@@ -1,0 +1,15 @@
+#############################################
+# Tint2 config files must be in $TINT2PATH, #
+# set by default to $HOME/.config/tint2/    #
+#############################################
+
+##########Display##########
+When the dialog opens, all tint2 configs found recursively in the default location will be shown.
+Running tint2 config(s) will be checkmarked.
+
+
+##########Function##########
+To start a tint2 config, check it and click "Apply"
+To stop a config, uncheck it and click "Apply"
+The two actions may be combined: check one and uncheck another, then press "Apply"
+

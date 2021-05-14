@@ -1,0 +1,164 @@
+#!/bin/bash
+
+### recentfiles-fbmenu - Recent files menu for fluxbox
+### Based on "icewm-menu-recentfiles.sh - dynamic menu of recent files" by BobC 09/04/19 for antiX-IceWM
+### Modified by Girafenaine for use on Fluxbox and especially MF-Fluxbox, with added options 01/02/21
+### Released under GPLv3
+
+### to initialize options and vars
+#########################################################################
+
+#recent files xml path
+RECENTUSXML=~/.local/share/recently-used.xbel
+RECENTUSDSP=~/.config/recently-used-dsp.conf
+#default command to use to open scripts and other special files
+editor=geany
+#default file to write recent files menu
+menupath=~/.fluxbox/submenus/recent_files_menu
+#file to write temporary submenu
+menupathtemp=~/.fluxbox/recent_files_menu_TEMP
+sortswitch=0
+indicator=0
+
+#nb of recent files to display. if not configured, default to 25 max displayed
+limitlines=25
+if [ -f $RECENTUSDSP ]; then
+    limitlines=$( cat $RECENTUSDSP )
+else
+    echo $limitlines > $RECENTUSDSP
+fi
+
+filenb=0
+
+#to catch used icons path
+icontheme=$( cat ~/.config/gtk-3.0/settings.ini | grep icon-theme-name | sed 's/.*=//g' )
+
+### to catch options
+#########################################################################
+
+while [ $# -gt 0 ] ; do
+
+if [[ $1 = "-h" || $1 = "--help" ]] ; then
+echo '#########################################################
+RECENTFILES-FBMENU SCRIPT - RECENT FILES MENU FOR FLUXBOX
+#########################################################
+
+This script generates a menu for use in fluxbox menu. It uses recently-used.xbel file as the data source.
+It can display icons. For this feature to work you need to create .png icons in the icons folders of the icons
+theme that you use (fluxbox menu uses only .png, and most icons are in .svg). You can do that with "sudo nomacs" (and then use
+batch treatment in chosen folders, and save as .png).
+
+Generated menu default path is ~/.fluxbox/submenus/recent_files_menu. You can change this with the -m option. The script can sort files
+between personal files (in /home/ and not hidden) and other files (hidden or outside /home/) with the -s option.
+
+#################################
+You may use following options :
+
+		-s (or --sort)		enable sorting of files between personal files and other files
+		-n (or --number) number-of-files		overwrite system limit for number of recent files to display
+		-m (or --menupath) /path/to/generated/menu		modify default path to write generated menu
+		-i (or --icontheme) chosen-icontheme		modify default icon theme
+		-e (or --editor) command-to-execute		modify default command (geany) to open files whose mime types contains "octet" or "shell"
+
+#################################
+To use this script, you could :
+
+	1. Add this script in ~/.fluxbox/scripts/ folder with the name recentfiles-fbmenu, and give it execution permission. 
+
+	2. Add in your fluxbox menu following lines :
+		[submenu] (Recent files) 
+			[include] (~/.fluxbox/submenus/recent_files_menu)
+			[separator]
+			[exec] (Update list) {~/.fluxbox/scripts/recentfiles-fbmenu}
+		[end]
+
+	3.a Add this script to your fluxbox startup file, for your recent files menu to be updated at the session beginning. Just add the line : ~/.fluxbox/scripts/recentfiles-fbmenu (with needed options)
+ 
+	3.b Use cron (needs cron service to be on) to execute it every eg 15 minutes : "crontab -e", then add a line such as "*/15 * * * * ~/.fluxbox/scripts/recentfiles-fbmenu"
+
+#################################
+--- output examples ---
+[exec] ([scripts/]   mxfb_recent_files_menu.sh) { geany /home/username/.fluxbox/scripts/mxfb_recent_files_menu.sh } </usr/share/icons/Papirus/48x48/mimetypes/application-x-shellscript.png>
+[exec] ([gtk-3.0/]   gtk.css) { xdg-open "file:///home/username/.config/gtk-3.0/gtk.css" } </usr/share/icons/Papirus/48x48/mimetypes/text-css.png>
+'
+
+exit
+
+elif [[ $1 = "-s" || $1 = "--sort" ]] ; then sortswitch=1 ; echo '[separator]' > $menupathtemp ; shift
+
+elif [[ $1 = "-e" || $1 = "--editor" ]] ; then editor=$2 ; shift 2
+
+elif [[ $1 = "-n" || $1 = "--number" ]] ; then limitlines=$2 ; shift 2
+
+elif [[ $1 = "-i" || $1 = "--icontheme" ]] ; then icontheme=$2 ; shift 2
+
+elif [[ $1 = "-m" || $1 = "--menupath" ]] ; then menupath=$2 ; shift 2
+
+else echo "unkown option \"$1\" ignored" ; shift
+
+fi
+
+done
+
+### main function
+#########################################################################
+
+xmllines=$(( limitlines * 20 ))
+
+#function to decode ugly URL signs, using the echo -e option
+function urldecode() { : "${*//+/ }" : "${*//\&apos\;/\'}" ; echo -e "${_//%/\\x}" ; }
+
+#write first line of the recent-files menu
+echo "[begin] (Recent files)" > $menupath
+
+#line-by-line reading of the RECENTUSXML file to extract last files names and data
+while read recentfile mimetype; do
+    #printf '%s\n' "DEBUG recentfile: ${recentfile}  mimetype: ${mimetype} "
+    dispname=$(urldecode $( : ${recentfile##*/} ; echo ${_//\"/} ) )
+    foldername=$(urldecode $( : ${recentfile%/*} ; echo ${_##*/} ) )
+    localfile=$(urldecode $( : ${recentfile##*file:\/\/} ; echo ${_//\"/} ) )
+    mimeicon=$( : ${mimetype//\//-} ; echo ${_//\"/} )
+    command="xdg-open"
+    iconpath="/usr/share/icons/$icontheme/48x48/mimetypes"
+    pathtowrite=$menupath
+    #printf '%s\n' "DEBUG  dispname: ${dispname} foldername: ${foldername} localfile: ${localfile}  mimeicon: ${mimeicon} "
+	
+#if the file does exist and is not equal to root, then we will print a line in the menu
+	if [[ ( -e "$localfile" ) && ( "$localfile" != "/" ) ]]; then
+
+#to exit "while read" loop when reaching the fixed number of recent files
+		filenb=$((filenb+1))
+		if [[ $filenb -ge $((limitlines+1)) ]] ; then break ; fi 
+
+#to sort personal and other files, if --sort option is enabled
+		if [[ ( $sortswitch -eq 1 ) && ( "$localfile" != "/home/"* || "$localfile" = *"/."* ) ]] ; then pathtowrite=$menupathtemp ; indicator=1 ; fi
+
+		if [ -z "$mimeicon" ]; then mimeicon="application-x-executable" ; fi
+
+#if the file is actually a folder
+		if [ -d "$localfile" ]; then
+			mimeicon="folder"
+			iconpath="/usr/share/icons/$icontheme/48x48/places"
+			dispname=$dispname/
+		fi
+
+#management of some files that are better opened with geany or other text editor           
+        if [[ $mimeicon == *"octet"* || $mimeicon == *"shell"* ]] ; then command=$editor ; fi
+        
+#write the line of menu for the file
+    printf '%s\n' "[exec] ([${foldername}/]   ${dispname}) { $command \"$localfile\" } <$iconpath/$mimeicon.png>" >> $pathtowrite
+        
+    fi
+    
+done < <( tail -n $xmllines $RECENTUSXML | grep -e "<bookmark href=" -e "<mime:mime-type type=" | sed '1!b ; /<mime:mime-type/d' | sed 's/\<bookmark href\=//g' | sed 's/mime\:mime\-type type\=//g' | sed 's/\" .*/\"/' | sed 's/<//g' | sed 's/\/>//g' | sed 'N;s/\n/ /g' | sed 's/  */ /g' | tac )
+# above command extract from RECENTUSXML file only one line for each recent file, with file name followed by application to use to open the file, and send it into the while loop
+
+if [[ $sortswitch -eq 1 && $indicator -eq 1 ]] ; then cat $menupathtemp >> $menupath ; fi
+
+echo [end] >> $menupath
+
+echo "Menu generated in "$menupath" "
+
+rm -f $menupathtemp
+
+exit 0

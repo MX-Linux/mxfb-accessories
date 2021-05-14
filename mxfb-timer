@@ -1,0 +1,406 @@
+#!/bin/bash
+#
+# Timer script using YAD dialog
+#
+# Author: D.M-Wilhelm (Leiche)
+# Email: meisssw01 at gmail.com
+# Licence: GPL
+# Original date: 2011
+#
+# Updated and tweaked by @misko_2083 and @damo, of the bunsenlabs community November 2019
+#
+# Modified by MX Linux Devs for use with MX-Fluxbox
+# November 2020 
+# The sound file used here is located in the components folder
+########################################################################
+Encoding=UTF-8
+#
+# i18n - Internationalization
+export TEXTDOMAIN=mxfb-timer
+export TEXTDOMAINDIR="/usr/share/locale"
+
+TITLE=$"MXFB Timer"
+DIR1=$"Enter local time"
+DIR2=$"or number and unit"
+DIR3=$"Click \"Check...\" button to confirm time and date are correct"
+DIR4=$"Click systemtray icon to cancel"
+DIR5=$"Choose an audio file for the alert"
+DIR6=$"Alarm sound now in use is"
+DIR7=$"You need to choose a sound file"
+DIR8=$"Exit sound test"
+DIR9=$"You entered"
+DIR10=$"Alarm clock was set to"
+DIR11=$"Alarm will be at  "
+DIR12=$"Left-click to quit, right-click for menu"
+DIR13=$"Time is up"
+MSG10=$"Setting"
+#MSG11=$"Alarm will be at"
+#MSG12=$"Left-click to quit, right-click for menu"
+#MSG13=$"Time is up!"
+
+QUIT=$"Quit"
+
+BUTTON1=$"Change sound"
+BUTTON2=$"Test sound"
+FIELD1=$"Enter alarm time"
+FIELD2=$"Check time and date"
+
+
+#
+# define some variables
+#
+TITLE="MXFB Timer"
+#HELPFILE="/usr/share/doc/mxfb-timer/help"
+#ICON="/usr/share/icons/Moka/64x64/apps/time-admin.png"
+export ICON="/usr/share/icons/Papirus/64x64/apps/alarm-clock.svg"
+#ICON="/usr/share/icons/Paper/48x48/apps/alarm-clock.png"
+export ICON2="/usr/share/icons/mxflux.png"
+
+# set default sound files
+SOUNDFILES=(
+    /usr/share/sounds/bleep.wav
+    /usr/share/sounds/freedesktop/stereo/bell.oga
+)
+# set default sound
+for s in "${SOUNDFILES[@]}"; do
+    if [ -f "$s" ]; then
+       SOUNDFILE=$s
+       break
+    fi
+done
+export SOUNDFILE
+
+# Choose whether to use YAD dialog or system notification for Alarm alert
+ALERT="YAD_ALERT"
+#ALERT="SYSTEM_ALERT"
+
+win_class="timer_class"
+
+### Check default icon and sound file ###
+[[ ! -f "$ICON" ]] && echo "$ICON not found"
+[[ ! -f "$SOUNDFILE" ]] && echo "Default soundfile, $SOUNDFILE, not found"
+
+PLAYERLIST=(
+   mpv
+   cvlc
+   paplay
+)
+
+export PLAY=""
+export FILETYPES=""
+export MIMETYPES=""
+
+for P in ${PLAYERLIST[@]}; do
+    which $P >/dev/null || continue
+    case $P in
+		mpv) PLAY="mpv --no-video"
+			 A=/usr/share/applications/mpv.desktop
+			 [ -f $A ] || continue
+			 MIML=( $(sed -n '/^MimeType=/{s/MimeType=//; s/;/\n/g;p}' $A | grep audio | sort -u) )
+			 MIMETYPES="${MIML[*]}"
+			 break
+		  ;;
+	   cvlc) PLAY="cvlc --play-and-exit --no-loop --no-repeat"
+			 A=/usr/share/applications/vlc.desktop
+			 [ -f $A ] || continue
+			 MIML=( $(sed -n '/^MimeType=/{s/MimeType=//; s/;/\n/g;p}' $A | grep audio | sort -u) )
+			 MIMETYPES="${MIML[*]}"
+			 break
+		  ;;
+	 paplay) PLAY="paplay"
+			 PAPL=( $(paplay --list-file-formats | awk '{print $1}' | sort -u) );
+			 PAPL=( "${PAPL[@]/#/*.}" ) ;
+			 FILETYPES="${PAPL[*]}"
+			 break
+		  ;;
+     esac
+done
+
+echo "PLAYER=$PLAY"
+
+function soundfile {
+    local sound
+    if [ -f $HOME/.config/mxfb-timer/alert ]; then
+      sound=$(readlink -e "$HOME/.config/mxfb-timer/alert")
+    else
+      sound=$(readlink -e "$SOUNDFILE")
+      # not default sound found : default to sound dir
+      if [ -z "$sound" ]; then
+         sound=/usr/share/sounds
+      fi
+    fi
+    echo "$sound"
+}
+export -f soundfile
+
+function playsound {
+
+    local sound=$(soundfile)
+
+    echo "Running: playsound" >&2
+    echo "$PLAY $sound" >&2
+    $PLAY "$sound"
+}
+export -f playsound
+
+# play test sound max 6 seconds
+function testsound {
+
+    local sound=$(soundfile)
+
+    echo "Running: testsound" >&2
+    echo "timeout 6 $PLAY $sound" >&2
+    timeout 6 $PLAY "$sound"
+}
+export -f testsound
+
+#--------------------
+# change title to current time
+#--------------------
+function change_title {
+declare yad_xid
+
+# need some time to register window class with X
+while [[ ${yad_xid} == "" ]]; do
+   # get Xwindow id
+   yad_xid="$(wmctrl -lx | grep -e "yad.${win_class}" |  grep -oE "[0-9a-z]{10}")"
+done
+
+# convert to decimal number
+yad_xid="$(echo $((${yad_xid})))"
+
+while true
+ do
+   wmctrl -i -r "${yad_xid}" -N "$TITLE : $(date '+%X')" 2>/dev/null || break
+   sleep 1
+done
+}
+
+        
+# to transform entered alert time
+# in addtion to date's --date="STRING"
+# allowed formats 
+# "NMMM"  or "N MMM"  or "+NMMM" or "+N MMM"
+# where N is a number and MMM any out of: minutes, hours, days, weeks, month, years
+# MMM can be abreviated down to one letter, except "month" down to "mo" 
+# e.g.:
+#  "1" = "+1 minute"
+#  "1m +2d +3w 4mo" = "+1 minutes +2 days +3 weeks +4 month"
+#  "1m 2d 3w 4mo"   = "+1 minute +2 days +3 weeks +4 month"
+#  "1m 2h "         = "+1 minute +2 hours"
+
+function transform {
+    local alert="$1"
+    echo "$alert" | sed -r \
+     -e '/[:-]/b' \
+     -e 's/[+]?([0-9]+)$/+\1 minute/' \
+     -e 's/[+]?([0-9]+)[[:space:]]*m(i(n(u(t(e(s)?)?)?)?)?)?[[:space:]]*/+\1 minutes /' \
+     -e 's/[+]?([0-9]+)[[:space:]]*h(o(u(r(s)?)?)?)?[[:space:]]*/+\1 hours /' \
+     -e 's/[+]?([0-9]+)[[:space:]]*d(a(y(s)?)?)?[[:space:]]*/+\1 days /' \
+     -e 's/[+]?([0-9]+)[[:space:]]*w(e(e(k(s)?)?)?)?[[:space:]]*/+\1 weeks /' \
+     -e 's/[+]?([0-9]+)[[:space:]]*mo(n(t(h)?)?)?[[:space:]]*/+\1 month /' \
+     -e 's/[+]?([0-9]+)[[:space:]]*y(e(a(r(s)?)?)?)?[[:space:]]*/+\1 year /'
+}   
+export -f transform 
+    
+    
+function get_alert {
+    local mode="$1"
+    local time_entered="$2"
+    local time_transformed=$(transform "$time_entered")
+    local alert_min=""
+    local alert_time="<invalid time>"
+    echo "time_entered=$1" >&2
+    echo "time_transformed=$time_transformed" >&2
+    if [ -n "$time_transformed" ]; then
+        local sec_ent="$(date --date="$time_transformed" '+%s' 2>/dev/null)"
+        local sec_now="$(date '+%s')"
+        echo "sec_ent=$sec_ent" >&2
+        echo "sec_now=$sec_now" >&2
+        alert_min=$(( ($sec_ent - $sec_now)/60 ))
+        echo "alert_min=$alert_min" >&2
+        
+        if [ $alert_min -lt 1 ]; then
+           if [ $alert_min -gt $(( -24 * 60 )) ]; then
+              alert_min=$(( $alert_min +  24 * 60  ))
+              alert_time=$(date --date="+$alert_min minutes" '+%X %x')
+           else
+              alert_time="<invalid time>"
+              alert_min=""
+           fi
+        else
+           alert_time=$(date --date="+$alert_min minutes" '+%X %x')
+        fi
+    fi
+    echo "alert_time=$alert_time" >&2
+
+    case "$mode" in
+          time) echo "$alert_time"
+              ;;
+          min*) echo "$alert_min"
+              ;;
+             *) echo "<invalid time>"    
+              ;;
+    esac
+    
+}
+export  -f get_alert
+
+function change_sound {
+
+FILEFILTER=""
+MIMEFILTER=""
+
+[ -n "$FILETYPES" ] && FILEFILTER='--file-filter='"Sound | $FILETYPES"
+[ -n "$MIMETYPES" ] && MIMEFILTER='--mime-filter='"Sound | $MIMETYPES"
+
+#echo FILEFILTER="'$FILEFILTER'" >&2
+#echo MIMEFILTER="'$MIMEFILTER'" >&2
+
+CHANGE=$(yad --title="$TITLE" --window-icon=$ICON2 \
+        --file --width=600 --height=500 --center \
+        --button="gtk-ok:0" --button="gtk-cancel:1" \
+        --filename="$(soundfile)" \
+        "$FILEFILTER" \
+        "$MIMEFILTER" \
+        --text="\n\t<b>Choose an audio file for the alert</b>\n")
+
+    # check soundfile exists
+    if [ -n "$CHANGE" ] && [ -f "$CHANGE" ]; then
+        [ ! -d "$HOME/.config/mxfb-timer" ] && mkdir -p "$HOME/.config/mxfb-timer"
+        ln -nsf "$CHANGE" "$HOME/.config/mxfb-timer/alert"
+        yad --title "$TITLE" \
+            --window-icon="$ICON2" \
+            --button="gtk-ok:0" \
+            --width 300 --borders=15 --center \
+            --window-icon="$ICON2" \
+            --text="\nAlarm sound now in use is:\n\n<i>$CHANGE</i>"
+    fi
+}
+export -f change_sound
+
+
+### countdown dialog ###
+get_countdown() {
+
+    change_title &
+    TEXT="
+          <b><i>$DIR1 (9:15pm, 13:50, 12am, etc.)  \n
+          $DIR2 (3 minutes, 2hours + 30minutes, etc.) \n
+          $DIR4</i></b>
+    "
+    COUNTDOWN=$(
+    /bin/yad --class="${win_class}" \
+			--title="$TITLE     ($(date '+%D -- %R'))" \
+			--window-icon="$ICON2" --center \
+			--text "$TEXT" \
+			--image="$ICON" \
+			--borders=15 \
+			--button="$BUTTON1:bash -c 'change_sound'" \
+			--button="$BUTTON2:bash -c 'testsound'" \
+			--button="gtk-cancel:1" \
+			--button="gtk-ok:0" \
+			--height=180 \
+			--form  \
+			--align=center \
+			--field "$FIELD1 ... :LBL" ""  \
+			--field "$FIELD2 ...:FBTN" '@bash -c "echo 4:$(get_alert time %3)"' \
+			--field "" \
+			--field ' :RO' ""  "<not set>" \
+			--columns=2 \
+	)
+    ret=$?
+    [[ $ret -eq 1 ]] && exit 0
+    IFS='|' read -r _ _ COUNTDOWN _ <<<$COUNTDOWN
+    COUNTDOWN=$(get_alert minutes $COUNTDOWN)
+    echo "$COUNTDOWN"
+    return $ret
+    
+    #ret=&?
+
+#Help -- not working yet
+# Would need a button added: --button:"Help:2"
+ #if   [[  $ret -eq 2 ]]; then
+ #yad --text-info --title "HELP" --wrap <$HELPFILE \
+    --geometry 600x300 --window-icon="/usr/share/icons/mxflux.png" \
+     --button gtk-ok:1
+#fi
+}
+
+COUNTDOWN=$(get_countdown)
+
+echo "COUNTDOWN: $COUNTDOWN"
+[[ "$COUNTDOWN" == 1 ]] && MINS="minute" || MINS="minutes"
+
+if [ -z "$COUNTDOWN" ];then
+    exit
+fi
+
+
+echo $DIR9 "$COUNTDOWN $MINS"
+TIMER=$(echo $((COUNTDOWN)))
+TASK1=$(date --date="+$TIMER minutes" '+%X %x' 2>/dev/null )
+temp=$(mktemp -u --tmpdir alarm.XXXXXXXX)
+
+mkfifo $temp
+
+exec 3<> $temp
+
+# TOOLTIP="\nAlarm clock was set to <big><b>$COUNTDOWN</b></big> $MINS \
+#        \n\nAlarm will be at  <big><b>$TASK1</b></big> \
+#        \n\nLeft-click to quit, right-click for menu"
+
+
+COUNTDOWN_BIG="<big><b>$COUNTDOWN</b></big>"
+TASK_BIG="<big><b>$TASK1</b></big>"
+
+T_LINE_1="$DIR10 $COUNTDOWN_BIG $MINS"
+T_LINE_2="$DIR11 $TASK_BIG"
+T_LINE_3="$DIR12"
+
+M_LINE_1="$DIR10 $COUNTDOWN $MINS"
+M_LINE_2="$DIR11 $TASK1"
+
+TOOLTIP="\n"
+TOOLTIP+="$T_LINE_1\n\n"
+TOOLTIP+="$T_LINE_2\n\n"
+TOOLTIP+="$T_LINE_3"
+
+timeout --preserve-status ${TIMER}m \
+   yad --notification  --listen <&3 & _pid=$!
+echo tooltip: "$TOOLTIP" >&3
+echo "action:quit" >&3
+echo 'menu:'"$M_LINE_1"'!true|'"$M_LINE_2"'!true|'"$QUIT"'!quit!gtk-quit' >&3
+echo "icon:${ICON}" >&3
+
+wait $_pid
+
+    [[ $? -eq 0 || $? -eq 252 ]] && rm $temp && exit
+    
+    rm $temp
+    exec 3>&-
+
+#check which sound
+#
+if [ -f "$HOME/.config/mxfb-timer/alert" ]; then
+    SOUND="$HOME/.config/mxfb-timer/alert"
+else
+    SOUND="$SOUNDFILE"  # use default soundfile
+fi
+
+if [ "$ALERT" == "YAD_ALERT" ];then
+    ### Using YAD ##########
+    ($PLAY "$SOUND") | yad --title "$TITLE" --undecorated --center \
+                     --no-buttons --sticky --escape-ok --on-top \
+                     --width 300 --image="$ICON" \
+                     --window-icon="$ICON2" \
+                     --borders=15 \
+                     --timeout=3 \
+                     --text="\n\t<big><b>$DIR13!</b></big>"
+else
+    ### Using notify-send ###
+    ($PLAY "$SOUND") &
+    notify-send -i "$ICON" "$DIR13! "
+fi
+
+exit

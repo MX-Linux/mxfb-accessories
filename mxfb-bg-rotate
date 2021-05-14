@@ -1,0 +1,66 @@
+#! /bin/bash
+
+#mx-fb-bg-rotation  v1.0, released April 2021. 
+#A script by the MX Linux Dev Team, to set background rotation in fluxbox.
+
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mx-idesktool"
+
+DIALOG="yad --center --window-icon=/usr/share/icons/mxflux.png"
+
+refresh()
+{
+	if pgrep -u $(id -u)  -x idesk >/dev/null; then
+       idesktoggle idesk refresh
+    fi
+}
+
+set_background_rotation()
+{
+	local conf="$HOME/.ideskrc"
+	local source="/usr/share/backgrounds"
+	local delay=5
+	local mode=scale
+	local cb_mode="scale\!stretch\!center\!fit\!mirror" 
+
+	if [ -d "$HOME/.fluxbox/backgrounds/." ]; then
+			source="$HOME/.fluxbox/backgrounds"
+	fi
+
+	eval declare -A HASH=( $(sed -nr '/^[[:space:]]*Background[.](Delay|Mode|Source):[[:space:]]*(.*)[[:space:]]*$/{ s//[\1]="\2"/p}' ~/.ideskrc ) )
+
+	# echo "${!HASH[@]}"  ;echo "${HASH[@]@Q}"
+	
+	[ -n "${HASH[Delay]}"  ] && delay="${HASH[Delay]}"   && delay="${delay//[^0-9]}"
+	[ -n "${HASH[Mode]}"   ] && mode="${HASH[Mode]}"     && cb_mode="${cb_mode/${mode,,}/^${mode,,}}"
+	[ -n "${HASH[Source]}" ] && source="${HASH[Source]}"
+	
+	CFG="$($DIALOG --width=400 \
+			--title=$"Set background rotation" \
+			--text=$"No rotation: Delay = 0" \
+			--text-align=center \
+			--form \
+			--field=$"Delay (mins)":NUM    "${delay}\!0..1440\!1\0" \
+			--field=$"Image folder"":MDIR" "$source"  \
+			--field=$"Image mode"":CB"     "$cb_mode" 2>/dev/null)"
+
+	[  $?  -ne 0 ] && return 
+
+	# read cfg values
+	IFS='|' read -r new_delay new_source new_mode <<<$CFG
+
+  new_mode="${new_mode,,}" 
+  new_mode="${new_mode^}"    
+  # update ideskrc values
+  sed -ri  \
+		-e '/^([[:space:]]*Background[.]Delay:).*/s%%\1 '"$new_delay"'%'    \
+		-e '/^([[:space:]]*Background[.]Mode:).*/s%%\1 '"$new_mode"'%'    \
+		-e '/^([[:space:]]*Background[.]Source:).*/s%%\1 '"$new_source"'%' \
+		$conf
+
+   refresh
+   
+}
+
+set_background_rotation
+

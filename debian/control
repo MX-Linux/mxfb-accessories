@@ -1,0 +1,15 @@
+Source: mxfb-accessories
+Section: system
+Priority: optional
+Maintainer: Jerry3904<jerry@mxlinux.org>
+Build-Depends: debhelper (>= 9.20120115)
+Standards-Version: 3.9.6
+Homepage: https:/mxlinux.org
+
+Package: mxfb-goodies
+Architecture: all
+Depends: nitrogen wmctrl
+Conflicts: 
+Replaces: 
+Description: Various scripts used in MX-Fluxbox
+  

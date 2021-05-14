@@ -1,0 +1,17 @@
+components/mx-dockmaker32.png usr/share/icons
+components/mx-dockmaker48.png usr/share/icons
+components/mx-dockmaker64.png usr/share/icons
+components/mx-dockmaker64_nologo.png usr/share/icons
+
+
+components/choosefile usr/bincomponents/bleep.wav usr/share/sounds
+components/tint2-manager-help /usr/share/doc/mxfb-goodies/
+
+
+mxfb-separate-backgrounds usr/bin
+mxfb-recent-files usr/bin
+mxfb-tiles usr/bin
+mxfb-menu-generator usr/bin
+mxfb-timer usr/bin
+mxfb-simple-weather usr/bin
+mxfb-tint2-manager usr/bin
