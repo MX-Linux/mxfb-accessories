@@ -29,4 +29,4 @@
 
 * **mxfb-tint2-manager** -- Very useful tool for dealing with the tint2 panel configs
 
-![Tint2](/pix/tint2.png)
+![Tint2](/pix/tint2manager.png)
