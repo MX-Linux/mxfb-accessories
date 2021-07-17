@@ -6,10 +6,11 @@ Build-Depends: debhelper (>= 9.20120115)
 Standards-Version: 3.9.6
 Homepage: https:/mxlinux.org
 
-Package: mxfb-goodies
+Package: mxfb-accessories
 Architecture: all
-Depends: nitrogen wmctrl
-Conflicts: 
+Depends: 
+Breaks: mxfb-goodies (<< 21.05.01)
+Conflicts: mxfb-goodies (<< 21.05.01) 
 Replaces: 
 Description: Various scripts used in MX-Fluxbox
   
