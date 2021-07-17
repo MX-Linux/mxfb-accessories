@@ -5,11 +5,10 @@ components/mxfb-settings.list /etc/custom-toolbox
 components/bleep.wav usr/share/sounds
 components/tint2-manager-help /usr/share/doc/mxfb-goodies/
 
-
+mxfb-bg-rotate usr/bin
 mxfb-separate-backgrounds usr/bin
 mxfb-recent-files usr/bin
 mxfb-tiles usr/bin
 mxfb-menu-generator usr/bin
 mxfb-timer usr/bin
-mxfb-simple-weather usr/bin
 mxfb-tint2-manager usr/bin

@@ -1,5 +1,13 @@
-mxfb-accessories (VERSION) UNRELEASED; urgency=medium
+mxfb-accessories (07.17.21) mx; urgency=medium
+
+  * Ready for packaging
+
+ -- Jerry Bond <jb@X1Cmx>  Sat, 17 Jul 2021 18:45:38 -0400
+
+mxfb-accessories (unknowo) mx; urgency=medium
 
   * Initial release. (Closes: #XXXXXX)
+  * Added config for Settings manager
+  * Corrected control and install files
 
- -- Jerry Bond <jb@X1Cmx>  Fri, 14 May 2021 16:54:38 -0400
+ -- Jerry Bond <jb@X1Cmx>  Sat, 17 Jul 2021 18:43:30 -0400
