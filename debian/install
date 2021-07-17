@@ -1,10 +1,8 @@
 components/mx-dockmaker32.png usr/share/icons
 components/mx-dockmaker48.png usr/share/icons
 components/mx-dockmaker64.png usr/share/icons
-components/mx-dockmaker64_nologo.png usr/share/icons
-
-
-components/choosefile usr/bincomponents/bleep.wav usr/share/sounds
+components/mxfb-settings.list /etc/custom-toolbox
+components/bleep.wav usr/share/sounds
 components/tint2-manager-help /usr/share/doc/mxfb-goodies/
 
 

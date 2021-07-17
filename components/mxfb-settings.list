@@ -1,0 +1,40 @@
+# Comments that start with # are ignored
+# Simple text file containing Name= Comment= Category= keywords
+# with the list of app names under each coresponding category
+# optional "root" flag can follow app name to indicate how to run the app
+
+Name=SETTINGS MANAGER
+Comment=Common settings for MX-Linux Base 
+
+Category=User
+lxappearance
+tint2conf
+mxfb-tint2-manager
+mx-conky
+mugshot
+mx-tweak
+mx-dockmaker
+mx-idesktool
+mx-welcome
+pavucontrol
+
+Category=Hardware
+system-keyboard-qt
+lxrandr
+system-config-printer
+touchpad-indicator
+alsamixer
+mx-tweak-systray
+
+
+Category=System
+Quick_System_Info
+blueman-manager
+webcamoid
+mx-select-sound
+mx-network-assistant
+mx-cleanup
+gufw
+
+Category=Advanced settings
+mx-tools
