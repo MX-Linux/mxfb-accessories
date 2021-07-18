@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+
+Name=Tint2 Manager
+GenericName=Panel
+Comment=Selection tool for tint2
+
+Exec=/usr/bin/mxfb-tint2-manager
+Icon=systemtray.svg
+Terminal=false
+Categories=System;
