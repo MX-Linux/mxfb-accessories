@@ -1,8 +1,9 @@
-mxfb-accessories (07.17.22) UNRELEASED; urgency=medium
+mxfb-accessories (07.17.23) UNRELEASED; urgency=medium
 
-  * added mxfv-quickshot and conf
+  * added mxfb-quickshot and conf
+  * added tint2session, corrected help file location
 
- -- Jerry Bond <jb@X1Cmx>  Mon, 19 Jul 2021 06:52:22 -0400
+ -- Jerry Bond <jb@X1Cmx>  Tue, 20 Jul 2021 06:00:02 -0400
 
 mxfb-accessories (07.17.21) mx; urgency=medium
 

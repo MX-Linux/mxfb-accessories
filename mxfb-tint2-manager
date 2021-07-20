@@ -40,7 +40,7 @@
 TINT2PATH="$HOME/.config/tint2"
 TINT2DEFAULT="$TINT2PATH/tint2rc" # tint2 will create this if it doesn't exist
 SESSIONFILE="$TINT2PATH/tint2-sessionfile"
-HELPFILE="/usr/share/doc/mxfb-goodies/tint2-manager-help"
+HELPFILE="/usr/share/doc/mxfb-accessories/tint2-manager-help"
 USAGE='bl-tint2-manager is a tint2 selection and switcher script
 which uses yad to generate a graphical user interface.
 

@@ -1,21 +1,19 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Settings Manager
-Name=Custom Toolbox
-Name[ca]=Custom Toolbox
-Name[de]=Custom Toolbox
-Name[el]=Custom Toolbox
-Name[es]=Custom Toolbox
-Name[fr]=Custom Toolbox
-Name[it]=Custom Toolbox
-Name[ja]=Custom Toolbox
-Name[nl]=Custom Toolbox
-Name[sv]=Custom Toolbox
+Name[ca]=Settings Manager
+Name[de]=Settings Manager
+Name[el]=Settings Manager
+Name[es]=Settings Manager
+Name[fr]=Settings Manager
+Name[it]=Settings Manager
+Name[ja]=Settings Manager
+Name[nl]=Settings Manager
+Name[sv]=Settings Manager
 Exec=custom-toolbox /etc/custom-toolbox/mxfb-settings.list
 Terminal=false
 Type=Application
 Icon=/usr/share/pixmaps/custom-toolbox.svg
-Categories=GNOME;GTK;Fluxbox;
-Keywords=Desktop
+Categories=GNOME;GTK;System;
 NoDisplay=false
 
