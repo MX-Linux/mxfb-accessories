@@ -154,7 +154,7 @@ loadDialog() {
     local RET retval i pid cmd name file display
     declare -a retTint
 ## Populate dialog from array, get return value(s)
-    RET=$($DLGDEC $WINICON --list --title="$TITLE" --undecorated --window-icon="/usr/share/icons/mxflux.png" \
+    RET=$($DLGDEC $WINICON --list --title="$TITLE" --window-icon="/usr/share/icons/mxflux.png" \
         --text="
         <b><i>$TEXT</i></b>
         " \

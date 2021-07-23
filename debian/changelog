@@ -1,9 +1,11 @@
-mxfb-accessories (07.17.23) UNRELEASED; urgency=medium
+mxfb-accessories (07.22.21) mx; urgency=medium
 
   * added mxfb-quickshot and conf
   * added tint2session, corrected help file location
+  * updated toolbox desktop file
+  * ready for release
 
- -- Jerry Bond <jb@X1Cmx>  Tue, 20 Jul 2021 06:00:02 -0400
+ -- Jerry Bond <jb@X1Cmx>  Thu, 22 Jul 2021 16:01:37 -0400
 
 mxfb-accessories (07.17.21) mx; urgency=medium
 
