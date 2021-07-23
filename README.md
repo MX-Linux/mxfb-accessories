@@ -27,6 +27,6 @@
 
 ![Timer](/pix/timer.png)
 
-* **mxfb-tint2-manager** -- Very useful tool for dealing with the tint2 panel configs
+* **mxfb-tint2-manager** -- Very useful tool for dealing with the tint2 panel configs; adapted from bunsenlabs work
 
 ![Tint2](/pix/tint2manager.png)

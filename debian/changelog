@@ -1,3 +1,12 @@
+mxfb-accessories (07.22.21) mx; urgency=medium
+
+  * added mxfb-quickshot and conf
+  * added tint2session, corrected help file location
+  * updated toolbox desktop file
+  * ready for release
+
+ -- Jerry Bond <jb@X1Cmx>  Thu, 22 Jul 2021 16:01:37 -0400
+
 mxfb-accessories (07.17.21) mx; urgency=medium
 
   * Corrected date
