@@ -1,15 +1,16 @@
-#############################################
-# Tint2 config files must be in $TINT2PATH, #
-# set by default to $HOME/.config/tint2/    #
-#############################################
+Tint2 config files must be in $TINT2PATH, set by default to $HOME/.config/tint2/
+-----------------------------------
 
-##########Display##########
-When the dialog opens, all tint2 configs found recursively in the default location will be shown.
-Running tint2 config(s) will be checkmarked.
+When the dialog opens, any running tint2s will be checkmarked.
 
+Click "Apply" and all running tint2s are stopped, and all checkmarked tint2s are started.
 
-##########Function##########
-To start a tint2 config, check it and click "Apply"
-To stop a config, uncheck it and click "Apply"
-The two actions may be combined: check one and uncheck another, then press "Apply"
+To stop a tint2 just uncheck it, and "Apply".
 
+Selected running tint2s are saved to a session file in $TINT2PATH, and can be run with the "tint2session" script. To start them at login, the following line within the startup file would be used:
+
+           tint2session
+
+To edit a tint2 config in text format, this command can be used to launch a selection gui:
+
+           tint2edit

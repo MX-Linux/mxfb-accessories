@@ -1,0 +1,249 @@
+#!/bin/bash
+#
+#    bl-tint2-manager: a BunsenLabs tint2 selection and switcher script
+#    Copyright (C) 2015-2019  damo    <damo@bunsenlabs.org>
+#                  2019-2020  John Crawley <john@bunsenlabs.org>
+#    
+#	 mxfb-tint2-manager 2020-2021 MX Devs added "Help" and "Edit" 
+#    
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+########################################################################
+#
+#   Tint2 config files must be in $TINT2PATH
+#
+#   When the dialog opens, any running tint2s will be checkmarked.
+#
+#   Click "Apply" and all running tint2s are stopped,
+#   and all checkmarked tint2s are started.
+#
+#   To stop a tint2 just uncheck it, and "Apply".
+#
+#   Running tint2s are saved to a session file, and can be run with
+#   the "tint2-session" script. To start them at login, add the
+#   following line to autostart:
+#
+#           tint2session
+#
+########################################################################
+
+TINT2PATH="$HOME/.config/tint2"
+TINT2DEFAULT="$TINT2PATH/tint2rc" # tint2 will create this if it doesn't exist
+SESSIONFILE="$TINT2PATH/tint2-sessionfile"
+HELPFILE="/usr/share/doc/mxfb-accessories/tint2-manager-help"
+USAGE='bl-tint2-manager is a tint2 selection and switcher script
+which uses yad to generate a graphical user interface.
+
+Usage:  tint2manager
+   or:  tint2manager -h|--
+  
+
+Optional arguments:
+    -h | --help    Show this message (no other options are supported at this time)
+
+Use:
+    With no command option the script runs the gui
+
+    Tint2 config files must be in HOME/.config/tint2/
+
+    When the dialog opens, any running tint2s will be checkmarked.
+
+    Click "Apply" or "OK" and all running tint2s are stopped,
+    and all checkmarked tint2s are started.
+
+    To stop a tint2 just uncheck it, and click "Apply" or "OK".
+
+    Click "Apply" to return to the dialog after applying changes,
+    click "OK" to close the window after applying changes,
+    click "Close" to close the window without applying any more changes.
+
+    Running tint2s are saved to a session file, and can be run with
+    the "tint2session" script. To start them at login, add the
+    following line to autostart:
+
+            tint2session
+'
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mxfb-tint2-manager"
+
+TITLE="Tint2 Manager"
+TITLE2="HELP"
+TEXT="Check to run, uncheck to stop"
+BUTTON0="Apply"
+BUTTON1="Close"
+BUTTON2="Help"
+BUTTON3="Config"
+
+
+### DIALOG VARIABLES
+DLGDEC="yad --borders=20 "
+WINICON="--window-icon=tint2"
+#OK="--button=OK:2"
+HELP="--button=$BUTTON2:2"
+CONFIG="--button=$BUTTON3:3"
+APPLY="--button=$BUTTON0:0"
+#CANCEL="--button=gtk-cancel:1"
+CLOSE="--button=$BUTTON1:1"
+########################################################################
+
+getRunning(){
+    local pid cmd args TPATH
+    while read -r pid cmd args; do
+        TPATH=${args#-c } # tint2 will start even without -c before filepath
+        if [[ -z $TPATH ]]; then
+            TPATH=$TINT2DEFAULT
+        elif [[ $TPATH != "$HOME"/* ]]; then
+            TPATH="$HOME/$TPATH"
+        fi
+        [[ -f $TPATH ]] || {
+            echo "$0: pgrep tint2 parsing failed: $TPATH not a file" >&2
+            continue
+        }
+        runningTints+=("$TPATH")
+    done < <(pgrep -ax tint2)
+}
+
+# $1 holds full path to config file
+# return 0 if a running tint2 is using that file
+isRunning(){
+    local file=$1
+    for running in "${runningTints[@]}"
+    do
+        [[ $running = "$file" ]] && return 0
+    done
+    return 1
+}
+
+fillArrays(){
+    num="$1"
+    tintsPath[$num]="$2"   # full filepath to the tint2
+    tintsArr[$num]="$3"    # displayed name
+    # see if config file matches one of the running tints
+    if isRunning "$2";then
+        checkArr[$num]="TRUE"       # make checkmark in dialog
+    else
+        checkArr[$num]="FALSE"
+    fi
+}
+
+findTint(){
+# search dirs for tint2 config files
+    local file num display
+    num=0
+    shopt -s globstar
+    for file in "$TINT2PATH"/**;do
+        [[ -f $file ]] || continue
+        [[ $file = *~ ]] && continue # ignore backups
+        grep -q "panel_monitor" "$file" || continue # not a tint2rc file
+        display=${file#$TINT2PATH/}
+        fillArrays $num "$file" "$display"
+        num=$((num+1))
+    done
+    shopt -u globstar
+}
+
+loadDialog() {
+    local RET retval i pid cmd name file display
+    declare -a retTint
+## Populate dialog from array, get return value(s)
+    RET=$($DLGDEC $WINICON --list --title="$TITLE" --window-icon="/usr/share/icons/mxflux.png" \
+        --text="
+        <b><i>$TEXT</i></b>
+        " \
+        --checklist --width=360 --height=360 --borders=15 \
+        --column="Select" --column="Name" "${LISTTINT[@]}" --separator=":" \
+        $HELP $CONFIG $CLOSE $APPLY\
+        )
+# For OK button, add to last line of yad command:
+#       $APPLY $OK $CLOSE \
+
+    retval=$?
+    if (( retval == 1 )); then # close button pressed
+        exit 0
+    fi
+    :> "$SESSIONFILE"    # Create new session file
+
+    # loop through returned choices, add to array
+    i=0
+    OIFS=$IFS   # copy original IFS
+    IFS=":"     # separator is ":" in returned choices
+    for name in $RET; do
+        retTint[$i]=$name
+        i=$((i+1))
+    done
+    IFS=$OIFS    # reset IFS
+
+    # kill all tint2s
+    pgrep -a tint2 | while read -r pid cmd; do
+        if [[ ${cmd%% *} = tint2 ]]; then
+            kill "$pid"
+        fi
+    done
+
+    for name in "${retTint[@]}";do       # loop through checkmarked tint2 names
+        for ((j=0; j<${#tintsPath[*]}; j++));do  # traverse through elements
+            file=${tintsPath[j]}
+            display=${tintsArr[j]}
+            # see if it matches the returned name
+            if [[ $display = "$name" ]];then
+                echo "$file" >> "$SESSIONFILE"
+                set -m # enable job control so forked tint2 is immune to signals
+                # start the tint2 (adjust the sleep time if required)
+                tint2 -c "$file" >/dev/null 2>&1 &
+                disown
+                set +m
+                sleep 1s
+            fi
+        done
+    done
+    
+#   $HELP button 
+    (( retval == 2 )) && yad --text-info --title "$TITLE2" --wrap <$HELPFILE \
+    --geometry 600x300 --window-icon="/usr/share/icons/mxflux.png" \
+     --button gtk-ok:1
+     
+#   $CONFIG button
+	(( retval == 3 ))
+	tint2conf $1
+
+}
+
+# get any commandline arguments
+if ! (( $# == 0 ));then
+    for arg in "$@";do
+        if [[ $1 = "-h" ]] || [[ $1 = "--help" ]];then
+            echo -e "$USAGE"
+            exit 0
+        else
+            echo -e "\tERROR: sorry I don't understand \"${arg}\""
+            echo -e "$USAGE"
+            exit 1
+        fi
+    done
+fi
+
+while true;do
+    runningTints=()
+    # get tint2 directories in .tint2, add to array
+    getRunning
+    findTint
+
+    LISTTINT=()
+    # loop through arrays, and build list text for yad dialog
+    for ((j=0; j<${#tintsArr[*]}; j++));do
+        LISTTINT+=("${checkArr[j]}" "${tintsArr[j]}")
+    done
+    loadDialog #"$LISTTINT" now a global array
+done
+exit 0
