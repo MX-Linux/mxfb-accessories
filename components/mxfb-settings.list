@@ -3,7 +3,7 @@
 # with the list of app names under each coresponding category
 # optional "root" flag can follow app name to indicate how to run the app
 
-Name=SETTINGS MANAGER
+Name=Settings manager
 Comment=Common settings for MX-Linux Base 
 
 Category=User
