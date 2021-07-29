@@ -1,6 +1,3 @@
-components/mx-dockmaker32.png usr/share/icons
-components/mx-dockmaker48.png usr/share/icons
-components/mx-dockmaker64.png usr/share/icons
 components/mxfb-settings.list etc/custom-toolbox
 components/bleep.wav usr/share/sounds
 components/tint2-manager-help usr/share/doc/mxfb-goodies/
