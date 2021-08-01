@@ -3,6 +3,7 @@ components/bleep.wav usr/share/sounds
 components/tint2-manager-help usr/share/doc/mxfb-goodies/
 components/custom-toolbox-mxfb.desktop usr/share/applications
 components/tint2session usr/bin
+components/mxfb-settings.svg usr/share/pixmaps
 components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/
 mxfb-bg-rotate usr/bin
 mxfb-separate-backgrounds usr/bin
