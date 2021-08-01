@@ -1,3 +1,21 @@
+mxfb-accessories (07.29.21) mx; urgency=medium
+
+  * removed dockmaker icons
+
+ -- Jerry Bond <jb@X1Cmx>  Fri, 30 Jul 2021 14:31:24 -0400
+
+mxfb-accessories (07.28.21) mx; urgency=medium
+
+  * final changes for release
+
+ -- Jerry Bond <jb@X1Cmx>  Wed, 28 Jul 2021 19:27:29 -0400
+
+mxfb-accessories (07.23.21) mx; urgency=medium
+
+  * corrected use of switch in tint2 manager
+
+ -- Jerry Bond <jb@X1Cmx>  Fri, 23 Jul 2021 15:29:16 -0400
+
 mxfb-accessories (07.22.21) mx; urgency=medium
 
   * added mxfb-quickshot and conf
