@@ -4,7 +4,7 @@
 # optional "root" flag can follow app name to indicate how to run the app
 
 Name=Settings manager
-Comment=Common settings for MX-Linux Base 
+Comment=Common settings for MX-Fluxbox 
 
 Category=User
 lxappearance
