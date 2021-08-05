@@ -8,7 +8,7 @@ Comment=Common settings for MX-Fluxbox
 
 Category=User
 lxappearance
-tint2conf
+#tint2conf
 mxfb-tint2-manager
 mx-conky
 mugshot
