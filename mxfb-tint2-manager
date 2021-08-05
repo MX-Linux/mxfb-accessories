@@ -3,7 +3,7 @@
 #    bl-tint2-manager: a BunsenLabs tint2 selection and switcher script
 #    Copyright (C) 2015-2019  damo    <damo@bunsenlabs.org>
 #                  2019-2020  John Crawley <john@bunsenlabs.org>
-#    Modifications made December 2020 for use in MX Fluxbox 
+#    Major rewrite 2020-2021 by fehlix and other MX Devs for use in MX Fluxbox <devs@mxlinux.org>
 #    
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
