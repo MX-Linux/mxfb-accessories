@@ -1,3 +1,11 @@
+mxfb-accessories (21.08.05-1) mx; urgency=medium
+
+  * adjusted mxfb-tint2-manager
+  * adjusted tint2session
+  * added mxfb-edit
+
+ -- fehlix <fehlix@mxlinux.org>  Thu, 05 Aug 2021 01:03:54 +0000
+
 mxfb-accessories (07.29.22) UNRELEASED; urgency=medium
 
   * changed icon for settings manager

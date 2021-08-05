@@ -1,0 +1,162 @@
+#!/bin/bash
+
+# mx-edit : helper script to open user's "mime-default" text-editor
+#           fallback to featherpad, geany, nano, mcedit, vim, sensible-editor
+#           open terminal if needed
+#
+# author: fehlix at mxlinux dot org
+# version: 
+VERSION="2021-08-04.01"
+
+# need bash
+if [ -z "$BASH_VERSION" ]; then
+    exec /bin/bash "$0" "$@"
+fi
+
+ME=$(readlink -e $0)
+ME=${ME##*/}
+usage() { cat<<USAGE
+$ME     -  helper script to open users "mime-default" text-editor
+
+Usage:  $ME [options] [ text-file(s) ... ]
+
+Options:
+    
+        -e EDITOR   set text-edit EDITOR to use
+        
+        -d          debug - print debug messages
+
+        -h          help - show this help
+        
+        -r          edit as root
+        
+        -s          simulate - print commandline
+        
+        -v          version - show version
+
+        -V          verbose - show what is done
+        
+        --          pass options followed to text editor
+        
+USAGE
+}
+
+OPTSTRING=":e:dhrsvV"
+while getopts $OPTSTRING arg; do
+  case $arg in
+    e) # set editor to use
+      USE_EDITOR="$OPTARG"
+      ;;
+    d) # debug on
+      DEBUG=1
+      echo "DEBUG=on"
+      ;;
+    r) # edit as root
+      EDIT_AS_ROOT=1
+      ;;
+    s) # simulate on
+      SIMULATE=1
+      echo "SIMULATE=on"
+      ;;
+    h) # help.
+      usage
+      exit 
+      ;;
+    V) # verbose on
+      VERBOSE=1
+      echo "VERBOSE=on"
+      ;;
+    v) # version
+      echo "version $VERSION"
+      exit 0
+      ;;
+   \?) # invalid option
+      echo "invalid option: -$OPTARG"
+      exit 1
+      ;;
+    :) # missing argument
+      echo "option -$OPTARG : missing argument"
+      exit 1
+      ;;
+  esac
+done
+((DEBUG)) && echo shift $((OPTIND -1))
+shift $((OPTIND -1))
+((DEBUG)) && echo '$@: '"$@"
+FALLBACK=(
+    featherpad
+    geany
+    mousepad
+    nano
+    mcedit
+    vim
+    sensible-editor
+    )
+
+[ -n "$USE_EDITOR" ] && E="$USE_EDITOR" || E=""
+
+# avoid self-calling loop
+[ -n "$E" ] && {
+    read -r c d <<<"$E"
+
+    if [[ ${c##*/} == $ME ]]; then
+        echo "ignored editor: $ME" 
+        unset E 
+    elif ! which "$c" >/dev/null; then
+        echo "ignored not found editor: '$c'"
+        unset E 
+    fi 
+}
+
+
+# check mime-default text editor 
+r=""
+#((EUID)) || r="runuser -u $(logname)"
+M=$($r xdg-mime query default text/plain)
+
+[ -z "$E" ] &&  [ -n "$M" ] &&  { 
+    ((VERBOSE)) && echo "MIME_DEFAULT_TEXT_EDITOR:$M"
+    # set defaults
+    : ${XDG_DATA_DIRS:=/usr/local/share:/usr/share}
+    #XDD="$HOME/.local/share:$XDG_DATA_DIRS"
+    XDD="$(eval printf ~$(/usr/bin/logname))/.local/share:$XDG_DATA_DIRS"
+    readarray  -t  xdd  <<<"${XDD//://applications$'\n'}/applications"
+    ((DEBUG)) && declare -p xdd
+    # get first found with nullgob 
+    read -r e _<<<$(shopt -s nullglob; echo ${xdd[@]/%//${M%.desktop}[.]desktop}; shopt -u nullglob)
+    grep -sq '^Terminal=true' "$e" && terminal="x-terminal-emulator -e" || terminal=
+    # get and tidy up first found Exec line 
+    [ -n "$e" ] && E=$(grep -m1 -oP '^Exec[[:space:]]*=[[:space:]]*\K.*' "$e" | 
+                       sed -e 's:@::g; s:[[:space:]]%[a-zA-Z]::; s:"::g' -e "s:'::g")
+    
+    # check found editor is available
+    read -r c d <<<"$E"
+    [ -n "$E" ] &&  which "$c" >/dev/null || unset E 
+    
+}
+
+# fallback 
+[ -z "$E" ] && \
+for e in  ${FALLBACK[@]}; do
+    E=$(which "$e" 2>/dev/null) && break
+done
+
+read -r c d <<<"$E"
+[ -n "$E" ] &&  which "$c" >/dev/null || exit
+
+case ${c##*/} in
+    nano|pico|vi|vim*|mcedit|sensible-editor) 
+		terminal="x-terminal-emulator -e"
+		;;
+     *) : terminal="" ;;
+esac
+# have a terminal
+tty >/dev/null && terminal=""
+run="$terminal"
+((EDIT_AS_ROOT)) && run="mx-pkexec $terminal"    
+##launch editor
+((VERBOSE )) && echo $run "$E" "${@@Q}" 
+((SIMULATE)) && echo $run $E "$@" && exit
+$run $E "$@"
+
+exit

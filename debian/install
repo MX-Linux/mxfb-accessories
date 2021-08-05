@@ -2,6 +2,7 @@ components/mxfb-settings.list etc/custom-toolbox
 components/bleep.wav usr/share/sounds
 components/tint2-manager-help usr/share/doc/mxfb-goodies/
 components/custom-toolbox-mxfb.desktop usr/share/applications
+components/mxfb-tint2-manager.desktop usr/share/applications
 components/tint2session usr/bin
 components/mxfb-settings.svg usr/share/pixmaps
 components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/
@@ -13,3 +14,4 @@ mxfb-menu-generator usr/bin
 mxfb-timer usr/bin
 mxfb-tint2-manager usr/bin
 mxfb-quickshot usr/bin
+mxfb-edit usr/bin
