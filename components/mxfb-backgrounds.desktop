@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+
+Name=Backgrounds
+GenericName=Panel
+Comment=Wallpaper selector and manager
+
+Exec=nitrogen
+Icon=background.svg
+Terminal=false
+ShowOnly=fluxbox
+Categories=System;

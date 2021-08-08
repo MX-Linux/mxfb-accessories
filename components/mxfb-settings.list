@@ -17,6 +17,8 @@ mx-dockmaker
 mx-idesktool
 mx-welcome
 pavucontrol
+mxfb-backgrounds
+
 
 Category=Hardware
 system-keyboard-qt
@@ -35,6 +37,7 @@ mx-select-sound
 mx-network-assistant
 mx-cleanup
 gufw
+mxfb-backgrounds
 
 Category=Advanced settings
 mx-tools
