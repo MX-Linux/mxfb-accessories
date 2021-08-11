@@ -1,9 +1,10 @@
-mxfb-accessories (21.08.06+nmu1) UNRELEASED; urgency=medium
+mxfb-accessories (21.08.11) mx; urgency=medium
 
   * Non-maintainer upload.
   * added Backgrounds and components to Settings manager
+  * 
 
- -- Jerry Bond <jb@X1Cmx>  Sun, 08 Aug 2021 10:16:22 -0400
+ -- Jerry Bond <jb@X1Cmx>  Wed, 11 Aug 2021 13:49:05 -0400
 
 mxfb-accessories (21.08.06) mx; urgency=medium
 
