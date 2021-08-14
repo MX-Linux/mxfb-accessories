@@ -1,3 +1,9 @@
+mxfb-accessories (21.08.14) mx; urgency=medium
+
+  * corrected Settings list to remove double
+
+ -- Jerry Bond <jb@X1Cmx>  Sat, 14 Aug 2021 15:58:27 -0400
+
 mxfb-accessories (21.08.11) mx; urgency=medium
 
   * Non-maintainer upload.
