@@ -161,4 +161,7 @@ echo "Menu generated in "$menupath" "
 
 rm -f $menupathtemp
 
+#if fluxbox running, reload menu
+pgrep -x fluxbox && fluxbox-remote restart
+
 exit 0
