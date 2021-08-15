@@ -145,3 +145,6 @@ delete="%f"
 sed -e s/$delete//g -i $FILE
 echo Menu file created and ready to be used
 
+#if fluxbox running, reload menu
+pgrep -x fluxbox && fluxbox-remote restart
+
