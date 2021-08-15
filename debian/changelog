@@ -1,4 +1,18 @@
-mxfb-accessories (21.08.05-1) UNRELEASED; urgency=medium
+mxfb-accessories (21.08.14) mx; urgency=medium
+
+  * corrected Settings list to remove double
+
+ -- Jerry Bond <jb@X1Cmx>  Sat, 14 Aug 2021 15:58:27 -0400
+
+mxfb-accessories (21.08.11) mx; urgency=medium
+
+  * Non-maintainer upload.
+  * added Backgrounds and components to Settings manager
+  * 
+
+ -- Jerry Bond <jb@X1Cmx>  Wed, 11 Aug 2021 13:49:05 -0400
+
+mxfb-accessories (21.08.06) mx; urgency=medium
 
   * adjusted mxfb-tint2-manager
   * adjusted tint2session

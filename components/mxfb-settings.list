@@ -4,7 +4,7 @@
 # optional "root" flag can follow app name to indicate how to run the app
 
 Name=Settings manager
-Comment=Common settings for MX-Fluxbox 
+Comment=Common settings for MX-Linux Fluxbox 
 
 Category=User
 lxappearance
@@ -17,6 +17,8 @@ mx-dockmaker
 mx-idesktool
 mx-welcome
 pavucontrol
+mxfb-backgrounds
+
 
 Category=Hardware
 system-keyboard-qt
