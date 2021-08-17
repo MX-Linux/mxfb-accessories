@@ -30,3 +30,7 @@
 * **mxfb-tint2-manager** -- Very useful tool for dealing with the tint2 panel configs; adapted from bunsenlabs work
 
 ![Tint2](/pix/tint2manager.png)
+
+* **mxfb-trashcheck** -- utility to check number of files in trash and manage them
+
+![Trash](/pix/trashcheck.png)
