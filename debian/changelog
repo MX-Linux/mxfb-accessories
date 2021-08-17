@@ -1,3 +1,15 @@
+mxfb-accessories (21.08.16) UNRELEASED; urgency=medium
+
+  * added mxfb-trashcheck for Settings manager
+
+ -- Jerry Bond <jb@X1Cmx>  Tue, 17 Aug 2021 18:22:28 -0400
+
+mxfb-accessories (21.08.15) mx; urgency=medium
+
+  * corrected menu-generator and recent-files to avoid log out/in
+
+ -- Jerry Bond <jb@X1Cmx>  Sun, 15 Aug 2021 11:08:15 -0400
+
 mxfb-accessories (21.08.14) mx; urgency=medium
 
   * corrected Settings list to remove double
