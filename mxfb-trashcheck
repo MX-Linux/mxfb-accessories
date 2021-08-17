@@ -1,9 +1,12 @@
 #!/bin/bash
 
-##This script counts the files in the trash and asks for confirmation to remove the files permanently.
+##This script counts the files in the trash and asks for confirmation to remove them permanently.
 ##It uses YAD dialog-box.
 ##Created by Kobalan for MX-Fluxbox
 ##Released August 2021 under GPL3
+
+export TEXTDOMAIN=mxfb-trashcheck
+export TEXTDOMAINDIR="/usr/share/locale"
 
 file_count=$(ls $HOME/.local/share/Trash/files | wc -l)
 
