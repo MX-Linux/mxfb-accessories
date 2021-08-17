@@ -1,0 +1,51 @@
+#!/bin/bash
+
+##This script counts the files in the trash and asks for confirmation to remove the files permanently.
+##It uses YAD dialog-box.
+##Created by Kobalan for MX-Fluxbox
+##Released August 2021 under GPL3
+
+file_count=$(ls $HOME/.local/share/Trash/files | wc -l)
+
+TITLE=$"Trash"
+MESSAGE1=$"There are no files in the trash."
+MESSAGE2=$"There is 1 file in the trash.
+  Do you want to remove it permanently?"
+MESSAGE3=$"There are $file_count files in the trash.
+  Do you want to remove them permanently?"
+BUTTON1=$"No"
+BUTTON2=$"Yes"
+BUTTON3=$" Show files in trash..."
+
+if [[ $file_count -eq 0 ]] ; then
+
+yad --title="$TITLE" --borders=24 --image=user-trash --center --timeout 3 --on-top --fixed --undecorated --skip-taskbar --no-buttons --timeout=3 \
+--text="
+  $MESSAGE1" 
+	
+elif [[ $file_count -eq 1 ]] ; then
+ 
+yad --title="$TITLE" --borders=12 --image=user-trash-full --center --on-top  --window-icon=user-trash-full \
+	--text="  $MESSAGE2" \
+	--button="$BUTTON2!dialog-yes!:2" \
+	--button="$BUTTON1!dialog-no!:1" \
+	--button="$BUTTON3!user-trash-full!:3" 
+	
+else
+ 
+yad --title="$TITLE" --borders=12 --image=user-trash-full --center --on-top  --window-icon=user-trash-full \
+	--text="  $MESSAGE3" \
+	--button="$BUTTON2!dialog-yes!:2" \
+	--button="$BUTTON1!dialog-no!:1" \
+	--button="$BUTTON3!user-trash-full!:3" 
+fi
+	
+ret=$?
+
+[[ $ret -eq 1 ]] && exit 0
+
+if [[ $ret -eq 2 ]]; then
+    gio trash --empty && exit 0
+elif [[ $ret -eq 3 ]]; then
+    thunar $HOME/.local/share/Trash/files/ && exit 0
+fi

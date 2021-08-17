@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### mxfb-menu-generator: a tiny script to Create a (non dynamic) fluxbox menu using information on .desktop files, released by PPC, 7/10/2020, under GPLv3
-### Modified by MX Linux Devs for use in MX-Fluxbox April 2021
+### Modified by MX Linux Devs for use in MX-Fluxbox August 2021
 
 ### How to use this script:
 ### 1. Copy the script below and paste it into your text editor, saving it in your Home as MXFB_menu_generator.sh
