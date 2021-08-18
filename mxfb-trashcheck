@@ -2,7 +2,7 @@
 
 ##This script counts the files in the trash and asks for confirmation to remove them permanently.
 ##It uses YAD dialog-box.
-##Created by Kobalan for MX-Fluxbox
+##Created by Kobalan for MX-Fluxbox with additions by MX Devs and users
 ##Released August 2021 under GPL3
 
 export TEXTDOMAIN=mxfb-trashcheck
@@ -22,7 +22,7 @@ BUTTON3=$" Show files in trash..."
 
 if [[ $file_count -eq 0 ]] ; then
 
-yad --title="$TITLE" --borders=24 --image=user-trash --center --timeout 3 --on-top --fixed --undecorated --skip-taskbar --no-buttons --timeout=3 \
+yad --title="$TITLE" --borders=24 --image=user-trash --center --timeout 3 --on-top --fixed --undecorated --skip-taskbar --no-buttons \
 --text="
   $MESSAGE1" 
 	
@@ -50,5 +50,5 @@ ret=$?
 if [[ $ret -eq 2 ]]; then
     gio trash --empty && exit 0
 elif [[ $ret -eq 3 ]]; then
-    thunar $HOME/.local/share/Trash/files/ && exit 0
+    exo-open trash://  && exit 0
 fi
