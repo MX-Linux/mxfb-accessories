@@ -36,7 +36,7 @@ webcamoid
 mx-select-sound
 mx-network-assistant
 mx-cleanup
-gufw
+lightdm-gtk-greeter-settings
 
 Category=Advanced settings
 mx-tools

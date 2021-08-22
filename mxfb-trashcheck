@@ -50,5 +50,5 @@ ret=$?
 if [[ $ret -eq 2 ]]; then
     gio trash --empty && exit 0
 elif [[ $ret -eq 3 ]]; then
-    exo-open trash://  && exit 0
+    exo-open trash://  
 fi
