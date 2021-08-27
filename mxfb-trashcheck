@@ -20,27 +20,32 @@ BUTTON1=$"No"
 BUTTON2=$"Yes"
 BUTTON3=$" Show files in trash..."
 
+cmd=(
+	--title="$TITLE" --borders=12 --image=user-trash-full --text-align=center --fixed \
+	--height 20 --window-icon=user-trash-empty \
+	--button="$BUTTON2!dialog-yes!:2" \
+	--button="$BUTTON1!dialog-no!:1" \
+	--button="$BUTTON3!user-trash-full!:3" 
+)
+
 if [[ $file_count -eq 0 ]] ; then
 
-yad --title="$TITLE" --borders=24 --image=user-trash --center --timeout 3 --on-top --fixed --undecorated --skip-taskbar --no-buttons \
---text="
-  $MESSAGE1" 
+yad --text="
+
+          $MESSAGE1" --image=user-trash-empty --timeout 3 
 	
 elif [[ $file_count -eq 1 ]] ; then
  
-yad --title="$TITLE" --borders=12 --image=user-trash-full --center --on-top  --window-icon=user-trash-full \
-	--text="  $MESSAGE2" \
-	--button="$BUTTON2!dialog-yes!:2" \
-	--button="$BUTTON1!dialog-no!:1" \
-	--button="$BUTTON3!user-trash-full!:3" 
+yad "${cmd[@]}" --text="
+
+          $MESSAGE2" 
 	
 else
  
-yad --title="$TITLE" --borders=12 --image=user-trash-full --center --on-top  --window-icon=user-trash-full \
-	--text="  $MESSAGE3" \
-	--button="$BUTTON2!dialog-yes!:2" \
-	--button="$BUTTON1!dialog-no!:1" \
-	--button="$BUTTON3!user-trash-full!:3" 
+yad "${cmd[@]}" --text="
+
+          $MESSAGE3"
+
 fi
 	
 ret=$?
@@ -50,5 +55,5 @@ ret=$?
 if [[ $ret -eq 2 ]]; then
     gio trash --empty && exit 0
 elif [[ $ret -eq 3 ]]; then
-    exo-open trash://  && exit 0
+    exo-open trash://  
 fi

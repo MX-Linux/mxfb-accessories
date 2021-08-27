@@ -8,7 +8,7 @@ Homepage: https:/mxlinux.org
 
 Package: mxfb-accessories
 Architecture: all
-Depends: nitrogen
+Depends: nitrogen lightdm-gtk-greeter
 Breaks: mxfb-goodies (<< 21.05.01)
 Conflicts: mxfb-goodies (<< 21.05.01) 
 Replaces: 
