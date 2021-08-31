@@ -6,6 +6,7 @@
 
 DESTDIR="${HOME}/Pictures"
 NAME="`date +%y%m%d_%M%S_`\$wx\$h"
+
 SUF="png"
 PRE=""
 

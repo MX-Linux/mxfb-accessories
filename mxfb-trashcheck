@@ -8,7 +8,8 @@
 export TEXTDOMAIN=mxfb-trashcheck
 export TEXTDOMAINDIR="/usr/share/locale"
 
-file_count=$(ls $HOME/.local/share/Trash/files | wc -l)
+#file_count=$(ls $HOME/.local/share/Trash/files | wc -l)
+file_count=$(gio list trash:// | wc -l)
 
 TITLE=$"Trash"
 MESSAGE1=$"There are no files in the trash."
@@ -21,8 +22,8 @@ BUTTON2=$"Yes"
 BUTTON3=$" Show files in trash..."
 
 cmd=(
-	--title="$TITLE" --borders=12 --image=user-trash-full --text-align=center --fixed \
-	--height 20 --window-icon=user-trash-empty \
+	--title="$TITLE" --borders=12 --image=trashcanindicator.svg --text-align=center --fixed \
+	--height 50 --window-icon=user-trash-empty \
 	--button="$BUTTON2!dialog-yes!:2" \
 	--button="$BUTTON1!dialog-no!:1" \
 	--button="$BUTTON3!user-trash-full!:3" 
@@ -30,21 +31,15 @@ cmd=(
 
 if [[ $file_count -eq 0 ]] ; then
 
-yad --text="
-
-          $MESSAGE1" --image=user-trash-empty --timeout 3 
+yad --text="\n  <b><big>$MESSAGE1</big></b> \n " --image=user-trash-empty --fixed --no-buttons --undecorated --skip-taskbar --timeout 3 
 	
 elif [[ $file_count -eq 1 ]] ; then
  
-yad "${cmd[@]}" --text="
-
-          $MESSAGE2" 
+yad "${cmd[@]}" --text="\n  <b><big>$MESSAGE2 </big></b> \n "
 	
 else
  
-yad "${cmd[@]}" --text="
-
-          $MESSAGE3"
+yad "${cmd[@]}" --text="\n  <b><big>$MESSAGE3</big></b> \n "
 
 fi
 	
