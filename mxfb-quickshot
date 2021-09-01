@@ -12,7 +12,7 @@ TEXT2="Name"
 TEXT3="Options"
 
 ## the following parameters are set in ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
-#DESTDIR="$HOME/Pictures"
+#DESTDIR="${XDG_PICTURES_DIR}"
 #NAME="`date +%y%m%d_%M%S`"
 #TIMEOUT="5"
 #SUF="png"
@@ -22,6 +22,7 @@ if [ ! -f "$HOME/.config/MX-Linux/mxfb-quickshot.conf" ]; then
 cp /usr/share/mxfb-quickshot/mxfb-quickshot.conf $HOME/.config/MX-Linux/mxfb-quickshot.conf; 
 fi
 
+[ -r "$HOME/.config/user-dirs.dirs" ] && source "$HOME/.config/user-dirs.dirs"
 source ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
 
 display_help() {
