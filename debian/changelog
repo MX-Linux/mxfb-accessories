@@ -1,9 +1,10 @@
-mxfb-accessories (21.08.17) UNRELEASED; urgency=medium
+mxfb-accessories (21.08.18) UNRELEASED; urgency=medium
 
   * added mxfb-trashcheck for Settings manager
   * added lightdm-gtk-greeter to control file
+  * removed webcamoid and mx-welcome from settings"
 
- -- Jerry Bond <jb@X1Cmx>  Sun, 22 Aug 2021 16:00:59 -0400
+ -- Jerry Bond <jb@X1Cmx>  Wed, 01 Sep 2021 13:34:56 -0400
 
 mxfb-accessories (21.08.15) mx; urgency=medium
 

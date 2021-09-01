@@ -8,7 +8,6 @@ Comment=Common settings for MX-Linux Fluxbox
 
 Category=User
 lxappearance
-#tint2conf
 mxfb-tint2-manager
 mx-conky
 mugshot
@@ -32,11 +31,10 @@ mx-tweak-systray
 Category=System
 Quick_System_Info
 blueman-manager
-webcamoid
 mx-select-sound
 mx-network-assistant
 mx-cleanup
 lightdm-gtk-greeter-settings
 
-Category=Advanced settings
+Category=Other tools
 mx-tools
