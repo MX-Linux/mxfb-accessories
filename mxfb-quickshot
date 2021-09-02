@@ -13,7 +13,7 @@ TEXT3="Options"
 
 ## the following parameters are set in ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
 #DESTDIR="${XDG_PICTURES_DIR}"
-#NAME="`date +%y%m%d_%M%S`"
+#NAME="`date +%y%m%d_%H%M%S`"
 #TIMEOUT="5"
 #SUF="png"
 #PRE=""

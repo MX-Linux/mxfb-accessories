@@ -1,3 +1,9 @@
+mxfb-accessories (21.09.02) UNRELEASED; urgency=medium
+
+  * added missing %H to quickshot
+
+ -- Jerry Bond <jb@X1Cmx>  Thu, 02 Sep 2021 15:58:27 -0400
+
 mxfb-accessories (21.09.01) mx; urgency=medium
 
   * added mxfb-trashcheck for Settings manager
