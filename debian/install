@@ -5,12 +5,5 @@ components/*.desktop usr/share/applications
 components/tint2session usr/bin
 components/mxfb-settings.svg usr/share/pixmaps
 components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/
-mxfb-bg-rotate usr/bin
-mxfb-separate-backgrounds usr/bin
-mxfb-recent-files usr/bin
-mxfb-tiles usr/bin
-mxfb-menu-generator usr/bin
-mxfb-timer usr/bin
-mxfb-tint2-manager usr/bin
-mxfb-quickshot usr/bin
-mxfb-edit usr/bin
+mxfb-* usr/bin
+

@@ -33,7 +33,7 @@ Comment[sv]=
 Exec=mxfb-trashcheck
 Terminal=false
 Type=Application
-Icon=trash
+Icon=/usr/share/icons/Papirus/48x48/apps/trashindicator.svg
 Categories=System;
 NoDisplay=false
 
