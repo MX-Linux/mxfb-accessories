@@ -1,27 +1,31 @@
 #!/bin/bash
 
-##This script counts the files in the trash and asks for confirmation 
+##This script counts the files in the trash and asks for confirmation
 ##to remove them permanently. It uses YAD dialog-box.
 ##Created by Kobalan for MX-Fluxbox with additions by MX Devs and users
 ##Released August 2021 under GPL3
 
 # adjusted by fehlix,  September 2021
-# version : 210901-01
- 
+# version : 210906-02
+
 : YAD=${YAD:=/usr/bin/yad}
 
 export TEXTDOMAIN=mxfb-trashcheck
 export TEXTDOMAINDIR="/usr/share/locale"
 . gettext.sh
 
+
+export CLASS=mxfb-trashcheck
+
 # translation  re-use ;)
  TITLE=$(gettext gtk30 "Trash"  )
- CLOSE=$(gettext gtk30 "_Close" ); CLOSE=${CLOSE//_}
-CANCEL=$(gettext gtk30 "_Cancel"); CANCEL=${CANCEL//_};
-   YES=$(gettext gtk30 "_Yes" )  ; YES=${YES//_}
-    NO=$(gettext gtk30 "_No" )   ; NO=${NO//_}
-    OK=$(gettext gtk30 "_OK" )   ; OK=${OK//_}
+ CLOSE=$(gettext gtk30 "_Close" ); #CLOSE=${CLOSE//_}
+CANCEL=$(gettext gtk30 "_Cancel"); #CANCEL=${CANCEL//_};
+   YES=$(gettext gtk30 "_Yes" )  ; #YES=${YES//_}
+    NO=$(gettext gtk30 "_No" )   ; #NO=${NO//_}
+    OK=$(gettext gtk30 "_OK" )   ; #OK=${OK//_}
   SHOW=$(gettext gtk30-properties "Show 'Trash'")
+  SHOW=$(echo "$SHOW" | sed 's/[a-zA-Z]/_&/')
 
 
 MSG_NONE=$(gettext "There are no files in the trash.")
@@ -31,20 +35,18 @@ MSG_ASK=$(gettext "Do you want to empty the trash?")
 
 main() {
 
+local xpid
+
+# run me only once
+if xpid=$(xdotool search --class $CLASS getwindowpid); then
+    kill -SIGUSR2 $xpid && exit
+fi
+
 trap hangup_trash_monitor EXIT TERM HUP
 
 fix_mime
 
-run_trash_montor &
-	
-#---------------------------------------------------------
-readarray -t  A < <( xdotool search --class mxfb-trash) 
-ID="${A[@]: -1}"; 
-if [[ -n $ID ]]; then
-    xdotool windowraise $ID
-    exit 0
-fi
-#---------------------------------------------------------
+run_trash_monitor &
 
 
 MSG_NONE="
@@ -52,10 +54,6 @@ MSG_NONE="
           <b><big>$MSG_NONE</big></b>
 "
 
-MSG_SOME="
-
-          <b><big>$MSG_SOME</big></b>
-"
 
 ICON_TRASH_NONE=trashcan_empty
 ICON_TRASH_SOME=trashcan_full
@@ -67,36 +65,36 @@ BUTTON_SHOW="$SHOW"'!'"$ICON_TRASH_SOME"':3'
 
 YAD_NONE=(
     $YAD
-    --title="$TITLE" 
-    --borders=12 
-	--height=20 
-    --text-align=right 
+    --title="$TITLE"
+    --borders=12
+    --height=20
+    --text-align=right
     --fixed
-    --class=mxfb-trash
+    --class=$CLASS
     --window-icon=$ICON_TRASH_NONE
-	--image=user-trash
-	--timeout=300 
-	--button="$BUTTON_OK"
+    --image=user-trash
+    --timeout=300
+    --button="$BUTTON_OK"
 )
 
 YAD_SOME=(
     $YAD
-    --title="$TITLE" 
-    --borders=12 
-    --text-align=right 
+    --title="$TITLE"
+    --borders=12
+    --text-align=right
     --fixed
-	--height 20 
-    --class=mxfb-trash
+    --height 20
+    --class=$CLASS
     --image=$ICON_TRASH_SOME
     --window-icon=$ICON_TRASH_SOME
-	--button="$BUTTON_YES"
-	--button="$BUTTON_NO"
-	--button="$BUTTON_SHOW"
+    --button="$BUTTON_YES"
+    --button="$BUTTON_NO"
+    --button="$BUTTON_SHOW"
 )
 
 while true; do
 
-	COUNT=$(gio list trash:// | wc -l)
+    COUNT=$(gio list trash:// | wc -l)
 
     MSG_SOME=$(eval_ngettext \
         'There is 1 file in the trash.' \
@@ -104,27 +102,28 @@ while true; do
         $file_count
     )
 
-	MSG_SOME="
-    $MSG_SOME   
+    MSG_SOME="
+    $MSG_SOME
     $MSG_ASK            "
-	MSG_SOME="
+    MSG_SOME="
 
           <b><big>$MSG_SOME</big></b>
-	"
-	case ${COUNT:=0} in
-	    0) "${YAD_NONE[@]}" --text="$MSG_NONE" ;;
-	    *) "${YAD_SOME[@]}" --text="$MSG_SOME" ;;
-	esac
-		
-	ret=$?
-	case $ret in
-		0|252) exit 0
-		;; 
-		2) gio trash --empty
-		;;
-		3) ( xdg-open trash:// 2>/dev/null 1>&2 ) 2>/dev/null 1>&2 & 
-		;;
-	esac
+    "
+    case ${COUNT:=0} in
+        0) "${YAD_NONE[@]}" --text="$MSG_NONE" ;;
+        *) "${YAD_SOME[@]}" --text="$MSG_SOME" ;;
+    esac
+
+    ret=$?
+    case $ret in
+        0|252) exit 0
+        ;;
+        2) gio trash --empty
+        ;;
+        3) ( xdg-open trash:// 2>/dev/null 1>&2 ) 2>/dev/null 1>&2 &
+
+        ;;
+    esac
 done
 }
 
@@ -132,7 +131,7 @@ trash_monitor() {
     local monitor=
     while true ; do
         local TRASH
-        read TRASH 
+        read TRASH
         break
     done < <( /usr/bin/gio monitor trash:// )
     hangup_trash_monitor
@@ -140,20 +139,20 @@ trash_monitor() {
 }
 
 reload_mxfb_trash() {
-    local pid=$(xdotool search --class mxfb-trash getwindowpid)
+    local pid=$(xdotool search --class $CLASS getwindowpid)
     if [[ -n $pid ]]; then
         kill -SIGUSR2 $pid
         return 0
     else
         return 1
-    fi 
+    fi
 }
 
 hangup_trash_monitor() {
     pkill -SIGHUP -f '/usr/bin/gio monitor trash://'
 }
 
-run_trash_montor() {
+run_trash_monitor() {
 
     while trash_monitor 2>/dev/null; do
         reload_mxfb_trash || break
@@ -163,20 +162,20 @@ run_trash_montor() {
 }
 
 fix_mime() {
-	local mime
-	for mime in inode/directory x-scheme-handler/trash; do
-	
-		if grep -sq -iE '^Default.*(thunar|pcmanfm)' < <(LC_ALL=C.UTF-8 gio mime $mime); then 
-		   continue
-		fi
-		if which thunar >/dev/null; then
-		   gio mime $mime thunar.desktop
-		elif which pcmanfm-qt >/dev/null; then
-		   gio mime $mime pcmanfm-qt.desktop
-		elif which pcmanfm >/dev/null; then
-		   gio mime $mime pcmanfm.desktop
-		fi
-	done
+    local mime
+    for mime in inode/directory x-scheme-handler/trash; do
+
+        if grep -sq -iE '^Default.*(thunar|pcmanfm)' < <(LC_ALL=C.UTF-8 gio mime $mime); then
+           continue
+        fi
+        if which thunar >/dev/null; then
+           gio mime $mime thunar.desktop
+        elif which pcmanfm-qt >/dev/null; then
+           gio mime $mime pcmanfm-qt.desktop
+        elif which pcmanfm >/dev/null; then
+           gio mime $mime pcmanfm.desktop
+        fi
+    done
 }
 
 main

@@ -15,7 +15,7 @@ HINT2=$" Type \"mxfb\" to jump to the MXFB backgrounds."
 HINT3=$" Select the background you want and click OK."
 NOTE1=$" NOTE 1: Background changes using the menu won't be permanent."
 NOTE2=$" NOTE 2: Re-run this script when you add new workspaces!"
-NOTE3=$" NOTE 3: Disable nitrogen in startup file if using that app for image setting"
+#NOTE3=$" NOTE 3: Disable nitrogen in startup file if using that app for image setting"
 TITLE=$"MXFB -- separate workspace wallpapers"
 BUTTON1=$"Cancel"
 BUTTON2=$"Disable separate backgrounds"
@@ -25,15 +25,6 @@ TITLE2=$"Wallpaper selector"
 TITLE3=$"Warning"
 WARNING=$"There is no wallpaper image selected for Workspace $n... Will substitute 'mx_blue.jpg' to avoid any errors."
 
-STRING="Background.Delay: 0"
-
-if ! grep -q "$STRING" $HOME/.ideskrc;
-then
-        sed -i 's/^\([[:blank:]]*Background\.Delay:\).*/\1 0/' "$HOME/.ideskrc"
-yad --timeout=3 --no-buttons --geometry 500x100 --text-align=center --text="
-<b>$NOTIFICATION</b>
-"
-fi
 
 ICON=/usr/share/icons/mxflux.png
 
@@ -45,8 +36,7 @@ yad --center --window-icon=$ICON --fix-window --text="
 -- $HINT3 \n
 
 $NOTE1
-$NOTE2
-$NOTE3</b>
+$NOTE2</b>
 " \
 --title=$"$TITLE" --window-icon=$ICON --text-align=center \
 --button="<b>$BUTTON1</b>":1 \
@@ -106,6 +96,17 @@ number_of_workspaces=$(xdotool get_num_desktops)
 
 #Remove existing numbered wallpapers to avoid failure when wallpaper is symlinked to /usr/share/backgrounds
 rm ~/.fluxbox/backgrounds/numbered/*.jpg
+
+#Disable Rotate backgrounds if running
+STRING="Background.Delay: 0"
+
+if ! grep -q "$STRING" $HOME/.ideskrc;
+then
+        sed -i 's/^\([[:blank:]]*Background\.Delay:\).*/\1 0/' "$HOME/.ideskrc"
+yad --timeout=3 --no-buttons --geometry 500x100 --text-align=center --text="
+<b>$NOTIFICATION</b>
+"
+fi
 
 #Loop for as many workspaces as there is, selecting one wallpaper for each workspace
 for ((n=1;n<=$number_of_workspaces;n++))
