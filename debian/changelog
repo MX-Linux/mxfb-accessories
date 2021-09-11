@@ -1,6 +1,7 @@
 mxfb-accessories (21.09.04) UNRELEASED; urgency=medium
 
   * upgraded trashcheck 
+  * added desktop file for quickshot
 
  -- Jerry Bond <jb@X1Cmx>  Wed, 08 Sep 2021 20:20:51 -0400
 
