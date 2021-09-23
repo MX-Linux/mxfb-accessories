@@ -1,9 +1,10 @@
-mxfb-accessories (21.09.04) UNRELEASED; urgency=medium
+mxfb-accessories (21.09.05) UNRELEASED; urgency=medium
 
   * upgraded trashcheck 
   * added desktop file for quickshot
+  * added apps for top and border overlay
 
- -- Jerry Bond <jb@X1Cmx>  Wed, 08 Sep 2021 20:20:51 -0400
+ -- Jerry Bond <jb@X1Cmx>  Thu, 23 Sep 2021 07:47:15 -0400
 
 mxfb-accessories (21.09.03) mx; urgency=medium
 

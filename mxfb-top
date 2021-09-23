@@ -1,0 +1,50 @@
+#!/bin/sh
+
+##This app uses information in the Fluxbox Wiki: http://fluxbox-wiki.org/Make_windows_only_show_a_border.html 
+##and presents the operations in graphical form
+##It was developed by MX Devs July-October 2021 and released under GPLv3
+
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mxfb-windowoverlay"
+
+TITLE="CONFIGURE TOP"
+SUBTITLE="Select titlebar mode"
+
+helpfile=/usr/share/mxflux/HELP_Windowoverlay
+titlebar=$(echo """,show,hide,tab")
+
+yad --text="
+
+<b>$TITLE</b>
+
+<b><i>$SUBTITLE</i></b> 
+
+" \
+--text-align=center \
+--form --separator="," --item-separator="," \
+--button="Help":"featherpad $helpfile" --button=gtk-cancel:1 --button=gtk-ok:0 --buttons-layout=center \
+--field="Mode":CB \
+"$titlebar" | while read line; do
+echo "Titlebar='`echo $line | awk -F',' '{print $1}'`'" > /tmp/init
+done
+
+## titlebar config ##
+if grep -Fq "hide" /tmp/init
+then
+	sed -i 's/NORMAL/BORDER/' ~/.fluxbox/init 
+	sed -i 's/TAB/BORDER/' ~/.fluxbox/init
+fi
+
+if grep -Fq "show" /tmp/init
+then
+	sed -i 's/TAB/NORMAL/' ~/.fluxbox/init 
+	sed -i 's/BORDER/NORMAL/' ~/.fluxbox/init 
+fi
+
+if grep -Fq "tab" /tmp/init
+then
+	sed -i 's/NORMAL/TAB/' ~/.fluxbox/init 
+	sed -i 's/BORDER/TAB/' ~/.fluxbox/init 
+fi
+
+fluxbox-remote restart
