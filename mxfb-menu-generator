@@ -30,16 +30,16 @@ mkdir -p submenus
 touch submenus/full_menu
 FILE="$HOME/.fluxbox/submenus/full_menu"
 
-echo
-echo If you want to insert this 'All categories'  sub-menu into your MXFB menu:
-echo 'rootMenu > Settings > Configure > Menu'
-echo and insert, anywhere you want, this code:
-echo  ' [submenu] (All apps)'
-echo  '  [include] (~/.fluxbox/submenus/full_menu)'
-echo  '  [separator] '
-echo  '  [exec] (Update Menu) {mxfb-menu-generator} '
-echo  ' [end]'
-echo
+#echo
+#echo If you want to insert this 'All categories'  sub-menu into your MXFB menu:
+#echo 'rootMenu > Settings > Configure > Menu'
+#echo and insert, anywhere you want, this code:
+#echo  ' [submenu] (All apps)'
+#echo  '  [include] (~/.fluxbox/submenus/full_menu)'
+#echo  '  [separator] '
+#echo  '  [exec] (Update Menu) {mxfb-menu-generator} '
+#echo  ' [end]'
+#echo
 
 
 #Get system language (to allow localization):

@@ -1,0 +1,112 @@
+#!/bin/bash
+
+##This app uses information in the Fluxbox Wiki: http://fluxbox-wiki.org/Make_windows_only_show_a_border.html 
+##and presents the operations in graphical form
+##It was developed by MX Devs July 2021 and released as a beta under GPLv3
+
+# version="210929-01" # fehlix adjusted
+# version="210929-02" # jerry deleted Apply button identical to OK in command and icon
+
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mxfb-top"
+
+HELPFILE=/usr/share/mxflux/HELP_Windowoverlay
+
+   TITLE=$(gettext "CONFIGURE TOP")
+SUBTITLE=$(gettext "Select titlebar mode")
+
+TITLEBAR="show,hide,tab"
+
+    LABEL_BORDER_SIZE=$(gettext "Size")
+  LABEL_COLOR_FOCUSED=$(gettext "Color Focused")
+LABEL_COLOR_UNFOCUSED=$(gettext "Color Unfocused")
+
+. /usr/bin/gettext.sh
+
+    OK=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_OK" )
+CANCEL=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_Cancel") 
+ APPLY=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_Apply") 
+REVERT=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_Revert" )
+  HELP=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_Help" )
+
+    BUTTON_OK="$OK"'!gtk-ok:0'
+BUTTON_CANCEL="$CANCEL"'!gtk-cancel:1'
+ BUTTON_APPLY="$APPLY"'!gtk-apply:2'
+BUTTON_REVERT="$REVERT"'!undo:3'
+  BUTTON_HELP="$HELP"'!gtk-help:'"featherpad $HELPFILE"
+
+YAD_TEXT="
+
+<b>$TITLE</b>
+
+<b><i>$SUBTITLE</i></b> 
+
+"
+
+# session defaults
+FLUXBOX_INIT="$HOME/.fluxbox/init"
+DECO=$(grep -w -m1 -oE 'NORMAL|TAB|BORDER' $FLUXBOX_INIT)
+: ${DECO:=NORMAL} 
+
+echo "'${DEFAULT_DECO}'"
+
+TITLEBAR='show!hide!tab'
+
+declare -A MODE
+MODE[NORMAL]=show
+MODE[BORDER]=hide
+   MODE[TAB]=tab
+
+declare -A DECO
+DECO[show]=NORMAL
+DECO[hide]=BORDER
+ DECO[tab]=TAB
+
+while true; do
+
+    deco=$(grep -w -m1 -oE 'NORMAL|TAB|BORDER' $FLUXBOX_INIT)
+    : ${deco:=NORMAL} 
+
+    # mark current in selection list
+    CB=${TITLEBAR/${MODE[$deco]}/^${MODE[$deco]}}
+
+    YAD=(yad
+        --title="$TITLE"
+        --text="$YAD_TEXT"
+        --text-align=center
+        --form
+        --width=20
+        --separator=","
+        --buttons-layout=center
+        --button="$BUTTON_HELP"
+        --button="$BUTTON_REVERT"
+        --button="$BUTTON_CANCEL"
+        --button="$BUTTON_OK"
+        --field="     ""$LABEL_MODE":CB  "$CB"
+    )
+
+    RES=$("${YAD[@]}")
+    ret=$?
+    
+    # read selection
+    IFS=, read  -r mode _<<<"$RES"
+    
+    case $ret in
+        0|2) # OK or Apply
+            sed -i -r "s/(NORMAL|TAB|BORDER)/${DECO[$mode]}/" $FLUXBOX_INIT
+            #killall -SIGUSR2 fluxbox
+            fluxbox-remote restart
+            killall -SIGUSR1 conky 2>/dev/null
+            ((ret==0)) && exit # on Ok
+        ;;
+        1|252)  # cancel or Esc
+            exit
+        ;;
+        3)  # reset
+            sed -i -r "s/(NORMAL|TAB|BORDER)/${DECO[show]}/" $FLUXBOX_INIT
+            #killall -SIGUSR2 fluxbox
+            fluxbox-remote restart
+            killall -SIGUSR1 conky 2>/dev/null
+        ;; 
+    esac
+done
