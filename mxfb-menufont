@@ -1,0 +1,32 @@
+#!/bin/sh
+
+##This app uses information in the Fluxbox Wiki: http://fluxbox-wiki.org/Make_windows_only_show_a_border.html 
+##and presents the operations in graphical form
+##It was developed by MX Devs September 2021 and released under GPLv3
+
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mxfb-menufont"
+
+TITLE="CHANGE MENU FONT"
+SUBTITLE="Universal will override style font, chose Style to return"
+NOW="$(grep frame $HOME/.fluxbox/overlay)"
+
+helpfile=/usr/share/mxflux/HELP_Windowoverlay
+
+yad --window-icon=/usr/share/icons/mxflux.png --title="Menu font" \
+--checklist --list --separator="" --column=Select:chk --column=Name --print-column 2 false Universal false Style \
+--text-align=center --text=" \
+
+<big><b>$TITLE</b></big> \n
+
+$SUBTITLE \n
+Universal = <i>$NOW</i>
+" 
+--button=gtk-cancel:1 --button=gtk-OK:0
+
+
+
+
+fluxbox-remote restart
+
+

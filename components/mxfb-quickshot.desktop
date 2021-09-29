@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Trash check
+Name=Quickshot
 Name[ca]=
 Name[de]=
 Name[el]=
@@ -12,10 +12,10 @@ Name[it]=
 Name[ja]=
 Name[nl]=
 Name[pl]=
-Name[pt_br]=
+Name[pt_BR]=
 Name[ru]=
 Name[sv]=
-Comment=Count and manage trash files
+Comment=Capture desktop with single click
 Comment[ca]=
 Comment[de]=
 Comment[el]=
@@ -27,13 +27,12 @@ Comment[it]=
 Comment[ja]=
 Comment[nl]=
 Comment[pl]=
-Comment[pt_br]=
+Comment[pt_BR]=
 Comment[ru]=
 Comment[sv]=
-Exec=mxfb-trashcheck
+Exec=mxfb-quickshot
 Terminal=false
 Type=Application
-Icon=/usr/share/icons/Papirus/48x48/apps/trashindicator.svg
+Icon=/usr/share/icons/Papirus/48x48/devices/camera-photo.svg
 Categories=System;
 NoDisplay=false
-

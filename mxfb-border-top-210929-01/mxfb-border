@@ -1,0 +1,139 @@
+#!/bin/bash
+
+##This app uses information in the Fluxbox Wiki: http://fluxbox-wiki.org/Make_windows_only_show_a_border.html 
+##and presents the operations in graphical form
+##It was developed by MX Devs July 2021 and released as a beta under GPLv3
+
+# version="210929-01" # fehlix adjusted
+
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mxfb-windowoverlay"
+
+HELPFILE=/usr/share/mxflux/HELP_Windowoverlay
+
+   TITLE=$(gettext "OPTIONAL WINDOW STYLE CONFIG")
+SUBTITLE=$(gettext "Existing config will be overwritten -- be sure to fill in all fields you want enabled")
+
+    LABEL_BORDER_SIZE=$(gettext "Size")
+  LABEL_COLOR_FOCUSED=$(gettext "Color Focused")
+LABEL_COLOR_UNFOCUSED=$(gettext "Color Unfocused")
+
+. /usr/bin/gettext.sh
+
+    OK=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_OK" )
+CANCEL=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_Cancel") 
+ APPLY=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_Apply") 
+REVERT=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_Revert" )
+  HELP=$(TEXTDOMAIN=gtk30 eval_pgettext "Stock label" "_Help" )
+
+    BUTTON_OK="$OK"'!gtk-ok:0'
+BUTTON_CANCEL="$CANCEL"'!gtk-cancel:1'
+ BUTTON_APPLY="$APPLY"'!gtk-apply:2'
+BUTTON_REVERT="$REVERT"'!undo:3'
+  BUTTON_HELP="$HELP"'!gtk-help:'"featherpad $HELPFILE"
+
+YAD_TEXT="
+
+<b>$TITLE</b>
+
+<b><i>$SUBTITLE</i></b> 
+
+"
+
+# session defaults
+FLUXBOX_INIT="$HOME/.fluxbox/init"
+SESSION_STYLE_FILE=$(
+    sed -n -r "/session.styleFile:[[:space:]]*/I{
+        s///
+        s/[[:space:]]+$//
+        s:^~/:$HOME/:
+        p}" $FLUXBOX_INIT)
+    
+SESSION_STYLE_OVERLAY=$(
+    sed -n -r "/session.styleOverlay:[[:space:]]*/I{
+        s///
+        s/[[:space:]]+$//
+        s:^~/:$HOME/:
+        p;q}" $FLUXBOX_INIT)
+    
+echo "'$SESSION_STYLE_FILE'"
+echo "'$SESSION_STYLE_OVERLAY'"
+
+STYLE_BORDER_WIDTH=$(awk  '/^(window.)?borderWidth/{print $2}' "$SESSION_STYLE_FILE"{,/theme.cfg} 2>/dev/null)
+STYLE_BORDER_COLOR=$(awk  '/^(window.)?borderColor/{print $2}' "$SESSION_STYLE_FILE"{,/theme.cfg} 2>/dev/null)
+
+STYLE_FOCUS_BORDER_COLOR=$(awk  '/^(window.)?focus.borderColor/{print $2}' "$SESSION_STYLE_FILE"{,/theme.cfg} 2>/dev/null)
+: ${STYLE_FOCUS_BORDER_COLOR:=$STYLE_BORDER_COLOR} 
+
+STYLE_UNFOCUS_BORDER_COLOR=$(awk  '/^(window.)?unfocus.borderColor/{print $2}' "$SESSION_STYLE_FILE"{,/theme.cfg} 2>/dev/null)
+: ${STYLE_UNFOCUS_BORDER_COLOR:=$STYLE_BORDER_COLOR} 
+
+# border size limits
+# size=$(echo """,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20")
+MIN_SIZE=1
+MAX_SIZE=20
+SIZE_LIST=$(eval echo {$MIN_SIZE..$MAX_SIZE}) 
+SIZE_LIST=${SIZE_LIST// /!}
+
+while true; do
+
+    OVERLAY_BORDER_WIDTH=$(awk  '/^(window.)?borderWidth/{print $2}' "$SESSION_STYLE_OVERLAY" 2>/dev/null)
+    # defaults to session style
+    : ${OVERLAY_BORDER_WIDTH:=$STYLE_BORDER_WIDTH} 
+    : ${OVERLAY_BORDER_WIDTH:=1} 
+    
+    BORDER_WIDTH=$OVERLAY_BORDER_WIDTH
+
+    OVERLAY_FOCUS_BORDER_COLOR=$(awk  '/^(window.)?focus.borderColor/{print $2}' "$SESSION_STYLE_OVERLAY"{,/theme.cfg} 2>/dev/null)
+    : ${OVERLAY_FOCUS_BORDER_COLOR:=$STYLE_FOCUS_BORDER_COLOR} 
+
+    OVERLAY_UNFOCUS_BORDER_COLOR=$(awk  '/^(window.)?unfocus.borderColor/{print $2}' "$SESSION_STYLE_OVERLAY"{,/theme.cfg} 2>/dev/null)
+    : ${OVERLAY_UNFOCUS_BORDER_COLOR:=$STYLE_UNFOCUS_BORDER_COLOR} 
+    
+    # mark borderwidth in selection list
+    SIZE='!'"${SIZE_LIST}"'!'
+    SIZE=${SIZE/!$BORDER_WIDTH!/!^$BORDER_WIDTH!}
+    SIZE=${SIZE#!}; SIZE=${SIZE%!}; 
+    
+    YAD=(yad
+        --title="$TITLE"
+        --text="$YAD_TEXT"
+        --text-align=center
+        --form
+        --width=20
+        --separator=","
+        --buttons-layout=center
+        --button="$BUTTON_HELP"
+        --button="$BUTTON_REVERT"
+        --button="$BUTTON_APPLY"
+        --button="$BUTTON_CANCEL"
+        --button="$BUTTON_OK"
+        --field="     ""$LABEL_BORDER_SIZE":CB       "$SIZE"
+        --field="     ""$LABEL_COLOR_FOCUSED":CLR    "${OVERLAY_FOCUS_BORDER_COLOR}"
+        --field="     ""$LABEL_COLOR_UNFOCUSED":CLR  "${OVERLAY_UNFOCUS_BORDER_COLOR}"
+    )
+
+    RES=$("${YAD[@]}")
+    ret=$?
+    # selections
+    IFS=, read  -r borderWidth focus_borderColor unfocus_borderColor _<<<"$RES"
+    
+    case $ret in
+        0|2) # OK or Apply
+            [ -f $SESSION_STYLE_OVERLAY ] || touch $SESSION_STYLE_OVERLAY
+            sed -i -r '/window.(borderWidth|focus.borderColor|unfocus.borderColor)/d' $SESSION_STYLE_OVERLAY   
+            echo "window.borderWidth: $borderWidth" >> $SESSION_STYLE_OVERLAY   
+            echo "window.focus.borderColor: $focus_borderColor" >> $SESSION_STYLE_OVERLAY   
+            echo "window.unfocus.borderColor: $unfocus_borderColor" >> $SESSION_STYLE_OVERLAY   
+            killall -SIGUSR2 fluxbox
+            ((ret==0)) && exit # on Ok
+        ;;
+        1|252)  # cancel or Esc
+            exit
+        ;;
+        3)  # reset
+            sed -i -r '/border(Width|Color)/d' $SESSION_STYLE_OVERLAY   
+            killall -SIGUSR2 fluxbox
+        ;; 
+    esac
+done

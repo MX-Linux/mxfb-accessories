@@ -1,0 +1,15 @@
+Adapted from: http://fluxbox-wiki.org/Make_windows_only_show_a_border.html
+
+############################################
+#  HOW TO SET BORDERS FOR ALL WINDOWS  #
+############################################
+
+You can also change the pixelwidth and the color of the border manually.
+
+Either do it globally using the overlay file or separately for every single style. In both cases you need to add three lines to the appropriate file:
+
+window.borderWidth:  <some value>
+window.focus.borderColor:  <some value>
+window.unfocus.borderColor:  <some value>
+
+Video: https://youtu.be/LUwKZXH8xL0

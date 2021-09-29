@@ -1,9 +1,34 @@
-mxfb-accessories (21.08.17) UNRELEASED; urgency=medium
+mxfb-accessories (21.09.30) UNRELEASED; urgency=medium
+
+  * added mxfb-menufont, still in development
+
+ -- Jerry Bond <jb@X1Cmx>  Wed, 29 Sep 2021 14:38:29 -0400
+
+mxfb-accessories (21.09.29) mx; urgency=medium
+
+  * upgraded trashcheck 
+  * added desktop file for quickshot
+  * added apps for top and border overlay
+  * modified top and borders per fehlix, modified
+  * added desktop files for top and borders
+
+ -- Jerry Bond <jb@X1Cmx>  Wed, 29 Sep 2021 06:28:20 -0400
+
+mxfb-accessories (21.09.03) mx; urgency=medium
+
+  * added missing %H to quickshot
+  * 
+
+ -- Jerry Bond <jb@X1Cmx>  Thu, 02 Sep 2021 16:03:53 -0400
+
+mxfb-accessories (21.09.01) mx; urgency=medium
 
   * added mxfb-trashcheck for Settings manager
   * added lightdm-gtk-greeter to control file
+  * removed webcamoid and mx-welcome from settings
+  * updated trashcheck version and settings
 
- -- Jerry Bond <jb@X1Cmx>  Sun, 22 Aug 2021 16:00:59 -0400
+ -- Jerry Bond <jb@X1Cmx>  Wed, 01 Sep 2021 20:23:52 -0400
 
 mxfb-accessories (21.08.15) mx; urgency=medium
 

@@ -1,18 +1,28 @@
 #!/bin/bash 
 
 ## this app was developed by tenner and can be downloaded in its original at http://tenr.de/snippets/scripts/shot.sh
-## it was modified for use with MX-Fluxbox and released October 2020 under GPLv3
-## reworked by MX Devs for use of a config file April 2021
+## modified for use with MX-Fluxbox and released October 2020 under GPLv3
+## reworked by MX Devs April-August 2021
 
-DESTDIR="${HOME}/Pictures"
-NAME="`date +%y%m%d_%M%S_`\$wx\$h"
-SUF="png"
-PRE=""
+export TEXTDOMAIN=mxfb-quickshot
+export TEXTDOMAINDIR="/usr/share/locale"
+
+TEXT1="Location"
+TEXT2="Name"
+TEXT3="Options"
+
+## the following parameters are set in ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
+#DESTDIR="${XDG_PICTURES_DIR}"
+#NAME="`date +%y%m%d_%H%M%S`"
+#TIMEOUT="5"
+#SUF="png"
+#PRE=""
 
 if [ ! -f "$HOME/.config/MX-Linux/mxfb-quickshot.conf" ]; then 
 cp /usr/share/mxfb-quickshot/mxfb-quickshot.conf $HOME/.config/MX-Linux/mxfb-quickshot.conf; 
 fi
 
+[ -r "$HOME/.config/user-dirs.dirs" ] && source "$HOME/.config/user-dirs.dirs"
 source ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
 
 display_help() {
@@ -22,7 +32,11 @@ EOF
 }
 
 take_shot() {
-	scrot ${OPTION} "${PRE}${NAME}.${SUF}" -e 'mv $f '$DESTDIR' && feh --geometry 800x600 --scale-down '$DESTDIR'/$f'
+	scrot ${OPTION} "${PRE}${NAME}.${SUF}" -e 'mv $f '$DESTDIR''
+if [ $? -eq 2 ]; then
+    echo "exiting, no image selected"
+    exit 1
+fi
 }
 
 if [ $# -gt 2 ]
@@ -32,6 +46,12 @@ then
 elif [ $# -eq 0 ]
 then
 	take_shot
+	yad  --title="Success!" --timeout=$TIMEOUT --no-buttons --fixrf --height 50\
+	--text-align=center --text "
+	<b>$TEXT1: $DESTDIR </b>\n
+	$TEXT2: <i>${PRE}${NAME}.${SUF}</i> \n \n 
+	----- \n
+	<small>$TEXT3: $HOME/.config/MX-Linux/mxfb-quickshot.conf</small>"
 	exit 0
 else
 	case "$1" in
