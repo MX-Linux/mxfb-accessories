@@ -5,7 +5,7 @@
 ##It was developed by MX Devs July 2021 and released as a beta under GPLv3
 
 # version="210929-01" # fehlix adjusted
-# version="210929-02" # jerry deleted Apply button identical to OK in command and icon
+# version="210929-02" # jerry adjusted
 
 TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN="mxfb-top"
