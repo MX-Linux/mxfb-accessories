@@ -5,6 +5,7 @@
 ##It was developed by MX Devs September 2021 and released under GPLv3
 
 # version 210929-01 # fehlix tweaked
+# version 210930-01 # fehlix adjusted
 #
 
 TEXTDOMAINDIR=/usr/share/locale
@@ -51,10 +52,10 @@ esac
 
 case "${RES,,}" in
     style)
-        sed -i.bak 's/^menu.frame.font:/#&/' $HOME/.fluxbox/overlay
+        sed -i 's/^menu.frame.font:/#&/' $HOME/.fluxbox/overlay
         ;;
     universal)
-        sed -i.buk '/menu.frame.font:/d' $HOME/.fluxbox/overlay
+        sed -i '/menu.frame.font:/d' $HOME/.fluxbox/overlay
         echo "$NOW" >> $HOME/.fluxbox/overlay
         ;;
 esac
