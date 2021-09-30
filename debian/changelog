@@ -7,6 +7,7 @@ mxfb-accessories (21.09.30-1) mx; urgency=medium
 mxfb-accessories (21.09.30) UNRELEASED; urgency=medium
 
   * added mxfb-menufont, still in development
+  * added desktop file and icon for menufont
 
  -- Jerry Bond <jb@X1Cmx>  Wed, 29 Sep 2021 14:38:29 -0400
 
