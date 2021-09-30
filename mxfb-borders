@@ -6,11 +6,13 @@
 
 # version="210929-01" # fehlix adjusted
 # version="210929-02" # jerry adjusted
+# version="210930-01" # fehlix: add window icon
 
 TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN="mxfb-borders"
 
 HELPFILE=/usr/share/mxflux/HELP_Windowoverlay
+WINDOW_ICON=/usr/share/icons/mxflux.png
 
    TITLE=$(gettext "OPTIONAL BORDER STYLE CONFIG")
 #SUBTITLE=$(gettext "Be sure to fill in all fields you want enabled")
@@ -55,8 +57,8 @@ SESSION_STYLE_OVERLAY=$(
         s:^~/:$HOME/:
         p;q}" $FLUXBOX_INIT)
     
-echo "'$SESSION_STYLE_FILE'"
-echo "'$SESSION_STYLE_OVERLAY'"
+#echo "'$SESSION_STYLE_FILE'"
+#echo "'$SESSION_STYLE_OVERLAY'"
 
 STYLE_BORDER_WIDTH=$(awk  '/^(window.)?borderWidth/{print $2}' "$SESSION_STYLE_FILE"{,/theme.cfg} 2>/dev/null)
 STYLE_BORDER_COLOR=$(awk  '/^(window.)?borderColor/{print $2}' "$SESSION_STYLE_FILE"{,/theme.cfg} 2>/dev/null)
@@ -96,6 +98,7 @@ while true; do
     
     YAD=(yad
         --title="$TITLE"
+        --window-icon="$WINDOW_ICON"
         --text="$YAD_TEXT"
         --text-align=center
         --form

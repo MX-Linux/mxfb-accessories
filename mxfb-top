@@ -6,11 +6,13 @@
 
 # version="210929-01" # fehlix adjusted
 # version="210929-02" # jerry adjusted
+# version="210930-01" # fehlix: add window icon
 
 TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN="mxfb-top"
 
 HELPFILE=/usr/share/mxflux/HELP_Windowoverlay
+WINDOW_ICON=/usr/share/icons/mxflux.png
 
    TITLE=$(gettext "CONFIGURE TOP")
 SUBTITLE=$(gettext "Select titlebar mode")
@@ -43,12 +45,7 @@ YAD_TEXT="
 
 "
 
-# session defaults
 FLUXBOX_INIT="$HOME/.fluxbox/init"
-DECO=$(grep -w -m1 -oE 'NORMAL|TAB|BORDER' $FLUXBOX_INIT)
-: ${DECO:=NORMAL} 
-
-echo "'${DEFAULT_DECO}'"
 
 TITLEBAR='show!hide!tab'
 
@@ -72,6 +69,7 @@ while true; do
 
     YAD=(yad
         --title="$TITLE"
+        --window-icon="$WINDOW_ICON"
         --text="$YAD_TEXT"
         --text-align=center
         --form
