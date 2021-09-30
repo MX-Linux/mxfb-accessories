@@ -1,32 +1,66 @@
-#!/bin/sh
+#!/bin/bash
 
 ##This app uses information in the Fluxbox Wiki: http://fluxbox-wiki.org/Make_windows_only_show_a_border.html 
 ##and presents the operations in graphical form
 ##It was developed by MX Devs September 2021 and released under GPLv3
+
+# version 210929-01 # fehlix tweaked
+#
 
 TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN="mxfb-menufont"
 
 TITLE="CHANGE MENU FONT"
 SUBTITLE="Universal will override style font, chose Style to return"
-NOW="$(grep frame $HOME/.fluxbox/overlay)"
+NOW="$(grep 'menu.frame.font:' $HOME/.fluxbox/overlay| tail -1)"
+
+DEFAULT="menu.frame.font: PT Sans-12:regular"
+
+#     is emtpy   or commented out
+if [[ -z $NOW ]] || [[ -z ${NOW%%#*} ]]; then
+    universal=false
+    style=true
+else
+    universal=true
+    style=false
+fi
+
+# set default if empty
+: ${NOW:=$DEFAULT}
+
+# remove leading '#'
+NOW=${NOW##*#}
 
 helpfile=/usr/share/mxflux/HELP_Windowoverlay
 
-yad --window-icon=/usr/share/icons/mxflux.png --title="Menu font" \
---checklist --list --separator="" --column=Select:chk --column=Name --print-column 2 false Universal false Style \
+RES=$(yad --window-icon=/usr/share/icons/mxflux.png --title="Menu font" \
+--radiolist --list --separator="" --column=Select:chk --column=Name --print-column 2 $universal Universal $style Style \
 --text-align=center --text=" \
 
 <big><b>$TITLE</b></big> \n
 
 $SUBTITLE \n
 Universal = <i>$NOW</i>
-" 
---button=gtk-cancel:1 --button=gtk-OK:0
+" --button=gtk-cancel:1 --button=gtk-ok:0
+)
+ret=$?
+case $ret in
+    1|252) exit # if cancled or pressed Esc
+    ;;
+esac
 
+case "${RES,,}" in
+    style)
+        sed -i.bak 's/^menu.frame.font:/#&/' $HOME/.fluxbox/overlay
+        ;;
+    universal)
+        sed -i.buk '/menu.frame.font:/d' $HOME/.fluxbox/overlay
+        echo "$NOW" >> $HOME/.fluxbox/overlay
+        ;;
+esac
 
-
-
-fluxbox-remote restart
+#reload fluxbox configurations
+killall -SIGUSR2 fluxbox
+#fluxbox-remote restart
 
 
