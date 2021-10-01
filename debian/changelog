@@ -1,3 +1,10 @@
+mxfb-accessories (21.10.01) mx; urgency=medium
+
+  * Non-maintainer upload.
+  * Final small changes for RC
+
+ -- Jerry Bond <jb@X1Cmx>  Fri, 01 Oct 2021 12:58:50 -0400
+
 mxfb-accessories (21.09.30-2) mx; urgency=medium
 
   * adjusted mxfb-menufont, mxfb-borders, mxfb-top 
