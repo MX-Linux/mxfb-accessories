@@ -32,7 +32,6 @@ Comment[pl]=Narzędzie umożliwiające wybór kreatywnego panelu.
 Comment[pt_br]=Selection tool for creative panel
 Comment[ru]=Selection tool for creative panel
 Comment[sv]=Valverktyg för skapande av panel
-
 Exec=/usr/bin/mxfb-tint2-manager
 Icon=systemtray.svg
 Terminal=false

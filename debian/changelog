@@ -1,3 +1,9 @@
+mxfb-accessories (21.10.04) UNRELEASED; urgency=medium
+
+  * upgraded translations of desktop files
+
+ -- Jerry Bond <jb@X1Cmx>  Mon, 04 Oct 2021 18:38:58 -0400
+
 mxfb-accessories (21.10.03) mx; urgency=medium
 
   * corrected desktop files with empty lines
