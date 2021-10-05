@@ -147,4 +147,4 @@ echo Menu file created and ready to be used
 
 #if fluxbox running, reload menu
 pgrep -x fluxbox && fluxbox-remote restart
-
+killall -SIGUSR1 conky 2>/dev/null
