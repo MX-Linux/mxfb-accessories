@@ -153,9 +153,11 @@ sed -e s/$delete//g -i $FILE
 echo Menu file created and ready to be used
 
 #if fluxbox running, reload menu
+
 test=$(ps -aux)
 if [[ "$test" == *"startfluxbox" ]]; then
 	fluxbox-remote restart
+  killall -SIGUSR1 conky 2>/dev/null
 fi
 exit 0
 

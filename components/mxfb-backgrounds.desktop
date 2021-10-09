@@ -1,11 +1,36 @@
 [Desktop Entry]
 Type=Application
 Encoding=UTF-8
-
 Name=Backgrounds
-GenericName=Panel
+Name[ca]=Backgrounds
+Name[de]=Bildschirmhintergründe
+Name[el]=Ταπετσαρίες
+Name[es]=Fondos de pantalla
+Name[fr]=Fonds d'écran
+Name[hi]=Backgrounds
+Name[id]=Backgrounds
+Name[it]=Sfondi
+Name[ja]=壁紙
+Name[nl]=Backgrounds
+Name[pl]=Tapety
+Name[pt_BR]=Papéis de parede
+Name[ru]=Фоны
+Name[sv]=Bakgrunder
 Comment=Wallpaper selector and manager
-
+Comment[ca]=Wallpaper selector and manager
+Comment[de]=Auswahl und Verwaltung von Hintergrundbildern
+Comment[el]=Επιλογέας και διαχειριστής ταπετσαριών
+Comment[es]=Selector y gestor de fondos de pantalla
+Comment[fr]=Sélecteur et gestionnaire de fonds d'écran
+Comment[hi]=Capture desktop with single click
+Comment[id]=Capture desktop with single click
+Comment[it]=Selettore e gestore di sfondi
+Comment[ja]=壁紙セレクタ＆マネージャ
+Comment[nl]=Background selector en manager
+Comment[pl]=Wybór i zarządzanie tapetami
+Comment[pt_BR]=Seletor e gerente de papel de parede
+Comment[ru]=Селектор и менеджер обоев
+Comment[sv]=Val och hantering av bakgrundsbilder
 Exec=nitrogen
 Icon=background.svg
 Terminal=false
