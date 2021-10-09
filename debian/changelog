@@ -1,8 +1,15 @@
-mxfb-accessories (21.10.04) UNRELEASED; urgency=medium
+mxfb-accessories (21.10.06) mx; urgency=medium
+
+  * update menu-generator to remove apt error
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 08 Oct 2021 20:53:40 -0400
+
+mxfb-accessories (21.10.05) mx; urgency=medium
 
   * upgraded translations of desktop files
+  * ready for RC2
 
- -- Jerry Bond <jb@X1Cmx>  Mon, 04 Oct 2021 18:38:58 -0400
+ -- Jerry Bond <jb@X1Cmx>  Tue, 05 Oct 2021 19:10:48 -0400
 
 mxfb-accessories (21.10.03) mx; urgency=medium
 
