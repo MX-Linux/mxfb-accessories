@@ -17,7 +17,7 @@
 ### 4.- Now click Menu > All apps > Update menu. Wait for some seconds while the menu is generated
 
 #exit if in chroot
-if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
+if [ "$UID" = "0" ]; then
   echo "mxfb-menu-generator:  in a chroot, exiting..."
   exit 0
 fi
