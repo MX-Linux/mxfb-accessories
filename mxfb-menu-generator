@@ -16,6 +16,13 @@
 #######################################################################################
 ### 4.- Now click Menu > All apps > Update menu. Wait for some seconds while the menu is generated
 
+#exit if in chroot
+if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
+  echo "mxfb-menu-generator:  in a chroot, exiting..."
+  exit 0
+fi
+
+
 Encoding=UTF-8
 #
 # i18n - Internationalization
@@ -146,5 +153,11 @@ sed -e s/$delete//g -i $FILE
 echo Menu file created and ready to be used
 
 #if fluxbox running, reload menu
-pgrep -x fluxbox && fluxbox-remote restart
-killall -SIGUSR1 conky 2>/dev/null
+
+test=$(ps -aux)
+if [[ "$test" == *"startfluxbox" ]]; then
+	fluxbox-remote restart
+  killall -SIGUSR1 conky 2>/dev/null
+fi
+exit 0
+
