@@ -6,7 +6,7 @@
 Name=Settings manager
 Comment=Common settings for MX-Linux Fluxbox 
 
-Category=User
+Category=USER
 lxappearance
 mxfb-tint2-manager
 mx-conky
@@ -18,16 +18,13 @@ pavucontrol
 mxfb-backgrounds
 mxfb-trashcheck
 
-Category=Hardware
+Category=SYSTEM
 system-keyboard-qt
 lxrandr
 system-config-printer
 touchpad-indicator
 alsamixer
 mx-tweak-systray
-
-
-Category=System
 Quick_System_Info
 blueman-manager
 mx-select-sound
@@ -35,5 +32,5 @@ mx-network-assistant
 mx-cleanup
 lightdm-gtk-greeter-settings
 
-Category=Other tools
+Category=OTHER
 mx-tools
