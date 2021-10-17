@@ -43,6 +43,6 @@ Comment[tr]=MX Fluxbox için Genel Ayarlar
 Exec=custom-toolbox /etc/custom-toolbox/mxfb-settings.list
 Terminal=false
 Type=Application
-Icon=/usr/share/pixmaps/custom-toolbox.svg
+Icon=/usr/share/pixmaps/mxfb-settings.svg
 Categories=GNOME;GTK;System;
 NoDisplay=false
