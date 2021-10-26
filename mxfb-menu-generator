@@ -32,6 +32,12 @@ export TEXTDOMAINDIR="/usr/share/locale"
 CATEGORIES="Accessories Development Games Graphics Internet Multimedia Office System Settings"
 
 echo Please wait, creating menu file - stored in ~/.fluxbox/submenus/full_menu ...
+
+if [ ! -d $HOME/.fluxbox ]; then
+	mkdir -p $HOME/.fluxbox
+fi
+
+
 cd $HOME/.fluxbox/
 mkdir -p submenus
 touch submenus/full_menu
