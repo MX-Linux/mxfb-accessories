@@ -7,8 +7,8 @@
 #set -e
 
 case "$1" in
-  purge|remove) if [ -e "/etc/apt/apt.conf.d/00exectmp" ]; then                                    \
-                  rm /etc/apt/apt.conf.d/00exectmp                                    \
+  purge|remove) if [ -e "/etc/apt/apt.conf.d/00exectmp" ]; then
+                  rm /etc/apt/apt.conf.d/00exectmp
                 fi
                 ;;
 
