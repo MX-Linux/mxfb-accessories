@@ -1,1 +1,1 @@
- DPkg::Post-Invoke {"command -v /usr/bin/mxfb-menu-generator && su $(logname) /usr/bin/mxfb-menu-generator";};
+ DPkg::Post-Invoke {"su $(logname) /usr/bin/mxfb-menu-generator";};
