@@ -1,7 +1,0 @@
-#!/bin/sh
-set -e
-# Automatically added by dh_icons/12.1.1
-if which update-icon-caches >/dev/null 2>&1 ; then
-	update-icon-caches /usr/share/icons/conky-manager-mxfb.png /usr/share/icons/mx-dockmaker32.png /usr/share/icons/mx-dockmaker48.png /usr/share/icons/mx-dockmaker64.png
-fi
-# End automatically added section
