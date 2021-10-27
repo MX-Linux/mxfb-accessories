@@ -1,3 +1,9 @@
+mxfb-accessories (21.10.19) mx; urgency=medium
+
+  * add removal of apt hook
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 26 Oct 2021 23:15:23 -0400
+
 mxfb-accessories (21.10.18) mx; urgency=medium
 
   * fix menu-generator 
