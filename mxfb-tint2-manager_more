@@ -96,7 +96,7 @@ BUTTON2=$"Config"
 BUTTON3=$"Edit"
 BUTTON4=$"Help"
 BUTTON5=$"OK"
-BUTTON6=$"More"
+BUTTON6=$"12h/24h"
 
 #$DLGDEC $WINICON --list --title="$TITLE" --undecorated --window-icon="/usr/share/icons/mxflux.png" \
 ### DIALOG VARIABLES
