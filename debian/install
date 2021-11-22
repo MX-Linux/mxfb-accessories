@@ -8,4 +8,5 @@ components/mxfb-settings.svg usr/share/pixmaps
 components/*.png usr/share/pixmaps
 components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/
 mxfb-* usr/bin
+apt/* etc/apt/
 

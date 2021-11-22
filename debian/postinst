@@ -1,1 +1,16 @@
+#!/bin/bash
+
+#DEBHELPER#
+
+# postinst script for mxfb-accessories
+
+#set -e
+
+#cleanup bad configfile location
+
+if [ -d "/etc/apt/apt.conf.d/apt.conf.d" ]; then
+	rm -R /etc/apt/apt.conf.d/apt.conf.d
+fi
+
+exit 0
 

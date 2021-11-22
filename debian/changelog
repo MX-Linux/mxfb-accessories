@@ -1,3 +1,15 @@
+mxfb-accessories (21.10.19) mx; urgency=medium
+
+  * add removal of apt hook
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 26 Oct 2021 23:15:23 -0400
+
+mxfb-accessories (21.10.18) mx; urgency=medium
+
+  * fix menu-generator 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 25 Oct 2021 20:55:40 -0400
+
 mxfb-accessories (21.10.17) mx; urgency=medium
 
   * corrected desktop file for Setting Manager
