@@ -1,0 +1,294 @@
+#!/bin/bash
+#
+#    bl-tint2-manager: a BunsenLabs tint2 selection and switcher script
+#    Copyright (C) 2015-2019  damo    <damo@bunsenlabs.org>
+#                  2019-2020  John Crawley <john@bunsenlabs.org>
+#    Major rewrite 2020-2021 by fehlix and other MX Devs for use in MX Fluxbox <devs@mxlinux.org>
+#    
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+########################################################################
+#
+#   Tint2 config files must be in $TINT2PATH
+#
+#   When the dialog opens, any running tint2s will be checkmarked.
+#
+#   Click "Apply" and all running tint2s are stopped,
+#   and all checkmarked tint2s are started.
+#
+#   To stop a tint2 just uncheck it, and "Apply".
+#
+#   Running tint2s are saved to a session file, and can be run with
+#   the "tint2-session" script. To start them at login, add the
+#   following line to autostart:
+#
+#           tint2session
+#
+########################################################################
+
+ME="${0##*/}"
+VERSION="210804-6"
+
+TINT2PATH="$HOME/.config/tint2"
+TINT2DEFAULT="$TINT2PATH/tint2rc" # tint2 will create this if it doesn't exist
+SESSIONFILE="$TINT2PATH/tint2-sessionfile"
+HELPFILE="/usr/share/doc/mxfb-accessories/tint2-manager-help"
+# Usage
+(( $# != 0 )) && cat<<'USAGE' && exit
+
+mxfb-tint2-manager is a tint2 selection and switcher script
+which uses yad to generate a graphical user interface.
+
+Usage:  mxfb-tint2manager
+   or:  mxfb-tint2manager -h|--help
+  
+
+Optional arguments:
+    -h | --help    Show this message (no other options are supported at this time)
+
+Use:
+    With no command option the script runs the gui
+
+    Tint2 config files must be in HOME/.config/tint2/
+
+    When the dialog opens, any running tint2s will be checkmarked.
+
+    Click "Apply" or "OK" and all running tint2s are stopped,
+    and all checkmarked tint2s are started.
+
+    To stop a tint2 just uncheck it, and click "Apply" or "OK".
+
+    Click "Apply" to return to the dialog after applying changes,
+    click "OK" to close the window after applying changes,
+    click "Close" to close the window without applying any more changes.
+
+    Running tint2s are saved to a session file, and can be run with
+    the "tint2session" script. To start them at login, add the
+    following line to autostart:
+
+            tint2session
+
+USAGE
+
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN="mxfb-tint2-manager"
+
+TITLE="Tint2 Manager"
+TITLE2=$"HELP"
+TEXT=$"Check to run, uncheck to stop"
+TEXT="
+        <b><i>$TEXT</i></b>
+        "
+BUTTON0=$"Apply"
+BUTTON1=$"Close"
+BUTTON2=$"Config"
+BUTTON3=$"Edit"
+BUTTON4=$"Help"
+BUTTON5=$"OK"
+BUTTON6=$"More"
+
+#$DLGDEC $WINICON --list --title="$TITLE" --undecorated --window-icon="/usr/share/icons/mxflux.png" \
+### DIALOG VARIABLES
+  APPLY="--button=$BUTTON0"'!gtk-apply:0'
+  CLOSE="--button=$BUTTON1"'!gtk-close:1'
+ CONFIG="--button=$BUTTON2"'!gtk-preferences:2'
+   EDIT="--button=$BUTTON3"'!gtk-edit:4'
+   HELP="--button=$BUTTON4"'!gtk-help:5'
+     OK="--button=$BUTTON5"'!gtk-ok:0'
+     MORE="--button=$BUTTON6"'!gtk-add:6'
+# 
+
+FIELDSEPARATOR=" "
+WINICON="--window-icon=/usr/share/icons/mxflux.png"
+
+HELPTEXT='Tint2 config files must be in $TINT2PATH, set by default to $HOME/.config/tint2/
+-----------------------------------
+
+When the dialog opens, any running tint2s will be checkmarked.
+
+Click "Apply" and all running tint2s are stopped, and all checkmarked tint2s are started.
+
+To stop a tint2 just uncheck it, and "Apply".
+
+Selected running tint2s are saved to a session file in $TINT2PATH, and can be run with the "tint2session" script. To start them at login, the following line within the startup file would be used:
+
+           tint2session
+
+To edit a tint2 config in text format, the "Edit" command can be used open all selected tint2s within users preferred texteditor.
+
+'
+HELPTEXT=$(gettext "$HELPTEXT")
+
+declare -A foundTints   # hash table of found tints
+declare -a retTint      # list of user slected tints
+declare -A runningTints # hash table of running tints
+declare -a LISTTINT     # list of tints as yad input
+
+getRunning(){
+    local pid cmd args TPATH
+    runningTints=()
+    while read -r pid cmd args; do
+        TPATH=${args#-c } # tint2 will start even without -c before filepath
+        [[ -z $TPATH ]] && TPATH=$TINT2DEFAULT
+        [[ -f $TPATH ]] || {
+            echo "$0: pgrep tint2 parsing failed: $TPATH not a file" >&2
+            continue
+        }
+        [[ -n ${TPATH##${TINT2PATH}*} ]] && continue  # ignore none-default path
+        runningTints["${TPATH#$TINT2PATH/}"]="TRUE"
+    done < <(pgrep -u $(logname) -a '^(/usr/bin/)?tint2\b' )
+}
+
+findTint(){
+    # search tint2 config files
+    local file name
+    foundTints=()
+    shopt -s globstar
+    for file in "$TINT2PATH"/**; do
+        [[ -f $file ]] || continue
+        [[ $file =  $SESSIONFILE ]] && continue
+        [[ $file = *~     ]] && continue # ignore backups
+        [[ $file = *.bak  ]] && continue # ignore backups
+        [[ $file = *.orig ]] && continue # ignore backups
+        grep -sq "panel_monitor" "$file" || continue # not a tint2rc file
+        name=${file#$TINT2PATH/}
+        foundTints["$name"]="${runningTints["$name"]:-FALSE}"
+    done
+    shopt -u globstar
+}
+
+loadDialog() {
+    local RET retval i pid cmd name file display
+    retTint=()
+    RET=$(
+        yad --title="$TITLE" $WINICON \
+        --width=360 --height=360  --borders=20 \
+        --center \
+        --text="$TEXT"  \
+        --list --checklist \
+        --separator="$FIELDSEPARATOR" \
+        --print-column=2 \
+        --column="Select" --column="Name" \
+        "${LISTTINT[@]}"  \
+        "$HELP" "$MORE" "$EDIT" "$CONFIG" "$CLOSE" "$APPLY"
+        )
+    retval=$?
+    CHOICES=()
+    [[ -n $RET ]] && IFS=$"\n" readarray -t CHOICES <<<"$RET"    
+    
+  
+    #   $HELP button (5)
+    (( retval == 5 )) && {
+        yad --title="$TITLE2" $WINICON \
+        --center --width=600 --height=300  --borders=20 \
+        --text-info  \
+        --wrap <<<"$HELPTEXT" \
+        "$OK" 
+        return
+    }
+    #   $EDIT button (4)
+    (( retval == 4 )) && {
+        [[ ${#CHOICES[@]} == 0 ]] && return 
+        cd $TINT2PATH
+        #CHK=""
+        #[[ ${#runningTints[@]} > 0 ]] && CHK=$(cat $(printf '%s\n' "${!runningTints[@]}" | sort)| md5sum)
+        CHK=$(echo $(printf '%s\n' "${!runningTints[@]}" | sort)| md5sum)
+        which mxfb-edit >/dev/null && MX_EDITOR="mxfb-edit"
+        which mx-edit   >/dev/null && MX_EDITOR="mx-edit"
+        [[ -z $MX_EDITOR ]] && MX_EDITOR=fpad
+        
+        bash -c 'sleep 0.5; '"$MX_EDITOR ${CHOICES[*]%${FIELDSEPARATOR}*} "'2>/dev/null 1>&2 & disown' &
+        #[[ $CHK == $(cat $(ls -1 ${CHOICES[*]} | sort) | md5sum) ]] && return
+        [[ $CHK == $(echo $(printf '%s\n' "${CHOICES[@]}" | sort) | md5sum) ]] && return
+        retval=0
+    }
+    #   $MORE button (6)
+    (( retval == 6 )) 
+	## using one function as proof of concept ##
+	# function: toggle 12/24 hr
+		original_time_format=$(egrep "^time1_format =" ~/.config/tint2/tint2rc | cut -d'=' -f2)
+		SUB='%H'
+
+		if [[ "$original_time_format" == *"$SUB"* ]]; then
+		  selection=$(yad --title="Select tint2's 12h/24h clock" --form --center --field="Clock:CB" 24h\!12h)
+		  else 
+		  selection=$(yad --title="Select tint2's 12h/24h clock" --form --center --field="Clock:CB" 12h\!24h)
+		fi
+
+		selection=$(echo "${selection::-1}")
+
+		if [ "$selection" == "24h" ]
+		 then selection="%H:%M"
+		fi
+
+		if [ "$selection" == "12h" ] 
+		 then selection="%I:%M"
+		fi
+
+		if [ "$selection" == "" ] 
+		 then exit
+		fi
+
+		sed -i "/^time1_format =/s/$original_time_format/ $selection/g" ~/.config/tint2/*tint2rc
+
+    #   $CONFIG button (2)
+    (( retval == 2 )) && {
+        cd $TINT2PATH
+        #CHK=""
+        #[[ ${#runningTints[@]} > 0 ]] && CHK=$(cat $(printf '%s\n' "${!runningTints[@]}" | sort)| md5sum)
+        CHK=$(echo $(printf '%s\n' "${!runningTints[@]}" | sort)| md5sum)
+        bash -c 'sleep 0.8; tint2conf 2>/dev/null 1>&2 & disown' &
+        #[[ $CHK == $(cat ${CHOICES[*]} | md5sum) ]] && return
+        [[ $CHK == $(echo $(printf '%s\n' "${CHOICES[@]}" | sort)| md5sum) ]] && return
+        retval=0
+    }
+    #   $CLOSE button (1) or Esc (252) or window was closed
+    (( retval == 1 )) && exit 0  # close button  pressed
+    (( retval != 0 )) && exit 0  # ESC pressed or windows closed
+    
+    # $APPLY button  (0)
+    :> $SESSIONFILE                            # clear session file
+    pids=( $(pgrep -u $(logname) '^(/usr/bin/)?tint2\b') )
+    killall tint2
+    # wait until running tint's have been closed
+    for pid in ${pids[@]}; do
+        timeout 3 tail --pid=$pid -f /dev/null 
+    done
+
+    for chosen in "${CHOICES[@]}"; do          # start chosen tint2's
+        #echo "$TINT2PATH/$chosen" >> $SESSIONFILE
+        echo '$HOME'"/.config/tint2/$chosen" >> $SESSIONFILE
+        tint2 -c "$TINT2PATH"/$chosen >/dev/null 2>&1 &  disown
+    done
+}
+
+
+while true; do
+
+    getRunning  # get running tint's into hash table runningTints
+
+    findTint    # get list array of users tint's
+
+    # declare -p foundTints
+    LISTTINT=()
+    readarray -t sortedTints <<<$(printf '%s\n' "${!foundTints[@]}"|sort)
+    for name in "${sortedTints[@]}"; do
+        LISTTINT+=( "${foundTints["$name"]:-FALSE}" "${name}" )
+    done
+    # declare -p LISTTINT
+    loadDialog  # 
+
+done
+
+exit 0
