@@ -4,7 +4,7 @@
 #    Copyright (C) 2015-2019  damo    <damo@bunsenlabs.org>
 #                  2019-2020  John Crawley <john@bunsenlabs.org>
 #    Major rewrite 2020-2021 by fehlix and other MX Devs for use in MX Fluxbox <devs@mxlinux.org>
-#    
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -52,7 +52,7 @@ which uses yad to generate a graphical user interface.
 
 Usage:  mxfb-tint2manager
    or:  mxfb-tint2manager -h|--help
-  
+
 
 Optional arguments:
     -h | --help    Show this message (no other options are supported at this time)
@@ -96,6 +96,7 @@ BUTTON2=$"Config"
 BUTTON3=$"Edit"
 BUTTON4=$"Help"
 BUTTON5=$"OK"
+BUTTON6=$"12h/24h"
 
 #$DLGDEC $WINICON --list --title="$TITLE" --undecorated --window-icon="/usr/share/icons/mxflux.png" \
 ### DIALOG VARIABLES
@@ -105,7 +106,8 @@ BUTTON5=$"OK"
    EDIT="--button=$BUTTON3"'!gtk-edit:4'
    HELP="--button=$BUTTON4"'!gtk-help:5'
      OK="--button=$BUTTON5"'!gtk-ok:0'
-# 
+   MORE="--button=$BUTTON6"'!gtk-add:6'
+#
 
 FIELDSEPARATOR=" "
 WINICON="--window-icon=/usr/share/icons/mxflux.png"
@@ -179,25 +181,25 @@ loadDialog() {
         --print-column=2 \
         --column="Select" --column="Name" \
         "${LISTTINT[@]}"  \
-        "$HELP" "$EDIT" "$CONFIG" "$CLOSE" "$APPLY"
+        "$HELP" "$MORE" "$EDIT" "$CONFIG" "$CLOSE" "$APPLY"
         )
     retval=$?
     CHOICES=()
-    [[ -n $RET ]] && IFS=$"\n" readarray -t CHOICES <<<"$RET"    
-    
-  
+    [[ -n $RET ]] && IFS=$"\n" readarray -t CHOICES <<<"$RET"
+
+
     #   $HELP button (5)
     (( retval == 5 )) && {
         yad --title="$TITLE2" $WINICON \
         --center --width=600 --height=300  --borders=20 \
         --text-info  \
         --wrap <<<"$HELPTEXT" \
-        "$OK" 
+        "$OK"
         return
     }
     #   $EDIT button (4)
     (( retval == 4 )) && {
-        [[ ${#CHOICES[@]} == 0 ]] && return 
+        [[ ${#CHOICES[@]} == 0 ]] && return
         cd $TINT2PATH
         #CHK=""
         #[[ ${#runningTints[@]} > 0 ]] && CHK=$(cat $(printf '%s\n' "${!runningTints[@]}" | sort)| md5sum)
@@ -205,12 +207,42 @@ loadDialog() {
         which mxfb-edit >/dev/null && MX_EDITOR="mxfb-edit"
         which mx-edit   >/dev/null && MX_EDITOR="mx-edit"
         [[ -z $MX_EDITOR ]] && MX_EDITOR=fpad
-        
+
         bash -c 'sleep 0.5; '"$MX_EDITOR ${CHOICES[*]%${FIELDSEPARATOR}*} "'2>/dev/null 1>&2 & disown' &
         #[[ $CHK == $(cat $(ls -1 ${CHOICES[*]} | sort) | md5sum) ]] && return
         [[ $CHK == $(echo $(printf '%s\n' "${CHOICES[@]}" | sort) | md5sum) ]] && return
         retval=0
     }
+
+    #   $MORE button (6)
+    (( retval == 6 )) && {
+    ## using one function as proof of concept ##
+    # function: toggle 12/24 hr
+        regexp="^[[:space:]]*time1_format[[:space:]]*="
+        old_hour_format=$(grep -oP "$regexp.*\K%(I|l|H|k)" "$TINT2DEFAULT" 2>/dev/null)
+
+        time_format_changed=""
+
+        case "$old_hour_format" in
+            %H|%k)
+                 old="%H";  new="%I"
+                _old="%k"; _new="%l"
+                time_format_changed="12h"
+                ;;
+            %I|%l)
+                 old="%I";  new="%H"
+                _old="%l"; _new="%k"
+                time_format_changed="24h"
+                ;;
+             *) return;;
+        esac
+
+        sed -i -r "/$regexp/{s/$old/$new/g; s/$_old/$_new/g;} " "$TINT2PATH"/*tint2rc
+
+        retval=0
+    }
+
+
     #   $CONFIG button (2)
     (( retval == 2 )) && {
         cd $TINT2PATH
@@ -225,21 +257,32 @@ loadDialog() {
     #   $CLOSE button (1) or Esc (252) or window was closed
     (( retval == 1 )) && exit 0  # close button  pressed
     (( retval != 0 )) && exit 0  # ESC pressed or windows closed
-    
-    # $APPLY button  (0)
-    :> $SESSIONFILE                            # clear session file
-    pids=( $(pgrep -u $(logname) '^(/usr/bin/)?tint2\b') )
-    killall tint2
-    # wait until running tint's have been closed
-    for pid in ${pids[@]}; do
-        timeout 3 tail --pid=$pid -f /dev/null 
-    done
 
-    for chosen in "${CHOICES[@]}"; do          # start chosen tint2's
-        #echo "$TINT2PATH/$chosen" >> $SESSIONFILE
-        echo '$HOME'"/.config/tint2/$chosen" >> $SESSIONFILE
-        tint2 -c "$TINT2PATH"/$chosen >/dev/null 2>&1 &  disown
-    done
+    # $APPLY button  (0)
+    (( retval == 0 )) && {
+        :> $SESSIONFILE                            # clear session file
+        pids=( $(pgrep -u $(logname) '^(/usr/bin/)?tint2\b') )
+        killall tint2 2>/dev/null
+        # wait until running tint's have been closed
+        for pid in ${pids[@]}; do
+            timeout 3 tail --pid=$pid -f /dev/null
+        done
+
+        for chosen in "${CHOICES[@]}"; do          # start chosen tint2's
+            #echo "$TINT2PATH/$chosen" >> $SESSIONFILE
+            echo '$HOME'"/.config/tint2/$chosen" >> $SESSIONFILE
+            tint2 -c "$TINT2PATH"/$chosen >/dev/null 2>&1 &  disown
+        done
+        if [[ -n $time_format_changed ]]; then
+			( sleep 1
+              notify-send -t 5000                                   \
+                        -i preferences-system-time                \
+                         $"Tint2 Manager"                         \
+                         $"time format:"" ""$time_format_changed"
+            ) &
+            time_format_changed=""
+        fi
+    }
 }
 
 
@@ -256,7 +299,7 @@ while true; do
         LISTTINT+=( "${foundTints["$name"]:-FALSE}" "${name}" )
     done
     # declare -p LISTTINT
-    loadDialog  # 
+    loadDialog  #
 
 done
 
