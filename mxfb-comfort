@@ -1,7 +1,18 @@
 #!/bin/bash
 #mxfb-comfort is an app to change the colors of the MX-comfort themes in MX-Linux Fluxbox
-#V0.7 by Melber March 2022
+#V0.8.1 by Melber March 2022
 #thanks to fehlix, i_ri, Girafenaine, purplemoon and Jerry3904 @forum.mxlinux.org for help, tips and encouragement
+#License: GPL-3.0+
+
+
+
+
+#define some variables
+
+TITLE="MXFB-comfort"
+CLASS="mxcr"
+ICONPATH="/usr/share/pixmaps/mxcr-icon.png"
+
 
 #delete stylelist and tempclr after use
 trap "rm -r "~/.fluxbox/scripts/tempdir" " EXIT
@@ -35,7 +46,7 @@ sed -i 's|/mxcr.txt||g' ~/.fluxbox/scripts/tempdir/stylelist.txt
 
 #select starting style
 
-BASESTYLE=$( yad --title="MXFB-comfort" --class=mxcr --text="\n<b>Choose which style to use as a starting point</b>\n" --center --width=400 --height=300 --center --list --no-headers --separator=" " --column=Style < ~/.fluxbox/scripts/tempdir/stylelist.txt )
+BASESTYLE=$( yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="\n<b>Choose which style to use as a starting point</b>\n" --center --width=400 --height=300 --center --list --no-headers --separator=" " --column=Style < ~/.fluxbox/scripts/tempdir/stylelist.txt )
 
 GETOUT=$(echo "$?")
 
@@ -47,7 +58,7 @@ fi
 
 if [ -z "$BASESTYLE" ]; then
 
-yad --title="MXFB-comfort" --class=mxcr --text="No starting style selected.\n\n<b>MX-comfort</b> will be used as the starting style." --button=OK --text-align=center --center --width=400 --height=200 --borders=20 \
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="No starting style selected.\n\n<b>MX-comfort</b> will be used as the starting style." --button=OK --text-align=center --center --width=400 --height=200 --borders=20 \
 
 BASESTYLE=MX-comfort
 
@@ -97,12 +108,11 @@ color_picker() {
     (($?==0)) && echo "$N:$C"
 }
 
-#export -f color_picker
 
 # function to be called with help button
 
 mxcrhelp() {
-yad --title="MXFB-comfort help" --borders=20 --center --width=700 --height=400 --image /usr/share/doc/mxfb-comfort/help/mxcr-help.png --size=fit --button="Return to Main Window":1 \
+yad --title="MXFB-comfort help" --window-icon=/usr/share/doc/mxfb-comfort/help/mxcr-icon.png --borders=20 --center --width=700 --height=400 --image /usr/share/doc/mxfb-comfort/help/mxcr-help.png --size=fit --button="Return to Main Window":1 \
 
 }
 
@@ -110,7 +120,7 @@ export -f color_picker mxcrhelp
 
 #color selection dialogue
 
-MAIN=(yad --title="MXFB-comfort" --class=mxcr --borders=20 --center --width=900 --height=400 --fixed --form --columns=7 --align=right --separator=" " --button="gtk-help":"bash -c mxcrhelp" --button="gtk-quit":1 --button="gtk-ok":0 \
+MAIN=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=900 --height=400 --fixed --form --columns=7 --align=right --separator=" " --button="gtk-help":"bash -c mxcrhelp" --button="gtk-quit":1 --button="gtk-ok":0 \
 --text="<b>\nEdit MX-comfort colors and create a new fluxbox style.\n\n</b>" \
 --field="<b>Active Window</b>":LBL " " \
 --field="Window Highlight":CLR "$ACHL" \
@@ -209,68 +219,57 @@ MAKET2="${NEWCOLORS[16]}"
 
 fi
 
+#check style names yes no
 
-#check empty style name
-if [ "$NEWNAME" = "" ]; then
+if [ "$NEWNAME" = 'yes' -o "$NEWNAME" = 'no' ]; then
 
-NEWNAME=$(yad --title="MXFB-comfort" --class=mxcr --width=400 --height=200 --fixed --text="No Style name !!!!!" --form --center --borders=20 --separator="" --button="gtk-quit":1 \
---field="<b>Name for New Style</b>":LBL " " \
---field=" " "$NEWNAME-new" )
+  MAKET2="$MAKECUR"
+  MAKECUR="$NEWNAME"  
 
-GETOUT=$(echo "$?")
+  NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --text="No Style name !" --form --center --borders=20 --separator="" \
+  --field="<b>Name for new style</b>":LBL " " \
+  --field=" " "New style name" )
+    
+    GETOUT=$(echo "$?")
 
-if [ "$GETOUT" = 1 ]; then
+    if [ "$GETOUT" != 0 ]; then
 
-exit
+    exit
 
-fi
-
-fi
-
-#check no style name
-if [ "$NEWNAME" = "no" ]; then
-
-NEWNAME=$(yad --title="MXFB-comfort" --class=mxcr --width=400 --height=200 --fixed --text="No Style name !!!!!" --form --center --borders=20 --separator="" --button="gtk-quit":1 \
---field="<b>Name for New Style</b>":LBL " " \
---field=" " "$NEWNAME-new" )
-
-GETOUT=$(echo "$?")
-
-if [ "$GETOUT" = 1 ]; then
-
-exit
+    fi
 
 fi
 
-fi
+#check new style name is not empty and forbid MX-comfort overwrite
 
-#forbid MX-comfort overwrite
-if [ "$NEWNAME" = "MX-comfort" ]; then
+while [ -z "$NEWNAME" -o "$NEWNAME" = 'MX-comfort' -o "$NEWNAME" = 'MX-comfort-dark' ]; do
 
-NEWNAME=$(yad --title="MXFB-comfort" --class=mxcr --width=400 --height=200 --fixed --text="MX-comfort can not be overwritten. Choose another name." --form --center --borders=20 --separator="" \
---field="<b>Name for New Style</b>":LBL " " \
---field=" " "$NEWNAME-new" )
+  NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --text="Style name "$NEWNAME" is protected. Choose another name." --form --center --borders=20 --separator="" \
+  --field="<b>Name for new style</b>":LBL " " \
+  --field=" " "$NEWNAME-new" )
 
-elif [ "$NEWNAME" = "MX-comfort-dark" ]; then
+    GETOUT=$(echo "$?")
 
-NEWNAME=$(yad --title="MXFB-comfort" --class=mxcr --width=400 --height=200 --fixed --text="MX-comfort-dark can not be overwritten. Choose another name." --form --center --borders=20 --separator="" \
---field="<b>Name for New Style</b>":LBL " " \
---field=" " "$NEWNAME-new" )
+    if [ "$GETOUT" != 0 ]; then
 
-fi
+    exit
+
+    fi
+
+done
 
 
 #check if new style name exists, if yes ask if overwrite or different style name
 
 while [ -d ~/.fluxbox/styles/$NEWNAME ]; do
 
-yad --title="MXFB-comfort" --class=mxcr --width=400 --fixed --text="A Style with this name already exists. \n\nDo you want to overwrite <b>"$NEWNAME"</b>\nor save as a different style name\n" --button="Overwrite $NEWNAME":2 --button="Save as different style name":3 --text-align=center --center --borders=20\
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --fixed --text="A Style with this name already exists. \n\nDo you want to overwrite <b>"$NEWNAME"</b>\nor save as a different style name\n" --button="Overwrite $NEWNAME":2 --button="Save as different style name":3 --text-align=center --center --borders=20\
 
 case $? in
 
 2) rm -r ~/.fluxbox/styles/$NEWNAME   ;;
 
-3) NEWNAME=$(yad --title="MXFB-comfort" --class=mxcr --width=400 --height=200 --fixed --form --center --borders=20 --separator="" \
+3) NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --form --center --borders=20 --separator="" \
 --field="<b>Name for New Style</b>":LBL " " \
 --field=" " "$NEWNAME-new" )    ;;
 
@@ -282,7 +281,15 @@ done
 
 #Copy MX-comfort to new style name
 
-cp -r ~/.fluxbox/styles/MX-comfort ~/.fluxbox/styles/$NEWNAME
+if [[ $BASESTYLE = MX-comfort-plus* ]]; then
+
+  cp -r ~/.fluxbox/styles/MX-comfort-plus ~/.fluxbox/styles/$NEWNAME
+  
+else
+
+  cp -r ~/.fluxbox/styles/MX-comfort ~/.fluxbox/styles/$NEWNAME
+
+fi
 
 
 #move to new style directory and amend name and grips in theme config file
@@ -323,7 +330,7 @@ sed -i "s/#c6c8c8/$INSY/g" *-inactive.xpm
 if [ "$MAKET2" = yes ]; then
 
 ###Only works on the default tint2 so adding clarification###
-yad --title="MXFB-comfort" --class=mxcr --width=400 --height=200 --fixed --center --text="Currently only the original default tint2rc can be changed to match."
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --text="Currently only the original default tint2rc can be changed to match."
 
 cd ~/.config/tint2
 cp -r ~/.config/tint2/tint2rc ~/.config/tint2/$NEWNAME
@@ -343,13 +350,13 @@ sed -i -r "/^(session.styleFile:).*/s::\1    ~/.fluxbox/styles/$NEWNAME:"  ~/.fl
 
 fluxbox-remote restart
 
-yad --title="MXFB-comfort" --class=mxcr --width=400 --height=200 --fixed --center --borders=20 --text="All done!\n<b>"$NEWNAME"</b> has been set as the current style." --text-align=center --button="OK" \
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="All done!\n<b>"$NEWNAME"</b> has been set as the current style." --text-align=center --button="OK" \
 
 fi
 
 if [ "$MAKECUR" = no ]; then
 
-yad --title="MXFB-comfort" --class=mxcr --width=400 --height=250 --fixed --center --borders=20 --text="All done!\n<b>"$NEWNAME"</b> style has been created.\n\nYou can change styles with \n<b>Fluxbox menu  >  Appearance  >  Style</b> \n\nand refresh with \n<b>Fluxbox menu  >  Leave  >  Refresh</b> " --text-align=center --button="OK" \
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=250 --fixed --center --borders=20 --text="All done!\n<b>"$NEWNAME"</b> style has been created.\n\nYou can change styles with \n<b>Fluxbox menu  >  Appearance  >  Style</b> \n\nand refresh with \n<b>Fluxbox menu  >  Leave  >  Refresh</b> " --text-align=center --button="OK" \
 
 fi
 
