@@ -3,6 +3,10 @@
 
 ### Scripts for default use in MX-Fluxbox
 
+* **mxfb-comfort** -- Graphic tool to change colors of the MX-comfort style
+
+![MX-comfort style](/pix/mxfb-comfort.png)  
+
 * **mxfb-bg-rotate** -- Displays dialog box for iDesk's rotation function
 
 ![Rotate backgrounds](/pix/bg-rotate.png)

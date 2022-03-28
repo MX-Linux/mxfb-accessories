@@ -7,6 +7,9 @@ components/tint2session usr/bin
 components/mxfb-settings.svg usr/share/pixmaps
 components/*.png usr/share/pixmaps
 components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/
+components/MX-comfort-dark etc/skel/.fluxbox/styles/
+components/MX-comfort etc/skel/.fluxbox/styles/
+components/mxcr-help.png usr/share/doc/mxfb-comfort/help/
 mxfb-* usr/bin
 apt/* etc/apt/
 

@@ -1,3 +1,16 @@
+mxfb-accessories (22.03.28) mx; urgency=medium
+
+  * added mxfb-comfort
+
+ -- Dolphin Oracle <jb@mx>  Mon, 28 Mar 2022 16:26:04 -0400
+
+mxfb-accessories (21.11.26) mx; urgency=medium
+
+  * Non-maintainer upload.
+  * added 12/24hr toggle to tint2 manager
+
+ -- Dolphin Oracle <jb@mx>  Fri, 26 Nov 2021 11:39:23 -0500
+
 mxfb-accessories (21.10.19) mx; urgency=medium
 
   * add removal of apt hook
