@@ -112,7 +112,7 @@ color_picker() {
 # function to be called with help button
 
 mxcrhelp() {
-yad --title="MXFB-comfort help" --window-icon=/usr/share/doc/mxfb-comfort/help/mxcr-icon.png --borders=20 --center --width=700 --height=400 --image /usr/share/doc/mxfb-comfort/help/mxcr-help.png --size=fit --button="Return to Main Window":1 \
+yad --title="MXFB-comfort help" --window-icon=/usr/share/pixmaps/mxcr-icon.png --borders=20 --center --width=700 --height=400 --image /usr/share/doc/mxfb-comfort/help/mxcr-help.png --size=fit --button="Return to Main Window":1 \
 
 }
 
