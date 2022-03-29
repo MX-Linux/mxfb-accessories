@@ -8,6 +8,7 @@ components/mxfb-settings.svg usr/share/pixmaps
 components/*.png usr/share/pixmaps
 components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/
 components/mxcr-help.png usr/share/doc/mxfb-comfort/help/
+components/mxcr-icon.png usr/share/doc/mxfb-comfort/help/
 mxfb-* usr/bin
 apt/* etc/apt/
 
