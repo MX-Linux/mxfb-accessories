@@ -11,7 +11,7 @@
 
 TITLE="MXFB-comfort"
 CLASS="mxcr"
-ICONPATH="/usr/share/doc/mxfb-comfort/help/mxcr-icon.png"
+ICONPATH="/usr/share/pixmaps/mxcr-icon.png"
 
 
 #delete stylelist and tempclr after use
