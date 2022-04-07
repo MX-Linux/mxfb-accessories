@@ -3,7 +3,7 @@
 #V0.8.1 by Melber March 2022
 #thanks to fehlix, i_ri, Girafenaine, purplemoon and Jerry3904 @forum.mxlinux.org for help, tips and encouragement
 #License: GPL-3.0+
-
+#mxcr-icon based on yad icon from papirus icon set
 
 
 
@@ -242,7 +242,7 @@ fi
 
 #check new style name is not empty and forbid MX-comfort overwrite
 
-while [ -z "$NEWNAME" -o "$NEWNAME" = 'MX-comfort' -o "$NEWNAME" = 'MX-comfort-dark' ]; do
+while [ -z "$NEWNAME" -o "$NEWNAME" = 'MX-comfort' -o "$NEWNAME" = 'MX-comfort-dark' -o "$NEWNAME" = 'MX-comfort-plus' -o "$NEWNAME" = 'MX-comfort-plus-dark' ]; do
 
   NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --text="Style name "$NEWNAME" is protected. Choose another name." --form --center --borders=20 --separator="" \
   --field="<b>Name for new style</b>":LBL " " \
@@ -277,6 +277,24 @@ case $? in
 
 esac
 done
+
+#tint2 warning
+
+if [ "$MAKET2" = yes ]; then
+
+  yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --fixed --text="\nA copy of the default tint2 panel <b>tint2rc</b> will be created with a matching highlight colour.\n\nCreating a matching panel may have unexpected results if you have edited or overwritten the tint2rc file.\n\n<b>Please confirm that you want to create a matching tint2 panel</b>\n" --button="Create matching tint2 panel":2 --button="Do not create matching tint2 panel":3 --text-align=center --center --borders=20\
+
+    case $? in
+
+    2) MAKET2="yes"   ;;
+
+    3) MAKET2="no"    ;;
+
+    252) exit 0    ;;
+
+  esac
+  
+fi
 
 
 #Copy MX-comfort to new style name
@@ -328,9 +346,6 @@ sed -i "s/#c6c8c8/$INSY/g" *-inactive.xpm
 #copy and amend tint2 panel
 
 if [ "$MAKET2" = yes ]; then
-
-###Only works on the default tint2 so adding clarification###
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --text="Currently only the original default tint2rc can be changed to match."
 
 cd ~/.config/tint2
 cp -r ~/.config/tint2/tint2rc ~/.config/tint2/$NEWNAME
