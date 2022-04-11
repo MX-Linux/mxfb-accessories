@@ -321,6 +321,7 @@ sed -i "s/mx-comfort/$NEWNAME/g" theme.cfg
 sed -i "s/menu.frame.color:                    #EEEFF4/menu.frame.color:                    $MEBG/g" theme.cfg
 sed -i "s/menu.title.color:                    #1D2324/menu.title.color:                    $ACTI/g" theme.cfg
 sed -i "s/menu.hilite.color:                   #0f56d9/menu.hilite.color:                   $ACHL/g" theme.cfg
+sed -i "s/menu.frame.disableColor:             #0f56d9/menu.frame.disableColor:             $ACHL/g" theme.cfg
 sed -i "s/menu.frame.textColor:                #1D2324/menu.frame.textColor:                   $METX/g" theme.cfg
 sed -i "s/menu.title.textColor:                #ffffff/menu.title.textColor:                   $METXTI/g" theme.cfg
 sed -i "s/menu.hilite.textColor:               #ffffff/menu.hilite.textColor:                   $METXHL/g" theme.cfg
