@@ -1,6 +1,6 @@
 #!/bin/bash
 #mxfb-comfort is an app to change the colors of the MX-comfort themes in MX-Linux Fluxbox
-#V0.8.1 by Melber March 2022
+#V0.10 by Melber April 2022
 #thanks to fehlix, i_ri, Girafenaine, purplemoon and Jerry3904 @forum.mxlinux.org for help, tips and encouragement
 #License: GPL-3.0+
 #mxcr-icon based on yad icon from papirus icon set
@@ -88,6 +88,7 @@ METXHL="${NEWCOLORS[13]}"
 NEWNAME="${NEWCOLORS[14]}"
 MAKECUR="${NEWCOLORS[15]}"
 MAKET2="${NEWCOLORS[16]}"
+PLUS="${NEWCOLORS[17]}"
 
 
 # function to be called with yad button
@@ -299,7 +300,7 @@ fi
 
 #Copy MX-comfort to new style name
 
-if [[ $BASESTYLE = MX-comfort-plus* ]]; then
+if [[ $PLUS = plus ]]; then
 
   cp -r ~/.fluxbox/styles/MX-comfort-plus ~/.fluxbox/styles/$NEWNAME
   
@@ -314,7 +315,7 @@ fi
 
 cd ~/.fluxbox/styles/$NEWNAME
 
-echo ""$ACHL" "$ACTI" "$ACTXCOL" "$ACSY" "$ACGP" "$INHL" "$INTI" "$INTXCOL" "$INSY" "$INGP" "$MEBG" "$METXTI" "$METX" "$METXHL" "$NEWNAME" "$MAKECUR" "$MAKET2"" > ~/.fluxbox/styles/$NEWNAME/mxcr.txt
+echo ""$ACHL" "$ACTI" "$ACTXCOL" "$ACSY" "$ACGP" "$INHL" "$INTI" "$INTXCOL" "$INSY" "$INGP" "$MEBG" "$METXTI" "$METX" "$METXHL" "$NEWNAME" "$MAKECUR" "$MAKET2" "$PLUS"" > ~/.fluxbox/styles/$NEWNAME/mxcr.txt
 
 sed -i "s/mx-comfort/$NEWNAME/g" theme.cfg
 sed -i "s/menu.frame.color:                    #EEEFF4/menu.frame.color:                    $MEBG/g" theme.cfg
