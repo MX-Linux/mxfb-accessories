@@ -5,7 +5,8 @@
 #License: GPL-3.0+
 #mxcr-icon based on yad icon from papirus icon set
 
-
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mxfb-accessories"
 
 #define some variables
 

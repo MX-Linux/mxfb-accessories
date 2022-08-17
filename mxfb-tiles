@@ -5,7 +5,7 @@
 # One-third tiling, alternate methods and other changes were added by MX Linux Devs October 2020
 
 TEXTDOMAINDIR=/usr/share/locale
-export TEXTDOMAIN="mxfb-tiles"
+export TEXTDOMAIN="mxfb-accessories"
 
 MESSAGE1=$"This script will back up your current keys file, then install commands for tiling to the end of the file. \n
 </b>"

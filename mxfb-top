@@ -9,7 +9,7 @@
 # version="210930-01" # fehlix: add window icon
 
 TEXTDOMAINDIR=/usr/share/locale
-export TEXTDOMAIN="mxfb-top"
+export TEXTDOMAIN="mxfb-accessories"
 
 HELPFILE=/usr/share/mxflux/HELP_Windowoverlay
 WINDOW_ICON=/usr/share/icons/mxflux.png

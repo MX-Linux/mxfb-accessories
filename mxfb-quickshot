@@ -4,7 +4,7 @@
 ## modified for use with MX-Fluxbox and released October 2020 under GPLv3
 ## reworked by MX Devs April-August 2021
 
-export TEXTDOMAIN=mxfb-quickshot
+export TEXTDOMAIN=mxfb-accessories
 export TEXTDOMAINDIR="/usr/share/locale"
 
 TEXT1="Location"

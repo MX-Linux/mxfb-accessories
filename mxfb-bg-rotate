@@ -4,7 +4,7 @@
 #A script by the MX Linux Dev Team, to set background rotation in fluxbox.
 
 TEXTDOMAINDIR=/usr/share/locale
-export TEXTDOMAIN="mx-idesktool"
+export TEXTDOMAIN="mxfb-accessories"
 
 DIALOG="yad --center --window-icon=/usr/share/icons/mxflux.png"
 
