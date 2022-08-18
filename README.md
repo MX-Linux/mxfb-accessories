@@ -11,6 +11,10 @@
 
 ![Rotate backgrounds](/pix/bg-rotate.png)
 
+* **mxfb-look** -- A tool to save and restore desktop setups.
+
+![Desktop setups](/pix/mxfb-look.png)
+
 * **mxfb-menu-generator** -- Creates a menu with typical Debian categories
 
 ![Debian menu](/pix/DebianMenu.png)
