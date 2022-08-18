@@ -11,6 +11,10 @@
 
 ![Rotate backgrounds](/pix/bg-rotate.png)
 
+* **mxfb-look** -- A tool to save and restore desktop setups.
+
+![Desktop setups](/pix/mxfb-look.png)
+
 * **mxfb-menu-generator** -- Creates a menu with typical Debian categories
 
 ![Debian menu](/pix/DebianMenu.png)
@@ -31,7 +35,7 @@
 
 ![Timer](/pix/timer.png)
 
-* **mxfb-tint2-manager** -- Very useful tool for dealing with the tint2 panel configs; adapted from bunsenlabs work
+* **mxfb-tint2-manager** -- Very useful tool for dealing with the tint2 panel configs; adapted and expanded from bunsenlabs work
 
 ![Tint2](/pix/tint2manager.png)
 

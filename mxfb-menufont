@@ -9,7 +9,7 @@
 #
 
 TEXTDOMAINDIR=/usr/share/locale
-export TEXTDOMAIN="mxfb-menufont"
+export TEXTDOMAIN="mxfb-accessories"
 
 TITLE="CHANGE MENU FONT"
 SUBTITLE="Universal will override style font, chose Style to return"

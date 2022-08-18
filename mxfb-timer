@@ -16,7 +16,7 @@
 Encoding=UTF-8
 #
 # i18n - Internationalization
-export TEXTDOMAIN=mxfb-timer
+export TEXTDOMAIN=mxfb-accessories
 export TEXTDOMAINDIR="/usr/share/locale"
 
 TITLE=$"MXFB Timer"

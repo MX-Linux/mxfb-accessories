@@ -10,7 +10,7 @@
 
 : YAD=${YAD:=/usr/bin/yad}
 
-export TEXTDOMAIN=mxfb-trashcheck
+export TEXTDOMAIN=mxfb-accessories
 export TEXTDOMAINDIR="/usr/share/locale"
 . gettext.sh
 

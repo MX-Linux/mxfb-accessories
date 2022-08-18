@@ -5,7 +5,7 @@
 # Released under GPLv3
 
 TEXTDOMAINDIR=/usr/share/locale 
-export TEXTDOMAIN="mxfb-separate-backgrounds"
+export TEXTDOMAIN="mxfb-accessories"
 
 #Confirmation Window
 NOTIFICATION=$" Rotate Backgrounds has been disabled to avoid conflict."

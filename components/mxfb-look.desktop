@@ -1,0 +1,22 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=MXFB-Look
+Comment=Create and manage Fluxbox theme sets
+Comment[de]=Erstellen und Verwalten von Fluxbox-Themensätzen
+Comment[el]=Δημιουργία και διαχείριση συνόλων θεμάτων Fluxbox
+Comment[es]=Crear y gestionar conjuntos de temas de Fluxbox
+Comment[fr]=Créer et gérer des ensembles de thèmes Fluxbox
+Comment[it]=Creare e gestire i set di temi di Fluxbox
+Comment[ja]=Fluxboxテーマセットの作成と管理
+Comment[nl]=Creëer en beheer Fluxbox themasets
+Comment[pl]=Tworzenie i zarządzanie zestawami tematycznymi Fluxbox
+Comment[pt]=Criar e gerir conjuntos temáticos Fluxbox
+Comment[ru]=Создание и управление наборами тем Fluxbox
+Comment[sv]=Skapa och hantera Fluxbox-temaset
+Comment[zh]=创建和管理Fluxbox主题集
+Exec=mxfb-look
+Icon=/usr/share/pixmaps/mxfb-look-icon.png
+Terminal=false
+ShowOnly=fluxbox
+Categories=System;

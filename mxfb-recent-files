@@ -8,6 +8,9 @@
 ### to initialize options and vars
 #########################################################################
 
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mxfb-accessories"
+
 #recent files xml path
 RECENTUSXML=~/.local/share/recently-used.xbel
 RECENTUSDSP=~/.config/recently-used-dsp.conf

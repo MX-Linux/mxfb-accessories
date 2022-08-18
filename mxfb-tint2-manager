@@ -37,6 +37,9 @@
 #
 ########################################################################
 
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mxfb-accessories"
+
 ME="${0##*/}"
 VERSION="210804-6"
 
