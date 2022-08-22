@@ -247,8 +247,9 @@ done
 cd $MXLKPATH/looks
 
 while [ -f $NEWNAME.look ]; do
-
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --fixed --text=$"A Look with this name already exists. \n\nDo you want to overwrite <b>"$NEWNAME"</b>\or save as a different name?\n" --button=$"Overwrite $NEWNAME":2 --button=$"Save as different name":3 --text-align=center --center --borders=20\
+message=$"A Look with this name already exists. \n\nDo you want to overwrite"
+message2=$"or save as a new name?"
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --fixed --text="$message $NEWNAME $message2" --button=$"Overwrite $NEWNAME":2 --button=$"Save as different name":3 --text-align=center --center --borders=20\
 
 case $? in
 
@@ -308,8 +309,8 @@ done
 
 
 #all done
-
-  yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=250 --fixed --center --borders=20 --text=$"All done!\n\nLook has been saved as <b>$NEWNAME</b>" --text-align=center --button="OK" \
+message=$"All done!\n\nLook has been saved as"
+  yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=250 --fixed --center --borders=20 --text="$message <b>$NEWNAME</b>" --text-align=center --button="OK" \
 
 exit
 }
