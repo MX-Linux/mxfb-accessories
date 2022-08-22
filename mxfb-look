@@ -249,7 +249,7 @@ cd $MXLKPATH/looks
 while [ -f $NEWNAME.look ]; do
 message=$"A Look with this name already exists. \n\nDo you want to overwrite"
 message2=$"or save as a new name?"
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --fixed --text="$message $NEWNAME $message2" --button=$"Overwrite $NEWNAME":2 --button=$"Save as different name":3 --text-align=center --center --borders=20\
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --fixed --text="$message $NEWNAME $message2" --button=$"Overwrite":2 --button=$"Save as different name":3 --text-align=center --center --borders=20\
 
 case $? in
 

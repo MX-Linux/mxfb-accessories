@@ -190,7 +190,7 @@ msgstr ""
 
 #: ../mxfb-look:252
 #, sh-format
-msgid "Overwrite $NEWNAME"
+msgid "Overwrite"
 msgstr ""
 
 #. RESTOREMAIN
