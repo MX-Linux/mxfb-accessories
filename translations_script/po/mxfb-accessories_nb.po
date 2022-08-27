@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# James Bowlin <BitJam@gmail.com>, 2022
+# Kristian B <mopardud@hotmail.com>, 2022
+# anticapitalista <anticapitalista@riseup.net>, 2022
+# heskjestad <cato@heskjestad.xyz>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-22 18:34-0400\n"
+"PO-Revision-Date: 2022-08-21 18:57+0000\n"
+"Last-Translator: heskjestad <cato@heskjestad.xyz>, 2022\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/anticapitalista/teams/10162/nb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../mxfb-separate-backgrounds:12
+msgid ""
+"  This app allows you to configure separate backgrounds for each Workspace  "
+"</b>"
+msgstr ""
+"Dette programmet lar deg sette opp ulike bakgrunner for hvert skrivebord</b>"
+
+#. Confirmation Window
+#: ../mxfb-separate-backgrounds:11
+msgid " Rotate Backgrounds has been disabled to avoid conflict."
+msgstr "Rotasjon av bakgrunner er slått av for å unngå konflikter."
+
+#: ../mxfb-separate-backgrounds:13
+msgid " Selection windows will pop up  each Workspace."
+msgstr "Utvalgsvinduer vil sprette opp for hvert skrivebord."
+
+#: ../mxfb-separate-backgrounds:14
+msgid " Type \\"
+msgstr "Skriv \\"
+
+#: ../mxfb-tint2-manager:102
+msgid "12h/24h"
+msgstr "12 t/24 t"
+
+#: ../mxfb-look:231
+msgid "<b>Name for new style</b>"
+msgstr "<b>Den nye stilens navn</b>"
+
+#: ../mxfb-look:649
+msgid ""
+"<b>You can save the current look or restore a saved look</b>\\n\\nA look is "
+"comprised of the following elements\\n- Gtk-Theme\\n- Gtk-Icon\\n- Gtk-"
+"Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- "
+"Wallpaper\\n- One Conky\\n\\n"
+msgstr ""
+"<b>Det nye utseendet kan lagres, eller et lagret kan lastes inn</b>\\n\\nEt "
+"utseende består av følgende elementer\\n- Gtk-tema\\n- Gtk-ikon\\n- Gtk-"
+"skrifttype\\n-Fluxbox-stil\\n- Opp til to Tint2-paneler\\n- Rofi-tema\\n- "
+"Skrivebordsbakgrunn\\n- En Conky\\n\\n"
+
+#: ../mxfb-tiles:21
+msgid ""
+"<u>Arrow keys</u>\n"
+"  Alt + Arrow: half \n"
+"  Alt + LogoKey + Arrow: quarter\\n"
+msgstr ""
+"<u>Piltaster</u>\n"
+"Alt + pil: halv\n"
+"Alt + Win + pil: kvart\\n"
+
+#: ../mxfb-tiles:24
+msgid ""
+"<u>Keypad</u>\n"
+"  Alt + 2,4,6,8: half\n"
+"  Alt + 1,3,7,9: quarter\n"
+"  Alt + 5: center\n"
+"  Alt + 0: toggle maximize"
+msgstr ""
+"<u>Talltastaturet</u>\n"
+"Alt + 2, 4, 6, 8: halv\n"
+"Alt + 1, 3, 7, 9: kvart\n"
+"Alt + 5: senter\n"
+"Alt + 0: veksle maksimering"
+
+#: ../mxfb-tiles:16
+msgid ""
+"<u>Number keys</u> \n"
+"  Control + 1-4: half\n"
+"  Control + 5-8: quarter\n"
+"  Control + 9: third \n"
+"  Control + 0: toggle maximize"
+msgstr ""
+"<u>Vanlige talltaster</u>\n"
+"Ctrl + 1-4: halv\n"
+"Ctrl + 5-8:kvart\n"
+"Ctrl + 9: tredel\n"
+"Ctrl + 0: veksle maksimering"
+
+#: ../mxfb-look:250
+msgid "A Look with this name already exists. \\n\\nDo you want to overwrite"
+msgstr ""
+
+#. all done
+#: ../mxfb-look:312
+msgid "All done!\\n\\nLook has been saved as"
+msgstr ""
+
+#: ../mxfb-tint2-manager:96
+msgid "Apply"
+msgstr "Bruk"
+
+#: ../mxfb-top:17
+msgid "CONFIGURE TOP"
+msgstr "OPPSETT AV TOP"
+
+#: ../mxfb-tint2-manager:92
+msgid "Check to run, uncheck to stop"
+msgstr "Velg for å kjøre, fravelg for å stoppe"
+
+#: ../mxfb-timer:25
+msgid "Click \\"
+msgstr "Klikk \\"
+
+#: ../mxfb-tint2-manager:97
+msgid "Close"
+msgstr "Lukk"
+
+#: ../mxfb-borders:21 ../mxfb-top:23
+msgid "Color Focused"
+msgstr "Farge når fokusert"
+
+#: ../mxfb-borders:22 ../mxfb-top:24
+msgid "Color Unfocused"
+msgstr "Farge når ikke fokusert"
+
+#: ../mxfb-tint2-manager:98
+msgid "Config"
+msgstr "Oppsett"
+
+#: ../mxfb-bg-rotate:43
+msgid "Delay (mins)"
+msgstr "Forsinkelse (min.)"
+
+#. MSG_ASK=$(gettext "Do you want to remove it permanently?")
+#: ../mxfb-trashcheck:33
+msgid "Do you want to empty the trash?"
+msgstr "Vil du tømme papirkurven?"
+
+#: ../mxfb-tint2-manager:99
+msgid "Edit"
+msgstr "Rediger"
+
+#: ../mxfb-timer:23
+msgid "Enter local time"
+msgstr "Angi lokaltid"
+
+#: ../mxfb-tiles:12
+msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
+msgstr ""
+"Funksjonalitet: 1/2 skjerm, 1/4 skjerm, 1/3 skjerm og gjenoppretting \\n"
+
+#: ../mxfb-tint2-manager:91
+msgid "HELP"
+msgstr "HJELP"
+
+#: ../mxfb-tint2-manager:100
+msgid "Help"
+msgstr "Hjelp"
+
+#: ../mxfb-bg-rotate:44
+msgid "Image folder"
+msgstr "Bildemappe"
+
+#: ../mxfb-bg-rotate:45
+msgid "Image mode"
+msgstr "Bildemodus"
+
+#: ../mxfb-look:230
+msgid "Look name "
+msgstr "Utseendets navn"
+
+#: ../mxfb-timer:22
+msgid "MXFB Timer"
+msgstr "MXFB-tidtaker"
+
+#: ../mxfb-tiles:13
+msgid "Multiple options for number keys and keyboard"
+msgstr "En del alternativer for talltaster og tastatur"
+
+#: ../mxfb-look:205
+msgid "New-Look-Name"
+msgstr "Nytt-utseendes-navn"
+
+#: ../mxfb-bg-rotate:40
+msgid "No rotation: Delay = 0"
+msgstr "Ingen rotasjon: Forsinkelse = 0"
+
+#: ../mxfb-tint2-manager:101
+msgid "OK"
+msgstr "OK"
+
+#: ../mxfb-tiles:14
+msgid "OK to proceed?"
+msgstr "Vil du fortsette?"
+
+#: ../mxfb-borders:17
+msgid "OPTIONAL BORDER STYLE CONFIG"
+msgstr "VALGFRITT OPPSETT AV KANTSTIL"
+
+#: ../mxfb-look:252
+#, sh-format
+msgid "Overwrite"
+msgstr ""
+
+#. RESTOREMAIN
+#: ../mxfb-look:501 ../mxfb-look:649
+msgid "Restore Look"
+msgstr "Gjenopprett utseende"
+
+#: ../mxfb-look:205
+msgid "Save Look as"
+msgstr "Lagre utseende som"
+
+#: ../mxfb-look:252
+msgid "Save as different name"
+msgstr "Lagre som forskjellig navn"
+
+#: ../mxfb-top:18
+msgid "Select titlebar mode"
+msgstr "Velg modus for tittellinje"
+
+#: ../mxfb-bg-rotate:39
+msgid "Set background rotation"
+msgstr "Velg bakgrunnsrotasjon"
+
+#. SUBTITLE=$(gettext "Be sure to fill in all fields you want enabled")
+#: ../mxfb-borders:20 ../mxfb-top:22
+msgid "Size"
+msgstr "Størrelse"
+
+#: ../mxfb-tiles:15
+msgid ""
+"The code has been inserted successfully. Now there are 3 methods to do the "
+"tiling</b>"
+msgstr "Koden ble satt inn. Det er nå tre måter å flislegge på </b>"
+
+#: ../mxfb-trashcheck:31
+msgid "There are no files in the trash."
+msgstr "Papirkurven er tom."
+
+#: ../mxfb-trashcheck:100
+#, sh-format
+msgid "There is 1 file in the trash."
+msgid_plural "There are ${COUNT} files in the trash."
+msgstr[0] "Det er ${COUNT} fil i papirkurven."
+msgstr[1] "Det er ${COUNT} filer i papirkurven."
+
+#: ../mxfb-tiles:10
+msgid ""
+"This script will back up your current keys file, then install commands for tiling to the end of the file. \\n\n"
+"</b>"
+msgstr ""
+"Dette skriptet vil reservekopiere gjeldende nøkkelfil og deretter installere kommandoer for flislegging til slutten av fila. \\n\n"
+"</b>"
+
+#: ../mxfb-tint2-manager:283
+msgid "Tint2 Manager"
+msgstr "Tint2-behandler"
+
+#: ../mxfb-tiles:29
+msgid "Usage options"
+msgstr "Alternativer for bruk"
+
+#: ../mxfb-tint2-manager:191
+msgid "\\n"
+msgstr "\\n"
+
+#: ../mxfb-look:341
+msgid "\\n<b> Choose which look to restore</b>\\n"
+msgstr "\\n<b>Velg hvilket utseende som skal gjenopprettes</b>\\n"
+
+#: ../mxfb-look:353
+msgid "\\n<b> You need to select a look !</b>\\n"
+msgstr "\\n<b>Velg et utseende først</b>\\n"
+
+#. MAIN
+#: ../mxfb-look:194
+msgid ""
+"\\n<b>Current Settings.\\n</b>\\n\n"
+"GTK Theme: <b>"
+msgstr ""
+"\\n<b>Gjeldende innstillinger.\\n</b>\\n\n"
+"GTK-tema: <b>"
+
+#: ../mxfb-borders:28 ../mxfb-top:30
+#, sh-format
+msgctxt "Stock label"
+msgid "_Apply"
+msgstr "_Bruk"
+
+#: ../mxfb-borders:27 ../mxfb-top:29
+#, sh-format
+msgctxt "Stock label"
+msgid "_Cancel"
+msgstr "A_vbryt"
+
+#: ../mxfb-borders:30 ../mxfb-top:32
+#, sh-format
+msgctxt "Stock label"
+msgid "_Help"
+msgstr "_Hjelp"
+
+#: ../mxfb-borders:26 ../mxfb-top:28
+#, sh-format
+msgctxt "Stock label"
+msgid "_OK"
+msgstr "_OK"
+
+#: ../mxfb-borders:29 ../mxfb-top:31
+#, sh-format
+msgctxt "Stock label"
+msgid "_Revert"
+msgstr "_Tilbakestil"
+
+#: ../mxfb-timer:24 ../mxfb-look:251
+msgid "or save as a new name?"
+msgstr ""
+
+#: ../mxfb-tint2-manager:284
+msgid "time format:"
+msgstr "tidsformat:"
