@@ -9,6 +9,8 @@ Comment=Common settings for MX-Linux Fluxbox
 Category=USER
 lxappearance
 mxfb-tint2-manager
+mx-rofi-manager
+mxfb-look
 mx-conky
 mugshot
 mx-tweak
