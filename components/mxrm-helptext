@@ -1,0 +1,146 @@
+
+Rofi is a fast and handy pop-up app that can have various functions ("modi") as determined by the user. By default in MX Fluxbox it displays an app launcher ("dmenu") and a help page, but a calculator, run dialog, window switcher and more are also available. It can easily be started by pressing the logo key or using a menu.
+
+
+MX Rofi manager provides a convenient method of making changes in the functions to be shown, switching the current theme, changing colors of the default theme or manually editing themes not based on the default. It does that by manipulating the settings in $HOME/.config/rofi/
+
+
+For more detailed help, consult rofi's "help" tab or visit the MX wiki
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### DE #####
+Rofi ist eine schnelle und praktische Pop-up-App, die verschiedene Funktionen ("modi") haben kann, die vom Benutzer bestimmt werden. Standardmäßig zeigt es in MX Fluxbox einen App-Launcher ("dmenu") und eine Hilfeseite an, aber auch ein Taschenrechner, ein Ausführungsdialog, ein Fensterwechsler und mehr sind verfügbar. Er kann einfach durch Drücken der Logotaste oder über ein Menü gestartet werden.
+
+
+MX Rofi Manager bietet eine bequeme Methode, um Änderungen an den anzuzeigenden Funktionen vorzunehmen, das aktuelle Thema zu wechseln, die Farben des Standardthemas zu ändern oder Themen, die nicht auf dem Standard basieren, manuell zu bearbeiten. Dies geschieht durch Manipulation der Einstellungen in $HOME/.config/rofi/
+
+
+Ausführlichere Hilfe finden Sie in der "Hilfe"-Registerkarte von rofi oder in der MX-Wiki
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### EL #####
+Το Rofi είναι μια γρήγορη και εύχρηστη αναδυόμενη εφαρμογή που μπορεί να έχει διάφορες λειτουργίες ("modi") όπως ορίζει ο χρήστης. Από προεπιλογή στο MX Fluxbox εμφανίζει έναν εκκινητή εφαρμογών ("dmenu") και μια σελίδα βοήθειας, αλλά είναι επίσης διαθέσιμη μια αριθμομηχανή, ένας διάλογος εκτέλεσης, ένας διακόπτης παραθύρων και πολλά άλλα. Μπορεί εύκολα να ξεκινήσει πατώντας το πλήκτρο λογότυπο ή χρησιμοποιώντας ένα μενού.
+
+
+Ο διαχειριστής MX Rofi παρέχει μια βολική μέθοδο για την πραγματοποίηση αλλαγών στις λειτουργίες που θα εμφανίζονται, την εναλλαγή του τρέχοντος θέματος, την αλλαγή των χρωμάτων του προεπιλεγμένου θέματος ή τη χειροκίνητη επεξεργασία θεμάτων που δεν βασίζονται στο προεπιλεγμένο. Αυτό το κάνει με το χειρισμό των ρυθμίσεων στο $HOME/.config/rofi/
+
+
+Για πιο λεπτομερή βοήθεια, συμβουλευτείτε την καρτέλα "help" του rofi ή επισκεφθείτε το wiki του MX
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### ES #####
+Rofi es una aplicación emergente rápida y práctica que puede tener varias funciones ("modi") según determine el usuario. Por defecto, en MX Fluxbox muestra un lanzador de aplicaciones ("dmenu") y una página de ayuda, pero también está disponible una calculadora, un cuadro de diálogo de ejecución, un conmutador de ventanas y mucho más. Se puede iniciar fácilmente pulsando la tecla del logotipo o utilizando un menú.
+
+
+El gestor MX Rofi ofrece un método cómodo para realizar cambios en las funciones que se mostrarán, cambiar el tema actual, cambiar los colores del tema por defecto o editar manualmente los temas que no se basan en el predeterminado. Lo hace manipulando la configuración en $HOME/.config/rofi/
+
+
+Para una ayuda más detallada, consulte la pestaña "help" de rofi o visite el wiki de MX
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+
+##### FR #####
+Rofi est une application pop-up rapide et pratique qui peut avoir diverses fonctions ("modi") déterminées par l'utilisateur. Par défaut, dans le MX Fluxbox, elle affiche un lanceur d'application ("dmenu") et une page d'aide, mais une calculatrice, une boîte de dialogue d'exécution, un commutateur de fenêtre et plus encore sont également disponibles. Il peut facilement être démarré en appuyant sur la touche logo ou en utilisant un menu.
+
+
+Le gestionnaire MX Rofi fournit une méthode pratique pour effectuer des changements dans les fonctions à afficher, pour changer le thème actuel, pour changer les couleurs du thème par défaut ou pour modifier manuellement les thèmes qui ne sont pas basés sur le thème par défaut. Il fait cela en manipulant les paramètres dans $HOME/.config/rofi/
+
+
+Pour une aide plus détaillée, consultez l'onglet "help" de rofi ou visitez le wiki MX
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### IT #####
+Rofi è un'applicazione a comparsa veloce e pratica che può avere varie funzioni ("modi") a scelta dell'utente. Per impostazione predefinita in MX Fluxbox visualizza un lanciatore di applicazioni ("dmenu") e una pagina di aiuto, ma sono disponibili anche una calcolatrice, una finestra di dialogo di esecuzione, un selettore di finestre e altro ancora. Può essere facilmente avviato premendo il tasto logo o utilizzando un menu.
+
+
+MX Rofi manager offre un comodo metodo per modificare le funzioni da visualizzare, cambiare il tema corrente, modificare i colori del tema predefinito o modificare manualmente i temi non basati su quello predefinito. Lo fa manipolando le impostazioni in $HOME/.config/rofi/
+
+
+Per una guida più dettagliata, consultare la scheda "help" di rofi o visitare il wiki MX
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### JP #####
+Rofiは、高速で便利なポップアップアプリで、ユーザーが決めた様々な機能(「modi」)を持つことができます。MX Fluxboxのデフォルトでは、アプリランチャー（"dmenu"）とヘルプページを表示しますが、電卓、実行ダイアログ、ウィンドウスイッチャーなども利用可能です。ロゴキーを押したり、メニューから簡単に起動することができます。
+
+
+MX Rofiマネージャは、表示する機能の変更、現在のテーマの切り替え、デフォルトテーマの色変更、デフォルトに基づかないテーマの手動編集を行うための便利な方法を提供します。これは、$HOME/.config/rofi/にある設定を操作することで行います。
+
+
+より詳細なヘルプは、rofi の "help" タブを参照するか、MX wiki を参照してください。
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### NL #####
+Rofi is een snelle en handige pop-up app die verschillende functies ("modi") kan hebben zoals bepaald door de gebruiker. Standaard toont het in MX Fluxbox een app launcher ("dmenu") en een help pagina, maar een rekenmachine, run dialoogvenster, window switcher en meer zijn ook beschikbaar. Het kan eenvoudig worden gestart door op de logotoets te drukken of via een menu.
+
+
+MX Rofi manager biedt een handige methode om wijzigingen aan te brengen in de te tonen functies, het huidige thema te wijzigen, kleuren van het standaardthema te veranderen of handmatig thema's te bewerken die niet op de standaard zijn gebaseerd. Het doet dat door het manipuleren van de instellingen in $HOME/.config/rofi/
+
+
+Voor meer gedetailleerde hulp, raadpleeg de "help" tab van rofi of bezoek de MX wiki
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### PL #####
+Rofi to szybka i poręczna wyskakująca aplikacja, która może mieć różne funkcje ("modi") określone przez użytkownika. Domyślnie w MX Fluxbox wyświetla launcher aplikacji ("dmenu") i stronę pomocy, ale kalkulator, okno dialogowe run, przełącznik okien i inne są również dostępne. Można go łatwo uruchomić naciskając klawisz logo lub korzystając z menu.
+
+
+Menedżer MX Rofi zapewnia wygodną metodę dokonywania zmian w wyświetlanych funkcjach, przełączania bieżącego motywu, zmiany kolorów domyślnego motywu lub ręcznej edycji motywów nie opartych na domyślnym. Robi to poprzez manipulowanie ustawieniami w $HOME/.config/rofi/
+
+
+Bardziej szczegółowa pomoc znajduje się w zakładce "help" rofi lub na wiki MX
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### PT #####
+Rofi é uma aplicação rápida e prática que pode ter várias funções ("modi"), conforme determinado pelo utilizador. Por defeito, no MX Fluxbox exibe um lançador de aplicações ("dmenu") e uma página de ajuda, mas também está disponível uma calculadora, diálogo de execução, comutador de janelas e muito mais. Pode ser facilmente iniciada premindo a tecla do logótipo ou utilizando um menu.
+
+
+O gestor MX Rofi fornece um método conveniente para fazer alterações nas funções a mostrar, mudar o tema actual, mudar as cores do tema padrão ou editar manualmente temas não baseados no padrão. Faz isso através da manipulação das definições em $HOME/.config/rofi/
+
+
+Para ajuda mais detalhada, consulte o separador "ajuda" da rofi ou visite o wiki MX
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### RU #####
+Rofi - это быстрое и удобное всплывающее приложение, которое может иметь различные функции ("modi"), определяемые пользователем. По умолчанию в MX Fluxbox оно отображает программу запуска приложений ("dmenu") и страницу помощи, но также доступны калькулятор, диалог запуска, переключатель окон и многое другое. Его можно легко запустить нажатием клавиши с логотипом или через меню.
+
+
+Менеджер MX Rofi предоставляет удобный способ внесения изменений в отображаемые функции, переключения текущей темы, изменения цветов темы по умолчанию или ручного редактирования тем, не основанных на стандартных. Он делает это, манипулируя настройками в $HOME/.config/rofi/
+
+
+Для получения более подробной помощи обратитесь к вкладке "помощь" rofi или посетите MX wiki
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### SV #####
+Rofi är en snabb och praktisk popup-app som kan ha olika funktioner ("modi") som användaren bestämmer. Som standard i MX Fluxbox visar den en appstartare ("dmenu") och en hjälpsida, men en miniräknare, en kördialog, en fönsterbytare med mera är också tillgängliga. Den kan enkelt startas genom att trycka på logotangenten eller genom att använda en meny.
+
+
+MX Rofi-hanteraren erbjuder en bekväm metod för att göra ändringar i de funktioner som ska visas, byta aktuellt tema, ändra färgerna i standardtemat eller manuellt redigera teman som inte är baserade på standardtemat. Det gör den genom att manipulera inställningarna i $HOME/.config/rofi/.
+
+
+För mer detaljerad hjälp, se rofi's "help"-flik eller besök MX-wikin.
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+##### ZH #####
+Rofi是一个快速和方便的弹出式应用程序，可以有各种功能（"modi"），由用户决定。在MX Fluxbox中，它默认显示一个应用程序启动器（"dmenu"）和一个帮助页面，但计算器、运行对话框、窗口切换器等也可以使用。它可以通过按徽标键或使用菜单轻松启动。
+
+
+MX Rofi管理器提供了一种方便的方法，可以对要显示的功能进行修改，切换当前的主题，改变默认主题的颜色或手动编辑不基于默认的主题。它通过操作$HOME/.config/rofi/中的设置来实现这一目的。
+
+
+更详细的帮助，请查阅rofi的 "帮助 "标签或访问MX wiki
+
+https://mxlinux.org/wiki/help-files/help-rofi/
+
+
+Translations by https://www.deepl.com/translator
