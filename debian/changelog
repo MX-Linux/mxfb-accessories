@@ -1,3 +1,9 @@
+mxfb-accessories (22.09.11) UNRELEASED; urgency=medium
+
+  * added new mx-rofi-manager and components
+
+ -- Jerry <jb@mx>  Sun, 11 Sep 2022 07:11:15 -0400
+
 mxfb-accessories (22.08.26) mx; urgency=medium
 
   * translation refresh
