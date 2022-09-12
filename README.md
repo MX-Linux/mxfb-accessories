@@ -45,4 +45,4 @@
 
 * **mx-rofi-manager** -- Allows easy manipulation of rofi settings
 
-![Rofi manager](pix/mx-rofi-manager.png)
+![Rofi manager](/pix/mx-rofi-manager.png)
