@@ -9,4 +9,4 @@ configuration {
 	sidebar-mode: true;
 }
 
-@theme "/usr/share/rofi/themes/mx-comfort.rasi"
+@theme "/usr/share/rofi/themes/MX-comfort.rasi"
