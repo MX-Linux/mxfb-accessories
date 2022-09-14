@@ -1,11 +1,11 @@
 configuration {
 	
-	modi: "drun,help:~/.config/rofi/rofi-help";
-	width: 20;
+	modi: "drun,help:/usr/share/rofi/rofi-help";
+	//width: 20;
 	show-icons: true;
 	icon-theme: "papirus";
-	lines: 20;
-	fake-transparency: true;
+	//lines: 20;
+	//fake-transparency: true;
 	sidebar-mode: true;
 }
 
