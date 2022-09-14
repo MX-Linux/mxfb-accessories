@@ -1,9 +1,9 @@
 #!/bin/bash
 #Rofi-Manager
 #Tool to manage rofi settings
-#V.0.3 by Melber and MX Devs, 10 September 2022
+#V.0.3c by Melber and MX Devs, 12 September 2022
 #License: GPL-3.0+
-
+#mxrm-icon based on applications-development and applications-interfacedesign icons from papirus icon set
 
 #set up translation
 
@@ -612,6 +612,12 @@ ROFIPATHUSR="/usr/share/rofi/themes"
 ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 source gettext.sh
 
+#find editor
+
+which mxfb-edit >/dev/null && MX_EDITOR="mxfb-edit"
+[[ -z $MX_EDITOR ]] && MX_EDITOR=fpad
+
+
 
 #read available themes
 
@@ -623,8 +629,7 @@ ls -f *rasi >> $ROFIPATH/tempdir/editlist.txt
 
 #select theme
 
-TEXTEDIT1="$(gettext '\n<b>Select the rofi theme you wish to edit</b>
-The .rasi file will be opened in geany\n\n')"
+TEXTEDIT1="$(gettext '\n<b>Select the rofi theme you wish to edit</b>\n\nThe .rasi file will be opened in your preferred text editor\n\n')"
 
 EDITTHEME=$( yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTEDIT1" --width=600 --height=400 --borders=20 --center --list --no-headers --separator="" --column=Style --text-align=left < $ROFIPATH/tempdir/editlist.txt )
 
@@ -638,15 +643,39 @@ fi
 
 if [ ! -f $ROFIPATH/$EDITTHEME ]; then
 
-	EDITTHEME="$ROFIPATHUSR/$EDITTHEME"
+	EDITTHEMEUSR="$ROFIPATHUSR/$EDITTHEME"
 
-	else
+	COPYTIME=$(date +%Y"%m%d")
+	
+	EDITTHEME=$(echo "${EDITTHEME}" | sed -e 's/.rasi//g' )
+
+	EDITTHEMECOPY="$EDITTHEME"_"$COPYTIME".rasi
+
+	cp $EDITTHEMEUSR $ROFIPATH/$EDITTHEMECOPY
+
+	TEXTEDIT2="$(eval_gettext '\nThe theme to be edited has been saved in\n<b>$ROFIPATH</b> as\n\n<b>$EDITTHEMECOPY</b>\n\n')"
+
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTEDIT2" --width=600 --height=400 --borders=20 --center --text-align=center
+
+	GETOUT=$(echo "$?")
+
+		if [ "$GETOUT" != 0 ]; then
+
+		exit
+
+		fi
+
+
+	$MX_EDITOR $ROFIPATH/$EDITTHEMECOPY
+
+
+else
 
 	EDITTHEME="$ROFIPATH/$EDITTHEME"
 
-fi
+	$MX_EDITOR $EDITTHEME
 
-geany $EDITTHEME
+fi
 
 exit
 
@@ -684,7 +713,7 @@ TEXTMXRM="$(gettext '\n<b><big>Rofi Manager is a tool to configure rofi themes.<
 BUTTONTHEME="$(gettext 'Change the current rofi theme')"
 BUTTONTABS="$(gettext 'Change the functions (<i>modi</i>) of the rofi tabs')"
 BUTTONRECOLOR="$(gettext 'Recolor a rofi theme based on MX-comfort')"
-BUTTONEDIT="$(gettext 'Edit a rofi theme config file')"
+BUTTONEDIT="$(gettext 'Edit a rofi theme config file in text editor')"
 
 yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=400 --fixed --form --text-align=center --text="$TEXTMXRM" --button="Help":"bash -c rofi_help" --button="gtk-close" --buttons-layout=spread \
 --field="$BUTTONTHEME:FBTN" 'bash -c rofi_theme' \
