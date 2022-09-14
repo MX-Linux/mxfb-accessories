@@ -1,7 +1,7 @@
 #!/bin/bash
 #Rofi-Manager
 #Tool to manage rofi settings
-#V.0.3c by Melber and MX Devs, 12 September 2022
+#V.0.4 by Melber and MX Devs, 14 September 2022
 #License: GPL-3.0+
 #mxrm-icon based on applications-development and applications-interfacedesign icons from papirus icon set
 
@@ -36,6 +36,16 @@ if [ ! -d $ROFIPATH/tempdir ]; then
 
 fi
 
+
+# Check if MX-comfort-rr exists, create if false
+
+if [ ! -f $ROFIPATH/MX-comfort-rr ]; then
+
+	printf "#1D2324 #CACDD0 #29353B #ffffff #29353B #CACDD0 #1D2324 #ffffff #0f56d9 #0f56d9 #ffffff MX-comfort yes" > $ROFIPATH/MX-comfort-rr
+
+fi
+
+
 # notify user and back up config.rasi if mx-rofi-manager has not already been launched
 
 if [ ! -f $ROFIPATH/MX-comfort-rr ]; then
@@ -45,7 +55,7 @@ NOW=$(date +%Y"%m%d")
 MESSAGE="$(eval_gettext 'This tool edits the rofi config file.\n\nThe existing file will be backed up as \n\n<b>$HOME/.restore/rofi/config.rasi_$NOW</b>')"
 
 ##begin message box
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=350 --height=200 --text-align=center --text="\n\n$MESSAGE\n\n" --text-align=center --center --borders=20 --button="Cancel":7 --button=$"OK to proceed?":6
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=350 --height=200 --text-align=center --text="\n\n$MESSAGE\n\n" --text-align=center --center --borders=20 --button="gtk-cancel":7 --button="$(gettext 'OK to proceed?')":6
 
 
 if [ ! "$?" = "6" ]; then
@@ -79,6 +89,29 @@ ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 source gettext.sh
 
 #################################
+#fix rasi
+
+cd $HOME/.config/rofi
+
+ROFICHECK1="$(grep "@import" config.rasi)"
+
+if [ "$ROFICHECK1" = "" ]; then
+
+sed -i "s/@import/@theme/g" config.rasi
+
+fi
+
+ROFICHECK2="$(grep "//width" config.rasi)"
+
+if [ "$ROFICHECK2" = "" ]; then
+
+sed -i 's/width\:/\/\/width\:/g' config.rasi
+sed -i 's/lines\:/\/\/lines\:/g' config.rasi
+sed -i 's/fake-transparency\:/\/\/fake-transparency\:/g' config.rasi
+
+fi
+
+#################################
 #define function rofi_preview
 rofi_preview() {
 
@@ -87,18 +120,18 @@ TEMPTHEME=$1
 ROFIPATH="$HOME/.config/rofi/themes"
 ROFIPATHUSR="/usr/share/rofi/themes"
 
-ROFIOLD="$(grep "themes" $HOME/.config/rofi/config.rasi)"
+ROFIOLD="$(grep '@theme' $HOME/.config/rofi/config.rasi | tail -1)"
 ROFIOLD=$(echo "${ROFIOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
 
 if [ ! -f $ROFIPATH/$TEMPTHEME.rasi ]; then
 
-	ROFITEMP="@import \""$ROFIPATHUSR"/"$TEMPTHEME".rasi"\"
+	ROFITEMP="@theme \""$ROFIPATHUSR"/"$TEMPTHEME".rasi"\"
 	ROFITEMP=$(echo "${ROFITEMP}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
 	else
 
-	ROFITEMP="@import \""$ROFIPATH"/"$TEMPTHEME".rasi"\"
+	ROFITEMP="@theme \""$ROFIPATH"/"$TEMPTHEME".rasi"\"
 	ROFITEMP=$(echo "${ROFITEMP}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
 fi
@@ -119,7 +152,7 @@ exit
 
 export -f rofi_preview
 
-
+#################################
 #read available themes
 
 cd $ROFIPATH
@@ -133,7 +166,6 @@ sed -i 's|.rasi||g' $ROFIPATH/tempdir/rasilist.txt
 #select theme
 
 TEXTTHEME1="$(gettext '\n<b>Select rofi theme to make current</b>
-
 Double click a theme name to open a preview rofi.\n')"
 
 NEWTHEME=$( yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTTHEME1" --width=600 --height=400 --borders=20 --center --fixed --list --no-headers --separator="" --column=Style --text-align=left --dclick-action='@bash -c "rofi_preview %s;"' < $ROFIPATH/tempdir/rasilist.txt )
@@ -151,29 +183,31 @@ fi
 
 cd $HOME/.config/rofi/
 
-ROFIOLD="$(grep "themes" $HOME/.config/rofi/config.rasi)"
+ROFIOLD="$(grep "@theme" $HOME/.config/rofi/config.rasi | tail -1)"
+ROFIOLDCOMMENT="//$ROFIOLD"
 ROFIOLD=$(echo "${ROFIOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+ROFIOLDCOMMENT=$(echo "${ROFIOLDCOMMENT}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
 
 if [ ! -f $ROFIPATH/$NEWTHEME.rasi ]; then
 
-	ROFINEW="@import \""$ROFIPATHUSR"/"$NEWTHEME".rasi"\"
-	ROFINEW=$(echo "${ROFINEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
-
+	ROFINEW="@theme \""$ROFIPATHUSR"/"$NEWTHEME".rasi"\"
+	
 else
 
-	ROFINEW="@import \""$ROFIPATH"/"$NEWTHEME".rasi"\"
-	ROFINEW=$(echo "${ROFINEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+	ROFINEW="@theme \""$ROFIPATH"/"$NEWTHEME".rasi"\"
 
 fi
 
-cd $HOME/.config/rofi
-sed -i -e "s/${ROFIOLD}/${ROFINEW}/g" config.rasi
+sed -i "s/$ROFIOLD/$ROFIOLDCOMMENT/g" config.rasi
+
+
+echo $ROFINEW >> config.rasi
 
 
 TEXTTHEME2="$(eval_gettext 'All done!\n\n<b>$NEWTHEME</b> has been set as the current rofi theme.\n\n')"
 
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text=$"$TEXTTHEME2" --text-align=center --button="OK" \
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTTHEME2" --text-align=center --button="OK" \
 
 exit
 
@@ -195,7 +229,6 @@ source gettext.sh
 
 TEXTTABS1="$(gettext '
 <b>Select which tabs rofi should display</b>
-
 drun: the MX-21 default that displays available apps
 calc: a powerful calculation engine
 run: displays all available executable files
@@ -230,7 +263,7 @@ read -r -a TEMPTABS < $ROFIPATH/tempdir/temptabs.txt
 
 NEWTABS="modi: \""$TAB0","$TAB1","$TAB2"\";"
 
-	NEWTABS=$(echo "${NEWTABS}" | sed -e "s/help/help\:\~\/.config\/rofi\/rofi-help/g" )
+	NEWTABS=$(echo "${NEWTABS}" | sed -e "s/help/help\:\/usr\/share\/rofi\/rofi-help/g" )
 	NEWTABS=$(echo "${NEWTABS}" | sed -e "s/calc/calc\:qalc/g" )
 	NEWTABS=$(echo "${NEWTABS}" | sed -e "s/,none//g" )
 
@@ -272,46 +305,6 @@ CLASS="mxrm"
 ROFIPATH="$HOME/.config/rofi/themes"
 ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 source gettext.sh
-
-
-# notify user and back up config.rasi if mxrr has not already been launched
-
-#if [ ! -f $ROFIPATH/MX-comfort-rr ]; then
-
-#NOW=$(date +%Y"%m%d")
-
-#MESSAGE="$(eval_gettext 'This tool edits the rofi config file.\n\nThe existing file will be backed up as \n\n<b>$HOME/.restore/rofi/config.rasi_$NOW</b>')"
-
-##begin message box
-#yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=350 --height=200 --text-align=center --text="\n\n$MESSAGE\n\n" --text-align=center --center --borders=20 --button="Cancel":7 --button=$"OK to proceed?":6
-
-
-#if [ ! "$?" = "6" ]; then
-
-#	exit 0
-		
-#else
-
-#mkdir -p $HOME/.restore/rofi/
-#cp $HOME/.config/rofi/config.rasi $HOME/.restore/rofi/config.rasi_$(date -d "today" +"%Y%m%d")
-#cp /usr/share/rofi/config.rasi $HOME/.config/rofi/
-#cp /usr/share/rofi/rofi-help $HOME/.config/rofi/  << LEAVE COMMENTED OUT
-#cp /usr/share/rofi/calc-help $HOME/.config/rofi/  << LEAVE COMMENTED OUT
-#cp /usr/share/mxrr/template.rasi $HOME/.config/rofi/themes/
-#cp /usr/share/mxrr/MX-comfort.rasi $HOME/.config/rofi/themes/  
-
-#fi
-#fi
-
-
-# Check if MX-comfort-rr exists, create if false
-
-if [ ! -f $ROFIPATH/MX-comfort-rr ]; then
-
-	printf "#1D2324 #CACDD0 #29353B #ffffff #29353B #CACDD0 #1D2324 #ffffff #0f56d9 #0f56d9 #ffffff MX-comfort yes" > $ROFIPATH/MX-comfort-rr
-
-fi
-
 
 #read available styles
 
@@ -486,7 +479,7 @@ if [ "$NEWNAME" = 'yes' -o "$NEWNAME" = 'no' ]; then
 
 	  NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --text="$(gettext 'No Theme name!')" --form --center --borders=20 --separator="" \
 	--field="$(gettext '<b>Name for new theme</b>')":LBL " " \
-	--field=$" " "$(gettext 'New theme name')" )
+	--field=" " "$(gettext 'New theme name')" )
     
 	GETOUT=$(echo "$?")
 
@@ -505,7 +498,7 @@ while [ -z "$NEWNAME" -o "$NEWNAME" = 'MX-comfort' -o "$NEWNAME" = 'MX-comfort-d
 
 	  NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --text="$(eval_gettext 'Theme name $NEWNAME is protected. Choose another name')" --form --center --borders=20 --separator="" \
 	--field="$(gettext '<b>Name for new style</b>')":LBL " " \
-	--field=$" " "$NEWNAME-new" )
+	--field=" " "$NEWNAME-new" )
 
     GETOUT=$(echo "$?")
 
@@ -532,7 +525,7 @@ while [ -f $NEWNAME.rasi ]; do
 
 	3) NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --form --center --borders=20 --separator="" \
     --field="$(gettext '<b>Name for new theme</b>')":LBL " " \
-    --field=$" " "$NEWNAME-new" )    ;;
+    --field=" " "$NEWNAME-new" )    ;;
 
 	252) exit 0    ;;
 
@@ -569,14 +562,17 @@ if [ "$MAKECUR" = yes ]; then
 
 	cd $HOME/.config/rofi/
 
-	ROFIOLD="$(grep "themes" $HOME/.config/rofi/config.rasi)"
+	ROFIOLD="$(grep "@theme" $HOME/.config/rofi/config.rasi | tail -1)"
+	ROFIOLDCOMMENT="//$ROFIOLD"	
 	ROFIOLD=$(echo "${ROFIOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+	ROFIOLDCOMMENT=$(echo "${ROFIOLDCOMMENT}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
-	ROFINEW="@import \""$ROFIPATH"/"$NEWNAME".rasi"\"
-	ROFINEW=$(echo "${ROFINEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
-	sed -i -e "s/${ROFIOLD}/${ROFINEW}/g" config.rasi
+	ROFINEW="@theme \""$ROFIPATH"/"$NEWNAME".rasi\""
 
+	sed -i "s/$ROFIOLD/$ROFIOLDCOMMENT/g" config.rasi
+
+	echo $ROFINEW >> config.rasi
 
 	TEXTALLDONE1="$(eval_gettext 'All done!\n<b>$NEWNAME</b> has been set as the current rofi theme.')"
 
