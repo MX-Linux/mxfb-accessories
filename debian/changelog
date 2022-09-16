@@ -1,9 +1,11 @@
-mxfb-accessories (22.09.12) UNRELEASED; urgency=medium
+mxfb-accessories (22.09.13) UNRELEASED; urgency=medium
 
   * added new mx-rofi-manager and components
   * updated other small items
+  * adjusted install targets
+  * brought up ICONPATH to top so first yad would show
 
- -- Jerry <jb@mx>  Wed, 14 Sep 2022 18:17:37 -0400
+ -- Jerry <jb@mx>  Fri, 16 Sep 2022 06:40:47 -0400
 
 mxfb-accessories (22.08.26) mx; urgency=medium
 

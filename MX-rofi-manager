@@ -16,7 +16,7 @@ export TEXTDOMAIN="mxfb-accessories"
 #define some variables
 
 ROFIPATH="$HOME/.config/rofi/themes"
-
+ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 
 #delete stylelist and tempclr after use
 trap "rm -r "$ROFIPATH/tempdir" " EXIT
