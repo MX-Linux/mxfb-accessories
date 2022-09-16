@@ -120,4 +120,5 @@ element-text {
 
 element-icon {
     size: 30;
+    background-color: inherit;
 }

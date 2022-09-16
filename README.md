@@ -39,6 +39,10 @@
 
 ![Tint2](/pix/tint2manager.png)
 
-* **mxfb-trashcheck** -- utility to check number of files in trash and manage them
+* **mxfb-trashcheck** -- Utility to check number of files in trash and manage them
 
 ![Trash](/pix/trashcheck.png)
+
+* **mx-rofi-manager** -- Allows easy manipulation of rofi settings
+
+![Rofi manager](/pix/mx-rofi-manager.png)
