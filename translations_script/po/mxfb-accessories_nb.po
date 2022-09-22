@@ -104,12 +104,12 @@ msgstr ""
 
 #: ../mxfb-look:250
 msgid "A Look with this name already exists. \\n\\nDo you want to overwrite"
-msgstr ""
+msgstr "Det finnes allerede et utseende som heter dette.\\n\\nVil du overskrive"
 
 #. all done
 #: ../mxfb-look:312
 msgid "All done!\\n\\nLook has been saved as"
-msgstr ""
+msgstr "Ferdig!\\n\\nUtseendet er lagret som"
 
 #: ../mxfb-tint2-manager:96
 msgid "Apply"
@@ -216,7 +216,7 @@ msgstr "VALGFRITT OPPSETT AV KANTSTIL"
 #: ../mxfb-look:252
 #, sh-format
 msgid "Overwrite"
-msgstr ""
+msgstr "Overskrive"
 
 #. RESTOREMAIN
 #: ../mxfb-look:501 ../mxfb-look:649
@@ -330,7 +330,7 @@ msgstr "_Tilbakestil"
 
 #: ../mxfb-timer:24 ../mxfb-look:251
 msgid "or save as a new name?"
-msgstr ""
+msgstr "eller lagre med nytt navn?"
 
 #: ../mxfb-tint2-manager:284
 msgid "time format:"

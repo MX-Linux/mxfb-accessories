@@ -33,11 +33,11 @@ msgstr ""
 #. Confirmation Window
 #: ../mxfb-separate-backgrounds:11
 msgid " Rotate Backgrounds has been disabled to avoid conflict."
-msgstr ""
+msgstr "S'ha desactivat Gira el Fons per evitar conflictes."
 
 #: ../mxfb-separate-backgrounds:13
 msgid " Selection windows will pop up  each Workspace."
-msgstr ""
+msgstr "S'obriran finestres emergents de selecció per cada Espai de Treball. "
 
 #: ../mxfb-separate-backgrounds:14
 msgid " Type \\"
@@ -45,11 +45,11 @@ msgstr "Marqueu \\ "
 
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
-msgstr ""
+msgstr "12h/24h"
 
 #: ../mxfb-look:231
 msgid "<b>Name for new style</b>"
-msgstr ""
+msgstr "<b>Nom per al nou estil</b>"
 
 #: ../mxfb-look:649
 msgid ""
@@ -58,6 +58,10 @@ msgid ""
 "Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- "
 "Wallpaper\\n- One Conky\\n\\n"
 msgstr ""
+"<b>Podeu desar l'aspecte actual o restaurar-ne un de desat</b>\\n\\nUn "
+"Aspecte es composa d'aquests elements\\n- Tema-Gtk\\n- Gtk-Icon\\n- Gtk-"
+"Font\\n- Fluxbox Style\\n- fins a dos quadres Tint2 \\n- Tema Rofi\\n- "
+"Empaperat\\n- Un Conky\\n\\n"
 
 #: ../mxfb-tiles:21
 msgid ""
@@ -99,12 +103,12 @@ msgstr ""
 
 #: ../mxfb-look:250
 msgid "A Look with this name already exists. \\n\\nDo you want to overwrite"
-msgstr ""
+msgstr "Ja hi ha un Aspecte amb aquest nom. \\n\\nEl voleu sobreescriure? "
 
 #. all done
 #: ../mxfb-look:312
 msgid "All done!\\n\\nLook has been saved as"
-msgstr ""
+msgstr "Ja està!\\n\\nL'Aspecte s'ha desat com a"
 
 #: ../mxfb-tint2-manager:96
 msgid "Apply"
@@ -112,15 +116,15 @@ msgstr "Aplica"
 
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
-msgstr ""
+msgstr "CONFIGURA LA PART SUPERIOR"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
-msgstr ""
+msgstr "Marqueu per executar, demarqueu per aturar"
 
 #: ../mxfb-timer:25
 msgid "Click \\"
-msgstr ""
+msgstr "Cliqueu \\"
 
 #: ../mxfb-tint2-manager:97
 msgid "Close"
@@ -128,11 +132,11 @@ msgstr "Tanca"
 
 #: ../mxfb-borders:21 ../mxfb-top:23
 msgid "Color Focused"
-msgstr ""
+msgstr "Color al Focus"
 
 #: ../mxfb-borders:22 ../mxfb-top:24
 msgid "Color Unfocused"
-msgstr ""
+msgstr "Color Fora de focus"
 
 #: ../mxfb-tint2-manager:98
 msgid "Config"
@@ -145,7 +149,7 @@ msgstr "Retard (minuts)"
 #. MSG_ASK=$(gettext "Do you want to remove it permanently?")
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
-msgstr ""
+msgstr "Voleu buidar la brossa?"
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
@@ -177,7 +181,7 @@ msgstr "Mode d'imatge "
 
 #: ../mxfb-look:230
 msgid "Look name "
-msgstr ""
+msgstr "Nom de l'Aspecte"
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
@@ -189,7 +193,7 @@ msgstr "Opcions múltiples per a les tecles numèriques i teclat  "
 
 #: ../mxfb-look:205
 msgid "New-Look-Name"
-msgstr ""
+msgstr "Nom del nou Aspecte"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
@@ -205,29 +209,29 @@ msgstr "D'acord en començar?"
 
 #: ../mxfb-borders:17
 msgid "OPTIONAL BORDER STYLE CONFIG"
-msgstr ""
+msgstr "CONFIGURACIÓ D'ESTIL DE LA VORA OPCIONAL"
 
 #: ../mxfb-look:252
 #, sh-format
 msgid "Overwrite"
-msgstr ""
+msgstr "Sobreescriu"
 
 #. RESTOREMAIN
 #: ../mxfb-look:501 ../mxfb-look:649
 msgid "Restore Look"
-msgstr ""
+msgstr "Restaura l'Aspecte"
 
 #: ../mxfb-look:205
 msgid "Save Look as"
-msgstr ""
+msgstr "Desa l'Aspecte com a"
 
 #: ../mxfb-look:252
 msgid "Save as different name"
-msgstr ""
+msgstr "Desa amb un nom diferent"
 
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
-msgstr ""
+msgstr "Trieu el mode de la Barra de Títol"
 
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
@@ -248,14 +252,14 @@ msgstr ""
 
 #: ../mxfb-trashcheck:31
 msgid "There are no files in the trash."
-msgstr ""
+msgstr "No hi ha fitxers a la brossa."
 
 #: ../mxfb-trashcheck:100
 #, sh-format
 msgid "There is 1 file in the trash."
 msgid_plural "There are ${COUNT} files in the trash."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hi ha un fitxer a la brossa."
+msgstr[1] "Hi ha ${COUNT} fitxers a la brossa."
 
 #: ../mxfb-tiles:10
 msgid ""
@@ -267,7 +271,7 @@ msgstr ""
 
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
-msgstr ""
+msgstr "Gestor del Tint2"
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
@@ -279,11 +283,11 @@ msgstr "\\n"
 
 #: ../mxfb-look:341
 msgid "\\n<b> Choose which look to restore</b>\\n"
-msgstr ""
+msgstr "\\n<b> Trieu quin Aspecte cal restaurar</b>\\n"
 
 #: ../mxfb-look:353
 msgid "\\n<b> You need to select a look !</b>\\n"
-msgstr ""
+msgstr "\\n<b> Cal que seleccioneu un Aspecte !</b>\\n"
 
 #. MAIN
 #: ../mxfb-look:194
@@ -291,12 +295,14 @@ msgid ""
 "\\n<b>Current Settings.\\n</b>\\n\n"
 "GTK Theme: <b>"
 msgstr ""
+"\\n<b>Paràmetres actuals.\\n</b>\\n\n"
+"Tema GTK: <b>"
 
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
 msgctxt "Stock label"
 msgid "_Apply"
-msgstr ""
+msgstr "_Aplica"
 
 #: ../mxfb-borders:27 ../mxfb-top:29
 #, sh-format
@@ -320,12 +326,12 @@ msgstr "D'ac_ord"
 #, sh-format
 msgctxt "Stock label"
 msgid "_Revert"
-msgstr ""
+msgstr "_Reverteix"
 
 #: ../mxfb-timer:24 ../mxfb-look:251
 msgid "or save as a new name?"
-msgstr ""
+msgstr "o desa amb un nom nou?"
 
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
-msgstr ""
+msgstr "Format d'hora: "

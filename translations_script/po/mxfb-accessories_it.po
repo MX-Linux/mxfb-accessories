@@ -106,12 +106,12 @@ msgstr ""
 
 #: ../mxfb-look:250
 msgid "A Look with this name already exists. \\n\\nDo you want to overwrite"
-msgstr ""
+msgstr "Un aspetto con questo nome esiste già. \\n\\nVuoi sovrascrivere"
 
 #. all done
 #: ../mxfb-look:312
 msgid "All done!\\n\\nLook has been saved as"
-msgstr ""
+msgstr "Tutto fatto!\\n\\nL'aspetto è stato salvato come"
 
 #: ../mxfb-tint2-manager:96
 msgid "Apply"
@@ -217,7 +217,7 @@ msgstr "CONFIGURAZIONE OPZIONALE STILE DEL BORDO"
 #: ../mxfb-look:252
 #, sh-format
 msgid "Overwrite"
-msgstr ""
+msgstr "Sovrascrivi"
 
 #. RESTOREMAIN
 #: ../mxfb-look:501 ../mxfb-look:649
@@ -334,7 +334,7 @@ msgstr "_Ritorna"
 
 #: ../mxfb-timer:24 ../mxfb-look:251
 msgid "or save as a new name?"
-msgstr ""
+msgstr "o salva come nuovo nome?"
 
 #: ../mxfb-tint2-manager:284
 msgid "time format:"

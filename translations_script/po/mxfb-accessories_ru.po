@@ -108,12 +108,12 @@ msgstr ""
 
 #: ../mxfb-look:250
 msgid "A Look with this name already exists. \\n\\nDo you want to overwrite"
-msgstr ""
+msgstr "Вид с таким названием уже существует. \\n\\nХотите перезаписать"
 
 #. all done
 #: ../mxfb-look:312
 msgid "All done!\\n\\nLook has been saved as"
-msgstr ""
+msgstr "Готово!\\n\\nВид был сохранён в"
 
 #: ../mxfb-tint2-manager:96
 msgid "Apply"
@@ -158,7 +158,7 @@ msgstr "Хотите очистить корзину?"
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
-msgstr "Редактировать"
+msgstr "Править"
 
 #: ../mxfb-timer:23
 msgid "Enter local time"
@@ -219,7 +219,7 @@ msgstr "НЕОБЯЗАТЕЛЬНАЯ НАСТРОЙКА СТИЛЯ ГРАНИЦ�
 #: ../mxfb-look:252
 #, sh-format
 msgid "Overwrite"
-msgstr ""
+msgstr "Перезаписать"
 
 #. RESTOREMAIN
 #: ../mxfb-look:501 ../mxfb-look:649
@@ -335,7 +335,7 @@ msgstr "_Вернуть"
 
 #: ../mxfb-timer:24 ../mxfb-look:251
 msgid "or save as a new name?"
-msgstr ""
+msgstr "или сохранить с новым именем?"
 
 #: ../mxfb-tint2-manager:284
 msgid "time format:"

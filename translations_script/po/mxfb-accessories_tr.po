@@ -7,6 +7,7 @@
 # Caner Başaran <basaran.caner@gmail.com>, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2022
 # mahmut özcan <mahmutozcan@protonmail.com>, 2022
+# Mehmet Akif 9oglu, 2022
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-22 18:34-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: mahmut özcan <mahmutozcan@protonmail.com>, 2022\n"
+"Last-Translator: Mehmet Akif 9oglu, 2022\n"
 "Language-Team: Turkish (https://www.transifex.com/anticapitalista/teams/10162/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,11 +35,11 @@ msgstr ""
 #. Confirmation Window
 #: ../mxfb-separate-backgrounds:11
 msgid " Rotate Backgrounds has been disabled to avoid conflict."
-msgstr ""
+msgstr "Çakışmayı önlemek için Arka Planları Döndür devre dışı bırakıldı."
 
 #: ../mxfb-separate-backgrounds:13
 msgid " Selection windows will pop up  each Workspace."
-msgstr ""
+msgstr "Seçim pencereleri her Çalışma Alanında açılır."
 
 #: ../mxfb-separate-backgrounds:14
 msgid " Type \\"
@@ -50,7 +51,7 @@ msgstr "12h/24h"
 
 #: ../mxfb-look:231
 msgid "<b>Name for new style</b>"
-msgstr ""
+msgstr "<b>Yeni stilin adı</b>"
 
 #: ../mxfb-look:649
 msgid ""
@@ -59,6 +60,10 @@ msgid ""
 "Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- "
 "Wallpaper\\n- One Conky\\n\\n"
 msgstr ""
+"<b>Mevcut görünümü kaydedebilir veya kaydedilmiş olanı geri "
+"yükleyebilirsiniz.</b>\\n\\nBir görünüm aşağıdaki unsurlardan oluşur\\n- "
+"Gtk-Teması\\n- Gtk-Simgesi\\n- Gtk-Yazıtipi\\n- Fluxbox Stili\\n- iki kadar "
+"Tint2 Paneli\\n- Rofi Teması\\n- Duvar kağıdı\\n- Bir Conky\\n\\n"
 
 #: ../mxfb-tiles:21
 msgid ""
@@ -100,12 +105,12 @@ msgstr ""
 
 #: ../mxfb-look:250
 msgid "A Look with this name already exists. \\n\\nDo you want to overwrite"
-msgstr ""
+msgstr "Bu ada sahip bir Görünüm zaten var. \\n\\nÜzerine yazmak istiyor musunuz"
 
 #. all done
 #: ../mxfb-look:312
 msgid "All done!\\n\\nLook has been saved as"
-msgstr ""
+msgstr "Her şey tamamlandı!\\n\\nGörünüm şu şekilde kaydedildi:"
 
 #: ../mxfb-tint2-manager:96
 msgid "Apply"
@@ -113,11 +118,11 @@ msgstr "Uygula"
 
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
-msgstr ""
+msgstr "ÜSTÜ YAPILANDIR"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
-msgstr ""
+msgstr "Çalıştırmak için işaretleyin, durdurmak için işareti kaldırın"
 
 #: ../mxfb-timer:25
 msgid "Click \\"
@@ -129,11 +134,11 @@ msgstr "Kapat"
 
 #: ../mxfb-borders:21 ../mxfb-top:23
 msgid "Color Focused"
-msgstr ""
+msgstr "Odak Rengi"
 
 #: ../mxfb-borders:22 ../mxfb-top:24
 msgid "Color Unfocused"
-msgstr ""
+msgstr "Odaklanmamış Rengi"
 
 #: ../mxfb-tint2-manager:98
 msgid "Config"
@@ -146,7 +151,7 @@ msgstr "Gecikme (dakika)"
 #. MSG_ASK=$(gettext "Do you want to remove it permanently?")
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
-msgstr ""
+msgstr "Çöpü boşaltmak ister misin?"
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
@@ -178,7 +183,7 @@ msgstr "Resim kipi"
 
 #: ../mxfb-look:230
 msgid "Look name "
-msgstr ""
+msgstr "Görünüm adı"
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
@@ -190,7 +195,7 @@ msgstr "Sayı tuşları ve klavye için çoklu seçenekler"
 
 #: ../mxfb-look:205
 msgid "New-Look-Name"
-msgstr ""
+msgstr "Yeni-Görünüm-Adı"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
@@ -206,29 +211,29 @@ msgstr "Devam etmek için hazır mısınız?"
 
 #: ../mxfb-borders:17
 msgid "OPTIONAL BORDER STYLE CONFIG"
-msgstr ""
+msgstr "İSTEĞE BAĞLI KENAR STİLİ YAPILANDIRMASI"
 
 #: ../mxfb-look:252
 #, sh-format
 msgid "Overwrite"
-msgstr ""
+msgstr "Üzerine yaz"
 
 #. RESTOREMAIN
 #: ../mxfb-look:501 ../mxfb-look:649
 msgid "Restore Look"
-msgstr ""
+msgstr "Görünümü Geri Yükle"
 
 #: ../mxfb-look:205
 msgid "Save Look as"
-msgstr ""
+msgstr "Gürünümü Farklı Kaydet"
 
 #: ../mxfb-look:252
 msgid "Save as different name"
-msgstr ""
+msgstr "Farklı isimle kaydet"
 
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
-msgstr ""
+msgstr "Başlık çubuğu modunu seçin"
 
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
@@ -247,14 +252,14 @@ msgstr "Kod başarıyla eklendi. Şimdi döşemeyi yapmanın 3 yöntemi var</b>"
 
 #: ../mxfb-trashcheck:31
 msgid "There are no files in the trash."
-msgstr ""
+msgstr "Çöp kutusunda dosya yok."
 
 #: ../mxfb-trashcheck:100
 #, sh-format
 msgid "There is 1 file in the trash."
 msgid_plural "There are ${COUNT} files in the trash."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Çöp kutusunda 1 dosya var."
+msgstr[1] "Çöp kutusunda ${COUNT} dosya var."
 
 #: ../mxfb-tiles:10
 msgid ""
@@ -266,7 +271,7 @@ msgstr ""
 
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
-msgstr ""
+msgstr "Tint2 Yönetici"
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
@@ -278,11 +283,11 @@ msgstr "\\n"
 
 #: ../mxfb-look:341
 msgid "\\n<b> Choose which look to restore</b>\\n"
-msgstr ""
+msgstr "\\n<b> Geri yüklenecek görünümü seç</b>\\n"
 
 #: ../mxfb-look:353
 msgid "\\n<b> You need to select a look !</b>\\n"
-msgstr ""
+msgstr "\\n<b> Bir görünüm seçmelisiniz !</b>\\n"
 
 #. MAIN
 #: ../mxfb-look:194
@@ -290,12 +295,14 @@ msgid ""
 "\\n<b>Current Settings.\\n</b>\\n\n"
 "GTK Theme: <b>"
 msgstr ""
+"\\n<b>Geçerli Ayarlar.\\n</b>\\n\n"
+"GTK Teması: <b>"
 
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
 msgctxt "Stock label"
 msgid "_Apply"
-msgstr ""
+msgstr "_Uygula"
 
 #: ../mxfb-borders:27 ../mxfb-top:29
 #, sh-format
@@ -319,12 +326,12 @@ msgstr "_Tamam"
 #, sh-format
 msgctxt "Stock label"
 msgid "_Revert"
-msgstr ""
+msgstr "_GeriAl"
 
 #: ../mxfb-timer:24 ../mxfb-look:251
 msgid "or save as a new name?"
-msgstr ""
+msgstr "veya yeni bir ad olarak kaydet?"
 
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
-msgstr ""
+msgstr "saat biçimi:"

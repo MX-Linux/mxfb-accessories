@@ -59,8 +59,10 @@ FILE="$HOME/.fluxbox/submenus/full_menu"
 lang=$(locale | grep LANG | cut -d= -f2 | cut -d_ -f1)
 #Loop through all .desktop files in the applications folder
 #lang=fr
-for file in /usr/share/applications/*.desktop
+for file in /usr/share/applications/*.desktop $HOME/.local/share/applications/*.desktop /var/lib/flatpak/exports/share/applications/*.desktop $HOME/.local/share/flatpak/exports/share/applications/*.desktop
 do
+
+if [ -e "$file" ]; then
 name1=$(grep -o -m 1 '^Name=.*' $file)
  ### localized menu entries generator (slows the script down, but produces nearly perfect localized menus):
     name2=$name1
@@ -85,6 +87,7 @@ terminal=$(grep -o -m 1 'Terminal=.*' $file)
     Note="not adding this entry to menu because it has a nodisplay flag"
    else
     echo "[exec] ("$name ")" "{" $command "}" $categories
+  fi
   fi
 done > /tmp/list.txt
 sort /tmp/list.txt > ~/.fluxbox/pre-global-menu.txt
