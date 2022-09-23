@@ -63,26 +63,26 @@ for file in /usr/share/applications/*.desktop $HOME/.local/share/applications/*.
 do
 
 if [ -e "$file" ]; then
-name1=$(grep -o -m 1 '^Name=.*' $file)
+name1=$(grep -o -m 1 '^Name=.*' "$file")
  ### localized menu entries generator (slows the script down, but produces nearly perfect localized menus):
     name2=$name1
-	translated_name1=$(grep -o -m 1 "^Name\[$lang\]=.*" $file)
+	translated_name1=$(grep -o -m 1 "^Name\[$lang\]=.*" "$file")
 	[ -z "$translated_name1" ] && note="No localized name found, using the original one" || name2=$translated_name1
 	#if the desktop file has the string "Desktop Action" simple use the original untranslated name, to avoid using a translation that's not the name of the app, but the action it does
-	grep -q "Desktop Action" $file && name2=$name1
+	grep -q "Desktop Action" "$file" && name2=$name1
     name1=$name2
 ### end of localized menu entries generator	 
 
 name=$(echo $name1|sed 's/.*\=//') 
-command1=$(grep -o -m 1 'Exec=.*' $file)
+command1=$(grep -o -m 1 'Exec=.*' "$file")
 command=$(echo $command1|sed -E 's/Exec\=//g')
-terminal=$(grep -o -m 1 'Terminal=.*' $file)
+terminal=$(grep -o -m 1 'Terminal=.*' "$file")
   if [[ $terminal == *"true"* ]]; then
    command=$(echo xfce4-terminal -e $command1|sed -E 's/Exec\=//g') 
   fi
- categories=$(grep -o -m 1 'Categories=.*' $file)
+ categories=$(grep -o -m 1 'Categories=.*' "$file")
 
- nodisplay=$(grep -o -m 1 'NoDisplay=.*' $file)
+ nodisplay=$(grep -o -m 1 'NoDisplay=.*' "$file")
   if [[ $nodisplay == *"rue"* ]]; then
     Note="not adding this entry to menu because it has a nodisplay flag"
    else
