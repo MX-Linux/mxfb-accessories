@@ -228,14 +228,14 @@ ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 source gettext.sh
 
 TEXTTABS1="$(gettext '
-<b>Select which tabs rofi should display</b>
-drun: the MX-21 default that displays available apps
-calc: a powerful calculation engine
-run: displays all available executable files
-ssh: opens a secure shell
-window: enables easy switching
-help: a set of links about using rofi
-none: tab will not be shown
+<b>Select which tabs rofi should display</b>')
+drun: $(gettext 'the MX-21 default that displays available apps')
+calc: $(gettext 'a powerful calculation engine')
+run: $(gettext 'displays all available executable files')
+ssh: $(gettext 'opens a secure shell')
+window: $(gettext 'enables easy switching')
+help: $(gettext 'a set of links about using rofi')
+none: $(gettext 'tab will not be shown')
 \n')"
 
 TABS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTTABS1" --text-align=left --height=400 --width=600 --borders=20 --center --separator=" " --form --columns=3 --button="gtk-cancel":1 --button="gtk-ok":0 \
