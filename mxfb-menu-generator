@@ -59,10 +59,24 @@ FILE="$HOME/.fluxbox/submenus/full_menu"
 lang=$(locale | grep LANG | cut -d= -f2 | cut -d_ -f1)
 #Loop through all .desktop files in the applications folder
 #lang=fr
-for file in /usr/share/applications/*.desktop $HOME/.local/share/applications/*.desktop /var/lib/flatpak/exports/share/applications/*.desktop $HOME/.local/share/flatpak/exports/share/applications/*.desktop
+
+LIST="/usr/share/applications/*.desktop"
+if [ -f "/var/lib/flatpak/exports/share/applications/*.desktop" ]; then
+	LIST="$LIST /var/lib/flatpak/exports/share/applications/*.desktop"
+fi
+
+if [ -f "$HOME/.local/share/applications/*.desktop" ]; then
+	LIST="$LIST $HOME/.local/share/applications/*.desktop"
+fi
+
+if [ -f "$HOME/.local/share/flatpak/exports/share/applications/*.desktop" ]; then
+	LIST="$LIST $HOME/.local/share/flatpak/exports/share/applications/*.desktop"
+fi
+
+for file in $LIST
 do
 
-if [ -e "$file" ]; then
+if [ -f "$file" ]; then
 name1=$(grep -o -m 1 '^Name=.*' "$file")
  ### localized menu entries generator (slows the script down, but produces nearly perfect localized menus):
     name2=$name1
