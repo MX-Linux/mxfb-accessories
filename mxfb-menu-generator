@@ -61,18 +61,19 @@ lang=$(locale | grep LANG | cut -d= -f2 | cut -d_ -f1)
 #lang=fr
 
 LIST="/usr/share/applications/*.desktop"
-if [ -f "/var/lib/flatpak/exports/share/applications/*.desktop" ]; then
+
+if [ -n "$(find /var/lib/flatpak/exports/share/applications/ -name *.desktop 2>/dev/null)" ]; then
 	LIST="$LIST /var/lib/flatpak/exports/share/applications/*.desktop"
 fi
 
-if [ -f "$HOME/.local/share/applications/*.desktop" ]; then
-	LIST="$LIST $HOME/.local/share/applications/*.desktop"
+if [ -n "$(find $HOME/.local/share/applications/ -name *.desktop 2>/dev/null)" ]; then
+    LIST="$LIST $HOME/.local/share/applications/*.desktop"
 fi
 
-if [ -f "$HOME/.local/share/flatpak/exports/share/applications/*.desktop" ]; then
-	LIST="$LIST $HOME/.local/share/flatpak/exports/share/applications/*.desktop"
+if [ -n "$(find $HOME/.local/share/flatpak/exports/share/applications/ -name *.desktop 2>/dev/null)" ]; then
+    LIST="$LIST $HOME/.local/share/flatpak/exports/share/applications/*.desktop"
 fi
-
+ 
 for file in $LIST
 do
 
