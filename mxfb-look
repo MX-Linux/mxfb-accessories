@@ -1,29 +1,27 @@
 #!/bin/bash
 #MXFB-Look is a tool to save and restore desktop setups in MX-Linux Fluxbox
-#V.0.8 by Melber and MX Devs 17 August 2022
+#V.1.0 by Melber and MX Devs 26 September 2022
 #License: GPL-3.0+
 #mxcr-icon based on yad icon from papirus icon set
 
 ##Changelog##
-#added- check nitrogen or feh in fb-startup, enable setting wallpaper with feh
-#fixed- disallow empty selection for restore look, conky toggle status display, empty space in look name
-#inserted code to copy Default look image from installation location
-#added localization prompts
+#added gettext localization, fixed rofi
 
 # add locale
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="mxfb-accessories"
+source gettext.sh
 
 #define some variables
 
-TITLE="MXFB-Look"
+TITLE="$(gettext 'MXFB-Look')"
 CLASS="mxfblook"
 MXLKPATH="$HOME/.config/MX-Linux/mxfb-look"
 ICONPATH="/usr/share/pixmaps/mxcr-icon.png"
 
 
 #delete stylelist and tempclr after use
-#trap "rm -r "$MXLKPATH/tempdir" " EXIT
+trap "rm -r "$MXLKPATH/tempdir" " EXIT
 
 #create path
 if [ ! -d $MXLKPATH ]; then
@@ -53,7 +51,7 @@ fi
 
 if [ ! -f $MXLKPATH/looks/MXFB-default.look ]; then
 
-printf "gtk-theme-name=mx-comfort\ngtk-icon-theme-name=Papirus-mxblue-darkpanes\ngtk-font-name=Sans 11\ngtk-theme-name=\"mx-comfort\"\ngtk-icon-theme-name=\"Papirus-mxblue-darkpanes\"\ngtk-font-name=\"Sans 11\"\nsession.styleFile: ~/.fluxbox/styles/MX-comfort\n1\n$\HOME/.config/tint2/tint2rc\nNone\n@import \"/usr/share/rofi/themes/glue_pro_blue.rasi\"\nfile=/usr/share/backgrounds/Honesty.jpg\ncd \"/home/\$USER/.conky/MX-CowonBlue\"\nconky -c \"/home/\$USER/.conky/MX-CowonPink/MX-Cowon_pink_roboto\" &\nHidden=false" > $MXLKPATH/looks/MXFB-default.look
+printf "gtk-theme-name=mx-comfort\ngtk-icon-theme-name=Papirus-mxblue-darkpanes\ngtk-font-name=Sans 11\ngtk-theme-name=\"mx-comfort\"\ngtk-icon-theme-name=\"Papirus-mxblue-darkpanes\"\ngtk-font-name=\"Sans 11\"\nsession.styleFile: ~/.fluxbox/styles/MX-comfort\n1\n$\HOME/.config/tint2/tint2rc\nNone\n@theme \"$HOME/.config/rofi/themes/MX-comfort.rasi\"\nfile=/usr/share/backgrounds/Honesty.jpg\ncd \"/home/\$USER/.conky/MX-CowonBlue\"\nconky -c \"/home/\$USER/.conky/MX-CowonPink/MX-Cowon_pink_roboto\" &\nHidden=false" > $MXLKPATH/looks/MXFB-default.look
 
 fi
 
@@ -66,16 +64,40 @@ cp /usr/share/pixmaps/MXFB-default.png $MXLKPATH/looks/
 fi
 
 #################################
+#fix rasi
+
+cd $HOME/.config/rofi
+
+ROFICHECK1="$(grep "@import" config.rasi)"
+
+if [ "$ROFICHECK1" = "" ]; then
+
+sed -i "s/@import/@theme/g" config.rasi
+
+fi
+
+ROFICHECK2="$(grep "//width" config.rasi)"
+
+if [ "$ROFICHECK2" = "" ]; then
+
+sed -i 's/width\:/\/\/width\:/g' config.rasi
+sed -i 's/lines\:/\/\/lines\:/g' config.rasi
+sed -i 's/fake-transparency\:/\/\/fake-transparency\:/g' config.rasi
+
+fi
+
+#################################
 # function save look
 
 save_look() {
 #define some variables
 
-TITLE="MXFB-Look"
+TITLE="$(gettext 'MXFB-Look')"
 CLASS="mxfblook"
 MXLKPATH="$HOME/.config/MX-Linux/mxfb-look"
 ICONPATH="/usr/share/pixmaps/mxcr-icon.png"
 
+source gettext.sh
 
 #read current look components
 
@@ -107,7 +129,7 @@ LKTINT2="None"
 fi
 
 #rofi
-LKROFI="$(grep "themes" $HOME/.config/rofi/config.rasi)"
+LKROFI="$(grep '@theme' $HOME/.config/rofi/config.rasi | tail -1)"
 
 #background
 CHECKFEH=$(grep '#nitrogen' $HOME/.fluxbox/startup)
@@ -149,7 +171,7 @@ sed -i "s/gtk-icon-theme-name\=/ /g" looktmp.txt
 sed -i "s/gtk-font-name\=/ /g" looktmp.txt
 sed -i "s/session\.styleFile\:/ /g" looktmp.txt
 sed -i "s/\$HOME\/\.config\/tint2\// /g" looktmp.txt
-sed -i "s/\@import//g" looktmp.txt
+sed -i "s/\@theme//g" looktmp.txt
 sed -i "s/file\=/ /g" looktmp.txt
 sed -i "s/\"//g" looktmp.txt
 sed -i "s/cd //g" looktmp.txt
@@ -178,31 +200,44 @@ LKRO=$(echo "${LKRO}" | sed -e "s/ //g" )
 LKCOSTSV=$(echo "${LKCOST}" | sed -e 's/Hidden=//g' | sed -e "s/\ //g" )
 
 if [ -z "$LKCO1" ]; then
-LKCO1="None"
+LKCO1="$(gettext 'None')"
 fi
 
 if [ $LKCOSTSV = "false" ]; then
-LKCOSTSV="toggled on"
+LKCOSTSV="$(gettext 'toggled on')"
 else
-LKCOSTSV="toggled off"
+LKCOSTSV="$(gettext 'toggled off')"
 fi
 
 
 #MAIN
 
-MAIN=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=400 --fixed --form --columns=1 --align=left --separator="" --button="gtk-quit":1 --button="Save Look":0 \
---text=$"\n<b>Current Settings.\n</b>\n
-GTK Theme: <b>"$LKTH"</b>\n
-Gtk Icons: <b>"$LKIC"</b>\n
-Gtk Font: <b>"$LKFO"</b>\n
-Fluxbox Style: <b>"$LKFS"</b>\n
-1st Tint2 Panel: <b>"$LKTI1"</b>\n
-2nd Tint2 Panel: <b>"$LKTI2"</b>\n
-Rofi Theme: <b>"$LKRO"</b>\n
-Wallpaper: <b>"$LKBG"</b>\n
-Conky: <b>"$LKCO1"</b>\n
-Conky State: <b>"$LKCOSTSV"</b>\n"
---field=$"Save Look as" $"New-Look-Name"\
+TEXTMAIN0="$(gettext 'Current Settings')"
+TEXTMAIN1="$(gettext 'GTK Theme')"
+TEXTMAIN2="$(gettext 'GTK Icons')"
+TEXTMAIN3="$(gettext 'GTK Font')"
+TEXTMAIN4="$(gettext 'Fluxbox Style')"
+TEXTMAIN5="$(gettext '1st Tint2 Panel')"
+TEXTMAIN6="$(gettext '2nd Tint2 Panel')"
+TEXTMAIN7="$(gettext 'Rofi Theme')"
+TEXTMAIN8="$(gettext 'Wallpaper')"
+TEXTMAIN9="$(gettext 'Conky')"
+TEXTMAIN10="$(gettext 'Conky State')"
+
+
+MAIN=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=400 --fixed --form --columns=1 --align=left --separator="" --button="gtk-quit":1 --button="$(gettext 'Save Look')":0 \
+--text=$"\n<b>"$TEXTMAIN0".\n</b>\n
+"$TEXTMAIN1": <b>"$LKTH"</b>\n
+"$TEXTMAIN2": <b>"$LKIC"</b>\n
+"$TEXTMAIN3": <b>"$LKFO"</b>\n
+"$TEXTMAIN4": <b>"$LKFS"</b>\n
+"$TEXTMAIN5": <b>"$LKTI1"</b>\n
+"$TEXTMAIN6": <b>"$LKTI2"</b>\n
+"$TEXTMAIN7": <b>"$LKRO"</b>\n
+"$TEXTMAIN8": <b>"$LKBG"</b>\n
+"$TEXTMAIN9": <b>"$LKCO1"</b>\n
+"$TEXTMAIN10": <b>"$LKCOSTSV"</b>\n"
+--field="$(eval_gettext 'Save Look as')" $"New-Look-Name"\
 )
 NEWNAME=$("${MAIN[@]}")
 (($?==0)) && echo "$NEWNAME" > $MXLKPATH/tempdir/tempname.txt
@@ -227,8 +262,8 @@ NEWNAME=$(echo "$NEWNAME" | sed -e 's/ /-/g')
 
 while [ -z "$NEWNAME" -o "$NEWNAME" = 'MXFB-default' ]; do
 
-  NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --text=$"Look name "$NEWNAME" is protected. Choose another name." --form --center --borders=20 --separator="" \
-  --field=$"<b>Name for new style</b>":LBL " " \
+  NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --text="$(eval_gettext 'Look name $NEWNAME is protected. Choose another name.')" --form --center --borders=20 --separator="" \
+  --field="$(gettext '<b>Name for new style</b>')":LBL " " \
   --field=$" " "$NEWNAME-new" )
 
     GETOUT=$(echo "$?")
@@ -247,16 +282,15 @@ done
 cd $MXLKPATH/looks
 
 while [ -f $NEWNAME.look ]; do
-message=$"A Look with this name already exists. \n\nDo you want to overwrite"
-message2=$"or save as a new name?"
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --fixed --text="$message $NEWNAME $message2" --button=$"Overwrite":2 --button=$"Save as different name":3 --text-align=center --center --borders=20\
+message="$(eval_gettext 'A Look with this name already exists.\n\nDo you want to overwrite $NEWNAME or save as a new name?\n')"
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --fixed --text="$message" --button="$(eval_gettext 'Overwrite $NEWNAME')":2 --button="$(gettext 'Save as different name')":3 --text-align=center --center --borders=20\
 
 case $? in
 
 2) rm -r $MXLKPATH/looks/$NEWNAME.look ;;
 
 3) NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --form --center --borders=20 --separator="" \
---field="$<b>Name for New Look</b>":LBL " " \
+--field="$(gettext '<b>Name for New Look</b>')":LBL " " \
 --field=$" " "$NEWNAME-new" )    ;;
 
 252) exit 0    ;;
@@ -277,7 +311,7 @@ session.styleFile: "$LKFS"
 "$TINTNUM"
 "$LKTINT1"
 "$LKTINT2"
-@import \""$LKRO"\"
+@theme \""$LKRO"\"
 "$LKBACK"
 "$LKCONK1"
 "$LKCONK2"
@@ -309,8 +343,9 @@ done
 
 
 #all done
-message=$"All done!\n\nLook has been saved as"
-  yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=250 --fixed --center --borders=20 --text="$message <b>$NEWNAME</b>" --text-align=center --button="OK" \
+ALLDONE="$(eval_gettext 'All done!\n\nLook has been saved as <b>$NEWNAME</b>')"
+
+  yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=250 --fixed --center --borders=20 --text="$ALLDONE" --text-align=center --button="gtk-ok" \
 
 exit
 }
@@ -323,11 +358,12 @@ exit
 restore_look() {
 #define some variables
 
-TITLE="MXFB-Look"
+TITLE="$(gettext 'MXFB-Look')"
 CLASS="mxfblook"
 MXLKPATH="$HOME/.config/MX-Linux/mxfb-look"
 ICONPATH="/usr/share/pixmaps/mxcr-icon.png"
 
+source gettext.sh
 
 #read saved looks
 cd $MXLKPATH/looks
@@ -338,7 +374,7 @@ ls -f *.look > $MXLKPATH/tempdir/looklist.txt
 
 while [ -z "$LOOKRESTORE" ]; do
 
-LOOKRESTORE=$( yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text=$"\n<b> Choose which look to restore</b>\n" --center --width=400 --height=300 --center --list --no-headers --column=Style --separator="" < $MXLKPATH/tempdir/looklist.txt )
+LOOKRESTORE=$( yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$(gettext '\n<b> Choose which look to restore</b>\n')" --center --width=400 --height=300 --center --list --no-headers --column=Style --separator="" < $MXLKPATH/tempdir/looklist.txt )
 
 GETOUT=$(echo "$?")
 
@@ -350,7 +386,7 @@ fi
 
 if [ -z "$LOOKRESTORE" ]; then
 
-  yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text=$"\n<b> You need to select a look !</b>\n" --center  --width=400 --height=300 
+  yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$(gettext '\n<b> You need to select a look !</b>\n')" --center  --width=400 --height=300 
 
 fi
 
@@ -372,7 +408,8 @@ LKFSNEW="${LKRE[6]}"
 TINTNUMNEW="${LKRE[7]}"
 LKTINT1NEW="${LKRE[8]}"
 LKTINT2NEW="${LKRE[9]}"
-LKROFINEW="${LKRE[10]}"
+LKROFINEW1="${LKRE[10]}"
+LKROFINEW2=$LKROFINEW1
 LKBACKNEW="${LKRE[11]}"
 LKCONK1NEW="${LKRE[12]}"
 LKCONK2NEW="${LKRE[13]}"
@@ -387,7 +424,7 @@ LKFONTNEW2=$(echo "${LKFONTNEW2}" | sed -e 's/[]$ .*[\^]/\\&/g' )
 LKFSNEW=$(echo "${LKFSNEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 LKTINT1NEW=$(echo "${LKTINT1NEW}" | sed -e 's/$HOME/\$HOME/g' )
 LKTINT2NEW=$(echo "${LKTINT2NEW}" | sed -e 's/$HOME/\$HOME/g' )
-LKROFINEW=$(echo "${LKROFINEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+LKROFINEW1=$(echo "${LKROFINEW1}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 LKBACKNEW=$(echo "${LKBACKNEW}" | sed -e 's/[]$ \/*[\^]/\\&/g' )
 
 #read current look components
@@ -408,7 +445,7 @@ LKTINT1OLD="$(grep "tint2" $HOME/.config/tint2/tint2-sessionfile | sed -n 1p)"
 LKTINT2OLD="$(grep "tint2" $HOME/.config/tint2/tint2-sessionfile | sed -n 2p)"
 
 #rofi
-LKROFIOLD="$(grep "themes" $HOME/.config/rofi/config.rasi)"
+LKROFIOLD="$(grep '@theme' $HOME/.config/rofi/config.rasi | tail -1)"
 
 #background
 CHECKFEH=$(grep '#nitrogen' $HOME/.fluxbox/startup)
@@ -430,7 +467,7 @@ LKICONOLD2=$(echo "${LKICONOLD2}" | sed -e 's/[]$ .*[\^]/\\&/g' )
 LKFONTOLD2=$(echo "${LKFONTOLD2}" | sed -e 's/[]$ .*[\^]/\\&/g' )
 LKFSOLD=$(echo "${LKFSOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 #LKTINTOLD=$(echo "${LKTINTOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
-LKROFIOLD=$(echo "${LKROFIOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+#LKROFIOLD=$(echo "${LKROFIOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 LKBACKOLD=$(echo "${LKBACKOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
 #conky
@@ -438,7 +475,7 @@ LKCOSTOLD="$(grep "Hidden" "$HOME/.config/autostart/conky.desktop")"
 
 
 #make temp file
-echo ""$LKTHEMENEW"|"$LKICONNEW"|"$LKFONTNEW"|"$LKTHEMENEW2"|"$LKICONNEW2"|"$LKFONTNEW2"|"$LKFSNEW"|"$TINTNUMNEW"|"$LKTINT1NEW"|"$LKTINT2NEW"|"$LKROFINEW"|"$LKBACKNEW"|"$LKCONK1NEW"|"$LKCONK2NEW"|"$LKCOSTNEW"" > $MXLKPATH/tempdir/looktmp-new.txt
+echo ""$LKTHEMENEW"|"$LKICONNEW"|"$LKFONTNEW"|"$LKTHEMENEW2"|"$LKICONNEW2"|"$LKFONTNEW2"|"$LKFSNEW"|"$TINTNUMNEW"|"$LKTINT1NEW"|"$LKTINT2NEW"|"$LKROFINEW1"|"$LKBACKNEW"|"$LKCONK1NEW"|"$LKCONK2NEW"|"$LKCOSTNEW"" > $MXLKPATH/tempdir/looktmp-new.txt
 
 #amend temp
 cd $MXLKPATH/tempdir
@@ -448,7 +485,7 @@ sed -i "s/gtk-icon-theme-name\=/ /g" looktmp-new.txt
 sed -i "s/gtk-font-name\=/ /g" looktmp-new.txt
 sed -i "s/session\.styleFile\:/ /g" looktmp-new.txt
 sed -i "s/\$HOME\/\.config\/tint2\// /g" looktmp-new.txt
-sed -i "s/\@import/ /g" looktmp-new.txt
+sed -i "s/\@theme/ /g" looktmp-new.txt
 sed -i "s/file\=//g" looktmp-new.txt
 sed -i "s/\"/ /g" looktmp-new.txt
 sed -i "s/cd //g" looktmp-new.txt
@@ -488,9 +525,9 @@ fi
 NLKCOST=$(echo "${NLKCOST}" | sed -e 's/Hidden=//g' | sed -e "s/\ //g" )
 
 if [ $NLKCOST = "false" ]; then
-COST="toggled on"
+COST="$(gettext 'toggled on')"
 else
-COST="toggled off"
+COST="$(gettext 'toggled off')"
 fi
 
 PREVIEW="$MXLKPATH/looks/$LOOKRESTORE"
@@ -498,19 +535,32 @@ PREVIEW=$(echo "${PREVIEW}" | sed -e "s/\.look/\.png/g" )
 
 #RESTOREMAIN
 
+TEXTRESTORE0="$(eval_gettext '<b>$LOOKRESTORE</b>\n')"
+TEXTRESTORE1="$(gettext 'GTK Theme')"
+TEXTRESTORE2="$(gettext 'GTK Icons')"
+TEXTRESTORE3="$(gettext 'GTK Font')"
+TEXTRESTORE4="$(gettext 'Fluxbox Style')"
+TEXTRESTORE5="$(gettext '1st Tint2 Panel')"
+TEXTRESTORE6="$(gettext '2nd Tint2 Panel')"
+TEXTRESTORE7="$(gettext 'Rofi Theme')"
+TEXTRESTORE8="$(gettext 'Wallpaper')"
+TEXTRESTORE9="$(gettext 'Conky')"
+TEXTRESTORE10="$(gettext 'Conky State')"
+TEXTRESTORE11="$(gettext 'Wait 10 seconds for the conky to restart')"
+
 yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=400 --fixed --image="$PREVIEW" --button="gtk-quit":1 --button=$"Restore Look":0 \
---text=$"<b>   "$LOOKRESTORE"</b>\n
-   GTK Theme: <b>"$NLKTH"</b>\n
-   Gtk Icons: <b>"$NLKIC"</b>\n
-   Gtk Font: <b>"$NLKFO"</b>\n
-   Fluxbox Style: <b>"$NLKFS"</b>\n
-   1st Tint2 Panel: <b>"$NLKTI1"</b>\n
-   2nd Tint2 Panel: <b>"$NLKTI2"</b>\n
-   Rofi: <b>"$NLKRO"</b>\n
-   Wallpaper: <b>"$NLKBG"</b>\n
-   Conky: <b>"$NLKCO1"</b>\n
-   Conky State: <b>"$COST"</b>\n
-   (Wait 10 seconds for the conky to restart)\n"\
+--text=$"<b>   "$TEXTRESTORE0"</b>\n
+   "$TEXTRESTORE1": <b>"$NLKTH"</b>\n
+   "$TEXTRESTORE2": <b>"$NLKIC"</b>\n
+   "$TEXTRESTORE3": <b>"$NLKFO"</b>\n
+   "$TEXTRESTORE4": <b>"$NLKFS"</b>\n
+   "$TEXTRESTORE5": <b>"$NLKTI1"</b>\n
+   "$TEXTRESTORE6": <b>"$NLKTI2"</b>\n
+   "$TEXTRESTORE7": <b>"$NLKRO"</b>\n
+   "$TEXTRESTORE8": <b>"$NLKBG"</b>\n
+   "$TEXTRESTORE9": <b>"$NLKCO1"</b>\n
+   "$TEXTRESTORE10": <b>"$COST"</b>\n
+   ("$TEXTRESTORE11")\n"\
 
 GETOUT=$(echo "$?")
 
@@ -588,11 +638,22 @@ fi
 
 #rofi
 cd $HOME/.config/rofi/
-sed -i -e "s/${LKROFIOLD}/${LKROFINEW}/g" config.rasi
+
+ROFIOLDCOMMENT="//$LKROFIOLD"
+LKROFIOLD=$(echo "${LKROFIOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+ROFIOLDCOMMENT=$(echo "${ROFIOLDCOMMENT}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+sed -i "s/$LKROFIOLD/$ROFIOLDCOMMENT/g" config.rasi
+
+LKROFINEW2=$(echo "${LKROFINEW2}" | sed -e 's/@import/@theme/g' )
+
+sed -i 's/\/\/\/\/@/\/\/@/g' config.rasi
+
+echo $LKROFINEW2 >> config.rasi
 
 #background
 
-#CHECKFEH=$(grep '#nitrogen' $HOME/.fluxbox/startup)
+CHECKFEH=$(grep '#nitrogen' $HOME/.fluxbox/startup)
 
 if [ -z "$CHECKFEH" ]; then
 
@@ -646,4 +707,6 @@ exit
 
 export -f save_look restore_look
 
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text-align=center --text=$"<b>You can save the current look or restore a saved look</b>\n\nA look is comprised of the following elements\n- Gtk-Theme\n- Gtk-Icon\n- Gtk-Font\n- Fluxbox Style\n- up to two Tint2 Panels\n- Rofi Theme\n- Wallpaper\n- One Conky\n\n" --button="gtk-close" --button=$"Restore Look":"bash -c restore_look" --button="Save Current Look":"bash -c save_look" \
+TEXTMAIN="$(gettext '<b>You can save the current look or restore a saved look</b>\n\nA look is comprised of the following elements\n- Gtk-Theme\n- Gtk-Icon\n- Gtk-Font\n- Fluxbox Style\n- up to two Tint2 Panels\n- Rofi Theme\n- Wallpaper\n- One Conky\n\n')"
+
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text-align=center --text="$TEXTMAIN" --button="gtk-close" --button="$(gettext 'Restore Look')":"bash -c restore_look" --button="$(gettext 'Save Current Look')":"bash -c save_look" \
