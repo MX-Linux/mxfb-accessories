@@ -64,7 +64,9 @@ featherpad ~/.config/rofi/rofi-calc
 kill featherpad
 fi
 
-echo "ROFI"
+echo "------------------"
+echo "       ROFI       "
+echo "------------------"
 echo ">> general help"
 echo ">> calc"
 echo ">> detailed help"
@@ -72,6 +74,7 @@ echo ">> theme selector"
 echo ">> theme format"
 echo ">> recolor"
 echo ">> scripts"
-echo "-----"
-echo "MX-FLUXBOX"
+echo "------------------"
+echo "    MX-FLUXBOX    "
+echo "------------------"
 echo ">> documentation"

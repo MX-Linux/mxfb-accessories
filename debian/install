@@ -17,6 +17,7 @@ components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/
 components/mxcr-help.png usr/share/doc/mxfb-comfort/help/
 components/rofi-help usr/share/rofi
 mxfb-* usr/bin
+mx-rofi-manager usr/bin
 apt/* etc/apt/
 translations_script/mo/am/mxfb-accessories.mo     /usr/share/locale/am/LC_MESSAGES
 translations_script/mo/ar/mxfb-accessories.mo     /usr/share/locale/ar/LC_MESSAGES

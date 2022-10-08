@@ -16,7 +16,7 @@
     separatorcolor:              #0f56d9;
     background:                  #CACDD0;
     normal-background:           #1D2324;
-    selected-normal-background:  #ADD8E6;
+    selected-normal-background:  #29353B;
     alternate-normal-background: #1D2324;
     urgent-background:           #1D2324;
     selected-urgent-background:  #29353B;
