@@ -229,14 +229,14 @@ source gettext.sh
 
 TEXTTABS1="$(gettext '
 <b>Select which tabs rofi should display</b>')
-     <i>drun</i>: $(gettext 'the MX-21 default that displays available apps')
-     <i>calc</i>: $(gettext 'a powerful calculation engine')
-     <i>run</i>: $(gettext 'displays all available executable files')
-     <i>ssh</i>: $(gettext 'opens a secure shell')
-     <i>window</i>: $(gettext 'enables easy switching')
-     <i>help</i>: $(gettext 'a set of links about using rofi')
-     <i>none</i>: $(gettext 'tab will not be shown')
-\n"
+drun: $(gettext 'the MX-21 default that displays available apps')
+calc: $(gettext 'a powerful calculation engine')
+run: $(gettext 'displays all available executable files')
+ssh: $(gettext 'opens a secure shell')
+window: $(gettext 'enables easy switching')
+help: $(gettext 'a set of links about using rofi')
+none: $(gettext 'tab will not be shown')
+\n')"
 
 TABS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTTABS1" --text-align=left --height=400 --width=600 --borders=20 --center --separator=" " --form --columns=3 --button="gtk-cancel":1 --button="gtk-ok":0 \
 --field="$(gettext '1st Tab')":CB "drun!calc!run!ssh!window!help" \
