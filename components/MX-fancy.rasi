@@ -1,0 +1,235 @@
+/*******************************************************************************
+ * ROFI Color theme MX-comfort-fancy by Melber
+ * Theme based on fancy.rasi by DaveDavenport
+ ********************************************************************************/
+* {
+    foreground:                  #ffffff;
+    normal-foreground:           @foreground;
+    selected-normal-foreground:  #ffffff;
+    urgent-foreground:           #ffffff;
+    selected-urgent-foreground:  #ffffff;
+    alternate-urgent-foreground: @urgent-foreground;
+    active-foreground:           #ffffff;
+    selected-active-foreground:  #ffffff;
+    alternate-active-foreground: @active-foreground;
+    bordercolor:                 #0f56d9;
+    separatorcolor:              #0f56d9;
+    background:                  #CACDD0;
+    normal-background:           #1D2324;
+    selected-normal-background:  #29353B;
+    alternate-normal-background: #1D2324;
+    urgent-background:           #1D2324;
+    selected-urgent-background:  #29353B;
+    alternate-urgent-background: #1D2324;
+    active-background:           #1D2324;
+    selected-active-background:  #29353B;
+    alternate-active-background: #1D2324;
+}
+
+window {
+    border-color:     @normal-background;
+    background-color: @background;
+    border:           1px;
+    padding:          0px;
+    padding:          0.5em;
+    spacing:          0px;
+    anchor:         center;
+    location:       center;
+    children: [ inputbar, message, wrapper-mode-switcher, listview , pagerbox ];
+}
+
+
+pagerbox {
+    expand: false;
+    orientation: horizontal;
+    children: [ pad ];
+}
+
+pad {
+  expand: true;
+}
+
+wrapper-mode-switcher {
+    orientation: horizontal;
+
+    expand:     false;
+    spacing:    0;
+    children: [ mode-switcher ];
+}
+
+mode-switcher {
+    border:  0px;
+    spacing: 0px;
+    expand: true;
+}
+
+button {
+    padding:      2px;
+    background-color: @background;
+    border-color: @separatorcolor;
+}
+
+button selected.normal {
+    text-color: @normal-foreground;
+    background-color: @normal-background;
+
+    border:       5px 0px 0px ;
+    border-color: @separatorcolor;
+}
+
+sidebar {
+    expand: false;
+}
+
+message {
+    text-color:       black;
+    background-color: lightgrey / 50%;
+    border-color:     grey;
+    border:           2px;
+    padding:          4px;
+    margin:           0px 0px 0.5em;
+    expand:           false;
+}
+
+listview {
+    spacing:      2px ;
+    scrollbar:    false;
+    padding:      0.5em;
+    background-color: @normal-background;
+    expand:       true;
+}
+
+element {
+    border:  1px;
+    padding: 4px ;
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+element.selected.normal {
+    border:  1;
+    border-color:     @bordercolor;
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element.selected.urgent {
+    border:  1;
+    border-color:     @bordercolor;
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+
+element.selected.active {
+    border:  1;
+    border-color:     @bordercolor;
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+
+sidebar {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+}
+
+inputbar {
+    text-color: @normal-foreground;
+    padding: 0px 0px 0.5em;
+}
+
+case-indicator {
+    text-color: @normal-foreground;
+}
+
+wrapper {
+    orientation: horizontal;
+    text-color:       @normal-background;
+    background-color: @normal-foreground;
+    border-color:     @normal-background;
+    border: 1px;
+    border-radius: 5px;
+    padding: 4px;
+    children:   [ icon-k, entry, icon-paste];
+    spacing:  0.5em;
+}
+
+button-paste {
+    expand: false;
+    str: "gtk-paste";
+    size: 24;
+    vertical-align: 0.5;
+    action: "kb-cancel";
+}
+
+icon-paste {
+    expand: false;
+    filename: "gtk-paste";
+    size: 24;
+    vertical-align: 0.5;
+    action: "kb-primary-paste";
+}
+
+icon-k {
+    expand: false;
+    filename: "input-keyboard";
+    size: 24;
+    vertical-align: 0.5;
+}
+
+entry {
+    vertical-align: 0.5;
+}
+
+inputbar {
+    children:   [ wrapper ];
+}
+
+error-message {
+    background-color: darkred/10%;
+    border-color: darkred;
+    border-radius: 10px;
+    border: 2px;
+    padding: 0.5em;
+}

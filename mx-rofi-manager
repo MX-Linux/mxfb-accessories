@@ -1,9 +1,10 @@
 #!/bin/bash
 #Rofi-Manager
 #Tool to manage rofi settings
-#V.0.4 by Melber and MX Devs, 14 September 2022
+#V.0.6 by Melber and MX Devs, 03 October 2022
 #License: GPL-3.0+
 #mxrm-icon based on applications-development and applications-interfacedesign icons from papirus icon set
+#added location and font functions
 
 #set up translation
 
@@ -19,7 +20,7 @@ ROFIPATH="$HOME/.config/rofi/themes"
 ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 
 #delete stylelist and tempclr after use
-trap "rm -r "$ROFIPATH/tempdir" " EXIT
+#trap "rm -r "$ROFIPATH/tempdir" " EXIT
 
 #
 if [ ! -d $ROFIPATH ]; then
@@ -70,7 +71,7 @@ cp /usr/share/rofi/config.rasi $HOME/.config/rofi/
 #cp /usr/share/rofi/rofi-help $HOME/.config/rofi/  << will be called from installation location
 #cp /usr/share/rofi/calc-help $HOME/.config/rofi/  << will be called from installation location
 cp /usr/share/mxrr/template.rasi $HOME/.config/rofi/themes/
-cp /usr/share/mxrr/MX-comfort.rasi $HOME/.config/rofi/themes/  
+cp /usr/share/mxrr/MX-*.rasi $HOME/.config/rofi/themes/  
 
 fi
 fi
@@ -201,6 +202,7 @@ fi
 
 sed -i "s/$ROFIOLD/$ROFIOLDCOMMENT/g" config.rasi
 
+sed -i 's/\/\/\/\/@/\/\/@/g' config.rasi
 
 echo $ROFINEW >> config.rasi
 
@@ -228,14 +230,14 @@ ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 source gettext.sh
 
 TEXTTABS1="$(gettext '
-<b>Select which tabs rofi should display</b>')
-drun: $(gettext 'the MX-21 default that displays available apps')
-calc: $(gettext 'a powerful calculation engine')
-run: $(gettext 'displays all available executable files')
-ssh: $(gettext 'opens a secure shell')
-window: $(gettext 'enables easy switching')
-help: $(gettext 'a set of links about using rofi')
-none: $(gettext 'tab will not be shown')
+<b>Select which tabs rofi should display</b>
+     <i>drun</i>: the MX default that displays available apps
+     <i>calc</i>: a powerful calculation engine
+     <i>run</i>: displays all available executable files
+     <i>ssh</i>: opens a secure shell
+     <i>window</i>: enables easy switching
+     <i>help</i>: a set of links about using rofi
+     <i>none</i>: tab will not be shown
 \n')"
 
 TABS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTTABS1" --text-align=left --height=400 --width=600 --borders=20 --center --separator=" " --form --columns=3 --button="gtk-cancel":1 --button="gtk-ok":0 \
@@ -285,6 +287,337 @@ yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --he
 exit
 
 }
+
+
+###################################################################
+###################################################################
+# function rofi_position
+
+rofi_position() {
+
+TITLE="$(gettext 'Rofi-Position')"
+CLASS="mxrm"
+ROFIPATH="$HOME/.config/rofi/themes"
+ROFIPATHUSR="/usr/share/rofi/themes"
+ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
+source gettext.sh
+
+###################################################################
+# function rofi_help-position
+
+rofi_help-position() {
+
+TITLE="$(gettext 'MX-Rofi-Help')"
+CLASS="mxrm"
+#/usr/share/mx-rofi-manager/mxrm-helptext-position 
+
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+--borders=20 --width=600 --height=600 --center --fixed --text-info --wrap --margins=20 < /usr/share/rofi/mxrm-helptext-position  --fontname="12" --button="gtk-close" \
+	
+}
+
+export -f rofi_help-position
+
+###################################################################
+
+
+#get current rofi & check if MX-comfort based
+ROFICURRENT="$(grep '@theme' $HOME/.config/rofi/config.rasi | tail -1)"
+
+ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/\"//g' )
+ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/@theme//g' )
+
+
+#check theme is MX-comfort based
+
+ROFICOMFORTCHECK="$(grep 'with tabs' $ROFICURRENT)"
+
+TEXTSORRY="$(gettext 'Sorry, this function is only available for MX-comfort based rofi themes\n\nTo adjust the current rofi theme you need to manually edit the .rasi file.\n\n')"
+
+
+if [ "$ROFICOMFORTCHECK" = "" ]; then
+
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+	--borders=20 --width=600 --height=600 --center --fixed --margins=20 --button="gtk-close" \
+	--text="$TEXTSORRY" --text-align=center --button="gtk-OK" \
+	
+	exit
+
+
+
+fi
+
+
+#get current position
+
+ROFILOCATIONOLD="$(grep "location" $ROFICURRENT)"
+
+	if [ "$ROFILOCATIONOLD" = "" ]; then
+
+		ROFILOCATIONOLD='     location: center;'
+		sed -ie "/^window/a $ROFILOCATIONOLD" $ROFICURRENT
+
+	fi
+	
+LOCVALUE=$(echo "${ROFILOCATIONOLD}" | sed -e 's/location\://g' | sed -e 's/\;//g' | sed -e 's/ //g')
+
+ROFILOCATIONOLD=$(echo "${ROFILOCATIONOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+######
+
+ROFIANCHOROLD="$(grep "anchor" $ROFICURRENT)"
+
+	if [ "$ROFIANCHOROLD" = "" ]; then
+
+		ROFIANCHOROLD='     anchor: center;'
+		sed -ie "/^window/a $ROFIANCHOROLD" $ROFICURRENT
+
+	fi
+	
+ANCVALUE=$(echo "${ROFIANCHOROLD}" | sed -e 's/anchor\://g' | sed -e 's/\;//g' | sed -e 's/ //g' )
+
+ROFIANCHOROLD=$(echo "${ROFIANCHOROLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+#####
+
+ROFIXOFFSETOLD="$(grep "x-offset" $ROFICURRENT)"
+
+	if [ "$ROFIXOFFSETOLD" = "" ]; then
+
+		ROFIXOFFSETOLD='     x-offset: 0;'
+		sed -ie "/^window/a $ROFIXOFFSETOLD" $ROFICURRENT
+
+	fi
+
+XOFFVALUE=$(echo "${ROFIXOFFSETOLD}" | sed -e 's/x-offset\://g' | sed -e 's/\;//g' )
+
+ROFIXOFFSETOLD=$(echo "${ROFIXOFFSETOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+#####
+
+ROFIYOFFSETOLD="$(grep "y-offset" $ROFICURRENT)"
+
+	if [ "$ROFIYOFFSETOLD" = "" ]; then
+
+		ROFIYOFFSETOLD='     y-offset: 0;'
+		sed -ie "/^window/a $ROFIYOFFSETOLD" $ROFICURRENT
+
+	fi
+	
+YOFFVALUE=$(echo "${ROFIYOFFSETOLD}" | sed -e 's/y-offset\://g' | sed -e 's/\;//g' )
+	
+ROFIYOFFSETOLD=$(echo "${ROFIYOFFSETOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+#####
+
+ROFIWIDTHOLD="$(grep "width" $ROFICURRENT)"
+
+	if [ "$ROFIWIDTHOLD" = "" ]; then
+
+		ROFIWIDTHOLD='     width: 30%;'
+		sed -ie "/^window/a $ROFIWIDTHOLD" $ROFICURRENT
+
+	fi
+	
+WIDVALUE=$(echo "${ROFIWIDTHOLD}" | sed -e 's/width\://g' | sed -e 's/\;//g' | sed -e 's/\%//g' )
+
+ROFIWIDTHOLD=$(echo "${ROFIWIDTHOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+#####
+
+ROFIHEIGHTOLD="$(grep "lines" $ROFICURRENT)"
+
+	if [ "$ROFIHEIGHTOLD" = "" ]; then
+
+		ROFIHEIGHTOLD='     lines: 12;'
+		sed -ie "/^listview/a $ROFIHEIGHTOLD" $ROFICURRENT
+
+	fi
+	
+LINVALUE=$(echo "${ROFIHEIGHTOLD}" | sed -e 's/lines\://g' | sed -e 's/\;//g' )
+
+ROFIHEIGHTOLD=$(echo "${ROFIHEIGHTOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+
+#get new position
+#MAINPOS
+
+MAINPOS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=400 --fixed --form --columns=1 --align=left --separator=" " --button="gtk-help":"bash -c rofi_help-position" --button="gtk-cancel":1 --button="gtk-ok":0 \
+--text="$(gettext '<b>\nAdjust the location and size of the current rofi window.\n</b>')" \
+--field="$(gettext 'Location of rofi window on the screen')":CB "$LOCVALUE!northwest!north!northeast!west!center!east!southwest!south!southeast" \
+--field="$(gettext 'Anchor position within rofi window')":CB "$ANCVALUE!northwest!north!northeast!west!center!east!southwest!south!southeast" \
+--field="$(gettext 'X-Offset (negative to left, positive to right)')":NUM "$XOFFVALUE\!-100..100\!1\!0" \
+--field="$(gettext 'Y-Offset (negative upwards, positive downwards)')":NUM "$YOFFVALUE\!-100..100\!1\!0" \
+--field="$(gettext 'Width (percentage of screen width)')":NUM "$WIDVALUE\!1..100\!1\!0" \
+--field="$(gettext 'Height (number of lines shown in list)')":NUM "$LINVALUE\!1..25\!1\!0" \
+)
+
+POS=$("${MAINPOS[@]}")
+	(($?==0)) && echo "$POS" > $ROFIPATH/tempdir/tempposition.txt
+
+GETOUT=$(echo "$?")
+
+if [ "$GETOUT" != 0 ]; then
+
+	  exit
+
+elif [ "$GETOUT" = 0 ]; then
+
+	  cd $ROFIPATH/tempdir
+
+	  read -r -a NEWPOS < tempposition.txt
+
+	  LOCNEW="${NEWPOS[0]}"
+	  ANCNEW="${NEWPOS[1]}"
+	  XOFNEW="${NEWPOS[2]}"
+	  YOFNEW="${NEWPOS[3]}"
+	  WIDNEW="${NEWPOS[4]}"
+	  HIGNEW="${NEWPOS[5]}"
+
+fi
+
+ROFILOCATIONNEW="location: "$LOCNEW";"
+ROFILOCATIONNEW=$(echo "${ROFILOCATIONNEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+ROFIANCHORNEW="anchor: "$ANCNEW";"
+ROFIANCHORNEW=$(echo "${ROFIANCHORNEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+ROFIXOFFSETNEW="x-offset: "$XOFNEW";"
+ROFIXOFFSETNEW=$(echo "${ROFIXOFFSETNEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+ROFIYOFFSETNEW="y-offset: "$YOFNEW";"
+ROFIYOFFSETNEW=$(echo "${ROFIYOFFSETNEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+ROFIWIDTHNEW="width: "$WIDNEW"%;"
+ROFIWIDTHNEW=$(echo "${ROFIWIDTHNEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+ROFIHEIGHTNEW="lines: "$HIGNEW";"
+ROFIHEIGHTNEW=$(echo "${ROFIHEIGHTNEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
+
+
+sed -i -e "s/${ROFILOCATIONOLD}/${ROFILOCATIONNEW}/g" $ROFICURRENT
+sed -i -e "s/${ROFIANCHOROLD}/${ROFIANCHORNEW}/g" $ROFICURRENT
+sed -i -e "s/${ROFIXOFFSETOLD}/${ROFIXOFFSETNEW}/g" $ROFICURRENT
+sed -i -e "s/${ROFIYOFFSETOLD}/${ROFIYOFFSETNEW}/g" $ROFICURRENT
+sed -i -e "s/${ROFIWIDTHOLD}/${ROFIWIDTHNEW}/g" $ROFICURRENT
+sed -i -e "s/${ROFIHEIGHTOLD}/${ROFIHEIGHTNEW}/g" $ROFICURRENT
+
+
+TEXTPOSDONE1="$(eval_gettext 'All done!\nPosition and size of the current rofi theme have been amended.')"
+
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTPOSDONE1" --text-align=center --button="OK" \
+	
+
+exit
+
+}
+
+
+###################################################################
+###################################################################
+# function rofi_font
+
+rofi_font() {
+
+TITLE="$(gettext 'Rofi-Font')"
+CLASS="mxrm"
+ROFIPATH="$HOME/.config/rofi/themes"
+ROFIPATHUSR="/usr/share/rofi/themes"
+ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
+source gettext.sh
+
+###################################################################
+
+
+#get current rofi & check if MX-comfort based
+ROFICURRENT="$(grep '@theme' $HOME/.config/rofi/config.rasi | tail -1)"
+
+ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/\"//g' )
+ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/@theme//g' )
+ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/ //g' )
+
+
+#check theme is MX-comfort based
+
+TEXTSORRY="$(gettext 'Sorry, this function is only available for MX-comfort based rofi themes\n\nTo adjust the current rofi theme you need to manually edit the .rasi file.\n\n')"
+
+ROFICOMFORTCHECK="$(grep 'with tabs' $ROFICURRENT)"
+
+if [ "$ROFICOMFORTCHECK" = "" ]; then
+
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+	--borders=20 --width=600 --height=400 --center --fixed --margins=20 \
+	--text="$TEXTSORRY" --text-align=center --button="gtk-ok" \
+	
+	exit
+
+
+
+fi
+
+
+ROFIFONTOLD="$(grep "font" $ROFICURRENT | head -1 )"
+
+	if [ "$ROFIFONTOLD" = "" ]; then
+
+		ROFIFONTOLD='    font: "Noto Sans 12";'
+		sed -ie "/^listview/a $ROFIFONTOLD" $ROFICURRENT
+
+	fi
+	
+	
+FONVALUE=$(echo "${ROFIFONTOLD}" | sed -e 's/font\://g' | sed -e 's/\;//g'| sed -e 's/\"//g' )
+
+ROFIFONTOLD=$(echo "${ROFIFONTOLD}" | sed -e 's/[]$\/*"[\^]/\\&/g' )
+
+
+#get new position
+#MAINPOS
+
+MAINPOS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=400 --fixed --form --columns=1 --align=left --separator=" " --button="gtk-help":"bash -c rofi_help-position" --button="gtk-cancel":1 --button="gtk-ok":0 \
+--text="$(gettext '<b>\nAdjust the font of the current rofi window.\n</b>')" \
+
+--field="$(gettext 'Font')":FN "$FONVALUE" \
+)
+
+POS=$("${MAINPOS[@]}")
+	(($?==0)) && echo "$POS" > $ROFIPATH/tempdir/tempfont.txt
+
+GETOUT=$(echo "$?")
+
+if [ "$GETOUT" != 0 ]; then
+
+	  exit
+
+elif [ "$GETOUT" = 0 ]; then
+
+
+	  cd $ROFIPATH/tempdir
+
+	  read -r -a NEWPOS < tempfont.txt
+
+	  FONNEW="${NEWPOS[@]}"
+
+fi
+
+
+
+ROFIFONTNEW="font: \""$FONNEW"\";"
+ROFIFONTNEW=$(echo "${ROFIFONTNEW}" | sed -e 's/[]$\/"*[\^]/\\&/g' )
+
+sed -i -e "s/${ROFIFONTOLD}/${ROFIFONTNEW}/g" $ROFICURRENT
+
+
+TEXTFONTDONE="$(eval_gettext 'All done!\nFont of the current rofi theme has been amended.')"
+
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTFONTDONE" --text-align=center --button="OK" \
+	
+
+exit
+
+}
+
 
 
 ###################################################################
@@ -585,7 +918,7 @@ if [ "$MAKECUR" = no ]; then
 
 	TEXTALLDONE2="$(eval_gettext 'All done!\n<b>$NEWNAME</b> Rofi theme has been created.\n\nYou can change themes with <b>MX-Rofi-Manager</b>')"
 
-	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=250 --fixed --center --borders=20 --text="$TEXTALLDONE2" --text-align=center --button="OK" \
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTALLDONE2" --text-align=center --button="OK" \
   
 fi
 
@@ -686,7 +1019,7 @@ rofi_help() {
 
 TITLE="$(gettext 'MX-Rofi-Help')"
 CLASS="mxrm"
-ICONPATH="/usr/share/pixmaps/mxrr-icon.png"
+ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 
 yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --borders=20 --width=600 --height=600 --center --fixed --text-info --wrap --margins=20 < /usr/share/mx-rofi-manager/mxrm-helptext  --fontname="12" --show-uri --button="gtk-close" \
@@ -695,24 +1028,29 @@ yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 
 ###################################################################
 
-export -f rofi_theme rofi_tabs rofi_recolor rofi_edit
+export -f rofi_theme rofi_tabs rofi_position rofi_font rofi_recolor rofi_edit
 export -f rofi_help
 
 ###################################################################
 ###################################################################
+
 #MAIN WINDOW
 TITLE="$(gettext 'MX-Rofi-Manager')"
 CLASS="mxrm"
 ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 
-TEXTMXRM="$(gettext '\n<b><big>Rofi Manager is a tool to configure rofi themes.</big>\n\nWhat would you like to do?</b>\n\n')"
+TEXTMXRM="$(gettext '<b><big>Rofi Manager is a tool to configure rofi themes.</big>\n\nWhat would you like to do?</b>\n')"
 BUTTONTHEME="$(gettext 'Change the current rofi theme')"
 BUTTONTABS="$(gettext 'Change the functions (<i>modi</i>) of the rofi tabs')"
+BUTTONPOSITION="$(gettext 'Change the location and size of the current Rofi window')"
+BUTTONFONT="$(gettext 'Change the font of the current Rofi window')"
 BUTTONRECOLOR="$(gettext 'Recolor a rofi theme based on MX-comfort')"
 BUTTONEDIT="$(gettext 'Edit a rofi theme config file in text editor')"
 
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=400 --fixed --form --text-align=center --text="$TEXTMXRM" --button="Help":"bash -c rofi_help" --button="gtk-close" --buttons-layout=spread \
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=400 --fixed --form --text-align=center --text="$TEXTMXRM" --button="gtk-help":"bash -c rofi_help" --button="gtk-close" --buttons-layout=spread \
 --field="$BUTTONTHEME:FBTN" 'bash -c rofi_theme' \
 --field="$BUTTONTABS:FBTN" 'bash -c rofi_tabs' \
+--field="$BUTTONPOSITION:FBTN" 'bash -c rofi_position' \
+--field="$BUTTONFONT:FBTN" 'bash -c rofi_font' \
 --field="$BUTTONRECOLOR:FBTN" 'bash -c rofi_recolor' \
 --field="$BUTTONEDIT:FBTN" 'bash -c rofi_edit' \

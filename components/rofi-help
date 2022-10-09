@@ -60,18 +60,31 @@ if [ x"$@" = x">> calc" ];
 then
 killall rofi
 sleep 0.25
-featherpad ~/.config/rofi/rofi-calc
+featherpad /usr/share/rofi/calc-help
 kill featherpad
 fi
 
-echo "ROFI"
+if [ x"$@" = x">> ssh" ];
+then
+killall rofi
+sleep 0.25
+featherpad /usr/share/rofi/ssh-help
+kill featherpad
+fi
+
+echo "Select and press Return to view"
+echo "------------------"
+echo "       ROFI       "
+echo "------------------"
 echo ">> general help"
 echo ">> calc"
+echo ">> ssh"
 echo ">> detailed help"
 echo ">> theme selector"
 echo ">> theme format"
 echo ">> recolor"
 echo ">> scripts"
-echo "-----"
-echo "MX-FLUXBOX"
+echo "------------------"
+echo "    MX-FLUXBOX    "
+echo "------------------"
 echo ">> documentation"
