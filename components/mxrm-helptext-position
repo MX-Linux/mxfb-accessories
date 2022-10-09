@@ -1,0 +1,23 @@
+
+Position of the rofi window on the screen
+and the anchor point within the rofi window
+
+ ─────────────────────────────────────────
+│	northwest	│		north		│	northeast	│
+ ─────────────────────────────────────────
+│	west		│		center		│	east		│
+ ─────────────────────────────────────────
+│	southwest	│		south		│	southeast	│
+ ─────────────────────────────────────────
+
+
+Offset moves the window relative to the anchor point,
+allowing you to push the window left/right/up/down
+
+ ─────────────────────────────────────────
+│				│		y -			│				│
+ ─────────────────────────────────────────
+│		x -		│		offset		│		x +		│
+ ─────────────────────────────────────────
+│				│		y +			│				│
+ ─────────────────────────────────────────

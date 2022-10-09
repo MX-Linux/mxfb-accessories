@@ -18,6 +18,7 @@ components/mxcr-help.png usr/share/doc/mxfb-comfort/help/
 components/rofi-help usr/share/rofi
 components/calc-help usr/share/rofi
 components/ssh-help usr/share/rofi
+components/mxrm-helptext-position usr/share/rofi
 mxfb-* usr/bin
 mx-rofi-manager usr/bin
 apt/* etc/apt/
