@@ -1,10 +1,10 @@
 #!/bin/bash
 #Rofi-Manager
 #Tool to manage rofi settings
-#V.0.6 by Melber and MX Devs, 03 October 2022
+#V.0.7 by Melber and MX Devs, 12 October 2022
 #License: GPL-3.0+
 #mxrm-icon based on applications-development and applications-interfacedesign icons from papirus icon set
-#added location and font functions
+#Changelog: Fixed issues identified by DO, added ssh and filebrowser tabs
 
 #set up translation
 
@@ -20,7 +20,7 @@ ROFIPATH="$HOME/.config/rofi/themes"
 ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 
 #delete stylelist and tempclr after use
-#trap "rm -r "$ROFIPATH/tempdir" " EXIT
+trap "rm -r "$ROFIPATH/tempdir" " EXIT
 
 #
 if [ ! -d $ROFIPATH ]; then
@@ -34,15 +34,6 @@ fi
 if [ ! -d $ROFIPATH/tempdir ]; then
 
 	mkdir -p $ROFIPATH/tempdir
-
-fi
-
-
-# Check if MX-comfort-rr exists, create if false
-
-if [ ! -f $ROFIPATH/MX-comfort-rr ]; then
-
-	printf "#1D2324 #CACDD0 #29353B #ffffff #29353B #CACDD0 #1D2324 #ffffff #0f56d9 #0f56d9 #ffffff MX-comfort yes" > $ROFIPATH/MX-comfort-rr
 
 fi
 
@@ -70,11 +61,33 @@ cp $HOME/.config/rofi/config.rasi $HOME/.restore/rofi/config.rasi_$(date -d "tod
 cp /usr/share/rofi/config.rasi $HOME/.config/rofi/
 #cp /usr/share/rofi/rofi-help $HOME/.config/rofi/  << will be called from installation location
 #cp /usr/share/rofi/calc-help $HOME/.config/rofi/  << will be called from installation location
-cp /usr/share/mxrr/template.rasi $HOME/.config/rofi/themes/
+cp /usr/share/mxrr/template*.rasi $HOME/.config/rofi/themes/
 cp /usr/share/mxrr/MX-*.rasi $HOME/.config/rofi/themes/  
 
 fi
 fi
+
+
+# Check if MX-comfort-rr exists, create if false
+
+if [ ! -f $ROFIPATH/MX-comfort-rr ]; then
+
+	printf "#1D2324 #CACDD0 #29353B #ffffff #29353B #CACDD0 #1D2324 #ffffff #0f56d9 #0f56d9 #ffffff MX-comfort yes" > $ROFIPATH/MX-comfort-rr
+
+fi
+
+if [ ! -f $ROFIPATH/MX-fancy-rr ]; then
+
+	printf "#1D2324 #CACDD0 #29353B #ffffff #29353B #CACDD0 #1D2324 #ffffff #0f56d9 #0f56d9 #ffffff MX-fancy yes" > $ROFIPATH/MX-fancy-rr
+
+fi
+
+if [ ! -f $ROFIPATH/MX-sidebar-rr ]; then
+
+	printf "#1D2324 #CACDD0 #29353B #ffffff #29353B #CACDD0 #1D2324 #ffffff #0f56d9 #0f56d9 #ffffff MX-sidebar yes" > $ROFIPATH/MX-sidebar-rr
+
+fi
+
 
 ###################################################################
 ###################################################################
@@ -179,16 +192,8 @@ if [ "$GETOUT" != 0 ]; then
 
 fi
 
-
-#make current
-
+#check change and make current
 cd $HOME/.config/rofi/
-
-ROFIOLD="$(grep "@theme" $HOME/.config/rofi/config.rasi | tail -1)"
-ROFIOLDCOMMENT="//$ROFIOLD"
-ROFIOLD=$(echo "${ROFIOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
-ROFIOLDCOMMENT=$(echo "${ROFIOLDCOMMENT}" | sed -e 's/[]$\/*[\^]/\\&/g' )
-
 
 if [ ! -f $ROFIPATH/$NEWTHEME.rasi ]; then
 
@@ -200,6 +205,25 @@ else
 
 fi
 
+
+ROFIOLD="$(grep "@theme" $HOME/.config/rofi/config.rasi | tail -1)"
+ROFIOLDCOMMENT="//$ROFIOLD"
+
+
+if [ "$ROFINEW" = "$ROFIOLD" ]; then
+
+	TEXTROFINOCHANGE="$(eval_gettext 'No change to current settings!\n')"
+
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTROFINOCHANGE" --text-align=center --button="gtk-ok" \
+	
+
+	exit
+
+else
+
+ROFIOLD=$(echo "${ROFIOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+ROFIOLDCOMMENT=$(echo "${ROFIOLDCOMMENT}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+
 sed -i "s/$ROFIOLD/$ROFIOLDCOMMENT/g" config.rasi
 
 sed -i 's/\/\/\/\/@/\/\/@/g' config.rasi
@@ -209,9 +233,11 @@ echo $ROFINEW >> config.rasi
 
 TEXTTHEME2="$(eval_gettext 'All done!\n\n<b>$NEWTHEME</b> has been set as the current rofi theme.\n\n')"
 
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTTHEME2" --text-align=center --button="OK" \
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTTHEME2" --text-align=center --button="gtk-ok" \
 
 exit
+
+fi
 
 }
 
@@ -229,21 +255,29 @@ ROFIPATHUSR="/usr/share/rofi/themes"
 ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 source gettext.sh
 
-TEXTTABS1="$(gettext '
-<b>Select which tabs rofi should display</b>
-     <i>drun</i>: the MX default that displays available apps
-     <i>calc</i>: a powerful calculation engine
-     <i>run</i>: displays all available executable files
-     <i>ssh</i>: opens a secure shell
-     <i>window</i>: enables easy switching
-     <i>help</i>: a set of links about using rofi
-     <i>none</i>: tab will not be shown
-\n')"
+TEXTTABS1="$(gettext '\n<b>Select which tabs rofi should display</b>')"
+TEXTTABS2="$(gettext 'the MX default that displays available apps')"
+TEXTTABS3="$(gettext 'a powerful calculation engine')"
+TEXTTABS4="$(gettext 'fast access to files')"
+TEXTTABS5="$(gettext 'displays all available executable files')"
+TEXTTABS6="$(gettext 'opens a secure shell')"
+TEXTTABS7="$(gettext 'enables easy switching')"
+TEXTTABS8="$(gettext 'a set of links about using rofi')"
+TEXTTABS9="$(gettext 'tab will not be shown\n')"
 
-TABS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTTABS1" --text-align=left --height=400 --width=600 --borders=20 --center --separator=" " --form --columns=3 --button="gtk-cancel":1 --button="gtk-ok":0 \
---field="$(gettext '1st Tab')":CB "drun!calc!run!ssh!window!help" \
---field="$(gettext '2nd Tab')":CB "help!calc!drun!run!ssh!window!none" \
---field="$(gettext '3rd Tab')":CB "none!help!calc!drun!run!ssh!window" \
+TABS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text-align=left --height=400 --width=600 --borders=20 --center --separator=" " --form --columns=3 --button="gtk-cancel":1 --button="gtk-ok":0 \
+--text="$TEXTTABS1
+<i>drun</i>: $TEXTTABS2
+<i>calc</i>: $TEXTTABS3
+<i>filebrowser</i>: $TEXTTABS4
+<i>run</i>: $TEXTTABS5
+<i>ssh</i>: $TEXTTABS6
+<i>window</i>: $TEXTTABS7
+<i>help</i>: $TEXTTABS8
+<i>none</i>: $TEXTTABS9" 
+--field="$(gettext '1st Tab')":CB "drun!calc!run!ssh!window!filebrowser!help" \
+--field="$(gettext '2nd Tab')":CB "help!calc!drun!run!ssh!filebrowser!window!none" \
+--field="$(gettext '3rd Tab')":CB "none!help!calc!drun!run!filebrowser!ssh!window" \
 )
 
 NEWTABS=$("${TABS[@]}")
@@ -269,19 +303,33 @@ NEWTABS="modi: \""$TAB0","$TAB1","$TAB2"\";"
 	NEWTABS=$(echo "${NEWTABS}" | sed -e "s/calc/calc\:qalc/g" )
 	NEWTABS=$(echo "${NEWTABS}" | sed -e "s/,none//g" )
 
-	NEWTABS=$(echo "${NEWTABS}" | sed -e 's/[]$\/*[\^]/\\&/g' )
-
 
 OLDTABS="$(grep "modi" $HOME/.config/rofi/config.rasi)"
-OLDTABS=$(echo "${OLDTABS}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
 
-cd $HOME/.config/rofi/
-sed -i -e "s/${OLDTABS}/${NEWTABS}/g" config.rasi
+if [ "$NEWTABS" = "$OLDTABS" ]; then
 
-TEXTTABS2="$(gettext 'All done!\n\nTab configuration has been updated.\n\n')"
+	TEXTTABNOCHANGE="$(eval_gettext 'No change to current settings!\n')"
 
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTTABS2" --text-align=center --button="OK" \
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTTABNOCHANGE" --text-align=center --button="gtk-ok" \
+	
+
+	exit
+
+else
+
+	cd $HOME/.config/rofi/
+	
+	NEWTABS=$(echo "${NEWTABS}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+	OLDTABS=$(echo "${OLDTABS}" | sed -e 's/[]$\/*[\^]/\\&/g' )
+	
+	sed -i -e "s/${OLDTABS}/${NEWTABS}/g" config.rasi
+
+	TEXTTABS2="$(gettext 'All done!\n\nTab configuration has been updated.\n\n')"
+
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTTABS2" --text-align=center --button="gtk-ok" \
+
+fi
 
 
 exit
@@ -339,7 +387,7 @@ if [ "$ROFICOMFORTCHECK" = "" ]; then
 
 	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 	--borders=20 --width=600 --height=600 --center --fixed --margins=20 --button="gtk-close" \
-	--text="$TEXTSORRY" --text-align=center --button="gtk-OK" \
+	--text="$TEXTSORRY" --text-align=center --button="gtk-ok" \
 	
 	exit
 
@@ -476,6 +524,7 @@ elif [ "$GETOUT" = 0 ]; then
 
 fi
 
+
 ROFILOCATIONNEW="location: "$LOCNEW";"
 ROFILOCATIONNEW=$(echo "${ROFILOCATIONNEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
@@ -495,21 +544,52 @@ ROFIHEIGHTNEW="lines: "$HIGNEW";"
 ROFIHEIGHTNEW=$(echo "${ROFIHEIGHTNEW}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
 
+#check change
 
-sed -i -e "s/${ROFILOCATIONOLD}/${ROFILOCATIONNEW}/g" $ROFICURRENT
-sed -i -e "s/${ROFIANCHOROLD}/${ROFIANCHORNEW}/g" $ROFICURRENT
-sed -i -e "s/${ROFIXOFFSETOLD}/${ROFIXOFFSETNEW}/g" $ROFICURRENT
-sed -i -e "s/${ROFIYOFFSETOLD}/${ROFIYOFFSETNEW}/g" $ROFICURRENT
-sed -i -e "s/${ROFIWIDTHOLD}/${ROFIWIDTHNEW}/g" $ROFICURRENT
-sed -i -e "s/${ROFIHEIGHTOLD}/${ROFIHEIGHTNEW}/g" $ROFICURRENT
+NEWPOSLIST="$ROFILOCATIONNEW
+$ROFIANCHORNEW
+$ROFIXOFFSETNEW
+$ROFIYOFFSETNEW
+$ROFIWIDTHNEW
+$ROFIHEIGHTNEW"
+
+OLDPOSLIST="$ROFILOCATIONOLD
+$ROFIANCHOROLD
+$ROFIXOFFSETOLD
+$ROFIYOFFSETOLD
+$ROFIWIDTHOLD
+$ROFIHEIGHTOLD"
 
 
-TEXTPOSDONE1="$(eval_gettext 'All done!\nPosition and size of the current rofi theme have been amended.')"
+if [ "$NEWPOSLIST" = "$OLDPOSLIST" ]; then
 
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTPOSDONE1" --text-align=center --button="OK" \
+	TEXTPOSNOCHANGE="$(eval_gettext 'No change to current settings!\n')"
+
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTPOSNOCHANGE" --text-align=center --button="gtk-ok" \
+	
+
+	exit
+	
+
+else
+
+
+	sed -i -e "s/${ROFILOCATIONOLD}/${ROFILOCATIONNEW}/g" $ROFICURRENT
+	sed -i -e "s/${ROFIANCHOROLD}/${ROFIANCHORNEW}/g" $ROFICURRENT
+	sed -i -e "s/${ROFIXOFFSETOLD}/${ROFIXOFFSETNEW}/g" $ROFICURRENT
+	sed -i -e "s/${ROFIYOFFSETOLD}/${ROFIYOFFSETNEW}/g" $ROFICURRENT
+	sed -i -e "s/${ROFIWIDTHOLD}/${ROFIWIDTHNEW}/g" $ROFICURRENT
+	sed -i -e "s/${ROFIHEIGHTOLD}/${ROFIHEIGHTNEW}/g" $ROFICURRENT
+
+
+	TEXTPOSDONE1="$(eval_gettext 'All done!\nPosition and size of the current rofi theme have been amended.')"
+
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTPOSDONE1" --text-align=center --button="gtk-ok" \
 	
 
 exit
+
+fi
 
 }
 
@@ -572,7 +652,6 @@ FONVALUE=$(echo "${ROFIFONTOLD}" | sed -e 's/font\://g' | sed -e 's/\;//g'| sed 
 ROFIFONTOLD=$(echo "${ROFIFONTOLD}" | sed -e 's/[]$\/*"[\^]/\\&/g' )
 
 
-#get new position
 #MAINPOS
 
 MAINPOS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=400 --fixed --form --columns=1 --align=left --separator=" " --button="gtk-help":"bash -c rofi_help-position" --button="gtk-cancel":1 --button="gtk-ok":0 \
@@ -588,16 +667,16 @@ GETOUT=$(echo "$?")
 
 if [ "$GETOUT" != 0 ]; then
 
-	  exit
+	exit
 
 elif [ "$GETOUT" = 0 ]; then
 
 
-	  cd $ROFIPATH/tempdir
+	cd $ROFIPATH/tempdir
 
-	  read -r -a NEWPOS < tempfont.txt
+	read -r -a NEWPOS < tempfont.txt
 
-	  FONNEW="${NEWPOS[@]}"
+	FONNEW="${NEWPOS[@]}"
 
 fi
 
@@ -606,15 +685,27 @@ fi
 ROFIFONTNEW="font: \""$FONNEW"\";"
 ROFIFONTNEW=$(echo "${ROFIFONTNEW}" | sed -e 's/[]$\/"*[\^]/\\&/g' )
 
-sed -i -e "s/${ROFIFONTOLD}/${ROFIFONTNEW}/g" $ROFICURRENT
+if [ "$ROFIFONTNEW" = "$ROFIFONTOLD" ]; then
+
+	TEXTFONNOCHANGE="$(eval_gettext 'No change to current settings!\n')"
+
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTFONNOCHANGE" --text-align=center --button="gtk-ok" \
+
+	exit
+
+else
+
+	sed -i -e "s/${ROFIFONTOLD}/${ROFIFONTNEW}/g" $ROFICURRENT
 
 
-TEXTFONTDONE="$(eval_gettext 'All done!\nFont of the current rofi theme has been amended.')"
+	TEXTFONTDONE="$(eval_gettext 'All done!\nFont of the current rofi theme has been amended.')"
 
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTFONTDONE" --text-align=center --button="OK" \
-	
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTFONTDONE" --text-align=center --button="gtk-ok" \
 
-exit
+
+	exit
+
+fi
 
 }
 
@@ -665,7 +756,7 @@ if [ -z "$BASESTYLE" ]; then
 
 	TEXTBASE2="$(gettext 'No theme selected.\n\n<b>MX-comfort</b> will be used as the starting theme.')"
 
-	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTBASE2" --button=OK --text-align=center --center --width=400 --height=200 --borders=20 \
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTBASE2" --button=gtk-ok --text-align=center --center --width=400 --height=200 --borders=20 \
 
 	BASESTYLE=MX-comfort
 
@@ -827,7 +918,7 @@ fi
 
 #check new theme name is not empty and forbid MX-comfort overwrite
 
-while [ -z "$NEWNAME" -o "$NEWNAME" = 'MX-comfort' -o "$NEWNAME" = 'MX-comfort-dark' -o "$NEWNAME" = 'MX-comfort-plus' -o "$NEWNAME" = 'MX-comfort-plus-dark' ]; do
+while [ -z "$NEWNAME" -o "$NEWNAME" = 'MX-comfort' -o "$NEWNAME" = 'MX-fancy' -o "$NEWNAME" = 'MX-sidebar' ]; do
 
 	  NEWNAME=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --text="$(eval_gettext 'Theme name $NEWNAME is protected. Choose another name')" --form --center --borders=20 --separator="" \
 	--field="$(gettext '<b>Name for new style</b>')":LBL " " \
@@ -871,9 +962,13 @@ done
 
 cd $ROFIPATH
 
+TEMPLATE="$(grep "mxrr" $BASESTYLE.rasi)"
+TEMPLATE=$(echo "${TEMPLATE}" | sed -e 's/mxrr\://g' )
+
+
 echo ""$COL01" "$COL02" "$COL03" "$COL04" "$COL05" "$COL06" "$COL07" "$COL08" "$COL09" "$COL10" "$COL11" "$NEWNAME" "$MAKECUR"" > $ROFIPATH/$NEWNAME-rr
 
-cp -r $ROFIPATH/template.rasi $ROFIPATH/$NEWNAME.rasi
+cp -r $ROFIPATH/$TEMPLATE $ROFIPATH/$NEWNAME.rasi
 
 sed -i "s/NEWNAME/$NEWNAME/g" $NEWNAME.rasi
 sed -i "s/xyz001/$COL01/g" $NEWNAME.rasi
@@ -909,7 +1004,7 @@ if [ "$MAKECUR" = yes ]; then
 
 	TEXTALLDONE1="$(eval_gettext 'All done!\n<b>$NEWNAME</b> has been set as the current rofi theme.')"
 
-	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTALLDONE1" --text-align=center --button="OK" \
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTALLDONE1" --text-align=center --button="gtk-ok" \
 
 fi
 
@@ -918,7 +1013,7 @@ if [ "$MAKECUR" = no ]; then
 
 	TEXTALLDONE2="$(eval_gettext 'All done!\n<b>$NEWNAME</b> Rofi theme has been created.\n\nYou can change themes with <b>MX-Rofi-Manager</b>')"
 
-	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTALLDONE2" --text-align=center --button="OK" \
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTALLDONE2" --text-align=center --button="gtk-ok" \
   
 fi
 
@@ -1022,7 +1117,7 @@ CLASS="mxrm"
 ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 
 yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
---borders=20 --width=600 --height=600 --center --fixed --text-info --wrap --margins=20 < /usr/share/mx-rofi-manager/mxrm-helptext  --fontname="12" --show-uri --button="gtk-close" \
+--borders=20 --width=600 --height=600 --center --fixed --text-info --wrap --margins=20 < /usr/share/doc/mxrm-helptext  --fontname="12" --show-uri --button="gtk-close" \
 	
 }
 
@@ -1039,7 +1134,7 @@ TITLE="$(gettext 'MX-Rofi-Manager')"
 CLASS="mxrm"
 ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 
-TEXTMXRM="$(gettext '<b><big>Rofi Manager is a tool to configure rofi themes.</big>\n\nWhat would you like to do?</b>\n')"
+TEXTMXRM="$(gettext '<b><big>Rofi Manager is a tool to configure rofi themes.</big>\n\nWhat would you like to do?</b>\n\n')"
 BUTTONTHEME="$(gettext 'Change the current rofi theme')"
 BUTTONTABS="$(gettext 'Change the functions (<i>modi</i>) of the rofi tabs')"
 BUTTONPOSITION="$(gettext 'Change the location and size of the current Rofi window')"
