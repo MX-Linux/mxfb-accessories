@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-22 18:34-0400\n"
+"POT-Creation-Date: 2022-09-24 19:24-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2022\n"
 "Language-Team: Slovenian (https://www.transifex.com/anticapitalista/teams/10162/sl/)\n"
@@ -23,6 +23,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#: ../MX-rofi-manager:230
+msgid ""
+"\n"
+"<b>Select which tabs rofi should display</b>"
+msgstr ""
+"\n"
+"<b>Izberite zavihek, ki naj ga rofi prikaže</b>"
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -45,13 +53,49 @@ msgstr "Za vsako delovno površino se bo pojavilo izbirno okno."
 msgid " Type \\"
 msgstr "Vrsta \\"
 
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr "$TITLE1"
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr "$TITLE2"
+
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12 ur/24 ur"
 
-#: ../mxfb-look:231
+#: ../MX-rofi-manager:242
+msgid "1st Tab"
+msgstr "Prvi zavihek"
+
+#: ../MX-rofi-manager:243
+msgid "2nd Tab"
+msgstr "Drugi zavihek"
+
+#: ../MX-rofi-manager:244
+msgid "3rd Tab"
+msgstr "Tretji zavihek"
+
+#: ../MX-rofi-manager:436
+msgid "<b>Make new theme current?</b>"
+msgstr "<b>Prevzamem nove teme?</b>"
+
+#: ../mxfb-look:231 ../MX-rofi-manager:500
 msgid "<b>Name for new style</b>"
 msgstr "<b>Ime novega sloga</b>"
+
+#: ../MX-rofi-manager:481 ../MX-rofi-manager:527
+msgid "<b>Name for new theme</b>"
+msgstr "<b>Ime nove teme</b>"
+
+#: ../MX-rofi-manager:434
+msgid "<b>Name for new theme</b>     "
+msgstr "<b>Ime nove teme</b>"
 
 #: ../mxfb-look:649
 msgid ""
@@ -64,6 +108,12 @@ msgstr ""
 " je sestavljen iz naslednjih elementov\\n- Gtk-Theme\\n- Gtk-Icon\\n- Gtk-"
 "Font\\n- Fluxbox slog\\n- do dva Tint2 panoja\\n- Rofi tema\\n- ozadje\\n- "
 "One Conky\\n\\n"
+
+#. MAIN
+#. color selection dialogue
+#: ../MX-rofi-manager:397
+msgid "<b>\\nEdit colors and create a new rofi theme.\\n\\n</b>"
+msgstr "<b>\\nUredi barve in ustvari novo rofi temo.\\n\\n</b>"
 
 #: ../mxfb-tiles:21
 msgid ""
@@ -107,10 +157,58 @@ msgstr ""
 msgid "A Look with this name already exists. \\n\\nDo you want to overwrite"
 msgstr "Izgled z enakim imenom že obstaja. \\n\\nŽelite prepisati "
 
+#: ../MX-rofi-manager:520
+#, sh-format
+msgid ""
+"A Theme with this name already exists. \\n\\nDo you want to overwrite "
+"<b>$NEWNAME</b>\\nor save as a different theme name?\\n"
+msgstr ""
+"tema s tem imenom že obstaha. \\n\\nŽelite prepisati <b>$NEWNAME</b>\\nali "
+"jo shraniti pod drugim imenom?\\n"
+
+#: ../MX-rofi-manager:416
+msgid "Active Tab Background"
+msgstr "Ozadje aktivnega zavihka"
+
+#: ../MX-rofi-manager:418
+msgid "Active Tab Highlight"
+msgstr "Poudarek aktivnega zavihka"
+
+#: ../MX-rofi-manager:417
+msgid "Active Tab Text"
+msgstr "Tekst aktivnega zavihka"
+
+#: ../MX-rofi-manager:586
+#, sh-format
+msgid ""
+"All done!\\n<b>$NEWNAME</b> Rofi theme has been created.\\n\\nYou can change"
+" themes with <b>MX-Rofi-Manager</b>"
+msgstr ""
+"Narejeno!\\n<b>$NEWNAME</b> rofi tema je bila ustvarjena.\\n\\nTeme lahko "
+"zamenjate z <b>MX-Rofi-upravljalnik</b>om"
+
+#: ../MX-rofi-manager:577
+#, sh-format
+msgid "All done!\\n<b>$NEWNAME</b> has been set as the current rofi theme."
+msgstr ""
+"Opravljeno!\\n Za trenutno rofi temo ja bila nastavljena tema "
+"<b>NEWNAME</b>."
+
+#: ../MX-rofi-manager:208
+#, sh-format
+msgid "All done!\\n\\n<b>$NEWTHEME</b> has been set as the current rofi theme.\\n\\n"
+msgstr ""
+"Opravljeno!\\nZa trenutno rofi temo ja bila nastavljena tema "
+"<b>NEWTHEME</b>\\n\\n."
+
 #. all done
 #: ../mxfb-look:312
 msgid "All done!\\n\\nLook has been saved as"
 msgstr "Storjeno!\\n\\nIzgled je bil shranjen kot"
+
+#: ../MX-rofi-manager:280
+msgid "All done!\\n\\nTab configuration has been updated.\\n\\n"
+msgstr "Opravljeno!\\n\\nNastavitve zavihkov so bile posodobljene.\\n\\n"
 
 #: ../mxfb-tint2-manager:96
 msgid "Apply"
@@ -119,6 +217,14 @@ msgstr "Uveljavi"
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "NASTAVI VRH"
+
+#: ../MX-rofi-manager:709
+msgid "Change the current rofi theme"
+msgstr "Spremeni trenutno rofi temo"
+
+#: ../MX-rofi-manager:710
+msgid "Change the functions (<i>modi</i>) of the rofi tabs"
+msgstr "Spremeni funkcijo (<i>modi</i>) rovi zavihkov"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
@@ -157,6 +263,10 @@ msgstr "Ali želite izprazniti koš?"
 msgid "Edit"
 msgstr "Uredi"
 
+#: ../MX-rofi-manager:712
+msgid "Edit a rofi theme config file in text editor"
+msgstr "Urejanje nastavitvene datoteke rofi teme v urejevalniku besedil"
+
 #: ../mxfb-timer:23
 msgid "Enter local time"
 msgstr "Vnesite lokalni čas"
@@ -181,9 +291,41 @@ msgstr "Slikovna mapa"
 msgid "Image mode"
 msgstr "Slikovni način"
 
+#: ../MX-rofi-manager:402
+msgid "Inactive Tab Background"
+msgstr "Ozadje nekativnega zavihka"
+
+#: ../MX-rofi-manager:403
+msgid "Inactive Tab Text"
+msgstr "Tekst neaktivnega zavihka"
+
 #: ../mxfb-look:230
 msgid "Look name "
 msgstr "Ime izgleda"
+
+#: ../MX-rofi-manager:687
+msgid "MX-Rofi-Help"
+msgstr "MX-Rofi-pomoč"
+
+#. ##################################################################
+#. ##################################################################
+#. MAIN WINDOW
+#: ../MX-rofi-manager:704
+msgid "MX-Rofi-Manager"
+msgstr "MX-Rofi-upravljanik"
+
+#. mxrr MX-comfort-rofi-recolor
+#. Tool to edit colors in MX-comfort rofi theme
+#. V.0.6 by Melber and MX Devs, 09 September 2022
+#. License: GPL-3.0+
+#. define some variables
+#: ../MX-rofi-manager:303
+msgid "MX-Rofi-Recolor"
+msgstr "MX-Rofi-prebarvaj"
+
+#: ../MX-rofi-manager:387
+msgid "MX-Rofi-Recolor Help"
+msgstr "MX-Rofi-prebarvaj pomoč"
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
@@ -193,19 +335,35 @@ msgstr "MXFB čaovnik"
 msgid "Multiple options for number keys and keyboard"
 msgstr "Več možnosti za tipke s številkami in tipkovnico"
 
+#: ../MX-rofi-manager:482
+msgid "New theme name"
+msgstr "Ime nove teme"
+
 #: ../mxfb-look:205
 msgid "New-Look-Name"
 msgstr "Ime-novega-izgleda"
+
+#: ../MX-rofi-manager:480
+msgid "No Theme name!"
+msgstr "Ni imena za temo!"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
 msgstr "Brez menjav: zamik = 0"
 
+#: ../MX-rofi-manager:333
+msgid ""
+"No theme selected.\\n\\n<b>MX-comfort</b> will be used as the starting "
+"theme."
+msgstr ""
+"Nobena tema ni izbrana.\\n\\n<b>MX-comfort</b> bo izbrana za začetno temo."
+
 #: ../mxfb-tint2-manager:101
 msgid "OK"
 msgstr "V redu"
 
-#: ../mxfb-tiles:14
+#. #begin message box
+#: ../mxfb-tiles:14 ../MX-rofi-manager:58
 msgid "OK to proceed?"
 msgstr "OK za nadaljevanje?"
 
@@ -214,14 +372,38 @@ msgid "OPTIONAL BORDER STYLE CONFIG"
 msgstr "NASTAVITEV IZBIRNEGA SLOGA ROBA"
 
 #: ../mxfb-look:252
-#, sh-format
 msgid "Overwrite"
 msgstr "Prepišem"
+
+#: ../MX-rofi-manager:520
+#, sh-format
+msgid "Overwrite $NEWNAME"
+msgstr "Prepiši $NEWNAME"
+
+#: ../MX-rofi-manager:711
+msgid "Recolor a rofi theme based on MX-comfort"
+msgstr "Prebarvaj rofi temo glede na MX-komfort"
 
 #. RESTOREMAIN
 #: ../mxfb-look:501 ../mxfb-look:649
 msgid "Restore Look"
 msgstr "Obnovi izgled"
+
+#: ../MX-rofi-manager:387
+msgid "Return to Main Window"
+msgstr "Vrni se na glavno okno"
+
+#: ../MX-rofi-manager:604
+msgid "Rofi-Edit"
+msgstr "Rofu-urejanje"
+
+#: ../MX-rofi-manager:223
+msgid "Rofi-Tab-Selector"
+msgstr "ROFI-izbirnik-zavihka"
+
+#: ../MX-rofi-manager:84
+msgid "Rofi-Theme"
+msgstr "Rofi-tema"
 
 #: ../mxfb-look:205
 msgid "Save Look as"
@@ -231,9 +413,29 @@ msgstr "Shrani izgled kot"
 msgid "Save as different name"
 msgstr "Shrani pod drugim imenom"
 
+#: ../MX-rofi-manager:520
+msgid "Save as different theme name"
+msgstr "Shrani pod drugim imenom teme"
+
+#: ../MX-rofi-manager:400
+msgid "Searchbar Background"
+msgstr "Ozadje pasice iskalnika"
+
+#: ../MX-rofi-manager:401
+msgid "Searchbar Text"
+msgstr "Tekst pasice iskalnik"
+
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr "Izbira načina z naslovno vrstico"
+
+#: ../MX-rofi-manager:419
+msgid "Selection Background"
+msgstr "Ozadje izbora"
+
+#: ../MX-rofi-manager:420
+msgid "Selection Text"
+msgstr "Tekst izbora"
 
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
@@ -250,6 +452,11 @@ msgid ""
 "tiling</b>"
 msgstr ""
 "Koda je bila uspešno vnešena. Obstajajo trije načini za razdelitev</b>"
+
+#: ../MX-rofi-manager:499
+#, sh-format
+msgid "Theme name $NEWNAME is protected. Choose another name"
+msgstr "Ime za temo $NEWNAME je zaščiteno. Izberite drugo ime"
 
 #: ../mxfb-trashcheck:31
 msgid "There are no files in the trash."
@@ -272,9 +479,26 @@ msgstr ""
 "Ta skript bo varnostno skopiral vaše trenutne datoteke s ključi, nato pa bo na konec datotke namestil ukaze za razdelitev. \\n\n"
 "</b>"
 
+#: ../MX-rofi-manager:55
+#, sh-format
+msgid ""
+"This tool edits the rofi config file.\\n\\nThe existing file will be backed "
+"up as \\n\\n<b>$HOME/.restore/rofi/config.rasi_$NOW</b>"
+msgstr ""
+"To orodje ureja rofi nastavitveno datoteko.\\n\\nObstoječa datoeka bo "
+"varnostno kopirana kot\\n\\n<b>$HOME /.restore/rofi/config.rasi_$NOW</b>"
+
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
 msgstr "Upravljalnik Tint2"
+
+#: ../MX-rofi-manager:398
+msgid "Title Background"
+msgstr "Ozadje"
+
+#: ../MX-rofi-manager:399
+msgid "Title Text"
+msgstr "Besedilo naslova"
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
@@ -288,9 +512,22 @@ msgstr "\\n"
 msgid "\\n<b> Choose which look to restore</b>\\n"
 msgstr "\\n<b> Izberite izgled za obnovo</b>\\n"
 
+#. select starting style
+#: ../MX-rofi-manager:318
+msgid "\\n<b> Choose which theme to use as a starting point</b>\\n"
+msgstr "\\n<b>Izberite izhodiščno temo</b>\\n"
+
 #: ../mxfb-look:353
 msgid "\\n<b> You need to select a look !</b>\\n"
 msgstr "\\n<b> Izbrati morate izgled!</b>\\n"
+
+#: ../MX-rofi-manager:708
+msgid ""
+"\\n<b><big>Rofi Manager is a tool to configure rofi themes.</big>\\n\\nWhat "
+"would you like to do?</b>\\n\\n"
+msgstr ""
+"\\n<b><big>Rofi upravljalnik je orodje za konfiguriranje rofi "
+"tem.</big>\\n\\nKaj želite storiti?</b>\\n\\n"
 
 #. MAIN
 #: ../mxfb-look:194
@@ -300,6 +537,33 @@ msgid ""
 msgstr ""
 "\\n<b>Trenutne nastavitve.\\n</b>\\n\n"
 "GTK tema: <b>"
+
+#. select theme
+#: ../MX-rofi-manager:168
+msgid ""
+"\\n<b>Select rofi theme to make current</b>\n"
+"Double click a theme name to open a preview rofi.\\n"
+msgstr ""
+"\\n<b>Izberite rofi tenmo, ki naj postane trenutna</b>\n"
+"Za rofi predogled dvojno kliknite na temo.\\n"
+
+#. select theme
+#: ../MX-rofi-manager:628
+msgid ""
+"\\n<b>Select the rofi theme you wish to edit</b>\\n\\nThe .rasi file will be"
+" opened in your preferred text editor\\n\\n"
+msgstr ""
+"\\n<b>Izberite rofi temo za urejanje</b>\\n\\nDatoteka .rasi se bo odprla v "
+"privzetem urejevalniku besedil\\n\\n"
+
+#: ../MX-rofi-manager:652
+#, sh-format
+msgid ""
+"\\nThe theme to be edited has been saved in\\n<b>$ROFIPATH</b> "
+"as\\n\\n<b>$EDITTHEMECOPY</b>\\n\\n"
+msgstr ""
+"\\nTema za urejanje je bila shranjena v\\n\\n<b>$ROFIPATH1 </b> kot\\n\\n "
+"<b>$EDITTHEMECOPY</b>\\n\\n"
 
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
@@ -331,9 +595,60 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Povrnitev"
 
-#: ../mxfb-timer:24 ../mxfb-look:251
+#: ../MX-rofi-manager:233
+msgid "a powerful calculation engine"
+msgstr "zmogljiv računski pogon"
+
+#: ../MX-rofi-manager:237
+msgid "a set of links about using rofi"
+msgstr "skupek povezav o rabi rofija"
+
+#: ../MX-rofi-manager:234
+msgid "displays all available executable files"
+msgstr "Prikaže vse izvršljive datoteke"
+
+#: ../MX-rofi-manager:236
+msgid "enables easy switching"
+msgstr "vklpi preprosto preklapljanje"
+
+#. translation  re-use ;)
+#. CLOSE=${CLOSE//_}
+#. CANCEL=${CANCEL//_};
+#. YES=${YES//_}
+#. NO=${NO//_}
+#: ../mxfb-trashcheck:21 ../mxfb-trashcheck:22 ../mxfb-trashcheck:23
+#: ../mxfb-trashcheck:24 ../mxfb-trashcheck:25 ../mxfb-trashcheck:26
+msgid "gtk30"
+msgstr "gtk30"
+
+#. OK=${OK//_}
+#: ../mxfb-trashcheck:27
+msgid "gtk30-properties"
+msgstr "gtk30-lastnosti"
+
+#: ../MX-rofi-manager:370
+msgid "mxrr-color-selector"
+msgstr "mxrr-izbirnik-barv"
+
+#: ../MX-rofi-manager:235
+msgid "opens a secure shell"
+msgstr "odpre varno ukazno lupino"
+
+#: ../mxfb-timer:24
+msgid "or number and unit"
+msgstr "ali številko in enoto"
+
+#: ../mxfb-look:251
 msgid "or save as a new name?"
 msgstr "ali shranim pod novim imenom?"
+
+#: ../MX-rofi-manager:238
+msgid "tab will not be shown"
+msgstr "zavihek ne bo prikazan"
+
+#: ../MX-rofi-manager:232
+msgid "the MX-21 default that displays available apps"
+msgstr "privzeto za MX-21, ki prikaže vse aplikacije, ki so na voljo"
 
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
