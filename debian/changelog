@@ -1,5 +1,6 @@
-mxfb-accessories (22.10.10) UNRELEASED; urgency=medium
+mxfb-accessories (22.10.10+nmu1) UNRELEASED; urgency=medium
 
+  [ Jerry ]
   * added new mx-rofi-manager and components
   * updated other small items
   * adjusted install targets
@@ -10,7 +11,10 @@ mxfb-accessories (22.10.10) UNRELEASED; urgency=medium
   * adjusted install file
   * updated mx-rofi-manager to v7
 
- -- Jerry <jb@mx>  Wed, 12 Oct 2022 10:16:31 -0400
+  [ Dolphin Oracle ]
+  * update translations
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 26 Oct 2022 20:01:09 -0400
 
 mxfb-accessories (22.08.26) mx; urgency=medium
 
