@@ -1,9 +1,8 @@
 /**
  * ROFI Color theme by Melber & MX-Devs
  */
-
-* {
-    // MX-comfort
+  * {
+    // NEWNAME
     // with tabs
     // mxrr template-comfort.rasi
     font: "Noto Sans 12";
@@ -11,35 +10,35 @@
 
 * {
     // Title background
-    color01: #1D2324;
+    color01: xyz001;
     // Title text
-    color02: #CACDD0;
+    color02: xyz002;
     // Searchbar background
-    color03: #29353B;
+    color03: xyz003;
     // Searchbar text
-    color04: #ffffff;
+    color04: xyz004;
     // Inctive tab background
-    color05: #29353B;
+    color05: xyz005;
     // Inctive tab text
-    color06: #CACDD0;
+    color06: xyz006;
     // Active tab background
-    color07: #1D2324;
+    color07: xyz007;
     // Active tab text
-    color08: #ffffff;
+    color08: xyz008;
     // Active tab highlight
-    color09: #0f56d9;
+    color09: xyz009;
     // Selection background
-    color10: #0f56d9;
+    color10: xyz010;
     // Selection text 
-    color11: #ffffff;
+    color11: xyz011;
 }
 
 window {
-anchor: southwest;
-location: southwest;
+anchor: center;
+location: center;
 y-offset: 0;
 x-offset: 0;
-width: 20%;
+width: 30%;
 }
 
 mainbox {
@@ -101,7 +100,7 @@ button selected.normal {
 
 listview {
     columns: 1;
-lines: 10;
+lines: 12;
     background-color: @color07;
 }
 
