@@ -1,10 +1,10 @@
 #!/bin/bash
 #Rofi-Manager
 #Tool to manage rofi settings
-#V.0.7 by Melber and MX Devs, 12 October 2022
+#V.0.8 by Melber and MX Devs, 18 October 2022
 #License: GPL-3.0+
 #mxrm-icon based on applications-development and applications-interfacedesign icons from papirus icon set
-#Changelog: Fixed issues identified by DO, added ssh and filebrowser tabs
+#Changelog: 08 added mxrr fancy and sidebar.rasi, added help pngs
 
 #set up translation
 
@@ -78,13 +78,13 @@ fi
 
 if [ ! -f $ROFIPATH/MX-fancy-rr ]; then
 
-	printf "#1D2324 #CACDD0 #29353B #ffffff #29353B #CACDD0 #1D2324 #ffffff #0f56d9 #0f56d9 #ffffff MX-fancy yes" > $ROFIPATH/MX-fancy-rr
+	printf "#CACDD0 #FF0000 #29353B #ffffff #CACDD0 #29353B #1D2324 #CACDD0 #0f56d9 #0f56d9 #ffffff MX-fancy yes" > $ROFIPATH/MX-fancy-rr
 
 fi
 
 if [ ! -f $ROFIPATH/MX-sidebar-rr ]; then
 
-	printf "#1D2324 #CACDD0 #29353B #ffffff #29353B #CACDD0 #1D2324 #ffffff #0f56d9 #0f56d9 #ffffff MX-sidebar yes" > $ROFIPATH/MX-sidebar-rr
+	printf "#1D2324 #FF0000 #29353B #ffffff #29353B #CACDD0 #1D2324 #ffffff #0f56d9 #0f56d9 #ffffff MX-sidebar yes" > $ROFIPATH/MX-sidebar-rr
 
 fi
 
@@ -174,7 +174,8 @@ ls -f *rasi > $ROFIPATH/tempdir/rasilist.txt
 cd $ROFIPATHUSR
 ls -f *rasi >> $ROFIPATH/tempdir/rasilist.txt
 
-sed -i 's|.rasi||g' $ROFIPATH/tempdir/rasilist.txt
+sed -i 's/.rasi//g' $ROFIPATH/tempdir/rasilist.txt
+sed -i '/template/d' $ROFIPATH/tempdir/rasilist.txt
 
 
 #select theme
@@ -357,7 +358,6 @@ rofi_help-position() {
 
 TITLE="$(gettext 'MX-Rofi-Help')"
 CLASS="mxrm"
-#/usr/share/mx-rofi-manager/mxrm-helptext-position 
 
 yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --borders=20 --width=600 --height=600 --center --fixed --text-info --wrap --margins=20 < /usr/share/rofi/mxrm-helptext-position  --fontname="12" --button="gtk-close" \
@@ -372,13 +372,13 @@ export -f rofi_help-position
 #get current rofi & check if MX-comfort based
 ROFICURRENT="$(grep '@theme' $HOME/.config/rofi/config.rasi | tail -1)"
 
-ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/\"//g' )
-ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/@theme//g' )
+ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/\"//g' | sed -e 's/@theme//g' | sed -e 's/ //g')
+#ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/@theme//g' )
 
 
 #check theme is MX-comfort based
 
-ROFICOMFORTCHECK="$(grep 'with tabs' $ROFICURRENT)"
+ROFICOMFORTCHECK="$(grep 'mxrr' $ROFICURRENT)"
 
 TEXTSORRY="$(gettext 'Sorry, this function is only available for MX-comfort based rofi themes\n\nTo adjust the current rofi theme you need to manually edit the .rasi file.\n\n')"
 
@@ -386,7 +386,7 @@ TEXTSORRY="$(gettext 'Sorry, this function is only available for MX-comfort base
 if [ "$ROFICOMFORTCHECK" = "" ]; then
 
 	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
-	--borders=20 --width=600 --height=600 --center --fixed --margins=20 --button="gtk-close" \
+	--borders=20 --width=400 --height=200 --center --fixed --margins=20 \
 	--text="$TEXTSORRY" --text-align=center --button="gtk-ok" \
 	
 	exit
@@ -481,7 +481,8 @@ ROFIHEIGHTOLD="$(grep "lines" $ROFICURRENT)"
 		sed -ie "/^listview/a $ROFIHEIGHTOLD" $ROFICURRENT
 
 	fi
-	
+
+
 LINVALUE=$(echo "${ROFIHEIGHTOLD}" | sed -e 's/lines\://g' | sed -e 's/\;//g' )
 
 ROFIHEIGHTOLD=$(echo "${ROFIHEIGHTOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
@@ -585,7 +586,14 @@ else
 	TEXTPOSDONE1="$(eval_gettext 'All done!\nPosition and size of the current rofi theme have been amended.')"
 
 	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=400 --height=200 --fixed --center --borders=20 --text="$TEXTPOSDONE1" --text-align=center --button="gtk-ok" \
-	
+
+
+#delete rasie
+
+STRANGERASIE=$(echo "${ROFICURRENT}" | sed -e 's/rasi/rasie/g' )
+
+	rm "$STRANGERASIE"
+
 
 exit
 
@@ -622,12 +630,12 @@ ROFICURRENT=$(echo "${ROFICURRENT}" | sed -e 's/ //g' )
 
 TEXTSORRY="$(gettext 'Sorry, this function is only available for MX-comfort based rofi themes\n\nTo adjust the current rofi theme you need to manually edit the .rasi file.\n\n')"
 
-ROFICOMFORTCHECK="$(grep 'with tabs' $ROFICURRENT)"
+ROFICOMFORTCHECK="$(grep 'mxrr' $ROFICURRENT)"
 
 if [ "$ROFICOMFORTCHECK" = "" ]; then
 
 	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
-	--borders=20 --width=600 --height=400 --center --fixed --margins=20 \
+	--borders=20 --width=400 --height=200 --center --fixed --margins=20 \
 	--text="$TEXTSORRY" --text-align=center --button="gtk-ok" \
 	
 	exit
@@ -804,11 +812,58 @@ color_picker() {
 }
 
 
+# make mxrrhelptemp
+echo "$BASESTYLE" > $ROFIPATH/tempdir/mxrrhelptemp.txt
+
+
 # function to be called with help button
 
 mxrrhelp() {
+TITLE="$(gettext 'MX-Rofi-Recolor Help')"
+CLASS="mxrm"
+ROFIPATH="$HOME/.config/rofi/themes"
+ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 source gettext.sh
-yad --title="$(gettext 'MX-Rofi-Recolor Help')"  --class=mxrrhelp --window-icon="$ICONPATH" --borders=20 --fixed --center --width=600 --height=400 --image /usr/share/pixmaps/mxrr-help.png --button="$(gettext 'Return to Main Window')":1 \
+
+read -r -a BASESTYLE < $ROFIPATH/tempdir/mxrrhelptemp.txt
+
+	BASE="${BASESTYLE[0]}"
+
+HELPTEMP="$(grep "mxrr" $ROFIPATH/$BASE.rasi)"
+HELPTEMP=$(echo "${HELPTEMP}" | sed -e 's/\/\// /g' | sed -e 's/mxrr/ /g' | sed -e 's/ //g' )
+
+
+if [ "$HELPTEMP" = template-fancy.rasi ]; then
+
+	HELPPNG=mxrr-help-fancy.png
+	
+elif [ "$HELPTEMP" = template-sidebar.rasi ]; then
+
+	HELPPNG=mxrr-help-sidebar.png
+
+else
+
+	HELPPNG="mxrr-help-comfort.png"
+
+fi
+
+
+MXRRHELPTEXT1="$(gettext 'Title Background')"
+MXRRHELPTEXT2="$(gettext 'Title Text')"
+MXRRHELPTEXT3="$(gettext 'Searchbar Background')"
+MXRRHELPTEXT4="$(gettext 'Searchbar Text')"
+MXRRHELPTEXT5="$(gettext 'Inactive Tab Background')"
+MXRRHELPTEXT6="$(gettext 'Inactive Tab Text')"
+MXRRHELPTEXT7="$(gettext 'Active Tab Background')"
+MXRRHELPTEXT8="$(gettext 'Active Tab Text')"
+MXRRHELPTEXT9="$(gettext 'Active Tab Highlight')"
+MXRRHELPTEXT10="$(gettext 'Selection Background')"
+MXRRHELPTEXT11="$(gettext 'Selection Text')"
+
+
+yad --title="$(gettext 'MX-Rofi-Recolor Help')"  --class=mxrrhelp --window-icon="
+$ICONPATH" --borders=20 --fixed --posx=10 --posy=10 --image /usr/share/pixmaps/$HELPPNG --button="$(gettext 'Return to Main Window')":1 \
+--text=" 01 $MXRRHELPTEXT1 \n\n 02 $MXRRHELPTEXT2 \n\n 03 $MXRRHELPTEXT3 \n\n 04 $MXRRHELPTEXT4 \n\n 05 $MXRRHELPTEXT5 \n\n 06 $MXRRHELPTEXT6 \n\n 07 $MXRRHELPTEXT7 \n\n 08 $MXRRHELPTEXT8 \n\n 09 $MXRRHELPTEXT9 \n\n 10 $MXRRHELPTEXT10 \n\n 11 $MXRRHELPTEXT11 \n\n"
 
 }
 
@@ -963,12 +1018,27 @@ done
 cd $ROFIPATH
 
 TEMPLATE="$(grep "mxrr" $BASESTYLE.rasi)"
-TEMPLATE=$(echo "${TEMPLATE}" | sed -e 's/mxrr\://g' )
+TEMPLATE=$(echo "${TEMPLATE}" | sed -e 's/\/\// /g' | sed -e 's/mxrr/ /g' | sed -e 's/ //g' )
 
 
 echo ""$COL01" "$COL02" "$COL03" "$COL04" "$COL05" "$COL06" "$COL07" "$COL08" "$COL09" "$COL10" "$COL11" "$NEWNAME" "$MAKECUR"" > $ROFIPATH/$NEWNAME-rr
 
-cp -r $ROFIPATH/$TEMPLATE $ROFIPATH/$NEWNAME.rasi
+
+if [ "$TEMPLATE" = template-fancy.rasi ]; then
+
+	cp $ROFIPATH/template-fancy.rasi $ROFIPATH/$NEWNAME.rasi
+	
+elif [ "$TEMPLATE" = template-sidebar.rasi ]; then
+
+	cp $ROFIPATH/template-sidebar.rasi $ROFIPATH/$NEWNAME.rasi
+
+else
+
+	cp $ROFIPATH/template-comfort.rasi $ROFIPATH/$NEWNAME.rasi
+
+fi
+
+#cp $ROFIPATH/$TEMPLATE $ROFIPATH/$NEWNAME.rasi
 
 sed -i "s/NEWNAME/$NEWNAME/g" $NEWNAME.rasi
 sed -i "s/xyz001/$COL01/g" $NEWNAME.rasi
@@ -1049,6 +1119,8 @@ cd $ROFIPATH
 ls -f *rasi > $ROFIPATH/tempdir/editlist.txt
 cd $ROFIPATHUSR
 ls -f *rasi >> $ROFIPATH/tempdir/editlist.txt
+
+sed -i '/template/d' $ROFIPATH/tempdir/editlist.txt
 
 
 #select theme

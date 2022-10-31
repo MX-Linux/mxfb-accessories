@@ -1,0 +1,91 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package mxfb-accessories
+dpkg-buildpackage: info: source version 22.10.10+nmu2
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Jerry <jb@mx>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_clean
+dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building mxfb-accessories in mxfb-accessories_22.10.10+nmu2.tar.xz
+dpkg-source: info: building mxfb-accessories in mxfb-accessories_22.10.10+nmu2.dsc
+ debian/rules build
+dh build
+dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_update_autotools_config
+ fakeroot debian/rules binary
+dh binary
+dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_testroot
+   dh_prep
+   dh_install
+dh_install: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_installdocs
+dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+	Normalized debian/mxfb-accessories/usr/share/locale/ja/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/el/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/ar/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/hr/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/pl/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/ro/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/id/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/pt_BR/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/lt/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/et/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/ko/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/fr/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/bg/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/de/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/am/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/hi/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/it/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/fi/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/tr/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/hu/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/fa/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/kk/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/uk/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/nl/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/da/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/cs/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/zh_CN/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/ca/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/zh_TW/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/es/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/sq/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/nb/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/eu/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/ru/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/sk/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/sr/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/is/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/sl/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/mk/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/sv/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/pt/LC_MESSAGES/mxfb-accessories.mo
+	Normalized debian/mxfb-accessories/usr/share/locale/he_IL/LC_MESSAGES/mxfb-accessories.mo
+   dh_compress
+dh_compress: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_fixperms
+   dh_missing
+dh_missing: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_installdeb
+dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'mxfb-accessories' in '../mxfb-accessories_22.10.10+nmu2_all.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../mxfb-accessories_22.10.10+nmu2_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload; Debian-native package (full source is included)

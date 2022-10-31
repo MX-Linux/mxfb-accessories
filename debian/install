@@ -1,12 +1,12 @@
 components/*-help usr/share/rofi
 components/config.rasi usr/share/rofi
-components/mxrr-help.png usr/share/pixmaps
+components/mxrr-help-*.png usr/share/pixmaps
 components/mxrm-icon.png usr/share/pixmaps
-components/template.rasi usr/share/mxrr
+components/template-*.rasi usr/share/mxrr
 components/MX-*.rasi usr/share/mxrr
+components/MX-*-rr usr/share/mxrr
 components/mxfb-settings.list etc/custom-toolbox
 components/bleep.wav usr/share/sounds
-components/tint2-manager-help usr/share/doc/mxfb-goodies/
 components/HELP-windowbuttons usr/share/doc/mxfb-accessories
 components/mxrm-helptext usr/share/doc/
 components/*.desktop usr/share/applications

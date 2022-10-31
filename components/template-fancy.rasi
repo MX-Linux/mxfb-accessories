@@ -12,27 +12,27 @@
 
 * {
     // Title background
-    color01: #CACDD0;
-    // Title text not used
-    color02: #FF0000;
+    color01: xyz001;
+    // Title text
+    color02: xyz002;
     // Searchbar background
-    color03: #29353B;
+    color03: xyz003;
     // Searchbar text
-    color04: #ffffff;
+    color04: xyz004;
     // Inctive tab background
-    color05: #CACDD0;
+    color05: xyz005;
     // Inctive tab text
-    color06: #29353B;
+    color06: xyz006;
     // Active tab background
-    color07: #1D2324;
+    color07: xyz007;
     // Active tab text
-    color08: #CACDD0;
+    color08: xyz008;
     // Active tab highlight
-    color09: #0f56d9;
+    color09: xyz009;
     // Selection background
-    color10: #0f56d9;
+    color10: xyz010;
     // Selection text 
-    color11: #ffffff;
+    color11: xyz011;
 }
 
 window {
