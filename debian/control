@@ -9,8 +9,8 @@ Homepage: https:/mxlinux.org
 Package: mxfb-accessories
 Architecture: all
 Depends: nitrogen 
-Breaks: mxfb-goodies (<< 21.05.01)
-Conflicts: mxfb-goodies (<< 21.05.01) 
+Breaks: mxfb-goodies (<< 22.08.26)
+Conflicts: mxfb-goodies (<< 22.08.26) 
 Replaces: 
 Description: Various scripts used in MX-Fluxbox
   
