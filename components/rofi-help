@@ -1,13 +1,5 @@
 #!/bin/bash
 
-if [ x"$@" = x">> documentation" ];
-then
-killall rofi
-sleep 0.25
-rofi-sensible-terminal -e "mxfb-help"
-kill rofi-sensible-terminal
-fi
-
 if [ x"$@" = x">> theme selector" ];
 then
 killall rofi
@@ -84,7 +76,3 @@ echo ">> theme selector"
 echo ">> theme format"
 echo ">> recolor"
 echo ">> scripts"
-echo "------------------"
-echo "    MX-FLUXBOX    "
-echo "------------------"
-echo ">> documentation"
