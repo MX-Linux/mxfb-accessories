@@ -1,23 +1,310 @@
+##############
+     Terms
+##############
 
-Position of the rofi window on the screen
-and the anchor point within the rofi window
+LOCATION: The general placement of the rofi window on the screen
 
- ─────────────────────────────────────────
-│	northwest	│		north		│	northeast	│
- ─────────────────────────────────────────
-│	west		│		center		│	east		│
- ─────────────────────────────────────────
-│	southwest	│		south		│	southeast	│
- ─────────────────────────────────────────
+ANCHOR: The point of the rofi window which is set at the location.
+
+X-OFFSET & Y-OFFSET: The offset (pixels) of the rofi window from to the anchor point
+
+##############
+   Examples
+##############
+
+Location center, anchor center: places the center of the rofi window at the center of the screen
+
+Location northwest, anchor northwest: places the top left corner of the rofi window at the top left of the screen.
+
+Location center, anchor northwest: places the top left corner of the rofi window at the center of the screen.
+
+Location west, anchor west, x-offset 32: displaces the rofi window to avoid overlap with a vertical panel.
 
 
-Offset moves the window relative to the anchor point,
-allowing you to push the window left/right/up/down
+##### DE #####
+##############
+   Begriffe
+##############
 
- ─────────────────────────────────────────
-│				│		y -			│				│
- ─────────────────────────────────────────
-│		x -		│		offset		│		x +		│
- ─────────────────────────────────────────
-│				│		y +			│				│
- ─────────────────────────────────────────
+LOCATION: Die allgemeine Platzierung des rofi-Fensters auf dem Bildschirm
+
+ANCHOR: Der Punkt des Rofi-Fensters, der auf die Position gesetzt wird.
+
+X-VERSATZ & Y-VERSATZ: Der Versatz (Pixel) des Rofi-Fensters zum Ankerpunkt
+
+##############
+   Beispiele
+##############
+
+Position center, anchor center: platziert die Mitte des Rofi-Fensters in die Mitte des Bildschirms
+
+Position Nordwest, Anker Nordwest: platziert die linke obere Ecke des Rofi-Fensters an den linken oberen Rand des Bildschirms.
+
+Position Mitte, Anker Nordwest: platziert die obere linke Ecke des Rofi-Fensters in der Mitte des Bildschirms.
+
+Position West, Anker West, x-Offset 32: verschiebt das Rofi-Fenster, um eine Überlappung mit einem vertikalen Panel zu vermeiden.
+
+
+##### EL #####
+##############
+     Όροι
+##############
+
+LOCATION: Η γενική τοποθέτηση του παραθύρου rofi στην οθόνη.
+
+ANCHOR: Το σημείο του παραθύρου rofi που έχει οριστεί στη θέση.
+
+X-OFFSET & Y-OFFSET: Η μετατόπιση (pixels) του παραθύρου rofi από το σημείο αγκύρωσης.
+
+##############
+ Παραδείγματα
+##############
+
+Location center, anchor center: Τοποθετεί το κέντρο του παραθύρου rofi στο κέντρο της οθόνης.
+
+Location northwest, anchor northwest: τοποθετεί την επάνω αριστερή γωνία του παραθύρου rofi στην επάνω αριστερή γωνία της οθόνης.
+
+Location center, anchor northwest: τοποθετεί την επάνω αριστερή γωνία του παραθύρου rofi στο κέντρο της οθόνης.
+
+Location west, anchor west, x-offset 32: μετατοπίζει το παράθυρο rofi για να αποφύγει την επικάλυψη με ένα κατακόρυφο πάνελ.
+
+
+##### ES #####
+##############
+   Términos
+##############
+
+UBICACIÓN: La colocación general de la ventana rofi en la pantalla
+
+ANCLAJE: El punto de la ventana rofi que se fija en la ubicación.
+
+DESPLAZAMIENTO X Y DESPLAZAMIENTO Y: El desplazamiento (píxeles) de la ventana rofi desde al punto de anclaje.
+
+##############
+   Ejemplos
+##############
+
+Ubicación centro, ancla centro: coloca el centro de la ventana rofi en el centro de la pantalla
+
+Ubicación noroeste, ancla noroeste: coloca la esquina superior izquierda de la ventana rofi en la parte superior izquierda de la pantalla.
+
+Ubicación centro, ancla noroeste: coloca la esquina superior izquierda de la ventana rofi en el centro de la pantalla.
+
+Ubicación oeste, ancla oeste, desplazamiento x 32: desplaza la ventana de rofi para evitar la superposición con un panel vertical.
+
+
+##### FR #####
+##############
+    Termes
+##############
+
+LOCATION : Le placement général de la fenêtre rofi sur l'écran
+
+ANCRE : Le point de la fenêtre rofi qui est placé à l'emplacement.
+
+X-OFFSET & Y-OFFSET : Le décalage (pixels) de la fenêtre rofi par rapport au point d'ancrage
+
+##############
+   Exemples
+##############
+Location center, anchor center : place le centre de la fenêtre rofi au centre de l'écran
+
+Location northwest, anchor northwest : place le coin supérieur gauche de la fenêtre rofi en haut et à gauche de l'écran.
+
+Emplacement centre, ancre nord-ouest : place le coin supérieur gauche de la fenêtre rofi au centre de l'écran.
+
+Location west, anchor west, x-offset 32 : déplace la fenêtre rofi pour éviter le chevauchement avec un panneau vertical.
+
+
+##### IT #####
+##############
+   Termini
+##############
+
+POSIZIONE: la posizione generale della finestra rofi sullo schermo.
+
+ANCORA: Il punto della finestra rofi che è impostato sulla posizione.
+
+X-OFFSET & Y-OFFSET: L'offset (pixel) della finestra rofi rispetto al punto di ancoraggio
+
+##############
+   Esempi
+##############
+
+Posizione centro, ancoraggio centro: posiziona il centro della finestra rofi al centro dello schermo
+
+Posizione nord-ovest, ancora nord-ovest: colloca l'angolo superiore sinistro della finestra rofi in alto a sinistra dello schermo.
+
+Posizione centro, ancora nord-ovest: posiziona l'angolo superiore sinistro della finestra rofi al centro dello schermo.
+
+Posizione ovest, ancoraggio ovest, x-offset 32: sposta la finestra rofi per evitare la sovrapposizione con un pannello verticale.
+
+
+##### JA #####
+##############
+     用語解説
+##############
+
+位置：画面上のrofiウィンドウの大まかな位置
+
+ANCHOR: ANCHOR: 位置に設定されたロファイウィンドウの点。
+
+x-オフセットとy-オフセット。アンカーポイントからの rofi ウィンドウのオフセット (ピクセル)
+
+##############
+      例
+##############
+
+位置 center, anchor center: rofi ウィンドウの中心を画面の中央に配置する
+
+Location northwest, anchor northwest: rofiウィンドウの左上隅を画面左上に配置します。
+
+中央、アンカーnorthwest：rofiウィンドウの左上隅を画面の中央に配置します。
+
+location west, anchor west, x-offset 32: rofiウィンドウを垂直パネルとの重なりを避けるように移動させます。
+
+##### NL #####
+##############
+  Voorwaarden
+##############
+
+LOCATIE: De algemene plaatsing van het rofi venster op het scherm.
+
+ANCHOR: Het punt van het rofi venster dat is ingesteld op de locatie.
+
+X-OFFSET & Y-OFFSET: De offset (pixels) van het rofi venster ten opzichte van het ankerpunt.
+
+##############
+ Voorbeelden
+##############
+
+Locatie midden, anker midden: plaatst het midden van het rofi venster in het midden van het scherm
+
+Locatie noordwest, anker noordwest: plaatst de linkerbovenhoek van het rofi venster linksboven in het scherm.
+
+Locatie midden, anker noordwest: plaatst de linkerbovenhoek van het rofi venster in het midden van het scherm.
+
+Locatie west, anker west, x-offset 32: verplaatst het rofi venster om overlapping met een verticaal paneel te voorkomen.
+
+
+##### PL #####
+##############
+   Terminy
+##############
+
+LOKALIZACJA: Ogólne rozmieszczenie okna rofi na ekranie.
+
+ANCHOR: Punkt okna rofi, który jest ustawiony w danym miejscu.
+
+X-OFFSET & Y-OFFSET: Przesunięcie (w pikselach) okna rofi w stosunku do punktu zakotwiczenia.
+
+##############
+   Przykłady
+##############
+
+Location center, anchor center: umieszcza środek okna rofi na środku ekranu.
+
+Położenie northwest, kotwica northwest: umieszcza lewy górny róg okna rofi w lewym górnym rogu ekranu.
+
+Lokalizacja środek, kotwica północny zachód: umieszcza lewy górny róg okna rofi na środku ekranu.
+
+Lokalizacja west, kotwica west, x-offset 32: przesuwa okno rofi, aby uniknąć nakładania się z pionowym panelem.
+
+
+##### PT #####
+##############
+     Termos
+##############
+
+LOCALIZAÇÃO: A colocação geral da janela rofi no ecrã
+
+ANCHOR: O ponto da janela rofi que se encontra no local.
+
+X-OFFSET & Y-OFFSET: O desvio (pixels) da janela rofi desde o ponto de ancoragem
+
+##############
+   Exemplos
+##############
+
+Centro de localização, centro de ancoragem: coloca o centro da janela rofi no centro do ecrã
+
+Localização noroeste, ancorar a noroeste: coloca o canto superior esquerdo da janela rofi no canto superior esquerdo do ecrã.
+
+Localização centro, âncora noroeste: coloca o canto superior esquerdo da janela rofi no centro do ecrã.
+
+Localização oeste, âncora oeste, deslocamento 32 x: desloca a janela rofi para evitar sobreposição com um painel vertical.
+
+
+##### RU #####
+##############
+   Термины
+##############
+
+РАСПОЛОЖЕНИЕ: Общее расположение окна rofi на экране.
+
+ЯКОРЬ (ANCHOR): Точка окна rofi, которая устанавливается в данном месте.
+
+X-OFFSET & Y-OFFSET: Смещение (в пикселях) окна rofi относительно точки привязки.
+
+##############
+   Примеры
+##############
+
+Расположение center, anchor center: помещает центр окна rofi в центр экрана
+
+Расположение northwest, anchor northwest: помещает левый верхний угол окна rofi в левый верхний угол экрана.
+
+Расположение center, anchor northwest: помещает левый верхний угол окна rofi в центр экрана.
+
+Расположение west, anchor west, x-offset 32: смещает окно rofi, чтобы избежать перекрытия с вертикальной панелью.
+
+
+##### SV #####
+##############
+    Villkor
+##############
+
+PLATS: Den allmänna placeringen av rofi-fönstret på skärmen.
+
+ANCHOR: Den punkt på rofi-fönstret som är inställd på platsen.
+
+X-OFFSET & Y-OFFSET: Förskjutningen (pixlar) av rofi-fönstret från ankarpunkten.
+
+##############
+   Exempel
+##############
+
+Location center, anchor center: placerar mitten av rofi-fönstret i mitten av skärmen.
+
+Location northwest, anchor northwest: placerar det övre vänstra hörnet av rofi-fönstret högst upp till vänster på skärmen.
+
+Plats centrum, ankare nordväst: placerar det övre vänstra hörnet av rofi-fönstret i mitten av skärmen.
+
+Plats väst, ankare väst, x-offset 32: förskjuter rofi-fönstret för att undvika överlappning med en vertikal panel.
+
+
+##### ZH #####
+##############
+     术语
+##############
+
+位置：rofi窗口在屏幕上的一般位置。
+
+锚点。rofi窗口的点，它被设置在位置上。
+
+x-offset & y-offset: rofi窗口与锚点之间的偏移（像素）。
+
+##############
+   例子
+##############
+
+位置中心，锚点中心：将rofi窗口的中心放在屏幕的中心。
+
+位置西北，锚点西北：将rofi窗口的左上角放在屏幕的左上角。
+
+位置中心，锚定西北：将rofi窗口的左上角放在屏幕的中心。
+
+位置向西，锚点向西，x-offset 32：移动rofi窗口以避免与垂直面板重叠。
+
+
+##### Translations by https://www.deepl.com/translator #####
