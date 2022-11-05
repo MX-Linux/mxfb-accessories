@@ -35,10 +35,10 @@
 }
 
 window {
-anchor: northwest;
-location: northwest;
-y-offset: 50;
-x-offset: 50;
+anchor: center;
+location: center;
+y-offset: 0;
+x-offset: 0;
 width: 30%;
 }
 
