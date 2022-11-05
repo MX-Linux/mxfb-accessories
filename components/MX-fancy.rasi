@@ -43,6 +43,8 @@ window {
     spacing:          0px;
     location:       center;
     anchor:         center;
+    y-offset: 0;
+    x-offset: 0;
     width: 40%;
     children: [ inputbar, wrapper-mode-switcher, listview , pagerbox ];
 }

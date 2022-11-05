@@ -1,10 +1,10 @@
 #!/bin/bash
 #Rofi-Manager
 #Tool to manage rofi settings
-#V.0.8 by Melber and MX Devs, 18 October 2022
+#V.0.8b by Melber and MX Devs, 05 November 2022
 #License: GPL-3.0+
 #mxrm-icon based on applications-development and applications-interfacedesign icons from papirus icon set
-#Changelog: 08 added mxrr fancy and sidebar.rasi, added help pngs
+#Changelog: 08 added mxrr fancy and sidebar.rasi, added help pngs 08b help in fpad
 
 #set up translation
 
@@ -193,6 +193,16 @@ if [ "$GETOUT" != 0 ]; then
 
 fi
 
+if [ -z "$NEWTHEME" ]; then
+
+	TEXTTHEME3="$(gettext 'Nothing selected, theme not changed.')"
+
+	yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="$TEXTTHEME3" --button=gtk-ok --text-align=center --center --width=400 --height=200 --borders=20 \
+
+	exit
+
+fi
+
 #check change and make current
 cd $HOME/.config/rofi/
 
@@ -356,11 +366,7 @@ source gettext.sh
 
 rofi_help-position() {
 
-TITLE="$(gettext 'MX-Rofi-Help')"
-CLASS="mxrm"
-
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
---borders=20 --width=600 --height=600 --center --fixed --text-info --wrap --margins=20 < /usr/share/rofi/mxrm-helptext-position  --fontname="12" --button="gtk-close" \
+fpad /usr/share/doc/mxfb-accessories/mxrm-helptext-position
 	
 }
 
@@ -1184,12 +1190,7 @@ exit
 
 rofi_help() {
 
-TITLE="$(gettext 'MX-Rofi-Help')"
-CLASS="mxrm"
-ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
-
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
---borders=20 --width=600 --height=600 --center --fixed --text-info --wrap --margins=20 < /usr/share/doc/mxrm-helptext  --fontname="12" --show-uri --button="gtk-close" \
+fpad /usr/share/doc/mxfb-accessories/mxrm-helptext
 	
 }
 
