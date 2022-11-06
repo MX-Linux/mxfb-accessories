@@ -1,10 +1,11 @@
 #!/bin/bash
 #Rofi-Manager
 #Tool to manage rofi settings
-#V.0.9 by Melber and MX Devs, 05 November 2022
+#V.0.10 by Melber and MX Devs, 06 November 2022
 #License: GPL-3.0+
 #mxrm-icon based on applications-development and applications-interfacedesign icons from papirus icon set
-#Changelog:fixed no style selection in theme changer, reworked location help, incorporated main and location help text in main script 
+#Changelog 09:fixed no style selection in theme changer, reworked location help, incorporated main and location help text in main script
+#Changelog 10:fixed existing theme blocks setup, removed commenting out of previous theme in config.rasi, added current tabs shown in tab selector
 
 #set up translation
 
@@ -40,7 +41,7 @@ fi
 
 # notify user and back up config.rasi if mx-rofi-manager has not already been launched
 
-if [ ! -f $ROFIPATH/MX-comfort-rr ]; then
+if [ ! -f $HOME/.config/rofi/mxrm-check ]; then
 
 NOW=$(date +%Y"%m%d")
 
@@ -58,11 +59,15 @@ else
 
 mkdir -p $HOME/.restore/rofi/
 cp $HOME/.config/rofi/config.rasi $HOME/.restore/rofi/config.rasi_$(date -d "today" +"%Y%m%d")
-cp /usr/share/rofi/config.rasi $HOME/.config/rofi/
+cp $ROFIPATH/MX-comfort.rasi $HOME/.restore/rofi/MX-comfort.rasi_$(date -d "today" +"%Y%m%d")
 #cp /usr/share/rofi/rofi-help $HOME/.config/rofi/  << will be called from installation location
 #cp /usr/share/rofi/calc-help $HOME/.config/rofi/  << will be called from installation location
-cp /usr/share/mxrr/template*.rasi $HOME/.config/rofi/themes/
-cp /usr/share/mxrr/MX-*.rasi $HOME/.config/rofi/themes/  
+cp -f /usr/share/rofi/config.rasi $HOME/.config/rofi/
+cp -f /usr/share/mxrr/template*.rasi $HOME/.config/rofi/themes/
+cp -f /usr/share/mxrr/MX-*.rasi $HOME/.config/rofi/themes/
+
+echo '#mxrm-check
+#do not delete, file used to set up MX-rofi-manager' > $HOME/.config/rofi/mxrm-check
 
 fi
 fi
@@ -220,7 +225,6 @@ fi
 
 
 ROFIOLD="$(grep "@theme" $HOME/.config/rofi/config.rasi | tail -1)"
-ROFIOLDCOMMENT="//$ROFIOLD"
 
 
 if [ "$ROFINEW" = "$ROFIOLD" ]; then
@@ -235,11 +239,8 @@ if [ "$ROFINEW" = "$ROFIOLD" ]; then
 else
 
 ROFIOLD=$(echo "${ROFIOLD}" | sed -e 's/[]$\/*[\^]/\\&/g' )
-ROFIOLDCOMMENT=$(echo "${ROFIOLDCOMMENT}" | sed -e 's/[]$\/*[\^]/\\&/g' )
 
-sed -i "s/$ROFIOLD/$ROFIOLDCOMMENT/g" config.rasi
-
-sed -i 's/\/\/\/\/@/\/\/@/g' config.rasi
+sed -i "/$ROFIOLD/d" config.rasi
 
 echo $ROFINEW >> config.rasi
 
@@ -268,7 +269,8 @@ ROFIPATHUSR="/usr/share/rofi/themes"
 ICONPATH="/usr/share/pixmaps/mxrm-icon.png"
 source gettext.sh
 
-TEXTTABS1="$(gettext '\n<b>Select which tabs rofi should display</b>')"
+
+TEXTTABS1="$(gettext '\n<b>Select which tabs rofi should display</b>\n')"
 TEXTTABS2="$(gettext 'the MX default that displays available apps')"
 TEXTTABS3="$(gettext 'a powerful calculation engine')"
 TEXTTABS4="$(gettext 'fast access to files')"
@@ -277,6 +279,27 @@ TEXTTABS6="$(gettext 'opens a secure shell')"
 TEXTTABS7="$(gettext 'enables easy switching')"
 TEXTTABS8="$(gettext 'a set of links about using rofi')"
 TEXTTABS9="$(gettext 'tab will not be shown\n')"
+
+
+CURRENTTABS="$(grep 'modi:' $HOME/.config/rofi/config.rasi)"
+CURRENTTABS=$(echo "${CURRENTTABS}" | sed -e "s/help:\/usr\/share\/rofi\/rofi-help/help/g" )
+CURRENTTABS=$(echo "${CURRENTTABS}" | sed -e "s/calc:qalc/calc/g" )
+CURRENTTABS=$(echo "${CURRENTTABS}" | sed -e 's/modi: //g' | sed -e 's/;//g'| sed -e 's/,/" "/g')
+
+TABARRAY=($CURRENTTABS)
+CURTAB1=${TABARRAY[0]}
+CURTAB1=$(echo "${CURTAB1}" | sed -e 's/"//g' )
+CURTAB2=${TABARRAY[1]}
+CURTAB2=$(echo "${CURTAB2}" | sed -e 's/"//g' )
+CURTAB3=${TABARRAY[2]}
+CURTAB3=$(echo "${CURTAB3}" | sed -e 's/"//g' )
+
+if [ "$CURTAB3" = "" ]; then
+
+	  CURTAB3=none
+
+fi
+
 
 TABS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text-align=left --height=400 --width=600 --borders=20 --center --separator=" " --form --columns=3 --button="gtk-cancel":1 --button="gtk-ok":0 \
 --text="$TEXTTABS1
@@ -288,9 +311,9 @@ TABS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text-ali
 <i>window</i>: $TEXTTABS7
 <i>help</i>: $TEXTTABS8
 <i>none</i>: $TEXTTABS9" 
---field="$(gettext '1st Tab')":CB "drun!calc!run!ssh!window!filebrowser!help" \
---field="$(gettext '2nd Tab')":CB "help!calc!drun!run!ssh!filebrowser!window!none" \
---field="$(gettext '3rd Tab')":CB "none!help!calc!drun!run!filebrowser!ssh!window" \
+--field="$(gettext '1st Tab')":CB "$CURTAB1!drun!calc!filebrowser!run!ssh!window!help!none" \
+--field="$(gettext '2nd Tab')":CB "$CURTAB2!drun!calc!filebrowser!run!ssh!window!help!none" \
+--field="$(gettext '3rd Tab')":CB "$CURTAB3!drun!calc!filebrowser!run!ssh!window!help!none" \
 )
 
 NEWTABS=$("${TABS[@]}")
