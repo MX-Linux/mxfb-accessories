@@ -64,10 +64,8 @@ featherpad /usr/share/rofi/ssh-help
 kill featherpad
 fi
 
-echo "Select and press Return to view"
-echo "------------------"
-echo "       ROFI       "
-echo "------------------"
+echo "  ROFI HELP  "
+echo "-------------"
 echo ">> general help"
 echo ">> calc"
 echo ">> ssh"
