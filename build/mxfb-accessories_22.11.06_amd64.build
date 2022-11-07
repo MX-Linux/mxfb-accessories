@@ -1,7 +1,7 @@
  dpkg-buildpackage -us -uc -ui
 dpkg-buildpackage: info: source package mxfb-accessories
-dpkg-buildpackage: info: source version 22.10.10+nmu2
-dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source version 22.11.06
+dpkg-buildpackage: info: source distribution mx
 dpkg-buildpackage: info: source changed by Jerry <jb@mx>
  dpkg-source --before-build .
 dpkg-buildpackage: info: host architecture amd64
@@ -12,15 +12,14 @@ dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
 dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
  dpkg-source -b .
 dpkg-source: info: using source format '3.0 (native)'
-dpkg-source: info: building mxfb-accessories in mxfb-accessories_22.10.10+nmu2.tar.xz
-dpkg-source: info: building mxfb-accessories in mxfb-accessories_22.10.10+nmu2.dsc
+dpkg-source: info: building mxfb-accessories in mxfb-accessories_22.11.06.tar.xz
+dpkg-source: info: building mxfb-accessories in mxfb-accessories_22.11.06.dsc
  debian/rules build
-dh build
-dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
-   dh_update_autotools_config
+make: 'build' is up to date.
  fakeroot debian/rules binary
 dh binary
 dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_update_autotools_config
    dh_testroot
    dh_prep
    dh_install
@@ -83,9 +82,9 @@ dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 9 i
    dh_gencontrol
    dh_md5sums
    dh_builddeb
-dpkg-deb: building package 'mxfb-accessories' in '../mxfb-accessories_22.10.10+nmu2_all.deb'.
+dpkg-deb: building package 'mxfb-accessories' in '../mxfb-accessories_22.11.06_all.deb'.
  dpkg-genbuildinfo
- dpkg-genchanges  >../mxfb-accessories_22.10.10+nmu2_amd64.changes
+ dpkg-genchanges  >../mxfb-accessories_22.11.06_amd64.changes
 dpkg-genchanges: info: including full source code in upload
  dpkg-source --after-build .
 dpkg-buildpackage: info: full upload; Debian-native package (full source is included)
