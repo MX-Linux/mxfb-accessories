@@ -1,4 +1,4 @@
-mxfb-accessories (22.10.10+nmu3) UNRELEASED; urgency=medium
+mxfb-accessories (22.11.06) mx; urgency=medium
 
   [ Jerry ]
   * added new mx-rofi-manager and components
@@ -18,8 +18,10 @@ mxfb-accessories (22.10.10+nmu3) UNRELEASED; urgency=medium
   * upgraded rofi-manager to v8
   * added new configs and templates
   * final changes for public testing beta
+  * upgraded rofi-manager to v10
+  * final minor changes for beta release
 
- -- Jerry <jb@mx>  Sun, 06 Nov 2022 06:45:40 -0500
+ -- Jerry <jb@mx>  Sun, 06 Nov 2022 19:12:25 -0500
 
 mxfb-accessories (22.08.26) mx; urgency=medium
 

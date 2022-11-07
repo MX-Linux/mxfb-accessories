@@ -28,7 +28,7 @@ if [ x"$@" = x">> recolor" ];
 then
 killall rofi
 sleep 0.25
-rofi-sensible-terminal -e "mxrr"
+feh /usr/share/pixmaps/mxrr-help-recolor.png
 kill rofi-sensible-terminal
 fi
 
@@ -66,11 +66,13 @@ fi
 
 echo "  ROFI HELP  "
 echo "-------------"
-echo ">> general help"
 echo ">> calc"
-echo ">> ssh"
 echo ">> detailed help"
-echo ">> theme selector"
-echo ">> theme format"
+echo ">> general help"
 echo ">> recolor"
 echo ">> scripts"
+echo ">> ssh"
+echo ">> theme format"
+echo ">> theme selector"
+
+
