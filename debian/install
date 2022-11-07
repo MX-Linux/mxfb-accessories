@@ -9,7 +9,7 @@ components/mxfb-settings.list etc/custom-toolbox
 components/bleep.wav usr/share/sounds
 components/HELP-windowbuttons usr/share/doc/mxfb-accessories
 components/*.desktop usr/share/applications
-components/tint2session usr/bin
+components/tint2* usr/bin
 components/mxfb-settings.svg usr/share/pixmaps
 components/*.png usr/share/pixmaps
 components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/

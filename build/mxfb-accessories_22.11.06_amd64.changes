@@ -1,0 +1,50 @@
+Format: 1.8
+Date: Sun, 06 Nov 2022 19:12:25 -0500
+Source: mxfb-accessories
+Binary: mxfb-accessories
+Architecture: source all
+Version: 22.11.06
+Distribution: mx
+Urgency: medium
+Maintainer: Jerry3904<jerry@mxlinux.org>
+Changed-By: Jerry <jb@mx>
+Description:
+ mxfb-accessories - Various scripts used in MX-Fluxbox
+Changes:
+ mxfb-accessories (22.11.06) mx; urgency=medium
+ .
+   [ Jerry ]
+   * added new mx-rofi-manager and components
+   * updated other small items
+   * adjusted install targets
+   * brought up ICONPATH to top so first yad would show
+   * added 2 alt MX themes
+   * modified rofi-help
+   * added mxrm-helptext-position
+   * adjusted install file
+   * updated mx-rofi-manager to v7
+ .
+   [ Dolphin Oracle ]
+   * update translations
+ .
+   [ Jerry ]
+   * upgraded rofi-manager to v8
+   * added new configs and templates
+   * final changes for public testing beta
+   * upgraded rofi-manager to v10
+   * final minor changes for beta release
+Checksums-Sha1:
+ 4c87f44c224cc7a06257a804e35f1bdde1ff6661 610 mxfb-accessories_22.11.06.dsc
+ 86471966899b7728b51a6f5469a40217180a3591 2297928 mxfb-accessories_22.11.06.tar.xz
+ 9dc95ebda637120228ad42f823950c5963a8b3e3 498844 mxfb-accessories_22.11.06_all.deb
+ ab6f58024ea0bd3ec7d0ceeefa80c0dda3638df6 5286 mxfb-accessories_22.11.06_amd64.buildinfo
+Checksums-Sha256:
+ 4573b722c9a6c0bd2e8f68b05b6b38fd49d395f9503bf2799f794a7355cd5170 610 mxfb-accessories_22.11.06.dsc
+ e231a897e71aa2953477518fe21d28b844868169e30387bd1c9e42847fa1c39a 2297928 mxfb-accessories_22.11.06.tar.xz
+ b3a634ed25cc2d74a302e72ff71d9ae885bab620c9a12a21b5d080daf8800313 498844 mxfb-accessories_22.11.06_all.deb
+ a165dd0368052b72b7fc4fa01872fbe5d41e3a7fbbd755099adb322e09affe33 5286 mxfb-accessories_22.11.06_amd64.buildinfo
+Files:
+ 43f3d242d0d0f4c81d01b2ff5e6d8ecd 610 system optional mxfb-accessories_22.11.06.dsc
+ 41eb1943c0147b6242656fc890a05e7c 2297928 system optional mxfb-accessories_22.11.06.tar.xz
+ 2bbe69f02602006c8194e68365a3bbcb 498844 system optional mxfb-accessories_22.11.06_all.deb
+ 193023928c1f5f8904683cc2658e08a3 5286 system optional mxfb-accessories_22.11.06_amd64.buildinfo

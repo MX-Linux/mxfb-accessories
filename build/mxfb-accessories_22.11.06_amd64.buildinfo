@@ -2,19 +2,19 @@ Format: 1.0
 Source: mxfb-accessories
 Binary: mxfb-accessories
 Architecture: all source
-Version: 22.10.10+nmu2
+Version: 22.11.06
 Checksums-Md5:
- d4092c797220dbb0a8185818cfdc2490 630 mxfb-accessories_22.10.10+nmu2.dsc
- 555fb871e35ebd9a08800d793b6187d3 439080 mxfb-accessories_22.10.10+nmu2_all.deb
+ 43f3d242d0d0f4c81d01b2ff5e6d8ecd 610 mxfb-accessories_22.11.06.dsc
+ 2bbe69f02602006c8194e68365a3bbcb 498844 mxfb-accessories_22.11.06_all.deb
 Checksums-Sha1:
- 36e2e6944362eb548e04e3c68ec024a1848f05ac 630 mxfb-accessories_22.10.10+nmu2.dsc
- e40517782243957bd7188690510d1c71797ad923 439080 mxfb-accessories_22.10.10+nmu2_all.deb
+ 4c87f44c224cc7a06257a804e35f1bdde1ff6661 610 mxfb-accessories_22.11.06.dsc
+ 9dc95ebda637120228ad42f823950c5963a8b3e3 498844 mxfb-accessories_22.11.06_all.deb
 Checksums-Sha256:
- 995907249f901503eff9805b82132a4073448cfcbc51c830af6c78c673cf938a 630 mxfb-accessories_22.10.10+nmu2.dsc
- 6edb9fb8071b8681d14fdfe094279dbd5d6c914ab395d28ec94dd594f2c51adc 439080 mxfb-accessories_22.10.10+nmu2_all.deb
+ 4573b722c9a6c0bd2e8f68b05b6b38fd49d395f9503bf2799f794a7355cd5170 610 mxfb-accessories_22.11.06.dsc
+ b3a634ed25cc2d74a302e72ff71d9ae885bab620c9a12a21b5d080daf8800313 498844 mxfb-accessories_22.11.06_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Mon, 31 Oct 2022 17:16:35 -0400
+Build-Date: Sun, 06 Nov 2022 19:14:39 -0500
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -148,7 +148,7 @@ Installed-Build-Depends:
  libudev1 (= 1:247.3-6mx21),
  libunistring2 (= 0.9.10-4),
  libuuid1 (= 2.36.1-8+deb11u1),
- libxml2 (= 2.9.10+dfsg-6.7+deb11u2),
+ libxml2 (= 2.9.10+dfsg-6.7+deb11u3),
  libzstd1 (= 1.4.8+dfsg-2.1),
  linux-libc-dev (= 5.14.6-3~mx21+1),
  login (= 1:4.8.1-1),
@@ -176,4 +176,4 @@ Installed-Build-Depends:
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1667250375"
+ SOURCE_DATE_EPOCH="1667779945"
