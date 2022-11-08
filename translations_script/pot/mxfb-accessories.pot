@@ -46,10 +46,6 @@ msgid ""
 "overlap with a vertical panel."
 msgstr ""
 
-#: ../mxfb-look:267 ../mxfb-look:294
-msgid " "
-msgstr ""
-
 #: ../mxfb-separate-backgrounds:12
 msgid ""
 "  This app allows you to configure separate backgrounds for each Workspace  "
@@ -67,18 +63,6 @@ msgstr ""
 
 #: ../mxfb-separate-backgrounds:14
 msgid " Type \\"
-msgstr ""
-
-#. #begin first message box
-#: ../mxfb-tiles:37
-#, sh-format
-msgid "$TITLE1"
-msgstr ""
-
-#. #begin second message box
-#: ../mxfb-tiles:135
-#, sh-format
-msgid "$TITLE2"
 msgstr ""
 
 #: ../mxfb-tint2-manager:102
@@ -103,16 +87,6 @@ msgstr ""
 
 #: ../mx-rofi-manager:316
 msgid "3rd Tab"
-msgstr ""
-
-#: ../mxfb-look:552
-msgid "<b>   "
-msgstr ""
-
-#. RESTOREMAIN
-#: ../mxfb-look:538
-#, sh-format
-msgid "<b>$LOOKRESTORE</b>\\n"
 msgstr ""
 
 #: ../mx-rofi-manager:970
