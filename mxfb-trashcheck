@@ -18,19 +18,19 @@ export TEXTDOMAINDIR="/usr/share/locale"
 export CLASS=mxfb-trashcheck
 
 # translation  re-use ;)
- TITLE=$(gettext gtk30 "Trash"  )
- CLOSE=$(gettext gtk30 "_Close" ); #CLOSE=${CLOSE//_}
-CANCEL=$(gettext gtk30 "_Cancel"); #CANCEL=${CANCEL//_};
-   YES=$(gettext gtk30 "_Yes" )  ; #YES=${YES//_}
-    NO=$(gettext gtk30 "_No" )   ; #NO=${NO//_}
-    OK=$(gettext gtk30 "_OK" )   ; #OK=${OK//_}
-  SHOW=$(gettext gtk30-properties "Show 'Trash'")
-  SHOW=$(echo "$SHOW" | sed 's/[a-zA-Z]/_&/')
+GETTEXT=gettext 
+  TITLE=$($GETTEXT -d gtk30 "Trash"  )
+  CLOSE=$($GETTEXT -d gtk30 "_Close" ); #CLOSE=${CLOSE//_}
+ CANCEL=$($GETTEXT -d gtk30 "_Cancel"); #CANCEL=${CANCEL//_};
+    YES=$($GETTEXT -d gtk30 "_Yes" )  ; #YES=${YES//_}
+     NO=$($GETTEXT -d gtk30 "_No" )   ; #NO=${NO//_}
+     OK=$($GETTEXT -d gtk30 "_OK" )   ; #OK=${OK//_}
+   SHOW=$($GETTEXT -d gtk30-properties "Show 'Trash'")
+   SHOW=$(echo "$SHOW" | sed 's/[a-zA-Z]/_&/')
 
 
 MSG_NONE=$(gettext "There are no files in the trash.")
-#MSG_ASK=$(gettext "Do you want to remove it permanently?")
-MSG_ASK=$(gettext "Do you want to empty the trash?")
+ MSG_ASK=$(gettext "Do you want to empty the trash?")
 
 
 main() {
@@ -96,10 +96,14 @@ while true; do
 
     COUNT=$(gio list trash:// | wc -l)
 
+    # TRANSLATORS:
+    # Do not translate the count placeholder '${COUNT}'.
+    # Singular form: 'There is 1 file in the trash.'
+    # Plural form: 'There are 2 files in the trash.'
     MSG_SOME=$(eval_ngettext \
         'There is 1 file in the trash.' \
         'There are ${COUNT} files in the trash.' \
-        $file_count
+        ${COUNT}
     )
 
     MSG_SOME="
