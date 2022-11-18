@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-17 19:52-0500\n"
+"POT-Creation-Date: 2022-11-17 20:01-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Dede Carli <dede.carli.drums@gmail.com>, 2022\n"
 "Language-Team: Italian (https://www.transifex.com/anticapitalista/teams/10162/it/)\n"
@@ -57,12 +57,6 @@ msgstr "1° pannello Tint2"
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr "2° pannello Tint2"
-
-#. RESTOREMAIN
-#: ../mxfb-look:538
-#, sh-format
-msgid "<b>$LOOKRESTORE</b>\\n"
-msgstr "<b>$LOOKRESTORE</b>\\n"
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -186,7 +180,6 @@ msgstr "Impostazioni correnti"
 msgid "Delay (mins)"
 msgstr "Ritardo (min)"
 
-#. MSG_ASK=$(gettext "Do you want to remove it permanently?")
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
 msgstr "Vuoi svuotare il cestino?"
@@ -328,11 +321,15 @@ msgstr ""
 "Il codice è stato inserito con successo. Ora ci sono 3 metodi per eseguire "
 "l'affiancamento"
 
-#: ../mxfb-trashcheck:31
+#: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
 msgstr "Non ci sono file nel cestino."
 
-#: ../mxfb-trashcheck:100
+#. TRANSLATORS:
+#. Do not translate the count placeholder '${COUNT}'.
+#. Singular form: 'There is 1 file in the trash.'
+#. Plural form: 'There are 2 files in the trash.'
+#: ../mxfb-trashcheck:104
 #, sh-format
 msgid "There is 1 file in the trash."
 msgid_plural "There are ${COUNT} files in the trash."
@@ -401,11 +398,6 @@ msgstr "_Ok"
 msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Ritorna"
-
-#. OK=${OK//_}
-#: ../mxfb-trashcheck:27
-msgid "gtk30-properties"
-msgstr "proprietà-gtk30"
 
 #: ../mxfb-timer:24
 msgid "or number and unit"
