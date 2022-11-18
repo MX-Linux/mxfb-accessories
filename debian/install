@@ -1,10 +1,3 @@
-components/*-help usr/share/rofi
-components/config.rasi usr/share/rofi
-components/mxrr-help-*.png usr/share/pixmaps
-components/mxrm-icon.png usr/share/pixmaps
-components/template-*.rasi usr/share/mxrr
-components/MX-*.rasi usr/share/mxrr
-components/MX-*-rr usr/share/mxrr
 components/mxfb-settings.list etc/custom-toolbox
 components/bleep.wav usr/share/sounds
 components/HELP-windowbuttons usr/share/doc/mxfb-accessories
@@ -13,12 +6,7 @@ components/tint2* usr/bin
 components/mxfb-settings.svg usr/share/pixmaps
 components/*.png usr/share/pixmaps
 components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/
-components/mxcr-help.png usr/share/doc/mxfb-comfort/help/
-components/rofi-help usr/share/rofi
-components/calc-help usr/share/rofi
-components/ssh-help usr/share/rofi
 mxfb-* usr/bin
-mx-rofi-manager usr/bin
 apt/* etc/apt/
 translations_script/mo/am/mxfb-accessories.mo     /usr/share/locale/am/LC_MESSAGES
 translations_script/mo/ar/mxfb-accessories.mo     /usr/share/locale/ar/LC_MESSAGES
