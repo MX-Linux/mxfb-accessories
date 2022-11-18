@@ -5,11 +5,11 @@
 # 
 # Translators:
 # night1ynx <night1ynxd@gmail.com>, 2022
-# Transifex Bot <>, 2022
-# Dolphin Oracle <dolphinoracle@gmail.com>, 2022
 # James Bowlin <BitJam@gmail.com>, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2022
-# BALLOON | FU-SEN, 2022
+# 🎈 BALLOON | FU-SEN, 2022
+# Transifex Bot <>, 2022
+# Dolphin Oracle <dolphinoracle@gmail.com>, 2022
 # Green, 2022
 # 
 #, fuzzy
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-24 19:24-0400\n"
+"POT-Creation-Date: 2022-11-17 19:52-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Green, 2022\n"
 "Language-Team: Japanese (https://www.transifex.com/anticapitalista/teams/10162/ja/)\n"
@@ -26,14 +26,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: ../MX-rofi-manager:230
-msgid ""
-"\n"
-"<b>Select which tabs rofi should display</b>"
-msgstr ""
-"\n"
-"<b>rofi が表示するタブを選択する</b>"
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -54,51 +46,33 @@ msgstr "選択ウィンドウはワークスペース毎にポップアップ表
 msgid " Type \\"
 msgstr " Type \\"
 
-#. #begin first message box
-#: ../mxfb-tiles:37
-#, sh-format
-msgid "$TITLE1"
-msgstr "$TITLE1"
-
-#. #begin second message box
-#: ../mxfb-tiles:135
-#, sh-format
-msgid "$TITLE2"
-msgstr "$TITLE2"
-
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12時間制/24時間制"
 
-#: ../MX-rofi-manager:242
-msgid "1st Tab"
-msgstr "1 つ目のタブ"
+#: ../mxfb-look:220 ../mxfb-look:543
+msgid "1st Tint2 Panel"
+msgstr ""
 
-#: ../MX-rofi-manager:243
-msgid "2nd Tab"
-msgstr "2 つ目のタブ"
+#: ../mxfb-look:221 ../mxfb-look:544
+msgid "2nd Tint2 Panel"
+msgstr ""
 
-#: ../MX-rofi-manager:244
-msgid "3rd Tab"
-msgstr "3 つ目のタブ"
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
+msgstr ""
 
-#: ../MX-rofi-manager:436
-msgid "<b>Make new theme current?</b>"
-msgstr "<b>新しいテーマを現在のものにしますか？</b>"
+#: ../mxfb-look:293
+msgid "<b>Name for New Look</b>"
+msgstr ""
 
-#: ../mxfb-look:231 ../MX-rofi-manager:500
+#: ../mxfb-look:266
 msgid "<b>Name for new style</b>"
 msgstr "<b>新しいスタイルの名前</b>"
 
-#: ../MX-rofi-manager:481 ../MX-rofi-manager:527
-msgid "<b>Name for new theme</b>"
-msgstr "<b>新しいテーマの名前</b>"
-
-#: ../MX-rofi-manager:434
-msgid "<b>Name for new theme</b>     "
-msgstr "<b>新しいテーマの名前</b>"
-
-#: ../mxfb-look:649
+#: ../mxfb-look:710
 msgid ""
 "<b>You can save the current look or restore a saved look</b>\\n\\nA look is "
 "comprised of the following elements\\n- Gtk-Theme\\n- Gtk-Icon\\n- Gtk-"
@@ -108,12 +82,6 @@ msgstr ""
 "<b>現在の外観を保存したり、保存した外見を復元できます</b>\\n\\n外観は次の要素から出来ています\\n- Gtk-Theme\\n- Gtk-"
 "Icon\\n- Gtk-Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi "
 "Theme\\n- 壁紙\\n- One Conky\\n\\n"
-
-#. MAIN
-#. color selection dialogue
-#: ../MX-rofi-manager:397
-msgid "<b>\\nEdit colors and create a new rofi theme.\\n\\n</b>"
-msgstr "<b>\\n色を編集して新しい rofi テーマを作成します。\\n\\n</b>"
 
 #: ../mxfb-tiles:21
 msgid ""
@@ -153,56 +121,18 @@ msgstr ""
 "  Control + 9: third \n"
 "  Control + 0: toggle maximize"
 
-#: ../mxfb-look:250
-msgid "A Look with this name already exists. \\n\\nDo you want to overwrite"
-msgstr "この名前の外観すでに存在しています。 \\n\\n上書きしますか？"
-
-#: ../MX-rofi-manager:520
+#: ../mxfb-look:285
 #, sh-format
 msgid ""
-"A Theme with this name already exists. \\n\\nDo you want to overwrite "
-"<b>$NEWNAME</b>\\nor save as a different theme name?\\n"
-msgstr "この名前の外観すでに存在しています。 \\n\\n上書きしますか？ <b>$NEWNAME</b>\\あるいは別のテーマ名で保存しますか？\\n"
-
-#: ../MX-rofi-manager:416
-msgid "Active Tab Background"
-msgstr "アクティブタブの背景"
-
-#: ../MX-rofi-manager:418
-msgid "Active Tab Highlight"
-msgstr "アクティブタブの強調表示"
-
-#: ../MX-rofi-manager:417
-msgid "Active Tab Text"
-msgstr "アクティブタブのテキスト"
-
-#: ../MX-rofi-manager:586
-#, sh-format
-msgid ""
-"All done!\\n<b>$NEWNAME</b> Rofi theme has been created.\\n\\nYou can change"
-" themes with <b>MX-Rofi-Manager</b>"
+"A Look with this name already exists.\\n\\nDo you want to overwrite $NEWNAME"
+" or save as a new name?\\n"
 msgstr ""
-"すべて完了！\\n<b>$NEWNAME</b> Rofi テーマを作成しました。\\n\\nテーマは <b>MX-Rofi-"
-"マネージャ</b>を使って変更できます。"
-
-#: ../MX-rofi-manager:577
-#, sh-format
-msgid "All done!\\n<b>$NEWNAME</b> has been set as the current rofi theme."
-msgstr "すべて完了！\\n<b>$NEWNAME</b> を現在の rofi テーマにセットしました。"
-
-#: ../MX-rofi-manager:208
-#, sh-format
-msgid "All done!\\n\\n<b>$NEWTHEME</b> has been set as the current rofi theme.\\n\\n"
-msgstr "すべて完了！\\n<b>$NEWNAME</b> を現在の rofi テーマにセットしました。"
 
 #. all done
-#: ../mxfb-look:312
-msgid "All done!\\n\\nLook has been saved as"
-msgstr "すべて完了！\\n\\n外観を保存しました"
-
-#: ../MX-rofi-manager:280
-msgid "All done!\\n\\nTab configuration has been updated.\\n\\n"
-msgstr "すべて完了！\\n\\nタブの設定を更新しました。\\n\\n"
+#: ../mxfb-look:346
+#, sh-format
+msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
+msgstr ""
 
 #: ../mxfb-tint2-manager:96
 msgid "Apply"
@@ -211,14 +141,6 @@ msgstr "適用"
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "CONFIGURE TOP"
-
-#: ../MX-rofi-manager:709
-msgid "Change the current rofi theme"
-msgstr "現在の rofi テーマを変更"
-
-#: ../MX-rofi-manager:710
-msgid "Change the functions (<i>modi</i>) of the rofi tabs"
-msgstr "rofi タブの機能 (<i>modi</i>) を変更"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
@@ -244,6 +166,19 @@ msgstr "フォーカスしていない色"
 msgid "Config"
 msgstr "設定"
 
+#: ../mxfb-look:224 ../mxfb-look:547
+msgid "Conky"
+msgstr "Conky"
+
+#: ../mxfb-look:225 ../mxfb-look:548
+msgid "Conky State"
+msgstr ""
+
+#. MAIN
+#: ../mxfb-look:215
+msgid "Current Settings"
+msgstr ""
+
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
 msgstr "遅延 (分)"
@@ -257,10 +192,6 @@ msgstr "ゴミ箱を空にしますか？"
 msgid "Edit"
 msgstr "編集"
 
-#: ../MX-rofi-manager:712
-msgid "Edit a rofi theme config file in text editor"
-msgstr "テキストエディタで rofi テーマの設定ファイルを編集"
-
 #: ../mxfb-timer:23
 msgid "Enter local time"
 msgstr "現地時間を入力します"
@@ -268,6 +199,22 @@ msgstr "現地時間を入力します"
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
 msgstr "機能：1/2画面、1/4画面、1/3画面、復元 \\n"
+
+#: ../mxfb-look:219 ../mxfb-look:542
+msgid "Fluxbox Style"
+msgstr ""
+
+#: ../mxfb-look:218 ../mxfb-look:541
+msgid "GTK Font"
+msgstr ""
+
+#: ../mxfb-look:217 ../mxfb-look:540
+msgid "GTK Icons"
+msgstr ""
+
+#: ../mxfb-look:216 ../mxfb-look:539
+msgid "GTK Theme"
+msgstr "GTK テーマ"
 
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
@@ -285,78 +232,41 @@ msgstr "画像フォルダ"
 msgid "Image mode"
 msgstr "画像モード"
 
-#: ../MX-rofi-manager:402
-msgid "Inactive Tab Background"
-msgstr "非アクティブタブの背景"
-
-#: ../MX-rofi-manager:403
-msgid "Inactive Tab Text"
-msgstr "非アクティブタブのテキスト"
-
-#: ../mxfb-look:230
-msgid "Look name "
-msgstr "外観の名前"
-
-#: ../MX-rofi-manager:687
-msgid "MX-Rofi-Help"
-msgstr "MX-Rofi-Help"
-
-#. ##################################################################
-#. ##################################################################
-#. MAIN WINDOW
-#: ../MX-rofi-manager:704
-msgid "MX-Rofi-Manager"
-msgstr "MX-Rofi-Manager"
-
-#. mxrr MX-comfort-rofi-recolor
-#. Tool to edit colors in MX-comfort rofi theme
-#. V.0.6 by Melber and MX Devs, 09 September 2022
-#. License: GPL-3.0+
-#. define some variables
-#: ../MX-rofi-manager:303
-msgid "MX-Rofi-Recolor"
-msgstr "MX-Rofi-Recolor"
-
-#: ../MX-rofi-manager:387
-msgid "MX-Rofi-Recolor Help"
-msgstr "MX-Rofi-Recolor ヘルプ"
+#: ../mxfb-look:265
+#, sh-format
+msgid "Look name $NEWNAME is protected. Choose another name."
+msgstr ""
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
 msgstr "MXFB タイマー"
 
+#. define some variables
+#: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
+msgid "MXFB-Look"
+msgstr ""
+
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
 msgstr "数字キーとキーボードの複数のオプション"
 
-#: ../MX-rofi-manager:482
-msgid "New theme name"
-msgstr "新しいテーマ名"
-
-#: ../mxfb-look:205
+#: ../mxfb-look:240
 msgid "New-Look-Name"
 msgstr "New-Look-Name"
-
-#: ../MX-rofi-manager:480
-msgid "No Theme name!"
-msgstr "テーマ名がありません！"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
 msgstr "回転しない：遅延 = 0"
 
-#: ../MX-rofi-manager:333
-msgid ""
-"No theme selected.\\n\\n<b>MX-comfort</b> will be used as the starting "
-"theme."
-msgstr "テーマを選択していません。\\n\\n<b>MX-comfort</b> を開始時のテーマとして使用します。"
+#: ../mxfb-look:203
+msgid "None"
+msgstr "なし"
 
 #: ../mxfb-tint2-manager:101
 msgid "OK"
 msgstr "OK"
 
-#. #begin message box
-#: ../mxfb-tiles:14 ../MX-rofi-manager:58
+#: ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr "続行してもいいですか？"
 
@@ -364,71 +274,39 @@ msgstr "続行してもいいですか？"
 msgid "OPTIONAL BORDER STYLE CONFIG"
 msgstr "OPTIONAL BORDER STYLE CONFIG"
 
-#: ../mxfb-look:252
-msgid "Overwrite"
-msgstr "上書き"
-
-#: ../MX-rofi-manager:520
+#: ../mxfb-look:286
 #, sh-format
 msgid "Overwrite $NEWNAME"
 msgstr "$NEWNAME を上書きする"
 
-#: ../MX-rofi-manager:711
-msgid "Recolor a rofi theme based on MX-comfort"
-msgstr "MX-comfort をベースにして rofi テーマをリカラー化"
-
-#. RESTOREMAIN
-#: ../mxfb-look:501 ../mxfb-look:649
+#: ../mxfb-look:551 ../mxfb-look:712
 msgid "Restore Look"
 msgstr "外観の保存"
 
-#: ../MX-rofi-manager:387
-msgid "Return to Main Window"
-msgstr "メインウィンドウへ戻る"
+#: ../mxfb-look:222 ../mxfb-look:545
+msgid "Rofi Theme"
+msgstr ""
 
-#: ../MX-rofi-manager:604
-msgid "Rofi-Edit"
-msgstr "Rofi-Edit"
+#: ../mxfb-look:712
+msgid "Save Current Look"
+msgstr ""
 
-#: ../MX-rofi-manager:223
-msgid "Rofi-Tab-Selector"
-msgstr "Rofi-Tab-Selector"
+#: ../mxfb-look:228
+msgid "Save Look"
+msgstr ""
 
-#: ../MX-rofi-manager:84
-msgid "Rofi-Theme"
-msgstr "Rofi-Theme"
-
-#: ../mxfb-look:205
+#: ../mxfb-look:240
+#, sh-format
 msgid "Save Look as"
 msgstr "外観の保存"
 
-#: ../mxfb-look:252
+#: ../mxfb-look:286
 msgid "Save as different name"
 msgstr "別名で保存"
-
-#: ../MX-rofi-manager:520
-msgid "Save as different theme name"
-msgstr "別のテーマ名として保存"
-
-#: ../MX-rofi-manager:400
-msgid "Searchbar Background"
-msgstr "検索バーの背景"
-
-#: ../MX-rofi-manager:401
-msgid "Searchbar Text"
-msgstr "検索バーのテキスト"
 
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr "タイトルバーモードを選択"
-
-#: ../MX-rofi-manager:419
-msgid "Selection Background"
-msgstr "選択の背景"
-
-#: ../MX-rofi-manager:420
-msgid "Selection Text"
-msgstr "選択のテキスト"
 
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
@@ -444,11 +322,6 @@ msgid ""
 "The code has been inserted successfully. Now there are 3 methods to do the "
 "tiling</b>"
 msgstr "無事にコードが挿入されました。これで、タイリングを行う方法は3つになりました</b>"
-
-#: ../MX-rofi-manager:499
-#, sh-format
-msgid "Theme name $NEWNAME is protected. Choose another name"
-msgstr "テーマ名 $NEWNAME は保護されています。別の名前を選んでください。"
 
 #: ../mxfb-trashcheck:31
 msgid "There are no files in the trash."
@@ -468,86 +341,29 @@ msgstr ""
 "このスクリプトは、現在のキーファイルをバックアップし、ファイルの最後までタイル化するためのコマンドをインストールします。 \\n\n"
 "</b>"
 
-#: ../MX-rofi-manager:55
-#, sh-format
-msgid ""
-"This tool edits the rofi config file.\\n\\nThe existing file will be backed "
-"up as \\n\\n<b>$HOME/.restore/rofi/config.rasi_$NOW</b>"
-msgstr ""
-"このツールで rofi "
-"設定ファイルを編集できます。\\n\\n既存のファイルは<b>$HOME/.restore/rofi/config.rasi_$NOW</b> "
-"としてバックアップします。"
-
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
 msgstr "Tint2 マネージャ"
-
-#: ../MX-rofi-manager:398
-msgid "Title Background"
-msgstr "タイトルの背景"
-
-#: ../MX-rofi-manager:399
-msgid "Title Text"
-msgstr "タイトルのテキスト"
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
 msgstr "利用オプション"
 
-#: ../mxfb-tint2-manager:191
-msgid "\\n"
-msgstr "\\n"
+#: ../mxfb-look:549
+msgid "Wait 10 seconds for the conky to restart"
+msgstr ""
 
-#: ../mxfb-look:341
+#: ../mxfb-look:223 ../mxfb-look:546
+msgid "Wallpaper"
+msgstr "壁紙"
+
+#: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
 msgstr "\\n<b> 復元する外観を選択</b>\\n"
 
-#. select starting style
-#: ../MX-rofi-manager:318
-msgid "\\n<b> Choose which theme to use as a starting point</b>\\n"
-msgstr "\\n<b> どのテーマを開始時にするかを選択する</b>\\n"
-
-#: ../mxfb-look:353
+#: ../mxfb-look:389
 msgid "\\n<b> You need to select a look !</b>\\n"
 msgstr "\\n<b> 外観をどれか選択してください！</b>\\n"
-
-#: ../MX-rofi-manager:708
-msgid ""
-"\\n<b><big>Rofi Manager is a tool to configure rofi themes.</big>\\n\\nWhat "
-"would you like to do?</b>\\n\\n"
-msgstr "\\n<b><big>Rofi マネージャは rofi テーマの設定ツールです。</big>\\n\\nどんなことがしたいですか？</b>\\n\\n"
-
-#. MAIN
-#: ../mxfb-look:194
-msgid ""
-"\\n<b>Current Settings.\\n</b>\\n\n"
-"GTK Theme: <b>"
-msgstr ""
-"\\n<b>現在の設定。\\n</b>\\n\n"
-"GTK テーマ: <b>"
-
-#. select theme
-#: ../MX-rofi-manager:168
-msgid ""
-"\\n<b>Select rofi theme to make current</b>\n"
-"Double click a theme name to open a preview rofi.\\n"
-msgstr ""
-"\\n<b>rofi テーマを現行にする</b>\n"
-"テーマ名をダブルクリックすると rofi のプレビュー画面が開きます。\\n"
-
-#. select theme
-#: ../MX-rofi-manager:628
-msgid ""
-"\\n<b>Select the rofi theme you wish to edit</b>\\n\\nThe .rasi file will be"
-" opened in your preferred text editor\\n\\n"
-msgstr "\\n<b>編集したい rofi テーマを選択します</b>\\n\\n rasi ファイルがお気に入りのテキストエディタで開きます\\n\\n"
-
-#: ../MX-rofi-manager:652
-#, sh-format
-msgid ""
-"\\nThe theme to be edited has been saved in\\n<b>$ROFIPATH</b> "
-"as\\n\\n<b>$EDITTHEMECOPY</b>\\n\\n"
-msgstr "\\n編集したテーマを<b>$EDITTHEMECOPY</b>として、<b>$ROFIPATH</b> に保存しました\\n\\n"
 
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
@@ -579,61 +395,23 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr "復元 (_R)"
 
-#: ../MX-rofi-manager:233
-msgid "a powerful calculation engine"
-msgstr "パワフルな計算エンジン"
-
-#: ../MX-rofi-manager:237
-msgid "a set of links about using rofi"
-msgstr "rofi の使い方に関するリンク集"
-
-#: ../MX-rofi-manager:234
-msgid "displays all available executable files"
-msgstr "利用可能なすべての実行可能ファイルを表示"
-
-#: ../MX-rofi-manager:236
-msgid "enables easy switching"
-msgstr "簡単に切り替え可能にする"
-
-#. translation  re-use ;)
-#. CLOSE=${CLOSE//_}
-#. CANCEL=${CANCEL//_};
-#. YES=${YES//_}
-#. NO=${NO//_}
-#: ../mxfb-trashcheck:21 ../mxfb-trashcheck:22 ../mxfb-trashcheck:23
-#: ../mxfb-trashcheck:24 ../mxfb-trashcheck:25 ../mxfb-trashcheck:26
-msgid "gtk30"
-msgstr "gtk30"
-
 #. OK=${OK//_}
 #: ../mxfb-trashcheck:27
 msgid "gtk30-properties"
 msgstr "gtk30-properties"
 
-#: ../MX-rofi-manager:370
-msgid "mxrr-color-selector"
-msgstr "mxrr-color-selector"
-
-#: ../MX-rofi-manager:235
-msgid "opens a secure shell"
-msgstr "セキュアなシェルを開く"
-
 #: ../mxfb-timer:24
 msgid "or number and unit"
 msgstr "または数と単位"
 
-#: ../mxfb-look:251
-msgid "or save as a new name?"
-msgstr "新しい名前で保存しますか？"
-
-#: ../MX-rofi-manager:238
-msgid "tab will not be shown"
-msgstr "タブを表示しません"
-
-#: ../MX-rofi-manager:232
-msgid "the MX-21 default that displays available apps"
-msgstr "利用可能なアプリを表示する MX-21 の既定"
-
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
 msgstr "時刻の表示形式:"
+
+#: ../mxfb-look:209 ../mxfb-look:530
+msgid "toggled off"
+msgstr ""
+
+#: ../mxfb-look:207 ../mxfb-look:528
+msgid "toggled on"
+msgstr ""

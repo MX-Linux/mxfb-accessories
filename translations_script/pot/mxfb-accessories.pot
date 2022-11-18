@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-06 20:01-0500\n"
+"POT-Creation-Date: 2022-11-17 19:52-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,34 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-
-#: ../mx-rofi-manager:397
-msgid ""
-"\n"
-"TERMS\n"
-"\n"
-"- LOCATION: The general placement of the rofi window on the screen\n"
-"\n"
-"- ANCHOR: The point of the rofi window which is set at the location.\n"
-"\n"
-"- X-OFFSET & Y-OFFSET: The offset (pixels) of the rofi window from the "
-"anchor point\n"
-"\n"
-"\n"
-"EXAMPLES\n"
-"\n"
-"Location center, anchor center: places the center of the rofi window at the "
-"center of the screen\n"
-"\n"
-"Location northwest, anchor northwest: places the top left corner of the rofi "
-"window at the top left of the screen.\n"
-"\n"
-"Location center, anchor northwest: places the top left corner of the rofi "
-"window at the center of the screen.\n"
-"\n"
-"Location west, anchor west, x-offset 32: displaces the rofi window to avoid "
-"overlap with a vertical panel."
-msgstr ""
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -69,50 +41,26 @@ msgstr ""
 msgid "12h/24h"
 msgstr ""
 
-#: ../mx-rofi-manager:314
-msgid "1st Tab"
-msgstr ""
-
 #: ../mxfb-look:220 ../mxfb-look:543
 msgid "1st Tint2 Panel"
-msgstr ""
-
-#: ../mx-rofi-manager:315
-msgid "2nd Tab"
 msgstr ""
 
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr ""
 
-#: ../mx-rofi-manager:316
-msgid "3rd Tab"
-msgstr ""
-
-#: ../mx-rofi-manager:970
-msgid "<b>Make new theme current?</b>"
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
 msgstr ""
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
 msgstr ""
 
-#: ../mxfb-look:266 ../mx-rofi-manager:1034
+#: ../mxfb-look:266
 msgid "<b>Name for new style</b>"
-msgstr ""
-
-#: ../mx-rofi-manager:1015 ../mx-rofi-manager:1061
-msgid "<b>Name for new theme</b>"
-msgstr ""
-
-#: ../mx-rofi-manager:968
-msgid "<b>Name for new theme</b>     "
-msgstr ""
-
-#: ../mx-rofi-manager:1274
-msgid ""
-"<b>Rofi Manager is a tool to configure rofi themes.\\n\\nWhat would you like "
-"to do?</b>\\n"
 msgstr ""
 
 #: ../mxfb-look:710
@@ -121,23 +69,6 @@ msgid ""
 "comprised of the following elements\\n- Gtk-Theme\\n- Gtk-Icon\\n- Gtk-Font"
 "\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- Wallpaper"
 "\\n- One Conky\\n\\n"
-msgstr ""
-
-#. MAINPOS
-#: ../mx-rofi-manager:721
-msgid "<b>\\nAdjust the font of the current rofi window.\\n</b>"
-msgstr ""
-
-#. get new position
-#. MAINPOS
-#: ../mx-rofi-manager:550
-msgid "<b>\\nAdjust the location and size of the current rofi window.\\n</b>"
-msgstr ""
-
-#. MAIN
-#. color selection dialogue
-#: ../mx-rofi-manager:931
-msgid "<b>\\nEdit colors and create a new rofi theme.\\n\\n</b>"
 msgstr ""
 
 #: ../mxfb-tiles:21
@@ -172,66 +103,10 @@ msgid ""
 "or save as a new name?\\n"
 msgstr ""
 
-#: ../mx-rofi-manager:1054
-#, sh-format
-msgid ""
-"A Theme with this name already exists. \\n\\nDo you want to overwrite <b>"
-"$NEWNAME</b>\\nor save as a different theme name?\\n"
-msgstr ""
-
-#: ../mx-rofi-manager:912 ../mx-rofi-manager:950
-msgid "Active Tab Background"
-msgstr ""
-
-#: ../mx-rofi-manager:914 ../mx-rofi-manager:952
-msgid "Active Tab Highlight"
-msgstr ""
-
-#: ../mx-rofi-manager:913 ../mx-rofi-manager:951
-msgid "Active Tab Text"
-msgstr ""
-
-#: ../mx-rofi-manager:1139
-#, sh-format
-msgid ""
-"All done!\\n<b>$NEWNAME</b> Rofi theme has been created.\\n\\nYou can change "
-"themes with <b>MX-Rofi-Manager</b>"
-msgstr ""
-
-#: ../mx-rofi-manager:1130
-#, sh-format
-msgid "All done!\\n<b>$NEWNAME</b> has been set as the current rofi theme."
-msgstr ""
-
-#: ../mx-rofi-manager:764
-#, sh-format
-msgid "All done!\\nFont of the current rofi theme has been amended."
-msgstr ""
-
-#: ../mx-rofi-manager:641
-#, sh-format
-msgid ""
-"All done!\\nPosition and size of the current rofi theme have been amended."
-msgstr ""
-
-#: ../mx-rofi-manager:248
-#, sh-format
-msgid ""
-"All done!\\n\\n<b>$NEWTHEME</b> has been set as the current rofi theme.\\n\\n"
-msgstr ""
-
 #. all done
 #: ../mxfb-look:346
 #, sh-format
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
-msgstr ""
-
-#: ../mx-rofi-manager:364
-msgid "All done!\\n\\nTab configuration has been updated.\\n\\n"
-msgstr ""
-
-#: ../mx-rofi-manager:552
-msgid "Anchor position within rofi window"
 msgstr ""
 
 #: ../mxfb-tint2-manager:96
@@ -240,22 +115,6 @@ msgstr ""
 
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
-msgstr ""
-
-#: ../mx-rofi-manager:1275
-msgid "Change the current rofi theme"
-msgstr ""
-
-#: ../mx-rofi-manager:1278
-msgid "Change the font of the current Rofi window"
-msgstr ""
-
-#: ../mx-rofi-manager:1276
-msgid "Change the functions (<i> modi </i>) of the rofi tabs"
-msgstr ""
-
-#: ../mx-rofi-manager:1277
-msgid "Change the location and size of the current Rofi window"
 msgstr ""
 
 #: ../mxfb-tint2-manager:92
@@ -308,10 +167,6 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../mx-rofi-manager:1280
-msgid "Edit a rofi theme config file in text editor"
-msgstr ""
-
 #: ../mxfb-timer:23
 msgid "Enter local time"
 msgstr ""
@@ -322,10 +177,6 @@ msgstr ""
 
 #: ../mxfb-look:219 ../mxfb-look:542
 msgid "Fluxbox Style"
-msgstr ""
-
-#: ../mx-rofi-manager:723
-msgid "Font"
 msgstr ""
 
 #: ../mxfb-look:218 ../mxfb-look:541
@@ -344,10 +195,6 @@ msgstr ""
 msgid "HELP"
 msgstr ""
 
-#: ../mx-rofi-manager:556
-msgid "Height (number of lines shown in list)"
-msgstr ""
-
 #: ../mxfb-tint2-manager:100
 msgid "Help"
 msgstr ""
@@ -360,57 +207,9 @@ msgstr ""
 msgid "Image mode"
 msgstr ""
 
-#: ../mx-rofi-manager:910 ../mx-rofi-manager:936
-msgid "Inactive Tab Background"
-msgstr ""
-
-#: ../mx-rofi-manager:911 ../mx-rofi-manager:937
-msgid "Inactive Tab Text"
-msgstr ""
-
-#: ../mx-rofi-manager:551
-msgid "Location of rofi window on the screen"
-msgstr ""
-
 #: ../mxfb-look:265
 #, sh-format
 msgid "Look name $NEWNAME is protected. Choose another name."
-msgstr ""
-
-#: ../mx-rofi-manager:1246
-msgid ""
-"MX Rofi manager provides a fast and easy way to manipulate the handy app "
-"rofi and its many possible functions (\"modi\"). Available actions:\n"
-"--select the functions to be shown\n"
-"--switch the current theme\n"
-"--adjust colors, font and position (default themes only)\n"
-"--edit themes manually\n"
-"--access documentation\n"
-"For more details, consult the rofi \"help\" tab.\n"
-msgstr ""
-
-#: ../mx-rofi-manager:394 ../mx-rofi-manager:1242
-msgid "MX-Rofi-Help"
-msgstr ""
-
-#. ##################################################################
-#. ##################################################################
-#. MAIN WINDOW
-#: ../mx-rofi-manager:1270
-msgid "MX-Rofi-Manager"
-msgstr ""
-
-#. mxrr MX-comfort-rofi-recolor
-#. Tool to edit colors in MX-comfort rofi theme
-#. V.0.6 by Melber and MX Devs, 09 September 2022
-#. License: GPL-3.0+
-#. define some variables
-#: ../mx-rofi-manager:790
-msgid "MX-Rofi-Recolor"
-msgstr ""
-
-#: ../mx-rofi-manager:877 ../mx-rofi-manager:919
-msgid "MX-Rofi-Recolor Help"
 msgstr ""
 
 #: ../mxfb-timer:22
@@ -426,35 +225,12 @@ msgstr ""
 msgid "Multiple options for number keys and keyboard"
 msgstr ""
 
-#: ../mx-rofi-manager:1016
-msgid "New theme name"
-msgstr ""
-
 #: ../mxfb-look:240
 msgid "New-Look-Name"
 msgstr ""
 
-#: ../mx-rofi-manager:1014
-msgid "No Theme name!"
-msgstr ""
-
-#: ../mx-rofi-manager:232 ../mx-rofi-manager:348 ../mx-rofi-manager:622
-#: ../mx-rofi-manager:753
-#, sh-format
-msgid "No change to current settings!\\n"
-msgstr ""
-
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
-msgstr ""
-
-#: ../mx-rofi-manager:204
-msgid "No theme selected."
-msgstr ""
-
-#: ../mx-rofi-manager:820
-msgid ""
-"No theme selected.\\n\\n<b>MX-comfort</b> will be used as the starting theme."
 msgstr ""
 
 #: ../mxfb-look:203
@@ -465,8 +241,7 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#. #begin message box
-#: ../mxfb-tiles:14 ../mx-rofi-manager:51
+#: ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr ""
 
@@ -474,45 +249,17 @@ msgstr ""
 msgid "OPTIONAL BORDER STYLE CONFIG"
 msgstr ""
 
-#: ../mxfb-look:286 ../mx-rofi-manager:1054
+#: ../mxfb-look:286
 #, sh-format
 msgid "Overwrite $NEWNAME"
-msgstr ""
-
-#: ../mx-rofi-manager:1279
-msgid "Recolor a rofi theme based on MX-comfort"
 msgstr ""
 
 #: ../mxfb-look:551 ../mxfb-look:712
 msgid "Restore Look"
 msgstr ""
 
-#: ../mx-rofi-manager:920
-msgid "Return to Main Window"
-msgstr ""
-
 #: ../mxfb-look:222 ../mxfb-look:545
 msgid "Rofi Theme"
-msgstr ""
-
-#: ../mx-rofi-manager:1157
-msgid "Rofi-Edit"
-msgstr ""
-
-#: ../mx-rofi-manager:666
-msgid "Rofi-Font"
-msgstr ""
-
-#: ../mx-rofi-manager:382
-msgid "Rofi-Position"
-msgstr ""
-
-#: ../mx-rofi-manager:265
-msgid "Rofi-Tab-Selector"
-msgstr ""
-
-#: ../mx-rofi-manager:103
-msgid "Rofi-Theme"
 msgstr ""
 
 #: ../mxfb-look:712
@@ -532,28 +279,8 @@ msgstr ""
 msgid "Save as different name"
 msgstr ""
 
-#: ../mx-rofi-manager:1054
-msgid "Save as different theme name"
-msgstr ""
-
-#: ../mx-rofi-manager:908 ../mx-rofi-manager:934
-msgid "Searchbar Background"
-msgstr ""
-
-#: ../mx-rofi-manager:909 ../mx-rofi-manager:935
-msgid "Searchbar Text"
-msgstr ""
-
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
-msgstr ""
-
-#: ../mx-rofi-manager:915 ../mx-rofi-manager:953
-msgid "Selection Background"
-msgstr ""
-
-#: ../mx-rofi-manager:916 ../mx-rofi-manager:954
-msgid "Selection Text"
 msgstr ""
 
 #: ../mxfb-bg-rotate:39
@@ -565,23 +292,10 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#. check theme is MX-comfort based
-#: ../mx-rofi-manager:438 ../mx-rofi-manager:686
-msgid ""
-"Sorry, this function is only available for MX-comfort based rofi themes\\n"
-"\\nTo adjust the current rofi theme you need to manually edit the .rasi file."
-"\\n\\n"
-msgstr ""
-
 #: ../mxfb-tiles:15
 msgid ""
 "The code has been inserted successfully. Now there are 3 methods to do the "
 "tiling</b>"
-msgstr ""
-
-#: ../mx-rofi-manager:1033
-#, sh-format
-msgid "Theme name $NEWNAME is protected. Choose another name"
 msgstr ""
 
 #: ../mxfb-trashcheck:31
@@ -602,23 +316,8 @@ msgid ""
 "</b>"
 msgstr ""
 
-#: ../mx-rofi-manager:48
-#, sh-format
-msgid ""
-"This tool edits the rofi config file.\\n\\nThe existing file will be backed "
-"up as \\n\\n<b>$HOME/.restore/rofi/config.rasi_$NOW</b>"
-msgstr ""
-
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
-msgstr ""
-
-#: ../mx-rofi-manager:906 ../mx-rofi-manager:932
-msgid "Title Background"
-msgstr ""
-
-#: ../mx-rofi-manager:907 ../mx-rofi-manager:933
-msgid "Title Text"
 msgstr ""
 
 #: ../mxfb-tiles:29
@@ -633,54 +332,12 @@ msgstr ""
 msgid "Wallpaper"
 msgstr ""
 
-#: ../mx-rofi-manager:555
-msgid "Width (percentage of screen width)"
-msgstr ""
-
-#: ../mx-rofi-manager:553
-msgid "X-Offset (negative to left, positive to right)"
-msgstr ""
-
-#: ../mx-rofi-manager:554
-msgid "Y-Offset (negative upwards, positive downwards)"
-msgstr ""
-
 #: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
 msgstr ""
 
-#. select starting style
-#: ../mx-rofi-manager:805
-msgid "\\n<b> Choose which theme to use as a starting point</b>\\n"
-msgstr ""
-
 #: ../mxfb-look:389
 msgid "\\n<b> You need to select a look !</b>\\n"
-msgstr ""
-
-#. select theme
-#: ../mx-rofi-manager:188
-msgid ""
-"\\n<b>Select rofi theme to make current</b>\n"
-"Double click a theme name to open a preview rofi.\\n"
-msgstr ""
-
-#. select theme
-#: ../mx-rofi-manager:1183
-msgid ""
-"\\n<b>Select the rofi theme you wish to edit</b>\\n\\nThe .rasi file will be "
-"opened in your preferred text editor\\n\\n"
-msgstr ""
-
-#: ../mx-rofi-manager:273
-msgid "\\n<b>Select which tabs rofi should display</b>\\n"
-msgstr ""
-
-#: ../mx-rofi-manager:1207
-#, sh-format
-msgid ""
-"\\nThe theme to be edited has been saved in\\n<b>$ROFIPATH</b> as\\n\\n<b>"
-"$EDITTHEMECOPY</b>\\n\\n"
 msgstr ""
 
 #: ../mxfb-borders:28 ../mxfb-top:30
@@ -713,44 +370,13 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr ""
 
-#: ../mx-rofi-manager:275
-msgid "a powerful calculation engine"
-msgstr ""
-
-#: ../mx-rofi-manager:280
-msgid "a set of links about using rofi"
-msgstr ""
-
-#: ../mx-rofi-manager:277
-msgid "displays all available executable files"
-msgstr ""
-
-#: ../mx-rofi-manager:279
-msgid "enables easy switching"
-msgstr ""
-
-#: ../mx-rofi-manager:276
-msgid "fast access to files"
-msgstr ""
-
-#: ../mx-rofi-manager:857
-msgid "mxrr-color-selector"
-msgstr ""
-
-#: ../mx-rofi-manager:278
-msgid "opens a secure shell"
+#. OK=${OK//_}
+#: ../mxfb-trashcheck:27
+msgid "gtk30-properties"
 msgstr ""
 
 #: ../mxfb-timer:24
 msgid "or number and unit"
-msgstr ""
-
-#: ../mx-rofi-manager:281
-msgid "tab will not be shown\\n"
-msgstr ""
-
-#: ../mx-rofi-manager:274
-msgid "the MX default that displays available apps"
 msgstr ""
 
 #: ../mxfb-tint2-manager:284

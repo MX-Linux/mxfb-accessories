@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-24 19:24-0400\n"
+"POT-Creation-Date: 2022-11-17 19:52-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Language-Team: Somali (https://www.transifex.com/anticapitalista/teams/10162/so/)\n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: so\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: ../MX-rofi-manager:230
-msgid ""
-"\n"
-"<b>Select which tabs rofi should display</b>"
-msgstr ""
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -42,62 +36,38 @@ msgstr ""
 msgid " Type \\"
 msgstr ""
 
-#. #begin first message box
-#: ../mxfb-tiles:37
-#, sh-format
-msgid "$TITLE1"
-msgstr ""
-
-#. #begin second message box
-#: ../mxfb-tiles:135
-#, sh-format
-msgid "$TITLE2"
-msgstr ""
-
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr ""
 
-#: ../MX-rofi-manager:242
-msgid "1st Tab"
+#: ../mxfb-look:220 ../mxfb-look:543
+msgid "1st Tint2 Panel"
 msgstr ""
 
-#: ../MX-rofi-manager:243
-msgid "2nd Tab"
+#: ../mxfb-look:221 ../mxfb-look:544
+msgid "2nd Tint2 Panel"
 msgstr ""
 
-#: ../MX-rofi-manager:244
-msgid "3rd Tab"
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
 msgstr ""
 
-#: ../MX-rofi-manager:436
-msgid "<b>Make new theme current?</b>"
+#: ../mxfb-look:293
+msgid "<b>Name for New Look</b>"
 msgstr ""
 
-#: ../mxfb-look:231 ../MX-rofi-manager:500
+#: ../mxfb-look:266
 msgid "<b>Name for new style</b>"
 msgstr ""
 
-#: ../MX-rofi-manager:481 ../MX-rofi-manager:527
-msgid "<b>Name for new theme</b>"
-msgstr ""
-
-#: ../MX-rofi-manager:434
-msgid "<b>Name for new theme</b>     "
-msgstr ""
-
-#: ../mxfb-look:649
+#: ../mxfb-look:710
 msgid ""
 "<b>You can save the current look or restore a saved look</b>\\n\\nA look is "
 "comprised of the following elements\\n- Gtk-Theme\\n- Gtk-Icon\\n- Gtk-"
 "Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- "
 "Wallpaper\\n- One Conky\\n\\n"
-msgstr ""
-
-#. MAIN
-#. color selection dialogue
-#: ../MX-rofi-manager:397
-msgid "<b>\\nEdit colors and create a new rofi theme.\\n\\n</b>"
 msgstr ""
 
 #: ../mxfb-tiles:21
@@ -125,53 +95,17 @@ msgid ""
 "  Control + 0: toggle maximize"
 msgstr ""
 
-#: ../mxfb-look:250
-msgid "A Look with this name already exists. \\n\\nDo you want to overwrite"
-msgstr ""
-
-#: ../MX-rofi-manager:520
+#: ../mxfb-look:285
 #, sh-format
 msgid ""
-"A Theme with this name already exists. \\n\\nDo you want to overwrite "
-"<b>$NEWNAME</b>\\nor save as a different theme name?\\n"
-msgstr ""
-
-#: ../MX-rofi-manager:416
-msgid "Active Tab Background"
-msgstr ""
-
-#: ../MX-rofi-manager:418
-msgid "Active Tab Highlight"
-msgstr ""
-
-#: ../MX-rofi-manager:417
-msgid "Active Tab Text"
-msgstr ""
-
-#: ../MX-rofi-manager:586
-#, sh-format
-msgid ""
-"All done!\\n<b>$NEWNAME</b> Rofi theme has been created.\\n\\nYou can change"
-" themes with <b>MX-Rofi-Manager</b>"
-msgstr ""
-
-#: ../MX-rofi-manager:577
-#, sh-format
-msgid "All done!\\n<b>$NEWNAME</b> has been set as the current rofi theme."
-msgstr ""
-
-#: ../MX-rofi-manager:208
-#, sh-format
-msgid "All done!\\n\\n<b>$NEWTHEME</b> has been set as the current rofi theme.\\n\\n"
+"A Look with this name already exists.\\n\\nDo you want to overwrite $NEWNAME"
+" or save as a new name?\\n"
 msgstr ""
 
 #. all done
-#: ../mxfb-look:312
-msgid "All done!\\n\\nLook has been saved as"
-msgstr ""
-
-#: ../MX-rofi-manager:280
-msgid "All done!\\n\\nTab configuration has been updated.\\n\\n"
+#: ../mxfb-look:346
+#, sh-format
+msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr ""
 
 #: ../mxfb-tint2-manager:96
@@ -180,14 +114,6 @@ msgstr ""
 
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
-msgstr ""
-
-#: ../MX-rofi-manager:709
-msgid "Change the current rofi theme"
-msgstr ""
-
-#: ../MX-rofi-manager:710
-msgid "Change the functions (<i>modi</i>) of the rofi tabs"
 msgstr ""
 
 #: ../mxfb-tint2-manager:92
@@ -214,6 +140,19 @@ msgstr ""
 msgid "Config"
 msgstr ""
 
+#: ../mxfb-look:224 ../mxfb-look:547
+msgid "Conky"
+msgstr ""
+
+#: ../mxfb-look:225 ../mxfb-look:548
+msgid "Conky State"
+msgstr ""
+
+#. MAIN
+#: ../mxfb-look:215
+msgid "Current Settings"
+msgstr ""
+
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
 msgstr ""
@@ -227,16 +166,28 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../MX-rofi-manager:712
-msgid "Edit a rofi theme config file in text editor"
-msgstr ""
-
 #: ../mxfb-timer:23
 msgid "Enter local time"
 msgstr ""
 
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
+msgstr ""
+
+#: ../mxfb-look:219 ../mxfb-look:542
+msgid "Fluxbox Style"
+msgstr ""
+
+#: ../mxfb-look:218 ../mxfb-look:541
+msgid "GTK Font"
+msgstr ""
+
+#: ../mxfb-look:217 ../mxfb-look:540
+msgid "GTK Icons"
+msgstr ""
+
+#: ../mxfb-look:216 ../mxfb-look:539
+msgid "GTK Theme"
 msgstr ""
 
 #: ../mxfb-tint2-manager:91
@@ -255,78 +206,41 @@ msgstr ""
 msgid "Image mode"
 msgstr ""
 
-#: ../MX-rofi-manager:402
-msgid "Inactive Tab Background"
-msgstr ""
-
-#: ../MX-rofi-manager:403
-msgid "Inactive Tab Text"
-msgstr ""
-
-#: ../mxfb-look:230
-msgid "Look name "
-msgstr ""
-
-#: ../MX-rofi-manager:687
-msgid "MX-Rofi-Help"
-msgstr ""
-
-#. ##################################################################
-#. ##################################################################
-#. MAIN WINDOW
-#: ../MX-rofi-manager:704
-msgid "MX-Rofi-Manager"
-msgstr ""
-
-#. mxrr MX-comfort-rofi-recolor
-#. Tool to edit colors in MX-comfort rofi theme
-#. V.0.6 by Melber and MX Devs, 09 September 2022
-#. License: GPL-3.0+
-#. define some variables
-#: ../MX-rofi-manager:303
-msgid "MX-Rofi-Recolor"
-msgstr ""
-
-#: ../MX-rofi-manager:387
-msgid "MX-Rofi-Recolor Help"
+#: ../mxfb-look:265
+#, sh-format
+msgid "Look name $NEWNAME is protected. Choose another name."
 msgstr ""
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
 msgstr ""
 
+#. define some variables
+#: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
+msgid "MXFB-Look"
+msgstr ""
+
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
 msgstr ""
 
-#: ../MX-rofi-manager:482
-msgid "New theme name"
-msgstr ""
-
-#: ../mxfb-look:205
+#: ../mxfb-look:240
 msgid "New-Look-Name"
-msgstr ""
-
-#: ../MX-rofi-manager:480
-msgid "No Theme name!"
 msgstr ""
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
 msgstr ""
 
-#: ../MX-rofi-manager:333
-msgid ""
-"No theme selected.\\n\\n<b>MX-comfort</b> will be used as the starting "
-"theme."
+#: ../mxfb-look:203
+msgid "None"
 msgstr ""
 
 #: ../mxfb-tint2-manager:101
 msgid "OK"
 msgstr ""
 
-#. #begin message box
-#: ../mxfb-tiles:14 ../MX-rofi-manager:58
+#: ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr ""
 
@@ -334,70 +248,38 @@ msgstr ""
 msgid "OPTIONAL BORDER STYLE CONFIG"
 msgstr ""
 
-#: ../mxfb-look:252
-msgid "Overwrite"
-msgstr ""
-
-#: ../MX-rofi-manager:520
+#: ../mxfb-look:286
 #, sh-format
 msgid "Overwrite $NEWNAME"
 msgstr ""
 
-#: ../MX-rofi-manager:711
-msgid "Recolor a rofi theme based on MX-comfort"
-msgstr ""
-
-#. RESTOREMAIN
-#: ../mxfb-look:501 ../mxfb-look:649
+#: ../mxfb-look:551 ../mxfb-look:712
 msgid "Restore Look"
 msgstr ""
 
-#: ../MX-rofi-manager:387
-msgid "Return to Main Window"
+#: ../mxfb-look:222 ../mxfb-look:545
+msgid "Rofi Theme"
 msgstr ""
 
-#: ../MX-rofi-manager:604
-msgid "Rofi-Edit"
+#: ../mxfb-look:712
+msgid "Save Current Look"
 msgstr ""
 
-#: ../MX-rofi-manager:223
-msgid "Rofi-Tab-Selector"
+#: ../mxfb-look:228
+msgid "Save Look"
 msgstr ""
 
-#: ../MX-rofi-manager:84
-msgid "Rofi-Theme"
-msgstr ""
-
-#: ../mxfb-look:205
+#: ../mxfb-look:240
+#, sh-format
 msgid "Save Look as"
 msgstr ""
 
-#: ../mxfb-look:252
+#: ../mxfb-look:286
 msgid "Save as different name"
-msgstr ""
-
-#: ../MX-rofi-manager:520
-msgid "Save as different theme name"
-msgstr ""
-
-#: ../MX-rofi-manager:400
-msgid "Searchbar Background"
-msgstr ""
-
-#: ../MX-rofi-manager:401
-msgid "Searchbar Text"
 msgstr ""
 
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
-msgstr ""
-
-#: ../MX-rofi-manager:419
-msgid "Selection Background"
-msgstr ""
-
-#: ../MX-rofi-manager:420
-msgid "Selection Text"
 msgstr ""
 
 #: ../mxfb-bg-rotate:39
@@ -413,11 +295,6 @@ msgstr ""
 msgid ""
 "The code has been inserted successfully. Now there are 3 methods to do the "
 "tiling</b>"
-msgstr ""
-
-#: ../MX-rofi-manager:499
-#, sh-format
-msgid "Theme name $NEWNAME is protected. Choose another name"
 msgstr ""
 
 #: ../mxfb-trashcheck:31
@@ -437,78 +314,28 @@ msgid ""
 "</b>"
 msgstr ""
 
-#: ../MX-rofi-manager:55
-#, sh-format
-msgid ""
-"This tool edits the rofi config file.\\n\\nThe existing file will be backed "
-"up as \\n\\n<b>$HOME/.restore/rofi/config.rasi_$NOW</b>"
-msgstr ""
-
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
-msgstr ""
-
-#: ../MX-rofi-manager:398
-msgid "Title Background"
-msgstr ""
-
-#: ../MX-rofi-manager:399
-msgid "Title Text"
 msgstr ""
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
 msgstr ""
 
-#: ../mxfb-tint2-manager:191
-msgid "\\n"
+#: ../mxfb-look:549
+msgid "Wait 10 seconds for the conky to restart"
 msgstr ""
 
-#: ../mxfb-look:341
+#: ../mxfb-look:223 ../mxfb-look:546
+msgid "Wallpaper"
+msgstr ""
+
+#: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
 msgstr ""
 
-#. select starting style
-#: ../MX-rofi-manager:318
-msgid "\\n<b> Choose which theme to use as a starting point</b>\\n"
-msgstr ""
-
-#: ../mxfb-look:353
+#: ../mxfb-look:389
 msgid "\\n<b> You need to select a look !</b>\\n"
-msgstr ""
-
-#: ../MX-rofi-manager:708
-msgid ""
-"\\n<b><big>Rofi Manager is a tool to configure rofi themes.</big>\\n\\nWhat "
-"would you like to do?</b>\\n\\n"
-msgstr ""
-
-#. MAIN
-#: ../mxfb-look:194
-msgid ""
-"\\n<b>Current Settings.\\n</b>\\n\n"
-"GTK Theme: <b>"
-msgstr ""
-
-#. select theme
-#: ../MX-rofi-manager:168
-msgid ""
-"\\n<b>Select rofi theme to make current</b>\n"
-"Double click a theme name to open a preview rofi.\\n"
-msgstr ""
-
-#. select theme
-#: ../MX-rofi-manager:628
-msgid ""
-"\\n<b>Select the rofi theme you wish to edit</b>\\n\\nThe .rasi file will be"
-" opened in your preferred text editor\\n\\n"
-msgstr ""
-
-#: ../MX-rofi-manager:652
-#, sh-format
-msgid ""
-"\\nThe theme to be edited has been saved in\\n<b>$ROFIPATH</b> "
-"as\\n\\n<b>$EDITTHEMECOPY</b>\\n\\n"
 msgstr ""
 
 #: ../mxfb-borders:28 ../mxfb-top:30
@@ -541,61 +368,23 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr ""
 
-#: ../MX-rofi-manager:233
-msgid "a powerful calculation engine"
-msgstr ""
-
-#: ../MX-rofi-manager:237
-msgid "a set of links about using rofi"
-msgstr ""
-
-#: ../MX-rofi-manager:234
-msgid "displays all available executable files"
-msgstr ""
-
-#: ../MX-rofi-manager:236
-msgid "enables easy switching"
-msgstr ""
-
-#. translation  re-use ;)
-#. CLOSE=${CLOSE//_}
-#. CANCEL=${CANCEL//_};
-#. YES=${YES//_}
-#. NO=${NO//_}
-#: ../mxfb-trashcheck:21 ../mxfb-trashcheck:22 ../mxfb-trashcheck:23
-#: ../mxfb-trashcheck:24 ../mxfb-trashcheck:25 ../mxfb-trashcheck:26
-msgid "gtk30"
-msgstr ""
-
 #. OK=${OK//_}
 #: ../mxfb-trashcheck:27
 msgid "gtk30-properties"
-msgstr ""
-
-#: ../MX-rofi-manager:370
-msgid "mxrr-color-selector"
-msgstr ""
-
-#: ../MX-rofi-manager:235
-msgid "opens a secure shell"
 msgstr ""
 
 #: ../mxfb-timer:24
 msgid "or number and unit"
 msgstr ""
 
-#: ../mxfb-look:251
-msgid "or save as a new name?"
-msgstr ""
-
-#: ../MX-rofi-manager:238
-msgid "tab will not be shown"
-msgstr ""
-
-#: ../MX-rofi-manager:232
-msgid "the MX-21 default that displays available apps"
-msgstr ""
-
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
+msgstr ""
+
+#: ../mxfb-look:209 ../mxfb-look:530
+msgid "toggled off"
+msgstr ""
+
+#: ../mxfb-look:207 ../mxfb-look:528
+msgid "toggled on"
 msgstr ""
