@@ -1,3 +1,9 @@
+mxfb-accessories (22.11.08) mx; urgency=medium
+
+  * put back mxfb-comfort desktop file 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 28 Nov 2022 22:28:31 -0500
+
 mxfb-accessories (22.11.07) mx; urgency=medium
 
   * release cleaned-up mxfb-accessories 
