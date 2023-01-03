@@ -27,7 +27,7 @@ source ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
 
 display_help() {
 	cat << EOF
-	Usage: `basename "$0"` [-r/r/-w/w/-b/b] [-png|png|-jpg|jpg] 
+	Usage: `basename "$0"` [-r/r/-w/w/-b/b/-u/u] [-png|png|-jpg|jpg]
 EOF
 }
 
@@ -55,17 +55,20 @@ then
 	exit 0
 else
 	case "$1" in
-		-r|r|-R|-r|root|Root|-root|-Root)
+		-r|r|-R|R|root|Root|-root|-Root)
 			OPTION=""
 			;;		
-		-w|w|-W|-W|window|Window|-window|-Window)
+		-w|w|-W|W|window|Window|-window|-Window)
 			OPTION="-s"
 			#PRE="part_"
 			;;
-		-b|b|-B|-B|border|Border)
+		-b|b|-B|B|border|Border|-border|-Border)
 			OPTION="-sb"
 			#PRE="part_"
 			;;		
+		-u|u|-U|U|focused|Focused|-focused|-Focused)
+			OPTION="-u"
+			;;
 		*)
 			display_help
 			exit 1
