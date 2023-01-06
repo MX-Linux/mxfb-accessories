@@ -33,7 +33,7 @@ EOF
 
 take_shot() {
 	scrot ${OPTION} "${PRE}${NAME}.${SUF}" -e 'mv $f '$DESTDIR''
-if [ $? -eq 2 ]; then
+if [ $? -eq 2 ] || [ $? -eq 1 ]; then
     echo "exiting, no image selected"
     exit 1
 fi
