@@ -1,9 +1,10 @@
-mxfb-accessories (22.11.08+nmu1) UNRELEASED; urgency=medium
+mxfb-accessories (23.01.06) mx; urgency=medium
 
-  * Non-maintainer upload.
+  * Non-maintainer upload
   * fixed ESC = exit
+  * ready for point release
 
- -- Jerry <jb@mx>  Fri, 06 Jan 2023 08:19:43 -0500
+ -- Jerry <jb@mx>  Fri, 06 Jan 2023 09:05:14 -0500
 
 mxfb-accessories (22.11.08) mx; urgency=medium
 

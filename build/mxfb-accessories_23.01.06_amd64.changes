@@ -1,0 +1,33 @@
+Format: 1.8
+Date: Fri, 06 Jan 2023 09:05:14 -0500
+Source: mxfb-accessories
+Binary: mxfb-accessories
+Architecture: source all
+Version: 23.01.06
+Distribution: mx
+Urgency: medium
+Maintainer: Jerry3904<jerry@mxlinux.org>
+Changed-By: Jerry <jb@mx>
+Description:
+ mxfb-accessories - Various scripts used in MX-Fluxbox
+Changes:
+ mxfb-accessories (23.01.06) mx; urgency=medium
+ .
+   * Non-maintainer upload
+   * fixed ESC = exit
+   * ready for point release
+Checksums-Sha1:
+ 92d04ed18587648529939eaa718c75100cb5296f 607 mxfb-accessories_23.01.06.dsc
+ 2253c742f7ec62f94c760466e4e4cb3b14f71dee 947392 mxfb-accessories_23.01.06.tar.xz
+ 6467fe937ff8b6974a545571b12b146a6c590bf8 318036 mxfb-accessories_23.01.06_all.deb
+ 356e46e58b92d68fa94e7eed47eda19c2a840be0 5286 mxfb-accessories_23.01.06_amd64.buildinfo
+Checksums-Sha256:
+ 7c9cb3f1541174af5c9e3fb72e067cb34a2005b74ede6afe6912fa736c478fbc 607 mxfb-accessories_23.01.06.dsc
+ 6325e0311052c8667cdfe6ac77a85fe5366bc938db6700ec64931d21010cec99 947392 mxfb-accessories_23.01.06.tar.xz
+ bf6d807001adfd048713f2fbde96ab15878226b062975298c3022c1082c7fa51 318036 mxfb-accessories_23.01.06_all.deb
+ 05c905d156a353dfc3f5a09529083fee8be07a254b57a6aedfc53880de25aa0b 5286 mxfb-accessories_23.01.06_amd64.buildinfo
+Files:
+ a406565829cad9102c38c73ff24f80b0 607 system optional mxfb-accessories_23.01.06.dsc
+ a8a1d1905d9b26e878fe7625e62556ec 947392 system optional mxfb-accessories_23.01.06.tar.xz
+ a0bc234b1187b403f6bec72f82ec5d41 318036 system optional mxfb-accessories_23.01.06_all.deb
+ 859c9a471eb295089db39e2e3aef4d49 5286 system optional mxfb-accessories_23.01.06_amd64.buildinfo
