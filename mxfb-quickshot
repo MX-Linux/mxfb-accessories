@@ -1,29 +1,66 @@
 #!/bin/bash 
 
-## this app was developed by tenner and can be downloaded in its original at http://tenr.de/snippets/scripts/shot.sh
-## modified for use with MX-Fluxbox and released October 2020 under GPLv3
-## reworked by MX Devs April-August 2021
+## this app is based on one by tenner that can be downloaded at http://tenr.de/snippets/scripts/shot.sh
+## it has been modified and expanded for use with MX-Fluxbox
+## released under GPLv3
+
+#set up translation
+
+source gettext.sh
 
 export TEXTDOMAIN=mxfb-accessories
 export TEXTDOMAINDIR="/usr/share/locale"
 
-TEXT1="Location"
-TEXT2="Name"
-TEXT3="Options"
-
 ## the following parameters are set in ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
-#DESTDIR="${XDG_PICTURES_DIR}"
-#NAME="`date +%y%m%d_%H%M%S`"
-#TIMEOUT="5"
-#SUF="png"
+#OPTION
+#DESTDIR=""
+#NAME=""
+#TIMEOUT=""
+#SUF=""
 #PRE=""
+#SHOWHELP=""
+#SHOWSUCCESS=""
 
-if [ ! -f "$HOME/.config/MX-Linux/mxfb-quickshot.conf" ]; then 
+if [ ! "$HOME/.config/MX-Linux/mxfb-quickshot.conf" ]; then 
 cp /usr/share/mxfb-quickshot/mxfb-quickshot.conf $HOME/.config/MX-Linux/mxfb-quickshot.conf; 
 fi
 
 [ -r "$HOME/.config/user-dirs.dirs" ] && source "$HOME/.config/user-dirs.dirs"
 source ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
+
+NOW=$(date +%Y"%m%d")
+
+if [ ! -f $HOME/.restore/MX-Linux/mxfb-quickshot.conf* ]; then
+MESSAGE="$(eval_gettext 'This installation will install a new config file \n\nThe existing file will be backed up as \n\n<b>$HOME/.restore/MX-Linux/mxfb-quickshot.conf_$NOW</b>')"
+
+##begin message box
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=350 --height=200 --text-align=center --text="\n\n$MESSAGE\n\n" --text-align=center --center --borders=20 --button="gtk-cancel":7 --button="$(gettext 'OK to proceed?')":6
+
+if [ ! "$?" = "6" ]; then
+exit 0
+		
+else
+
+mkdir -p $HOME/.restore/MX-Linux/
+cp $HOME/.config/MX-Linux/mxfb-quickshot.conf $HOME/.restore/MX-Linux/mxfb-quickshot.conf_$(date -d "today" +"%Y%m%d")
+
+fi
+fi
+
+if [ $SHOWHELP = "yes" ]; then	
+	yad  --title="Usage" --window-icon /usr/share/icons/ePapirus/16x16/categories/accessories-screenshot.svg --timeout=9 --no-buttons \
+	--text-align=center --width=200 --height=200 --fixed \
+    --text=" \n\n\n
+<big>$(eval_gettext 'MODES    \n 
+<b>Active Window</b>: press Print and click anywhere \n
+<b>Selection</b>: press Print and draw rectangle \n
+<b>Desktop</b>: press Shift + Print \n\n
+
+PREFERENCES \n
+$HOME/.config/MX-Linux/mxfb-quickshot.conf \n
+<b>>>Hide Usage message</b>: <i>SHOWHELP='no'</i> \n
+<b>>>Hide Success message</b>: <i>SHOWSUCCESS='no'</i>')</big>"
+fi
 
 display_help() {
 	cat << EOF
@@ -33,8 +70,12 @@ EOF
 
 take_shot() {
 	scrot ${OPTION} "${PRE}${NAME}.${SUF}" -e 'mv $f '$DESTDIR''
-if [ $? -eq 2 ] || [ $? -eq 1 ]; then
+if [ $? -eq 2 ] ; then
     echo "exiting, no image selected"
+    exit 1
+fi
+
+if [ $? -eq 1 ] ; then
     exit 1
 fi
 }
@@ -46,25 +87,19 @@ then
 elif [ $# -eq 0 ]
 then
 	take_shot
-	yad  --title="Success!" --timeout=$TIMEOUT --no-buttons --fixrf --height 50\
-	--text-align=center --text "
-	<b>$TEXT1: $DESTDIR </b>\n
-	$TEXT2: <i>${PRE}${NAME}.${SUF}</i> \n \n 
+if [ $SHOWSUCCESS = "yes" ]; then	
+	yad  --title="$(gettext 'Success!')" --timeout=$TIMEOUT --no-buttons \
+	--borders=20 --text-align=center --width=200 --height=200 --margins=20 --fixed --text " \n\n\n
+	<big><b>$(eval_gettext 'Location'): $DESTDIR </b>\n
+	$(gettext 'Name'): <i>${PRE}${NAME}.${SUF}</i></big> \n \n 
 	----- \n
-	<small>$TEXT3: $HOME/.config/MX-Linux/mxfb-quickshot.conf</small>"
-	exit 0
+	$(gettext 'Options'): $HOME/.config/MX-Linux/mxfb-quickshot.conf"
+fi
+exit 0
 else
 	case "$1" in
 		-r|r|-R|R|root|Root|-root|-Root)
 			OPTION=""
-			;;		
-		-w|w|-W|W|window|Window|-window|-Window)
-			OPTION="-s"
-			#PRE="part_"
-			;;
-		-b|b|-B|B|border|Border|-border|-Border)
-			OPTION="-sb"
-			#PRE="part_"
 			;;		
 		-u|u|-U|U|focused|Focused|-focused|-Focused)
 			OPTION="-u"
