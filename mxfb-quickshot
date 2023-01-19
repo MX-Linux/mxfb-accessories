@@ -18,10 +18,9 @@ export TEXTDOMAINDIR="/usr/share/locale"
 #TIMEOUT=""
 #SUF=""
 #PRE=""
+#ICONPATH=""
 #SHOWHELP=""
 #SHOWSUCCESS=""
-
-ICONPATH=/usr/share/icons/Papirus/48x48/devices/camera-photo.svg
 
 if [ ! -f "$HOME/.config/MX-Linux/mxfb-quickshot.conf" ]; then 
 cp /usr/share/mxfb-quickshot/mxfb-quickshot.conf $HOME/.config/MX-Linux/mxfb-quickshot.conf; 
@@ -48,7 +47,7 @@ fi
 fi
 
 if [ $SHOWHELP = "yes" ]; then
-notify-send -i /usr/share/icons/Papirus/24x24/status/dialog-information.svg -t 6000 "
+notify-send -i $ICONPATH -t 9000 "
 $(eval_gettext '
 (Click anywhere inside this window to capture it)
 
@@ -82,12 +81,15 @@ EOF
 
 take_shot() {
 	scrot ${OPTION} "${PRE}${NAME}.${SUF}" -e 'mv $f '$DESTDIR''
-if [ $? -eq 2 ] ; then
-    echo "exiting, no image selected"
-    exit 1
+
+if [ "$?" = "1" ]; then
+notify-send -i $ICONPATH -t 3000 "
+	$(gettext 'Cancelled!')"
+exit 0
 fi
 
-if [ $? -eq 1 ] ; then
+if [ $? -eq 2 ] ; then
+    echo "$(gettext 'exiting, no image selected')"
     exit 1
 fi
 }
@@ -99,8 +101,9 @@ then
 elif [ $# -eq 0 ]
 then
 	take_shot
-if [ $SHOWSUCCESS = "yes" ]; then	
-	notify-send -i /usr/share/icons/Papirus/24x24/status/dialog-information.svg -t 4000 "
+   
+if [ $SHOWSUCCESS = "yes" ] ; then	
+	notify-send -i $ICONPATH -t 3000 "
 	$(gettext 'Success!')"
 fi
 exit 0
