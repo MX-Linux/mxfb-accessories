@@ -21,17 +21,17 @@ export TEXTDOMAINDIR="/usr/share/locale"
 #SHOWHELP=""
 #SHOWSUCCESS=""
 
-if [ ! "$HOME/.config/MX-Linux/mxfb-quickshot.conf" ]; then 
+ICONPATH=/usr/share/icons/Papirus/48x48/devices/camera-photo.svg
+
+if [ ! -f "$HOME/.config/MX-Linux/mxfb-quickshot.conf" ]; then 
 cp /usr/share/mxfb-quickshot/mxfb-quickshot.conf $HOME/.config/MX-Linux/mxfb-quickshot.conf; 
 fi
 
 [ -r "$HOME/.config/user-dirs.dirs" ] && source "$HOME/.config/user-dirs.dirs"
 source ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
 
-NOW=$(date +%Y"%m%d")
-
 if [ ! -f $HOME/.restore/MX-Linux/mxfb-quickshot.conf* ]; then
-MESSAGE="$(eval_gettext 'This installation will install a new config file \n\nThe existing file will be backed up as \n\n<b>$HOME/.restore/MX-Linux/mxfb-quickshot.conf_$NOW</b>')"
+MESSAGE="$(eval_gettext 'This upgrade will install a new config file \n\nThe existing file will be backed up as \n\n<b>$HOME/.restore/MX-Linux/mxfb-quickshot.conf_$NOW</b>')"
 
 ##begin message box
 yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=350 --height=200 --text-align=center --text="\n\n$MESSAGE\n\n" --text-align=center --center --borders=20 --button="gtk-cancel":7 --button="$(gettext 'OK to proceed?')":6
@@ -47,19 +47,31 @@ cp $HOME/.config/MX-Linux/mxfb-quickshot.conf $HOME/.restore/MX-Linux/mxfb-quick
 fi
 fi
 
-if [ $SHOWHELP = "yes" ]; then	
-	yad  --title="Usage" --window-icon /usr/share/icons/ePapirus/16x16/categories/accessories-screenshot.svg --timeout=9 --no-buttons \
-	--text-align=center --width=200 --height=200 --fixed \
-    --text=" \n\n\n
-<big>$(eval_gettext 'MODES    \n 
-<b>Active Window</b>: press Print and click anywhere \n
-<b>Selection</b>: press Print and draw rectangle \n
-<b>Desktop</b>: press Shift + Print \n\n
+if [ $SHOWHELP = "yes" ]; then
+notify-send -i /usr/share/icons/Papirus/24x24/status/dialog-information.svg -t 6000 "
+$(eval_gettext '
+(Click anywhere inside this window to capture it)
 
-PREFERENCES \n
-$HOME/.config/MX-Linux/mxfb-quickshot.conf \n
-<b>>>Hide Usage message</b>: <i>SHOWHELP='no'</i> \n
-<b>>>Hide Success message</b>: <i>SHOWSUCCESS='no'</i>')</big>"
+
+MODES
+
+	A window: press Print and click anywhere inside
+		Actuve window: Press ALT + PRINT
+
+	Selection: press Print and draw a rectangle
+
+	Desktop: press Print and click the background 			
+		OR: press SHIFT + PRINT
+    
+
+PREFERENCES
+
+	$HOME/.config/MX-Linux/mxfb-quickshot.conf
+
+		Hide this message: SHOWHELP="no"
+
+		Hide Success message: SHOWSUCCES="no"')"
+     
 fi
 
 display_help() {
@@ -88,12 +100,8 @@ elif [ $# -eq 0 ]
 then
 	take_shot
 if [ $SHOWSUCCESS = "yes" ]; then	
-	yad  --title="$(gettext 'Success!')" --timeout=$TIMEOUT --no-buttons \
-	--borders=20 --text-align=center --width=200 --height=200 --margins=20 --fixed --text " \n\n\n
-	<big><b>$(eval_gettext 'Location'): $DESTDIR </b>\n
-	$(gettext 'Name'): <i>${PRE}${NAME}.${SUF}</i></big> \n \n 
-	----- \n
-	$(gettext 'Options'): $HOME/.config/MX-Linux/mxfb-quickshot.conf"
+	notify-send -i /usr/share/icons/Papirus/24x24/status/dialog-information.svg -t 4000 "
+	$(gettext 'Success!')"
 fi
 exit 0
 else
