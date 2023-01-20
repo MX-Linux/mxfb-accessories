@@ -51,25 +51,21 @@ notify-send -i $ICONPATH -t 9000 "
 $(eval_gettext '
 (Click anywhere inside this window to capture it)
 
-
 MODES
 
-	A window: press Print and click anywhere inside
-		Actuve window: Press ALT + PRINT
+	Window: press Print, then click anywhere inside
+		
+	Desktop: press Print, then click the background 			
+				
+	Selection: press Print, then draw a rectangle
+	    
+OTHER
 
-	Selection: press Print and draw a rectangle
+	Preferences: $HOME/.config/MX-Linux/mxfb-quickshot.conf
 
-	Desktop: press Print and click the background 			
-		OR: press SHIFT + PRINT
-    
-
-PREFERENCES
-
-	$HOME/.config/MX-Linux/mxfb-quickshot.conf
-
-		Hide this message: SHOWHELP="no"
-
-		Hide Success message: SHOWSUCCES="no"')"
+		Hide this notification: SHOWHELP="no"
+		
+	Default key bindings: $HOME/.fluxbox/keys')"
      
 fi
 
@@ -101,8 +97,7 @@ then
 elif [ $# -eq 0 ]
 then
 	take_shot
-   
-if [ $SHOWSUCCESS = "yes" ] ; then	
+
 	notify-send -i $ICONPATH -t 3000 "
 	$(gettext 'Success!')"
 fi
