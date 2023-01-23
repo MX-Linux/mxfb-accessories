@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 ## this app is based on one by tenner that can be downloaded at http://tenr.de/snippets/scripts/shot.sh
 ## it has been modified and expanded for use with MX-Fluxbox
@@ -6,10 +6,14 @@
 
 #set up translation
 
-source gettext.sh
+# mxfb-quickshot version
+VERSION="230101"
 
 export TEXTDOMAIN=mxfb-accessories
 export TEXTDOMAINDIR="/usr/share/locale"
+source gettext.sh
+
+[ -r "$HOME/.config/user-dirs.dirs" ] && source "$HOME/.config/user-dirs.dirs"
 
 ## the following parameters are set in ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
 #OPTION
@@ -22,110 +26,170 @@ export TEXTDOMAINDIR="/usr/share/locale"
 #SHOWHELP=""
 #SHOWSUCCESS=""
 
-if [ ! -f "$HOME/.config/MX-Linux/mxfb-quickshot.conf" ]; then 
-cp /usr/share/mxfb-quickshot/mxfb-quickshot.conf $HOME/.config/MX-Linux/mxfb-quickshot.conf; 
-fi
 
-[ -r "$HOME/.config/user-dirs.dirs" ] && source "$HOME/.config/user-dirs.dirs"
-source ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
+BASE_NAME=$(basename "$0")
 
-if [ ! -f $HOME/.restore/MX-Linux/mxfb-quickshot.conf* ]; then
-MESSAGE="$(eval_gettext 'This upgrade will install a new config file \n\nThe existing file will be backed up as \n\n<b>$HOME/.restore/MX-Linux/mxfb-quickshot.conf_$NOW</b>')"
+DATE=$(date '+%Y%m%d')
+CONFIG_DIR="$HOME/.config/MX-Linux"
+BACKUP_DIR="$HOME/.restore/MX-Linux"
 
-##begin message box
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --width=350 --height=200 --text-align=center --text="\n\n$MESSAGE\n\n" --text-align=center --center --borders=20 --button="gtk-cancel":7 --button="$(gettext 'OK to proceed?')":6
+CONFIG_NAME="mxfb-quickshot.conf"
+BACKUP_NAME="${CONFIG_NAME}_${VERSION}_${DATE}"
+FLUXBOXKEYS='$HOME'/.fluxbox/keys
+USER_CONFIG='$HOME'/.config/MX-Linux/${CONFIG_NAME}
 
-if [ ! "$?" = "6" ]; then
-exit 0
-		
-else
+BACKUP_CONF="${BACKUP_DIR}/${BACKUP_NAME}"
+SYSTEM_CONF="/usr/share/mxfb-quickshot/mxfb-quickshot.conf"
 
-mkdir -p $HOME/.restore/MX-Linux/
-cp $HOME/.config/MX-Linux/mxfb-quickshot.conf $HOME/.restore/MX-Linux/mxfb-quickshot.conf_$(date -d "today" +"%Y%m%d")
 
-fi
-fi
+# messages shown
 
-if [ $SHOWHELP = "yes" ]; then
-notify-send -i $ICONPATH -t 9000 "
-$(eval_gettext '
+NONE_SELECTED=$(gettext 'exiting, no image selected')
+    CANCELLED="$(gettext 'Cancelled!')"
+      SUCCESS="    $(gettext 'Success!')"
+USAGE="Usage: $BASE_NAME [-r/r/-w/w/-b/b/-u/u] [-png|png|-jpg|jpg]"
+
+UPGRADE_MESSAGE=$(gettext 'This upgrade will install a new config file')
+BACKUP_MESSAGE=$(gettext 'The existing file will be backed up as:')
+MESSAGE="$UPGRADE_MESSAGE\n\n$BACKUP_MESSAGE\n\n<b>$BACKUP_CONF</b>"
+
+HELP_MESSAGE=$(eval_gettext '
 (Click anywhere inside this window to capture it)
 
 MODES
 
-	Window: press Print, then click anywhere inside
-		
-	Desktop: press Print, then click the background 			
-				
-	Selection: press Print, then draw a rectangle
-	    
+    Window: press Print, then click anywhere inside
+
+    Desktop: press Print, then click the background
+
+    Selection: press Print, then draw a rectangle
+
 OTHER
 
-	Preferences: $HOME/.config/MX-Linux/mxfb-quickshot.conf
+    Preferences: $USER_CONFIG
 
-		Hide this notification: SHOWHELP="no"
-		
-	Default key bindings: $HOME/.fluxbox/keys')"
-     
+        Hide this notification: SHOWHELP="no"
+
+    Default key bindings: $FLUXBOXKEYS')
+
+
+USER_CONFIG="${CONFIG_DIR}/${CONFIG_NAME}"
+
+
+if ! ls "${BACKUP_DIR}/${CONFIG_NAME}_${VERSION}"* >/dev/null 2>&1 &&
+   [ -r "$USER_CONFIG" ] &&
+   [ -r "$SYSTEM_CONF" ]; then
+
+   YAD=(yad
+    --title="$TITLE"
+    --class="$CLASS"
+    --window-icon="$ICONPATH"
+    --width=350
+    --height=200
+    --text-align=center
+    --text="\n\n$MESSAGE\n\n"
+    --center
+    --borders=20
+    --button="gtk-cancel":7
+    --button="$(gettext 'OK to proceed?')":6
+    )
+
+   "${YAD[@]}"
+   [ ! "$?" = "6" ] && exit 0
+
+   [ -d "$BACKUP_DIR" ] || mkdir -p "$BACKUP_DIR"
+   cp "$USER_CONFIG" "$BACKUP_CONF"
+   cp "$SYSTEM_CONF" "$USER_CONFIG"
 fi
 
+if [ -r "$SYSTEM_CONF" ] && [ ! -r "$USER_CONFIG" ]; then
+      [ -d "$CONFIG_DIR" ] || mkdir -p "$CONFIG_DIR"
+      cp "$SYSTEM_CONF" "$USER_CONFIG"
+fi
+[ -r "$USER_CONFIG" ] &&  source "$USER_CONFIG"
+
+# user config sanity check 
+# set to reasonable vaules with := assignment only if not set already
+
+: ${OPTION:="-s -q 100"} 
+: ${NAME:=$(date +%y%m%d_%H%M%S)}
+: ${TIMEOUT:=5}
+: ${SUF:=png}
+: ${SHOWHELP:=yes}
+: ${PRE:=quickshot_}
+
+if [ -z "$ICONPATH" ] || [ ! -e "$ICONPATH" ]; then
+   # take icon from theme  
+   ICONPATH=camera-photo
+fi
+# use current dir if destdir is not defined
+: ${DESTDIR:=.}
+
+[ "${SHOWHELP:=yes}" = "yes" ] && notify-send -i "$ICONPATH" -t 9000 "$HELP_MESSAGE"
+
+
 display_help() {
-	cat << EOF
-	Usage: `basename "$0"` [-r/r/-w/w/-b/b/-u/u] [-png|png|-jpg|jpg]
-EOF
+    printf "%s\n" "$USAGE"
 }
 
 take_shot() {
-	scrot ${OPTION} "${PRE}${NAME}.${SUF}" -e 'mv $f '$DESTDIR''
+    local ret
+    local filename="${PRE}${NAME}.${SUF}"
+    local exec_option='mv $f '"$DESTDIR"
+    if [ "$(readlink -e "$DESTDIR")" = "$(readlink -e "$PWD")" ]; then
+       scrot ${OPTION} "${PRE}${NAME}.${SUF}"
+       ret=$?
+    else
+       scrot ${OPTION} "${PRE}${NAME}.${SUF}" -e "$exec_option"
+       ret=$?
+    fi
+    
+    if [ $ret = 1 ]; then
+       notify-send -i "$ICONPATH" -t 3000 "$CANCELLED"
+       exit 0
+    fi
 
-if [ "$?" = "1" ]; then
-notify-send -i $ICONPATH -t 3000 "
-	$(gettext 'Cancelled!')"
-exit 0
-fi
-
-if [ $? -eq 2 ] ; then
-    echo "$(gettext 'exiting, no image selected')"
-    exit 1
-fi
+    if [ $ret = 2 ] ; then
+       echo "$NONE_SELECTED"
+       exit 1
+    fi
+    return $ret
 }
 
-if [ $# -gt 2 ]
-then
-	display_help
-	exit 1
-elif [ $# -eq 0 ]
-then
-	take_shot
-
-	notify-send -i $ICONPATH -t 3000 "
-	$(gettext 'Success!')"
+if [ $# -gt 2 ]; then
+   display_help
+   exit 1
 fi
-exit 0
-else
-	case "$1" in
-		-r|r|-R|R|root|Root|-root|-Root)
-			OPTION=""
-			;;		
-		-u|u|-U|U|focused|Focused|-focused|-Focused)
-			OPTION="-u"
-			;;
-		*)
-			display_help
-			exit 1
-	esac
 
-	case "$2" in
-		jpg|JPG|-jpg|-JPG)
-			SUF="jpg"
-			;;	
-		png|PNG|-png|-PNG)
-			SUF="png"
-			;;
-		*)
-			display_help
-			exit 1
-	esac
-	take_shot
-	exit 0
+if [ $# -eq 0 ]; then
+   take_shot &&  notify-send -i $ICONPATH -t 3000 "$SUCCESS"
+   exit 0
 fi
+
+case "$1" in
+    -r|r|-R|R|root|Root|-root|-Root)
+        OPTION=""
+        ;;
+    -u|u|-U|U|focused|Focused|-focused|-Focused)
+        OPTION="-u"
+        ;;
+    *)
+        display_help
+        exit 1
+        ;;
+esac
+
+case "$2" in
+    jpg|JPG|-jpg|-JPG)
+        SUF="jpg"
+        ;;
+    png|PNG|-png|-PNG)
+        SUF="png"
+        ;;
+    *)
+        display_help
+        exit 1
+        ;;
+esac
+take_shot 
+exit $?
