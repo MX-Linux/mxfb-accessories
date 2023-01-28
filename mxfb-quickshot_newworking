@@ -52,34 +52,57 @@ NONE_SELECTED=$(gettext 'exiting, no image selected')
 UPGRADE_MESSAGE=$(gettext 'This upgrade will install a new config file')
 BACKUP_MESSAGE=$(gettext 'The existing file will be backed up as:')
 MESSAGE="$UPGRADE_MESSAGE\n\n$BACKUP_MESSAGE\n\n<b>$BACKUP_CONF</b>"
-HELPQUESTION=$(gettext 'Continue to see the Help screen?')
-CAPTURE_HELP=$(gettext 'Click Help screen to save it') 
-HELP_MESSAGE=$(eval_gettext '
-MODES
-
-    Window: press Print, then click anywhere inside
-
-    Desktop: press Print, then click the background
-
-    Selection: press Print, then draw a rectangle
-    
-    Delay: press Shift + Print to enter number of seconds
-
-OTHER
-
-    Preferences: $USER_CONFIG
-
-    Default key bindings: $FLUXBOXKEYS')
-
 
 USER_CONFIG="${CONFIG_DIR}/${CONFIG_NAME}"
+
+HELP_MESSAGE=$(eval_gettext '
+HOW TO CAPTURE
+
+    --Window: press Print, then click anywhere inside
+
+    --Desktop: press Print, then click the background
+
+    --Selection: press Print, then draw a rectangle
+    
+HINTS 
+
+	--The Help screen will only show once. 
+
+	--You can save it by clicking it after the dialog windows close 
+
+	--Preferences: $$USER_CONFIG')
+ICONPATH="/usr/share/icons/Papirus/24x24/devices/camera.svg"
+if [ -z "$ICONPATH" ] || [ ! -e "$ICONPATH" ]; then
+   # take icon from theme  
+   ICONPATH=camera-photo
+fi
+
+if [ ! -f ${BACKUP_DIR}/${CONFIG_NAME}* ]; then
+notify-send -i "$ICONPATH" -t 20000 "$HELP_MESSAGE" 
+YAD=(yad
+    --title="Quickshot"
+    --class="$CLASS"
+    --window-icon="$ICONPATH"
+    --height=300
+    --width=300
+    --fixed
+    --text-align=left
+    --text="\n\n$HELP_MESSAGE\n\n"
+    --center
+    --borders=20
+    --button=gtk-ok
+    )
+    
+    "${YAD[@]}"
+	
+fi
 
 if ! ls "${BACKUP_DIR}/${CONFIG_NAME}_${VERSION}"* >/dev/null 2>&1 &&
    [ -r "$USER_CONFIG" ] &&
    [ -r "$SYSTEM_CONF" ]; then
 
    YAD=(yad
-    --title="$TITLE"
+    --title="Quickshot"
     --class="$CLASS"
     --window-icon="$ICONPATH"
     --width=350
@@ -98,6 +121,7 @@ if ! ls "${BACKUP_DIR}/${CONFIG_NAME}_${VERSION}"* >/dev/null 2>&1 &&
    [ -d "$BACKUP_DIR" ] || mkdir -p "$BACKUP_DIR"
    cp "$USER_CONFIG" "$BACKUP_CONF"
    cp "$SYSTEM_CONF" "$USER_CONFIG"
+   
 fi
 
 if [ -r "$SYSTEM_CONF" ] && [ ! -r "$USER_CONFIG" ]; then
@@ -116,51 +140,10 @@ fi
 : ${SHOWHELP:=yes}
 : ${PRE:=quickshot_}
 
-if [ -z "$ICONPATH" ] || [ ! -e "$ICONPATH" ]; then
-   # take icon from theme  
-   ICONPATH=camera-photo
-fi
+
 # use current dir if destdir is not defined
 : ${DESTDIR:=.}
 
-# show Help and give option to hide it
-##how to run this only once??
-
-[ "${SHOWHELP:=yes}" = "yes" ] && notify-send -i "$ICONPATH" -t 9000 "$HELP_MESSAGE" && \
-YAD=(yad
-    --title="$TITLE"
-    --class="$CLASS"
-    --window-icon="$ICONPATH"
-    --width=350
-    --height=200
-    --text-align=center
-    --text="\n\n$HELPQUESTION\n\n"
-    --center
-    --borders=20
-    --button="gtk-no":0
-    --button="gtk-yes":1
-    )
-    
-    "${YAD[@]}"
-	
-	[ "$?" = "1" ] && exit 0
-	sed -i -e 's/SHOWHELP=\"yes\"/SHOWHELP=\"no\"/' $USER_CONFIG
- 	
-	YAD=(yad
-    --title="$TITLE"
-    --class="$CLASS"
-    --window-icon="$ICONPATH"
-    --width=350
-    --height=200
-    --timeout=1
-    --text-align=center
-    --text="\n\n$CAPTURE_HELP\n\n"
-    --center
-    --borders=20
-    )
-    
-    "${YAD[@]}"
-	
 display_help() {
     printf "%s\n" "$USAGE"
 

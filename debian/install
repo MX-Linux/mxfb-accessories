@@ -5,7 +5,8 @@ components/*.desktop usr/share/applications
 components/tint2* usr/bin
 components/mxfb-settings.svg usr/share/pixmaps
 components/*.png usr/share/pixmaps
-components/mxfb-quickshot.conf /usr/share/mxfb-quickshot/
+components/mxfb-quickshot.conf usr/share/mxfb-quickshot/
+components/quickshot_help usr/share/mxfb-quickshot/quickshot_help
 mxfb-* usr/bin
 apt/* etc/apt/
 translations_script/mo/am/mxfb-accessories.mo     /usr/share/locale/am/LC_MESSAGES
