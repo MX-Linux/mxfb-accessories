@@ -49,7 +49,7 @@ NONE_SELECTED=$(gettext 'exiting, no image selected')
       SUCCESS="    $(gettext 'Success!')"
 #USAGE="Usage: $BASE_NAME [-r/r/-w/w/-b/b/-u/u] [-png|png|-jpg|jpg]"
 
-UPGRADE_MESSAGE=$(gettext 'This upgrade will install a new config file')
+UPGRADE_MESSAGE=$(gettext 'This will install a new config file')
 BACKUP_MESSAGE=$(gettext 'The existing file will be backed up as:')
 MESSAGE="$UPGRADE_MESSAGE\n\n$BACKUP_MESSAGE\n\n<b>$BACKUP_CONF</b>"
 
@@ -80,7 +80,7 @@ if [ -z "$ICONPATH" ] || [ ! -e "$ICONPATH" ]; then
 fi
 
 if [ ! -f ${BACKUP_DIR}/${CONFIG_NAME}* ]; then
-notify-send -i "$ICONPATH" -t 30000 "$HELP_MESSAGE" 
+/usr/bin/notify-send -i "$ICONPATH" -t 30000 "$HELP_MESSAGE" 
 
 sleep 3
 YAD=(yad
