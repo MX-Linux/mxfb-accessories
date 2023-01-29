@@ -164,7 +164,7 @@ take_shot() {
     fi
     
     if [ $ret = 1 ]; then
-       notify-send -i "$ICONPATH" -t 3000 "$CANCELLED"
+       /usr/bin/notify-send -i "$ICONPATH" -t 3000 "$CANCELLED"
        exit 0
     fi
 
@@ -181,7 +181,7 @@ if [ $# -gt 2 ]; then
 fi
 
 if [ $# -eq 0 ]; then
-   take_shot &&  notify-send -i $ICONPATH -t 3000 "$SUCCESS"
+   take_shot &&  /usr/bin/notify-send -i $ICONPATH -t 3000 "$SUCCESS"
    exit 0
 fi
 }
