@@ -8,7 +8,7 @@ Homepage: https:/mxlinux.org
 
 Package: mxfb-accessories
 Architecture: all
-Depends: nitrogen
+Depends: nitrogen libnotify-bin
 Breaks: mxfb-goodies (<< 22.08.26)
 Conflicts: mxfb-goodies (<< 22.08.26) 
 Replaces: 
