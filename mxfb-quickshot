@@ -5,7 +5,7 @@
 ## released under GPLv3
 
 # mxfb-quickshot version
-VERSION="230206"
+VERSION="230210"
 
 ## the following parameters are set in ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
 #OPTION="-s -q 100"
@@ -54,52 +54,58 @@ NONE_SELECTED=$(gettext 'exiting, no image selected')
     CANCELLED=$(gettext 'Cancelled!')
 # The capture of a screenshot was successful.
       SUCCESS=$(gettext 'Success!')
-# Do you want to proceed to capture a screenshot.
+# Do you want to allow a new config file to be installed?
 OK_TO_PROCEED=$(gettext 'OK to proceed?')
-# Do you want to display this help message again?
+# Do you want to display the Help message again?
       DISMISS=$(gettext 'Dismiss')
- DISMISS_HELP=$(gettext "Don't display this help message again!")
+ DISMISS_HELP=$(gettext "Don't display the Help message again!")
 
 # A new config file will be installed.
 UPGRADE_MESSAGE=$(gettext 'This will install a new config file')
 
 # The existing config file will be copied into a backup directory.
-BACKUP_MESSAGE=$(gettext 'The existing file will be backed up as:')
-MESSAGE="$UPGRADE_MESSAGE\n\n$BACKUP_MESSAGE\n\n<b>$BACKUP_CONF</b>"
+BACKUP_MESSAGE=$(gettext 'The existing file will be backed up in:')
+MESSAGE="$UPGRADE_MESSAGE\n\n$BACKUP_MESSAGE\n\n<b>$BACKUP_DIR/</b>"
 
 # How to take a screenshot...
-HELP0=$(gettext 'How to capture')
+HELP_TITLE=$(gettext 'HOW TO TAKE A SCREENSHOT')
+HELP0=$(gettext 'Press "Print" (or "PrtSc") and use the mouse:')
 # Press the Print-Screen-key to capture a window.
-HELP1=$(gettext 'WINDOW: press Print, then click anywhere inside')
+# How to capture
+HELP1=$(gettext 'WINDOW: click anywhere inside')
 # Press the Print-Screen-key to capture a wallpaper.
-HELP2=$(gettext 'DESKTOP: press Print, then click the background')
+# WINDOW: press Print, then click anywhere inside
+HELP2=$(gettext 'DESKTOP: click the background')
 # Press the Print-Screen-key to capture a screen selection.
-HELP3=$(gettext 'SELECTION: press Print, then draw a rectangle')
-
+# DESKTOP: press Print, then click the background
+HELP3=$(gettext 'SELECTION: draw a rectangle')
+# SELECTION: press Print, then draw a rectangle
 HELP_MESSAGE="
+
+	$HELP_TITLE
+
 
 $HELP0
 
-    $HELP1
+    --$HELP1
 
-    $HELP2
+    --$HELP2
 
-    $HELP3
+    --$HELP3
 
     "
 
 # Hints for creating a screenshot
 # The help message will not be displayed again, if user clicks on "Dismiss" button.
 # The capture of a screenshot will start after closing this window.
-# Do not translate '$USER_CONFIG'.
 HELP_HINTS=$(eval_gettext '
 Hints
 
-    --Click "Dismiss" to not show this help message again!
+    --Click "Dismiss" to hide Help in the future!
 
-    --Capture by clicking after this window is closed
+    --Capture Help by clicking it after agreeing to proceed
 
-    --$USER_CONFIG')
+    --More: search "Quickshot" in the MX Wiki')
 
 
 display_help() {
