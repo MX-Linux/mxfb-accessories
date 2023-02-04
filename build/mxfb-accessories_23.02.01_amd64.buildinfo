@@ -1,20 +1,23 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Format: 1.0
 Source: mxfb-accessories
 Binary: mxfb-accessories
 Architecture: all source
-Version: 23.01.06
+Version: 23.02.01
 Checksums-Md5:
- a406565829cad9102c38c73ff24f80b0 607 mxfb-accessories_23.01.06.dsc
- a0bc234b1187b403f6bec72f82ec5d41 318036 mxfb-accessories_23.01.06_all.deb
+ bf8380949e42b0808ddabeec2d17cf16 1519 mxfb-accessories_23.02.01.dsc
+ ea627e8f2cfcb27dcbf21fb668e4a0da 319544 mxfb-accessories_23.02.01_all.deb
 Checksums-Sha1:
- 92d04ed18587648529939eaa718c75100cb5296f 607 mxfb-accessories_23.01.06.dsc
- 6467fe937ff8b6974a545571b12b146a6c590bf8 318036 mxfb-accessories_23.01.06_all.deb
+ 27c12197ffbf4dbc03f15f418bc62bf37f955b60 1519 mxfb-accessories_23.02.01.dsc
+ 0e891cfcba11edfd4306973658de530c13804a02 319544 mxfb-accessories_23.02.01_all.deb
 Checksums-Sha256:
- 7c9cb3f1541174af5c9e3fb72e067cb34a2005b74ede6afe6912fa736c478fbc 607 mxfb-accessories_23.01.06.dsc
- bf6d807001adfd048713f2fbde96ab15878226b062975298c3022c1082c7fa51 318036 mxfb-accessories_23.01.06_all.deb
+ 6ad6cdb700172b85d6aab2cadb604b58ade0d402b1d9e592c692b8431e82a6c4 1519 mxfb-accessories_23.02.01.dsc
+ c6a275eb516073f429fd08ca3772ac5b9e4e50c23014f4f36b9e4b118bfeaede 319544 mxfb-accessories_23.02.01_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Fri, 06 Jan 2023 09:10:48 -0500
+Build-Date: Fri, 03 Feb 2023 23:50:54 +0100
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -35,6 +38,7 @@ Installed-Build-Depends:
  bsdutils (= 1:2.36.1-8+deb11u1),
  build-essential (= 12.9),
  bzip2 (= 1.0.8-4),
+ clang-11 (= 1:11.0.1-2),
  coreutils (= 8.32-4+b1),
  cpp (= 4:10.2.1-1),
  cpp-10 (= 10.2.1-6),
@@ -65,6 +69,8 @@ Installed-Build-Depends:
  init-system-helpers (= 1.60),
  install-info (= 6.7.0.dfsg.2-6),
  intltool-debian (= 0.35.0+20060710.5),
+ lib32gcc-s1 (= 10.2.1-6),
+ lib32stdc++6 (= 10.2.1-6),
  libacl1 (= 2.2.53-10),
  libarchive-zip-perl (= 1.68-1),
  libasan6 (= 10.2.1-6),
@@ -74,13 +80,18 @@ Installed-Build-Depends:
  libaudit1 (= 1:3.0-2),
  libbinutils (= 2.35.2-2),
  libblkid1 (= 2.36.1-8+deb11u1),
+ libbsd0 (= 0.11.3-1),
  libbz2-1.0 (= 1.0.8-4),
  libc-bin (= 2.31-13+deb11u5),
  libc-dev-bin (= 2.31-13+deb11u5),
  libc6 (= 2.31-13+deb11u5),
  libc6-dev (= 2.31-13+deb11u5),
+ libc6-i386 (= 2.31-13+deb11u5),
  libcap-ng0 (= 0.7.9-2.2+b1),
  libcc1-0 (= 10.2.1-6),
+ libclang-common-11-dev (= 1:11.0.1-2),
+ libclang-cpp11 (= 1:11.0.1-2),
+ libclang1-11 (= 1:11.0.1-2),
  libcom-err2 (= 1.46.2-2),
  libcrypt-dev (= 1:4.4.18-4),
  libcrypt1 (= 1:4.4.18-4),
@@ -90,8 +101,11 @@ Installed-Build-Depends:
  libdebconfclient0 (= 0.260),
  libdebhelper-perl (= 13.3.4),
  libdpkg-perl (= 1.20.12),
+ libedit2 (= 3.1-20191231-2+b1),
  libelf1 (= 0.183-1),
+ libffi7 (= 3.3-6),
  libfile-stripnondeterminism-perl (= 1.12.0-1),
+ libgc1 (= 1:8.0.4-3),
  libgcc-10-dev (= 10.2.1-6),
  libgcc-s1 (= 10.2.1-6),
  libgcrypt20 (= 1.8.7-6),
@@ -108,16 +122,20 @@ Installed-Build-Depends:
  libkeyutils1 (= 1.6.1-2),
  libkrb5-3 (= 1.18.3-6+deb11u3),
  libkrb5support0 (= 1.18.3-6+deb11u3),
+ libllvm11 (= 1:11.0.1-2),
  liblsan0 (= 10.2.1-6),
  liblz4-1 (= 1.9.3-2),
  liblzma5 (= 5.2.5-2.1~deb11u1),
  libmagic-mgc (= 1:5.39-3),
  libmagic1 (= 1:5.39-3),
+ libmd0 (= 1.0.3-3),
  libmount1 (= 2.36.1-8+deb11u1),
  libmpc3 (= 1.2.0-1),
  libmpfr6 (= 4.1.0-3),
  libnsl-dev (= 1.3.0-2),
  libnsl2 (= 1.3.0-2),
+ libobjc-10-dev (= 10.2.1-6),
+ libobjc4 (= 10.2.1-6),
  libpam-modules (= 1.4.0-9+deb11u1),
  libpam-modules-bin (= 1.4.0-9+deb11u1),
  libpam-runtime (= 1.4.0-9+deb11u1),
@@ -149,8 +167,9 @@ Installed-Build-Depends:
  libunistring2 (= 0.9.10-4),
  libuuid1 (= 2.36.1-8+deb11u1),
  libxml2 (= 2.9.10+dfsg-6.7+deb11u3),
+ libz3-4 (= 4.8.10-1),
  libzstd1 (= 1.4.8+dfsg-2.1),
- linux-libc-dev (= 5.14.6-3~mx21+1),
+ linux-libc-dev (= 6.1.7-1~mx21+1),
  login (= 1:4.8.1-1),
  lsb-base (= 11.1.0),
  m4 (= 1.4.18-5),
@@ -176,4 +195,22 @@ Installed-Build-Depends:
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1673013914"
+ SOURCE_DATE_EPOCH="1675463786"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmPdj9UTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6ejLEACeCl5FUuGo0yw/OGqyO9bnal5L4Drs
+o0+i/1bUVSacXYIx6cQlThbEwiJshcvHM2M2g86yoAAD+SUiTr+aCPz5eyfKUfGs
+X2tcgRuL/EQgnVcV94Efh4DhgX5lTnDWnPbm0vegqBkHmPYV+KbLtwD1lDTPfXmC
+oyT4eW2F6mSIx8UfPt8IBRpd7N3nxA6yHV3MtgmVW/QyzdE+dP4DMDV7yvTC6VxS
+jxtolOoiykWXCNKifVhEdTn/w1U8QEm/3EsPnrzQb/CzbM0OP8Dz5twCW2SVYDXk
+cylFEzs38CIvEhnJB/6OtbKfhhvQ4jnQHHqk1+odHjHQmFd2rFiilES9sdXl2KJ7
+i1ymsvOcs8bxe5+tSzHW6m1a+g8DPKQWvehOzzvZPriyhObmXZAeS2XzCr+tmjG+
+Zr617wZ43GCrR8XCygLJ+EYf+aBUWWyqR6UrbOzuurVw+TgYEolKh4mzOFTCVfFp
+kNxExXx6T19w4Dq/KreK+kCDV0EJSbpxLXzXMF5ESfJ5AvYtPgnpjcAB9swesqtq
+/76rEZ7Hz8KR044cm3+bAXo3jKgU3Yxc4xmqZLUj9tXOMV8yEO2hdmpmF0ZK5Epp
+YYBlmMcsS+6OBbJMd61GQ3BZnqnkmW2XqJDOOoHu0vMBeM2buogHYyWPHWum0DAq
+BX5GBJjrUidzMg==
+=ebv4
+-----END PGP SIGNATURE-----

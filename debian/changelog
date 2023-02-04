@@ -1,3 +1,16 @@
+mxfb-accessories (23.02.01) mx; urgency=medium
+
+  mxfb-quickshot adjustments:
+  * use xdg-user-dir PICTURES
+  * adjust help messages
+  * add help message dismiss check
+  * add "safer-source" instead of sourcing user conf file
+  * allow only system wide defined parameters to be changed by user
+  * add translator comments
+  * code restructure
+
+ -- fehlix <fehlix@mxlinux.org>  Fri, 03 Feb 2023 17:36:26 -0500
+
 mxfb-accessories (23.01.07) UNRELEASED; urgency=medium
 
   * upgraded quickshot to beta for testing

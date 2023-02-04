@@ -4,27 +4,15 @@
 ## it has been modified and expanded for use with MX-Fluxbox
 ## released under GPLv3
 
-#set up translation
-
 # mxfb-quickshot version
-VERSION="230201"
-
-export TEXTDOMAIN=mxfb-accessories
-export TEXTDOMAINDIR="/usr/share/locale"
-source gettext.sh
-
-[ -r "$HOME/.config/user-dirs.dirs" ] && source "$HOME/.config/user-dirs.dirs"
+VERSION="230206"
 
 ## the following parameters are set in ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
-#OPTION
-#DESTDIR=""
-#NAME=""
-#TIMEOUT=""
-#SUF=""
-#PRE=""
-#ICONPATH=""
-#SHOWHELP=""
-#SHOWSUCCESS=""
+#OPTION="-s -q 100"
+#DESTDIR="$(xdg-user-dir PICTURES)"
+#NAME="$(date +'%y%m%d_%H%M%S')"
+#SUF="png"
+#PRE="quickshot_"
 
 
 BASE_NAME=$(basename "$0")
@@ -35,126 +23,178 @@ BACKUP_DIR="$HOME/.restore/MX-Linux"
 
 CONFIG_NAME="mxfb-quickshot.conf"
 BACKUP_NAME="${CONFIG_NAME}_${VERSION}_${DATE}"
-FLUXBOXKEYS='$HOME'/.fluxbox/keys
-USER_CONFIG='$HOME'/.config/MX-Linux/${CONFIG_NAME}
+FLUXBOXKEYS="$HOME/.fluxbox/keys"
+USER_CONFIG="${CONFIG_DIR}/${CONFIG_NAME}"
+DISMISS_CHK="${CONFIG_DIR}/mxfb-quickshot-dismiss.chk"
 
 BACKUP_CONF="${BACKUP_DIR}/${BACKUP_NAME}"
-SYSTEM_CONF="/usr/share/mxfb-quickshot/mxfb-quickshot.conf"
+SYSTEM_CONF="/usr/share/mxfb-quickshot/$CONFIG_NAME"
+
+ICONPATH="/usr/share/icons/Papirus/24x24/devices/camera.svg"
+# take icon from theme if needed
+[ -e "$ICONPATH" ] || ICONPATH=camera-photo
+WM_CLASS=mxfb-quickshot
 
 
 # messages shown
 
-NONE_SELECTED=$(gettext 'exiting, no image selected')
-    CANCELLED="$(gettext 'Cancelled!')"
-      SUCCESS="    $(gettext 'Success!')"
-#USAGE="Usage: $BASE_NAME [-r/r/-w/w/-b/b/-u/u] [-png|png|-jpg|jpg]"
+USAGE="Usage: $BASE_NAME [-r|r|-u|u] [-png|png|-jpg|jpg]"
 
+#set up translation
+
+export TEXTDOMAIN=mxfb-accessories
+export TEXTDOMAINDIR=/usr/share/locale
+source gettext.sh
+
+#Note: Comment lines above gettext lines are visible to translators.
+
+# The capture of a screenshot was aborted.
+NONE_SELECTED=$(gettext 'exiting, no image selected')
+# The capture of a screenshot was cancelled.
+    CANCELLED=$(gettext 'Cancelled!')
+# The capture of a screenshot was successful.
+      SUCCESS=$(gettext 'Success!')
+# Do you want to proceed to capture a screenshot.
+OK_TO_PROCEED=$(gettext 'OK to proceed?')
+# Do you want to display this help message again?
+      DISMISS=$(gettext 'Dismiss')
+ DISMISS_HELP=$(gettext "Don't display this help message again!")
+
+# A new config file will be installed.
 UPGRADE_MESSAGE=$(gettext 'This will install a new config file')
+
+# The existing config file will be copied into a backup directory.
 BACKUP_MESSAGE=$(gettext 'The existing file will be backed up as:')
 MESSAGE="$UPGRADE_MESSAGE\n\n$BACKUP_MESSAGE\n\n<b>$BACKUP_CONF</b>"
 
-USER_CONFIG="${CONFIG_DIR}/${CONFIG_NAME}"
-HELP_MESSAGE=$(eval_gettext '
+# How to take a screenshot...
+HELP0=$(gettext 'How to capture')
+# Press the Print-Screen-key to capture a window.
+HELP1=$(gettext 'WINDOW: press Print, then click anywhere inside')
+# Press the Print-Screen-key to capture a wallpaper.
+HELP2=$(gettext 'DESKTOP: press Print, then click the background')
+# Press the Print-Screen-key to capture a screen selection.
+HELP3=$(gettext 'SELECTION: press Print, then draw a rectangle')
 
-How to capture
+HELP_MESSAGE="
 
-    --WINDOW: press Print, then click anywhere inside
+$HELP0
 
-    --DESKTOP: press Print, then click the background
+    $HELP1
 
-    --SELECTION: press Print, then draw a rectangle
-    
-    ')
+    $HELP2
+
+    $HELP3
+
+    "
+
+# Hints for creating a screenshot
+# The help message will not be displayed again, if user clicks on "Dismiss" button.
+# The capture of a screenshot will start after closing this window.
+# Do not translate '$USER_CONFIG'.
 HELP_HINTS=$(eval_gettext '
-Hints 
+Hints
 
-	--The Help screen will only show once 
+    --Click "Dismiss" to not show this help message again!
 
-	--Capture by clicking on it after windows close 
+    --Capture by clicking after this window is closed
 
-	--$USER_CONFIG')
-ICONPATH="/usr/share/icons/Papirus/24x24/devices/camera.svg"
-if [ -z "$ICONPATH" ] || [ ! -e "$ICONPATH" ]; then
-   # take icon from theme  
-   ICONPATH=camera-photo
-fi
+    --$USER_CONFIG')
 
-if [ ! -f ${BACKUP_DIR}/${CONFIG_NAME}* ]; then
-/usr/bin/notify-send -i "$ICONPATH" -t 30000 "$HELP_MESSAGE" 
 
-sleep 3
-YAD=(yad
-    --title="Quickshot"
-    --class="$CLASS"
-    --window-icon="$ICONPATH"
-    --height=300
-    --width=300
-    --fixed
-    --text-align=left
-    --text="\n\n<b>$HELP_HINTS</b>\n\n"
-    --center
-    --borders=20
-    --button=gtk-ok
-    )
-      
-       "${YAD[@]}"
-	
+display_help() {
+    printf "%s\n" "$USAGE"
+}
+
+if [ ! -f "$DISMISS_CHK" ]; then
+
+    /usr/bin/notify-send -i "$ICONPATH" -t 30000 "$HELP_MESSAGE"
+    sleep 3
+
+    YAD=(yad
+        --title="Quickshot"
+        --class="$WM_CLASS"
+        --window-icon="$ICONPATH"
+        --borders=20
+        --center
+        --fixed
+        --height=300
+        --width=300
+        --text-align=left
+        --text="\n\n<b>$HELP_HINTS</b>\n\n"
+        --button="$DISMISS"'!!'"$DISMISS_HELP":3
+        --button=gtk-ok
+        )
+
+    "${YAD[@]}"
+    if [ $? = 3 ]; then
+       [ -d "$CONFIG_DIR" ] || mkdir -p "$CONFIG_DIR"
+       echo "VERSION=$VERSION" > "$DISMISS_CHK"
+    fi
 fi
 
 if ! ls "${BACKUP_DIR}/${CONFIG_NAME}_${VERSION}"* >/dev/null 2>&1 &&
    [ -r "$USER_CONFIG" ] &&
    [ -r "$SYSTEM_CONF" ]; then
 
-   YAD=(yad
-    --title="Quickshot"
-    --class="$CLASS"
-    --window-icon="$ICONPATH"
-    --width=350
-    --height=200
-    --text-align=center
-    --text="\n\n$MESSAGE\n\n"
-    --center
-    --borders=20
-    --button="gtk-cancel":7
-    --button="$(gettext 'OK to proceed?')":6
-    )
+    YAD=(yad
+        --title="Quickshot"
+        --class="$WM_CLASS"
+        --window-icon="$ICONPATH"
+        --width=350
+        --height=200
+        --borders=20
+        --center
+        --text-align=center
+        --text="\n\n$MESSAGE\n\n"
+        --button="gtk-cancel":7
+        --button="$OK_TO_PROCEED":6
+        )
 
    "${YAD[@]}"
-   [ ! "$?" = "6" ] && exit 0
+   [ $? = 6 ] || exit 0
 
    [ -d "$BACKUP_DIR" ] || mkdir -p "$BACKUP_DIR"
    cp "$USER_CONFIG" "$BACKUP_CONF"
    cp "$SYSTEM_CONF" "$USER_CONFIG"
-   
+
 fi
 
 if [ -r "$SYSTEM_CONF" ] && [ ! -r "$USER_CONFIG" ]; then
       [ -d "$CONFIG_DIR" ] || mkdir -p "$CONFIG_DIR"
       cp "$SYSTEM_CONF" "$USER_CONFIG"
 fi
-[ -r "$USER_CONFIG" ] &&  source "$USER_CONFIG"
 
-# user config sanity check 
+# using "safe-source" instead of source "$USER_CONFIG"
+# safe-source - will read only allowed config parameter lines from user config
+# as defined in system config. Other paramter and lines are ignored.
+#
+ALLOWED_CONF_PARAMETER=( $(sed -r '/^\s*[a-zA-Z_]+=/!d; s/=.*//' $SYSTEM_CONF 2>/dev/null) )
+CONF_PARAMETER_PATTERN="${ALLOWED_CONF_PARAMETER[*]}"
+CONF_PARAMETER_PATTERN="${CONF_PARAMETER_PATTERN// /|}"
+USER_CONF_PARAMETER=$(sed -r "/^\s*(${CONF_PARAMETER_PATTERN})=/!d" "$USER_CONFIG" 2>/dev/null )
+eval "$USER_CONF_PARAMETER"
+
+# user config sanity check
 # set to reasonable vaules with := assignment only if not set already
-
-: ${OPTION:="-s -q 100"} 
+: ${OPTION:="-s -q 100"}
+: ${DESTDIR:=$(xdg-user-dir PICTURES)}
 : ${NAME:=$(date +%y%m%d_%H%M%S)}
-: ${TIMEOUT:=5}
-: ${SUF:=png}
-: ${SHOWHELP:=yes}
 : ${PRE:=quickshot_}
+: ${SUF:=png}
+: ${TIMEOUT:=5}
+: ${ICONPATH:=/usr/share/icons/Papirus/24x24/devices/camera.svg}
+# take icon from theme if needed - in case user change in conf was allowed
+[ -e "$ICONPATH" ] || ICONPATH=camera-photo
 
-
-# use current dir if destdir is not defined
-: ${DESTDIR:=.}
-
-display_help() {
-    printf "%s\n" "$USAGE"
+# use home directory if destdir is not defined
+: ${DESTDIR:=$HOME}
 
 take_shot() {
     local ret
     local filename="${PRE}${NAME}.${SUF}"
     local exec_option='mv $f '"$DESTDIR"
+    [ -w "$PWD" ] || cd "$HOME"  # to make shure current directory is writable
     if [ "$(readlink -e "$DESTDIR")" = "$(readlink -e "$PWD")" ]; then
        scrot ${OPTION} "${PRE}${NAME}.${SUF}"
        ret=$?
@@ -162,7 +202,7 @@ take_shot() {
        scrot ${OPTION} "${PRE}${NAME}.${SUF}" -e "$exec_option"
        ret=$?
     fi
-    
+
     if [ $ret = 1 ]; then
        /usr/bin/notify-send -i "$ICONPATH" -t 3000 "$CANCELLED"
        exit 0
@@ -175,22 +215,22 @@ take_shot() {
     return $ret
 }
 
+if [ $# -eq 0 ]; then
+   take_shot &&  /usr/bin/notify-send -i "$ICONPATH" -t 3000 "    $SUCCESS"
+   exit 0
+fi
+
 if [ $# -gt 2 ]; then
    display_help
    exit 1
 fi
 
-if [ $# -eq 0 ]; then
-   take_shot &&  /usr/bin/notify-send -i $ICONPATH -t 3000 "$SUCCESS"
-   exit 0
-fi
-}
-
-case "$1" in
-    -r|r|-R|R|root|Root|-root|-Root)
+ARG1=${1#-}          # remove '-' from start of arg
+case "${ARG1,,}" in  # lower case
+    r|root)
         OPTION=""
         ;;
-    -u|u|-U|U|focused|Focused|-focused|-Focused)
+    u|focused)
         OPTION="-u"
         ;;
     *)
@@ -199,11 +239,12 @@ case "$1" in
         ;;
 esac
 
-case "$2" in
-    jpg|JPG|-jpg|-JPG)
+ARG2=${2#-}          # remove '-' from start of arg
+case "${ARG2,,}" in  # lower case
+    jpg)
         SUF="jpg"
         ;;
-    png|PNG|-png|-PNG)
+    png)
         SUF="png"
         ;;
     *)
@@ -211,6 +252,6 @@ case "$2" in
         exit 1
         ;;
 esac
-take_shot 
 
+take_shot
 exit $?
