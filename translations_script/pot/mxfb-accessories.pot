@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-04 11:32-0500\n"
+"POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. Hints for creating a screenshot
 #. The help message will not be displayed again, if user clicks on "Dismiss" button.
 #. The capture of a screenshot will start after closing this window.
-#: ../mxfb-quickshot:101
+#: ../mxfb-quickshot:98
 #, sh-format
 msgid ""
 "\n"
@@ -196,7 +196,7 @@ msgid "Current Settings"
 msgstr ""
 
 #. Press the Print-Screen-key to capture a wallpaper.
-#. WINDOW: press Print, then click anywhere inside
+#. DESKTOP: press Print, then click the background
 #: ../mxfb-quickshot:78
 msgid "DESKTOP: click the background"
 msgstr ""
@@ -250,9 +250,8 @@ msgstr ""
 msgid "HELP"
 msgstr ""
 
-#. How to take a screenshot...
-#: ../mxfb-quickshot:71
-msgid "HOW TO TAKE A SCREENSHOT"
+#: ../mxfb-quickshot:70
+msgid "HELP: how to take a screenshot"
 msgstr ""
 
 #: ../mxfb-tint2-manager:100
@@ -315,6 +314,7 @@ msgstr ""
 msgid "Overwrite $NEWNAME"
 msgstr ""
 
+#. How to take a screenshot...
 #: ../mxfb-quickshot:72
 msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
 msgstr ""
@@ -328,7 +328,7 @@ msgid "Rofi Theme"
 msgstr ""
 
 #. Press the Print-Screen-key to capture a screen selection.
-#. DESKTOP: press Print, then click the background
+#. SELECTION: press Print, then draw a rectangle
 #: ../mxfb-quickshot:81
 msgid "SELECTION: draw a rectangle"
 msgstr ""
@@ -415,7 +415,7 @@ msgid "Usage options"
 msgstr ""
 
 #. Press the Print-Screen-key to capture a window.
-#. How to capture
+#. WINDOW: press Print, then click anywhere inside
 #: ../mxfb-quickshot:75
 msgid "WINDOW: click anywhere inside"
 msgstr ""
