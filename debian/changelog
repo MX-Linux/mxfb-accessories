@@ -1,10 +1,10 @@
 mxfb-accessories (23.02.01+nmu2) UNRELEASED; urgency=medium
 
-  * backup config file only if changed
-  * add help notification titel
-  * addjust check for config parameter user can change
-  * readjust translatore comments
-  * set debhelper compatibility level v10
+  * Backup the config file only when changes have been made
+  * Add title to the help message
+  * Adjust check of config parameters that user can change
+  * Readjust translator comments
+  * Set debhelper compatibility level v10
 
  -- fehlix <fehlix@mxlinux.org>  Sat, 04 Feb 2023 20:24:41 -0500
 
