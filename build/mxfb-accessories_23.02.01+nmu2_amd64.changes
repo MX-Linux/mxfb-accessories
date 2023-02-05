@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Sat, 04 Feb 2023 20:24:41 -0500
+Source: mxfb-accessories
+Binary: mxfb-accessories
+Architecture: source all
+Version: 23.02.01+nmu2
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Jerry3904<jerry@mxlinux.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ mxfb-accessories - Various scripts used in MX-Fluxbox
+Changes:
+ mxfb-accessories (23.02.01+nmu2) UNRELEASED; urgency=medium
+ .
+   * backup config file only if changed
+   * add help notification titel
+   * addjust check for config parameter user can change
+   * readjust translatore comments
+   * set debhelper compatibility level v10
+Checksums-Sha1:
+ b00a6683274236afe92d7c8de3f4f40dd5c30656 627 mxfb-accessories_23.02.01+nmu2.dsc
+ f56cc6d6b91d321e4cfefa1d8e481a8d22cf621b 949380 mxfb-accessories_23.02.01+nmu2.tar.xz
+ 4b72c39070ac49540a587f8bd6f98f3d4343df22 319848 mxfb-accessories_23.02.01+nmu2_all.deb
+ 490c9baa1f5087f4dd3779bbe473300490352963 5760 mxfb-accessories_23.02.01+nmu2_amd64.buildinfo
+Checksums-Sha256:
+ 3c2419c00a3eb8477690ccde30e3f3c23599cfb87283b5fd4ee7a3a92d36df8b 627 mxfb-accessories_23.02.01+nmu2.dsc
+ cb574e53af367c5f33e0fcfbcf5bb0eac0b08d861811933f99e6e4ce94cc69ef 949380 mxfb-accessories_23.02.01+nmu2.tar.xz
+ 15608507f406ee66812a25adc4a9c7529a0b812bb87e79cf0f8c0c7f2ecf7597 319848 mxfb-accessories_23.02.01+nmu2_all.deb
+ 8a90173df9923c976895bf78b33464bc9cd584c7db9c7f9b1fc7f13eb4d9f3b4 5760 mxfb-accessories_23.02.01+nmu2_amd64.buildinfo
+Files:
+ be5d016ce2184dec58c43e35eb44babf 627 system optional mxfb-accessories_23.02.01+nmu2.dsc
+ e770be2585360d301ecaf6dbcc651cb4 949380 system optional mxfb-accessories_23.02.01+nmu2.tar.xz
+ b0cb49f3f06c4821d0564e0ad3d40080 319848 system optional mxfb-accessories_23.02.01+nmu2_all.deb
+ f9bdeed73bebfa938a6686a10f900eb9 5760 system optional mxfb-accessories_23.02.01+nmu2_amd64.buildinfo

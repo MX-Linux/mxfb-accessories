@@ -67,23 +67,20 @@ UPGRADE_MESSAGE=$(gettext 'This will install a new config file')
 BACKUP_MESSAGE=$(gettext 'The existing file will be backed up in:')
 MESSAGE="$UPGRADE_MESSAGE\n\n$BACKUP_MESSAGE\n\n<b>$BACKUP_DIR/</b>"
 
+HELP_TITLE=$(gettext 'HELP: how to take a screenshot')
 # How to take a screenshot...
-HELP_TITLE=$(gettext 'HOW TO TAKE A SCREENSHOT')
 HELP0=$(gettext 'Press "Print" (or "PrtSc") and use the mouse:')
 # Press the Print-Screen-key to capture a window.
-# How to capture
+# WINDOW: press Print, then click anywhere inside
 HELP1=$(gettext 'WINDOW: click anywhere inside')
 # Press the Print-Screen-key to capture a wallpaper.
-# WINDOW: press Print, then click anywhere inside
+# DESKTOP: press Print, then click the background
 HELP2=$(gettext 'DESKTOP: click the background')
 # Press the Print-Screen-key to capture a screen selection.
-# DESKTOP: press Print, then click the background
-HELP3=$(gettext 'SELECTION: draw a rectangle')
 # SELECTION: press Print, then draw a rectangle
+HELP3=$(gettext 'SELECTION: draw a rectangle')
+
 HELP_MESSAGE="
-
-	$HELP_TITLE
-
 
 $HELP0
 
@@ -114,7 +111,14 @@ display_help() {
 
 if [ ! -f "$DISMISS_CHK" ]; then
 
-    /usr/bin/notify-send -i "$ICONPATH" -t 30000 "$HELP_MESSAGE"
+    HELP=(
+        /usr/bin/notify-send 
+        -i "$ICONPATH" 
+        -t 30000 
+        "$HELP_TITLE" 
+        "$HELP_MESSAGE"
+        )
+    "${HELP[@]}"
     sleep 3
 
     YAD=(yad
@@ -139,9 +143,16 @@ if [ ! -f "$DISMISS_CHK" ]; then
     fi
 fi
 
+if [ -r "$SYSTEM_CONF" ] && [ ! -r "$USER_CONFIG" ]; then
+   [ -d "$CONFIG_DIR" ] || mkdir -p "$CONFIG_DIR"
+   cp "$SYSTEM_CONF" "$USER_CONFIG"
+   [ -d "$BACKUP_DIR" ] || mkdir -p "$BACKUP_DIR"
+   cp "$USER_CONFIG" "$BACKUP_CONF"
+fi
+
 if ! ls "${BACKUP_DIR}/${CONFIG_NAME}_${VERSION}"* >/dev/null 2>&1 &&
-   [ -r "$USER_CONFIG" ] &&
-   [ -r "$SYSTEM_CONF" ]; then
+   [ -r "$USER_CONFIG" ] && [ -r "$SYSTEM_CONF" ] &&
+   ! cmp -s "$SYSTEM_CONF" "$USER_CONFIG"  ; then
 
     YAD=(yad
         --title="Quickshot"
@@ -166,20 +177,17 @@ if ! ls "${BACKUP_DIR}/${CONFIG_NAME}_${VERSION}"* >/dev/null 2>&1 &&
 
 fi
 
-if [ -r "$SYSTEM_CONF" ] && [ ! -r "$USER_CONFIG" ]; then
-      [ -d "$CONFIG_DIR" ] || mkdir -p "$CONFIG_DIR"
-      cp "$SYSTEM_CONF" "$USER_CONFIG"
-fi
-
 # using "safe-source" instead of source "$USER_CONFIG"
 # safe-source - will read only allowed config parameter lines from user config
 # as defined in system config. Other paramter and lines are ignored.
 #
 ALLOWED_CONF_PARAMETER=( $(sed -r '/^\s*[a-zA-Z_]+=/!d; s/=.*//' $SYSTEM_CONF 2>/dev/null) )
-CONF_PARAMETER_PATTERN="${ALLOWED_CONF_PARAMETER[*]}"
-CONF_PARAMETER_PATTERN="${CONF_PARAMETER_PATTERN// /|}"
-USER_CONF_PARAMETER=$(sed -r "/^\s*(${CONF_PARAMETER_PATTERN})=/!d" "$USER_CONFIG" 2>/dev/null )
-eval "$USER_CONF_PARAMETER"
+if [ ${#ALLOWED_CONF_PARAMETER[@]} != 0 ]; then
+    CONF_PARAMETER_PATTERN="${ALLOWED_CONF_PARAMETER[*]}"
+    CONF_PARAMETER_PATTERN="${CONF_PARAMETER_PATTERN// /|}"
+    USER_CONF_PARAMETER=$(sed -r "/^\s*(${CONF_PARAMETER_PATTERN})=/!d" "$USER_CONFIG" 2>/dev/null )
+    eval "$USER_CONF_PARAMETER"
+fi
 
 # user config sanity check
 # set to reasonable vaules with := assignment only if not set already

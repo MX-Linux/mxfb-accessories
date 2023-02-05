@@ -1,23 +1,20 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
-
 Format: 1.0
 Source: mxfb-accessories
 Binary: mxfb-accessories
 Architecture: all source
-Version: 23.02.01
+Version: 23.02.01+nmu2
 Checksums-Md5:
- bf8380949e42b0808ddabeec2d17cf16 1519 mxfb-accessories_23.02.01.dsc
- ea627e8f2cfcb27dcbf21fb668e4a0da 319544 mxfb-accessories_23.02.01_all.deb
+ be5d016ce2184dec58c43e35eb44babf 627 mxfb-accessories_23.02.01+nmu2.dsc
+ b0cb49f3f06c4821d0564e0ad3d40080 319848 mxfb-accessories_23.02.01+nmu2_all.deb
 Checksums-Sha1:
- 27c12197ffbf4dbc03f15f418bc62bf37f955b60 1519 mxfb-accessories_23.02.01.dsc
- 0e891cfcba11edfd4306973658de530c13804a02 319544 mxfb-accessories_23.02.01_all.deb
+ b00a6683274236afe92d7c8de3f4f40dd5c30656 627 mxfb-accessories_23.02.01+nmu2.dsc
+ 4b72c39070ac49540a587f8bd6f98f3d4343df22 319848 mxfb-accessories_23.02.01+nmu2_all.deb
 Checksums-Sha256:
- 6ad6cdb700172b85d6aab2cadb604b58ade0d402b1d9e592c692b8431e82a6c4 1519 mxfb-accessories_23.02.01.dsc
- c6a275eb516073f429fd08ca3772ac5b9e4e50c23014f4f36b9e4b118bfeaede 319544 mxfb-accessories_23.02.01_all.deb
+ 3c2419c00a3eb8477690ccde30e3f3c23599cfb87283b5fd4ee7a3a92d36df8b 627 mxfb-accessories_23.02.01+nmu2.dsc
+ 15608507f406ee66812a25adc4a9c7529a0b812bb87e79cf0f8c0c7f2ecf7597 319848 mxfb-accessories_23.02.01+nmu2_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Fri, 03 Feb 2023 23:50:54 +0100
+Build-Date: Sun, 05 Feb 2023 02:47:44 +0100
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -195,22 +192,4 @@ Installed-Build-Depends:
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1675463786"
-
------BEGIN PGP SIGNATURE-----
-
-iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmPdj9UTHGZlaGxpeEBt
-eGxpbnV4Lm9yZwAKCRAvV48brJ2b6ejLEACeCl5FUuGo0yw/OGqyO9bnal5L4Drs
-o0+i/1bUVSacXYIx6cQlThbEwiJshcvHM2M2g86yoAAD+SUiTr+aCPz5eyfKUfGs
-X2tcgRuL/EQgnVcV94Efh4DhgX5lTnDWnPbm0vegqBkHmPYV+KbLtwD1lDTPfXmC
-oyT4eW2F6mSIx8UfPt8IBRpd7N3nxA6yHV3MtgmVW/QyzdE+dP4DMDV7yvTC6VxS
-jxtolOoiykWXCNKifVhEdTn/w1U8QEm/3EsPnrzQb/CzbM0OP8Dz5twCW2SVYDXk
-cylFEzs38CIvEhnJB/6OtbKfhhvQ4jnQHHqk1+odHjHQmFd2rFiilES9sdXl2KJ7
-i1ymsvOcs8bxe5+tSzHW6m1a+g8DPKQWvehOzzvZPriyhObmXZAeS2XzCr+tmjG+
-Zr617wZ43GCrR8XCygLJ+EYf+aBUWWyqR6UrbOzuurVw+TgYEolKh4mzOFTCVfFp
-kNxExXx6T19w4Dq/KreK+kCDV0EJSbpxLXzXMF5ESfJ5AvYtPgnpjcAB9swesqtq
-/76rEZ7Hz8KR044cm3+bAXo3jKgU3Yxc4xmqZLUj9tXOMV8yEO2hdmpmF0ZK5Epp
-YYBlmMcsS+6OBbJMd61GQ3BZnqnkmW2XqJDOOoHu0vMBeM2buogHYyWPHWum0DAq
-BX5GBJjrUidzMg==
-=ebv4
------END PGP SIGNATURE-----
+ SOURCE_DATE_EPOCH="1675560281"
