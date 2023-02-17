@@ -1,20 +1,23 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Format: 1.0
 Source: mxfb-accessories
 Binary: mxfb-accessories
 Architecture: all source
-Version: 23.02.01+nmu2
+Version: 23.02.11
 Checksums-Md5:
- be5d016ce2184dec58c43e35eb44babf 627 mxfb-accessories_23.02.01+nmu2.dsc
- b0cb49f3f06c4821d0564e0ad3d40080 319848 mxfb-accessories_23.02.01+nmu2_all.deb
+ b4e731d1fd663ba718e7c35333c71f11 1490 mxfb-accessories_23.02.11.dsc
+ 386a957d04c1292f434772b8aa888505 325784 mxfb-accessories_23.02.11_all.deb
 Checksums-Sha1:
- b00a6683274236afe92d7c8de3f4f40dd5c30656 627 mxfb-accessories_23.02.01+nmu2.dsc
- 4b72c39070ac49540a587f8bd6f98f3d4343df22 319848 mxfb-accessories_23.02.01+nmu2_all.deb
+ f19a858ebcfc60f2d575def5e0ab3e323d754002 1490 mxfb-accessories_23.02.11.dsc
+ fc4e40eb1a8fa8e2cb3a3ee819a3bdcd4b2418c2 325784 mxfb-accessories_23.02.11_all.deb
 Checksums-Sha256:
- 3c2419c00a3eb8477690ccde30e3f3c23599cfb87283b5fd4ee7a3a92d36df8b 627 mxfb-accessories_23.02.01+nmu2.dsc
- 15608507f406ee66812a25adc4a9c7529a0b812bb87e79cf0f8c0c7f2ecf7597 319848 mxfb-accessories_23.02.01+nmu2_all.deb
+ 31f59140042bfb0d2e4bfdd3146a42fc947019082c1b4a35850ea12b3232deec 1490 mxfb-accessories_23.02.11.dsc
+ 454cae314b76812e3e782529a57ed47e4ac73b92aac705064d6ae62ec09d9804 325784 mxfb-accessories_23.02.11_all.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Sun, 05 Feb 2023 02:47:44 +0100
+Build-Date: Fri, 17 Feb 2023 18:06:54 -0500
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-libraries
@@ -147,7 +150,7 @@ Installed-Build-Depends:
  libselinux1 (= 3.1-3),
  libsigsegv2 (= 2.13-1),
  libsmartcols1 (= 2.36.1-8+deb11u1),
- libssl1.1 (= 1.1.1n-0+deb11u3),
+ libssl1.1 (= 1.1.1n-0+deb11u4),
  libstdc++-10-dev (= 10.2.1-6),
  libstdc++6 (= 10.2.1-6),
  libsub-override-perl (= 0.09-2),
@@ -166,7 +169,7 @@ Installed-Build-Depends:
  libxml2 (= 2.9.10+dfsg-6.7+deb11u3),
  libz3-4 (= 4.8.10-1),
  libzstd1 (= 1.4.8+dfsg-2.1),
- linux-libc-dev (= 6.1.7-1~mx21+1),
+ linux-libc-dev (= 6.1.11-1~mx21+1),
  login (= 1:4.8.1-1),
  lsb-base (= 11.1.0),
  m4 (= 1.4.18-5),
@@ -190,6 +193,23 @@ Installed-Build-Depends:
  xz-utils (= 5.2.5-2.1~deb11u1),
  zlib1g (= 1:1.2.11.dfsg-2+deb11u2)
 Environment:
- DEB_BUILD_OPTIONS="parallel=4"
+ DEB_BUILD_OPTIONS="parallel=16"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1675560281"
+ SOURCE_DATE_EPOCH="1676675049"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE9i7eqjrnCpyZ2sQYm2ih6Lm2N1wFAmPwCJgACgkQm2ih6Lm2
+N1xd+RAA2Di4njEGa/yfd7zG20SWF4HS6T684t/TLz1Hwi0sGS9q51JDVPq2i9bC
+tQ89x7HzD6ZXaLRTWZF3ANfWHyn/o1n3xGYmNkxjmy8hXs4OoflFlbpDABpQyrvZ
+ormT9AjhT6PN5PWNntvEv4bguj4Id7wA+suKPGApViYXQ6LDMpHJ79wss0ywDOgp
+C7Wiuf3l52MVaTJdKEqtKeIs2mrIJWkA0/Qvrx/eUYazOczICRNwwHajUbSkWqMw
+dnZXd5R1pBAgebKEa3JYPfKVmIIagF3k8VsNqxb0olAhLr6gNNRamPRCiZBjKbxd
+w/yLautcZ85dUGBrxGgbK8/n9sHYW+s+1O+TzXCRiVqwLDYZinvkAijc1iNhqUCC
+N2Vvxi1z2ftdFXiqGfmiVxMKk9FCQEyVx1qAma9KD4afabsHl0p70BuQ7XiZ/ITY
+fXmJgsPxKTWoaQ4xJ/rzoUXj6UrQbA4RO9E+0xn3tf8u8sLwxh21YEagL+JgMnx3
+Li3GR4c0t3YwqmIPZ6n302zGniEwx1HB/++P7cSePYMtpSRgZ54crLy/wqeXzwCi
+s7vcsCN5ShOclcA+91noRyGhZl8baTcVODGEMkPJnJ5NCljbU5ETS41zCD0troFE
+l0luYJhWROSgMQfYJ6Z25VQ/XhpUMy1uQeofeUnUOPOY6sHuIBg=
+=RYgK
+-----END PGP SIGNATURE-----
