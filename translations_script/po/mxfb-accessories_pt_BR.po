@@ -7,22 +7,51 @@
 # José Vieira <jvieira33@sapo.pt>, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2022
 # cmenemrs <cmenemrs@gmail.com>, 2022
-# marcelo cripe <marcelocripe@gmail.com>, 2022
+# marcelo cripe <marcelocripe@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-17 20:01-0500\n"
+"POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: marcelo cripe <marcelocripe@gmail.com>, 2022\n"
+"Last-Translator: marcelo cripe <marcelocripe@gmail.com>, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/anticapitalista/teams/10162/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#. Hints for creating a screenshot
+#. The help message will not be displayed again, if user clicks on "Dismiss"
+#. button.
+#. The capture of a screenshot will start after closing this window.
+#: ../mxfb-quickshot:98
+#, sh-format
+msgid ""
+"\n"
+"Hints\n"
+"\n"
+"    --Click \"Dismiss\" to hide Help in the future!\n"
+"\n"
+"    --Capture Help by clicking it after agreeing to proceed\n"
+"\n"
+"    --More: search \"Quickshot\" in the MX Wiki"
+msgstr ""
+"\n"
+"Dicas:\n"
+"\n"
+"--Clique na opção \"Ignorar\" para não exibir a ajuda no futuro!\n"
+"\n"
+"--Clique na ajuda após você concordar em prosseguir\n"
+"\n"
+"--Obtenha mais informações pesquisando por \"Quickshot\" no Wiki do MX"
+
+#: ../mxfb-look:267 ../mxfb-look:294
+msgid " "
+msgstr " "
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -47,6 +76,18 @@ msgstr " As janelas de seleção irão aparecer em cada área de trabalho."
 msgid " Type \\"
 msgstr "Escreva \\"
 
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr "$TITLE1"
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr "$TITLE2"
+
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12h ou 24h"
@@ -58,6 +99,16 @@ msgstr "1ª Painel do Tint2"
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr "2º Painel do Tint2"
+
+#: ../mxfb-look:552
+msgid "<b>   "
+msgstr "<b>   "
+
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
+msgstr "<b>$LOOKRESTORE</b>\\n"
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -143,6 +194,11 @@ msgstr "Aplicar"
 msgid "CONFIGURE TOP"
 msgstr "CONFIGURAR A PARTE SUPERIOR"
 
+#. The capture of a screenshot was cancelled.
+#: ../mxfb-quickshot:54
+msgid "Cancelled!"
+msgstr "A ação foi cancelada!"
+
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
 msgstr "Marque para executar ou desmarque para parar"
@@ -180,13 +236,28 @@ msgstr "Estado do Conky"
 msgid "Current Settings"
 msgstr "Configurações Atuais"
 
+#. Press the Print-Screen-key to capture a wallpaper.
+#. DESKTOP: press Print, then click the background
+#: ../mxfb-quickshot:78
+msgid "DESKTOP: click the background"
+msgstr "ÁREA DE TRABALHO: clique no plano de fundo"
+
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
 msgstr "Tempo de Atraso (minutos)"
 
+#. Do you want to display the Help message again?
+#: ../mxfb-quickshot:60
+msgid "Dismiss"
+msgstr "Ignorar"
+
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
 msgstr "Você quer esvaziar a lixeira?"
+
+#: ../mxfb-quickshot:61
+msgid "Don't display the Help message again!"
+msgstr "Não exibir a mensagem de ajuda novamente!"
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
@@ -219,6 +290,10 @@ msgstr "Tema do GTK"
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
 msgstr "AJUDA"
+
+#: ../mxfb-quickshot:70
+msgid "HELP: how to take a screenshot"
+msgstr "AJUDA: como fazer uma captura de tela"
 
 #: ../mxfb-tint2-manager:100
 msgid "Help"
@@ -266,7 +341,8 @@ msgstr "Nenhum"
 msgid "OK"
 msgstr "OK"
 
-#: ../mxfb-tiles:14
+#. Do you want to allow a new config file to be installed?
+#: ../mxfb-quickshot:58 ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr "Você quer continuar?"
 
@@ -279,6 +355,13 @@ msgstr "CONFIGURAÇÕES DO ESTILO DA BORDA"
 msgid "Overwrite $NEWNAME"
 msgstr "Substituir o nome $NEWNAME"
 
+#. How to take a screenshot...
+#: ../mxfb-quickshot:72
+msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
+msgstr ""
+"Pressione a tecla \"Print Screen\" ou \"Captura de Tela\" ou \"PrtSc\" e "
+"utilize o rato/mouse:"
+
 #: ../mxfb-look:551 ../mxfb-look:712
 msgid "Restore Look"
 msgstr "Restaurar o Estilo"
@@ -286,6 +369,12 @@ msgstr "Restaurar o Estilo"
 #: ../mxfb-look:222 ../mxfb-look:545
 msgid "Rofi Theme"
 msgstr "Tema do Rofi"
+
+#. Press the Print-Screen-key to capture a screen selection.
+#. SELECTION: press Print, then draw a rectangle
+#: ../mxfb-quickshot:81
+msgid "SELECTION: draw a rectangle"
+msgstr "SELEÇÃO: desenhe um retângulo"
 
 #: ../mxfb-look:712
 msgid "Save Current Look"
@@ -317,6 +406,11 @@ msgstr "Definir a rotação do fundo"
 msgid "Size"
 msgstr "Tamanho"
 
+#. The capture of a screenshot was successful.
+#: ../mxfb-quickshot:56
+msgid "Success!"
+msgstr "A ação foi concluída com sucesso!"
+
 #: ../mxfb-tiles:15
 msgid ""
 "The code has been inserted successfully. Now there are 3 methods to do the "
@@ -324,6 +418,11 @@ msgid ""
 msgstr ""
 "O código foi inserido com sucesso. Agora, existem 3 métodos para fazer o "
 "'tiling' (lado a lado)</b>"
+
+#. The existing config file will be copied into a backup directory.
+#: ../mxfb-quickshot:67
+msgid "The existing file will be backed up in:"
+msgstr "O arquivo existente será copiado para:"
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -349,6 +448,11 @@ msgstr ""
 "Esta instrução (script) fará uma cópia de segurança (backup) do seu arquivo 'keys' atual e, em seguida, instalará comandos para agrupar (tiling) ao final do arquivo. \\n\n"
 "</b>"
 
+#. A new config file will be installed.
+#: ../mxfb-quickshot:64
+msgid "This will install a new config file"
+msgstr "Esta opção instalará um novo arquivo de configurações"
+
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
 msgstr "Gerenciador da Barra de Ferramentas Tint2"
@@ -357,6 +461,12 @@ msgstr "Gerenciador da Barra de Ferramentas Tint2"
 msgid "Usage options"
 msgstr "Opções de uso"
 
+#. Press the Print-Screen-key to capture a window.
+#. WINDOW: press Print, then click anywhere inside
+#: ../mxfb-quickshot:75
+msgid "WINDOW: click anywhere inside"
+msgstr "JANELA: clique em qualquer lugar dentro da janela"
+
 #: ../mxfb-look:549
 msgid "Wait 10 seconds for the conky to restart"
 msgstr "Por favor, aguarde 10 segundos para reiniciar o Conky"
@@ -364,6 +474,14 @@ msgstr "Por favor, aguarde 10 segundos para reiniciar o Conky"
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
 msgstr "Papel de Parede"
+
+#: ../mxfb-tint2-manager:191
+msgid "\\n"
+msgstr "\\n"
+
+#: ../mxfb-look:229
+msgid "\\n<b>"
+msgstr "\\n<b>"
 
 #: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
@@ -403,9 +521,15 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Reverter"
 
+#. Note: Comment lines above gettext lines are visible to translators.
+#. The capture of a screenshot was aborted.
+#: ../mxfb-quickshot:52
+msgid "exiting, no image selected"
+msgstr "Saindo, nenhuma imagem foi selecionada"
+
 #: ../mxfb-timer:24
 msgid "or number and unit"
-msgstr "ou o número e a unidade"
+msgstr "Ou o número e a unidade"
 
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
@@ -413,8 +537,8 @@ msgstr "Formato da hora:"
 
 #: ../mxfb-look:209 ../mxfb-look:530
 msgid "toggled off"
-msgstr "desativado"
+msgstr "Desativado"
 
 #: ../mxfb-look:207 ../mxfb-look:528
 msgid "toggled on"
-msgstr "ativado"
+msgstr "Ativado"

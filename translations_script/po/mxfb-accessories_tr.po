@@ -6,25 +6,46 @@
 # Translators:
 # Caner Başaran <basaran.caner@gmail.com>, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2022
-# Mehmet Akif 9oglu, 2022
 # e0360fc3c0afcd70e5aed1cfc885bac6, 2022
-# mahmut özcan <mahmutozcan@protonmail.com>, 2022
 # yusuf miroğlu <gurbetcii_@hotmail.com>, 2022
+# Mehmet Akif 9oglu, 2022
+# mahmut özcan <mahmutozcan@protonmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-17 20:01-0500\n"
+"POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: yusuf miroğlu <gurbetcii_@hotmail.com>, 2022\n"
+"Last-Translator: mahmut özcan <mahmutozcan@protonmail.com>, 2023\n"
 "Language-Team: Turkish (https://www.transifex.com/anticapitalista/teams/10162/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Hints for creating a screenshot
+#. The help message will not be displayed again, if user clicks on "Dismiss"
+#. button.
+#. The capture of a screenshot will start after closing this window.
+#: ../mxfb-quickshot:98
+#, sh-format
+msgid ""
+"\n"
+"Hints\n"
+"\n"
+"    --Click \"Dismiss\" to hide Help in the future!\n"
+"\n"
+"    --Capture Help by clicking it after agreeing to proceed\n"
+"\n"
+"    --More: search \"Quickshot\" in the MX Wiki"
+msgstr ""
+
+#: ../mxfb-look:267 ../mxfb-look:294
+msgid " "
+msgstr ""
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -47,6 +68,18 @@ msgstr "Seçim pencereleri her Çalışma Alanında açılır."
 msgid " Type \\"
 msgstr "Tür \\"
 
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr ""
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr ""
+
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12h/24h"
@@ -59,9 +92,19 @@ msgstr "1. Tint2 Paneli"
 msgid "2nd Tint2 Panel"
 msgstr "2. Tint2 Paneli"
 
+#: ../mxfb-look:552
+msgid "<b>   "
+msgstr ""
+
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
+msgstr ""
+
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
-msgstr ""
+msgstr "<b>Yeni Görünümün Adı</b>"
 
 #: ../mxfb-look:266
 msgid "<b>Name for new style</b>"
@@ -123,6 +166,8 @@ msgid ""
 "A Look with this name already exists.\\n\\nDo you want to overwrite $NEWNAME"
 " or save as a new name?\\n"
 msgstr ""
+"Bu ada sahip bir görünüm mevcut.\\n\\n$NEWNAME'in üzerine yazmak mı yoksa "
+"yeni bir ad olarak kaydetmek mi istiyorsunuz?\\n"
 
 #. all done
 #: ../mxfb-look:346
@@ -137,6 +182,11 @@ msgstr "Uygula"
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "ÜSTÜ YAPILANDIR"
+
+#. The capture of a screenshot was cancelled.
+#: ../mxfb-quickshot:54
+msgid "Cancelled!"
+msgstr ""
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
@@ -175,13 +225,28 @@ msgstr "Conky Durumu"
 msgid "Current Settings"
 msgstr "Geçerli Ayarlar"
 
+#. Press the Print-Screen-key to capture a wallpaper.
+#. DESKTOP: press Print, then click the background
+#: ../mxfb-quickshot:78
+msgid "DESKTOP: click the background"
+msgstr ""
+
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
 msgstr "Gecikme (dakika)"
 
+#. Do you want to display the Help message again?
+#: ../mxfb-quickshot:60
+msgid "Dismiss"
+msgstr ""
+
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
 msgstr "Çöpü boşaltmak ister misin?"
+
+#: ../mxfb-quickshot:61
+msgid "Don't display the Help message again!"
+msgstr ""
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
@@ -215,6 +280,10 @@ msgstr "GTK Teması"
 msgid "HELP"
 msgstr "YARDIM"
 
+#: ../mxfb-quickshot:70
+msgid "HELP: how to take a screenshot"
+msgstr ""
+
 #: ../mxfb-tint2-manager:100
 msgid "Help"
 msgstr "Yardım"
@@ -230,7 +299,7 @@ msgstr "Resim kipi"
 #: ../mxfb-look:265
 #, sh-format
 msgid "Look name $NEWNAME is protected. Choose another name."
-msgstr ""
+msgstr "Görünüm $NEWNAME adı korunuyor. Başka bir ad seç."
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
@@ -261,7 +330,8 @@ msgstr "Hiçbiri"
 msgid "OK"
 msgstr "Tamam"
 
-#: ../mxfb-tiles:14
+#. Do you want to allow a new config file to be installed?
+#: ../mxfb-quickshot:58 ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr "Devam etmek için hazır mısınız?"
 
@@ -272,6 +342,11 @@ msgstr "İSTEĞE BAĞLI KENAR STİLİ YAPILANDIRMASI"
 #: ../mxfb-look:286
 #, sh-format
 msgid "Overwrite $NEWNAME"
+msgstr "$NEWNAME üzerine yaz"
+
+#. How to take a screenshot...
+#: ../mxfb-quickshot:72
+msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
 msgstr ""
 
 #: ../mxfb-look:551 ../mxfb-look:712
@@ -281,6 +356,12 @@ msgstr "Görünümü Geri Yükle"
 #: ../mxfb-look:222 ../mxfb-look:545
 msgid "Rofi Theme"
 msgstr "Rofi Teması"
+
+#. Press the Print-Screen-key to capture a screen selection.
+#. SELECTION: press Print, then draw a rectangle
+#: ../mxfb-quickshot:81
+msgid "SELECTION: draw a rectangle"
+msgstr ""
 
 #: ../mxfb-look:712
 msgid "Save Current Look"
@@ -312,11 +393,21 @@ msgstr "Arka plan değişimini ayarla"
 msgid "Size"
 msgstr "Boyut"
 
+#. The capture of a screenshot was successful.
+#: ../mxfb-quickshot:56
+msgid "Success!"
+msgstr ""
+
 #: ../mxfb-tiles:15
 msgid ""
 "The code has been inserted successfully. Now there are 3 methods to do the "
 "tiling</b>"
 msgstr "Kod başarıyla eklendi. Şimdi döşemeyi yapmanın 3 yöntemi var</b>"
+
+#. The existing config file will be copied into a backup directory.
+#: ../mxfb-quickshot:67
+msgid "The existing file will be backed up in:"
+msgstr ""
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -341,6 +432,11 @@ msgstr ""
 "Bu betik mevcut anahtar dosyanızı yedekler ve ardından dosyanın sonuna "
 "döşeme komutları yükler."
 
+#. A new config file will be installed.
+#: ../mxfb-quickshot:64
+msgid "This will install a new config file"
+msgstr ""
+
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
 msgstr "Tint2 Yönetici"
@@ -349,13 +445,27 @@ msgstr "Tint2 Yönetici"
 msgid "Usage options"
 msgstr "Kullanım seçenekleri"
 
+#. Press the Print-Screen-key to capture a window.
+#. WINDOW: press Print, then click anywhere inside
+#: ../mxfb-quickshot:75
+msgid "WINDOW: click anywhere inside"
+msgstr ""
+
 #: ../mxfb-look:549
 msgid "Wait 10 seconds for the conky to restart"
-msgstr ""
+msgstr "Conky'nin yeniden başlaması için 10 saniye bekleyin"
 
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
 msgstr "Duvarkağıdı"
+
+#: ../mxfb-tint2-manager:191
+msgid "\\n"
+msgstr "\\n"
+
+#: ../mxfb-look:229
+msgid "\\n<b>"
+msgstr ""
 
 #: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
@@ -395,6 +505,12 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_GeriAl"
 
+#. Note: Comment lines above gettext lines are visible to translators.
+#. The capture of a screenshot was aborted.
+#: ../mxfb-quickshot:52
+msgid "exiting, no image selected"
+msgstr ""
+
 #: ../mxfb-timer:24
 msgid "or number and unit"
 msgstr "veya sayı ve birim"
@@ -405,8 +521,8 @@ msgstr "saat biçimi:"
 
 #: ../mxfb-look:209 ../mxfb-look:530
 msgid "toggled off"
-msgstr ""
+msgstr "devre dışı"
 
 #: ../mxfb-look:207 ../mxfb-look:528
 msgid "toggled on"
-msgstr ""
+msgstr "etkin"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-17 20:01-0500\n"
+"POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: scootergrisen, 2022\n"
 "Language-Team: Danish (https://www.transifex.com/anticapitalista/teams/10162/da/)\n"
@@ -21,6 +21,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Hints for creating a screenshot
+#. The help message will not be displayed again, if user clicks on "Dismiss"
+#. button.
+#. The capture of a screenshot will start after closing this window.
+#: ../mxfb-quickshot:98
+#, sh-format
+msgid ""
+"\n"
+"Hints\n"
+"\n"
+"    --Click \"Dismiss\" to hide Help in the future!\n"
+"\n"
+"    --Capture Help by clicking it after agreeing to proceed\n"
+"\n"
+"    --More: search \"Quickshot\" in the MX Wiki"
+msgstr ""
+
+#: ../mxfb-look:267 ../mxfb-look:294
+msgid " "
+msgstr ""
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -41,6 +62,18 @@ msgstr ""
 msgid " Type \\"
 msgstr ""
 
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr ""
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr ""
+
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr ""
@@ -51,6 +84,16 @@ msgstr ""
 
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
+msgstr ""
+
+#: ../mxfb-look:552
+msgid "<b>   "
+msgstr ""
+
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
 msgstr ""
 
 #: ../mxfb-look:293
@@ -115,6 +158,11 @@ msgstr "Anvend"
 msgid "CONFIGURE TOP"
 msgstr ""
 
+#. The capture of a screenshot was cancelled.
+#: ../mxfb-quickshot:54
+msgid "Cancelled!"
+msgstr ""
+
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
 msgstr ""
@@ -152,12 +200,27 @@ msgstr ""
 msgid "Current Settings"
 msgstr ""
 
+#. Press the Print-Screen-key to capture a wallpaper.
+#. DESKTOP: press Print, then click the background
+#: ../mxfb-quickshot:78
+msgid "DESKTOP: click the background"
+msgstr ""
+
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
 msgstr ""
 
+#. Do you want to display the Help message again?
+#: ../mxfb-quickshot:60
+msgid "Dismiss"
+msgstr ""
+
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
+msgstr ""
+
+#: ../mxfb-quickshot:61
+msgid "Don't display the Help message again!"
 msgstr ""
 
 #: ../mxfb-tint2-manager:99
@@ -190,6 +253,10 @@ msgstr "GTK-tema"
 
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
+msgstr ""
+
+#: ../mxfb-quickshot:70
+msgid "HELP: how to take a screenshot"
 msgstr ""
 
 #: ../mxfb-tint2-manager:100
@@ -238,7 +305,8 @@ msgstr "Ingen"
 msgid "OK"
 msgstr "OK"
 
-#: ../mxfb-tiles:14
+#. Do you want to allow a new config file to be installed?
+#: ../mxfb-quickshot:58 ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr "OK at fortsætte?"
 
@@ -251,12 +319,23 @@ msgstr ""
 msgid "Overwrite $NEWNAME"
 msgstr ""
 
+#. How to take a screenshot...
+#: ../mxfb-quickshot:72
+msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
+msgstr ""
+
 #: ../mxfb-look:551 ../mxfb-look:712
 msgid "Restore Look"
 msgstr ""
 
 #: ../mxfb-look:222 ../mxfb-look:545
 msgid "Rofi Theme"
+msgstr ""
+
+#. Press the Print-Screen-key to capture a screen selection.
+#. SELECTION: press Print, then draw a rectangle
+#: ../mxfb-quickshot:81
+msgid "SELECTION: draw a rectangle"
 msgstr ""
 
 #: ../mxfb-look:712
@@ -289,10 +368,20 @@ msgstr ""
 msgid "Size"
 msgstr "Størrelse"
 
+#. The capture of a screenshot was successful.
+#: ../mxfb-quickshot:56
+msgid "Success!"
+msgstr ""
+
 #: ../mxfb-tiles:15
 msgid ""
 "The code has been inserted successfully. Now there are 3 methods to do the "
 "tiling</b>"
+msgstr ""
+
+#. The existing config file will be copied into a backup directory.
+#: ../mxfb-quickshot:67
+msgid "The existing file will be backed up in:"
 msgstr ""
 
 #: ../mxfb-trashcheck:32
@@ -316,12 +405,23 @@ msgid ""
 "</b>"
 msgstr ""
 
+#. A new config file will be installed.
+#: ../mxfb-quickshot:64
+msgid "This will install a new config file"
+msgstr ""
+
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
 msgstr ""
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
+msgstr ""
+
+#. Press the Print-Screen-key to capture a window.
+#. WINDOW: press Print, then click anywhere inside
+#: ../mxfb-quickshot:75
+msgid "WINDOW: click anywhere inside"
 msgstr ""
 
 #: ../mxfb-look:549
@@ -331,6 +431,14 @@ msgstr ""
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
 msgstr "Tapet"
+
+#: ../mxfb-tint2-manager:191
+msgid "\\n"
+msgstr ""
+
+#: ../mxfb-look:229
+msgid "\\n<b>"
+msgstr ""
 
 #: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
@@ -368,6 +476,12 @@ msgstr "_OK"
 #, sh-format
 msgctxt "Stock label"
 msgid "_Revert"
+msgstr ""
+
+#. Note: Comment lines above gettext lines are visible to translators.
+#. The capture of a screenshot was aborted.
+#: ../mxfb-quickshot:52
+msgid "exiting, no image selected"
 msgstr ""
 
 #: ../mxfb-timer:24

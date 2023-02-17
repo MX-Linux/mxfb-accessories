@@ -7,22 +7,43 @@
 # Mario <al.manja@gmx.com>, 2022
 # James Bowlin <BitJam@gmail.com>, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2022
-# Arnold Marko <arnold.marko@gmail.com>, 2022
+# Arnold Marko <arnold.marko@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-17 20:01-0500\n"
+"POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2022\n"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2023\n"
 "Language-Team: Slovenian (https://www.transifex.com/anticapitalista/teams/10162/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. Hints for creating a screenshot
+#. The help message will not be displayed again, if user clicks on "Dismiss"
+#. button.
+#. The capture of a screenshot will start after closing this window.
+#: ../mxfb-quickshot:98
+#, sh-format
+msgid ""
+"\n"
+"Hints\n"
+"\n"
+"    --Click \"Dismiss\" to hide Help in the future!\n"
+"\n"
+"    --Capture Help by clicking it after agreeing to proceed\n"
+"\n"
+"    --More: search \"Quickshot\" in the MX Wiki"
+msgstr ""
+
+#: ../mxfb-look:267 ../mxfb-look:294
+msgid " "
+msgstr ""
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -45,6 +66,18 @@ msgstr "Za vsako delovno površino se bo pojavilo izbirno okno."
 msgid " Type \\"
 msgstr "Vrsta \\"
 
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr "$TITLE1"
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr "$TITLE2"
+
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12 ur/24 ur"
@@ -56,6 +89,16 @@ msgstr "Prvi Tint2 pano"
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr "Drugi Tint2 pano"
+
+#: ../mxfb-look:552
+msgid "<b>   "
+msgstr ""
+
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
+msgstr ""
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -138,6 +181,11 @@ msgstr "Uveljavi"
 msgid "CONFIGURE TOP"
 msgstr "NASTAVI VRH"
 
+#. The capture of a screenshot was cancelled.
+#: ../mxfb-quickshot:54
+msgid "Cancelled!"
+msgstr ""
+
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
 msgstr "Označi za zagon, odznači za zaustavitev"
@@ -175,13 +223,28 @@ msgstr "Conky stanje"
 msgid "Current Settings"
 msgstr "Trenutne nastavitve"
 
+#. Press the Print-Screen-key to capture a wallpaper.
+#. DESKTOP: press Print, then click the background
+#: ../mxfb-quickshot:78
+msgid "DESKTOP: click the background"
+msgstr ""
+
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
 msgstr "Zamik (minut)"
 
+#. Do you want to display the Help message again?
+#: ../mxfb-quickshot:60
+msgid "Dismiss"
+msgstr ""
+
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
 msgstr "Ali želite izprazniti koš?"
+
+#: ../mxfb-quickshot:61
+msgid "Don't display the Help message again!"
+msgstr ""
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
@@ -214,6 +277,10 @@ msgstr "GTK tema"
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
 msgstr "POMOČ"
+
+#: ../mxfb-quickshot:70
+msgid "HELP: how to take a screenshot"
+msgstr ""
 
 #: ../mxfb-tint2-manager:100
 msgid "Help"
@@ -261,7 +328,8 @@ msgstr "brez"
 msgid "OK"
 msgstr "V redu"
 
-#: ../mxfb-tiles:14
+#. Do you want to allow a new config file to be installed?
+#: ../mxfb-quickshot:58 ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr "OK za nadaljevanje?"
 
@@ -274,6 +342,11 @@ msgstr "NASTAVITEV IZBIRNEGA SLOGA ROBA"
 msgid "Overwrite $NEWNAME"
 msgstr "Prepiši $NEWNAME"
 
+#. How to take a screenshot...
+#: ../mxfb-quickshot:72
+msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
+msgstr ""
+
 #: ../mxfb-look:551 ../mxfb-look:712
 msgid "Restore Look"
 msgstr "Obnovi videz"
@@ -281,6 +354,12 @@ msgstr "Obnovi videz"
 #: ../mxfb-look:222 ../mxfb-look:545
 msgid "Rofi Theme"
 msgstr "Rofi tema"
+
+#. Press the Print-Screen-key to capture a screen selection.
+#. SELECTION: press Print, then draw a rectangle
+#: ../mxfb-quickshot:81
+msgid "SELECTION: draw a rectangle"
+msgstr ""
 
 #: ../mxfb-look:712
 msgid "Save Current Look"
@@ -312,12 +391,22 @@ msgstr "Nastavi menjavo ozadja"
 msgid "Size"
 msgstr "Velikost"
 
+#. The capture of a screenshot was successful.
+#: ../mxfb-quickshot:56
+msgid "Success!"
+msgstr ""
+
 #: ../mxfb-tiles:15
 msgid ""
 "The code has been inserted successfully. Now there are 3 methods to do the "
 "tiling</b>"
 msgstr ""
 "Koda je bila uspešno vnešena. Obstajajo trije načini za razdelitev</b>"
+
+#. The existing config file will be copied into a backup directory.
+#: ../mxfb-quickshot:67
+msgid "The existing file will be backed up in:"
+msgstr ""
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -344,6 +433,11 @@ msgstr ""
 "Ta skript bo varnostno skopiral vaše trenutne datoteke s ključi, nato pa bo na konec datotke namestil ukaze za razdelitev. \\n\n"
 "</b>"
 
+#. A new config file will be installed.
+#: ../mxfb-quickshot:64
+msgid "This will install a new config file"
+msgstr ""
+
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
 msgstr "Upravljalnik Tint2"
@@ -352,6 +446,12 @@ msgstr "Upravljalnik Tint2"
 msgid "Usage options"
 msgstr "Možnosti rabe"
 
+#. Press the Print-Screen-key to capture a window.
+#. WINDOW: press Print, then click anywhere inside
+#: ../mxfb-quickshot:75
+msgid "WINDOW: click anywhere inside"
+msgstr ""
+
 #: ../mxfb-look:549
 msgid "Wait 10 seconds for the conky to restart"
 msgstr "Počakajte 10 sekund, da se conky ponovno zažene"
@@ -359,6 +459,14 @@ msgstr "Počakajte 10 sekund, da se conky ponovno zažene"
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
 msgstr "Ozadje"
+
+#: ../mxfb-tint2-manager:191
+msgid "\\n"
+msgstr "\\n"
+
+#: ../mxfb-look:229
+msgid "\\n<b>"
+msgstr "\\n<b>"
 
 #: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
@@ -397,6 +505,12 @@ msgstr "_V redu"
 msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Povrnitev"
+
+#. Note: Comment lines above gettext lines are visible to translators.
+#. The capture of a screenshot was aborted.
+#: ../mxfb-quickshot:52
+msgid "exiting, no image selected"
+msgstr ""
 
 #: ../mxfb-timer:24
 msgid "or number and unit"

@@ -4,22 +4,43 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Besnik Bleta <besnik@programeshqip.org>, 2022
+# Besnik Bleta <besnik@programeshqip.org>, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-17 20:01-0500\n"
+"POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2022\n"
+"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2023\n"
 "Language-Team: Albanian (https://www.transifex.com/anticapitalista/teams/10162/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Hints for creating a screenshot
+#. The help message will not be displayed again, if user clicks on "Dismiss"
+#. button.
+#. The capture of a screenshot will start after closing this window.
+#: ../mxfb-quickshot:98
+#, sh-format
+msgid ""
+"\n"
+"Hints\n"
+"\n"
+"    --Click \"Dismiss\" to hide Help in the future!\n"
+"\n"
+"    --Capture Help by clicking it after agreeing to proceed\n"
+"\n"
+"    --More: search \"Quickshot\" in the MX Wiki"
+msgstr ""
+
+#: ../mxfb-look:267 ../mxfb-look:294
+msgid " "
+msgstr " "
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -42,6 +63,18 @@ msgstr " Për secilën Hapësirë pune do të shfaqen dritare për përzgjedhje.
 msgid " Type \\"
 msgstr " Shtypni \\"
 
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr "$TITLE1"
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr "$TITLE2"
+
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12h/24h"
@@ -53,6 +86,16 @@ msgstr "Paneli i parë Tint2"
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr "Paneli i dytë Tint2"
+
+#: ../mxfb-look:552
+msgid "<b>   "
+msgstr "<b>   "
+
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
+msgstr "<b>$LOOKRESTORE</b>\\n"
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -135,6 +178,11 @@ msgstr "Zbatoje"
 msgid "CONFIGURE TOP"
 msgstr "FORMËSONI KRYET"
 
+#. The capture of a screenshot was cancelled.
+#: ../mxfb-quickshot:54
+msgid "Cancelled!"
+msgstr "U anulua!"
+
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
 msgstr "I vini shenjë të xhirohet, hiqjani shenjën, që të ndalet"
@@ -172,13 +220,28 @@ msgstr "Gjendje e Conky-t"
 msgid "Current Settings"
 msgstr "Rregullimet në Fuqi"
 
+#. Press the Print-Screen-key to capture a wallpaper.
+#. DESKTOP: press Print, then click the background
+#: ../mxfb-quickshot:78
+msgid "DESKTOP: click the background"
+msgstr "DESKTOP: klikoni te sfondi"
+
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
 msgstr "Vonesë (min.)"
 
+#. Do you want to display the Help message again?
+#: ../mxfb-quickshot:60
+msgid "Dismiss"
+msgstr "Hidhe tej"
+
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
 msgstr "Doni të zbrazen hedhurinat?"
+
+#: ../mxfb-quickshot:61
+msgid "Don't display the Help message again!"
+msgstr "Mos e shfaq më mesazhin e Ndihmës!"
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
@@ -211,6 +274,10 @@ msgstr "Temë Gtk"
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
 msgstr "NDIHMË"
+
+#: ../mxfb-quickshot:70
+msgid "HELP: how to take a screenshot"
+msgstr "NDIHMË: si të bëhet një foto ekrani"
 
 #: ../mxfb-tint2-manager:100
 msgid "Help"
@@ -258,7 +325,8 @@ msgstr "Asnjë"
 msgid "OK"
 msgstr "OK"
 
-#: ../mxfb-tiles:14
+#. Do you want to allow a new config file to be installed?
+#: ../mxfb-quickshot:58 ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr "OK të vazhdohet?"
 
@@ -271,6 +339,11 @@ msgstr "FORMËSIM OPSIONAL STILI ANËSH"
 msgid "Overwrite $NEWNAME"
 msgstr "Mbishkruaje $NEWNAME"
 
+#. How to take a screenshot...
+#: ../mxfb-quickshot:72
+msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
+msgstr "Shtypni tastin “Print” (ose “PrtSc”) dhe përdorni miun:"
+
 #: ../mxfb-look:551 ../mxfb-look:712
 msgid "Restore Look"
 msgstr "Rikthe Pamje"
@@ -278,6 +351,12 @@ msgstr "Rikthe Pamje"
 #: ../mxfb-look:222 ../mxfb-look:545
 msgid "Rofi Theme"
 msgstr "Temë Rofi"
+
+#. Press the Print-Screen-key to capture a screen selection.
+#. SELECTION: press Print, then draw a rectangle
+#: ../mxfb-quickshot:81
+msgid "SELECTION: draw a rectangle"
+msgstr "PËRZGJEDHJE: vizatoni një drejtkëndësh"
 
 #: ../mxfb-look:712
 msgid "Save Current Look"
@@ -309,11 +388,21 @@ msgstr "Caktoni rrotullim sfondi"
 msgid "Size"
 msgstr "Madhësi"
 
+#. The capture of a screenshot was successful.
+#: ../mxfb-quickshot:56
+msgid "Success!"
+msgstr "Sukses!"
+
 #: ../mxfb-tiles:15
 msgid ""
 "The code has been inserted successfully. Now there are 3 methods to do the "
 "tiling</b>"
 msgstr "Kodi u fut me sukses. Tani ka 3 metoda për të bërë vendosjen</b>"
+
+#. The existing config file will be copied into a backup directory.
+#: ../mxfb-quickshot:67
+msgid "The existing file will be backed up in:"
+msgstr "Kartela ekzistuese do të kopjeruhet te:"
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -338,6 +427,11 @@ msgstr ""
 "Ky programth do të kopjeruajë kartelën tuaj të tanishme për tastet, mandej do të shtojë në fund të kartelës urdhra për dritaret. \\n\n"
 "</b>"
 
+#. A new config file will be installed.
+#: ../mxfb-quickshot:64
+msgid "This will install a new config file"
+msgstr "Kjo do të instalojë një kartelë të re formësimi"
+
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
 msgstr "Përgjegjës Tint2"
@@ -346,6 +440,12 @@ msgstr "Përgjegjës Tint2"
 msgid "Usage options"
 msgstr "Mundësi përdorimi"
 
+#. Press the Print-Screen-key to capture a window.
+#. WINDOW: press Print, then click anywhere inside
+#: ../mxfb-quickshot:75
+msgid "WINDOW: click anywhere inside"
+msgstr "DRITARE: klikoni ku të jetë brenda"
+
 #: ../mxfb-look:549
 msgid "Wait 10 seconds for the conky to restart"
 msgstr "Prisni 10 sekonda që të riniset Conky"
@@ -353,6 +453,14 @@ msgstr "Prisni 10 sekonda që të riniset Conky"
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
 msgstr "Sfond"
+
+#: ../mxfb-tint2-manager:191
+msgid "\\n"
+msgstr "\\n"
+
+#: ../mxfb-look:229
+msgid "\\n<b>"
+msgstr "\\n<b>"
 
 #: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
@@ -391,6 +499,12 @@ msgstr "_OK"
 msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Riktheje"
+
+#. Note: Comment lines above gettext lines are visible to translators.
+#. The capture of a screenshot was aborted.
+#: ../mxfb-quickshot:52
+msgid "exiting, no image selected"
+msgstr "po dilet, s’u përzgjodh figurë"
 
 #: ../mxfb-timer:24
 msgid "or number and unit"
