@@ -23,8 +23,10 @@ if [ "$UID" = "0" ]; then
 fi
 
 #exit if menu generation toggled off
-if [ -e "$HOME/.fluxbox/mxfb-menu-generator-disabled.chk" ]; then
+if [ "$1" = "auto" ]; then
+    if [ -e "$HOME/.fluxbox/mxfb-menu-generator-disabled.chk" ]; then
     exit 0
+    fi
 fi
 
 Encoding=UTF-8
