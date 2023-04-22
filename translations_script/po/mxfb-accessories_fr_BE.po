@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Wallon Wallon, 2023\n"
-"Language-Team: French (Belgium) (https://www.transifex.com/anticapitalista/teams/10162/fr_BE/)\n"
+"Language-Team: French (Belgium) (https://app.transifex.com/anticapitalista/teams/10162/fr_BE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,9 +40,9 @@ msgstr ""
 "\n"
 "Conseils\n"
 "\n"
-"    --Cliquez sur « Ignorer » pour masquer l'aide à l'avenir!\n"
+"    --Cliquez sur « Ne plus afficher » pour masquer l’aide à l’avenir!\n"
 "\n"
-"    --Capturez l'aide en cliquant dessus après avoir accepté de continuer\n"
+"    --Capturez l’aide en cliquant dessus après avoir accepté de continuer\n"
 "\n"
 "    --En savoir plus: recherchez « Quickshot » dans MX Wiki"
 
@@ -122,10 +122,10 @@ msgid ""
 "Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- "
 "Wallpaper\\n- One Conky\\n\\n"
 msgstr ""
-"<b>Vous pouvez sauvegarder l'apparence actuelle ou en restaurer une "
-"précédente</b>\\n\\nL'apparence est composée des éléments suivants\\n- Gtk-"
-"Thème\\n- Gtk-Icône\\n- Gtk-Police\\n- Fluxbox Style\\n- jusqu'à deux barres"
-" de tâches Tint2\\n- Rofi Thème\\n- Fond d'écran\\n- Un Conky\\n\\n"
+"<b>Vous pouvez sauvegarder l’apparence actuelle ou en restaurer une "
+"précédente</b>\\n\\nL’apparence est composée des éléments suivants\\n- Gtk-"
+"Thème\\n- Gtk-Icône\\n- Gtk-Police\\n- Fluxbox Style\\n- jusqu’à deux barres"
+" de tâches Tint2\\n- Rofi Thème\\n- Fond d’écran\\n- Un Conky\\n\\n"
 
 #: ../mxfb-tiles:21
 msgid ""
@@ -172,7 +172,7 @@ msgid ""
 " or save as a new name?\\n"
 msgstr ""
 "Il existe déjà une apparence avec ce nom.\\n\\nVoulez-vous écraser $NEWNAME "
-"ou l'enregistrer sous un nouveau nom?\\n"
+"ou l’enregistrer sous un nouveau nom?\\n"
 
 #. all done
 #: ../mxfb-look:346
@@ -234,7 +234,7 @@ msgstr "Paramètres actuels"
 #. DESKTOP: press Print, then click the background
 #: ../mxfb-quickshot:78
 msgid "DESKTOP: click the background"
-msgstr "BUREAU: cliquez sur l'arrière-plan"
+msgstr "BUREAU: cliquez sur l’arrière-plan"
 
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
@@ -243,7 +243,7 @@ msgstr "Délai (en minutes)"
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
-msgstr "Ignorer"
+msgstr "Ne plus afficher"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
@@ -251,7 +251,7 @@ msgstr "Voulez-vous vider la poubelle?"
 
 #: ../mxfb-quickshot:61
 msgid "Don't display the Help message again!"
-msgstr "N'affichez plus le message d'aide!"
+msgstr "N’affichez plus le message d’aide!"
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
@@ -259,7 +259,7 @@ msgstr "Modifier"
 
 #: ../mxfb-timer:23
 msgid "Enter local time"
-msgstr "Entrer l'heure locale"
+msgstr "Entrer l’heure locale"
 
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
@@ -287,7 +287,7 @@ msgstr "AIDE"
 
 #: ../mxfb-quickshot:70
 msgid "HELP: how to take a screenshot"
-msgstr "AIDE: comment faire une capture d'écran"
+msgstr "AIDE: comment faire une capture d’écran"
 
 #: ../mxfb-tint2-manager:100
 msgid "Help"
@@ -304,7 +304,7 @@ msgstr "Mode Image"
 #: ../mxfb-look:265
 #, sh-format
 msgid "Look name $NEWNAME is protected. Choose another name."
-msgstr "Le nom de l'apparence $NEWNAME est protégé. Choisissez un autre nom."
+msgstr "Le nom de l’apparence $NEWNAME est protégé. Choisissez un autre nom."
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
@@ -321,7 +321,7 @@ msgstr "Plusieurs options pour les touches numériques et le clavier"
 
 #: ../mxfb-look:240
 msgid "New-Look-Name"
-msgstr "Nouveau-nom-de-l'apparence - New-Look-Name"
+msgstr "Nouveau-nom-de-l’apparence - New-Look-Name"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
@@ -338,7 +338,7 @@ msgstr "Valider"
 #. Do you want to allow a new config file to be installed?
 #: ../mxfb-quickshot:58 ../mxfb-tiles:14
 msgid "OK to proceed?"
-msgstr "OK pour continuer?"
+msgstr "Prêt à continuer?"
 
 #: ../mxfb-borders:17
 msgid "OPTIONAL BORDER STYLE CONFIG"
@@ -352,11 +352,11 @@ msgstr "Écraser $NEWNAME"
 #. How to take a screenshot...
 #: ../mxfb-quickshot:72
 msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
-msgstr "Appuyez sur \"Print\" (ou \"PrtSc\") et utilisez la souris:"
+msgstr "Appuyez sur « Print » (ou « PrtSc ») et utilisez la souris:"
 
 #: ../mxfb-look:551 ../mxfb-look:712
 msgid "Restore Look"
-msgstr "Restaurer l'apparence"
+msgstr "Restaurer l’apparence"
 
 #: ../mxfb-look:222 ../mxfb-look:545
 msgid "Rofi Theme"
@@ -370,16 +370,16 @@ msgstr "SÉLECTION: dessinez un rectangle"
 
 #: ../mxfb-look:712
 msgid "Save Current Look"
-msgstr "Enregistrer l'apparence actuelle"
+msgstr "Enregistrer l’apparence actuelle"
 
 #: ../mxfb-look:228
 msgid "Save Look"
-msgstr "Enregistrer l'apparence"
+msgstr "Enregistrer l’apparence"
 
 #: ../mxfb-look:240
 #, sh-format
 msgid "Save Look as"
-msgstr "Enregistrer l'apparence sous"
+msgstr "Enregistrer l’apparence sous"
 
 #: ../mxfb-look:286
 msgid "Save as different name"
@@ -391,7 +391,7 @@ msgstr "Choisir le mode de la barre de titre"
 
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
-msgstr "Définir une rotation de l'arrière-plan"
+msgstr "Définir une rotation de l’arrière-plan"
 
 #. SUBTITLE=$(gettext "Be sure to fill in all fields you want enabled")
 #: ../mxfb-borders:20 ../mxfb-top:22
@@ -418,7 +418,7 @@ msgstr "Le fichier actuel sera sauvegardé dans:"
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
-msgstr "Il n'y a pas de fichiers dans la poubelle."
+msgstr "Il n’y a pas de fichiers dans la poubelle."
 
 #. TRANSLATORS:
 #. Do not translate the count placeholder '${COUNT}'.
@@ -437,7 +437,7 @@ msgid ""
 "This script will back up your current keys file, then install commands for tiling to the end of the file. \\n\n"
 "</b>"
 msgstr ""
-"Ce script sauvegardera votre fichier de clés actuel, puis installera les commandes d'ajustement des fenêtres en mosaïque à la fin du fichier. \\n\n"
+"Ce script sauvegardera votre fichier de clés actuel, puis installera les commandes d’ajustement des fenêtres en mosaïque à la fin du fichier. \\n\n"
 "</b>"
 
 #. A new config file will be installed.
@@ -451,13 +451,13 @@ msgstr "Gestionnaire Tint2"
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
-msgstr "Options d'utilisation"
+msgstr "Options d’utilisation"
 
 #. Press the Print-Screen-key to capture a window.
 #. WINDOW: press Print, then click anywhere inside
 #: ../mxfb-quickshot:75
 msgid "WINDOW: click anywhere inside"
-msgstr "FENÊTRE: cliquez n'importe où à l'intérieur"
+msgstr "FENÊTRE: cliquez n’importe où à l’intérieur"
 
 #: ../mxfb-look:549
 msgid "Wait 10 seconds for the conky to restart"
@@ -465,7 +465,7 @@ msgstr "Attendez 10 secondes pour que le conky redémarre."
 
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
-msgstr "Fond d'écran "
+msgstr "Fond d’écran "
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
@@ -477,7 +477,7 @@ msgstr "\\n<b>"
 
 #: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
-msgstr "\\n<b> Choisir l'apparence à restaurer</b>\\n"
+msgstr "\\n<b> Choisir l’apparence à restaurer</b>\\n"
 
 #: ../mxfb-look:389
 msgid "\\n<b> You need to select a look !</b>\\n"
@@ -525,7 +525,7 @@ msgstr "ou nombre et unité"
 
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
-msgstr "format de l'heure:"
+msgstr "format de l’heure:"
 
 #: ../mxfb-look:209 ../mxfb-look:530
 msgid "toggled off"

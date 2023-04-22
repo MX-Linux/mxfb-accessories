@@ -7,6 +7,8 @@
 # Nenad Bartole <nenad.neca.1994@gmail.com>, 2022
 # James Bowlin <BitJam@gmail.com>, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2023
+# Robin, 2023
+# fehlix, 2023
 # 
 #, fuzzy
 msgid ""
@@ -15,8 +17,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: anticapitalista <anticapitalista@riseup.net>, 2023\n"
-"Language-Team: Serbian (https://www.transifex.com/anticapitalista/teams/10162/sr/)\n"
+"Last-Translator: fehlix, 2023\n"
+"Language-Team: Serbian (https://app.transifex.com/anticapitalista/teams/10162/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -214,7 +216,7 @@ msgstr ""
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
-msgstr ""
+msgstr "Одбаци"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
@@ -432,7 +434,7 @@ msgstr ""
 
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
-msgstr ""
+msgstr "Валлпапер"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

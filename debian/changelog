@@ -1,3 +1,9 @@
+mxfb-accessories (23.04.02) mx; urgency=medium
+
+  * update translations
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 21 Apr 2023 20:36:20 -0400
+
 mxfb-accessories (23.04.01) mx; urgency=medium
 
   * update mxfb-menu-generator with a check file function (for toggles)

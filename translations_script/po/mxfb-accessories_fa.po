@@ -6,6 +6,7 @@
 # Translators:
 # anticapitalista <anticapitalista@riseup.net>, 2022
 # lupin 0xf <lupin0xf@gmail.com>, 2022
+# fehlix, 2023
 # 
 #, fuzzy
 msgid ""
@@ -14,8 +15,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: lupin 0xf <lupin0xf@gmail.com>, 2022\n"
-"Language-Team: Persian (https://www.transifex.com/anticapitalista/teams/10162/fa/)\n"
+"Last-Translator: fehlix, 2023\n"
+"Language-Team: Persian (https://app.transifex.com/anticapitalista/teams/10162/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -213,7 +214,7 @@ msgstr ""
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
-msgstr ""
+msgstr "رد کردن"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"

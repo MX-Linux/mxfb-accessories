@@ -7,6 +7,7 @@
 # darknet matrix, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2023
 # Eadwine Rose, 2023
+# fehlix, 2023
 # 
 #, fuzzy
 msgid ""
@@ -15,8 +16,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Eadwine Rose, 2023\n"
-"Language-Team: Dutch (https://www.transifex.com/anticapitalista/teams/10162/nl/)\n"
+"Last-Translator: fehlix, 2023\n"
+"Language-Team: Dutch (https://app.transifex.com/anticapitalista/teams/10162/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -229,7 +230,7 @@ msgstr "Vertraging (min)"
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
-msgstr ""
+msgstr "Sluiten"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"

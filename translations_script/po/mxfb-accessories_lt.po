@@ -6,7 +6,8 @@
 # Translators:
 # James Bowlin <BitJam@gmail.com>, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2022
-# Moo, 2022
+# Moo, 2023
+# fehlix, 2023
 # 
 #, fuzzy
 msgid ""
@@ -15,8 +16,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Moo, 2022\n"
-"Language-Team: Lithuanian (https://www.transifex.com/anticapitalista/teams/10162/lt/)\n"
+"Last-Translator: fehlix, 2023\n"
+"Language-Team: Lithuanian (https://app.transifex.com/anticapitalista/teams/10162/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,7 +43,7 @@ msgstr ""
 
 #: ../mxfb-look:267 ../mxfb-look:294
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -214,7 +215,7 @@ msgstr ""
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
-msgstr ""
+msgstr "Atmesti"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
@@ -437,7 +438,7 @@ msgstr "Darbalaukio fonas"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
-msgstr ""
+msgstr "\\n"
 
 #: ../mxfb-look:229
 msgid "\\n<b>"

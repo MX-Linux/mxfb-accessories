@@ -6,6 +6,7 @@
 # Translators:
 # James Bowlin <BitJam@gmail.com>, 2022
 # Panwar108 <caspian7pena@gmail.com>, 2023
+# fehlix, 2023
 # 
 #, fuzzy
 msgid ""
@@ -14,8 +15,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Panwar108 <caspian7pena@gmail.com>, 2023\n"
-"Language-Team: Hindi (https://www.transifex.com/anticapitalista/teams/10162/hi/)\n"
+"Last-Translator: fehlix, 2023\n"
+"Language-Team: Hindi (https://app.transifex.com/anticapitalista/teams/10162/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -228,7 +229,7 @@ msgstr "विलंब (मिनट में)"
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
-msgstr ""
+msgstr "छोड़ें"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"

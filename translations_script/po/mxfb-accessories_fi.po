@@ -10,6 +10,7 @@
 # En Kerro <inactive+ekeimaja@transifex.com>, 2022
 # Kimmo Kujansuu <mrkujansuu@gmail.com>, 2022
 # asd asd <ekeimaja@gmail.com>, 2023
+# fehlix, 2023
 # 
 #, fuzzy
 msgid ""
@@ -18,8 +19,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: asd asd <ekeimaja@gmail.com>, 2023\n"
-"Language-Team: Finnish (https://www.transifex.com/anticapitalista/teams/10162/fi/)\n"
+"Last-Translator: fehlix, 2023\n"
+"Language-Team: Finnish (https://app.transifex.com/anticapitalista/teams/10162/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -232,7 +233,7 @@ msgstr "Viive (minuutteina)"
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
-msgstr ""
+msgstr "Hylkää"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"

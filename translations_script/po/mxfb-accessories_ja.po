@@ -5,12 +5,12 @@
 # 
 # Translators:
 # night1ynx <night1ynxd@gmail.com>, 2022
-# James Bowlin <BitJam@gmail.com>, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2022
+# James Bowlin <BitJam@gmail.com>, 2022
+# 🎈 BALLOON | FU-SEN, 2022
 # Transifex Bot <>, 2022
 # Dolphin Oracle <dolphinoracle@gmail.com>, 2022
-# 🎈 BALLOON | FU-SEN, 2023
-# Green, 2023
+# Green <usergreen@users.osdn.me>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -19,8 +19,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Green, 2023\n"
-"Language-Team: Japanese (https://www.transifex.com/anticapitalista/teams/10162/ja/)\n"
+"Last-Translator: Green <usergreen@users.osdn.me>, 2023\n"
+"Language-Team: Japanese (https://app.transifex.com/anticapitalista/teams/10162/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,10 +43,17 @@ msgid ""
 "\n"
 "    --More: search \"Quickshot\" in the MX Wiki"
 msgstr ""
+"\n"
+"ヒント\n"
+"\n"
+"    --今後ヘルプを非表示したい場合、「解除」をクリックしてください！\n"
+"\n"
+"    --先に進むに同意したあとで、クリックでヘルプをキャプチャします。\n"
+"    --さらに:  MX Wiki の \"Quickshot\" で検索します"
 
 #: ../mxfb-look:267 ../mxfb-look:294
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -93,13 +100,13 @@ msgstr "2つ目の Tint2 パネル"
 
 #: ../mxfb-look:552
 msgid "<b>   "
-msgstr ""
+msgstr "<b>   "
 
 #. RESTOREMAIN
 #: ../mxfb-look:538
 #, sh-format
 msgid "<b>$LOOKRESTORE</b>\\n"
-msgstr ""
+msgstr "<b>$外観の復元</b>\\n"
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -182,7 +189,7 @@ msgstr "CONFIGURE TOP"
 #. The capture of a screenshot was cancelled.
 #: ../mxfb-quickshot:54
 msgid "Cancelled!"
-msgstr ""
+msgstr "キャンセルしました！"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
@@ -225,7 +232,7 @@ msgstr "現在の設定"
 #. DESKTOP: press Print, then click the background
 #: ../mxfb-quickshot:78
 msgid "DESKTOP: click the background"
-msgstr ""
+msgstr "デスクトップ: 背景をクリックします"
 
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
@@ -234,7 +241,7 @@ msgstr "遅延 (分)"
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
-msgstr ""
+msgstr "解除"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
@@ -242,7 +249,7 @@ msgstr "ゴミ箱を空にしますか？"
 
 #: ../mxfb-quickshot:61
 msgid "Don't display the Help message again!"
-msgstr ""
+msgstr "ヘルプのメッセージは二度としない"
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
@@ -278,7 +285,7 @@ msgstr "ヘルプ"
 
 #: ../mxfb-quickshot:70
 msgid "HELP: how to take a screenshot"
-msgstr ""
+msgstr "ヘルプ: 画面を撮影する方法"
 
 #: ../mxfb-tint2-manager:100
 msgid "Help"
@@ -304,7 +311,7 @@ msgstr "MXFB タイマー"
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
 msgid "MXFB-Look"
-msgstr "MXFB-Look"
+msgstr "MXFB の外観"
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -312,7 +319,7 @@ msgstr "数字キーとキーボードの複数のオプション"
 
 #: ../mxfb-look:240
 msgid "New-Look-Name"
-msgstr "New-Look-Name"
+msgstr "新しい外観の名前"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
@@ -333,7 +340,7 @@ msgstr "続行してもいいですか？"
 
 #: ../mxfb-borders:17
 msgid "OPTIONAL BORDER STYLE CONFIG"
-msgstr "OPTIONAL BORDER STYLE CONFIG"
+msgstr "ボーダースタイルのオプション設定"
 
 #: ../mxfb-look:286
 #, sh-format
@@ -343,7 +350,7 @@ msgstr "$NEWNAME を上書きする"
 #. How to take a screenshot...
 #: ../mxfb-quickshot:72
 msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
-msgstr ""
+msgstr "\"Print\" (or \"PrtSc\") キー押下とマウス使用:"
 
 #: ../mxfb-look:551 ../mxfb-look:712
 msgid "Restore Look"
@@ -357,7 +364,7 @@ msgstr "Rofi テーマ"
 #. SELECTION: press Print, then draw a rectangle
 #: ../mxfb-quickshot:81
 msgid "SELECTION: draw a rectangle"
-msgstr ""
+msgstr "選択: 矩形の描画"
 
 #: ../mxfb-look:712
 msgid "Save Current Look"
@@ -392,7 +399,7 @@ msgstr "サイズ"
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:56
 msgid "Success!"
-msgstr "Success!"
+msgstr "成功です！"
 
 #: ../mxfb-tiles:15
 msgid ""
@@ -403,7 +410,7 @@ msgstr "無事にコードが挿入されました。これで、タイリング
 #. The existing config file will be copied into a backup directory.
 #: ../mxfb-quickshot:67
 msgid "The existing file will be backed up in:"
-msgstr ""
+msgstr "既存ファイルを次の場所にバックアップします:"
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -430,7 +437,7 @@ msgstr ""
 #. A new config file will be installed.
 #: ../mxfb-quickshot:64
 msgid "This will install a new config file"
-msgstr ""
+msgstr "この操作で新規設定ファイルをインストールします"
 
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
@@ -444,7 +451,7 @@ msgstr "利用オプション"
 #. WINDOW: press Print, then click anywhere inside
 #: ../mxfb-quickshot:75
 msgid "WINDOW: click anywhere inside"
-msgstr ""
+msgstr "ウィンドウ: この内側のどこかをクリックしてください"
 
 #: ../mxfb-look:549
 msgid "Wait 10 seconds for the conky to restart"
@@ -460,7 +467,7 @@ msgstr "\\n"
 
 #: ../mxfb-look:229
 msgid "\\n<b>"
-msgstr ""
+msgstr "\\n<b>"
 
 #: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
@@ -492,7 +499,7 @@ msgstr "ヘルプ (_H)"
 #, sh-format
 msgctxt "Stock label"
 msgid "_OK"
-msgstr "_OK"
+msgstr "OK (_O)"
 
 #: ../mxfb-borders:29 ../mxfb-top:31
 #, sh-format
@@ -504,7 +511,7 @@ msgstr "復元 (_R)"
 #. The capture of a screenshot was aborted.
 #: ../mxfb-quickshot:52
 msgid "exiting, no image selected"
-msgstr ""
+msgstr "画像を選択しないで終了します"
 
 #: ../mxfb-timer:24
 msgid "or number and unit"

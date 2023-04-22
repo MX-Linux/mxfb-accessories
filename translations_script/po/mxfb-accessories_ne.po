@@ -1,0 +1,500 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Robin, 2023
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-05 14:46-0500\n"
+"PO-Revision-Date: 2022-08-21 18:57+0000\n"
+"Last-Translator: Robin, 2023\n"
+"Language-Team: Nepali (https://app.transifex.com/anticapitalista/teams/10162/ne/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ne\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Hints for creating a screenshot
+#. The help message will not be displayed again, if user clicks on "Dismiss"
+#. button.
+#. The capture of a screenshot will start after closing this window.
+#: ../mxfb-quickshot:98
+#, sh-format
+msgid ""
+"\n"
+"Hints\n"
+"\n"
+"    --Click \"Dismiss\" to hide Help in the future!\n"
+"\n"
+"    --Capture Help by clicking it after agreeing to proceed\n"
+"\n"
+"    --More: search \"Quickshot\" in the MX Wiki"
+msgstr ""
+
+#: ../mxfb-look:267 ../mxfb-look:294
+msgid " "
+msgstr ""
+
+#: ../mxfb-separate-backgrounds:12
+msgid ""
+"  This app allows you to configure separate backgrounds for each Workspace  "
+"</b>"
+msgstr ""
+
+#. Confirmation Window
+#: ../mxfb-separate-backgrounds:11
+msgid " Rotate Backgrounds has been disabled to avoid conflict."
+msgstr ""
+
+#: ../mxfb-separate-backgrounds:13
+msgid " Selection windows will pop up  each Workspace."
+msgstr ""
+
+#: ../mxfb-separate-backgrounds:14
+msgid " Type \\"
+msgstr ""
+
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr ""
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr ""
+
+#: ../mxfb-tint2-manager:102
+msgid "12h/24h"
+msgstr ""
+
+#: ../mxfb-look:220 ../mxfb-look:543
+msgid "1st Tint2 Panel"
+msgstr ""
+
+#: ../mxfb-look:221 ../mxfb-look:544
+msgid "2nd Tint2 Panel"
+msgstr ""
+
+#: ../mxfb-look:552
+msgid "<b>   "
+msgstr ""
+
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
+msgstr ""
+
+#: ../mxfb-look:293
+msgid "<b>Name for New Look</b>"
+msgstr ""
+
+#: ../mxfb-look:266
+msgid "<b>Name for new style</b>"
+msgstr ""
+
+#: ../mxfb-look:710
+msgid ""
+"<b>You can save the current look or restore a saved look</b>\\n\\nA look is "
+"comprised of the following elements\\n- Gtk-Theme\\n- Gtk-Icon\\n- Gtk-"
+"Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- "
+"Wallpaper\\n- One Conky\\n\\n"
+msgstr ""
+
+#: ../mxfb-tiles:21
+msgid ""
+"<u>Arrow keys</u>\n"
+"  Alt + Arrow: half \n"
+"  Alt + LogoKey + Arrow: quarter\\n"
+msgstr ""
+
+#: ../mxfb-tiles:24
+msgid ""
+"<u>Keypad</u>\n"
+"  Alt + 2,4,6,8: half\n"
+"  Alt + 1,3,7,9: quarter\n"
+"  Alt + 5: center\n"
+"  Alt + 0: toggle maximize"
+msgstr ""
+
+#: ../mxfb-tiles:16
+msgid ""
+"<u>Number keys</u> \n"
+"  Control + 1-4: half\n"
+"  Control + 5-8: quarter\n"
+"  Control + 9: third \n"
+"  Control + 0: toggle maximize"
+msgstr ""
+
+#: ../mxfb-look:285
+#, sh-format
+msgid ""
+"A Look with this name already exists.\\n\\nDo you want to overwrite $NEWNAME"
+" or save as a new name?\\n"
+msgstr ""
+
+#. all done
+#: ../mxfb-look:346
+#, sh-format
+msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
+msgstr ""
+
+#: ../mxfb-tint2-manager:96
+msgid "Apply"
+msgstr ""
+
+#: ../mxfb-top:17
+msgid "CONFIGURE TOP"
+msgstr ""
+
+#. The capture of a screenshot was cancelled.
+#: ../mxfb-quickshot:54
+msgid "Cancelled!"
+msgstr ""
+
+#: ../mxfb-tint2-manager:92
+msgid "Check to run, uncheck to stop"
+msgstr ""
+
+#: ../mxfb-timer:25
+msgid "Click \\"
+msgstr ""
+
+#: ../mxfb-tint2-manager:97
+msgid "Close"
+msgstr ""
+
+#: ../mxfb-borders:21 ../mxfb-top:23
+msgid "Color Focused"
+msgstr ""
+
+#: ../mxfb-borders:22 ../mxfb-top:24
+msgid "Color Unfocused"
+msgstr ""
+
+#: ../mxfb-tint2-manager:98
+msgid "Config"
+msgstr ""
+
+#: ../mxfb-look:224 ../mxfb-look:547
+msgid "Conky"
+msgstr ""
+
+#: ../mxfb-look:225 ../mxfb-look:548
+msgid "Conky State"
+msgstr ""
+
+#. MAIN
+#: ../mxfb-look:215
+msgid "Current Settings"
+msgstr ""
+
+#. Press the Print-Screen-key to capture a wallpaper.
+#. DESKTOP: press Print, then click the background
+#: ../mxfb-quickshot:78
+msgid "DESKTOP: click the background"
+msgstr ""
+
+#: ../mxfb-bg-rotate:43
+msgid "Delay (mins)"
+msgstr ""
+
+#. Do you want to display the Help message again?
+#: ../mxfb-quickshot:60
+msgid "Dismiss"
+msgstr ""
+
+#: ../mxfb-trashcheck:33
+msgid "Do you want to empty the trash?"
+msgstr ""
+
+#: ../mxfb-quickshot:61
+msgid "Don't display the Help message again!"
+msgstr ""
+
+#: ../mxfb-tint2-manager:99
+msgid "Edit"
+msgstr ""
+
+#: ../mxfb-timer:23
+msgid "Enter local time"
+msgstr ""
+
+#: ../mxfb-tiles:12
+msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
+msgstr ""
+
+#: ../mxfb-look:219 ../mxfb-look:542
+msgid "Fluxbox Style"
+msgstr ""
+
+#: ../mxfb-look:218 ../mxfb-look:541
+msgid "GTK Font"
+msgstr ""
+
+#: ../mxfb-look:217 ../mxfb-look:540
+msgid "GTK Icons"
+msgstr ""
+
+#: ../mxfb-look:216 ../mxfb-look:539
+msgid "GTK Theme"
+msgstr ""
+
+#: ../mxfb-tint2-manager:91
+msgid "HELP"
+msgstr ""
+
+#: ../mxfb-quickshot:70
+msgid "HELP: how to take a screenshot"
+msgstr ""
+
+#: ../mxfb-tint2-manager:100
+msgid "Help"
+msgstr ""
+
+#: ../mxfb-bg-rotate:44
+msgid "Image folder"
+msgstr ""
+
+#: ../mxfb-bg-rotate:45
+msgid "Image mode"
+msgstr ""
+
+#: ../mxfb-look:265
+#, sh-format
+msgid "Look name $NEWNAME is protected. Choose another name."
+msgstr ""
+
+#: ../mxfb-timer:22
+msgid "MXFB Timer"
+msgstr ""
+
+#. define some variables
+#: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
+msgid "MXFB-Look"
+msgstr ""
+
+#: ../mxfb-tiles:13
+msgid "Multiple options for number keys and keyboard"
+msgstr ""
+
+#: ../mxfb-look:240
+msgid "New-Look-Name"
+msgstr ""
+
+#: ../mxfb-bg-rotate:40
+msgid "No rotation: Delay = 0"
+msgstr ""
+
+#: ../mxfb-look:203
+msgid "None"
+msgstr ""
+
+#: ../mxfb-tint2-manager:101
+msgid "OK"
+msgstr ""
+
+#. Do you want to allow a new config file to be installed?
+#: ../mxfb-quickshot:58 ../mxfb-tiles:14
+msgid "OK to proceed?"
+msgstr ""
+
+#: ../mxfb-borders:17
+msgid "OPTIONAL BORDER STYLE CONFIG"
+msgstr ""
+
+#: ../mxfb-look:286
+#, sh-format
+msgid "Overwrite $NEWNAME"
+msgstr ""
+
+#. How to take a screenshot...
+#: ../mxfb-quickshot:72
+msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
+msgstr ""
+
+#: ../mxfb-look:551 ../mxfb-look:712
+msgid "Restore Look"
+msgstr ""
+
+#: ../mxfb-look:222 ../mxfb-look:545
+msgid "Rofi Theme"
+msgstr ""
+
+#. Press the Print-Screen-key to capture a screen selection.
+#. SELECTION: press Print, then draw a rectangle
+#: ../mxfb-quickshot:81
+msgid "SELECTION: draw a rectangle"
+msgstr ""
+
+#: ../mxfb-look:712
+msgid "Save Current Look"
+msgstr ""
+
+#: ../mxfb-look:228
+msgid "Save Look"
+msgstr ""
+
+#: ../mxfb-look:240
+#, sh-format
+msgid "Save Look as"
+msgstr ""
+
+#: ../mxfb-look:286
+msgid "Save as different name"
+msgstr ""
+
+#: ../mxfb-top:18
+msgid "Select titlebar mode"
+msgstr ""
+
+#: ../mxfb-bg-rotate:39
+msgid "Set background rotation"
+msgstr ""
+
+#. SUBTITLE=$(gettext "Be sure to fill in all fields you want enabled")
+#: ../mxfb-borders:20 ../mxfb-top:22
+msgid "Size"
+msgstr ""
+
+#. The capture of a screenshot was successful.
+#: ../mxfb-quickshot:56
+msgid "Success!"
+msgstr ""
+
+#: ../mxfb-tiles:15
+msgid ""
+"The code has been inserted successfully. Now there are 3 methods to do the "
+"tiling</b>"
+msgstr ""
+
+#. The existing config file will be copied into a backup directory.
+#: ../mxfb-quickshot:67
+msgid "The existing file will be backed up in:"
+msgstr ""
+
+#: ../mxfb-trashcheck:32
+msgid "There are no files in the trash."
+msgstr ""
+
+#. TRANSLATORS:
+#. Do not translate the count placeholder '${COUNT}'.
+#. Singular form: 'There is 1 file in the trash.'
+#. Plural form: 'There are 2 files in the trash.'
+#: ../mxfb-trashcheck:104
+#, sh-format
+msgid "There is 1 file in the trash."
+msgid_plural "There are ${COUNT} files in the trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../mxfb-tiles:10
+msgid ""
+"This script will back up your current keys file, then install commands for tiling to the end of the file. \\n\n"
+"</b>"
+msgstr ""
+
+#. A new config file will be installed.
+#: ../mxfb-quickshot:64
+msgid "This will install a new config file"
+msgstr ""
+
+#: ../mxfb-tint2-manager:283
+msgid "Tint2 Manager"
+msgstr ""
+
+#: ../mxfb-tiles:29
+msgid "Usage options"
+msgstr ""
+
+#. Press the Print-Screen-key to capture a window.
+#. WINDOW: press Print, then click anywhere inside
+#: ../mxfb-quickshot:75
+msgid "WINDOW: click anywhere inside"
+msgstr ""
+
+#: ../mxfb-look:549
+msgid "Wait 10 seconds for the conky to restart"
+msgstr ""
+
+#: ../mxfb-look:223 ../mxfb-look:546
+msgid "Wallpaper"
+msgstr "वालपेपर"
+
+#: ../mxfb-tint2-manager:191
+msgid "\\n"
+msgstr ""
+
+#: ../mxfb-look:229
+msgid "\\n<b>"
+msgstr ""
+
+#: ../mxfb-look:377
+msgid "\\n<b> Choose which look to restore</b>\\n"
+msgstr ""
+
+#: ../mxfb-look:389
+msgid "\\n<b> You need to select a look !</b>\\n"
+msgstr ""
+
+#: ../mxfb-borders:28 ../mxfb-top:30
+#, sh-format
+msgctxt "Stock label"
+msgid "_Apply"
+msgstr ""
+
+#: ../mxfb-borders:27 ../mxfb-top:29
+#, sh-format
+msgctxt "Stock label"
+msgid "_Cancel"
+msgstr ""
+
+#: ../mxfb-borders:30 ../mxfb-top:32
+#, sh-format
+msgctxt "Stock label"
+msgid "_Help"
+msgstr ""
+
+#: ../mxfb-borders:26 ../mxfb-top:28
+#, sh-format
+msgctxt "Stock label"
+msgid "_OK"
+msgstr ""
+
+#: ../mxfb-borders:29 ../mxfb-top:31
+#, sh-format
+msgctxt "Stock label"
+msgid "_Revert"
+msgstr ""
+
+#. Note: Comment lines above gettext lines are visible to translators.
+#. The capture of a screenshot was aborted.
+#: ../mxfb-quickshot:52
+msgid "exiting, no image selected"
+msgstr ""
+
+#: ../mxfb-timer:24
+msgid "or number and unit"
+msgstr ""
+
+#: ../mxfb-tint2-manager:284
+msgid "time format:"
+msgstr ""
+
+#: ../mxfb-look:209 ../mxfb-look:530
+msgid "toggled off"
+msgstr ""
+
+#: ../mxfb-look:207 ../mxfb-look:528
+msgid "toggled on"
+msgstr ""

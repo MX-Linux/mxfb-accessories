@@ -6,8 +6,8 @@
 # Translators:
 # hell spurs <alesha2000@gmail.com>, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2022
-# עומר א״ש <omeritzicschwartz@gmail.com>, 2022
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2022
+# 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2022
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -16,8 +16,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-05 14:46-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2022\n"
-"Language-Team: Hebrew (Israel) (https://www.transifex.com/anticapitalista/teams/10162/he_IL/)\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2023\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/anticapitalista/teams/10162/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -104,7 +104,7 @@ msgstr ""
 
 #: ../mxfb-look:266
 msgid "<b>Name for new style</b>"
-msgstr ""
+msgstr "<b>שם לסגנון החדש</b>"
 
 #: ../mxfb-look:710
 msgid ""
@@ -215,7 +215,7 @@ msgstr ""
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
-msgstr ""
+msgstr "התעלמות"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
@@ -319,7 +319,7 @@ msgstr ""
 #: ../mxfb-look:286
 #, sh-format
 msgid "Overwrite $NEWNAME"
-msgstr ""
+msgstr "שכתוב $NEWNAME"
 
 #. How to take a screenshot...
 #: ../mxfb-quickshot:72
