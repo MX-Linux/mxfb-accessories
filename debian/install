@@ -4,6 +4,7 @@ components/HELP-windowbuttons usr/share/doc/mxfb-accessories
 components/*.desktop usr/share/applications
 components/tint2* usr/bin
 components/mxfb-settings.svg usr/share/pixmaps
+components/exit-options-manager.svg usr/share/pixmaps
 components/*.png usr/share/pixmaps
 components/mxfb-quickshot.conf usr/share/mxfb-quickshot/
 components/quickshot_help usr/share/mxfb-quickshot/quickshot_help
