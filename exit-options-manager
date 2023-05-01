@@ -1,6 +1,6 @@
 #!/bin/bash
 #exit-options-manager
-#V.0.1 29.04.2023
+#V.0.1 01.05.2023
 
 #add locale
 TEXTDOMAINDIR=/usr/share/locale 
@@ -156,6 +156,10 @@ yad --notebook --key=$fkey --tab="$(gettext 'Select Icon Theme')" --tab="$(gette
         (( RET == 1 )) && {
             WAIT=1
         }
+        
+        (( RET == 252 )) && {
+            WAIT=1
+        }
 
         (( RET == 0 )) && {
 
@@ -213,8 +217,7 @@ yad --notebook --key=$fkey --tab="$(gettext 'Select Icon Theme')" --tab="$(gette
     unset CONFIG_CURRENT
     unset IMAGES
 
-    sed -i "s/\#\[General\]/\[General\]/" $CONF_FILE
-    sed -i "s/\#geometry/geometry/" $CONF_FILE
+
 
 }
 
@@ -271,5 +274,8 @@ while [ $WAIT != 1 ]; do
 
 done
 
+
+    sed -i "s/\#\[General\]/\[General\]/" $CONF_FILE
+    sed -i "s/\#geometry/geometry/" $CONF_FILE
 
 exit
