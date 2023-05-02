@@ -1,0 +1,281 @@
+#!/bin/bash
+#exit-options-manager
+#V.0.1 01.05.2023
+
+#add locale
+TEXTDOMAINDIR=/usr/share/locale 
+export TEXTDOMAIN="mxfb-accessories"
+source gettext.sh
+
+#define some variables
+
+TITLE="$(gettext 'Exit-options-manager')"
+CLASS="eom"
+ICONPATH="/usr/share/pixmaps/exit-options-manager.svg"
+
+CONFIG_PATH_USR="/usr/share/exit-options/conf"
+CONFIG_PATH_HOME="$HOME/.config/MX-Linux/exit-options"
+CONF_FILE="$HOME/.config/MX-Linux/exit-options.conf"
+
+res1=/tmp/eom-1.txt
+res2=/tmp/eom-2.txt
+
+
+# cleanup
+trap "rm -f $res1 $res2" EXIT
+
+
+# buttons
+export BTN_CLOSE=$(gettext "Close")  ; BTN_CLOSE+='!window-close'
+export BTN_HELP=$(gettext "Help")    ; BTN_HELP+='!help-contents'
+export BTN_OK=$(gettext "OK")        ; BTN_OK+='!object-select'
+export BTN_APPLY=$(gettext "Apply")        ; BTN_OK+='!object-select'
+
+
+###
+
+sed -i "s/\%23//g" $CONF_FILE
+sed -i "s/\[General\]/\#\[General\]/" $CONF_FILE
+sed -i "s/geometry/\#geometry/" $CONF_FILE
+
+WAIT=0
+
+
+###Get list of themes###
+
+if [ -d "$CONFIG_PATH_HOME" ]; then
+
+    CONFIG_LIST=$(ls -d $CONFIG_PATH_HOME/*.conf $CONFIG_PATH_USR/*.conf)
+
+else
+
+    CONFIG_LIST=$(ls -d $CONFIG_PATH_USR/*.conf)
+
+fi
+
+
+CONFIG_ARRAY=($CONFIG_LIST)
+
+
+###eom function
+
+eom_function () {
+
+source $CONF_FILE 
+
+CONFIG_CURRENT=$ConfName
+
+for i in "${CONFIG_ARRAY[@]}"
+
+do
+
+    source $i
+
+    i=$(basename $i)
+
+    if [ $i = "$CONFIG_CURRENT" ]; then
+       IMAGE_ADD=$(echo "true $RestartFluxbox $LockIcon $LogoutIcon $SuspendIcon $RebootIcon $ShutdownIcon $i ")
+    else
+       IMAGE_ADD=$(echo "false $RestartFluxbox $LockIcon $LogoutIcon $SuspendIcon $RebootIcon $ShutdownIcon $i ")
+    fi
+
+   IMAGES=$(echo -e "$IMAGES $IMAGE_ADD")
+ 
+done
+
+
+############################
+
+###Read current conf file###
+
+source $CONF_FILE 
+
+if [ -z "$timeout" ]; then
+    timeout=3
+fi
+
+if [ -z "$layout" ]; then
+    layout=horizontal
+fi
+
+if [ "$layout" = horizontal ]; then
+    LAYOUTOTHER=vertical
+elif [ "$layout" = vertical ]; then
+    LAYOUTOTHER=horizontal
+fi
+
+if [ -z "$Margin" ]; then
+    Margin=24
+fi
+
+if [ -z "$Spacing" ]; then
+    Spacing=24
+fi
+
+if [ -z "$IconSize" ]; then
+    IconSize=32
+fi
+
+
+###MAIN###
+
+fkey=$RANDOM
+
+yad --plug=$fkey --tabnum=1 --separator=" " \
+    --list --radiolist --print-column=8 --grid-lines=horizontal --no-headers --text="\n" \
+    --column=Select \
+    --column=":IMG" \
+    --column=":IMG" \
+    --column=":IMG" \
+    --column=":IMG" \
+    --column=":IMG" \
+    --column=":IMG" \
+    --column=Theme \
+    $IMAGES \
+    >$res2 &
+
+
+yad --plug=$fkey --tabnum=2 --form --columns=2 --text-align=left --separator=" " --text="\n" \
+    --field="$(gettext 'Layout')":CB "$layout!$LAYOUTOTHER" \
+    --field="$(gettext 'Timeout')":NUM "$timeout\!1..60\!1\!0" \
+    --field="$(gettext 'Icon Size')":NUM "$IconSize\!32..64\!16\!0" \
+    --field="$(gettext 'Margin')":NUM "$Margin\!0..64\!6\!0" \
+    --field="$(gettext 'Spacing')":NUM "$Spacing\!0..64\!6\!0" \
+    > $res1 &
+
+
+# run main dialog
+
+yad --notebook --key=$fkey --tab="$(gettext 'Select Icon Theme')" --tab="$(gettext 'Change Window Settings')" \
+    --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+    --width=800 --height=600 --borders=20 --center \
+    --button="${BTN_HELP}":"bash -c eom_help" --button="${BTN_CLOSE}":1 --button="${BTN_APPLY}":0 \
+    
+    RET=$?
+    
+        (( RET == 1 )) && {
+            WAIT=1
+        }
+        
+        (( RET == 252 )) && {
+            WAIT=1
+        }
+
+        (( RET == 0 )) && {
+
+    read -r -a ICONSET < $res2
+    read -r -a YADSETTINGS < $res1
+
+
+###Apply Theme###
+
+    if [ "$ICONSET" != "CONFIG_CURRENT" ]; then
+
+        if [ -f $CONFIG_PATH_HOME/$ICONSET ]; then
+        cp $CONFIG_PATH_HOME/$ICONSET $CONF_FILE
+        else
+        cp $CONFIG_PATH_USR/$ICONSET $CONF_FILE
+        fi
+    fi
+
+
+###Apply Settings###
+
+    OLDLAYOUT="$(grep 'layout=' $CONF_FILE | sed -e "s/layout=//")"
+    OLDTIMEOUT="$(grep 'timeout=' $CONF_FILE | sed -e "s/timeout=//")"
+    OLDICONSIZE="$(grep 'IconSize=' $CONF_FILE | sed -e "s/IconSize=//")"
+    OLDMARGIN="$(grep 'Margin=' $CONF_FILE | sed -e "s/Margin=//")"
+    OLDSPACING="$(grep 'Spacing=' $CONF_FILE | sed -e "s/Spacing=//")"
+
+    NEWLAYOUT="${YADSETTINGS[0]}"
+    NEWTIMEOUT="${YADSETTINGS[1]}"
+    NEWICONSIZE="${YADSETTINGS[2]}"
+    NEWMARGIN="${YADSETTINGS[3]}"
+    NEWSPACING="${YADSETTINGS[4]}"
+
+
+    if [ "$NEWLAYOUT" != "$OLDLAYOUT" ]; then
+        sed -i "s/layout=${OLDLAYOUT}/layout=${NEWLAYOUT}/" $CONF_FILE
+    fi
+
+    if [ "$NEWTIMEOUT" != "$OLDTIMEOUT" ]; then
+        sed -i "s/timeout=${OLDTIMEOUT}/timeout=${NEWTIMEOUT}/" $CONF_FILE
+    fi
+
+    if [ "$NEWICONSIZE" != "$OLDICONSIZE" ]; then
+        sed -i "s/IconSize=${OLDICONSIZE}/IconSize=${NEWICONSIZE}/" $CONF_FILE
+    fi
+
+    if [ "$NEWMARGIN" != "$OLDMARGIN" ]; then
+        sed -i "s/Margin=${OLDMARGIN}/Margin=${NEWMARGIN}/" $CONF_FILE
+    fi
+
+    if [ "$NEWSPACING" != "$OLDSPACING" ]; then
+        sed -i "s/Spacing=${OLDSPACING}/Spacing=${NEWSPACING}/" $CONF_FILE
+    fi
+
+    unset CONFIG_CURRENT
+    unset IMAGES
+
+
+
+}
+
+}
+
+###Help###
+
+eom_help () {
+
+TITLE="$(gettext 'Exit-options-manager')"
+CLASS="eom"
+ICONPATH="/usr/share/pixmaps/exit-options-manager.svg"
+CONFIG_PATH_HOME="$HOME/.config/MX-Linux/exit-options"
+
+EOMHELP_TEXT1="$(gettext '\nIcon themes can be defined by creating a file')"
+
+EOMHELP_TEXT2="$(gettext 'and adding the paths for the desired 64x64 pixel icons to the following definitions')"
+
+EOMHELP_TEXT3="
+RestartFluxbox=path/to/file
+LockIcon=path/to/file
+LogoutIcon=path/to/file
+SuspendIcon=path/to/file
+RebootIcon=path/to/file
+ShutdownIcon=path/to/file"
+
+EOMHELP_TEXT4="$(gettext 'The following settings can also be defined')"
+
+EOMHELP_TEXT5="
+IconSize=32-48-64
+Margin=0-64
+Spacing=0-64
+timeout=-60
+layout=horizontal-vertical"
+
+
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+    --width=700 --height=400 --borders=20 --center \
+    --text="$EOMHELP_TEXT1\n\n<b>$CONFIG_PATH_HOME/YOURTHEMENAME_exit-options.conf</b>\n\n$EOMHELP_TEXT2\n$EOMHELP_TEXT3\n\n$EOMHELP_TEXT4\n$EOMHELP_TEXT5" \
+    --button="${BTN_CLOSE}":1 \
+    
+    [ $? == "1" ] && exit
+
+}
+
+export -f eom_function eom_help
+
+
+###################
+
+while [ $WAIT != 1 ]; do
+
+    eom_function
+
+done
+
+
+    sed -i "s/\#\[General\]/\[General\]/" $CONF_FILE
+    sed -i "s/\#geometry/geometry/" $CONF_FILE
+
+exit
