@@ -1,9 +1,14 @@
-mxfb-accessories (23.04.03+nmu1) UNRELEASED; urgency=medium
+mxfb-accessories (23.05.01) mx; urgency=medium
 
+  [ Jerry ]
   * Non-maintainer upload.
   * Updated mxfb-settings.list 
 
- -- Jerry <jb@mx>  Sat, 29 Apr 2023 09:23:58 -0400
+  [ Dolphin Oracle ]
+  * fix permissions on exit-options-manager
+  * update pot file 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 01 May 2023 22:18:12 -0400
 
 mxfb-accessories (23.04.03) mx; urgency=medium
 
