@@ -1,3 +1,10 @@
+mxfb-accessories (23.05.01+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * added config file for tint2 default
+
+ -- Jerry <jb@mx>  Wed, 03 May 2023 13:53:36 -0400
+
 mxfb-accessories (23.05.01) mx; urgency=medium
 
   [ Jerry ]
