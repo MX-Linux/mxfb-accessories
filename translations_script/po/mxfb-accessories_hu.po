@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-05 14:46-0500\n"
+"POT-Creation-Date: 2023-05-01 22:13-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Kempelen, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/anticapitalista/teams/10162/hu/)\n"
@@ -52,10 +52,6 @@ msgstr ""
 "\n"
 "  --Bővebben: keressen rá a \"Quickshot\" kifejezésre az MX Wikiben"
 
-#: ../mxfb-look:267 ../mxfb-look:294
-msgid " "
-msgstr " "
-
 #: ../mxfb-separate-backgrounds:12
 msgid ""
 "  This app allows you to configure separate backgrounds for each Workspace  "
@@ -78,18 +74,6 @@ msgstr "A választó ablak minden egyes munkafelülethez fel fog ugrani."
 msgid " Type \\"
 msgstr "Típus \\"
 
-#. #begin first message box
-#: ../mxfb-tiles:37
-#, sh-format
-msgid "$TITLE1"
-msgstr "$TITLE1"
-
-#. #begin second message box
-#: ../mxfb-tiles:135
-#, sh-format
-msgid "$TITLE2"
-msgstr "$TITLE2"
-
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12ó/24ó"
@@ -101,16 +85,6 @@ msgstr "Első Tint2 panel"
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr "Második Tint2 panel"
-
-#: ../mxfb-look:552
-msgid "<b>   "
-msgstr "<b>"
-
-#. RESTOREMAIN
-#: ../mxfb-look:538
-#, sh-format
-msgid "<b>$LOOKRESTORE</b>\\n"
-msgstr "<b>$LOOKRESTORE</b>\\n"
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -185,7 +159,7 @@ msgstr ""
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "Kész!\\n\\nA kinézet mentésre került mint <b>$NEWNAME</b>"
 
-#: ../mxfb-tint2-manager:96
+#: ../mxfb-tint2-manager:96 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Alkalmazás"
 
@@ -198,6 +172,10 @@ msgstr "CÍMSOR KONFIGURÁLÁSA"
 msgid "Cancelled!"
 msgstr "Elvetve!"
 
+#: ../exit-options-manager:149
+msgid "Change Window Settings"
+msgstr ""
+
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
 msgstr "Futtatáshoz jelölje be, megállításhoz vegye ki"
@@ -206,7 +184,8 @@ msgstr "Futtatáshoz jelölje be, megállításhoz vegye ki"
 msgid "Click \\"
 msgstr "Kattintson \\"
 
-#: ../mxfb-tint2-manager:97
+#. buttons
+#: ../mxfb-tint2-manager:97 ../exit-options-manager:29
 msgid "Close"
 msgstr "Bezárás"
 
@@ -266,6 +245,11 @@ msgstr "Szerkesztés"
 msgid "Enter local time"
 msgstr "Adja meg a helyi időt"
 
+#. define some variables
+#: ../exit-options-manager:12 ../exit-options-manager:230
+msgid "Exit-options-manager"
+msgstr ""
+
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
 msgstr ""
@@ -295,9 +279,13 @@ msgstr "SÚGÓ"
 msgid "HELP: how to take a screenshot"
 msgstr "SÚGÓ: képernyőkép készítésről"
 
-#: ../mxfb-tint2-manager:100
+#: ../mxfb-tint2-manager:100 ../exit-options-manager:30
 msgid "Help"
 msgstr "Súgó"
+
+#: ../exit-options-manager:141
+msgid "Icon Size"
+msgstr ""
 
 #: ../mxfb-bg-rotate:44
 msgid "Image folder"
@@ -306,6 +294,10 @@ msgstr "Kép mappa"
 #: ../mxfb-bg-rotate:45
 msgid "Image mode"
 msgstr "Kép mód"
+
+#: ../exit-options-manager:139
+msgid "Layout"
+msgstr "Billentyűzetkiosztás"
 
 #: ../mxfb-look:265
 #, sh-format
@@ -320,6 +312,10 @@ msgstr "MXFB időzítő"
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
 msgid "MXFB-Look"
 msgstr "MXFB kinézet"
+
+#: ../exit-options-manager:142
+msgid "Margin"
+msgstr ""
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -337,7 +333,7 @@ msgstr "Nincs forgatás: Késleltetés = 0"
 msgid "None"
 msgstr "Nincs"
 
-#: ../mxfb-tint2-manager:101
+#: ../mxfb-tint2-manager:101 ../exit-options-manager:31
 msgid "OK"
 msgstr "OK"
 
@@ -391,6 +387,11 @@ msgstr "Kinézet mentése mint"
 msgid "Save as different name"
 msgstr "Mentés másik néven"
 
+#. run main dialog
+#: ../exit-options-manager:149
+msgid "Select Icon Theme"
+msgstr ""
+
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr "Válasszon címsor módot"
@@ -403,6 +404,10 @@ msgstr "Háttér váltogatás beállítása"
 #: ../mxfb-borders:20 ../mxfb-top:22
 msgid "Size"
 msgstr "Méret"
+
+#: ../exit-options-manager:143
+msgid "Spacing"
+msgstr ""
 
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:56
@@ -419,6 +424,10 @@ msgstr "A kód sikeresen beszúrva. Most 3 lehetőség van az elrendezésre</b>"
 #: ../mxfb-quickshot:67
 msgid "The existing file will be backed up in:"
 msgstr "A meglévő fájl mentésre kerül:"
+
+#: ../exit-options-manager:247
+msgid "The following settings can also be defined"
+msgstr ""
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -447,6 +456,10 @@ msgstr ""
 #: ../mxfb-quickshot:64
 msgid "This will install a new config file"
 msgstr "Ez új beállításfájlt telepít"
+
+#: ../exit-options-manager:140
+msgid "Timeout"
+msgstr ""
 
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
@@ -486,6 +499,10 @@ msgstr "\\n<b> Válassza ki a visszaállítandó kinézetet</b>\\n"
 msgid "\\n<b> You need to select a look !</b>\\n"
 msgstr "\\n<b> Ki kell választania egy kinézetet!</b>\\n"
 
+#: ../exit-options-manager:235
+msgid "\\nIcon themes can be defined by creating a file"
+msgstr ""
+
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
 msgctxt "Stock label"
@@ -515,6 +532,12 @@ msgstr "_OK"
 msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Visszavonás"
+
+#: ../exit-options-manager:237
+msgid ""
+"and adding the paths for the desired 64x64 pixel icons to the following "
+"definitions"
+msgstr ""
 
 #. Note: Comment lines above gettext lines are visible to translators.
 #. The capture of a screenshot was aborted.

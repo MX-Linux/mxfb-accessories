@@ -6,17 +6,17 @@
 # Translators:
 # darknet matrix, 2022
 # anticapitalista <anticapitalista@riseup.net>, 2023
-# Eadwine Rose, 2023
 # fehlix, 2023
+# Eadwine Rose, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-05 14:46-0500\n"
+"POT-Creation-Date: 2023-05-01 22:13-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: fehlix, 2023\n"
+"Last-Translator: Eadwine Rose, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/anticapitalista/teams/10162/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,10 +41,6 @@ msgid ""
 "    --More: search \"Quickshot\" in the MX Wiki"
 msgstr ""
 
-#: ../mxfb-look:267 ../mxfb-look:294
-msgid " "
-msgstr ""
-
 #: ../mxfb-separate-backgrounds:12
 msgid ""
 "  This app allows you to configure separate backgrounds for each Workspace  "
@@ -66,18 +62,6 @@ msgstr ""
 msgid " Type \\"
 msgstr " Type \\"
 
-#. #begin first message box
-#: ../mxfb-tiles:37
-#, sh-format
-msgid "$TITLE1"
-msgstr "$TITLE1"
-
-#. #begin second message box
-#: ../mxfb-tiles:135
-#, sh-format
-msgid "$TITLE2"
-msgstr "$TITLE2"
-
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr ""
@@ -88,16 +72,6 @@ msgstr ""
 
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
-msgstr ""
-
-#: ../mxfb-look:552
-msgid "<b>   "
-msgstr ""
-
-#. RESTOREMAIN
-#: ../mxfb-look:538
-#, sh-format
-msgid "<b>$LOOKRESTORE</b>\\n"
 msgstr ""
 
 #: ../mxfb-look:293
@@ -167,7 +141,7 @@ msgstr ""
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr ""
 
-#: ../mxfb-tint2-manager:96
+#: ../mxfb-tint2-manager:96 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Toepassen"
 
@@ -180,6 +154,10 @@ msgstr ""
 msgid "Cancelled!"
 msgstr ""
 
+#: ../exit-options-manager:149
+msgid "Change Window Settings"
+msgstr ""
+
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
 msgstr ""
@@ -188,7 +166,8 @@ msgstr ""
 msgid "Click \\"
 msgstr ""
 
-#: ../mxfb-tint2-manager:97
+#. buttons
+#: ../mxfb-tint2-manager:97 ../exit-options-manager:29
 msgid "Close"
 msgstr "Sluiten"
 
@@ -248,6 +227,11 @@ msgstr "Bewerken"
 msgid "Enter local time"
 msgstr "Voer lokale tijd in"
 
+#. define some variables
+#: ../exit-options-manager:12 ../exit-options-manager:230
+msgid "Exit-options-manager"
+msgstr ""
+
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
 msgstr "Mogelijkheden: 1/2 scherm, 1/4 scherm, 1/3 scherm en herstel \\n"
@@ -276,9 +260,13 @@ msgstr "HELP"
 msgid "HELP: how to take a screenshot"
 msgstr ""
 
-#: ../mxfb-tint2-manager:100
+#: ../mxfb-tint2-manager:100 ../exit-options-manager:30
 msgid "Help"
 msgstr "Hulp"
+
+#: ../exit-options-manager:141
+msgid "Icon Size"
+msgstr ""
 
 #: ../mxfb-bg-rotate:44
 msgid "Image folder"
@@ -287,6 +275,10 @@ msgstr "Afbeelding map"
 #: ../mxfb-bg-rotate:45
 msgid "Image mode"
 msgstr "Afbeelding modus"
+
+#: ../exit-options-manager:139
+msgid "Layout"
+msgstr "Layout"
 
 #: ../mxfb-look:265
 #, sh-format
@@ -300,6 +292,10 @@ msgstr "MXFB Timer"
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
 msgid "MXFB-Look"
+msgstr ""
+
+#: ../exit-options-manager:142
+msgid "Margin"
 msgstr ""
 
 #: ../mxfb-tiles:13
@@ -318,7 +314,7 @@ msgstr "Geen rotatie: Vertraging = 0"
 msgid "None"
 msgstr "Geen"
 
-#: ../mxfb-tint2-manager:101
+#: ../mxfb-tint2-manager:101 ../exit-options-manager:31
 msgid "OK"
 msgstr "OK"
 
@@ -372,6 +368,11 @@ msgstr ""
 msgid "Save as different name"
 msgstr ""
 
+#. run main dialog
+#: ../exit-options-manager:149
+msgid "Select Icon Theme"
+msgstr ""
+
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr ""
@@ -384,6 +385,10 @@ msgstr "Stel achtergrondrotatie in"
 #: ../mxfb-borders:20 ../mxfb-top:22
 msgid "Size"
 msgstr "Grootte"
+
+#: ../exit-options-manager:143
+msgid "Spacing"
+msgstr ""
 
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:56
@@ -400,6 +405,10 @@ msgstr ""
 #. The existing config file will be copied into a backup directory.
 #: ../mxfb-quickshot:67
 msgid "The existing file will be backed up in:"
+msgstr ""
+
+#: ../exit-options-manager:247
+msgid "The following settings can also be defined"
 msgstr ""
 
 #: ../mxfb-trashcheck:32
@@ -428,6 +437,10 @@ msgstr ""
 #. A new config file will be installed.
 #: ../mxfb-quickshot:64
 msgid "This will install a new config file"
+msgstr ""
+
+#: ../exit-options-manager:140
+msgid "Timeout"
 msgstr ""
 
 #: ../mxfb-tint2-manager:283
@@ -468,6 +481,10 @@ msgstr ""
 msgid "\\n<b> You need to select a look !</b>\\n"
 msgstr ""
 
+#: ../exit-options-manager:235
+msgid "\\nIcon themes can be defined by creating a file"
+msgstr ""
+
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
 msgctxt "Stock label"
@@ -496,6 +513,12 @@ msgstr "_OK"
 #, sh-format
 msgctxt "Stock label"
 msgid "_Revert"
+msgstr ""
+
+#: ../exit-options-manager:237
+msgid ""
+"and adding the paths for the desired 64x64 pixel icons to the following "
+"definitions"
 msgstr ""
 
 #. Note: Comment lines above gettext lines are visible to translators.

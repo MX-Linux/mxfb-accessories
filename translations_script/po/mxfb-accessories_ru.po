@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-05 14:46-0500\n"
+"POT-Creation-Date: 2023-05-01 22:13-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Andrei Stepanov, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/anticapitalista/teams/10162/ru/)\n"
@@ -44,10 +44,14 @@ msgid ""
 "\n"
 "    --More: search \"Quickshot\" in the MX Wiki"
 msgstr ""
-
-#: ../mxfb-look:267 ../mxfb-look:294
-msgid " "
-msgstr " "
+"\n"
+"Подсказки\n"
+"\n"
+"    --Нажмите «Отклонить», чтобы скрыть Справку в будущем!\n"
+"\n"
+"    --Справка по захвату по щелчку после согласия с продолжением\n"
+"\n"
+"    --Больше: ищите в по запросу «Quickshot» в Вики MX"
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -70,18 +74,6 @@ msgstr " Окна выбора будут всплывать в каждом р�
 msgid " Type \\"
 msgstr " Наберите \\"
 
-#. #begin first message box
-#: ../mxfb-tiles:37
-#, sh-format
-msgid "$TITLE1"
-msgstr "$TITLE1"
-
-#. #begin second message box
-#: ../mxfb-tiles:135
-#, sh-format
-msgid "$TITLE2"
-msgstr "$TITLE2"
-
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12ч/24ч"
@@ -93,16 +85,6 @@ msgstr "1-я панель Tint2"
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr "2я панель Tint2"
-
-#: ../mxfb-look:552
-msgid "<b>   "
-msgstr "<b>   "
-
-#. RESTOREMAIN
-#: ../mxfb-look:538
-#, sh-format
-msgid "<b>$LOOKRESTORE</b>\\n"
-msgstr "<b>$LOOKRESTORE</b>\\n"
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -177,7 +159,7 @@ msgstr ""
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "Готово!\\n\\nВид был сохранён в <b>$NEWNAME</b>"
 
-#: ../mxfb-tint2-manager:96
+#: ../mxfb-tint2-manager:96 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Применить"
 
@@ -190,6 +172,10 @@ msgstr "НАСТРОИТЬ ВЕРХ"
 msgid "Cancelled!"
 msgstr "Отменено!"
 
+#: ../exit-options-manager:149
+msgid "Change Window Settings"
+msgstr "Сменить настройки окна"
+
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
 msgstr "Включите для запуска, отключите для остановки"
@@ -198,7 +184,8 @@ msgstr "Включите для запуска, отключите для ост
 msgid "Click \\"
 msgstr "Щелчок \\"
 
-#: ../mxfb-tint2-manager:97
+#. buttons
+#: ../mxfb-tint2-manager:97 ../exit-options-manager:29
 msgid "Close"
 msgstr "Закрыть"
 
@@ -258,6 +245,11 @@ msgstr "Править"
 msgid "Enter local time"
 msgstr "Ввести локальное время"
 
+#. define some variables
+#: ../exit-options-manager:12 ../exit-options-manager:230
+msgid "Exit-options-manager"
+msgstr "Exit-options-manager"
+
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
 msgstr "Функции: 1/2 экрана, 1/4 экрана, 1/3 экрана и восстановление \\n"
@@ -286,9 +278,13 @@ msgstr "СПРАВКА"
 msgid "HELP: how to take a screenshot"
 msgstr "СПРАКА: как сделать снимок экрана"
 
-#: ../mxfb-tint2-manager:100
+#: ../mxfb-tint2-manager:100 ../exit-options-manager:30
 msgid "Help"
 msgstr "Справка"
+
+#: ../exit-options-manager:141
+msgid "Icon Size"
+msgstr "Размер значка"
 
 #: ../mxfb-bg-rotate:44
 msgid "Image folder"
@@ -297,6 +293,10 @@ msgstr "Папка с изображениями"
 #: ../mxfb-bg-rotate:45
 msgid "Image mode"
 msgstr "Режим изображения"
+
+#: ../exit-options-manager:139
+msgid "Layout"
+msgstr "Размещение"
 
 #: ../mxfb-look:265
 #, sh-format
@@ -311,6 +311,10 @@ msgstr "MXFB Таймер"
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
 msgid "MXFB-Look"
 msgstr "MXFB-Вид"
+
+#: ../exit-options-manager:142
+msgid "Margin"
+msgstr ""
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -328,7 +332,7 @@ msgstr "Без поворота: Задержка = 0"
 msgid "None"
 msgstr "Нет"
 
-#: ../mxfb-tint2-manager:101
+#: ../mxfb-tint2-manager:101 ../exit-options-manager:31
 msgid "OK"
 msgstr "Да"
 
@@ -382,6 +386,11 @@ msgstr "Сохранить вид в"
 msgid "Save as different name"
 msgstr "Сохранить с другим именем"
 
+#. run main dialog
+#: ../exit-options-manager:149
+msgid "Select Icon Theme"
+msgstr "Выбор темы значков"
+
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr "Выбрать режим панели заголовка"
@@ -394,6 +403,10 @@ msgstr "Задать поворот фона"
 #: ../mxfb-borders:20 ../mxfb-top:22
 msgid "Size"
 msgstr "Размер"
+
+#: ../exit-options-manager:143
+msgid "Spacing"
+msgstr ""
 
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:56
@@ -410,6 +423,10 @@ msgstr "Код был вставлен успешно. Теперь есть 3 �
 #: ../mxfb-quickshot:67
 msgid "The existing file will be backed up in:"
 msgstr "Резервная копия существующего файла будет создана в:"
+
+#: ../exit-options-manager:247
+msgid "The following settings can also be defined"
+msgstr ""
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -440,6 +457,10 @@ msgstr ""
 #: ../mxfb-quickshot:64
 msgid "This will install a new config file"
 msgstr "Это установит новый файл конфигурации"
+
+#: ../exit-options-manager:140
+msgid "Timeout"
+msgstr "Тайм-аут"
 
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
@@ -479,6 +500,10 @@ msgstr "\\n<b> Выберите вид для восстановления</b>\\
 msgid "\\n<b> You need to select a look !</b>\\n"
 msgstr "\\n<b> Необходимо выбрать вид!</b>\\n"
 
+#: ../exit-options-manager:235
+msgid "\\nIcon themes can be defined by creating a file"
+msgstr ""
+
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
 msgctxt "Stock label"
@@ -509,6 +534,12 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Вернуть"
 
+#: ../exit-options-manager:237
+msgid ""
+"and adding the paths for the desired 64x64 pixel icons to the following "
+"definitions"
+msgstr ""
+
 #. Note: Comment lines above gettext lines are visible to translators.
 #. The capture of a screenshot was aborted.
 #: ../mxfb-quickshot:52
@@ -525,7 +556,7 @@ msgstr "формат времени:"
 
 #: ../mxfb-look:209 ../mxfb-look:530
 msgid "toggled off"
-msgstr "выкл"
+msgstr "отключено"
 
 #: ../mxfb-look:207 ../mxfb-look:528
 msgid "toggled on"
