@@ -10,6 +10,7 @@ components/*.svg usr/share/pixmaps
 components/mxfb-quickshot.conf usr/share/mxfb-quickshot/
 components/quickshot_help usr/share/mxfb-quickshot/quickshot_help
 exit-options-manager usr/bin
+app-categories usr/bin
 mxfb-* usr/bin
 apt/* etc/apt/
 translations_script/mo/am/mxfb-accessories.mo     /usr/share/locale/am/LC_MESSAGES
