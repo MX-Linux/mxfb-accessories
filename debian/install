@@ -6,6 +6,7 @@ components/tint2* usr/bin
 components/mxfb-settings.svg usr/share/pixmaps
 components/exit-options-manager.svg usr/share/pixmaps
 components/*.png usr/share/pixmaps
+components/*.svg usr/share/pixmaps
 components/mxfb-quickshot.conf usr/share/mxfb-quickshot/
 components/quickshot_help usr/share/mxfb-quickshot/quickshot_help
 exit-options-manager usr/bin
