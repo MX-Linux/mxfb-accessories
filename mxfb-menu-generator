@@ -79,7 +79,11 @@ fi
 if [ -n "$(find $HOME/.local/share/flatpak/exports/share/applications/ -name *.desktop 2>/dev/null)" ]; then
     LIST="$LIST $HOME/.local/share/flatpak/exports/share/applications/*.desktop"
 fi
- 
+
+if [ -n "$(find /usr/share/applications/antix/ -name *.desktop 2>/dev/null)" ]; then
+    LIST="$LIST /usr/share/applications/antix/*.desktop"
+fi
+
 for file in $LIST
 do
 
