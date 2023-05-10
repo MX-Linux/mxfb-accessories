@@ -1,0 +1,4 @@
+#!/bin/bash
+
+##start the standalone mx-run box
+rofi -show run -theme ~/.config/rofi/themes/MX-run.rasi -run-shell-command 'rofi-sensible-terminal -e bash -c "{cmd} && read"' 
