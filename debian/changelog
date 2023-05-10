@@ -1,3 +1,10 @@
+mxfb-accessories (23.05.03+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * added mxfb-rofirun for F2 run dialog
+
+ -- Jerry <jb@mx>  Wed, 10 May 2023 16:19:38 -0400
+
 mxfb-accessories (23.05.03) mx; urgency=medium
 
   * mxfb-menu-generator:  check antix subfolder of /usr/share/applications
