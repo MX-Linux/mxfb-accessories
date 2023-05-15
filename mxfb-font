@@ -4,8 +4,9 @@
 
 # version 230514-01
 
-TEXTDOMAINDIR=/usr/share/locale
-export TEXTDOMAIN="mxfb-accessories"
+#TEXTDOMAINDIR=/usr/share/locale 
+#export TEXTDOMAIN="mxfb-font"
+#source gettext.sh
 
 STYLE="$(grep 'session.styleFile:' $HOME/.fluxbox/init | sed -e "s/session\.styleFile\://")"
 
@@ -39,23 +40,26 @@ else
     MENU_FRAME_OVERRIDE=false
 fi
 
+#gtk-font
+
+GTK_FONT_NOW="$(grep "gtk-font-name" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-font-name\=//" )"
+#GTK2_FONT_NOW="$(grep "gtk-font-name" $HOME/.gtkrc-2.0 | sed -e "s/gtk-font-name\=//" )"
 
 ####
 
-helpfile=/usr/share/mxflux/HELP_Windowoverlay
-
-####
-
-TITLE="$(gettext 'Font Manager')"
-CLASS="mxmenufont"
+TITLE="$(gettext 'MXFB-Font')"
+CLASS="mxfb-font"
 ICONPATH="/usr/share/icons/mxflux.png"
-#source gettext.sh
+#helpfile=/usr/share/mxflux/HELP_Windowoverlay
 
 TEXT1="CHANGE FONTS"
-TEXT2="Select which default fonts should be overridden"
+TEXT2="Default fonts for Window Title, Menu Title and Menu Text are set in the current fluxbox style"
+TEXT3="Select and choose font to override default font"
+TEXT4="Unselect to use default font"
+TEXT5="Gtk-font applies to window contents and is independent of fluxbox style settings"
 
-MAINPOS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=600 --fixed --form --columns=1 --align=left --separator="_" --button="gtk-cancel":1 --button="gtk-ok":0 \
---text="<big><b>$TEXT1</b></big>\n$TEXT2\n" \
+MAINPOS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=600 --height=600 --form --columns=1 --align=left --separator="_" --button="gtk-cancel":1 --button="gtk-ok":0 \
+--text="<big><b>$TEXT1</b></big>\n$TEXT2\n - $TEXT3\n - $TEXT4\n$TEXT5\n" \
 --field="$(gettext 'Window Title Default'):  <b>$STYLE_WINDOW_TITLE</b>":LBL "" \
 --field="$(gettext 'Override')":CHK "$WINDOW_TITLE_OVERRIDE" \
 --field="$(gettext 'with')":FN "$WINDOW_TITLE_NOW" \
@@ -66,7 +70,9 @@ MAINPOS=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borde
 --field=" ":LBL "|" \
 --field="$(gettext 'Menu Default'):  <b>$STYLE_MENU_FRAME</b>":LBL "" \
 --field="$(gettext 'Override')":CHK "$MENU_FRAME_OVERRIDE" \
---field="$(gettext 'with')":FN "$MENU_FRAME_NOW"
+--field="$(gettext 'with')":FN "$MENU_FRAME_NOW" \
+--field=" ":LBL "|" \
+--field="$(gettext 'Gtk Font') :  ":FN "$GTK_FONT_NOW" \
 )
 
 RES=$("${MAINPOS[@]}" | sed -e "s/ /-/g" | sed -e "s/_/ /g")
@@ -201,13 +207,30 @@ fi
 
 
 
+#gtk bash
+
+    GTK_FONT_NEW=$(echo "${override[6]}" | sed -e "s/-/ /g")
+
+    if [ "$GTK_FONT_NOW" != "$GTK_FONT_NEW" ]; then
+
+        sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.config/gtk-3.0/settings.ini
+        sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.gtkrc-2.0
+
+function reload_gtk() {
+  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+  gsettings set org.gnome.desktop.interface gtk-theme ''
+  sleep 1
+  gsettings set org.gnome.desktop.interface gtk-theme $theme
+}
+
+export reload_gtk
+
+reload_gtk
+
+fi
+
 #fluxbox-remote restart
 fluxbox-remote reconfigure; fluxbox-remote reloadstyle
 
 exit
-
-
-
-
-
 
