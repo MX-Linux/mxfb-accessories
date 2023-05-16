@@ -75,7 +75,7 @@ GTK_FONT_NOW="$(grep "gtk-font-name" $HOME/.config/gtk-3.0/settings.ini | sed -e
 
 TITLE="$(gettext 'MXFB-Font')"
 CLASS="mxfb-font"
-ICONPATH="/usr/share/icons/mxflux.png"
+ICONPATH="/usr/share/pixmaps/mxfb-font.svg"
 #helpfile=/usr/share/mxflux/HELP_Windowoverlay
 
 TEXT1="CHANGE FONTS"
