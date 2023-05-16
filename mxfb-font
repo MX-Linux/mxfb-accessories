@@ -14,6 +14,21 @@ export BTN_HELP=$(gettext "Help")    ; BTN_HELP+='!help-contents'
 export BTN_OK=$(gettext "OK")        ; BTN_OK+='!object-select'
 export BTN_APPLY=$(gettext "Apply")        ; BTN_OK+='!object-select'
 
+####check overlay file
+CHECK_WINTITLE="$(grep "window.font: " $HOME/.fluxbox/overlay)"
+if [ -z "$CHECK_WINTITLE" ]; then
+    echo '#window.font: Sans-12:Regular' >> $HOME/.fluxbox/overlay
+fi
+
+CHECK_MENUTITLE="$(grep "menu.title.font: " $HOME/.fluxbox/overlay)"
+if [ -z "$CHECK_MENUTITLE" ]; then
+    echo '#menu.title.font: Sans-11:Regular' >> $HOME/.fluxbox/overlay
+fi
+
+CHECK_MENUFRAME="$(grep "menu.frame.font: " $HOME/.fluxbox/overlay)"
+if [ -z "$CHECK_MENUFRAME" ]; then
+    echo '#menu.frame.font: Sans-10:Regular' >> $HOME/.fluxbox/overlay
+fi
 
 ####
 
@@ -79,28 +94,32 @@ ICONPATH="/usr/share/pixmaps/mxfb-font.svg"
 #helpfile=/usr/share/mxflux/HELP_Windowoverlay
 
 TEXT1="CHANGE FONTS"
-TEXT2="Default fonts for Window Title, Menu Title and Menu Text are defined in the current fluxbox style"
-TEXT3="Select and choose a font to override the default fonts"
-TEXT4="Unselect to use default font"
-TEXT5="Gtk-font applies to window contents and is independent of fluxbox style settings"
+TEXT2="Default fonts are defined in the current fluxbox style."
+TEXT3="Select to override the default fonts, deselect to use default font"
+TEXT4="Gtk-font is independent of fluxbox style settings"
+
 
 MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
---borders=20 --center --width=600 --height=600 --form --columns=2 --output-by-row \
+--borders=20 --center --width=400 --form --columns=2 --output-by-row \
 --align=left --separator="_" --button="${BTN_CLOSE}":7 --button="${BTN_APPLY}":6 \
---text="<big><b>$TEXT1</b></big>\n$TEXT2\n - $TEXT3\n - $TEXT4\n$TEXT5\n" \
---field=" ":LBL "|" \
+--text="<big><b>$TEXT1</b></big>\n$TEXT2 $TEXT3\n$TEXT4\n" \
+--field="<b>$(gettext 'Window Title Default'):</b>":LBL "" \
 --field="$(gettext 'Override with') ":CHK "$WINDOW_TITLE_OVERRIDE" \
 --field=" ":LBL "|" \
+--field="<b>$(gettext 'Menu Title Default'):</b>":LBL "" \
 --field="$(gettext 'Override with') ":CHK "$MENU_TITLE_OVERRIDE" \
 --field=" ":LBL "|" \
+--field="<b>$(gettext 'Menu Text Default'):</b>":LBL "" \
 --field="$(gettext 'Override with') ":CHK "$MENU_FRAME_OVERRIDE" \
 --field=" ":LBL "|" \
---field="$(gettext 'Gtk Font'): ":LBL "|" \
---field="$(gettext 'Window Title Default'):  <b>$STYLE_WINDOW_TITLE</b>":LBL "" \
+--field="<b>$(gettext 'Gtk Font'): </b>":LBL "|" \
+--field="<b>$STYLE_WINDOW_TITLE</b>":LBL "|" \
 --field=" ":FN "$WINDOW_TITLE_NOW" \
---field="$(gettext 'Menu Title Default'):  <b>$STYLE_MENU_TITLE</b>":LBL "" \
+--field=" ":LBL "|" \
+--field="<b>$STYLE_MENU_TITLE</b>":LBL "|" \
 --field=" ":FN "$MENU_TITLE_NOW" \
---field="$(gettext 'Menu Default'):  <b>$STYLE_MENU_FRAME</b>":LBL "" \
+--field=" ":LBL "|" \
+--field="<b>$STYLE_MENU_FRAME</b>":LBL "|" \
 --field=" ":FN "$MENU_FRAME_NOW" \
 --field=" ":LBL "|" \
 --field=" ":FN "$GTK_FONT_NOW"
@@ -110,7 +129,7 @@ ret=$?
 
 case $ret in
     7 | 252 )
-        ENDLOOP= getouttahere
+        ENDLOOP=getouttahere
     ;;
 
     6 )
@@ -118,15 +137,6 @@ case $ret in
     RES=$(echo "$MAINPOS" | sed -e "s/ /-/g" | sed -e "s/_/ /g" | sed -e "s/__/ /g" | sed -e "s/___/ /g" | sed -e "s/____/ /g")
 
     override=($RES)
-
-    echo "${override[@]}"
-    echo "${override[0]}"
-    echo "${override[1]}"
-    echo "${override[2]}"
-    echo "${override[3]}"
-    echo "${override[4]}"
-    echo "${override[5]}"
-    echo "${override[6]}"
 
 
 ####
@@ -241,9 +251,6 @@ case $ret in
 
     GTK_FONT_NOW="$(grep "gtk-font-name" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-font-name\=//" )"
     GTK_FONT_NEW=$(echo "${override[6]}" | sed -e "s/-/ /g")
-    echo 111_"$GTK_FONT_NOW"_111
-    echo 222_"$GTK_FONT_NEW"_222
-    
     if [ -z "$GTK_FONT_NEW" ]; then
         GTK_FONT_NEW='Zekton 11'
     fi
@@ -269,7 +276,7 @@ export choose_font
 
 ####
 
-until [ $ENDLOOP =  "getouttahere"]; do
+until [ "$ENDLOOP" = "getouttahere" ]; do
     choose_font
 done
 
