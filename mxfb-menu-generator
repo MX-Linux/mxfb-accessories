@@ -99,13 +99,15 @@ name1=$(grep -o -m 1 '^Name=.*' "$file")
 ### end of localized menu entries generator	 
 
 name=$(echo $name1|sed 's/.*\=//') 
-command1=$(grep -o -m 1 'Exec=.*' "$file")
-command=$(echo $command1|sed -E 's/Exec\=//g')
+command1="$(grep -o -m 1 '^Exec=.*' "$file")"
+command=$(echo "$command1" |sed -E 's/Exec\=//g')
+name=$(echo "$name" |sed 's/[()]//g')
 terminal=$(grep -o -m 1 'Terminal=.*' "$file")
   if [[ $terminal == *"true"* ]]; then
-   command=$(echo xfce4-terminal -e $command1|sed -E 's/Exec\=//g') 
+   command=$(echo x-terminal-emulator -e $command) 
   fi
  categories=$(grep -o -m 1 'Categories=.*' "$file")
+
 
  nodisplay=$(grep -o -m 1 'NoDisplay=.*' "$file")
   if [[ $nodisplay == *"rue"* ]]; then
@@ -115,6 +117,7 @@ terminal=$(grep -o -m 1 'Terminal=.*' "$file")
   fi
   fi
 done > /tmp/list.txt
+
 sort /tmp/list.txt > ~/.fluxbox/pre-global-menu.txt
 rm $FILE
 #fix for repeated synaptic menu entry- first instance does not run, so, delete it:
