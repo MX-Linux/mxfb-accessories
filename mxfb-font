@@ -256,8 +256,11 @@ case $ret in
     fi
 
     if [ "$GTK_FONT_NOW" != "$GTK_FONT_NEW" ]; then
-        sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.config/gtk-3.0/settings.ini
-        sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.gtkrc-2.0
+        #sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.config/gtk-3.0/settings.ini
+        #sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.gtkrc-2.0
+        
+        GTK_FONT_NEW=$(echo "_$GTK_FONT_NEW_" / sed -e "s/\_/\'/g")
+        gsettings set org.gnome.desktop.interface font-name $GTK_FONT_NEW
 
         theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
         gsettings set org.gnome.desktop.interface gtk-theme ''
