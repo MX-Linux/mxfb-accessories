@@ -2,7 +2,7 @@
 
 ##This app was developed by MX Devs xxx 2023 and released under GPLv3
 
-# version 230516-01
+# version 230518-01
 
 #TEXTDOMAINDIR=/usr/share/locale 
 #export TEXTDOMAIN="mxfb-font"
@@ -93,16 +93,14 @@ CLASS="mxfb-font"
 ICONPATH="/usr/share/pixmaps/mxfb-font.svg"
 #helpfile=/usr/share/mxflux/HELP_Windowoverlay
 
-TEXT1="CHANGE FONTS"
-TEXT2="Default fonts are defined in the current fluxbox style."
-TEXT3="Select to override the default fonts, deselect to use default font"
-TEXT4="Gtk-font is independent of fluxbox style settings"
+TEXT1="Default fonts are defined in the current fluxbox style."
+TEXT2="Gtk-font is independent of fluxbox style settings"
 
 
 MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --borders=20 --center --width=400 --form --columns=2 --output-by-row \
 --align=left --separator="_" --button="${BTN_CLOSE}":7 --button="${BTN_APPLY}":6 \
---text="<big><b>$TEXT1</b></big>\n$TEXT2 $TEXT3\n$TEXT4\n" \
+--text="<i>$TEXT1\n$TEXT2\n</i>" \
 --field="<b>$(gettext 'Window Title Default'):</b>":LBL "" \
 --field="$(gettext 'Override with') ":CHK "$WINDOW_TITLE_OVERRIDE" \
 --field=" ":LBL "|" \
