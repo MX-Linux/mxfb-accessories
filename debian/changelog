@@ -1,9 +1,11 @@
-mxfb-accessories (23.05.03+nmu1) UNRELEASED; urgency=medium
+mxfb-accessories (23.05.03+nmu2) UNRELEASED; urgency=medium
 
   * Non-maintainer upload.
   * added mxfb-rofirun for F2 run dialog
+  * added mxfb-font, deleted mxfb-menufont
+  * adapted existing desktop file for mxfb-font
 
- -- Jerry <jb@mx>  Wed, 10 May 2023 16:19:38 -0400
+ -- Jerry <jb@mx>  Thu, 18 May 2023 21:20:56 -0400
 
 mxfb-accessories (23.05.03) mx; urgency=medium
 
