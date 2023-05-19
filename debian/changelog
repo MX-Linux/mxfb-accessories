@@ -1,12 +1,18 @@
-mxfb-accessories (23.05.03+nmu3) UNRELEASED; urgency=medium
+mxfb-accessories (23.05.04mx23) mx; urgency=medium
 
+  [ Jerry ]
   * Non-maintainer upload.
   * added mxfb-rofirun for F2 run dialog
   * added mxfb-font, deleted mxfb-menufont
   * adapted existing desktop file for mxfb-font
   * updated translations of mxfb-font.desktop 
 
- -- Jerry <jb@mx>  Fri, 19 May 2023 13:39:25 -0400
+  [ Dolphin Oracle ]
+  * new build
+  * clean up translations  
+  * mx23 build
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 19 May 2023 19:33:31 -0400
 
 mxfb-accessories (23.05.03) mx; urgency=medium
 
