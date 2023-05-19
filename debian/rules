@@ -2,3 +2,4 @@
 %:
 	dh $@
 override_dh_usrlocal:
+	translations_script/update-po-mo.sh mo

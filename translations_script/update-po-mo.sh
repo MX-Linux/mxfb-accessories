@@ -11,9 +11,9 @@ make_po()
 for val in $lang; do
     if [ ! -e "po/$val/$RESOURCE.po" ]; then
         mkdir -p po/$val
-        msginit --input=po/"$RESOURCE".pot --no-translator --locale=$val --output=po/$val/"$RESOURCE".po
+        msginit --input=pot/"$RESOURCE".pot --no-translator --locale=$val --output=po/$val/"$RESOURCE".po
     else
-        msgmerge --update po/$val/$RESOURCE.po po/$RESOURCE.pot
+        msgmerge --update po/$val/$RESOURCE.po pot/$RESOURCE.pot
     fi
 done
 }
@@ -26,13 +26,13 @@ fi
 xgettext --language Shell  --add-comments --sort-output -o pot/$RESOURCE.pot ../mxfb-menu-generator ../mxfb-tint2-manager ../mxfb-trashcheck ../mxfb-bg-rotate ../mxfb-borders ../mxfb-font ../mxfb-quickshot ../mxfb-separate-backgrounds ../mxfb-tiles ../mxfb-timer ../mxfb-top ../mxfb-look ../exit-options-manager
 }
 
-
+##during deb package build
 make_mo()
 {
     for val in $lang; do
-        if [ ! -e "mo/$val/$RESOURCE.mo" ]; then
-            mkdir -p mo/$val
-            msgfmt --output-file=mo/$val/"$RESOURCE".mo po/"${RESOURCE}_${val}.po"
+        if [ ! -e "translations_script/mo/$val/$RESOURCE.mo" ]; then
+            mkdir -p translations_script/mo/$val
+            msgfmt --output-file=translations_script/mo/$val/"$RESOURCE".mo translations_script/po/"${RESOURCE}_${val}.po"
         fi
     done
 }
