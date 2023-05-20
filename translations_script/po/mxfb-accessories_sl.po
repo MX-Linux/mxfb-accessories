@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-01 22:13-0400\n"
+"POT-Creation-Date: 2023-05-19 07:04-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2023\n"
 "Language-Team: Slovenian (https://app.transifex.com/anticapitalista/teams/10162/sl/)\n"
@@ -48,6 +48,10 @@ msgstr ""
 "\n"
 "    --Več o tem: v MX Wiki poiščite \"Quickshot\""
 
+#: ../mxfb-look:267 ../mxfb-look:294
+msgid " "
+msgstr " "
+
 #: ../mxfb-separate-backgrounds:12
 msgid ""
 "  This app allows you to configure separate backgrounds for each Workspace  "
@@ -69,6 +73,18 @@ msgstr "Za vsako delovno površino se bo pojavilo izbirno okno."
 msgid " Type \\"
 msgstr "Vrsta \\"
 
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr "$TITLE1"
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr "$TITLE2"
+
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12 ur/24 ur"
@@ -80,6 +96,16 @@ msgstr "Prvi Tint2 pano"
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr "Drugi Tint2 pano"
+
+#: ../mxfb-look:552
+msgid "<b>   "
+msgstr "<b>   "
+
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
+msgstr "<b>$LOOKRESTORE</b>\\n"
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -154,7 +180,7 @@ msgstr ""
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "Opravljeno!\\n\\nVidez je bil shranjen kot <b>$NEWNAME</b>"
 
-#: ../mxfb-tint2-manager:96 ../exit-options-manager:32
+#: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Uveljavi"
 
@@ -179,8 +205,14 @@ msgstr "Označi za zagon, odznači za zaustavitev"
 msgid "Click \\"
 msgstr "Klikni \\"
 
+#. !/bin/bash
+#. #This app was developed by MX Devs xxx 2023 and released under GPLv3
+#. version 230518-01
+#. TEXTDOMAINDIR=/usr/share/locale
+#. export TEXTDOMAIN="mxfb-font"
+#. source gettext.sh
 #. buttons
-#: ../mxfb-tint2-manager:97 ../exit-options-manager:29
+#: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../exit-options-manager:29
 msgid "Close"
 msgstr "Zapri"
 
@@ -265,6 +297,10 @@ msgstr "GTK ikone"
 msgid "GTK Theme"
 msgstr "GTK tema"
 
+#: ../mxfb-font:113
+msgid "Gtk Font"
+msgstr ""
+
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
 msgstr "POMOČ"
@@ -273,7 +309,7 @@ msgstr "POMOČ"
 msgid "HELP: how to take a screenshot"
 msgstr "POMOČ: kako zajeti zaslon"
 
-#: ../mxfb-tint2-manager:100 ../exit-options-manager:30
+#: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../exit-options-manager:30
 msgid "Help"
 msgstr "Pomoč"
 
@@ -302,6 +338,11 @@ msgstr "Ime videza $NEWNAME je zaščiteno. Izberite drugo ime"
 msgid "MXFB Timer"
 msgstr "MXFB čaovnik"
 
+#. ###
+#: ../mxfb-font:91
+msgid "MXFB-Font"
+msgstr ""
+
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
 msgid "MXFB-Look"
@@ -310,6 +351,14 @@ msgstr "MXFB-videz"
 #: ../exit-options-manager:142
 msgid "Margin"
 msgstr "Rob"
+
+#: ../mxfb-font:110
+msgid "Menu Text Default"
+msgstr ""
+
+#: ../mxfb-font:107
+msgid "Menu Title Default"
+msgstr ""
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -327,7 +376,7 @@ msgstr "Brez menjav: zamik = 0"
 msgid "None"
 msgstr "brez"
 
-#: ../mxfb-tint2-manager:101 ../exit-options-manager:31
+#: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
 msgstr "V redu"
 
@@ -339,6 +388,10 @@ msgstr "Lahko nadaljujem?"
 #: ../mxfb-borders:17
 msgid "OPTIONAL BORDER STYLE CONFIG"
 msgstr "NASTAVITEV IZBIRNEGA SLOGA ROBA"
+
+#: ../mxfb-font:105 ../mxfb-font:108 ../mxfb-font:111
+msgid "Override with"
+msgstr ""
 
 #: ../mxfb-look:286
 #, sh-format
@@ -479,6 +532,10 @@ msgstr "Počakajte 10 sekund, da se conky ponovno zažene"
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
 msgstr "Ozadje"
+
+#: ../mxfb-font:104
+msgid "Window Title Default"
+msgstr ""
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

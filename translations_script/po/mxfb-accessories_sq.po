@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-01 22:13-0400\n"
+"POT-Creation-Date: 2023-05-19 07:04-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2023\n"
 "Language-Team: Albanian (https://app.transifex.com/anticapitalista/teams/10162/sq/)\n"
@@ -46,6 +46,10 @@ msgstr ""
 "\n"
 "    --Më tepër: kërkoni për “Quickshot” në MX Wiki"
 
+#: ../mxfb-look:267 ../mxfb-look:294
+msgid " "
+msgstr " "
+
 #: ../mxfb-separate-backgrounds:12
 msgid ""
 "  This app allows you to configure separate backgrounds for each Workspace  "
@@ -67,6 +71,18 @@ msgstr " Për secilën Hapësirë pune do të shfaqen dritare për përzgjedhje.
 msgid " Type \\"
 msgstr " Shtypni \\"
 
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr "$TITLE1"
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr "$TITLE2"
+
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12h/24h"
@@ -78,6 +94,16 @@ msgstr "Paneli i parë Tint2"
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr "Paneli i dytë Tint2"
+
+#: ../mxfb-look:552
+msgid "<b>   "
+msgstr "<b>   "
+
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
+msgstr "<b>$LOOKRESTORE</b>\\n"
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -152,7 +178,7 @@ msgstr ""
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "Kaq qe!\\n\\nPamja është ruajtur si <b>$NEWNAME</b>"
 
-#: ../mxfb-tint2-manager:96 ../exit-options-manager:32
+#: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Zbatoje"
 
@@ -177,8 +203,14 @@ msgstr "I vini shenjë të xhirohet, hiqjani shenjën, që të ndalet"
 msgid "Click \\"
 msgstr "Klikoni \\"
 
+#. !/bin/bash
+#. #This app was developed by MX Devs xxx 2023 and released under GPLv3
+#. version 230518-01
+#. TEXTDOMAINDIR=/usr/share/locale
+#. export TEXTDOMAIN="mxfb-font"
+#. source gettext.sh
 #. buttons
-#: ../mxfb-tint2-manager:97 ../exit-options-manager:29
+#: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../exit-options-manager:29
 msgid "Close"
 msgstr "Mbylle"
 
@@ -263,6 +295,10 @@ msgstr "Ikona GTK"
 msgid "GTK Theme"
 msgstr "Temë Gtk"
 
+#: ../mxfb-font:113
+msgid "Gtk Font"
+msgstr ""
+
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
 msgstr "NDIHMË"
@@ -271,7 +307,7 @@ msgstr "NDIHMË"
 msgid "HELP: how to take a screenshot"
 msgstr "NDIHMË: si të bëhet një foto ekrani"
 
-#: ../mxfb-tint2-manager:100 ../exit-options-manager:30
+#: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../exit-options-manager:30
 msgid "Help"
 msgstr "Ndihmë"
 
@@ -300,6 +336,11 @@ msgstr "Emri $NEWNAME për pamje është i rezervuar. Zgjidhni tjetër emër."
 msgid "MXFB Timer"
 msgstr "Kohëmatës MXFB"
 
+#. ###
+#: ../mxfb-font:91
+msgid "MXFB-Font"
+msgstr ""
+
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
 msgid "MXFB-Look"
@@ -308,6 +349,14 @@ msgstr ""
 #: ../exit-options-manager:142
 msgid "Margin"
 msgstr "Mënjanë"
+
+#: ../mxfb-font:110
+msgid "Menu Text Default"
+msgstr ""
+
+#: ../mxfb-font:107
+msgid "Menu Title Default"
+msgstr ""
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -325,7 +374,7 @@ msgstr "Pa rrotullim: Vonesë = 0"
 msgid "None"
 msgstr "Asnjë"
 
-#: ../mxfb-tint2-manager:101 ../exit-options-manager:31
+#: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
 msgstr "OK"
 
@@ -337,6 +386,10 @@ msgstr "OK të vazhdohet?"
 #: ../mxfb-borders:17
 msgid "OPTIONAL BORDER STYLE CONFIG"
 msgstr "FORMËSIM OPSIONAL STILI ANËSH"
+
+#: ../mxfb-font:105 ../mxfb-font:108 ../mxfb-font:111
+msgid "Override with"
+msgstr ""
 
 #: ../mxfb-look:286
 #, sh-format
@@ -474,6 +527,10 @@ msgstr "Prisni 10 sekonda që të riniset Conky"
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
 msgstr "Sfond"
+
+#: ../mxfb-font:104
+msgid "Window Title Default"
+msgstr ""
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

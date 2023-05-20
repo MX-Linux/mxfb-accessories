@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-01 22:13-0400\n"
+"POT-Creation-Date: 2023-05-19 07:04-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Green <usergreen@users.osdn.me>, 2023\n"
 "Language-Team: Japanese (https://app.transifex.com/anticapitalista/teams/10162/ja/)\n"
@@ -51,6 +51,10 @@ msgstr ""
 "    --先に進むに同意したあとで、クリックでヘルプをキャプチャします。\n"
 "    --さらに:  MX Wiki の \"Quickshot\" で検索します"
 
+#: ../mxfb-look:267 ../mxfb-look:294
+msgid " "
+msgstr " "
+
 #: ../mxfb-separate-backgrounds:12
 msgid ""
 "  This app allows you to configure separate backgrounds for each Workspace  "
@@ -70,6 +74,18 @@ msgstr "選択ウィンドウはワークスペース毎にポップアップ表
 msgid " Type \\"
 msgstr " Type \\"
 
+#. #begin first message box
+#: ../mxfb-tiles:37
+#, sh-format
+msgid "$TITLE1"
+msgstr "$TITLE1"
+
+#. #begin second message box
+#: ../mxfb-tiles:135
+#, sh-format
+msgid "$TITLE2"
+msgstr "$TITLE2"
+
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
 msgstr "12時間制/24時間制"
@@ -81,6 +97,16 @@ msgstr "1つ目の Tint2 パネル"
 #: ../mxfb-look:221 ../mxfb-look:544
 msgid "2nd Tint2 Panel"
 msgstr "2つ目の Tint2 パネル"
+
+#: ../mxfb-look:552
+msgid "<b>   "
+msgstr "<b>   "
+
+#. RESTOREMAIN
+#: ../mxfb-look:538
+#, sh-format
+msgid "<b>$LOOKRESTORE</b>\\n"
+msgstr "<b>$外観の復元</b>\\n"
 
 #: ../mxfb-look:293
 msgid "<b>Name for New Look</b>"
@@ -152,7 +178,7 @@ msgstr "この名前の外観はすでに存在します。\\n\\n$NEWNAME を上
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "完了です!\\n\\n外観は <b>$NEWNAME</b> として保存しました。"
 
-#: ../mxfb-tint2-manager:96 ../exit-options-manager:32
+#: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
 msgstr "適用"
 
@@ -167,7 +193,7 @@ msgstr "キャンセルしました！"
 
 #: ../exit-options-manager:149
 msgid "Change Window Settings"
-msgstr ""
+msgstr "ウィンドウの設定変更"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
@@ -177,8 +203,14 @@ msgstr "チェックすると実行、チェックを外すと中止"
 msgid "Click \\"
 msgstr " \\ をクリック"
 
+#. !/bin/bash
+#. #This app was developed by MX Devs xxx 2023 and released under GPLv3
+#. version 230518-01
+#. TEXTDOMAINDIR=/usr/share/locale
+#. export TEXTDOMAIN="mxfb-font"
+#. source gettext.sh
 #. buttons
-#: ../mxfb-tint2-manager:97 ../exit-options-manager:29
+#: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../exit-options-manager:29
 msgid "Close"
 msgstr "閉じる"
 
@@ -263,6 +295,10 @@ msgstr "GTK アイコン"
 msgid "GTK Theme"
 msgstr "GTK テーマ"
 
+#: ../mxfb-font:113
+msgid "Gtk Font"
+msgstr ""
+
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
 msgstr "ヘルプ"
@@ -271,13 +307,13 @@ msgstr "ヘルプ"
 msgid "HELP: how to take a screenshot"
 msgstr "ヘルプ: 画面を撮影する方法"
 
-#: ../mxfb-tint2-manager:100 ../exit-options-manager:30
+#: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../exit-options-manager:30
 msgid "Help"
 msgstr "ヘルプ"
 
 #: ../exit-options-manager:141
 msgid "Icon Size"
-msgstr ""
+msgstr "アイコンの大きさ"
 
 #: ../mxfb-bg-rotate:44
 msgid "Image folder"
@@ -300,6 +336,11 @@ msgstr "$NEWNAME という外観の名前は保護されていて変更不可で
 msgid "MXFB Timer"
 msgstr "MXFB タイマー"
 
+#. ###
+#: ../mxfb-font:91
+msgid "MXFB-Font"
+msgstr ""
+
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
 msgid "MXFB-Look"
@@ -307,6 +348,14 @@ msgstr "MXFB の外観"
 
 #: ../exit-options-manager:142
 msgid "Margin"
+msgstr "余白"
+
+#: ../mxfb-font:110
+msgid "Menu Text Default"
+msgstr ""
+
+#: ../mxfb-font:107
+msgid "Menu Title Default"
 msgstr ""
 
 #: ../mxfb-tiles:13
@@ -325,7 +374,7 @@ msgstr "回転しない：遅延 = 0"
 msgid "None"
 msgstr "なし"
 
-#: ../mxfb-tint2-manager:101 ../exit-options-manager:31
+#: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
 msgstr "OK"
 
@@ -337,6 +386,10 @@ msgstr "続行してもいいですか？"
 #: ../mxfb-borders:17
 msgid "OPTIONAL BORDER STYLE CONFIG"
 msgstr "ボーダースタイルのオプション設定"
+
+#: ../mxfb-font:105 ../mxfb-font:108 ../mxfb-font:111
+msgid "Override with"
+msgstr ""
 
 #: ../mxfb-look:286
 #, sh-format
@@ -382,7 +435,7 @@ msgstr "別の名前で保存します"
 #. run main dialog
 #: ../exit-options-manager:149
 msgid "Select Icon Theme"
-msgstr ""
+msgstr "アイコンのテーマを選択"
 
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
@@ -399,7 +452,7 @@ msgstr "サイズ"
 
 #: ../exit-options-manager:143
 msgid "Spacing"
-msgstr ""
+msgstr "間隔"
 
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:56
@@ -419,7 +472,7 @@ msgstr "既存ファイルを次の場所にバックアップします:"
 
 #: ../exit-options-manager:247
 msgid "The following settings can also be defined"
-msgstr ""
+msgstr "また、以下の設定も定義可能です。"
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -450,7 +503,7 @@ msgstr "この操作で新規設定ファイルをインストールします"
 
 #: ../exit-options-manager:140
 msgid "Timeout"
-msgstr ""
+msgstr "タイムアウト"
 
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
@@ -474,6 +527,10 @@ msgstr "Conky が再起動するのに 10 秒間お待ちください"
 msgid "Wallpaper"
 msgstr "壁紙"
 
+#: ../mxfb-font:104
+msgid "Window Title Default"
+msgstr ""
+
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
 msgstr "\\n"
@@ -492,7 +549,7 @@ msgstr "\\n<b> 外観をどれか選択してください！</b>\\n"
 
 #: ../exit-options-manager:235
 msgid "\\nIcon themes can be defined by creating a file"
-msgstr ""
+msgstr "\\nアイコンテーマは、ファイルを作成して定義することができます。"
 
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
@@ -528,7 +585,7 @@ msgstr "復元 (_R)"
 msgid ""
 "and adding the paths for the desired 64x64 pixel icons to the following "
 "definitions"
-msgstr ""
+msgstr "以下の定義に従って、目的の 64x64 ピクセルのアイコンへのパスを追加します。"
 
 #. Note: Comment lines above gettext lines are visible to translators.
 #. The capture of a screenshot was aborted.
