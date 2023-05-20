@@ -1,3 +1,9 @@
+mxfb-accessories (23.05.06mx23) mx; urgency=medium
+
+  * update apt.conf.d configuration for mxfb-menu-generator 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 20 May 2023 16:49:08 -0400
+
 mxfb-accessories (23.05.05mx23) mx; urgency=medium
 
   * mxfb-menu-geneartor 5 second cooldown

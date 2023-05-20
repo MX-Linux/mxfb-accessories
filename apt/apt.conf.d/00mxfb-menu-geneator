@@ -1,0 +1,13 @@
+// Update MX fluxbox applications menu if needed
+// file /etc/apt/apt.conf.d/00-mxfb-menu-generator
+
+DPkg {
+  Pre-Invoke {
+    "if [ -x /usr/bin/mxfb-menu-generator ]; then /usr/bin/stat -c %Y /usr/share/applications /usr/share/applications/antix 2>/dev/null > /tmp/dpkg-pre-invoke-timestamp; fi";
+  };
+  Post-Invoke {
+    "if [ -x /usr/bin/mxfb-menu-generator ]; then /usr/bin/stat -c %Y /usr/share/applications /usr/share/applications/antix 2>/dev/null > /tmp/dpkg-post-invoke-timestamp; /usr/bin/cmp -s /tmp/dpkg-pre-invoke-timestamp /tmp/dpkg-post-invoke-timestamp || su $(logname) /usr/bin/mxfb-menu-generator auto; fi";
+  };
+};
+
+

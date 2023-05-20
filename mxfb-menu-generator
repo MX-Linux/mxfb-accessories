@@ -30,12 +30,12 @@ if [ "$1" = "auto" ]; then
 fi
 
 #check time since last build
-time=$(stat --format %Y $HOME/.fluxbox/submenus/full_menu)
-now=$(date +"%s")
+#time=$(stat --format %Y $HOME/.fluxbox/submenus/full_menu)
+#now=$(date +"%s")
 
-if [ $(($now-$time)) -lt 5 ]; then
-	exit 0
-fi 
+#if [ $(($now-$time)) -lt 5 ]; then
+#	exit 0
+#fi 
 
 Encoding=UTF-8
 #

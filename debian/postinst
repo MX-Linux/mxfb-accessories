@@ -12,5 +12,11 @@ if [ -d "/etc/apt/apt.conf.d/apt.conf.d" ]; then
 	rm -R /etc/apt/apt.conf.d/apt.conf.d
 fi
 
+if [ -e "/etc/apt/apt.conf.d/00exectmp" ]; then
+	if [ -z "$(grep mxfb-menu-generator /etc/apt/apt.conf.d/00exectmp)" ]; then
+		rm /etc/apt/apt.conf.d/00exectmp
+	fi
+fi
+
 exit 0
 
