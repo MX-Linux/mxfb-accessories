@@ -13,7 +13,7 @@ if [ -d "/etc/apt/apt.conf.d/apt.conf.d" ]; then
 fi
 
 if [ -e "/etc/apt/apt.conf.d/00exectmp" ]; then
-	if [ -z "$(grep mxfb-menu-generator /etc/apt/apt.conf.d/00exectmp)" ]; then
+	if [ -n "$(grep mxfb-menu-generator /etc/apt/apt.conf.d/00exectmp)" ]; then
 		rm /etc/apt/apt.conf.d/00exectmp
 	fi
 fi
