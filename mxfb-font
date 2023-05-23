@@ -2,7 +2,7 @@
 
 ##This app was developed by MX Devs xxx 2023 and released under GPLv3
 
-# version 230523-01-test
+# version 230523-02-test
 
 #TEXTDOMAINDIR=/usr/share/locale 
 #export TEXTDOMAIN="mxfb-font"
@@ -325,7 +325,7 @@ export fb_font
         NEWSIZE="${menu_title_new[-1]}"
         unset 'menu_title_new[-1]'
 
-        new_font=$menu_title_new
+        new_font="${menu_title_new[@]}"
 ###
         fb_font
 ###
@@ -357,7 +357,7 @@ export fb_font
         NEWSIZE="${menu_frame_new[-1]}"
         unset 'menu_frame_new[-1]'
 
-        new_font=$menu_frame_new
+        new_font="${menu_frame_new[@]}"
 ###
         fb_font
 ###
