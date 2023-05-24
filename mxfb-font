@@ -2,7 +2,7 @@
 
 ##This app was developed by MX Devs xxx 2023 and released under GPLv3
 
-# version 230523-02-test
+# version 230524-01-test
 
 #TEXTDOMAINDIR=/usr/share/locale 
 #export TEXTDOMAIN="mxfb-font"
@@ -162,7 +162,7 @@ GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini | sed -e 
 
 ####
 
-TITLE="$(gettext 'MXFB-Font')"
+TITLE="$(gettext 'Font')"
 CLASS="mxfb-font"
 ICONPATH="/usr/share/pixmaps/mxfb-font.svg"
 #helpfile=/usr/share/mxflux/HELP_Windowoverlay
@@ -226,6 +226,9 @@ if [ $i = 'Italic' ]; then
 
     elif [ $i = 'Bold' ]; then
     local BOLD=' Bold'
+    
+    elif [ $i = 'Oblique' ]; then
+    local OBLIQUE=' Oblique'
 
     elif [ $i = 'Condensed' ]; then
     local COND1=' Condensed'
@@ -244,7 +247,16 @@ if [ $i = 'Italic' ]; then
 fi
 done
 
-if [ "$ITALIC" = " Italic" ]; then
+if [ "$OBLIQUE" = " Oblique" ]; then
+    if [ "$BOLD" = " Bold" ]; then
+    NEWTYPE=$BOLD:$OBLIQUE
+    OBLIQUE=""
+    BOLD=""
+    else
+    NEWTYPE=$OBLIQUE
+    OBLIQUE=""
+    fi
+elif [ "$ITALIC" = " Italic" ]; then
     if [ "$BOLD" = " Bold" ]; then
     NEWTYPE=$BOLD:$ITALIC
     ITALIC=""
@@ -265,7 +277,7 @@ if [ "$COND2" = " Condensed," ]; then
     COND1=""
 fi
 
-NEWFONT=$(echo "${new_font[@]}" | sed -e "s/ Italic//" | sed -e "s/ Bold//" | sed -e "s/ Light//" | sed -e "s/\,//" | sed -e "s/ Condensed//g")
+NEWFONT=$(echo "${new_font[@]}" | sed -e "s/ Italic//" | sed -e "s/ Bold//" | sed -e "s/ Oblique//" | sed -e "s/ Light//" | sed -e "s/\,//" | sed -e "s/ Condensed//g")
 
 NEWFONT=$(echo "$NEWFONT$COND1$LIGHT$MEDIUM$EXTRABOLD$COND2$BOLD-$NEWSIZE:$NEWTYPE")
 
