@@ -2,7 +2,7 @@
 
 ##This app was developed by MX Devs xxx 2023 and released under GPLv3
 
-# version 230518-01
+# version 230524-01-test
 
 #TEXTDOMAINDIR=/usr/share/locale 
 #export TEXTDOMAIN="mxfb-font"
@@ -17,32 +17,33 @@ export BTN_APPLY=$(gettext "Apply")        ; BTN_OK+='!object-select'
 ####check overlay file
 CHECK_WINTITLE="$(grep "window.font: " $HOME/.fluxbox/overlay)"
 if [ -z "$CHECK_WINTITLE" ]; then
-    echo '#window.font: Sans-12:Regular' >> $HOME/.fluxbox/overlay
+    echo '#window.font: Sans-11:Regular' >> "$HOME"/.fluxbox/overlay
 fi
 
 CHECK_MENUTITLE="$(grep "menu.title.font: " $HOME/.fluxbox/overlay)"
 if [ -z "$CHECK_MENUTITLE" ]; then
-    echo '#menu.title.font: Sans-11:Regular' >> $HOME/.fluxbox/overlay
+    echo '#menu.title.font: Sans-11:Regular' >> "$HOME"/.fluxbox/overlay
 fi
 
 CHECK_MENUFRAME="$(grep "menu.frame.font: " $HOME/.fluxbox/overlay)"
 if [ -z "$CHECK_MENUFRAME" ]; then
-    echo '#menu.frame.font: Sans-10:Regular' >> $HOME/.fluxbox/overlay
+    echo '#menu.frame.font: Sans-10:Regular' >> "$HOME"/.fluxbox/overlay
 fi
+
 
 ####
 
 function choose_font() {
 
-STYLE="$(grep 'session.styleFile:' $HOME/.fluxbox/init | sed -e "s/session\.styleFile\://")"
+STYLE="$(grep 'session.styleFile:' $HOME/.fluxbox/init | sed -e "s/session\.styleFile\:	//")"
 
 STYLE_MENU_FRAME="$(grep 'menu.frame.font:' $STYLE/theme.cfg | sed -e "s/menu\.frame\.font\://")"
 STYLE_MENU_TITLE="$(grep 'menu.title.font:' $STYLE/theme.cfg | sed -e "s/menu\.title\.font\://")"
 STYLE_WINDOW_TITLE="$(grep 'window.font:' $STYLE/theme.cfg | sed -e "s/window\.font\://")"
 
-WINDOW_TITLE_NOW="$(grep "#window.font: " $HOME/.fluxbox/overlay)"
-MENU_TITLE_NOW="$(grep "#menu.title.font: " $HOME/.fluxbox/overlay)"
-MENU_FRAME_NOW="$(grep "#menu.frame.font: " $HOME/.fluxbox/overlay)"
+WINDOW_TITLE_NOW="$(grep "#window.font" $HOME/.fluxbox/overlay)"
+MENU_TITLE_NOW="$(grep "#menu.title.font" $HOME/.fluxbox/overlay)"
+MENU_FRAME_NOW="$(grep "#menu.frame.font" $HOME/.fluxbox/overlay)"
 
 
 if [ -z "$WINDOW_TITLE_NOW" ]; then
@@ -65,30 +66,103 @@ fi
 
 ####
 
-WINDOW_TITLE_NOW="$(grep "window.font: " $HOME/.fluxbox/overlay | sed -e "s/window\.font\://" | sed -e "s/-/ /g" | sed -e "s/\:/ /g" | sed -e "s/\#/ /g")"
+WINDOW_TITLE_NOW="$(grep "window.font" $HOME/.fluxbox/overlay | sed -e "s/window\.font\://" | sed -e "s/-/ /g" | sed -e "s/\:/ /g" | sed -e "s/\#/ /g")"
 window_title_now=($WINDOW_TITLE_NOW)
-WINDOW_TITLE_SIZE="${window_title_now[-2]}"
-unset 'window_title_now[-2]'
+###
+numa=0
+
+until [ "$CHECKNUM_A" = "okay" ]
+do
+    WINDOW_TITLE_SIZE="${window_title_now[$numa]}"
+
+        if [[ ! "$WINDOW_TITLE_SIZE" =~ ^[0-9]+$ ]]; then
+            numa=$(($numa-1))
+        else
+            CHECKNUM_A=okay
+        fi
+done
+
+unset 'window_title_now[$numa]'
+unset 'CHECKNUM_A'
+unset 'num'
+
 WINDOW_TITLE_NOW=$(echo "${window_title_now[@]}" $WINDOW_TITLE_SIZE)
 
-MENU_TITLE_NOW="$(grep "menu.title.font: " $HOME/.fluxbox/overlay | sed -e "s/menu\.title\.font\://" | sed -e "s/-/ /g" | sed -e "s/\:/ /g" | sed -e "s/\#/ /g")"
+###
+
+MENU_TITLE_NOW="$(grep "menu.title.font" $HOME/.fluxbox/overlay | sed -e "s/menu\.title\.font\://" | sed -e "s/-/ /g" | sed -e "s/\:/ /g" | sed -e "s/\#/ /g")"
 menu_title_now=($MENU_TITLE_NOW)
-MENU_TITLE_SIZE="${menu_title_now[-2]}"
-unset 'menu_title_now[-2]'
+###
+numb=0
+until [ "$CHECKNUM_B" = "okay" ]
+do
+    MENU_TITLE_SIZE="${menu_title_now[$numb]}"
+        if [[ ! "$MENU_TITLE_SIZE" =~ ^[0-9]+$ ]]; then
+            numb=$(($numb-1))
+        else
+            CHECKNUM_B=okay
+        fi
+done
+
+unset 'menu_title_now[$numb]'
+unset 'CHECKNUM_B'
+
 MENU_TITLE_NOW=$(echo "${menu_title_now[@]}" $MENU_TITLE_SIZE)
 
-MENU_FRAME_NOW="$(grep "menu.frame.font: " $HOME/.fluxbox/overlay | sed -e "s/menu\.frame\.font\://" | sed -e "s/-/ /g" | sed -e "s/\:/ /g" | sed -e "s/\#/ /g")"
-menu_frame_now=($MENU_FRAME_NOW)
-MENU_FRAME_SIZE="${menu_frame_now[-2]}"
-unset 'menu_frame_now[-2]'
-MENU_FRAME_NOW=$(echo "${menu_frame_now[@]}" $MENU_FRAME_SIZE)
+###
 
-GTK_FONT_NOW="$(grep "gtk-font-name" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-font-name\=//" )"
+MENU_FRAME_NOW="$(grep "menu.frame.font" $HOME/.fluxbox/overlay | sed -e "s/menu\.frame\.font\://" | sed -e "s/-/ /g" | sed -e "s/\:/ /g" | sed -e "s/\#/ /g")"
+menu_frame_now=($MENU_FRAME_NOW)
+###
+numc=0
+until [ "$CHECKNUM_C" = "okay" ]
+do
+    MENU_FRAME_SIZE="${menu_frame_now[$numc]}"
+        if [[ ! "$MENU_FRAME_SIZE" =~ ^[0-9]+$ ]]; then
+            numc=$(($numc-1))
+        else
+            CHECKNUM_C=okay
+        fi
+done
+
+unset 'menu_frame_now[$numc]'
+unset 'CHECKNUM_C'
+
+MENU_FRAME_NOW=$(echo "${menu_frame_now[@]}" $MENU_FRAME_SIZE)
+###
 
 
 ####
+GTK_FONT_NOW="$(grep "gtk-font-name" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-font-name\=//" )"
 
-TITLE="$(gettext 'MXFB-Font')"
+#gtk-xft-antialias=1 true 0 false
+GTK_ANTI_NOW="$(grep "gtk-xft-antialias" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-xft-antialias\=//" )"
+    if [ "$GTK_ANTI_NOW" = "1" ]; then
+        GTK_ANTI_NOW=TRUE
+    else
+        GTK_ANTI_NOW=FALSE
+    fi
+
+#gtk-xft-hinting=1 true 0 false
+#gtk-xft-hintstyle=hintnone!hintslight!hintmedium!hintfull
+
+GTK_HINT_NOW="$(grep "gtk-xft-hinting" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-xft-hinting\=//" )"
+    if [ "$GTK_HINT_NOW" = "1" ]; then
+        GTK_HINT_NOW=TRUE
+    else
+        GTK_HINT_NOW=FALSE
+    fi
+
+GTK_HINTSTYLE_NOW="$(grep "gtk-xft-hintstyle" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-xft-hintstyle\=//" )"
+GTK_HINTSTYLE_NOW="$(echo $GTK_HINTSTYLE_NOW | sed -e "s/hint//" )"
+
+
+#gtk-xft-rgba=none!rgb!bgr!vrgb!vbgr
+GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-xft-rgba\=//" )"
+
+####
+
+TITLE="$(gettext 'Font')"
 CLASS="mxfb-font"
 ICONPATH="/usr/share/pixmaps/mxfb-font.svg"
 #helpfile=/usr/share/mxflux/HELP_Windowoverlay
@@ -96,11 +170,10 @@ ICONPATH="/usr/share/pixmaps/mxfb-font.svg"
 TEXT1="Default fonts are defined in the current fluxbox style."
 TEXT2="Gtk-font is independent of fluxbox style settings"
 
-
 MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
---borders=20 --center --width=400 --form --columns=2 --output-by-row \
+--borders=20 --center --width=500 --form --columns=2 --output-by-row \
 --align=left --separator="_" --button="${BTN_CLOSE}":7 --button="${BTN_APPLY}":6 \
---text="<i>$TEXT1\n$TEXT2\n</i>" \
+--text="$TEXT1\n$TEXT2\n" \
 --field="<b>$(gettext 'Window Title Default'):</b>":LBL "" \
 --field="$(gettext 'Override with') ":CHK "$WINDOW_TITLE_OVERRIDE" \
 --field=" ":LBL "|" \
@@ -111,6 +184,9 @@ MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --field="$(gettext 'Override with') ":CHK "$MENU_FRAME_OVERRIDE" \
 --field=" ":LBL "|" \
 --field="<b>$(gettext 'Gtk Font'): </b>":LBL "|" \
+--field=" ":LBL "|" \
+--field="$(gettext 'Hinting')":CHK "$GTK_HINT_NOW" \
+--field="$(gettext 'Antialising')":CHK "$GTK_ANTI_NOW" \
 --field="<b>$STYLE_WINDOW_TITLE</b>":LBL "|" \
 --field=" ":FN "$WINDOW_TITLE_NOW" \
 --field=" ":LBL "|" \
@@ -120,7 +196,10 @@ MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --field="<b>$STYLE_MENU_FRAME</b>":LBL "|" \
 --field=" ":FN "$MENU_FRAME_NOW" \
 --field=" ":LBL "|" \
---field=" ":FN "$GTK_FONT_NOW"
+--field=" ":FN "$GTK_FONT_NOW" \
+--field=" ":LBL "|" \
+--field="$(gettext 'Hinting Style')":CB "$GTK_HINTSTYLE_NOW!none!slight!medium!full" \
+--field="$(gettext 'Sub-pixels')":CB "$GTK_RGBA_NOW!rgb!bgr!vrgb!vbgr"
 )
 
 ret=$?
@@ -136,13 +215,82 @@ case $ret in
 
     override=($RES)
 
+####function fb_font
+
+fb_font() {
+
+for i in $( eval echo "${new_font[@]}" )
+do
+if [ $i = 'Italic' ]; then
+    local ITALIC=' Italic'
+
+    elif [ $i = 'Bold' ]; then
+    local BOLD=' Bold'
+    
+    elif [ $i = 'Oblique' ]; then
+    local OBLIQUE=' Oblique'
+
+    elif [ $i = 'Condensed' ]; then
+    local COND1=' Condensed'
+
+    elif [ $i = 'Condensed,' ]; then
+    local COND2=' Condensed,'
+
+    elif [ $i = 'Light' ]; then
+    local LIGHT=' Light'
+
+    elif [ $i = 'Medium' ]; then
+    local MEDIUM=' Medium'
+
+    elif [ $i = 'Extrabold' ]; then
+    local EXTRABOLD=' Extrabold'
+fi
+done
+
+if [ "$OBLIQUE" = " Oblique" ]; then
+    if [ "$BOLD" = " Bold" ]; then
+    NEWTYPE=$BOLD:$OBLIQUE
+    OBLIQUE=""
+    BOLD=""
+    else
+    NEWTYPE=$OBLIQUE
+    OBLIQUE=""
+    fi
+elif [ "$ITALIC" = " Italic" ]; then
+    if [ "$BOLD" = " Bold" ]; then
+    NEWTYPE=$BOLD:$ITALIC
+    ITALIC=""
+    BOLD=""
+    else
+    NEWTYPE=$ITALIC
+    ITALIC=""
+    fi
+elif [ "$BOLD" = " Bold" ]; then
+    NEWTYPE=$BOLD
+    BOLD=""
+else NEWTYPE=Regular
+fi
+
+NEWTYPE=$(echo $NEWTYPE | sed -e "s/ //g")
+
+if [ "$COND2" = " Condensed," ]; then
+    COND1=""
+fi
+
+NEWFONT=$(echo "${new_font[@]}" | sed -e "s/ Italic//" | sed -e "s/ Bold//" | sed -e "s/ Oblique//" | sed -e "s/ Light//" | sed -e "s/\,//" | sed -e "s/ Condensed//g")
+
+NEWFONT=$(echo "$NEWFONT$COND1$LIGHT$MEDIUM$EXTRABOLD$COND2$BOLD-$NEWSIZE:$NEWTYPE")
+
+}
+
+export fb_font
 
 ####
 
     WINDOW_TITLE_OVERRIDE="${override[0]}"
 
     if [ "$WINDOW_TITLE_OVERRIDE" = FALSE ]; then
-        WINDOW_TITLE_NOW="$(grep "#window.font: " $HOME/.fluxbox/overlay)"
+        WINDOW_TITLE_NOW="$(grep "#window.font" $HOME/.fluxbox/overlay)"
             if [ -z "$WINDOW_TITLE_NOW" ]; then
                 sed -i 's/^window.font:/#&/' $HOME/.fluxbox/overlay
             fi
@@ -151,20 +299,17 @@ case $ret in
     if [ "$WINDOW_TITLE_OVERRIDE" = TRUE ]; then
         WINDOW_TITLE_NEW=$(echo "${override[1]}" | sed -e "s/-/ /g")
         window_title_new=($WINDOW_TITLE_NEW)
-        WINDOW_TITLE_NEWSIZE="${window_title_new[-1]}"
+        echo "${window_title_new[@]}"
+        NEWSIZE="${window_title_new[-1]}"
         unset 'window_title_new[-1]'
-        WINDOW_TITLE_NEWTYPE="${window_title_new[-1]}"
 
-        echo $WINDOW_TITLE_NEWTYPE
+        new_font="${window_title_new[@]}"
+###
+        fb_font
+###
+        unset new_font
 
-            if [ "$WINDOW_TITLE_NEWTYPE" = "Italic" -o "$WINDOW_TITLE_NEWTYPE" = "Bold" ]; then
-                unset 'window_title_new[-1]'
-            else
-                WINDOW_TITLE_NEWTYPE=Regular
-            fi
-
-        WINDOW_TITLE_NEW=$(echo "${window_title_new[@]}")
-        WINDOW_TITLE_NEW="window.font: $WINDOW_TITLE_NEW-$WINDOW_TITLE_NEWSIZE:$WINDOW_TITLE_NEWTYPE"
+        WINDOW_TITLE_NEW="window.font: $NEWFONT"
 
         WINDOW_TITLE_NOW="$(grep "window.font: " $HOME/.fluxbox/overlay)"
 
@@ -180,8 +325,8 @@ case $ret in
     MENU_TITLE_OVERRIDE="${override[2]}"
 
     if [ "$MENU_TITLE_OVERRIDE" = FALSE ]; then
-        MENU_TITLE_NOW="$(grep "#menu.title.font: " $HOME/.fluxbox/overlay)"
-            if [ -z "$WINDOW_TITLE_NOW" ]; then
+        MENU_TITLE_NOW="$(grep "#menu.title.font" $HOME/.fluxbox/overlay)"
+            if [ -z "$MENU_TITLE_NOW" ]; then
                 sed -i 's/^menu.title.font:/#&/' $HOME/.fluxbox/overlay
             fi
     fi
@@ -189,18 +334,15 @@ case $ret in
     if [ "$MENU_TITLE_OVERRIDE" = TRUE ]; then
         MENU_TITLE_NEW=$(echo "${override[3]}" | sed -e "s/-/ /g")
         menu_title_new=($MENU_TITLE_NEW)
-        MENU_TITLE_NEWSIZE="${menu_title_new[-1]}"
+        NEWSIZE="${menu_title_new[-1]}"
         unset 'menu_title_new[-1]'
-        MENU_TITLE_NEWTYPE="${menu_title_new[-1]}"
 
-            if [ "$MENU_TITLE_NEWTYPE" = "Italic" -o "$MENU_TITLE_NEWTYPE" = "Bold" ]; then
-                unset 'menu_title_new[-1]'
-            else
-                MENU_TITLE_NEWTYPE=Regular
-            fi
+        new_font="${menu_title_new[@]}"
+###
+        fb_font
+###
+        MENU_TITLE_NEW="menu.title.font: $NEWFONT"
 
-        MENU_TITLE_NEW=$(echo "${menu_title_new[@]}")
-        MENU_TITLE_NEW="menu.title.font: $MENU_TITLE_NEW-$MENU_TITLE_NEWSIZE:$MENU_TITLE_NEWTYPE"
         MENU_TITLE_NOW="$(grep "menu.title.font: " $HOME/.fluxbox/overlay)"
 
             if [ "$MENU_FRAME_NEW" != "$MENU_FRAME_NOW" ]; then
@@ -215,8 +357,8 @@ case $ret in
     MENU_FRAME_OVERRIDE="${override[4]}"
 
     if [ "$MENU_FRAME_OVERRIDE" = FALSE ]; then
-        MENU_FRAME_NOW="$(grep "#menu.frame.font: " $HOME/.fluxbox/overlay)"
-            if [ -z "$WINDOW_FRAME_NOW" ]; then
+        MENU_FRAME_NOW="$(grep "#menu.frame.font" $HOME/.fluxbox/overlay)"
+            if [ -z "$MENU_FRAME_NOW" ]; then
                 sed -i 's/^menu.frame.font:/#&/' $HOME/.fluxbox/overlay
             fi
     fi
@@ -224,18 +366,15 @@ case $ret in
     if [ "$MENU_FRAME_OVERRIDE" = TRUE ]; then
         MENU_FRAME_NEW=$(echo "${override[5]}" | sed -e "s/-/ /g")
         menu_frame_new=($MENU_FRAME_NEW)
-        MENU_FRAME_NEWSIZE="${menu_frame_new[-1]}"
+        NEWSIZE="${menu_frame_new[-1]}"
         unset 'menu_frame_new[-1]'
-        MENU_FRAME_NEWTYPE="${menu_frame_new[-1]}"
 
-            if [ "$MENU_FRAME_NEWTYPE" = "Italic" -o "$MENU_FRAME_NEWTYPE" = "Bold" ]; then
-                unset 'menu_frame_new[-1]'
-            else
-                MENU_FRAME_NEWTYPE=Regular
-            fi
+        new_font="${menu_frame_new[@]}"
+###
+        fb_font
+###
+        MENU_FRAME_NEW="menu.frame.font: $NEWFONT"
 
-        MENU_FRAME_NEW=$(echo "${menu_frame_new[@]}")
-        MENU_FRAME_NEW="menu.frame.font: $MENU_FRAME_NEW-$MENU_FRAME_NEWSIZE:$MENU_FRAME_NEWTYPE"
         MENU_FRAME_NOW="$(grep "menu.frame.font: " $HOME/.fluxbox/overlay)"
 
             if [ "$MENU_FRAME_NEW" != "$MENU_FRAME_NOW" ]; then
@@ -249,17 +388,77 @@ case $ret in
 
     GTK_FONT_NOW="$(grep "gtk-font-name" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-font-name\=//" )"
     GTK_FONT_NEW=$(echo "${override[6]}" | sed -e "s/-/ /g")
-    if [ -z "$GTK_FONT_NEW" ]; then
-        GTK_FONT_NEW='Zekton 11'
-    fi
 
     if [ "$GTK_FONT_NOW" != "$GTK_FONT_NEW" ]; then
-        #sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.config/gtk-3.0/settings.ini
-        #sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.gtkrc-2.0
-        
-        GTK_FONT_NEW=$(echo "_$GTK_FONT_NEW_" / sed -e "s/\_/\'/g")
-        gsettings set org.gnome.desktop.interface font-name $GTK_FONT_NEW
+        sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.config/gtk-3.0/settings.ini
+        sed -i "s/\"$GTK_FONT_NOW\"/\"$GTK_FONT_NEW\"/" $HOME/.gtkrc-2.0
+    fi
 
+#gtk-xft-antialias
+GTK_ANTI_NOW="$(grep "gtk-xft-antialias" $HOME/.config/gtk-3.0/settings.ini)"
+GTK_ANTI_NEW=$(echo "${override[9]}")
+
+    if [ "$GTK_ANTI_NEW" = TRUE ]; then
+        GTK_ANTI_NEW=1
+    elif [ "$GTK_ANTI_NEW" = FALSE ]; then
+        GTK_ANTI_NEW=0
+    fi
+
+GTK_ANTI_NEW="gtk-xft-antialias=$GTK_ANTI_NEW"
+
+    if [ "$GTK_ANTI_NOW" != "$GTK_ANTI_NEW" ]; then
+        sed -i "s/$GTK_ANTI_NOW/$GTK_ANTI_NEW/" $HOME/.config/gtk-3.0/settings.ini
+        sed -i "s/$GTK_ANTI_NOW/$GTK_ANTI_NEW/" $HOME/.gtkrc-2.0
+        RELOAD_GTK=TRUE
+    fi
+
+#gtk-xft-hinting
+GTK_HINT_NOW="$(grep "gtk-xft-hinting" $HOME/.config/gtk-3.0/settings.ini)"
+GTK_HINT_NEW=$(echo "${override[7]}")
+
+    if [ "$GTK_HINT_NEW" = TRUE ]; then
+        GTK_HINT_NEW=1
+    elif [ "$GTK_HINT_NEW" = FALSE ]; then
+        GTK_HINT_NEW=0
+    fi
+
+GTK_HINT_NEW=gtk-xft-hinting=$GTK_HINT_NEW
+
+    if [ "$GTK_HINT_NOW" != "$GTK_HINT_NEW" ]; then
+        sed -i "s/$GTK_HINT_NOW/$GTK_HINT_NEW/" $HOME/.config/gtk-3.0/settings.ini
+        sed -i "s/$GTK_HINT_NOW/$GTK_HINT_NEW/" $HOME/.gtkrc-2.0
+        RELOAD_GTK=TRUE
+    fi
+
+
+GTK_HINTSTYLE_NOW="$(grep "gtk-xft-hintstyle" $HOME/.config/gtk-3.0/settings.ini)"
+GTK_HINTSTYLE_NOW2="$(grep "gtk-xft-hintstyle" $HOME/.gtkrc-2.0)"
+GTK_HINTSTYLE_NEW=$(echo "${override[8]}" | sed -e "s/-/ /g")
+GTK_HINTSTYLE_NEW1=gtk-xft-hintstyle=hint$GTK_HINTSTYLE_NEW
+GTK_HINTSTYLE_NEW2=gtk-xft-hintstyle='"'hint$GTK_HINTSTYLE_NEW'"'
+
+    if [ "$GTK_HINTSTYLE_NOW" != "$GTK_HINTSTYLE_NEW" ]; then
+        sed -i "s/$GTK_HINTSTYLE_NOW/$GTK_HINTSTYLE_NEW1/" $HOME/.config/gtk-3.0/settings.ini
+        sed -i "s/$GTK_HINTSTYLE_NOW2/$GTK_HINTSTYLE_NEW2/" $HOME/.gtkrc-2.0
+        RELOAD_GTK=TRUE
+    fi
+
+#gtk-xft-rgba
+GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini)"
+GTK_RGBA_NOW2="$(grep "gtk-xft-rgba" $HOME/.gtkrc-2.0)"
+
+GTK_RGBA_NEW=$(echo "${override[10]}")
+GTK_RGBA_NEW1=gtk-xft-rgba=$GTK_RGBA_NEW
+GTK_RGBA_NEW2=gtk-xft-rgba='"'$GTK_RGBA_NEW'"'
+
+    if [ "$GTK_RGBA_NOW" != "$GTK_RGBA_NEW" ]; then
+        sed -i "s/$GTK_RGBA_NOW/$GTK_RGBA_NEW1/" $HOME/.config/gtk-3.0/settings.ini
+        sed -i "s/$GTK_RGBA_NOW2/$GTK_RGBA_NEW2/" $HOME/.gtkrc-2.0
+        RELOAD_GTK=TRUE
+    fi
+
+####
+    if [ "$RELOAD_GTK" = TRUE ]; then
         theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
         gsettings set org.gnome.desktop.interface gtk-theme ''
         sleep 1
