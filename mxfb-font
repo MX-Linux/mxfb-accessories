@@ -1,8 +1,8 @@
 #!/bin/bash
 
-##This app was developed by MX Devs xxx 2023 and released under GPLv3
+##This app was developed by MX Devs May 2023 and released under GPLv3
 
-# version 230524-01-test
+# version 230526-01
 
 #TEXTDOMAINDIR=/usr/share/locale 
 #export TEXTDOMAIN="mxfb-font"
@@ -75,7 +75,7 @@ until [ "$CHECKNUM_A" = "okay" ]
 do
     WINDOW_TITLE_SIZE="${window_title_now[$numa]}"
 
-        if [[ ! "$WINDOW_TITLE_SIZE" =~ ^[0-9]+$ ]]; then
+        if [[ ! "$WINDOW_TITLE_SIZE" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
             numa=$(($numa-1))
         else
             CHECKNUM_A=okay
@@ -97,7 +97,7 @@ numb=0
 until [ "$CHECKNUM_B" = "okay" ]
 do
     MENU_TITLE_SIZE="${menu_title_now[$numb]}"
-        if [[ ! "$MENU_TITLE_SIZE" =~ ^[0-9]+$ ]]; then
+        if [[ ! "$MENU_TITLE_SIZE" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
             numb=$(($numb-1))
         else
             CHECKNUM_B=okay
@@ -118,7 +118,7 @@ numc=0
 until [ "$CHECKNUM_C" = "okay" ]
 do
     MENU_FRAME_SIZE="${menu_frame_now[$numc]}"
-        if [[ ! "$MENU_FRAME_SIZE" =~ ^[0-9]+$ ]]; then
+        if [[ ! "$MENU_FRAME_SIZE" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
             numc=$(($numc-1))
         else
             CHECKNUM_C=okay
@@ -299,7 +299,6 @@ export fb_font
     if [ "$WINDOW_TITLE_OVERRIDE" = TRUE ]; then
         WINDOW_TITLE_NEW=$(echo "${override[1]}" | sed -e "s/-/ /g")
         window_title_new=($WINDOW_TITLE_NEW)
-        echo "${window_title_new[@]}"
         NEWSIZE="${window_title_new[-1]}"
         unset 'window_title_new[-1]'
 
