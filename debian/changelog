@@ -1,3 +1,10 @@
+mxfb-accessories (23.05.08mx23+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Upgraded mx-font to include decimal size
+
+ -- Jerry <jb@mx>  Fri, 26 May 2023 07:47:15 -0400
+
 mxfb-accessories (23.05.08mx23) mx; urgency=medium
 
   [ Jerry ]
