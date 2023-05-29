@@ -1,9 +1,12 @@
-mxfb-accessories (23.05.08mx23+nmu1) UNRELEASED; urgency=medium
+mxfb-accessories (23.05.09mx23) mx; urgency=medium
 
-  * Non-maintainer upload.
+  [ Jerry ]
   * Upgraded mx-font to include decimal size
 
- -- Jerry <jb@mx>  Fri, 26 May 2023 07:47:15 -0400
+  [ Dolphin Oracle ]
+  * new build
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 29 May 2023 12:17:05 -0400
 
 mxfb-accessories (23.05.08mx23) mx; urgency=medium
 
