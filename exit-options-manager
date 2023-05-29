@@ -176,6 +176,8 @@ yad --notebook --key=$fkey --tab="$(gettext 'Select Icon Theme')" --tab="$(gette
         else
         cp $CONFIG_PATH_USR/$ICONSET $CONF_FILE
         fi
+        
+        echo "ConfName=$ICONSET" >> $CONF_FILE
     fi
 
 
