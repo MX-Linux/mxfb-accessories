@@ -1,12 +1,12 @@
 #!/bin/bash
 
-##This app was developed by MX Devs May 2023 and released under GPLv3
+##This app was developed by MX Devs 2023 and released under GPLv3
 
-# version 230526-01
+# version 230604-01
 
-#TEXTDOMAINDIR=/usr/share/locale 
-#export TEXTDOMAIN="mxfb-font"
-#source gettext.sh
+TEXTDOMAINDIR=/usr/share/locale 
+export TEXTDOMAIN="mxfb-font"
+source gettext.sh
 
 # buttons
 export BTN_CLOSE=$(gettext "Close")  ; BTN_CLOSE+='!window-close'
@@ -143,8 +143,6 @@ GTK_ANTI_NOW="$(grep "gtk-xft-antialias" $HOME/.config/gtk-3.0/settings.ini | se
         GTK_ANTI_NOW=FALSE
     fi
 
-#gtk-xft-hinting=1 true 0 false
-#gtk-xft-hintstyle=hintnone!hintslight!hintmedium!hintfull
 
 GTK_HINT_NOW="$(grep "gtk-xft-hinting" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-xft-hinting\=//" )"
     if [ "$GTK_HINT_NOW" = "1" ]; then
@@ -158,7 +156,7 @@ GTK_HINTSTYLE_NOW="$(echo $GTK_HINTSTYLE_NOW | sed -e "s/hint//" )"
 
 
 #gtk-xft-rgba=none!rgb!bgr!vrgb!vbgr
-GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-xft-rgba\=//" )"
+#GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-xft-rgba\=//" )"
 
 ####
 
@@ -173,7 +171,7 @@ TEXT2="Gtk-font is independent of fluxbox style settings"
 MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --borders=20 --center --width=500 --form --columns=2 --output-by-row \
 --align=left --separator="_" --button="${BTN_CLOSE}":7 --button="${BTN_APPLY}":6 \
---text="$TEXT1\n$TEXT2\n" \
+--text="<i>$TEXT1\n$TEXT2\n</i>" \
 --field="<b>$(gettext 'Window Title Default'):</b>":LBL "" \
 --field="$(gettext 'Override with') ":CHK "$WINDOW_TITLE_OVERRIDE" \
 --field=" ":LBL "|" \
@@ -198,8 +196,7 @@ MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --field=" ":LBL "|" \
 --field=" ":FN "$GTK_FONT_NOW" \
 --field=" ":LBL "|" \
---field="$(gettext 'Hinting Style')":CB "$GTK_HINTSTYLE_NOW!none!slight!medium!full" \
---field="$(gettext 'Sub-pixels')":CB "$GTK_RGBA_NOW!rgb!bgr!vrgb!vbgr"
+--field="$(gettext 'Hinting Style')":CB "$GTK_HINTSTYLE_NOW!none!slight!medium!full"
 )
 
 ret=$?
@@ -442,19 +439,6 @@ GTK_HINTSTYLE_NEW2=gtk-xft-hintstyle='"'hint$GTK_HINTSTYLE_NEW'"'
         RELOAD_GTK=TRUE
     fi
 
-#gtk-xft-rgba
-GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini)"
-GTK_RGBA_NOW2="$(grep "gtk-xft-rgba" $HOME/.gtkrc-2.0)"
-
-GTK_RGBA_NEW=$(echo "${override[10]}")
-GTK_RGBA_NEW1=gtk-xft-rgba=$GTK_RGBA_NEW
-GTK_RGBA_NEW2=gtk-xft-rgba='"'$GTK_RGBA_NEW'"'
-
-    if [ "$GTK_RGBA_NOW" != "$GTK_RGBA_NEW" ]; then
-        sed -i "s/$GTK_RGBA_NOW/$GTK_RGBA_NEW1/" $HOME/.config/gtk-3.0/settings.ini
-        sed -i "s/$GTK_RGBA_NOW2/$GTK_RGBA_NEW2/" $HOME/.gtkrc-2.0
-        RELOAD_GTK=TRUE
-    fi
 
 ####
     if [ "$RELOAD_GTK" = TRUE ]; then
