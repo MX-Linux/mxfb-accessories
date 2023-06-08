@@ -1,3 +1,11 @@
+mxfb-accessories (23.06.07) mx; urgency=medium
+
+  * Non-maintainer upload.
+  * Changed yad infotext to italics
+  * Removed "Sub-pixels" combobox  
+
+ -- Jerry <jb@mx>  Wed, 07 Jun 2023 20:55:51 -0400
+
 mxfb-accessories (23.05.09mx23) mx; urgency=medium
 
   [ Jerry ]
