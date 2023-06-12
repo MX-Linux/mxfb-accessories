@@ -9,7 +9,6 @@ components/*.png usr/share/pixmaps
 components/*.svg usr/share/pixmaps
 components/mxfb-quickshot.conf usr/share/mxfb-quickshot/
 components/quickshot_help usr/share/mxfb-quickshot/quickshot_help
-components/disable-update usr/bin
 exit-options-manager usr/bin
 mxfb-* usr/bin
 apt/* etc/apt/

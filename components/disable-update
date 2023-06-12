@@ -1,3 +1,0 @@
-#!/bin/bash
-
-touch $HOME/.fluxbox/mxfb-menu-generator-disabled.chk
