@@ -1,3 +1,9 @@
+mxfb-accessories (23.06.08) UNRELEASED; urgency=medium
+
+  * added disable-update (All Apps) script 
+
+ -- Jerry <jb@mx>  Mon, 12 Jun 2023 09:50:49 -0400
+
 mxfb-accessories (23.06.07) mx; urgency=medium
 
   * Non-maintainer upload.
