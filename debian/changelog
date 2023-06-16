@@ -1,9 +1,10 @@
-mxfb-accessories (23.06.09) UNRELEASED; urgency=medium
+mxfb-accessories (23.06.10) mx; urgency=medium
 
   * added disable-update (All Apps) script 
   * reversed position, removed that script
+  * changed  to using Tweak instead
 
- -- Jerry <jb@mx>  Mon, 12 Jun 2023 11:36:31 -0400
+ -- Jerry <jb@mx>  Fri, 16 Jun 2023 06:07:49 -0400
 
 mxfb-accessories (23.06.07) mx; urgency=medium
 
