@@ -35,6 +35,6 @@ Comment[sv]=Select fonts for style elements
 Exec=mxfb-font
 Terminal=false
 Type=Application
-Icon=/usr/share/pixmaps/fonts.png
+Icon=mxfb-font
 Categories=System;
 NoDisplay=false
