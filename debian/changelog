@@ -1,3 +1,10 @@
+mxfb-accessories (23.06.10+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * corrected icon entry in 3 desktop files
+
+ -- Jerry <jb@mx>  Sat, 17 Jun 2023 06:49:54 -0400
+
 mxfb-accessories (23.06.10) mx; urgency=medium
 
   * added disable-update (All Apps) script 
