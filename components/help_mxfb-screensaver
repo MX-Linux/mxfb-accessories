@@ -1,0 +1,123 @@
+MX Fluxbox includes by default a simple screensaver: a single line in the file ~/.fluxbox/startup:
+
+xset -dpms && xset s 600
+
+The number at the end of the line is the delay time (seconds): you can change it as you like. To stop this screensaver:
+
+#xset -dpms && xset s 600
+
+Resource in terminal or online: man xset 
+
+##########DE##########
+MX Fluxbox enthält standardmäßig einen einfachen Bildschirmschoner: eine einzige Zeile in der Datei ~/.fluxbox/startup:
+
+xset -dpms && xset s 600
+
+Die Zahl am Ende der Zeile ist die Verzögerungszeit (Sekunden): Sie können sie nach Belieben ändern. Um diesen Bildschirmschoner zu stoppen:
+
+#xset -dpms && xset s 600
+
+Ressource im Terminal oder online: man xset 
+
+##########EL##########
+Το MX Fluxbox περιλαμβάνει από προεπιλογή μια απλή προφύλαξη οθόνης: μια απλή γραμμή στο αρχείο ~/.fluxbox/startup:
+
+xset -dpms && xset s 600
+
+Ο αριθμός στο τέλος της γραμμής είναι ο χρόνος καθυστέρησης (δευτερόλεπτα): μπορείτε να τον αλλάξετε όπως θέλετε. Για να σταματήσετε αυτή την προφύλαξη οθόνης:
+
+#xset -dpms && xset s 600
+
+Πόρος στο τερματικό ή στο διαδίκτυο: man xset 
+
+##########ES##########
+MX Fluxbox incluye por defecto un sencillo salvapantallas: una única línea en el archivo ~/.fluxbox/startup:
+
+xset -dpms && xset s 600
+
+El número al final de la línea es el tiempo de retardo (segundos): puede cambiarlo a su gusto. Para detener este salvapantallas
+
+#xset -dpms && xset s 600
+
+Recurso en terminal o en línea: man xset 
+
+##########FR##########
+MX Fluxbox inclut par défaut un économiseur d'écran simple : une simple ligne dans le fichier ~/.fluxbox/startup :
+
+xset -dpms && xset s 600
+
+Le nombre à la fin de la ligne est le temps de retard (secondes) : vous pouvez le modifier à votre guise. Pour arrêter cet économiseur d'écran :
+
+#xset -dpms && xset s 600
+
+Ressource dans le terminal ou en ligne : man xset 
+
+##########IT##########
+MX Fluxbox include di default un semplice screensaver: una singola riga nel file ~/.fluxbox/startup:
+
+xset -dpms && xset s 600
+
+Il numero alla fine della riga è il tempo di ritardo (secondi): può modificarlo a suo piacimento. Per interrompere questo screensaver:
+
+#xset -dpms && xset s 600
+
+Risorsa nel terminale o online: man xset 
+
+##########JA##########
+MX Fluxboxはデフォルトでシンプルなスクリーンセーバーを搭載しています：~/.fluxbox/startup：
+
+xset -dpms && xset s 600
+
+行末の数字は、遅延時間（秒）です。このスクリーンセーバーを停止するには
+
+#xset -dpms && xset s 600
+
+ターミナルまたはオンラインのリソース：man xset 
+
+##########PL##########
+MX Fluxbox domyślnie zawiera prosty wygaszacz ekranu: pojedyncza linia w pliku ~/.fluxbox/startup:
+
+xset -dpms && xset s 600
+
+Liczba na końcu linii to czas opóźnienia (w sekundach): można go dowolnie zmieniać. Aby zatrzymać ten wygaszacz ekranu:
+
+#xset -dpms && xset s 600
+
+Zasoby w terminalu lub online: man xset 
+
+##########PT##########
+O MX Fluxbox inclui por defeito um protetor de ecrã simples: uma única linha no ficheiro ~/.fluxbox/startup:
+
+xset -dpms && xset s 600
+
+O número no fim da linha é o tempo de atraso (segundos): pode alterá-lo como quiser. Para parar este protetor de ecrã:
+
+#xset -dpms && xset s 600
+
+Recurso no terminal ou em linha: man xset 
+
+##########RU##########
+MX Fluxbox включает по умолчанию простую заставку: одна строка в файле ~/.fluxbox/startup:
+
+xset -dpms && xset s 600
+
+Число в конце строки - это время задержки (секунды): Вы можете изменить его по своему усмотрению. Чтобы остановить эту заставку:
+
+#xset -dpms && xset s 600
+
+Ресурс в терминале или онлайн: man xset 
+
+##########ZH##########
+MX Fluxbox默认包括一个简单的屏幕保护程序：~/.fluxbox/startup：
+
+xset -dpms && xset s 600
+
+该行末尾的数字是延迟时间（秒）：你可以随意改变它。要停止这个屏幕保护程序：
+
+#xset -dpms && xset s 600
+
+在终端或在线的资源：man xset 
+
+----------
+
+Translations by DeepL (https://www.deepl.com/en/translator)
