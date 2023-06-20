@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Screensaver
+Name[de]=Bildschirmschoner
+Name[fr]=Économiseur d'écran
+Name[ja]=スクリーンセーバー
+Name[pl]=Wygaszacz ekranu
+Name[pt]=Protetor de ecrã
+Name[ru]=Скринсейвер
+Name[es]=Salvapantallas
+Name[zh]=屏幕保护程序
+Comment=MX Fluxbox
+Keywords=Display;Documentation
+Exec=xdg-open /usr/share/doc/mxfb-accessories/help_mxfb-screensaver
+Icon=/usr/share/icons/mxflux.png
+Type=Application
+Categories=System;
+Terminal=false
