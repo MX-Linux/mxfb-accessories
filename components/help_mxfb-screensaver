@@ -8,6 +8,14 @@ The number at the end of the line is the delay time (seconds): you can change it
 
 Resource in terminal or online: man xset 
 
+"-dpms
+     The -dpms option disables DPMS (Energy Star) features.
++dpms
+     The +dpms option enables DPMS (Energy Star) features.
+dpms flags...
+     The dpms option allows the DPMS (Energy Star) parameters to be set. The option can take up to three numerical values, or the 'force' flag followed by a DPMS state. The 'force' flags forces the server to immediately switch to the DPMS state specified. 
+     The DPMS state can be one of 'standby', 'suspend', 'off', or 'on'. When numerical values are given, they set the inactivity period (in units of seconds) before the three modes are activated. The first value given is for the 'standby' mode, the second is for the 'suspend' mode, and the third is for the 'off' mode. Setting these values implicitly enables the DPMS features. A value of zero disables a particular mode."
+
 ##########DE##########
 MX Fluxbox enthält standardmäßig einen einfachen Bildschirmschoner: eine einzige Zeile in der Datei ~/.fluxbox/startup:
 
