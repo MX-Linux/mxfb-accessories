@@ -1,11 +1,11 @@
 #!/bin/bash
 #MXFB-Look is a tool to save and restore desktop setups in MX-Linux Fluxbox
-#V.1.0 by Melber and MX Devs 26 September 2022
+#Version 230620 by Melber and MX Devs
 #License: GPL-3.0+
 #mxcr-icon based on yad icon from papirus icon set
 
 ##Changelog##
-#added gettext localization, fixed rofi
+#fixed conky for mxfb23
 
 # add locale
 TEXTDOMAINDIR=/usr/share/locale 
@@ -47,19 +47,71 @@ if [ ! -d $MXLKPATH/tempdir ]; then
 
 fi
 
+#remove mxfb21 Default look
+
+if [ -f $MXLKPATH/looks/MXFB-default.look ]; then
+
+    rm $MXLKPATH/looks/MXFB-default.look $MXLKPATH/looks/MXFB-default.png
+
+fi
+
 #make Default look file
 
-if [ ! -f $MXLKPATH/looks/MXFB-default.look ]; then
+if [ ! -f $MXLKPATH/looks/MX23-default.look ]; then
 
-printf "gtk-theme-name=mx-comfort\ngtk-icon-theme-name=Papirus-mxblue-darkpanes\ngtk-font-name=Sans 11\ngtk-theme-name=\"mx-comfort\"\ngtk-icon-theme-name=\"Papirus-mxblue-darkpanes\"\ngtk-font-name=\"Sans 11\"\nsession.styleFile: ~/.fluxbox/styles/MX-comfort\n1\n$\HOME/.config/tint2/tint2rc\nNone\n@theme \"$HOME/.config/rofi/themes/MX-comfort.rasi\"\nfile=/usr/share/backgrounds/Honesty.jpg\ncd \"/home/\$USER/.conky/MX-CowonBlue\"\nconky -c \"/home/\$USER/.conky/MX-CowonPink/MX-Cowon_pink_roboto\" &\nHidden=false" > $MXLKPATH/looks/MXFB-default.look
+printf "gtk-theme-name=mx-comfort
+gtk-icon-theme-name=Papirus-mxblue-darkpanes
+gtk-font-name=Sans 11
+gtk-theme-name=\"mx-comfort\"
+gtk-icon-theme-name=\"Papirus-mxblue-darkpanes\"
+gtk-font-name=\"Sans 11\"
+session.styleFile: ~/.fluxbox/styles/MX-comfort
+1
+$\HOME/.config/tint2/tint2rc
+None
+@theme \"$HOME/.config/rofi/themes/MX-comfort.rasi\"
+file=/usr/share/backgrounds/THE_Dark_Metal.png
+cd \"/home/\$USER/.conky/MX-CowonMildBlue\"
+conky -c \"/home/\$USER/.conky/MX-CowonMildBlue/MX-Cowon_MildBlue\" &
+Hidden=false" > $MXLKPATH/looks/MX23-default.look
 
 fi
 
 #copy image for Default look
 
-if [ ! -f $MXLKPATH/looks/MXFB-default.png ]; then
+if [ ! -f $MXLKPATH/looks/MX23-default.png ]; then
 
-cp /usr/share/pixmaps/MXFB-default.png $MXLKPATH/looks/
+    cp /usr/share/pixmaps/MX23-default.png $MXLKPATH/looks/
+
+fi
+
+#make torre look file
+
+if [ ! -f $MXLKPATH/looks/torre-di-libretti.look ]; then
+
+printf "gtk-theme-name=mx-comfort-dark
+gtk-icon-theme-name=Faba
+gtk-font-name=Rounded Elegance 11
+gtk-theme-name=\"mx-comfort-dark\"
+gtk-icon-theme-name=\"Faba\"
+gtk-font-name=\"Rounded Elegance 11\"
+session.styleFile: ~/.fluxbox/styles/MX-comfort-dark
+1
+$\HOME/.config/tint2/MX-workspaces.tint2rc
+None
+@theme \"$HOME/.config/rofi/themes/MX-fancy.rasi\"
+file=/usr/share/backgrounds/torre-di-libretti-blu.png
+cd \"/home/\$USER/.conky/MX-Comfort\"
+conky -c \"/home/\$USER/.conky/MX-Comfort/MX-Comfort\" &
+Hidden=false" > $MXLKPATH/looks/torre-di-libretti.look
+
+fi
+
+#copy image for torre look
+
+if [ ! -f $MXLKPATH/looks/torre-di-libretti.png ]; then
+
+    cp /usr/share/pixmaps/torre-di-libretti.png $MXLKPATH/looks/
 
 fi
 
@@ -535,7 +587,7 @@ PREVIEW=$(echo "${PREVIEW}" | sed -e "s/\.look/\.png/g" )
 
 #RESTOREMAIN
 
-TEXTRESTORE0="$(eval_gettext '<b>$LOOKRESTORE</b>\n')"
+TEXTRESTORE0=$LOOKRESTORE
 TEXTRESTORE1="$(gettext 'GTK Theme')"
 TEXTRESTORE2="$(gettext 'GTK Icons')"
 TEXTRESTORE3="$(gettext 'GTK Font')"
@@ -560,7 +612,7 @@ yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --c
    "$TEXTRESTORE8": <b>"$NLKBG"</b>\n
    "$TEXTRESTORE9": <b>"$NLKCO1"</b>\n
    "$TEXTRESTORE10": <b>"$COST"</b>\n
-   ("$TEXTRESTORE11")\n"\
+   ("$TEXTRESTORE11")"
 
 GETOUT=$(echo "$?")
 
@@ -679,7 +731,7 @@ fi
 cd ~/.conky
 
 printf "#!/bin/sh
-if [ x\"\${DESKTOP_SESSION##*/}\" = x\"lightdm-xsession\" ]; then
+if [ x\"\${DESKTOP_SESSION##*/}\" = x\"fluxbox\" ]; then
 sleep 10s
 killall conky
 $LKCONK1NEW
