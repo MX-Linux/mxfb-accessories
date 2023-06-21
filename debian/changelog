@@ -2,6 +2,7 @@ mxfb-accessories (23.06.10+nmu1) UNRELEASED; urgency=medium
 
   * Non-maintainer upload.
   * corrected icon entry in 3 desktop files
+  * added screensaver help and desktop file
 
  -- Jerry <jb@mx>  Sat, 17 Jun 2023 06:49:54 -0400
 
