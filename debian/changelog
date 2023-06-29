@@ -1,11 +1,12 @@
-mxfb-accessories (23.06.10+nmu2) UNRELEASED; urgency=medium
+mxfb-accessories (23.06.29) mx; urgency=medium
 
   * Non-maintainer upload.
   * corrected icon entry in 3 desktop files
   * added screensaver help and desktop file
   * removed dependency on moka-icon-theme
+  * ready fir RC
 
- -- Jerry <jb@mx>  Sun, 25 Jun 2023 07:30:33 -0400
+ -- Jerry <jb@mx>  Thu, 29 Jun 2023 08:24:31 -0400
 
 mxfb-accessories (23.06.10) mx; urgency=medium
 
