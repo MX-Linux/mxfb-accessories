@@ -30,8 +30,11 @@ if [ "$1" = "auto" ]; then
 fi
 
 #check time since last build
-time=$(stat --format %Y $HOME/.fluxbox/submenus/full_menu)
+time=0
 now=$(date +"%s")
+if [ -e "$HOME/.fluxbox/submenus/full_menu" ]; then
+   time=$(stat --format %Y $HOME/.fluxbox/submenus/full_menu)
+fi
 
 if [ $(($now-$time)) -lt 5 ]; then
 	exit 0
@@ -40,10 +43,13 @@ fi
 Encoding=UTF-8
 #
 # i18n - Internationalization
-export TEXTDOMAIN=mxfb-accessories
+#export TEXTDOMAIN=mxfb-accessories
+export TEXTDOMAIN=mx-desktop-menu-l10n
 export TEXTDOMAINDIR="/usr/share/locale"
 
 CATEGORIES="Accessories Development Games Graphics Internet Multimedia Office System Settings"
+ALLAPPS=$(gettext "All Applications")
+[ "$ALLAPPS" = "All Applications"  ] && ALLAPPS="All Apps"
 
 echo Please wait, creating menu file - stored in ~/.fluxbox/submenus/full_menu ...
 
@@ -146,12 +152,12 @@ array2=( . $CATEGORIES)
 #End LOCALIZATION OF Category sub-menus
     
 #Create the header of the file
-echo '[begin] (All Categories)' >> $FILE
+echo "[begin] ($ALLAPPS)" >> $FILE
 #Loop through the array- the last number below has to match the number of entries on $array1
 for i in {1..9};
 do 
  #Create a submenu entry for the current item on $array2
- echo '[submenu] ('${array2[$i]}')'  >> $FILE
+ echo "[submenu] ($(gettext "${array2[$i]}"))"  >> $FILE
 #Nested loop to check if the item on the current line of the "pre-global-menu.txt" file matches the current item on $array1, if it matches, add it to the "$FILE" file 
  while read p; 	do
 		if [[ $p =~ ${array1[$i]} ]]
@@ -179,7 +185,7 @@ if [ -s "$file" ]
 then 
  note="empty file, do nothing"
 else
-echo '[submenu] ('Other applications')'  >> $FILE
+  echo "[submenu] ($(gettext "Other"))"  >> $FILE
   while read p; 	do
 		echo $p >> $FILE
   done <~/.fluxbox/pre-global-menu.txt ;
