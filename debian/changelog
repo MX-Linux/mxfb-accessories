@@ -1,3 +1,9 @@
+mxfb-accessories (23.07.01mx23) mx; urgency=medium
+
+  * localize menu categories (fehlix) 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 10 Jul 2023 14:44:08 -0400
+
 mxfb-accessories (23.06.29mx23) mx; urgency=medium
 
   * corrected icon entry in 3 desktop files
