@@ -42,6 +42,10 @@ fi
 
 Encoding=UTF-8
 #
+# use session locale
+SESSION_LANG=$(sed -n '/^Language=/{s///; s/[.].*/.UTF-8/;p;q}' ~/.dmrc 2>/dev/null) ; 
+LANG=${SESSION_LANG:=$LANG}
+
 # i18n - Internationalization
 #export TEXTDOMAIN=mxfb-accessories
 export TEXTDOMAIN=mx-desktop-menu-l10n
@@ -76,7 +80,8 @@ FILE="$HOME/.fluxbox/submenus/full_menu"
 
 
 #Get system language (to allow localization):
-lang=$(locale | grep LANG | cut -d= -f2 | cut -d_ -f1)
+lang=${LANG%%_*}
+
 #Loop through all .desktop files in the applications folder
 #lang=fr
 
