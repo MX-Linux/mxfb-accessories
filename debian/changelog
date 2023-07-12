@@ -1,3 +1,9 @@
+mxfb-accessories (23.07.02mx23) mx; urgency=medium
+
+  * improve menu localization (fehlix)
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 12 Jul 2023 15:55:57 -0400
+
 mxfb-accessories (23.07.01mx23) mx; urgency=medium
 
   * mxfb-menu-generator localization (fehlix) 
