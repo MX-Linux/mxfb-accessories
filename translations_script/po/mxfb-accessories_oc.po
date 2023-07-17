@@ -4,7 +4,6 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Robin, 2023
 # fehlix, 2023
 # 
 #, fuzzy
@@ -15,12 +14,12 @@ msgstr ""
 "POT-Creation-Date: 2023-05-19 07:04-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: fehlix, 2023\n"
-"Language-Team: Galician (https://app.transifex.com/anticapitalista/teams/10162/gl/)\n"
+"Language-Team: Occitan (post 1500) (https://app.transifex.com/anticapitalista/teams/10162/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: gl\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: oc\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Hints for creating a screenshot
 #. The help message will not be displayed again, if user clicks on "Dismiss"
@@ -281,7 +280,7 @@ msgstr ""
 
 #: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../exit-options-manager:30
 msgid "Help"
-msgstr "Axuda"
+msgstr "Ajuda"
 
 #: ../exit-options-manager:141
 msgid "Icon Size"
@@ -496,7 +495,7 @@ msgstr ""
 
 #: ../mxfb-look:223 ../mxfb-look:546
 msgid "Wallpaper"
-msgstr "Fondo de pantalla"
+msgstr ""
 
 #: ../mxfb-font:104
 msgid "Window Title Default"

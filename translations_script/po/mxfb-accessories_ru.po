@@ -355,7 +355,7 @@ msgstr "MXFB-Вид"
 
 #: ../exit-options-manager:142
 msgid "Margin"
-msgstr ""
+msgstr "Поле"
 
 #: ../mxfb-font:110
 msgid "Menu Text Default"
@@ -459,7 +459,7 @@ msgstr "Размер"
 
 #: ../exit-options-manager:143
 msgid "Spacing"
-msgstr ""
+msgstr "Зазор"
 
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:56

@@ -298,7 +298,7 @@ msgstr "Tema del GTK"
 
 #: ../mxfb-font:113
 msgid "Gtk Font"
-msgstr ""
+msgstr "Lletra Gtk"
 
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
@@ -340,7 +340,7 @@ msgstr "Temporitzador MXFB"
 #. ###
 #: ../mxfb-font:91
 msgid "MXFB-Font"
-msgstr ""
+msgstr "lletra MXFB"
 
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
@@ -353,11 +353,11 @@ msgstr "Marge"
 
 #: ../mxfb-font:110
 msgid "Menu Text Default"
-msgstr ""
+msgstr "Text de Menú per omissió"
 
 #: ../mxfb-font:107
 msgid "Menu Title Default"
-msgstr ""
+msgstr "Títol de Menú per omissió"
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -390,7 +390,7 @@ msgstr "CONFIGURACIÓ D'ESTIL DE LA VORA OPCIONAL"
 
 #: ../mxfb-font:105 ../mxfb-font:108 ../mxfb-font:111
 msgid "Override with"
-msgstr ""
+msgstr "Substitueix per"
 
 #: ../mxfb-look:286
 #, sh-format
@@ -533,7 +533,7 @@ msgstr "Empaperat"
 
 #: ../mxfb-font:104
 msgid "Window Title Default"
-msgstr ""
+msgstr "Títol de finestra per omissió"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

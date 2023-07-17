@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../mxfb-separate-backgrounds:14
 msgid " Type \\"
-msgstr ""
+msgstr " סוג \\"
 
 #. #begin first message box
 #: ../mxfb-tiles:37
@@ -198,7 +198,7 @@ msgstr ""
 
 #: ../mxfb-tint2-manager:98
 msgid "Config"
-msgstr ""
+msgstr "הגדרות"
 
 #: ../mxfb-look:224 ../mxfb-look:547
 msgid "Conky"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
-msgstr ""
+msgstr "השהיה (בדקות)"
 
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
@@ -287,15 +287,15 @@ msgstr "עזרה"
 
 #: ../exit-options-manager:141
 msgid "Icon Size"
-msgstr ""
+msgstr "גודל סמל"
 
 #: ../mxfb-bg-rotate:44
 msgid "Image folder"
-msgstr ""
+msgstr "תיקיית תמונות"
 
 #: ../mxfb-bg-rotate:45
 msgid "Image mode"
-msgstr ""
+msgstr "מצב תמונה"
 
 #: ../exit-options-manager:139
 msgid "Layout"
@@ -508,7 +508,7 @@ msgstr ""
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
-msgstr ""
+msgstr "\\n"
 
 #: ../mxfb-look:229
 msgid "\\n<b>"

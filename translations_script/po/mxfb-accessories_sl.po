@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../mxfb-look:267 ../mxfb-look:294
 msgid " "
-msgstr " "
+msgstr "  "
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -299,7 +299,7 @@ msgstr "GTK tema"
 
 #: ../mxfb-font:113
 msgid "Gtk Font"
-msgstr ""
+msgstr "GTK pisava"
 
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
@@ -341,7 +341,7 @@ msgstr "MXFB čaovnik"
 #. ###
 #: ../mxfb-font:91
 msgid "MXFB-Font"
-msgstr ""
+msgstr "MXFB-pisava"
 
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
@@ -354,11 +354,11 @@ msgstr "Rob"
 
 #: ../mxfb-font:110
 msgid "Menu Text Default"
-msgstr ""
+msgstr "Privzeto besedilo menija"
 
 #: ../mxfb-font:107
 msgid "Menu Title Default"
-msgstr ""
+msgstr "Privzeti naslov menija"
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -391,7 +391,7 @@ msgstr "NASTAVITEV IZBIRNEGA SLOGA ROBA"
 
 #: ../mxfb-font:105 ../mxfb-font:108 ../mxfb-font:111
 msgid "Override with"
-msgstr ""
+msgstr "Nadomesti s/z"
 
 #: ../mxfb-look:286
 #, sh-format
@@ -535,7 +535,7 @@ msgstr "Ozadje"
 
 #: ../mxfb-font:104
 msgid "Window Title Default"
-msgstr ""
+msgstr "Privzeti naslov okna"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

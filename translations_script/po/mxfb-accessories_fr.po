@@ -183,7 +183,7 @@ msgstr ""
 #: ../mxfb-look:346
 #, sh-format
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
-msgstr "Terminé !\\n\\nLe look a été sauvé sous <b>$NEWNAME</b>"
+msgstr "Terminé !\\n\\nL’apparence a été sauvée sous <b>$NEWNAME</b>"
 
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"

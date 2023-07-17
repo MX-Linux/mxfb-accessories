@@ -273,7 +273,7 @@ msgstr "現地時間を入力します"
 #. define some variables
 #: ../exit-options-manager:12 ../exit-options-manager:230
 msgid "Exit-options-manager"
-msgstr ""
+msgstr "終了オプションマネージャ"
 
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
@@ -297,7 +297,7 @@ msgstr "GTK テーマ"
 
 #: ../mxfb-font:113
 msgid "Gtk Font"
-msgstr ""
+msgstr "Gtk フォント"
 
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
@@ -339,7 +339,7 @@ msgstr "MXFB タイマー"
 #. ###
 #: ../mxfb-font:91
 msgid "MXFB-Font"
-msgstr ""
+msgstr "MXFB-フォント"
 
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
@@ -352,11 +352,11 @@ msgstr "余白"
 
 #: ../mxfb-font:110
 msgid "Menu Text Default"
-msgstr ""
+msgstr "既定のテキストメニュー"
 
 #: ../mxfb-font:107
 msgid "Menu Title Default"
-msgstr ""
+msgstr "既定のタイトルメニュー"
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -389,7 +389,7 @@ msgstr "ボーダースタイルのオプション設定"
 
 #: ../mxfb-font:105 ../mxfb-font:108 ../mxfb-font:111
 msgid "Override with"
-msgstr ""
+msgstr "上書き"
 
 #: ../mxfb-look:286
 #, sh-format
@@ -529,7 +529,7 @@ msgstr "壁紙"
 
 #: ../mxfb-font:104
 msgid "Window Title Default"
-msgstr ""
+msgstr "既定のウィンドウタイトル"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
