@@ -1,3 +1,10 @@
+mxfb-accessories (23.07.02mx23+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * updated desktop file for mxfb-top
+
+ -- Jerry <jb@mx>  Mon, 17 Jul 2023 07:22:46 -0400
+
 mxfb-accessories (23.07.02mx23) mx; urgency=medium
 
   * improve menu localization (fehlix)
