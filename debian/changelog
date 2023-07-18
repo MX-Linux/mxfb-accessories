@@ -1,3 +1,10 @@
+mxfb-accessories (23.07.03mx23+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * One more change to desktop file for top
+
+ -- Jerry <jb@mx>  Tue, 18 Jul 2023 06:51:02 -0400
+
 mxfb-accessories (23.07.03mx23) mx; urgency=medium
 
   [ Jerry ]
