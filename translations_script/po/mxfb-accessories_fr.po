@@ -292,7 +292,7 @@ msgstr "Style Fluxbox"
 
 #: ../mxfb-look:218 ../mxfb-look:541
 msgid "GTK Font"
-msgstr "Police GTK"
+msgstr "Police d’écriture GTK"
 
 #: ../mxfb-look:217 ../mxfb-look:540
 msgid "GTK Icons"

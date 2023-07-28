@@ -200,7 +200,7 @@ msgstr "Elvetve!"
 
 #: ../exit-options-manager:149
 msgid "Change Window Settings"
-msgstr ""
+msgstr "Ablakbeállítások megváltoztatása"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
@@ -280,7 +280,7 @@ msgstr "Adja meg a helyi időt"
 #. define some variables
 #: ../exit-options-manager:12 ../exit-options-manager:230
 msgid "Exit-options-manager"
-msgstr ""
+msgstr "Kilépési lehetőségek kezelése"
 
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
@@ -305,7 +305,7 @@ msgstr "GTK téma"
 
 #: ../mxfb-font:113
 msgid "Gtk Font"
-msgstr ""
+msgstr "GTK betűkészlet"
 
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
@@ -321,7 +321,7 @@ msgstr "Súgó"
 
 #: ../exit-options-manager:141
 msgid "Icon Size"
-msgstr ""
+msgstr "Ikonméret"
 
 #: ../mxfb-bg-rotate:44
 msgid "Image folder"
@@ -347,7 +347,7 @@ msgstr "MXFB időzítő"
 #. ###
 #: ../mxfb-font:91
 msgid "MXFB-Font"
-msgstr ""
+msgstr "MXFB betűkészlet"
 
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
@@ -356,15 +356,15 @@ msgstr "MXFB kinézet"
 
 #: ../exit-options-manager:142
 msgid "Margin"
-msgstr ""
+msgstr "Margó"
 
 #: ../mxfb-font:110
 msgid "Menu Text Default"
-msgstr ""
+msgstr "Menü szöveg alapértelmezett"
 
 #: ../mxfb-font:107
 msgid "Menu Title Default"
-msgstr ""
+msgstr "Menü címsor alapértelmezett"
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -397,7 +397,7 @@ msgstr "OPCIONÁLIS KERET STÍLUS BEÁLLÍTÁS"
 
 #: ../mxfb-font:105 ../mxfb-font:108 ../mxfb-font:111
 msgid "Override with"
-msgstr ""
+msgstr "Felülírás ezzel:"
 
 #: ../mxfb-look:286
 #, sh-format
@@ -443,7 +443,7 @@ msgstr "Mentés másik néven"
 #. run main dialog
 #: ../exit-options-manager:149
 msgid "Select Icon Theme"
-msgstr ""
+msgstr "Válasszon ikontémát"
 
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
@@ -460,7 +460,7 @@ msgstr "Méret"
 
 #: ../exit-options-manager:143
 msgid "Spacing"
-msgstr ""
+msgstr "Helyköz"
 
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:56
@@ -480,7 +480,7 @@ msgstr "A meglévő fájl mentésre kerül:"
 
 #: ../exit-options-manager:247
 msgid "The following settings can also be defined"
-msgstr ""
+msgstr "A következő beállítások is meghatók"
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -512,7 +512,7 @@ msgstr "Ez új beállításfájlt telepít"
 
 #: ../exit-options-manager:140
 msgid "Timeout"
-msgstr ""
+msgstr "Időtúllépés"
 
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
@@ -538,7 +538,7 @@ msgstr "Háttérkép"
 
 #: ../mxfb-font:104
 msgid "Window Title Default"
-msgstr ""
+msgstr "Ablak címsor alapértelmezett"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
@@ -558,7 +558,7 @@ msgstr "\\n<b> Ki kell választania egy kinézetet!</b>\\n"
 
 #: ../exit-options-manager:235
 msgid "\\nIcon themes can be defined by creating a file"
-msgstr ""
+msgstr "\\nAz ikontémák egy fájl létrehozásával definiálhatók"
 
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
@@ -595,6 +595,7 @@ msgid ""
 "and adding the paths for the desired 64x64 pixel icons to the following "
 "definitions"
 msgstr ""
+"és megadva a kívánt 64x64 pixeles ikon útvonalát a következő definíciókhoz"
 
 #. Note: Comment lines above gettext lines are visible to translators.
 #. The capture of a screenshot was aborted.

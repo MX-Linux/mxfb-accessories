@@ -268,7 +268,7 @@ msgstr "編集"
 
 #: ../mxfb-timer:23
 msgid "Enter local time"
-msgstr "現地時間を入力します"
+msgstr "現地時刻を入力します"
 
 #. define some variables
 #: ../exit-options-manager:12 ../exit-options-manager:230
@@ -439,7 +439,7 @@ msgstr "アイコンのテーマを選択"
 
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
-msgstr "タイトルバーモードを選択"
+msgstr "タイトルバーのモードを選択"
 
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
