@@ -1,0 +1,242 @@
+#!/bin/bash
+
+##This app was developed by MX Devs 2023 and released under GPLv3
+
+### version 2309-03
+
+TEXTDOMAINDIR=/usr/share/locale 
+export TEXTDOMAIN="mxfb-keybindings"
+source gettext.sh
+
+### buttons
+export BTN_CLOSE=$(gettext "Close")  ; BTN_CLOSE+='!window-close'
+export BTN_EDIT=$(gettext "Edit keys file") ; BTN_EDIT+='!edit'
+
+###
+
+TITLE="$(gettext 'Common MX-Fluxbox Keybindings')"
+CLASS="mxfb-keybindings"
+
+ICONPATH=/usr/share/pixmaps/mxfb-keybindings.png
+tempfile1=/tmp/kb-1.txt
+
+
+### cleanup
+trap "rm -f $tempfile1" EXIT
+
+
+###Tab 1
+
+fkey=$RANDOM
+
+#Translator Note#
+#Please keep translated strings as short as possible#
+#to avoid messing up the formatting#
+
+LINE_1B_1="$(gettext 'Manual - MX Fluxbox')"
+LINE_1B_2="$(gettext 'Ctrl F1')"
+LINE_1C_1="$(gettext 'Manual - MX Linux')"
+LINE_1C_2="$(gettext 'Shift F1')"
+LINE_1D_1="$(gettext 'MX-Tools')"
+LINE_1D_2="$(gettext 'Ctrl F5')"
+LINE_1E_1="$(gettext 'Screen Magnifier')"
+LINE_1E_2="$(gettext 'Ctrl Alt M')"
+LINE_1F_1="$(gettext 'Next Workspace')"
+LINE_1F_2="$(gettext 'Scroll Wheel Up')"
+LINE_1F_3="$(gettext '   or')"
+LINE_1F_4="$(gettext 'Ctrl Alt ')"
+LINE_1G_1="$(gettext 'Previous Workspace')"
+LINE_1G_2="$(gettext 'Scroll Wheel Down')"
+LINE_1G_3="$(gettext '   or')"
+LINE_1G_4="$(gettext 'Ctrl Alt ')"
+
+
+yad --plug=$fkey --tabnum=1 \
+--form --columns=3 --scroll \
+--field="$LINE_1B_1":LBL \
+--field="$LINE_1C_1":LBL \
+--field="$LINE_1D_1":LBL \
+--field="$LINE_1E_1":LBL \
+--field="$LINE_1F_1":LBL \
+--field="$LINE_1F_3":LBL \
+--field="$LINE_1G_1":LBL \
+--field="$LINE_1G_3":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field="$LINE_1B_2":LBL \
+--field="$LINE_1C_2":LBL \
+--field="$LINE_1D_2":LBL \
+--field="$LINE_1E_2":LBL \
+--field="$LINE_1F_2":LBL \
+--field="$LINE_1F_4":LBL \
+--field="$LINE_1G_2":LBL \
+--field="$LINE_1G_4":LBL \
+>$tempfile1 &
+
+###Tab 2
+
+#Translator Note#
+#Please keep translated strings as short as possible#
+#to avoid messing up the formatting#
+
+LINE_2A_1="$(gettext 'All Apps')"
+LINE_2A_2="$(gettext 'Left Logo')"
+LINE_2B_1="$(gettext 'Run')"
+LINE_2B_2="$(gettext 'Ctrl F2')"
+LINE_2C_1="$(gettext 'File Manager')"
+LINE_2C_2="$(gettext 'Ctrl F3')"
+LINE_2D_1="$(gettext 'Terminal')"
+LINE_2D_2="$(gettext 'Ctrl Alt T')"
+LINE_2E_1="$(gettext 'Screen Capture')"
+LINE_2E_2="$(gettext 'Alt Q')"
+
+yad --plug=$fkey --tabnum=2 \
+--form --columns=3 --scroll \
+--field="$LINE_2A_1":LBL \
+--field="$LINE_2B_1":LBL \
+--field="$LINE_2C_1":LBL \
+--field="$LINE_2D_1":LBL \
+--field="$LINE_2E_1":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field="$LINE_2A_2":LBL \
+--field="$LINE_2B_2":LBL \
+--field="$LINE_2C_2":LBL \
+--field="$LINE_2D_2":LBL \
+--field="$LINE_2E_2":LBL \
+>>$tempfile1 &
+    
+###Tab 3
+
+#Translator Note#
+#Please keep translated strings as short as possible#
+#to avoid messing up the formatting#
+
+LINE_3A_1="$(gettext 'Minimize')"
+LINE_3A_2="$(gettext 'Alt F9')"
+LINE_3B_1="$(gettext 'Maximize')"
+LINE_3B_2="$(gettext 'Alt F10')"
+LINE_3C_1="$(gettext 'Close')"
+LINE_3C_2="$(gettext 'Alt F4')"
+LINE_3D_1="$(gettext 'Move (drag titlebar)')"
+LINE_3D_2="$(gettext 'Left click')"
+LINE_3E_1="$(gettext 'Resize (drag lower R corner)')"
+LINE_3E_2="$(gettext 'Alt Right click')"
+LINE_3F_1="$(gettext 'Hide All')"
+LINE_3F_2="$(gettext 'Alt D')"
+LINE_3G_1="$(gettext 'Workspace Menu (on desktop)')"
+LINE_3G_2="$(gettext 'Middle click')"
+LINE_3H_1="$(gettext 'Root Menu (on desktop)')"
+LINE_3H_2="$(gettext 'Right click')"
+
+
+yad --plug=$fkey --tabnum=3 \
+--form --columns=3 --scroll \
+--field="$LINE_3A_1":LBL \
+--field="$LINE_3B_1":LBL \
+--field="$LINE_3C_1":LBL \
+--field="$LINE_3D_1":LBL \
+--field="$LINE_3E_1":LBL \
+--field="$LINE_3F_1":LBL \
+--field="$LINE_3G_1":LBL \
+--field="$LINE_3H_1":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field="$LINE_3A_2":LBL \
+--field="$LINE_3B_2":LBL \
+--field="$LINE_3C_2":LBL \
+--field="$LINE_3D_2":LBL \
+--field="$LINE_3E_2":LBL \
+--field="$LINE_3F_2":LBL \
+--field="$LINE_3G_2":LBL \
+--field="$LINE_3H_2":LBL \
+>>$tempfile1 &
+    
+###Tab 4
+
+#Translator Note#
+#Please keep translated strings as short as possible#
+#to avoid messing up the formatting#
+
+LINE_4A_1="$(gettext 'One-Half')"
+LINE_4A_2="$(gettext 'Ctrl 1/2/3/4')"
+LINE_4B_1="$(gettext '   or (on keypad)')"
+LINE_4B_2="$(gettext 'Alt 2,4,6,8')"
+LINE_4C_1="$(gettext 'One-Quarter')"
+LINE_4C_2="$(gettext 'Ctrl 5/6/7/8')"
+LINE_4D_1="$(gettext '   or (on keypad)')"
+LINE_4D_2="$(gettext 'Alt 1,3,7,9')"
+LINE_4E_1="$(gettext 'One-Third')"
+LINE_4E_2="$(gettext 'Ctrl 9')"
+LINE_4F_1="$(gettext 'Fullscreen')"
+LINE_4F_2="$(gettext 'Ctrl 0')"
+
+yad --plug=$fkey --tabnum=4 \
+--form --columns=3 --scroll \
+--field="$LINE_4A_1":LBL \
+--field="$LINE_4B_1":LBL \
+--field="$LINE_4C_1":LBL \
+--field="$LINE_4D_1":LBL \
+--field="$LINE_4E_1":LBL \
+--field="$LINE_4F_1":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field=":":LBL \
+--field="$LINE_4A_2":LBL \
+--field="$LINE_4B_2":LBL \
+--field="$LINE_4C_2":LBL \
+--field="$LINE_4D_2":LBL \
+--field="$LINE_4E_2":LBL \
+--field="$LINE_4F_2":LBL \
+>>$tempfile1 &
+    
+###Main Tab
+
+#Translator Note#
+#Please keep the markup notation in TEXT2#
+
+TEXT1="$(gettext 'This tool displays shortcuts ("keys") that are frequently used.')"
+TEXT2="$(gettext 'Source: <u>default</u> config file')"
+TEXT3=' $HOME/.fluxbox/keys.'
+TEXT4="$(gettext 'Changes made since installation will not be reflected in this app.')" 
+
+TABTEXT_1="$(gettext 'GENERAL')"
+TABTEXT_2="$(gettext 'PROGRAMS')"
+TABTEXT_3="$(gettext 'WINDOWS')"
+TABTEXT_4="$(gettext 'TILING')"
+
+yad --notebook --key=$fkey --tab="<b>"$(gettext 'GENERAL')"</b>" --tab="<b>"$(gettext 'PROGRAMS')"</b>" --tab="<b>"$(gettext 'WINDOWS')"</b>" --tab="<b>"$(gettext 'TILING')"</b>" --tab-pos=left \
+--title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+--width=500 --height=450 --borders=10 --center --buttons-layout=spread \
+--text="\n<b>$TEXT1</b>\n\n$TEXT2<i>$TEXT3</i>\n$TEXT4\n" --text-align=center \
+--button="${BTN_EDIT}":7 --button="${BTN_CLOSE}":6
+
+ret=$?
+
+case $ret in
+    6 | 252 )
+        exit
+    ;;
+
+    7 )
+        fpad $HOME/.fluxbox/keys
+    ;;
+esac
