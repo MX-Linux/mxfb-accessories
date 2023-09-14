@@ -35,19 +35,31 @@ fkey=$RANDOM
 LINE_1B_1="$(gettext 'Manual - MX Fluxbox')"
 #Translator Note - Please translate key names for your language#
 LINE_1B_2="$(gettext 'Ctrl F1')"
+#Translator Note - opens mx manual
 LINE_1C_1="$(gettext 'Manual - MX Linux')"
+#Translator Note - Please translate key names for your language#
 LINE_1C_2="$(gettext 'Shift F1')"
+#Translator Note - opens mx-tools application
 LINE_1D_1="$(gettext 'MX-Tools')"
+#Translator Note - Please translate key names for your language#
 LINE_1D_2="$(gettext 'Ctrl F5')"
+#Translator Note - launches the screen magnifier
 LINE_1E_1="$(gettext 'Screen Magnifier')"
+#Translator Note - Please translate key names for your language#
 LINE_1E_2="$(gettext 'Ctrl Alt M')"
+#Translator Note - go to the next virtual workspace
 LINE_1F_1="$(gettext 'Next Workspace')"
+#Translator Note - Please translate key names for your language#
 LINE_1F_2="$(gettext 'Scroll Wheel Up')"
 LINE_1F_3="$(gettext '   or')"
+#Translator Note - Please translate key names for your language#
 LINE_1F_4="$(gettext 'Ctrl Alt' )"
+#Translator Note - Please translate key names for your language#
 LINE_1G_1="$(gettext 'Previous Workspace')"
+#Translator Note - Please translate key names for your language#
 LINE_1G_2="$(gettext 'Scroll Wheel Down')"
 LINE_1G_3="$(gettext '   or')"
+#Translator Note - Please translate key names for your language#
 LINE_1G_4="$(gettext 'Ctrl Alt' )"
 
 yad --plug=$fkey --tabnum=1 \

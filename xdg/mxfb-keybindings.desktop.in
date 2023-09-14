@@ -1,8 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
-#Translator comment:  name of application
-Name=MXFB-keybindings
-#Translator comment:  what the application does
+#Translator comment:  name of application, like keyboard shortcuts or accelerator keys
+Name=Shortcuts
+#Translator comment:  what the application does, displays key combinations
 Comment=Shows frequently used key shortcuts
 Exec=mxfb-keybindings
 Terminal=false
