@@ -2,11 +2,18 @@
 
 ##This app was developed by MX Devs 2023 and released under GPLv3
 
-### version 2309-03
+### version 2309-04
+#Changes - added desktop file strings
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="mxfb-keybindings"
 source gettext.sh
+
+### desktop file strings
+#Translator Note#
+#These strings are for the desktop file#
+Name="$(gettext 'Shortcuts')"
+Comment="$(gettext 'Shows frequently used key shortcuts')"
 
 ### buttons
 export BTN_CLOSE=$(gettext "Close")  ; BTN_CLOSE+='!window-close'
