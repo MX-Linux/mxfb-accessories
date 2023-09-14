@@ -304,7 +304,7 @@ msgstr "Тема GTK"
 
 #: ../mxfb-font:113
 msgid "Gtk Font"
-msgstr ""
+msgstr "Шрифт GTK"
 
 #: ../mxfb-tint2-manager:91
 msgid "HELP"

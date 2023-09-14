@@ -23,7 +23,7 @@ make_pot()
 if [ ! -d "pot" ]; then
     mkdir pot
 fi
-xgettext --language Shell  --add-comments --sort-output -o pot/$RESOURCE.pot ../mxfb-menu-generator ../mxfb-tint2-manager ../mxfb-trashcheck ../mxfb-bg-rotate ../mxfb-borders ../mxfb-font ../mxfb-quickshot ../mxfb-separate-backgrounds ../mxfb-tiles ../mxfb-timer ../mxfb-top ../mxfb-look ../exit-options-manager
+xgettext --language Shell  --add-comments --sort-output -o pot/$RESOURCE.pot ../mxfb-menu-generator ../mxfb-tint2-manager ../mxfb-trashcheck ../mxfb-bg-rotate ../mxfb-borders ../mxfb-font ../mxfb-quickshot ../mxfb-separate-backgrounds ../mxfb-tiles ../mxfb-timer ../mxfb-top ../mxfb-look ../exit-options-manager ../mxfb-keybindings
 }
 
 make_mo()

@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[o:anticapitalista:p:antix-development:r:mxfb-accessories]
+file_filter = po/mxfb-accessories_<lang>.po
+source_file = mxfb-accessories.pot
+source_lang = en
+type = po

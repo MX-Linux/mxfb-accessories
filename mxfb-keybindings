@@ -5,7 +5,7 @@
 ### version 2309-03
 
 TEXTDOMAINDIR=/usr/share/locale 
-export TEXTDOMAIN="mxfb-keybindings"
+export TEXTDOMAIN="mxfb-accessories"
 source gettext.sh
 
 ### buttons
