@@ -1,18 +1,16 @@
 #!/bin/bash
 
 ##This app was developed by MX Devs 2023 and released under GPLv3
-
 ### version 2309-04
-#Changes - added desktop file strings
 
 TEXTDOMAINDIR=/usr/share/locale 
-export TEXTDOMAIN="mxfb-keybindings"
+export TEXTDOMAIN="mxfb-accessories"
 source gettext.sh
 
 ### desktop file strings
-#Translator Note#
-#These strings are for the desktop file#
+#Translator Note - This string is for the desktop file#
 Name="$(gettext 'Shortcuts')"
+#Translator Note - This string is for the desktop file#
 Comment="$(gettext 'Shows frequently used key shortcuts')"
 
 ### buttons
@@ -23,24 +21,19 @@ export BTN_EDIT=$(gettext "Edit keys file") ; BTN_EDIT+='!edit'
 
 TITLE="$(gettext 'Common MX-Fluxbox Keybindings')"
 CLASS="mxfb-keybindings"
-
 ICONPATH=/usr/share/pixmaps/mxfb-keybindings.png
 tempfile1=/tmp/kb-1.txt
 
-
 ### cleanup
 trap "rm -f $tempfile1" EXIT
-
 
 ###Tab 1
 
 fkey=$RANDOM
 
-#Translator Note#
-#Please keep translated strings as short as possible#
-#to avoid messing up the formatting#
-
+#Translator Note - Please keep translated strings as short as possible to avoid messing up the formatting#
 LINE_1B_1="$(gettext 'Manual - MX Fluxbox')"
+#Translator Note - Please translate key names for your language#
 LINE_1B_2="$(gettext 'Ctrl F1')"
 LINE_1C_1="$(gettext 'Manual - MX Linux')"
 LINE_1C_2="$(gettext 'Shift F1')"
@@ -51,12 +44,11 @@ LINE_1E_2="$(gettext 'Ctrl Alt M')"
 LINE_1F_1="$(gettext 'Next Workspace')"
 LINE_1F_2="$(gettext 'Scroll Wheel Up')"
 LINE_1F_3="$(gettext '   or')"
-LINE_1F_4="$(gettext 'Ctrl Alt ')"
+LINE_1F_4="$(gettext 'Ctrl Alt' )"
 LINE_1G_1="$(gettext 'Previous Workspace')"
 LINE_1G_2="$(gettext 'Scroll Wheel Down')"
 LINE_1G_3="$(gettext '   or')"
-LINE_1G_4="$(gettext 'Ctrl Alt ')"
-
+LINE_1G_4="$(gettext 'Ctrl Alt' )"
 
 yad --plug=$fkey --tabnum=1 \
 --form --columns=3 --scroll \
@@ -88,10 +80,7 @@ yad --plug=$fkey --tabnum=1 \
 
 ###Tab 2
 
-#Translator Note#
-#Please keep translated strings as short as possible#
-#to avoid messing up the formatting#
-
+#Translator Note - Please keep translated strings as short as possible to avoid messing up the formatting#
 LINE_2A_1="$(gettext 'All Apps')"
 LINE_2A_2="$(gettext 'Left Logo')"
 LINE_2B_1="$(gettext 'Run')"
@@ -124,10 +113,6 @@ yad --plug=$fkey --tabnum=2 \
     
 ###Tab 3
 
-#Translator Note#
-#Please keep translated strings as short as possible#
-#to avoid messing up the formatting#
-
 LINE_3A_1="$(gettext 'Minimize')"
 LINE_3A_2="$(gettext 'Alt F9')"
 LINE_3B_1="$(gettext 'Maximize')"
@@ -144,7 +129,6 @@ LINE_3G_1="$(gettext 'Workspace Menu (on desktop)')"
 LINE_3G_2="$(gettext 'Middle click')"
 LINE_3H_1="$(gettext 'Root Menu (on desktop)')"
 LINE_3H_2="$(gettext 'Right click')"
-
 
 yad --plug=$fkey --tabnum=3 \
 --form --columns=3 --scroll \
@@ -175,10 +159,6 @@ yad --plug=$fkey --tabnum=3 \
 >>$tempfile1 &
     
 ###Tab 4
-
-#Translator Note#
-#Please keep translated strings as short as possible#
-#to avoid messing up the formatting#
 
 LINE_4A_1="$(gettext 'One-Half')"
 LINE_4A_2="$(gettext 'Ctrl 1/2/3/4')"
@@ -217,10 +197,8 @@ yad --plug=$fkey --tabnum=4 \
     
 ###Main Tab
 
-#Translator Note#
-#Please keep the markup notation in TEXT2#
-
 TEXT1="$(gettext 'This tool displays shortcuts ("keys") that are frequently used.')"
+#Translator Note - Please keep the <u> and </u> markup notation#
 TEXT2="$(gettext 'Source: <u>default</u> config file')"
 TEXT3=' $HOME/.fluxbox/keys.'
 TEXT4="$(gettext 'Changes made since installation will not be reflected in this app.')" 
