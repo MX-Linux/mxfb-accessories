@@ -1,130 +1,56 @@
-MX Fluxbox includes by default a simple screensaver: a single line in the file ~/.fluxbox/startup:
+MX Fluxbox enables by default a simple screensaver provided by xset (a user-preference utility for the X Window System).
 
-xset -dpms && xset s 600
+Using the control found on the "Fluxbox" tab of MX Tweak, the user can simply select the number of minutes of inactivity before the screen is turned off. Selecting a value of 0 turns screensaving off. 
 
-The number at the end of the line is the delay time (seconds): you can change it as you like. To stop this screensaver:
+########## DE ##########
+MX Fluxbox aktiviert standardmäßig einen einfachen Bildschirmschoner, der von xset (einem Dienstprogramm für das X Window System) bereitgestellt wird.
 
-#xset -dpms && xset s 600
+Mit dem Regler auf der Registerkarte "Fluxbox" von MX Tweak kann der Benutzer einfach die Anzahl der Minuten der Inaktivität auswählen, bevor der Bildschirm ausgeschaltet wird. Wenn du den Wert 0 wählst, wird die Bildschirmschonung ausgeschaltet.
 
-Resource in terminal or online: man xset 
+########## EL ##########
+Το MX Fluxbox ενεργοποιεί από προεπιλογή μια απλή προφύλαξη οθόνης που παρέχεται από το xset (ένα βοηθητικό πρόγραμμα προτίμησης του χρήστη για το σύστημα παραθύρων X).
 
-"-dpms
-     The -dpms option disables DPMS (Energy Star) features.
-+dpms
-     The +dpms option enables DPMS (Energy Star) features.
-dpms flags...
-     The dpms option allows the DPMS (Energy Star) parameters to be set. The option can take up to three numerical values, or the 'force' flag followed by a DPMS state. The 'force' flags forces the server to immediately switch to the DPMS state specified. 
-     The DPMS state can be one of 'standby', 'suspend', 'off', or 'on'. When numerical values are given, they set the inactivity period (in units of seconds) before the three modes are activated. The first value given is for the 'standby' mode, the second is for the 'suspend' mode, and the third is for the 'off' mode. Setting these values implicitly enables the DPMS features. A value of zero disables a particular mode."
+Χρησιμοποιώντας τον έλεγχο που βρίσκεται στην καρτέλα "Fluxbox" του MX Tweak, ο χρήστης μπορεί απλά να επιλέξει τον αριθμό των λεπτών αδράνειας πριν απενεργοποιηθεί η οθόνη. Η επιλογή της τιμής 0 απενεργοποιεί την εξοικονόμηση οθόνης.
 
-##########DE##########
-MX Fluxbox enthält standardmäßig einen einfachen Bildschirmschoner: eine einzige Zeile in der Datei ~/.fluxbox/startup:
+########## ES ##########
+MX Fluxbox activa por defecto un sencillo salvapantallas proporcionado por xset (una utilidad de preferencias del usuario para el Sistema X Window).
 
-xset -dpms && xset s 600
+Utilizando el control que se encuentra en la pestaña "Fluxbox" de MX Tweak, el usuario puede seleccionar simplemente el número de minutos de inactividad antes de que se apague la pantalla. Seleccionando un valor de 0 se desactiva el salvapantallas.
 
-Die Zahl am Ende der Zeile ist die Verzögerungszeit (Sekunden): Sie können sie nach Belieben ändern. Um diesen Bildschirmschoner zu stoppen:
+########## FR ##########
+MX Fluxbox active par défaut un économiseur d'écran simple fourni par xset (un utilitaire de préférence utilisateur pour le système X Window).
 
-#xset -dpms && xset s 600
+En utilisant la commande qui se trouve dans l'onglet "Fluxbox" de MX Tweak, l'utilisateur peut simplement sélectionner le nombre de minutes d'inactivité avant que l'écran ne s'éteigne. La valeur 0 désactive l'économie d'écran.
 
-Ressource im Terminal oder online: man xset 
+########## IT ##########
+MX Fluxbox attiva per impostazione predefinita un semplice salvaschermo fornito da xset (un'utility di preferenza per il sistema X Window).
 
-##########EL##########
-Το MX Fluxbox περιλαμβάνει από προεπιλογή μια απλή προφύλαξη οθόνης: μια απλή γραμμή στο αρχείο ~/.fluxbox/startup:
+Utilizzando il controllo presente nella scheda "Fluxbox" di MX Tweak, l'utente può semplicemente selezionare il numero di minuti di inattività prima che lo schermo venga spento. Selezionando un valore pari a 0, il risparmio dello schermo viene disattivato.
 
-xset -dpms && xset s 600
+########## JA ##########
+MX Fluxboxは、デフォルトでxset（X Window Systemのユーザー設定ユーティリティ）が提供するシンプルなスクリーンセーバーを有効にする。
 
-Ο αριθμός στο τέλος της γραμμής είναι ο χρόνος καθυστέρησης (δευτερόλεπτα): μπορείτε να τον αλλάξετε όπως θέλετε. Για να σταματήσετε αυτή την προφύλαξη οθόνης:
+MX Tweakの "Fluxbox "タブにあるコントロールを使って、ユーザーは画面がオフになるまでの非アクティブ時間を選択できる。0を選択するとスクリーンセービングがオフになる。 
 
-#xset -dpms && xset s 600
+########## PL ##########
+MX Fluxbox domyślnie włącza prosty wygaszacz ekranu dostarczany przez xset (narzędzie preferencji użytkownika dla X Window System).
 
-Πόρος στο τερματικό ή στο διαδίκτυο: man xset 
+Korzystając z kontrolki znajdującej się w zakładce "Fluxbox" w MX Tweak, użytkownik może po prostu wybrać liczbę minut bezczynności, po których ekran zostanie wyłączony. Wybranie wartości 0 wyłącza oszczędzanie ekranu.
 
-##########ES##########
-MX Fluxbox incluye por defecto un sencillo salvapantallas: una única línea en el archivo ~/.fluxbox/startup:
+########## PT ##########
+O MX Fluxbox ativa por defeito um protetor de ecrã simples fornecido pelo xset (um utilitário de preferência do utilizador para o sistema X Window).
 
-xset -dpms && xset s 600
+Usando o controlo encontrado no separador "Fluxbox" do MX Tweak, o utilizador pode simplesmente selecionar o número de minutos de inatividade antes do ecrã ser desligado. Seleccionando um valor de 0 desliga a poupança de ecrã.
 
-El número al final de la línea es el tiempo de retardo (segundos): puede cambiarlo a su gusto. Para detener este salvapantallas
+########## RU ##########
+MX Fluxbox по умолчанию включает простую заставку, предоставляемую xset (утилита пользовательских настроек для X Window System).
 
-#xset -dpms && xset s 600
+С помощью регулятора, расположенного на вкладке "Fluxbox" программы MX Tweak, пользователь может просто выбрать количество минут бездействия перед выключением экрана. Выбор значения, равного 0, отключает экраносбережение.
 
-Recurso en terminal o en línea: man xset 
+########## ZH ##########
+MX Fluxbox 默认启用由 xset（X 窗口系统的用户偏好工具）提供的简单屏幕保护程序。
 
-##########FR##########
-MX Fluxbox inclut par défaut un économiseur d'écran simple : une simple ligne dans le fichier ~/.fluxbox/startup :
-
-xset -dpms && xset s 600
-
-Le nombre à la fin de la ligne est le temps de retard (secondes) : vous pouvez le modifier à votre guise. Pour arrêter cet économiseur d'écran :
-
-#xset -dpms && xset s 600
-
-Ressource dans le terminal ou en ligne : man xset 
-
-##########IT##########
-MX Fluxbox include di default un semplice screensaver: una singola riga nel file ~/.fluxbox/startup:
-
-xset -dpms && xset s 600
-
-Il numero alla fine della riga è il tempo di ritardo (secondi): può modificarlo a suo piacimento. Per interrompere questo screensaver:
-
-#xset -dpms && xset s 600
-
-Risorsa nel terminale o online: man xset 
-
-##########JA##########
-MX Fluxboxはデフォルトでシンプルなスクリーンセーバーを搭載しています：~/.fluxbox/startup：
-
-xset -dpms && xset s 600
-
-行末の数字は、遅延時間（秒）です。このスクリーンセーバーを停止するには
-
-#xset -dpms && xset s 600
-
-ターミナルまたはオンラインのリソース：man xset 
-
-##########PL##########
-MX Fluxbox domyślnie zawiera prosty wygaszacz ekranu: pojedyncza linia w pliku ~/.fluxbox/startup:
-
-xset -dpms && xset s 600
-
-Liczba na końcu linii to czas opóźnienia (w sekundach): można go dowolnie zmieniać. Aby zatrzymać ten wygaszacz ekranu:
-
-#xset -dpms && xset s 600
-
-Zasoby w terminalu lub online: man xset 
-
-##########PT##########
-O MX Fluxbox inclui por defeito um protetor de ecrã simples: uma única linha no ficheiro ~/.fluxbox/startup:
-
-xset -dpms && xset s 600
-
-O número no fim da linha é o tempo de atraso (segundos): pode alterá-lo como quiser. Para parar este protetor de ecrã:
-
-#xset -dpms && xset s 600
-
-Recurso no terminal ou em linha: man xset 
-
-##########RU##########
-MX Fluxbox включает по умолчанию простую заставку: одна строка в файле ~/.fluxbox/startup:
-
-xset -dpms && xset s 600
-
-Число в конце строки - это время задержки (секунды): Вы можете изменить его по своему усмотрению. Чтобы остановить эту заставку:
-
-#xset -dpms && xset s 600
-
-Ресурс в терминале или онлайн: man xset 
-
-##########ZH##########
-MX Fluxbox默认包括一个简单的屏幕保护程序：~/.fluxbox/startup：
-
-xset -dpms && xset s 600
-
-该行末尾的数字是延迟时间（秒）：你可以随意改变它。要停止这个屏幕保护程序：
-
-#xset -dpms && xset s 600
-
-在终端或在线的资源：man xset 
+使用 MX Tweak 的 "Fluxbox "选项卡上的控件，用户可以简单地选择屏幕关闭前的闲置分钟数。如果选择的值为 0，则屏幕保护功能将关闭。
 
 ----------
 

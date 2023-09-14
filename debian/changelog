@@ -1,3 +1,12 @@
+mxfb-accessories (23.07.05mx23+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  [Jerry]
+  * updated mxfb-settings.list to include Shortcuts
+  * revised help_mxfb-screensaver to match use of MX Tweak 
+
+ -- Dolphin Oracle <jb@mx>  Thu, 14 Sep 2023 11:05:55 -0400
+
 mxfb-accessories (23.07.05mx23) mx; urgency=medium
 
   * update translations 

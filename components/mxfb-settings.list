@@ -105,6 +105,7 @@ Comment[vi]=Các cài đặt chung cho MX-Linux Fluxbox
 Category=USER
 lxappearance
 mxfb-tint2-manager
+mxfb-keybindings
 mx-rofi-manager
 exit-options-manager
 mxfb-look
