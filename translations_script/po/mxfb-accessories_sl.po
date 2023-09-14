@@ -547,7 +547,7 @@ msgstr "\\n<b>"
 
 #: ../mxfb-look:377
 msgid "\\n<b> Choose which look to restore</b>\\n"
-msgstr "\\n<b> Izberite videz za obnovo</b>\\n"
+msgstr "\\n<b> Izberite videz obnove</b>\\n"
 
 #: ../mxfb-look:389
 msgid "\\n<b> You need to select a look !</b>\\n"
