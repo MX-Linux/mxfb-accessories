@@ -244,7 +244,7 @@ yad --plug=$fkey --tabnum=4 \
     
 ###Main Tab
 #Translator Note - short descriptive text on main window of mxfb-keybindings
-TEXT1="$(gettext 'This tool displays shortcuts ("keys") that are frequently used.')"
+TEXT1="$(gettext 'This tool displays default shortcuts ("keys") that are frequently used.')"
 
 #Translator Note - tab label
 TABTEXT_1="$(gettext 'GENERAL')"
