@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 07:04-0400\n"
+"POT-Creation-Date: 2023-09-16 09:49-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2023\n"
 "Language-Team: Albanian (https://app.transifex.com/anticapitalista/teams/10162/sq/)\n"
@@ -46,9 +46,17 @@ msgstr ""
 "\n"
 "    --Më tepër: kërkoni për “Quickshot” në MX Wiki"
 
-#: ../mxfb-look:267 ../mxfb-look:294
+#: ../mxfb-look:319 ../mxfb-look:346
 msgid " "
 msgstr " "
+
+#: ../mxfb-keybindings:56 ../mxfb-keybindings:63
+msgid "   or"
+msgstr "ose"
+
+#: ../mxfb-keybindings:204 ../mxfb-keybindings:211
+msgid "   or (on keypad)"
+msgstr "   ose (te pjesa numerike e tastierës)"
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -87,33 +95,27 @@ msgstr "$TITLE2"
 msgid "12h/24h"
 msgstr "12h/24h"
 
-#: ../mxfb-look:220 ../mxfb-look:543
+#: ../mxfb-look:272 ../mxfb-look:595
 msgid "1st Tint2 Panel"
 msgstr "Paneli i parë Tint2"
 
-#: ../mxfb-look:221 ../mxfb-look:544
+#: ../mxfb-look:273 ../mxfb-look:596
 msgid "2nd Tint2 Panel"
 msgstr "Paneli i dytë Tint2"
 
-#: ../mxfb-look:552
+#: ../mxfb-look:604
 msgid "<b>   "
 msgstr "<b>   "
 
-#. RESTOREMAIN
-#: ../mxfb-look:538
-#, sh-format
-msgid "<b>$LOOKRESTORE</b>\\n"
-msgstr "<b>$LOOKRESTORE</b>\\n"
-
-#: ../mxfb-look:293
+#: ../mxfb-look:345
 msgid "<b>Name for New Look</b>"
 msgstr "<b>Emër për Pamjen e Re</b>"
 
-#: ../mxfb-look:266
+#: ../mxfb-look:318
 msgid "<b>Name for new style</b>"
 msgstr "<b>Emër për stilin e ri</b>"
 
-#: ../mxfb-look:710
+#: ../mxfb-look:762
 msgid ""
 "<b>You can save the current look or restore a saved look</b>\\n\\nA look is "
 "comprised of the following elements\\n- Gtk-Theme\\n- Gtk-Icon\\n- Gtk-"
@@ -163,7 +165,7 @@ msgstr ""
 "  Ctrl + 9: një e treta \n"
 "  Ctrl + 0: maksimizoje/çmaksimizoje"
 
-#: ../mxfb-look:285
+#: ../mxfb-look:337
 #, sh-format
 msgid ""
 "A Look with this name already exists.\\n\\nDo you want to overwrite $NEWNAME"
@@ -172,11 +174,65 @@ msgstr ""
 "Ka tashmë një Pamje me këtë emër.\\n\\nDoni të mbishkruhet $NEWNAME, apo të "
 "ruhet nën një emër të ri?\\n"
 
+#: ../mxfb-menu-generator:55
+msgid "All Applications"
+msgstr "Krejt Aplikacionet"
+
+#. ##Tab 2
+#. Translator Note - opens application finder
+#: ../mxfb-keybindings:98
+msgid "All Apps"
+msgstr "Krejt Aplikacionet"
+
 #. all done
-#: ../mxfb-look:346
+#: ../mxfb-look:398
 #, sh-format
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "Kaq qe!\\n\\nPamja është ruajtur si <b>$NEWNAME</b>"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:213
+msgid "Alt 1,3,7,9"
+msgstr "Alt 1,3,7,9"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:206
+msgid "Alt 2,4,6,8"
+msgstr "Alt 2,4,6,8"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:161
+msgid "Alt D"
+msgstr "Alt D"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:146
+msgid "Alt F10"
+msgstr "Alt F10"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:150
+msgid "Alt F4"
+msgstr "Alt F4"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:142
+msgid "Alt F9"
+msgstr "Alt F9"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:116
+msgid "Alt Q"
+msgstr "Alt Q"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:157
+msgid "Alt Right click"
+msgstr "Alt Klikim me të djathitin"
+
+#: ../mxfb-font:187
+msgid "Antialising"
+msgstr ""
 
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
@@ -203,14 +259,11 @@ msgstr "I vini shenjë të xhirohet, hiqjani shenjën, që të ndalet"
 msgid "Click \\"
 msgstr "Klikoni \\"
 
-#. !/bin/bash
-#. #This app was developed by MX Devs xxx 2023 and released under GPLv3
-#. version 230518-01
-#. TEXTDOMAINDIR=/usr/share/locale
-#. export TEXTDOMAIN="mxfb-font"
-#. source gettext.sh
 #. buttons
+#. ## buttons
+#. Translator Note - window command
 #: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../exit-options-manager:29
+#: ../mxfb-keybindings:17 ../mxfb-keybindings:148
 msgid "Close"
 msgstr "Mbylle"
 
@@ -226,16 +279,71 @@ msgstr ""
 msgid "Config"
 msgstr "Formësim"
 
-#: ../mxfb-look:224 ../mxfb-look:547
+#: ../mxfb-look:276 ../mxfb-look:599
 msgid "Conky"
 msgstr "Conky"
 
-#: ../mxfb-look:225 ../mxfb-look:548
+#: ../mxfb-look:277 ../mxfb-look:600
 msgid "Conky State"
 msgstr "Gjendje e Conky-t"
 
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:221
+msgid "Ctrl 0"
+msgstr "Ctrl 0"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:203
+msgid "Ctrl 1/2/3/4"
+msgstr "Ctrl 1/2/3/4"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:210
+msgid "Ctrl 5/6/7/8"
+msgstr "Ctrl 5/6/7/8"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:217
+msgid "Ctrl 9"
+msgstr "Ctrl 9"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:58 ../mxfb-keybindings:65
+msgid "Ctrl Alt"
+msgstr "Ctrl Alt"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:51
+msgid "Ctrl Alt M"
+msgstr "Ctrl Alt M"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:112
+msgid "Ctrl Alt T"
+msgstr "Ctrl Alt T"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:39
+msgid "Ctrl F1"
+msgstr "Ctrl F1"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:104
+msgid "Ctrl F2"
+msgstr "Ctrl F2"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:108
+msgid "Ctrl F3"
+msgstr "Ctrl F3"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:47
+msgid "Ctrl F5"
+msgstr "Ctrl F5"
+
 #. MAIN
-#: ../mxfb-look:215
+#: ../mxfb-look:267
 msgid "Current Settings"
 msgstr "Rregullimet në Fuqi"
 
@@ -266,12 +374,17 @@ msgstr "Mos e shfaq më mesazhin e Ndihmës!"
 msgid "Edit"
 msgstr "Përpunoni"
 
+#. Translator Note - button to open the fluxbox 'keys' file in text editor
+#: ../mxfb-keybindings:19
+msgid "Edit keys file"
+msgstr "Përpunoni kartelë tastesh"
+
 #: ../mxfb-timer:23
 msgid "Enter local time"
 msgstr "Jepni kohën vendore"
 
 #. define some variables
-#: ../exit-options-manager:12 ../exit-options-manager:230
+#: ../exit-options-manager:12 ../exit-options-manager:232
 msgid "Exit-options-manager"
 msgstr "Përgjegjës mundësish daljeje"
 
@@ -279,23 +392,46 @@ msgstr "Përgjegjës mundësish daljeje"
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
 msgstr "Përmban: 1/2 ekrani, 1/4 ekrani, 1/3 ekrani dhe rikthim \\n"
 
-#: ../mxfb-look:219 ../mxfb-look:542
+#. Translator Note - opens file manager
+#: ../mxfb-keybindings:106
+msgid "File Manager"
+msgstr "Përgjegjës Kartelash"
+
+#: ../mxfb-look:271 ../mxfb-look:594
 msgid "Fluxbox Style"
 msgstr "Stil Fluxbox-i"
 
-#: ../mxfb-look:218 ../mxfb-look:541
+#. gtk-xft-rgba=none!rgb!bgr!vrgb!vbgr
+#. GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini |
+#. sed -e "s/gtk-xft-rgba\=//" )"
+#. ###
+#: ../mxfb-font:163
+msgid "Font"
+msgstr "Shkronja"
+
+#. Translator Note - option for window tiling
+#: ../mxfb-keybindings:219
+msgid "Fullscreen"
+msgstr "Sa krejt ekrani"
+
+#. Translator Note - tab label
+#: ../mxfb-keybindings:250 ../mxfb-keybindings:258
+msgid "GENERAL"
+msgstr "TË PËRGJITHSHME"
+
+#: ../mxfb-look:270 ../mxfb-look:593
 msgid "GTK Font"
 msgstr "Shkronja Gtk"
 
-#: ../mxfb-look:217 ../mxfb-look:540
+#: ../mxfb-look:269 ../mxfb-look:592
 msgid "GTK Icons"
 msgstr "Ikona GTK"
 
-#: ../mxfb-look:216 ../mxfb-look:539
+#: ../mxfb-look:268 ../mxfb-look:591
 msgid "GTK Theme"
 msgstr "Temë Gtk"
 
-#: ../mxfb-font:113
+#: ../mxfb-font:184
 msgid "Gtk Font"
 msgstr "Shkronja Gtk"
 
@@ -310,6 +446,19 @@ msgstr "NDIHMË: si të bëhet një foto ekrani"
 #: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../exit-options-manager:30
 msgid "Help"
 msgstr "Ndihmë"
+
+#. Translator Note - window action
+#: ../mxfb-keybindings:159
+msgid "Hide All"
+msgstr "Fshihi krejt"
+
+#: ../mxfb-font:186
+msgid "Hinting"
+msgstr ""
+
+#: ../mxfb-font:199
+msgid "Hinting Style"
+msgstr ""
 
 #: ../exit-options-manager:141
 msgid "Icon Size"
@@ -327,50 +476,101 @@ msgstr "Mënyrë figurash"
 msgid "Layout"
 msgstr "Skemë"
 
-#: ../mxfb-look:265
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:100
+msgid "Left Super"
+msgstr "Tasti Super Majtas"
+
+#: ../mxfb-keybindings:153
+msgid "Left click"
+msgstr "Klikim me të majtin"
+
+#: ../mxfb-look:317
 #, sh-format
 msgid "Look name $NEWNAME is protected. Choose another name."
 msgstr "Emri $NEWNAME për pamje është i rezervuar. Zgjidhni tjetër emër."
+
+#. ##
+#. Translator Note - Window title, keybindings = shortcut keys
+#: ../mxfb-keybindings:24
+msgid "MX-Fluxbox Keybindings"
+msgstr "Përshoqërime Tastesh MX-Fluxbox"
+
+#. Translator Note - opens mx-tools application
+#: ../mxfb-keybindings:45
+msgid "MX-Tools"
+msgstr "MX-Tools"
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
 msgstr "Kohëmatës MXFB"
 
-#. ###
-#: ../mxfb-font:91
-msgid "MXFB-Font"
-msgstr "Shkronja MXFB"
-
 #. define some variables
-#: ../mxfb-look:17 ../mxfb-look:95 ../mxfb-look:361
+#: ../mxfb-look:17 ../mxfb-look:147 ../mxfb-look:413
 msgid "MXFB-Look"
-msgstr ""
+msgstr "MXFB-Look"
+
+#. Translator Note - opens mx-fluxbox manual
+#: ../mxfb-keybindings:37
+msgid "Manual - MX Fluxbox"
+msgstr "Doracak - MX Fluxbox"
+
+#. Translator Note - opens mx manual
+#: ../mxfb-keybindings:41
+msgid "Manual - MX Linux"
+msgstr "Doracak - MX Linux"
 
 #: ../exit-options-manager:142
 msgid "Margin"
 msgstr "Mënjanë"
 
-#: ../mxfb-font:110
+#. Translator Note - window command
+#: ../mxfb-keybindings:144
+msgid "Maximize"
+msgstr "Maksimizoje"
+
+#: ../mxfb-font:181
 msgid "Menu Text Default"
 msgstr "Parazgjedhje Teksti Menush"
 
-#: ../mxfb-font:107
+#: ../mxfb-font:178
 msgid "Menu Title Default"
 msgstr "Parazgjedhje Titujsh Menush"
+
+#. Translator Note - mouse action
+#: ../mxfb-keybindings:165
+msgid "Middle click"
+msgstr "Klikim te të mesit"
+
+#. ##Tab 3
+#. Translator Note - window command
+#: ../mxfb-keybindings:140
+msgid "Minimize"
+msgstr "Minimizoje"
+
+#. Translator Note - window action
+#: ../mxfb-keybindings:152
+msgid "Move (drag titlebar)"
+msgstr "Lëvizeni (tërhiqni shtyllën e titullit)"
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
 msgstr "Mundësi të shumta për taste numrash dhe tastierë"
 
-#: ../mxfb-look:240
+#: ../mxfb-look:292
 msgid "New-Look-Name"
 msgstr "Emër-Pamjeje-të-Re"
+
+#. Translator Note - go to the next virtual workspace
+#: ../mxfb-keybindings:53
+msgid "Next Workspace"
+msgstr "Hapësira Pasuese e Punës"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
 msgstr "Pa rrotullim: Vonesë = 0"
 
-#: ../mxfb-look:203
+#: ../mxfb-look:255
 msgid "None"
 msgstr "Asnjë"
 
@@ -387,27 +587,77 @@ msgstr "OK të vazhdohet?"
 msgid "OPTIONAL BORDER STYLE CONFIG"
 msgstr "FORMËSIM OPSIONAL STILI ANËSH"
 
-#: ../mxfb-font:105 ../mxfb-font:108 ../mxfb-font:111
+#. ##Tab 4
+#. Translator Note - option for window tiling
+#: ../mxfb-keybindings:201
+msgid "One-Half"
+msgstr "Gjysmë"
+
+#. Translator Note - option for window tiling
+#: ../mxfb-keybindings:208
+msgid "One-Quarter"
+msgstr "Çerek"
+
+#. Translator Note - option for window tiling
+#: ../mxfb-keybindings:215
+msgid "One-Third"
+msgstr "Një të Tretën"
+
+#: ../mxfb-menu-generator:193
+msgid "Other"
+msgstr "Tjetër"
+
+#: ../mxfb-font:176 ../mxfb-font:179 ../mxfb-font:182
 msgid "Override with"
 msgstr "Anashkaloje me"
 
-#: ../mxfb-look:286
+#: ../mxfb-look:338
 #, sh-format
 msgid "Overwrite $NEWNAME"
 msgstr "Mbishkruaje $NEWNAME"
+
+#. Translator Note - tab label
+#: ../mxfb-keybindings:252 ../mxfb-keybindings:258
+msgid "PROGRAMS"
+msgstr "PROGRAME"
 
 #. How to take a screenshot...
 #: ../mxfb-quickshot:72
 msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
 msgstr "Shtypni tastin “Print” (ose “PrtSc”) dhe përdorni miun:"
 
-#: ../mxfb-look:551 ../mxfb-look:712
+#. Translator Note - go to the previous virtual workspace
+#: ../mxfb-keybindings:60
+msgid "Previous Workspace"
+msgstr "Hapësira e Mëparshme e Punës"
+
+#. Translator Note - window action
+#: ../mxfb-keybindings:155
+msgid "Resize (drag lower R corner)"
+msgstr "Ripërmasojeni (tërhiqni cepin e poshtëm R)"
+
+#: ../mxfb-look:603 ../mxfb-look:764
 msgid "Restore Look"
 msgstr "Rikthe Pamje"
 
-#: ../mxfb-look:222 ../mxfb-look:545
+#. Translator Note - mouse action
+#: ../mxfb-keybindings:169
+msgid "Right click"
+msgstr "Klikim me të djathtin"
+
+#: ../mxfb-look:274 ../mxfb-look:597
 msgid "Rofi Theme"
 msgstr "Temë Rofi"
+
+#. Translator Note - opens root menu
+#: ../mxfb-keybindings:167
+msgid "Root Menu (on desktop)"
+msgstr "Menu Rrënje (në desktop)"
+
+#. Translator Note - opens run dialog
+#: ../mxfb-keybindings:102
+msgid "Run"
+msgstr "Xhironi"
 
 #. Press the Print-Screen-key to capture a screen selection.
 #. SELECTION: press Print, then draw a rectangle
@@ -415,22 +665,42 @@ msgstr "Temë Rofi"
 msgid "SELECTION: draw a rectangle"
 msgstr "PËRZGJEDHJE: vizatoni një drejtkëndësh"
 
-#: ../mxfb-look:712
+#: ../mxfb-look:764
 msgid "Save Current Look"
 msgstr "Ruaje Pamjen e Tanishme"
 
-#: ../mxfb-look:228
+#: ../mxfb-look:280
 msgid "Save Look"
 msgstr "Ruaje Pamjen"
 
-#: ../mxfb-look:240
+#: ../mxfb-look:292
 #, sh-format
 msgid "Save Look as"
 msgstr "Ruaje Pamjen si"
 
-#: ../mxfb-look:286
+#: ../mxfb-look:338
 msgid "Save as different name"
 msgstr "Ruaje nën një emër tjetër"
+
+#. Translator Note - opens screenshot app
+#: ../mxfb-keybindings:114
+msgid "Screen Capture"
+msgstr "Fotografim/Regjistrim Ekrani"
+
+#. Translator Note - launches the screen magnifier
+#: ../mxfb-keybindings:49
+msgid "Screen Magnifier"
+msgstr "Zmadhues Ekrani"
+
+#. Translator Note - mouse action
+#: ../mxfb-keybindings:62
+msgid "Scroll Wheel Down"
+msgstr "Rrotullojeni Rrotëzën Për Poshtë"
+
+#. Translator Note - mouse action
+#: ../mxfb-keybindings:55
+msgid "Scroll Wheel Up"
+msgstr "Rrotullojeni Rrotëzën Për Sipër"
 
 #. run main dialog
 #: ../exit-options-manager:149
@@ -444,6 +714,22 @@ msgstr "Përzgjidhni mënyrë shtylle titujsh"
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
 msgstr "Caktoni rrotullim sfondi"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:43
+msgid "Shift F1"
+msgstr "Shift F1"
+
+#. ## desktop file strings
+#. Translator Note - desktop file Name field
+#: ../mxfb-keybindings:12
+msgid "Shortcuts"
+msgstr "Shkurtore"
+
+#. Translator Note - desktop file Comment field
+#: ../mxfb-keybindings:14
+msgid "Shows frequently used key shortcuts"
+msgstr "Shfaq shkurtore të përdorura rëndom"
 
 #. SUBTITLE=$(gettext "Be sure to fill in all fields you want enabled")
 #: ../mxfb-borders:20 ../mxfb-top:22
@@ -459,6 +745,17 @@ msgstr "Hapësirë"
 msgid "Success!"
 msgstr "Sukses!"
 
+#. Translator Note - tab label - tiling as in arrangement of non-overlapping
+#. windows on a screen
+#: ../mxfb-keybindings:256 ../mxfb-keybindings:258
+msgid "TILING"
+msgstr ""
+
+#. Translator Note - opens terminal
+#: ../mxfb-keybindings:110
+msgid "Terminal"
+msgstr "Terminal"
+
 #: ../mxfb-tiles:15
 msgid ""
 "The code has been inserted successfully. Now there are 3 methods to do the "
@@ -470,7 +767,7 @@ msgstr "Kodi u fut me sukses. Tani ka 3 metoda për të bërë vendosjen</b>"
 msgid "The existing file will be backed up in:"
 msgstr "Kartela ekzistuese do të kopjeruhet te:"
 
-#: ../exit-options-manager:247
+#: ../exit-options-manager:249
 msgid "The following settings can also be defined"
 msgstr "Mund të përcaktohen rregullimet vijuese"
 
@@ -497,6 +794,12 @@ msgstr ""
 "Ky programth do të kopjeruajë kartelën tuaj të tanishme për tastet, mandej do të shtojë në fund të kartelës urdhra për dritaret. \\n\n"
 "</b>"
 
+#. ##Main Tab
+#. Translator Note - short descriptive text on main window of mxfb-keybindings
+#: ../mxfb-keybindings:247
+msgid "This tool displays default shortcuts (\"keys\") that are frequently used."
+msgstr "Ky mjet shfaq shkurtore (“taste”) parazgjedhje që përdoren rëndom."
+
 #. A new config file will be installed.
 #: ../mxfb-quickshot:64
 msgid "This will install a new config file"
@@ -520,35 +823,45 @@ msgstr "Mundësi përdorimi"
 msgid "WINDOW: click anywhere inside"
 msgstr "DRITARE: klikoni ku të jetë brenda"
 
-#: ../mxfb-look:549
+#. Translator Note - tab label
+#: ../mxfb-keybindings:254 ../mxfb-keybindings:258
+msgid "WINDOWS"
+msgstr "DRITARE"
+
+#: ../mxfb-look:601
 msgid "Wait 10 seconds for the conky to restart"
 msgstr "Prisni 10 sekonda që të riniset Conky"
 
-#: ../mxfb-look:223 ../mxfb-look:546
+#: ../mxfb-look:275 ../mxfb-look:598
 msgid "Wallpaper"
 msgstr "Sfond"
 
-#: ../mxfb-font:104
+#: ../mxfb-font:175
 msgid "Window Title Default"
 msgstr "Parazgjedhje Titujsh Dritaresh"
+
+#. Translator Note - opens workspace menu
+#: ../mxfb-keybindings:163
+msgid "Workspace Menu (on desktop)"
+msgstr "Menu Hapësirash Pune (në desktop)"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
 msgstr "\\n"
 
-#: ../mxfb-look:229
+#: ../mxfb-look:281
 msgid "\\n<b>"
 msgstr "\\n<b>"
 
-#: ../mxfb-look:377
+#: ../mxfb-look:429
 msgid "\\n<b> Choose which look to restore</b>\\n"
 msgstr "\\n<b> Zgjidhni cila pamje të rikthehet</b>\\n"
 
-#: ../mxfb-look:389
+#: ../mxfb-look:441
 msgid "\\n<b> You need to select a look !</b>\\n"
 msgstr "\\n<b> Lypset të përzgjidhni një pamje !</b>\\n"
 
-#: ../exit-options-manager:235
+#: ../exit-options-manager:237
 msgid "\\nIcon themes can be defined by creating a file"
 msgstr "\\nTemat e ikonave mund të përcaktohen duke krijuar një kartelë"
 
@@ -582,7 +895,7 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Riktheje"
 
-#: ../exit-options-manager:237
+#: ../exit-options-manager:239
 msgid ""
 "and adding the paths for the desired 64x64 pixel icons to the following "
 "definitions"
@@ -604,10 +917,10 @@ msgstr "ose numër dhe njësi"
 msgid "time format:"
 msgstr "format kohe:"
 
-#: ../mxfb-look:209 ../mxfb-look:530
+#: ../mxfb-look:261 ../mxfb-look:582
 msgid "toggled off"
 msgstr "çaktivizuar"
 
-#: ../mxfb-look:207 ../mxfb-look:528
+#: ../mxfb-look:259 ../mxfb-look:580
 msgid "toggled on"
 msgstr "aktivizuar"
