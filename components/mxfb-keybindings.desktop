@@ -1,5 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
+Name[ca]=Dreceres
 Name[de]=Verknüpfungen
 Name[es]=Atajos de teclado
 Name[es_ES]=Atajos de teclado
@@ -12,6 +13,7 @@ Name[pt_BR]=Atalhos do Teclado
 Name[sq]=Shkurtore
 Name[sv]=Genvägar
 Name=Shortcuts
+Comment[ca]=Mostra les tecles de drecera usades sovint
 Comment[de]=Zeigt häufig verwendete Tastenkombinationen
 Comment[es]=Muestra los atajos de teclado más utilizados
 Comment[es_ES]=Muestra los atajos de teclado más utilizados

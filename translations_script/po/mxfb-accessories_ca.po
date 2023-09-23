@@ -497,12 +497,12 @@ msgstr "El nom d'Aspecte $NEWNAME està protegit. Trieu-ne un altre."
 #. Translator Note - Window title, keybindings = shortcut keys
 #: ../mxfb-keybindings:24
 msgid "MX-Fluxbox Keybindings"
-msgstr ""
+msgstr "MX-Fluxbox Assignació de tecles"
 
 #. Translator Note - opens mx-tools application
 #: ../mxfb-keybindings:45
 msgid "MX-Tools"
-msgstr ""
+msgstr "MX-Tools"
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
@@ -516,12 +516,12 @@ msgstr "MXFB-Look"
 #. Translator Note - opens mx-fluxbox manual
 #: ../mxfb-keybindings:37
 msgid "Manual - MX Fluxbox"
-msgstr ""
+msgstr "Manual - MX Fluxbox"
 
 #. Translator Note - opens mx manual
 #: ../mxfb-keybindings:41
 msgid "Manual - MX Linux"
-msgstr ""
+msgstr "Manual - MX Linux"
 
 #: ../exit-options-manager:142
 msgid "Margin"
@@ -543,7 +543,7 @@ msgstr "Títol de Menú per omissió"
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:165
 msgid "Middle click"
-msgstr ""
+msgstr "Clic al mig"
 
 #. ##Tab 3
 #. Translator Note - window command
@@ -554,7 +554,7 @@ msgstr "Minimitza"
 #. Translator Note - window action
 #: ../mxfb-keybindings:152
 msgid "Move (drag titlebar)"
-msgstr ""
+msgstr "Mou (arrossega la barra de títol)"
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -567,7 +567,7 @@ msgstr "Nom del nou Aspecte"
 #. Translator Note - go to the next virtual workspace
 #: ../mxfb-keybindings:53
 msgid "Next Workspace"
-msgstr ""
+msgstr "Espai de treball següent"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
@@ -594,17 +594,17 @@ msgstr "CONFIGURACIÓ D'ESTIL DE LA VORA OPCIONAL"
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:201
 msgid "One-Half"
-msgstr ""
+msgstr "Una meitat"
 
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:208
 msgid "One-Quarter"
-msgstr ""
+msgstr "Un quart"
 
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:215
 msgid "One-Third"
-msgstr ""
+msgstr "Un terç"
 
 #: ../mxfb-menu-generator:193
 msgid "Other"
@@ -622,7 +622,7 @@ msgstr "Sobreescriu $NEWNAME"
 #. Translator Note - tab label
 #: ../mxfb-keybindings:252 ../mxfb-keybindings:258
 msgid "PROGRAMS"
-msgstr ""
+msgstr "PROGRAMES"
 
 #. How to take a screenshot...
 #: ../mxfb-quickshot:72
@@ -632,12 +632,12 @@ msgstr "Premeu \"ImprPant\" (o \"PrtSc\") i useu el ratolí:"
 #. Translator Note - go to the previous virtual workspace
 #: ../mxfb-keybindings:60
 msgid "Previous Workspace"
-msgstr ""
+msgstr "Espai de treball anterior"
 
 #. Translator Note - window action
 #: ../mxfb-keybindings:155
 msgid "Resize (drag lower R corner)"
-msgstr ""
+msgstr "Redimensiona (arrossega angle inferior dret)"
 
 #: ../mxfb-look:603 ../mxfb-look:764
 msgid "Restore Look"
@@ -646,7 +646,7 @@ msgstr "Restaura l'Aspecte"
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:169
 msgid "Right click"
-msgstr ""
+msgstr "Clic dret"
 
 #: ../mxfb-look:274 ../mxfb-look:597
 msgid "Rofi Theme"
@@ -655,7 +655,7 @@ msgstr "Tema Rofi"
 #. Translator Note - opens root menu
 #: ../mxfb-keybindings:167
 msgid "Root Menu (on desktop)"
-msgstr ""
+msgstr "Menú arrel (a l'escriptori)"
 
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
@@ -688,22 +688,22 @@ msgstr "Desa amb un nom diferent"
 #. Translator Note - opens screenshot app
 #: ../mxfb-keybindings:114
 msgid "Screen Capture"
-msgstr ""
+msgstr "Captura de pantalla"
 
 #. Translator Note - launches the screen magnifier
 #: ../mxfb-keybindings:49
 msgid "Screen Magnifier"
-msgstr ""
+msgstr "Lupa de pantalla"
 
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:62
 msgid "Scroll Wheel Down"
-msgstr ""
+msgstr "Roda de desplaçament avall"
 
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:55
 msgid "Scroll Wheel Up"
-msgstr ""
+msgstr "Roda de desplaçament amunt"
 
 #. run main dialog
 #: ../exit-options-manager:149
@@ -721,18 +721,18 @@ msgstr "Configura la rotació del fons de pantalla"
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:43
 msgid "Shift F1"
-msgstr ""
+msgstr "Maj. F1"
 
 #. ## desktop file strings
 #. Translator Note - desktop file Name field
 #: ../mxfb-keybindings:12
 msgid "Shortcuts"
-msgstr ""
+msgstr "Dreceres"
 
 #. Translator Note - desktop file Comment field
 #: ../mxfb-keybindings:14
 msgid "Shows frequently used key shortcuts"
-msgstr ""
+msgstr "Mostra les tecles de drecera usades sovint"
 
 #. SUBTITLE=$(gettext "Be sure to fill in all fields you want enabled")
 #: ../mxfb-borders:20 ../mxfb-top:22
@@ -752,7 +752,7 @@ msgstr "Èxit!"
 #. windows on a screen
 #: ../mxfb-keybindings:256 ../mxfb-keybindings:258
 msgid "TILING"
-msgstr ""
+msgstr "MOSAIC"
 
 #. Translator Note - opens terminal
 #: ../mxfb-keybindings:110
@@ -804,6 +804,7 @@ msgstr ""
 #: ../mxfb-keybindings:247
 msgid "This tool displays default shortcuts (\"keys\") that are frequently used."
 msgstr ""
+"Aquesta eina mostra les dreceres de tecla per omissió que s'usen sovint."
 
 #. A new config file will be installed.
 #: ../mxfb-quickshot:64
@@ -831,7 +832,7 @@ msgstr "FINESTRA: cliqueu a dins en qualsevol lloc"
 #. Translator Note - tab label
 #: ../mxfb-keybindings:254 ../mxfb-keybindings:258
 msgid "WINDOWS"
-msgstr ""
+msgstr "FINESTRES"
 
 #: ../mxfb-look:601
 msgid "Wait 10 seconds for the conky to restart"
@@ -848,7 +849,7 @@ msgstr "Títol de finestra per omissió"
 #. Translator Note - opens workspace menu
 #: ../mxfb-keybindings:163
 msgid "Workspace Menu (on desktop)"
-msgstr ""
+msgstr "Menú de l'espai de treball (a l'escriptori)"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
