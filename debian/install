@@ -1,7 +1,7 @@
 components/mxfb-settings.list etc/custom-toolbox
 components/bleep.wav usr/share/sounds
 components/HELP-windowbuttons usr/share/doc/mxfb-accessories
-components/help_mxfb-screensaver usr/share/doc/mxfb-accessories
+components/help_mxfb-screensaver usr/share/mxfb-accessories/help
 components/*.desktop usr/share/applications
 components/tint2* usr/bin
 components/mxfb-settings.svg usr/share/pixmaps
