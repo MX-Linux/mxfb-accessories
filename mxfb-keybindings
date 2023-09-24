@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##This app was developed by MX Devs 2023 and released under GPLv3
-### version 2309-05
+### version 2309-06
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="mxfb-accessories"
@@ -255,7 +255,7 @@ TABTEXT_3="$(gettext 'WINDOWS')"
 #Translator Note - tab label - tiling as in arrangement of non-overlapping windows on a screen
 TABTEXT_4="$(gettext 'TILING')"
 
-yad --notebook --key=$fkey --tab="<b>"$(gettext 'GENERAL')"</b>" --tab="<b>"$(gettext 'PROGRAMS')"</b>" --tab="<b>"$(gettext 'WINDOWS')"</b>" --tab="<b>"$(gettext 'TILING')"</b>" --tab-pos=left \
+yad --notebook --key=$fkey --tab="<b>$TABTEXT_1</b>" --tab="<b>$TABTEXT_2</b>" --tab="<b>$TABTEXT_3</b>" --tab="<b>$TABTEXT_4</b>" --tab-pos=left \
 --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --width=550 --height=450 --borders=10 --center --buttons-layout=spread \
 --text="\n<b>$TEXT1</b>\n" --text-align=center \
