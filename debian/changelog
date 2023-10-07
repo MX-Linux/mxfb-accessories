@@ -1,3 +1,9 @@
+mxfb-accessories (23.10.01mx23) mx; urgency=medium
+
+  * update mxfb-keybinds to correct a couple of functions
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 07 Oct 2023 14:48:26 -0400
+
 mxfb-accessories (23.09.01mx23) mx; urgency=medium
 
   [Jerry]
