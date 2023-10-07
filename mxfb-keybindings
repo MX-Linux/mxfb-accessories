@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##This app was developed by MX Devs 2023 and released under GPLv3
-### version 2309-06
+### version 2310-01
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="mxfb-accessories"
@@ -55,14 +55,14 @@ LINE_1F_1="$(gettext 'Next Workspace')"
 LINE_1F_2="$(gettext 'Scroll Wheel Up')"
 LINE_1F_3="$(gettext '   or')"
 #Translator Note - translate key names for your language if necessary
-LINE_1F_4="$(gettext 'Ctrl Alt' )"
+LINE_1F_4="$(gettext 'Ctrl Alt') "
 #Translator Note - go to the previous virtual workspace
 LINE_1G_1="$(gettext 'Previous Workspace')"
 #Translator Note - mouse action
 LINE_1G_2="$(gettext 'Scroll Wheel Down')"
 LINE_1G_3="$(gettext '   or')"
 #Translator Note - translate key names for your language if necessary
-LINE_1G_4="$(gettext 'Ctrl Alt' )"
+LINE_1G_4="$(gettext 'Ctrl Alt') "
 
 yad --plug=$fkey --tabnum=1 \
 --form --columns=3 --scroll \
