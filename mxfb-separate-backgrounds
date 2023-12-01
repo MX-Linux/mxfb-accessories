@@ -50,8 +50,18 @@ foo=$?
 if [[ $foo -eq 3 ]]; then
 #sed -i 's/ChangeWorkspace/#ChangeWorkspace/' ~/.fluxbox/keys 
 awk '!/ChangeWorkspace/'  ~/.fluxbox/keys > temp && mv temp  ~/.fluxbox/keys
-sed -i 's/#nitrogen/nitrogen/'  $HOME/.fluxbox/startup
-sed -i 's/~\/.fehbg/#~\/.fehbg/'  $HOME/.fluxbox/startup
+
+# block feh and enable nitrogen
+HASHCHECK_NITROGEN=$(grep '#nitrogen' $HOME/.fluxbox/startup)
+if [ ! -z "$HASHCHECK_NITROGEN" ]; then
+    sed -i 's/#nitrogen/nitrogen/'  $HOME/.fluxbox/startup
+fi
+
+HASHCHECK_FEH=$(grep '#~/.fehbg' $HOME/.fluxbox/startup)
+if [ -z "$HASHCHECK_FEH" ]; then
+    sed -i 's/~\/.fehbg/#~\/.fehbg/'  $HOME/.fluxbox/startup
+fi
+
 sed -i '/$full/d' $HOME/.fluxbox/lastwallpaper
 yad  --title=$"$TITLE" --window-icon=$ICON  --center --message --text="$MESSAGE2" --fixed --no-buttons --timeout=5 
 fluxbox-remote restart 
@@ -61,9 +71,15 @@ exit 0
 fi
 
 # block nitrogen and enable fehbg
-sed -i 's/nitrogen/#nitrogen/'  $HOME/.fluxbox/startup
-sed -i 's/#~\/.fehbg/~\/.fehbg/'  $HOME/.fluxbox/startup
+HASHCHECK_NITROGEN=$(grep '#nitrogen' $HOME/.fluxbox/startup)
+if [ -z "$HASHCHECK_NITROGEN" ]; then
+    sed -i 's/nitrogen/#nitrogen/'  $HOME/.fluxbox/startup
+fi
 
+HASHCHECK_FEH=$(grep '#~/.fehbg' $HOME/.fluxbox/startup)
+if [ ! -z "$HASHCHECK_FEH" ]; then
+    sed -i 's/#~\/.fehbg/~\/.fehbg/'  $HOME/.fluxbox/startup
+fi
 
 #Check if the keys file has already been edited to allow costume wallpapers for each workspace:
 ##check if the keys file has a ChangeWorkspace entry
