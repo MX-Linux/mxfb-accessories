@@ -62,11 +62,11 @@ if [ -z "$HASHCHECK_FEH" ]; then
     sed -i 's/~\/.fehbg/#~\/.fehbg/'  $HOME/.fluxbox/startup
 fi
 
+nitrogen --restore
+
 sed -i '/$full/d' $HOME/.fluxbox/lastwallpaper
 yad  --title=$"$TITLE" --window-icon=$ICON  --center --message --text="$MESSAGE2" --fixed --no-buttons --timeout=5 
 fluxbox-remote restart
-
-nitrogen --restore
 
 exit 0
 
