@@ -64,7 +64,9 @@ fi
 
 sed -i '/$full/d' $HOME/.fluxbox/lastwallpaper
 yad  --title=$"$TITLE" --window-icon=$ICON  --center --message --text="$MESSAGE2" --fixed --no-buttons --timeout=5 
-fluxbox-remote restart 
+fluxbox-remote restart
+
+nitrogen --restore
 
 exit 0
 
