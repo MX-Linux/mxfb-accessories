@@ -131,7 +131,7 @@ for ((n=1;n<=$number_of_workspaces;n++))
 do
  cd /usr/share/backgrounds/
 # select wallpaper:
- wallpaper=$(yad --title="$TITLE2" --center --window-icon=$ICON --file-selection --text="
+ wallpaper=$(yad --title="$TITLE2" --center --window-icon=$ICON --file-selection --add-preview --text="
  WORKSPACE $n
  " --text-align=center)
  # copy and rename wallpaper to match the current Workspace number:
