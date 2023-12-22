@@ -95,7 +95,7 @@ case $? in
         sed -i 's/#~\/.fehbg/~\/.fehbg/'  $HOME/.fluxbox/startup
     fi
 
-#Check if the keys file has already been edited to allow costume wallpapers for each workspace:
+#Check if the keys file has already been edited to allow custom wallpapers for each workspace:
 ##check if the keys file has a ChangeWorkspace entry
 
     expression_to_find="ChangeWorkspace"
