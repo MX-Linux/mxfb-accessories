@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to configure separate backgrounds for each Fluxbox Workspace
-# Written by user PPC and modified by MX Devs 
+# Written by user PPC, modified by MX Devs 2023
 # Released under GPLv3
 
 TEXTDOMAINDIR=/usr/share/locale 
@@ -13,151 +13,185 @@ MESSAGE1=$"  This app allows you to configure separate backgrounds for each Work
 HINT1=$" Selection windows will pop up  each Workspace."
 HINT2=$" Type \"mxfb\" to jump to the MXFB backgrounds."
 HINT3=$" Select the background you want and click OK."
+
 NOTE1=$" NOTE 1: Background changes using the menu won't be permanent."
 NOTE2=$" NOTE 2: Re-run this script when you add new workspaces!"
-#NOTE3=$" NOTE 3: Disable nitrogen in startup file if using that app for image setting"
+
 TITLE=$"MXFB -- separate workspace wallpapers"
+TITLE2=$"Wallpaper selector"
+TITLE3=$"Warning"
+CLASS=mxfb-sbg
+
 BUTTON1=$"Cancel"
 BUTTON2=$"Disable separate backgrounds"
 BUTTON3=$"Setup separate backgrounds"
-MESSAGE2=$"Separate backgrounds have been disabled."
-TITLE2=$"Wallpaper selector"
-TITLE3=$"Warning"
-WARNING=$"There is no wallpaper image selected for Workspace $n... Will substitute 'mx_blue.jpg' to avoid any errors."
 
+MESSAGE2=$"Separate backgrounds have been disabled."
+WARNING=$"There is no wallpaper image selected for Workspace $n... Will substitute 'mx_blue.jpg' to avoid any errors."
 
 ICON=/usr/share/icons/mxflux.png
 
-yad --center --window-icon=$ICON --fix-window --text="
-<b>$MESSAGE1\n
-
-<b>--$HINT1
---$HINT2 
--- $HINT3 \n
-
-$NOTE1
-$NOTE2</b>
-" \
---title=$"$TITLE" --window-icon=$ICON --text-align=center \
+yad --title=$"$TITLE" --window-icon=$ICON --class=$CLASS --text-align=center \
+--width=500  --height=300 --center \
+--text="\n<b>$MESSAGE1\n\n<b>--$HINT1\n--$HINT2\n-- $HINT3\n\n$NOTE1\n$NOTE2</b>" \
 --button="<b>$BUTTON1</b>":1 \
---button="<b>$BUTTON2</b>":3 \
---button="<b>$BUTTON3</b>":2 \ 
+--button="<b>$BUTTON2</b>":2 \
+--button="<b>$BUTTON3</b>":3 \ 
 
-foo=$?
+case $? in
 
-[[ $foo -eq 1 ]] && exit 0
+1 | 252 )
+    exit 0
+;;
+    
+2 )
 
-if [[ $foo -eq 3 ]]; then
-#sed -i 's/ChangeWorkspace/#ChangeWorkspace/' ~/.fluxbox/keys 
-awk '!/ChangeWorkspace/'  ~/.fluxbox/keys > temp && mv temp  ~/.fluxbox/keys
+ #####
+#DISABLE SEPARATE BACKGROUNDS
+#####
 
+    awk '!/ChangeWorkspace/' ~/.fluxbox/keys > temp && mv temp ~/.fluxbox/keys
+    awk '!/#This executes fbsetbg/' ~/.fluxbox/keys > temp && mv temp ~/.fluxbox/keys
+    
 # block feh and enable nitrogen
-HASHCHECK_NITROGEN=$(grep '#nitrogen' $HOME/.fluxbox/startup)
-if [ ! -z "$HASHCHECK_NITROGEN" ]; then
-    sed -i 's/#nitrogen/nitrogen/'  $HOME/.fluxbox/startup
-fi
+    HASHCHECK_NITROGEN=$(grep '#nitrogen' $HOME/.fluxbox/startup)
+    if [ ! -z "$HASHCHECK_NITROGEN" ]; then
+        sed -i 's/#nitrogen/nitrogen/'  $HOME/.fluxbox/startup
+    fi
 
-HASHCHECK_FEH=$(grep '#~/.fehbg' $HOME/.fluxbox/startup)
-if [ -z "$HASHCHECK_FEH" ]; then
-    sed -i 's/~\/.fehbg/#~\/.fehbg/'  $HOME/.fluxbox/startup
-fi
+    HASHCHECK_FEH=$(grep '#~/.fehbg' $HOME/.fluxbox/startup)
+    if [ -z "$HASHCHECK_FEH" ]; then
+        sed -i 's/~\/.fehbg/#~\/.fehbg/'  $HOME/.fluxbox/startup
+    fi
 
-nitrogen --restore
+    nitrogen --restore
 
-sed -i '/$full/d' $HOME/.fluxbox/lastwallpaper
-yad  --title=$"$TITLE" --window-icon=$ICON  --center --message --text="$MESSAGE2" --fixed --no-buttons --timeout=5 
-fluxbox-remote restart
+    sed -i '/$full/d' $HOME/.fluxbox/lastwallpaper
 
-exit 0
+    yad --title=$"$TITLE" --class= mxfb-sbg --window-icon=$ICON \
+    --width=500  --height=300 --center --text-align=center \
+    --text="\n\n<b>$MESSAGE2</b>" --fixed --no-buttons --timeout=3 
 
-fi
+    fluxbox-remote restart
+
+    exit 0
+
+;;
+    
+3 )
+
+#####
+#SET UP SEPARATE BACKGROUNDS
+#####
 
 # block nitrogen and enable fehbg
-HASHCHECK_NITROGEN=$(grep '#nitrogen' $HOME/.fluxbox/startup)
-if [ -z "$HASHCHECK_NITROGEN" ]; then
-    sed -i 's/nitrogen/#nitrogen/'  $HOME/.fluxbox/startup
-fi
+    HASHCHECK_NITROGEN=$(grep '#nitrogen' $HOME/.fluxbox/startup)
+    if [ -z "$HASHCHECK_NITROGEN" ]; then
+        sed -i 's/nitrogen/#nitrogen/'  $HOME/.fluxbox/startup
+    fi
 
-HASHCHECK_FEH=$(grep '#~/.fehbg' $HOME/.fluxbox/startup)
-if [ ! -z "$HASHCHECK_FEH" ]; then
-    sed -i 's/#~\/.fehbg/~\/.fehbg/'  $HOME/.fluxbox/startup
-fi
+    HASHCHECK_FEH=$(grep '#~/.fehbg' $HOME/.fluxbox/startup)
+    if [ ! -z "$HASHCHECK_FEH" ]; then
+        sed -i 's/#~\/.fehbg/~\/.fehbg/'  $HOME/.fluxbox/startup
+    fi
 
 #Check if the keys file has already been edited to allow costume wallpapers for each workspace:
 ##check if the keys file has a ChangeWorkspace entry
-expression_to_find="ChangeWorkspace"
-x=$(grep $expression_to_find ~/.fluxbox/keys)
 
-if [ -z "$x" ]
-then
-      echo "\$x is empty- the keys file has not been edited, editing it to allow different wallpaper for each workspace"
+    expression_to_find="ChangeWorkspace"
+    x=$(grep $expression_to_find ~/.fluxbox/keys)
 
-	  #Backup the keys config file:
-      cp ~/.fluxbox/keys ~/.restore/fluxbox/keys_BAK
+    if [ -z "$x" ]; then
+        echo "\$x is empty- the keys file has not been edited, editing it to allow different wallpaper for each workspace"
 
-      #Append the needed changes to the keys config file (the "\" is needed not to replace the variables:
-      echo "#This executes fbsetbg every time workspace is changed to load <workspace number>.jpg from ~/.fluxbox/backgrounds/numbered/ 
-ChangeWorkspace :Exec fbsetbg ~/.fluxbox/backgrounds/numbered/\$(xprop -root _NET_CURRENT_DESKTOP |awk '{print \$3+1}').jpg" >> ~/.fluxbox/keys 
+#Backup the keys config file:
+        if [ ! -d "~/.restore/fluxbox" ]; then
+            mkdir -p ~/.restore/fluxbox
+        fi
 
-      else
+        cp ~/.fluxbox/keys ~/.restore/fluxbox/keys_BAK
+
+#Append the needed changes to the keys config file (the "\" is needed not to replace the variables:
+        CHECK_KEYS=$(grep 'ChangeWorkspace :Exec' $HOME/.fluxbox/keys)
+        if [ -z "$CHECK_KEYS" ]; then
+            echo "#This executes fbsetbg every time workspace is changed to load <workspace number>.jpg from ~/.fluxbox/backgrounds/numbered/ 
+ChangeWorkspace :Exec fbsetbg ~/.fluxbox/backgrounds/numbered/\$(xprop -root _NET_CURRENT_DESKTOP |awk '{print \$3+1}').jpg" >> ~/.fluxbox/keys
+        fi
+    else
         echo "\$x is NOT empty- the keys file seems to already allow custom wallpapers for each workspace."
-     ###     echo Do you want to set up a single wallpaper for all Workspaces?
-     ## If no, edit the keys file, removing the line that sets the ChangeWorkspace...
-      
-fi
+
+    fi
 
 #Create the needed folder
-mkdir -p  ~/.fluxbox/backgrounds/numbered/
+    mkdir -p  ~/.fluxbox/backgrounds/numbered/
 
 #Check how many Workspaces Fluxbox currently has:
-number_of_workspaces=$(xdotool get_num_desktops)
+    number_of_workspaces=$(xdotool get_num_desktops)
 
 #Remove existing numbered wallpapers to avoid failure when wallpaper is symlinked to /usr/share/backgrounds
-rm ~/.fluxbox/backgrounds/numbered/*.jpg
+    if [ -f "$HOME/.fluxbox/backgrounds/numbered/*.jpg" ]; then
+        rm -r $HOME/.fluxbox/backgrounds/numbered/*.jpg
+    fi
 
 #Disable Rotate backgrounds if running
-STRING="Background.Delay: 0"
+    STRING="Background.Delay: 0"
 
-if ! grep -q "$STRING" $HOME/.ideskrc;
-then
+    if ! grep -q "$STRING" $HOME/.ideskrc;
+    then
         sed -i 's/^\([[:blank:]]*Background\.Delay:\).*/\1 0/' "$HOME/.ideskrc"
-yad --timeout=3 --no-buttons --geometry 500x100 --text-align=center --text="
-<b>$NOTIFICATION</b>
-"
-fi
 
-#Loop for as many workspaces as there is, selecting one wallpaper for each workspace
-for ((n=1;n<=$number_of_workspaces;n++))
-do
- cd /usr/share/backgrounds/
+        yad --title=$"$TITLE" --window-icon=$ICON --class=$CLASS \
+        --timeout=3 --no-buttons --geometry 500x100 --text-align=center \
+        --text="\n<b>$NOTIFICATION</b>"
+    fi
+
+#Loop for as many workspaces as there are, selecting one wallpaper for each workspace
+    for ((n=1;n<=$number_of_workspaces;n++))
+    do
+        cd /usr/share/backgrounds/
+    
 # select wallpaper:
- wallpaper=$(yad --title="$TITLE2" --center --window-icon=$ICON --file-selection --add-preview --text="
- WORKSPACE $n
- " --text-align=center)
- # copy and rename wallpaper to match the current Workspace number:
- cp $wallpaper  ~/.fluxbox/backgrounds/numbered/$n.jpg
+        wallpaper=$(yad --title="$TITLE2" --window-icon=$ICON --class=$CLASS \
+        --width=800  --height=400 --center --text-align=center \
+        --file-selection --add-preview --large-preview \
+        --text="\nWORKSPACE $n\n")
+    
+# copy and rename wallpaper to match the current Workspace number:
+        cp $wallpaper  ~/.fluxbox/backgrounds/numbered/$n.jpg
  
- if [ ! "$?" = "0" ]; then
-    echo User canceled the script
-    exit 0
-fi
+        if [ ! "$?" = "0" ]; then
+            echo User canceled the script
+            exit 0
+        fi
  
-  #Check if wallpaper for current Workspace exists, if not, use a default one (mx_blue.jpg), to avoid errors. NOTE: if the users does not select any wallpaper at this time but a wallpaper for that workspace already existed, that previous selection will be maintained
-  FILE=$n.jpg
- cd ~/.fluxbox/backgrounds/numbered/
- if [ ! -f "$FILE" ]
-   then
-    echo "File $FILE does not exist, using a default one- mx_blue.jpg"
-    yad --center --window-icon=$ICON--title="$TITLE3" --text="$WARNING"
-    cp  /usr/share/backgrounds/mx_blue.jpg ~/.fluxbox/backgrounds/numbered/$n.jpg
- fi
+#Check if wallpaper for current Workspace exists, if not, use a default one (mx_blue.jpg), to avoid errors. NOTE: if the users does not select any wallpaper at this time but a wallpaper for that workspace already existed, that previous selection will be maintained
 
-done
- echo Finished setting up workspace wallpapers, restarting fluxbox
+        FILE=$n.jpg
+
+        cd ~/.fluxbox/backgrounds/numbered/
+
+        if [ ! -f "$FILE" ]; then
+            echo "File $FILE does not exist, using a default one- mx_blue.jpg"
+    
+            yad --title="$TITLE3" --class=$CLASS --center --window-icon=$ICON \
+            --text="$WARNING"
+    
+            cp  /usr/share/backgrounds/mx_blue.jpg ~/.fluxbox/backgrounds/numbered/$n.jpg
+        fi
+
+    done
+
+    echo Finished setting up workspace wallpapers, restarting fluxbox
 
 #Implement the changes: 
-fluxbox-remote restart
-pgrep -u $(id -u)  -x idesk >/dev/null &&  idesktoggle idesk refresh
-killall -SIGUSR1 conky 2>/dev/null
+    fluxbox-remote restart
 
-echo fluxbox restarted, script finished
+    pgrep -u $(id -u)  -x idesk >/dev/null &&  idesktoggle idesk refresh
+
+    killall -SIGUSR1 conky 2>/dev/null
+
+    echo fluxbox restarted, script finished
+
+;;
+
+esac
