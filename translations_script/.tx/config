@@ -6,3 +6,4 @@ file_filter = po/mxfb-accessories_<lang>.po
 source_file = mxfb-accessories.pot
 source_lang = en
 type = po
+minimum_perc = 25

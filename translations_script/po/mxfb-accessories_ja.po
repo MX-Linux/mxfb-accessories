@@ -9,10 +9,10 @@
 # Transifex Bot <>, 2022
 # Dolphin Oracle <dolphinoracle@gmail.com>, 2022
 # Robin, 2023
-# Green <usergreen@users.osdn.me>, 2023
 # fehlix, 2023
 # 🎈 BALLOON | FU-SEN, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
+# Green <usergreen@users.osdn.me>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -21,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-16 09:49-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: anticapitalista <anticapitalista@riseup.net>, 2023\n"
+"Last-Translator: Green <usergreen@users.osdn.me>, 2023\n"
 "Language-Team: Japanese (https://app.transifex.com/anticapitalista/teams/10162/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,11 +59,11 @@ msgstr " "
 
 #: ../mxfb-keybindings:56 ../mxfb-keybindings:63
 msgid "   or"
-msgstr ""
+msgstr "   or"
 
 #: ../mxfb-keybindings:204 ../mxfb-keybindings:211
 msgid "   or (on keypad)"
-msgstr ""
+msgstr "or（キーパッドで）"
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -184,7 +184,7 @@ msgstr "すべてのアプリケーション"
 #. Translator Note - opens application finder
 #: ../mxfb-keybindings:98
 msgid "All Apps"
-msgstr ""
+msgstr "すべてアプリ"
 
 #. all done
 #: ../mxfb-look:398
@@ -195,46 +195,46 @@ msgstr "完了です!\\n\\n外観は <b>$NEWNAME</b> として保存しました
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:213
 msgid "Alt 1,3,7,9"
-msgstr ""
+msgstr "Alt 1,3,7,9"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:206
 msgid "Alt 2,4,6,8"
-msgstr ""
+msgstr "Alt 2,4,6,8"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:161
 msgid "Alt D"
-msgstr ""
+msgstr "Alt D"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:146
 msgid "Alt F10"
-msgstr ""
+msgstr "Alt F10"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:150
 msgid "Alt F4"
-msgstr ""
+msgstr "Alt F4"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:142
 msgid "Alt F9"
-msgstr ""
+msgstr "Alt F9"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:116
 msgid "Alt Q"
-msgstr ""
+msgstr "Alt Q"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:157
 msgid "Alt Right click"
-msgstr ""
+msgstr "Alt 右クリック"
 
 #: ../mxfb-font:187
 msgid "Antialising"
-msgstr ""
+msgstr "Antialiasing"
 
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
@@ -292,57 +292,57 @@ msgstr "Conky の状況"
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:221
 msgid "Ctrl 0"
-msgstr ""
+msgstr "Ctrl 0"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:203
 msgid "Ctrl 1/2/3/4"
-msgstr ""
+msgstr "Ctrl 1/2/3/4"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:210
 msgid "Ctrl 5/6/7/8"
-msgstr ""
+msgstr "Ctrl 5/6/7/8"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:217
 msgid "Ctrl 9"
-msgstr ""
+msgstr "Ctrl 9"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:58 ../mxfb-keybindings:65
 msgid "Ctrl Alt"
-msgstr ""
+msgstr "Ctrl Alt"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:51
 msgid "Ctrl Alt M"
-msgstr ""
+msgstr "Ctrl Alt M"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:112
 msgid "Ctrl Alt T"
-msgstr ""
+msgstr "Ctrl Alt T"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:39
 msgid "Ctrl F1"
-msgstr ""
+msgstr "Ctrl F1"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:104
 msgid "Ctrl F2"
-msgstr ""
+msgstr "Ctrl F2"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:108
 msgid "Ctrl F3"
-msgstr ""
+msgstr "Ctrl F3"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:47
 msgid "Ctrl F5"
-msgstr ""
+msgstr "Ctrl F5"
 
 #. MAIN
 #: ../mxfb-look:267
@@ -379,7 +379,7 @@ msgstr "編集"
 #. Translator Note - button to open the fluxbox 'keys' file in text editor
 #: ../mxfb-keybindings:19
 msgid "Edit keys file"
-msgstr ""
+msgstr "キーファイルの編集"
 
 #: ../mxfb-timer:23
 msgid "Enter local time"
@@ -414,12 +414,12 @@ msgstr "フォント"
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:219
 msgid "Fullscreen"
-msgstr ""
+msgstr "全画面"
 
 #. Translator Note - tab label
 #: ../mxfb-keybindings:250 ../mxfb-keybindings:258
 msgid "GENERAL"
-msgstr ""
+msgstr "全般"
 
 #: ../mxfb-look:270 ../mxfb-look:593
 msgid "GTK Font"
@@ -452,15 +452,15 @@ msgstr "ヘルプ"
 #. Translator Note - window action
 #: ../mxfb-keybindings:159
 msgid "Hide All"
-msgstr ""
+msgstr "全て隠す"
 
 #: ../mxfb-font:186
 msgid "Hinting"
-msgstr ""
+msgstr "ヒント"
 
 #: ../mxfb-font:199
 msgid "Hinting Style"
-msgstr ""
+msgstr "ヒントのスタイル"
 
 #: ../exit-options-manager:141
 msgid "Icon Size"
@@ -481,11 +481,11 @@ msgstr "レイアウト"
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:100
 msgid "Left Super"
-msgstr ""
+msgstr "Left Super"
 
 #: ../mxfb-keybindings:153
 msgid "Left click"
-msgstr ""
+msgstr "左クリック"
 
 #: ../mxfb-look:317
 #, sh-format
@@ -496,12 +496,12 @@ msgstr "$NEWNAME という外観の名前は保護されていて変更不可で
 #. Translator Note - Window title, keybindings = shortcut keys
 #: ../mxfb-keybindings:24
 msgid "MX-Fluxbox Keybindings"
-msgstr ""
+msgstr "MX-Fluxbox のキーバインディング"
 
 #. Translator Note - opens mx-tools application
 #: ../mxfb-keybindings:45
 msgid "MX-Tools"
-msgstr ""
+msgstr "MX-ツール"
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
@@ -515,12 +515,12 @@ msgstr "MXFB の外観"
 #. Translator Note - opens mx-fluxbox manual
 #: ../mxfb-keybindings:37
 msgid "Manual - MX Fluxbox"
-msgstr ""
+msgstr "MX Fluxbox のマニュアル"
 
 #. Translator Note - opens mx manual
 #: ../mxfb-keybindings:41
 msgid "Manual - MX Linux"
-msgstr ""
+msgstr "MX Linux のマニュアル"
 
 #: ../exit-options-manager:142
 msgid "Margin"
@@ -542,7 +542,7 @@ msgstr "既定のタイトルメニュー"
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:165
 msgid "Middle click"
-msgstr ""
+msgstr "中クリック"
 
 #. ##Tab 3
 #. Translator Note - window command
@@ -553,7 +553,7 @@ msgstr "最小化"
 #. Translator Note - window action
 #: ../mxfb-keybindings:152
 msgid "Move (drag titlebar)"
-msgstr ""
+msgstr "移動 (タイトルバーをドラッグ)"
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -566,7 +566,7 @@ msgstr "新しい外観の名前"
 #. Translator Note - go to the next virtual workspace
 #: ../mxfb-keybindings:53
 msgid "Next Workspace"
-msgstr ""
+msgstr "次のワークスペース"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
@@ -593,17 +593,17 @@ msgstr "ボーダースタイルのオプション設定"
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:201
 msgid "One-Half"
-msgstr ""
+msgstr "1/2"
 
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:208
 msgid "One-Quarter"
-msgstr ""
+msgstr "1/4"
 
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:215
 msgid "One-Third"
-msgstr ""
+msgstr "1/3"
 
 #: ../mxfb-menu-generator:193
 msgid "Other"
@@ -621,7 +621,7 @@ msgstr "$NEWNAME を上書きする"
 #. Translator Note - tab label
 #: ../mxfb-keybindings:252 ../mxfb-keybindings:258
 msgid "PROGRAMS"
-msgstr ""
+msgstr "プログラム"
 
 #. How to take a screenshot...
 #: ../mxfb-quickshot:72
@@ -631,12 +631,12 @@ msgstr "\"Print\" (or \"PrtSc\") キー押下とマウス使用:"
 #. Translator Note - go to the previous virtual workspace
 #: ../mxfb-keybindings:60
 msgid "Previous Workspace"
-msgstr ""
+msgstr "前のワークスペース"
 
 #. Translator Note - window action
 #: ../mxfb-keybindings:155
 msgid "Resize (drag lower R corner)"
-msgstr ""
+msgstr "サイズ変更 (右下角をドラッグ)"
 
 #: ../mxfb-look:603 ../mxfb-look:764
 msgid "Restore Look"
@@ -645,7 +645,7 @@ msgstr "外観の保存"
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:169
 msgid "Right click"
-msgstr ""
+msgstr "右クリック"
 
 #: ../mxfb-look:274 ../mxfb-look:597
 msgid "Rofi Theme"
@@ -654,7 +654,7 @@ msgstr "Rofi テーマ"
 #. Translator Note - opens root menu
 #: ../mxfb-keybindings:167
 msgid "Root Menu (on desktop)"
-msgstr ""
+msgstr "root メニュー (デスクトップで)"
 
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
@@ -687,22 +687,22 @@ msgstr "別の名前で保存します"
 #. Translator Note - opens screenshot app
 #: ../mxfb-keybindings:114
 msgid "Screen Capture"
-msgstr ""
+msgstr "スクリーンショットを開く"
 
 #. Translator Note - launches the screen magnifier
 #: ../mxfb-keybindings:49
 msgid "Screen Magnifier"
-msgstr ""
+msgstr "拡大鏡を起動する"
 
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:62
 msgid "Scroll Wheel Down"
-msgstr ""
+msgstr "下へスクロールする"
 
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:55
 msgid "Scroll Wheel Up"
-msgstr ""
+msgstr "上へスクロールする"
 
 #. run main dialog
 #: ../exit-options-manager:149
@@ -720,18 +720,18 @@ msgstr "背景の回転を設定"
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:43
 msgid "Shift F1"
-msgstr ""
+msgstr "Shift F1"
 
 #. ## desktop file strings
 #. Translator Note - desktop file Name field
 #: ../mxfb-keybindings:12
 msgid "Shortcuts"
-msgstr ""
+msgstr "ショートカット"
 
 #. Translator Note - desktop file Comment field
 #: ../mxfb-keybindings:14
 msgid "Shows frequently used key shortcuts"
-msgstr ""
+msgstr "よく使うショートカットキーを表示します"
 
 #. SUBTITLE=$(gettext "Be sure to fill in all fields you want enabled")
 #: ../mxfb-borders:20 ../mxfb-top:22
@@ -751,7 +751,7 @@ msgstr "成功です！"
 #. windows on a screen
 #: ../mxfb-keybindings:256 ../mxfb-keybindings:258
 msgid "TILING"
-msgstr ""
+msgstr "タイリング"
 
 #. Translator Note - opens terminal
 #: ../mxfb-keybindings:110
@@ -799,7 +799,7 @@ msgstr ""
 #. Translator Note - short descriptive text on main window of mxfb-keybindings
 #: ../mxfb-keybindings:247
 msgid "This tool displays default shortcuts (\"keys\") that are frequently used."
-msgstr ""
+msgstr "このツールは、よく使う既定のショートカット（「キー」）を表示します。"
 
 #. A new config file will be installed.
 #: ../mxfb-quickshot:64
@@ -827,7 +827,7 @@ msgstr "ウィンドウ: この内側のどこかをクリックしてくださ�
 #. Translator Note - tab label
 #: ../mxfb-keybindings:254 ../mxfb-keybindings:258
 msgid "WINDOWS"
-msgstr ""
+msgstr "ウィンドウ"
 
 #: ../mxfb-look:601
 msgid "Wait 10 seconds for the conky to restart"
@@ -844,7 +844,7 @@ msgstr "既定のウィンドウタイトル"
 #. Translator Note - opens workspace menu
 #: ../mxfb-keybindings:163
 msgid "Workspace Menu (on desktop)"
-msgstr ""
+msgstr "ワークスペースメニュー (デスクトップで)"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

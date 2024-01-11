@@ -10,10 +10,10 @@
 # Vladimir O <vldoduv@yandex.ru>, 2022
 # Caarmi, 2022
 # Андрей Холманских, 2023
-# Andrei Stepanov, 2023
 # Robin, 2023
 # fehlix, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
+# Andrei Stepanov, 2023
 # 
 #, fuzzy
 msgid ""
@@ -22,7 +22,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-16 09:49-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: anticapitalista <anticapitalista@riseup.net>, 2023\n"
+"Last-Translator: Andrei Stepanov, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/anticapitalista/teams/10162/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,7 +61,7 @@ msgstr " "
 
 #: ../mxfb-keybindings:56 ../mxfb-keybindings:63
 msgid "   or"
-msgstr ""
+msgstr "   или"
 
 #: ../mxfb-keybindings:204 ../mxfb-keybindings:211
 msgid "   or (on keypad)"
@@ -191,7 +191,7 @@ msgstr "Все приложения"
 #. Translator Note - opens application finder
 #: ../mxfb-keybindings:98
 msgid "All Apps"
-msgstr ""
+msgstr "Все приложения"
 
 #. all done
 #: ../mxfb-look:398
@@ -241,7 +241,7 @@ msgstr ""
 
 #: ../mxfb-font:187
 msgid "Antialising"
-msgstr ""
+msgstr "Антиалиасинг"
 
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
@@ -421,7 +421,7 @@ msgstr "Шрифт"
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:219
 msgid "Fullscreen"
-msgstr ""
+msgstr "Полный экран"
 
 #. Translator Note - tab label
 #: ../mxfb-keybindings:250 ../mxfb-keybindings:258
@@ -463,11 +463,11 @@ msgstr ""
 
 #: ../mxfb-font:186
 msgid "Hinting"
-msgstr ""
+msgstr "Хинтинг"
 
 #: ../mxfb-font:199
 msgid "Hinting Style"
-msgstr ""
+msgstr "Стиль хинтинга"
 
 #: ../exit-options-manager:141
 msgid "Icon Size"
@@ -549,7 +549,7 @@ msgstr ""
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:165
 msgid "Middle click"
-msgstr ""
+msgstr "Щелчок средней кнопкой"
 
 #. ##Tab 3
 #. Translator Note - window command
@@ -618,7 +618,7 @@ msgstr "Прочее"
 
 #: ../mxfb-font:176 ../mxfb-font:179 ../mxfb-font:182
 msgid "Override with"
-msgstr ""
+msgstr "Перезаписать с"
 
 #: ../mxfb-look:338
 #, sh-format
@@ -628,7 +628,7 @@ msgstr "Перезаписать $NEWNAME"
 #. Translator Note - tab label
 #: ../mxfb-keybindings:252 ../mxfb-keybindings:258
 msgid "PROGRAMS"
-msgstr ""
+msgstr "ПРОГРАММЫ"
 
 #. How to take a screenshot...
 #: ../mxfb-quickshot:72
@@ -652,7 +652,7 @@ msgstr "Восстановить вид"
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:169
 msgid "Right click"
-msgstr ""
+msgstr "Щелчок правой кнопкой"
 
 #: ../mxfb-look:274 ../mxfb-look:597
 msgid "Rofi Theme"
@@ -666,7 +666,7 @@ msgstr ""
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
 msgid "Run"
-msgstr "Бегать"
+msgstr "Запустить"
 
 #. Press the Print-Screen-key to capture a screen selection.
 #. SELECTION: press Print, then draw a rectangle
@@ -778,7 +778,7 @@ msgstr "Резервная копия существующего файла бу
 
 #: ../exit-options-manager:249
 msgid "The following settings can also be defined"
-msgstr ""
+msgstr "Также можно указать следующие настройки"
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -837,7 +837,7 @@ msgstr "ОКНО: щёлкните внутри"
 #. Translator Note - tab label
 #: ../mxfb-keybindings:254 ../mxfb-keybindings:258
 msgid "WINDOWS"
-msgstr ""
+msgstr "ОКНА"
 
 #: ../mxfb-look:601
 msgid "Wait 10 seconds for the conky to restart"

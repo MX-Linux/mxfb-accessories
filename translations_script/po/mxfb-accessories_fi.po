@@ -7,11 +7,11 @@
 # James Bowlin <BitJam@gmail.com>, 2022
 # Oi Suomi On! <oisuomion@protonmail.com>, 2022
 # asd asd <ekeimaja@gmail.com>, 2023
-# Kimmo Kujansuu <mrkujansuu@gmail.com>, 2023
 # En Kerro <inactive+ekeimaja@transifex.com>, 2023
 # Robin, 2023
 # fehlix, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
+# Kimmo Kujansuu <mrkujansuu@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
@@ -20,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-16 09:49-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: anticapitalista <anticapitalista@riseup.net>, 2023\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2023\n"
 "Language-Team: Finnish (https://app.transifex.com/anticapitalista/teams/10162/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,11 +51,11 @@ msgstr ""
 
 #: ../mxfb-keybindings:56 ../mxfb-keybindings:63
 msgid "   or"
-msgstr ""
+msgstr "tai"
 
 #: ../mxfb-keybindings:204 ../mxfb-keybindings:211
 msgid "   or (on keypad)"
-msgstr ""
+msgstr "tai (näppäimistöllä)"
 
 #: ../mxfb-separate-backgrounds:12
 msgid ""
@@ -68,11 +68,11 @@ msgstr ""
 #. Confirmation Window
 #: ../mxfb-separate-backgrounds:11
 msgid " Rotate Backgrounds has been disabled to avoid conflict."
-msgstr ""
+msgstr " Taustojen kääntäminen on pois käytöstä ristiriitojen välttämiseksi."
 
 #: ../mxfb-separate-backgrounds:13
 msgid " Selection windows will pop up  each Workspace."
-msgstr ""
+msgstr " Valintaikkunat avautuvat jokaiseen työtilaan."
 
 #: ../mxfb-separate-backgrounds:14
 msgid " Type \\"
@@ -82,37 +82,37 @@ msgstr "Tyyppi \\"
 #: ../mxfb-tiles:37
 #, sh-format
 msgid "$TITLE1"
-msgstr ""
+msgstr "$TITLE1"
 
 #. #begin second message box
 #: ../mxfb-tiles:135
 #, sh-format
 msgid "$TITLE2"
-msgstr ""
+msgstr "$TITLE2"
 
 #: ../mxfb-tint2-manager:102
 msgid "12h/24h"
-msgstr ""
+msgstr "12h/24h"
 
 #: ../mxfb-look:272 ../mxfb-look:595
 msgid "1st Tint2 Panel"
-msgstr ""
+msgstr "1:n Tint2 paneeli"
 
 #: ../mxfb-look:273 ../mxfb-look:596
 msgid "2nd Tint2 Panel"
-msgstr ""
+msgstr "2:n Tint2 paneeli"
 
 #: ../mxfb-look:604
 msgid "<b>   "
-msgstr ""
+msgstr "<b>   "
 
 #: ../mxfb-look:345
 msgid "<b>Name for New Look</b>"
-msgstr ""
+msgstr "<b>Uuden ilmeen nimi</b>"
 
 #: ../mxfb-look:318
 msgid "<b>Name for new style</b>"
-msgstr ""
+msgstr "<b>Uuden tyylin nimi</b>"
 
 #: ../mxfb-look:762
 msgid ""
@@ -121,6 +121,10 @@ msgid ""
 "Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- "
 "Wallpaper\\n- One Conky\\n\\n"
 msgstr ""
+"<b>Voit tallentaa nykyisen ilmeen tai palauttaa tallennetun</b>\\n\\nIlme "
+"koostuu seuraavista elementeistä\\n- Gtk teema\\n- Gtk kuvake\\n- Gtk "
+"fontti\\n- Fluxbox tyyli\\n- Enintään kaksi Tint2 paneelia\\n- Rofi "
+"teema\\n- Taustakuva\\n- Yksi Conky\\n\\n"
 
 #: ../mxfb-tiles:21
 msgid ""
@@ -166,6 +170,8 @@ msgid ""
 "A Look with this name already exists.\\n\\nDo you want to overwrite $NEWNAME"
 " or save as a new name?\\n"
 msgstr ""
+"Saman niminen ilme on jo olemassa.\\n\\nHaluatko korvata $NEWNAME vai "
+"tallettaa uudella nimellä?\\n"
 
 #: ../mxfb-menu-generator:55
 msgid "All Applications"
@@ -175,57 +181,57 @@ msgstr "Kaikki sovellukset"
 #. Translator Note - opens application finder
 #: ../mxfb-keybindings:98
 msgid "All Apps"
-msgstr ""
+msgstr "Kaikki sovelmat"
 
 #. all done
 #: ../mxfb-look:398
 #, sh-format
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
-msgstr ""
+msgstr "Valmista!!\\n\\nIlme on tallennettu nimellä <b>$NEWNAME</b>"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:213
 msgid "Alt 1,3,7,9"
-msgstr ""
+msgstr "Alt 1,3,7,9"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:206
 msgid "Alt 2,4,6,8"
-msgstr ""
+msgstr "Alt 2,4,6,8"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:161
 msgid "Alt D"
-msgstr ""
+msgstr "Alt D"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:146
 msgid "Alt F10"
-msgstr ""
+msgstr "Alt F10"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:150
 msgid "Alt F4"
-msgstr ""
+msgstr "Alt F4"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:142
 msgid "Alt F9"
-msgstr ""
+msgstr "Alt F9"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:116
 msgid "Alt Q"
-msgstr ""
+msgstr "Alt Q"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:157
 msgid "Alt Right click"
-msgstr ""
+msgstr "Alt + hiiren oikea"
 
 #: ../mxfb-font:187
 msgid "Antialising"
-msgstr ""
+msgstr "Pehmennys"
 
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
@@ -233,24 +239,24 @@ msgstr "Hyväksy"
 
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
-msgstr ""
+msgstr "MÄÄRITÄ YLÖS"
 
 #. The capture of a screenshot was cancelled.
 #: ../mxfb-quickshot:54
 msgid "Cancelled!"
-msgstr ""
+msgstr "Peruutettu!"
 
 #: ../exit-options-manager:149
 msgid "Change Window Settings"
-msgstr ""
+msgstr "Muuta ikkunan asetuksia"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
-msgstr ""
+msgstr "Valitse ja suorita, poista valinta lopettaaksesi"
 
 #: ../mxfb-timer:25
 msgid "Click \\"
-msgstr ""
+msgstr "Paina \\"
 
 #. buttons
 #. ## buttons
@@ -262,11 +268,11 @@ msgstr "Sulje"
 
 #: ../mxfb-borders:21 ../mxfb-top:23
 msgid "Color Focused"
-msgstr ""
+msgstr "Väri tarkka"
 
 #: ../mxfb-borders:22 ../mxfb-top:24
 msgid "Color Unfocused"
-msgstr ""
+msgstr "Väri epätarkka"
 
 #: ../mxfb-tint2-manager:98
 msgid "Config"
@@ -278,73 +284,73 @@ msgstr "Conky"
 
 #: ../mxfb-look:277 ../mxfb-look:600
 msgid "Conky State"
-msgstr ""
+msgstr "Conky tila"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:221
 msgid "Ctrl 0"
-msgstr ""
+msgstr "Ctrl 0"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:203
 msgid "Ctrl 1/2/3/4"
-msgstr ""
+msgstr "Ctrl 1/2/3/4"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:210
 msgid "Ctrl 5/6/7/8"
-msgstr ""
+msgstr "Ctrl 5/6/7/8"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:217
 msgid "Ctrl 9"
-msgstr ""
+msgstr "Ctrl 9"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:58 ../mxfb-keybindings:65
 msgid "Ctrl Alt"
-msgstr ""
+msgstr "Ctrl Alt"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:51
 msgid "Ctrl Alt M"
-msgstr ""
+msgstr "Ctrl Alt M"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:112
 msgid "Ctrl Alt T"
-msgstr ""
+msgstr "Ctrl Alt T"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:39
 msgid "Ctrl F1"
-msgstr ""
+msgstr "Ctrl F1"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:104
 msgid "Ctrl F2"
-msgstr ""
+msgstr "Ctrl F2"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:108
 msgid "Ctrl F3"
-msgstr ""
+msgstr "Ctrl F3"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:47
 msgid "Ctrl F5"
-msgstr ""
+msgstr "Ctrl F5"
 
 #. MAIN
 #: ../mxfb-look:267
 msgid "Current Settings"
-msgstr ""
+msgstr "Nykyiset asetukset"
 
 #. Press the Print-Screen-key to capture a wallpaper.
 #. DESKTOP: press Print, then click the background
 #: ../mxfb-quickshot:78
 msgid "DESKTOP: click the background"
-msgstr ""
+msgstr "TYÖPÖYTÄ: paina taustaa"
 
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
@@ -357,11 +363,11 @@ msgstr "Hylkää"
 
 #: ../mxfb-trashcheck:33
 msgid "Do you want to empty the trash?"
-msgstr ""
+msgstr "Haluatko tyhjentää roskat?"
 
 #: ../mxfb-quickshot:61
 msgid "Don't display the Help message again!"
-msgstr ""
+msgstr "Älä näytä ohjetta uudelleen!"
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
@@ -370,7 +376,7 @@ msgstr "Muokkaa"
 #. Translator Note - button to open the fluxbox 'keys' file in text editor
 #: ../mxfb-keybindings:19
 msgid "Edit keys file"
-msgstr ""
+msgstr "Muokkaa näppäinten tiedostoa"
 
 #: ../mxfb-timer:23
 msgid "Enter local time"
@@ -379,7 +385,7 @@ msgstr "Anna paikallinen aika"
 #. define some variables
 #: ../exit-options-manager:12 ../exit-options-manager:232
 msgid "Exit-options-manager"
-msgstr ""
+msgstr "Poistu asetusten hallinta"
 
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
@@ -392,7 +398,7 @@ msgstr "Tiedostonhallinta"
 
 #: ../mxfb-look:271 ../mxfb-look:594
 msgid "Fluxbox Style"
-msgstr ""
+msgstr "Fluxbox tyyli"
 
 #. gtk-xft-rgba=none!rgb!bgr!vrgb!vbgr
 #. GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini |
@@ -400,33 +406,33 @@ msgstr ""
 #. ###
 #: ../mxfb-font:163
 msgid "Font"
-msgstr ""
+msgstr "Fontti"
 
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:219
 msgid "Fullscreen"
-msgstr ""
+msgstr "Koko näyttö"
 
 #. Translator Note - tab label
 #: ../mxfb-keybindings:250 ../mxfb-keybindings:258
 msgid "GENERAL"
-msgstr ""
+msgstr "YLEINEN"
 
 #: ../mxfb-look:270 ../mxfb-look:593
 msgid "GTK Font"
-msgstr ""
+msgstr "GTK fontti"
 
 #: ../mxfb-look:269 ../mxfb-look:592
 msgid "GTK Icons"
-msgstr ""
+msgstr "GTK kuvakkeet"
 
 #: ../mxfb-look:268 ../mxfb-look:591
 msgid "GTK Theme"
-msgstr "GTK-teema"
+msgstr "GTK teema"
 
 #: ../mxfb-font:184
 msgid "Gtk Font"
-msgstr ""
+msgstr "Gtk fontti"
 
 #: ../mxfb-tint2-manager:91
 msgid "HELP"
@@ -434,7 +440,7 @@ msgstr "APUA"
 
 #: ../mxfb-quickshot:70
 msgid "HELP: how to take a screenshot"
-msgstr ""
+msgstr "APUA: kuinka ottaa kuvakaappaus"
 
 #: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../exit-options-manager:30
 msgid "Help"
@@ -443,19 +449,19 @@ msgstr "Ohje"
 #. Translator Note - window action
 #: ../mxfb-keybindings:159
 msgid "Hide All"
-msgstr ""
+msgstr "Piilota kaikki"
 
 #: ../mxfb-font:186
 msgid "Hinting"
-msgstr ""
+msgstr "Vihjeistys"
 
 #: ../mxfb-font:199
 msgid "Hinting Style"
-msgstr ""
+msgstr "Vihjeistys tyyli"
 
 #: ../exit-options-manager:141
 msgid "Icon Size"
-msgstr ""
+msgstr "Kuvakekoko"
 
 #: ../mxfb-bg-rotate:44
 msgid "Image folder"
@@ -472,50 +478,50 @@ msgstr "Asettelu"
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:100
 msgid "Left Super"
-msgstr ""
+msgstr "Vasen Suomenlippu"
 
 #: ../mxfb-keybindings:153
 msgid "Left click"
-msgstr ""
+msgstr "Vasen painallus"
 
 #: ../mxfb-look:317
 #, sh-format
 msgid "Look name $NEWNAME is protected. Choose another name."
-msgstr ""
+msgstr "Ilmeen nimi $NEWNAME on suojattu. Valitse toinen nimi."
 
 #. ##
 #. Translator Note - Window title, keybindings = shortcut keys
 #: ../mxfb-keybindings:24
 msgid "MX-Fluxbox Keybindings"
-msgstr ""
+msgstr "MX-Fluxbox pikanäppäimet"
 
 #. Translator Note - opens mx-tools application
 #: ../mxfb-keybindings:45
 msgid "MX-Tools"
-msgstr ""
+msgstr "MX-Tools"
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
-msgstr "MXFB Kello"
+msgstr "MXFB kello"
 
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:147 ../mxfb-look:413
 msgid "MXFB-Look"
-msgstr ""
+msgstr "MXFB ilme"
 
 #. Translator Note - opens mx-fluxbox manual
 #: ../mxfb-keybindings:37
 msgid "Manual - MX Fluxbox"
-msgstr ""
+msgstr "Manuaali - MX Fluxbox"
 
 #. Translator Note - opens mx manual
 #: ../mxfb-keybindings:41
 msgid "Manual - MX Linux"
-msgstr ""
+msgstr "Manuaali - MX Linux"
 
 #: ../exit-options-manager:142
 msgid "Margin"
-msgstr ""
+msgstr "Marginaali"
 
 #. Translator Note - window command
 #: ../mxfb-keybindings:144
@@ -524,16 +530,16 @@ msgstr "Suurenna"
 
 #: ../mxfb-font:181
 msgid "Menu Text Default"
-msgstr ""
+msgstr "Valikkoteksti oletus"
 
 #: ../mxfb-font:178
 msgid "Menu Title Default"
-msgstr ""
+msgstr "Valikkonimi oletus"
 
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:165
 msgid "Middle click"
-msgstr ""
+msgstr "Keskipainallus"
 
 #. ##Tab 3
 #. Translator Note - window command
@@ -544,7 +550,7 @@ msgstr "Pienennä"
 #. Translator Note - window action
 #: ../mxfb-keybindings:152
 msgid "Move (drag titlebar)"
-msgstr ""
+msgstr "Siirrä (vedä otsikkoriviä)"
 
 #: ../mxfb-tiles:13
 msgid "Multiple options for number keys and keyboard"
@@ -552,12 +558,12 @@ msgstr "Useita vaihtoehtoja numeronäppäimille ja näppäimistölle"
 
 #: ../mxfb-look:292
 msgid "New-Look-Name"
-msgstr ""
+msgstr "Uuden-ilmeen-nimi"
 
 #. Translator Note - go to the next virtual workspace
 #: ../mxfb-keybindings:53
 msgid "Next Workspace"
-msgstr ""
+msgstr "Seuraava työtila"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
