@@ -1,42 +1,65 @@
 #!/bin/bash
 
 # Script to configure separate backgrounds for each Fluxbox Workspace
-# Written by user PPC, modified by MX Devs 2023
+# Written by user PPC, modified by MX Devs Jan 2024
 # Released under GPLv3
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="mxfb-accessories"
 
 #Confirmation Window
-NOTIFICATION=$" Rotate Backgrounds has been disabled to avoid conflict."
-MESSAGE1=$"  This app allows you to configure separate backgrounds for each Workspace  </b>"
-HINT1=$" Selection windows will pop up  each Workspace."
-HINT2=$" Type \"mxfb\" to jump to the MXFB backgrounds."
-HINT3=$" Select the background you want and click OK."
 
-NOTE1=$" NOTE 1: Background changes using the menu won't be permanent."
-NOTE2=$" NOTE 2: Re-run this script when you add new workspaces!"
+#TRANSLATORS Rotate backgrounds is a separate app which creates a wallpaper slideshow 
+NOTIFICATION="$(gettext 'Rotate Backgrounds has been disabled to avoid conflict."')"
+#TRANSLATORS Main window text - line 1 
+MESSAGE1="$(gettext 'This app allows you to configure separate backgrounds for each Workspace')"
+#TRANSLATORS Main window text - line 2 
+HINT1="$(gettext 'A selection window for each currently configured workspace will be displayed.')"
+#TRANSLATORS Main window text - line 3 
+HINT2="$(gettext 'Select the background you want and click OK.')"
 
-TITLE=$"MXFB -- separate workspace wallpapers"
-TITLE2=$"Wallpaper selector"
-TITLE3=$"Warning"
+#TRANSLATORS Main window subtitle
+NOTE0="$(gettext 'Notes')"
+#TRANSLATORS Main window text - note 1 
+NOTE1="$(gettext 'Setting up separate backgrounds deactivates Nitrogen, the standard background settings app.')"
+#TRANSLATORS Main window text - note 2 
+NOTE2="$(gettext 'Any background changes using Nitrogen will not be permanent until separate backgrounds are disabled.')"
+#TRANSLATORS Main window text - note 3 
+NOTE3="$(gettext 'You need to rerun this app if you subsequently add new workspaces.')"
+
+#TRANSLATORS Main window title 
+TITLE="$(gettext 'Separate workspace wallpapers')"
+#TRANSLATORS Wallpaper selection window title 
+TITLE2="$(gettext 'Wallpaper selector')"
+#TRANSLATORS  
+TITLE3="$(gettext 'Warning')"
 CLASS=mxfb-sbg
 
-BUTTON1=$"Cancel"
-BUTTON2=$"Disable separate backgrounds"
-BUTTON3=$"Setup separate backgrounds"
+#TRANSLATORS - button label
+BUTTON1="$(gettext 'Cancel')"
+#TRANSLATORS - button label
+BUTTON2="$(gettext 'Disable')"
+#TRANSLATORS - button label
+BUTTON3="$(gettext 'Set up separate backgrounds')"
 
-MESSAGE2=$"Separate backgrounds have been disabled."
-WARNING=$"There is no wallpaper image selected for Workspace $n... Will substitute 'mx_blue.jpg' to avoid any errors."
+#TRANSLATORS - notification text
+MESSAGE2="$(gettext 'Separate backgrounds have been disabled.')"
+#TRANSLATORS - notification text
+WARNING1="$(gettext 'There is no wallpaper image selected for Workspace')"
+#TRANSLATORS - notification text
+WARNING2="$(gettext 'Will substitute mx_blue.jpg to avoid any errors.')"
+
+#TRANSLATORS Wallpaper selection window text - workspace number is added after WORKSPACE
+WS_NUMBER="$(gettext 'Select background for WORKSPACE')"
 
 ICON=/usr/share/icons/mxflux.png
 
-yad --title=$"$TITLE" --window-icon=$ICON --class=$CLASS --text-align=center \
---width=500  --height=300 --center \
---text="\n<b>$MESSAGE1\n\n<b>--$HINT1\n--$HINT2\n-- $HINT3\n\n$NOTE1\n$NOTE2</b>" \
---button="<b>$BUTTON1</b>":1 \
---button="<b>$BUTTON2</b>":2 \
---button="<b>$BUTTON3</b>":3 \ 
+yad --title="$TITLE" --window-icon=$ICON --class=$CLASS --text-align=center \
+--width=500  --height=300 --center --buttons-layout=spread \
+--text="\n<b>$MESSAGE1</b>\n\n$HINT1\n$HINT2\n\n$NOTE0\:\n- $NOTE1\n- $NOTE2\n- $NOTE3" \
+--button="$BUTTON1":1 \
+--button="$BUTTON2":2 \
+--button="$BUTTON3":3 \ 
 
 case $? in
 
@@ -68,8 +91,8 @@ case $? in
 
     sed -i '/$full/d' $HOME/.fluxbox/lastwallpaper
 
-    yad --title=$"$TITLE" --class= mxfb-sbg --window-icon=$ICON \
-    --width=500  --height=300 --center --text-align=center \
+    yad --title=$TITLE --class= mxfb-sbg --window-icon=$ICON \
+    --width=300  --height=200 --center --text-align=center \
     --text="\n\n<b>$MESSAGE2</b>" --fixed --no-buttons --timeout=3 
 
     fluxbox-remote restart
@@ -140,21 +163,40 @@ ChangeWorkspace :Exec fbsetbg ~/.fluxbox/backgrounds/numbered/\$(xprop -root _NE
     then
         sed -i 's/^\([[:blank:]]*Background\.Delay:\).*/\1 0/' "$HOME/.ideskrc"
 
-        yad --title=$"$TITLE" --window-icon=$ICON --class=$CLASS \
+        yad --title=$TITLE --window-icon=$ICON --class=$CLASS \
         --timeout=3 --no-buttons --geometry 500x100 --text-align=center \
         --text="\n<b>$NOTIFICATION</b>"
     fi
+
+#clear normal thumbnail cache so that yad shows large thumbnails
+
+    delete_thumb(){
+    full_path="file://$(realpath -s "$1")"
+    md5name=$(printf %s "${full_path// /%20}" | md5sum)
+    rm $HOME/.cache/thumbnails/normal/${md5name%% *}.png
+    }
+
+    export -f delete_thumb
+    
+    source $HOME/.config/user-dirs.dirs
+
+    bg_list=$(find /usr/share/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \); find $HOME/.fluxbox/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \); find $XDG_PICTURES_DIR/* backgrounds -type f \( -name '*.png' -o -name '*.jpg' \))
+
+    for i in $bg_list; do
+        delete_thumb $i
+    done
+
 
 #Loop for as many workspaces as there are, selecting one wallpaper for each workspace
     for ((n=1;n<=$number_of_workspaces;n++))
     do
         cd /usr/share/backgrounds/
-    
+
 # select wallpaper:
         wallpaper=$(yad --title="$TITLE2" --window-icon=$ICON --class=$CLASS \
         --width=800  --height=400 --center --text-align=center \
-        --file-selection --add-preview --large-preview \
-        --text="\nWORKSPACE $n\n")
+        --file --image-filter --add-preview --large-preview \
+        --text="<b>\n$WS_NUMBER $n\n</b>")
     
 # copy and rename wallpaper to match the current Workspace number:
         cp $wallpaper  ~/.fluxbox/backgrounds/numbered/$n.jpg
@@ -174,7 +216,7 @@ ChangeWorkspace :Exec fbsetbg ~/.fluxbox/backgrounds/numbered/\$(xprop -root _NE
             echo "File $FILE does not exist, using a default one- mx_blue.jpg"
     
             yad --title="$TITLE3" --class=$CLASS --center --window-icon=$ICON \
-            --text="$WARNING"
+            --text="$WARNING1 $n\n$WARNING2"
     
             cp  /usr/share/backgrounds/mx_blue.jpg ~/.fluxbox/backgrounds/numbered/$n.jpg
         fi
