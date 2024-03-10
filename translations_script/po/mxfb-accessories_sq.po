@@ -4,16 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Besnik Bleta <besnik@programeshqip.org>, 2023
+# Dolphin Oracle <dolphinoracle@gmail.com>, 2024
+# Besnik Bleta <besnik@programeshqip.org>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-16 09:49-0400\n"
+"POT-Creation-Date: 2024-01-30 23:25+0100\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2023\n"
+"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2024\n"
 "Language-Team: Albanian (https://app.transifex.com/anticapitalista/teams/10162/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,27 +58,6 @@ msgstr "ose"
 #: ../mxfb-keybindings:204 ../mxfb-keybindings:211
 msgid "   or (on keypad)"
 msgstr "   ose (te pjesa numerike e tastierës)"
-
-#: ../mxfb-separate-backgrounds:12
-msgid ""
-"  This app allows you to configure separate backgrounds for each Workspace  "
-"</b>"
-msgstr ""
-"  Ky aplikacion ju lejon të formësoni sfonde më vete për çdo Hapësirë pune  "
-"</b>"
-
-#. Confirmation Window
-#: ../mxfb-separate-backgrounds:11
-msgid " Rotate Backgrounds has been disabled to avoid conflict."
-msgstr " Rrotullimi i Sfondeve është çaktivizuar, për të shmangur përplasje."
-
-#: ../mxfb-separate-backgrounds:13
-msgid " Selection windows will pop up  each Workspace."
-msgstr " Për secilën Hapësirë pune do të shfaqen dritare për përzgjedhje."
-
-#: ../mxfb-separate-backgrounds:14
-msgid " Type \\"
-msgstr " Shtypni \\"
 
 #. #begin first message box
 #: ../mxfb-tiles:37
@@ -174,6 +154,15 @@ msgstr ""
 "Ka tashmë një Pamje me këtë emër.\\n\\nDoni të mbishkruhet $NEWNAME, apo të "
 "ruhet nën një emër të ri?\\n"
 
+#. TRANSLATORS Main window text - line 2
+#: ../mxfb-separate-backgrounds:17
+msgid ""
+"A selection window for each currently configured workspace will be "
+"displayed."
+msgstr ""
+"Do të shfaqet një dritare përzgjedhjeje për çdo hapësirë pune aktualisht të "
+"formësuar."
+
 #: ../mxfb-menu-generator:55
 msgid "All Applications"
 msgstr "Krejt Aplikacionet"
@@ -234,6 +223,15 @@ msgstr "Alt Klikim me të djathitin"
 msgid "Antialising"
 msgstr ""
 
+#. TRANSLATORS Main window text - note 2
+#: ../mxfb-separate-backgrounds:26
+msgid ""
+"Any background changes using Nitrogen will not be permanent until separate "
+"backgrounds are disabled."
+msgstr ""
+"Çfarëdo ndryshimesh duke përdorur Nitrogen-in s’do të jenë të përhershme, "
+"para se të jenë çaktivizuar sfondet më vete."
+
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Zbatoje"
@@ -241,6 +239,11 @@ msgstr "Zbatoje"
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "FORMËSONI KRYET"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:39
+msgid "Cancel"
+msgstr "Anullo"
 
 #. The capture of a screenshot was cancelled.
 #: ../mxfb-quickshot:54
@@ -357,6 +360,11 @@ msgstr "DESKTOP: klikoni te sfondi"
 msgid "Delay (mins)"
 msgstr "Vonesë (min.)"
 
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:41
+msgid "Disable"
+msgstr "Çaktivizoje"
+
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
@@ -415,7 +423,7 @@ msgid "Fullscreen"
 msgstr "Sa krejt ekrani"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:250 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:250
 msgid "GENERAL"
 msgstr "TË PËRGJITHSHME"
 
@@ -574,6 +582,11 @@ msgstr "Pa rrotullim: Vonesë = 0"
 msgid "None"
 msgstr "Asnjë"
 
+#. TRANSLATORS Main window subtitle
+#: ../mxfb-separate-backgrounds:22
+msgid "Notes"
+msgstr "Shënime"
+
 #: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
 msgstr "OK"
@@ -617,7 +630,7 @@ msgid "Overwrite $NEWNAME"
 msgstr "Mbishkruaje $NEWNAME"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:252 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:252
 msgid "PROGRAMS"
 msgstr "PROGRAME"
 
@@ -653,6 +666,13 @@ msgstr "Temë Rofi"
 #: ../mxfb-keybindings:167
 msgid "Root Menu (on desktop)"
 msgstr "Menu Rrënje (në desktop)"
+
+#. Confirmation Window
+#. TRANSLATORS Rotate backgrounds is a separate app which creates a wallpaper
+#. slideshow
+#: ../mxfb-separate-backgrounds:13
+msgid "Rotate Backgrounds has been disabled to avoid conflict.\""
+msgstr "“Rrotullo Sfonde” është çaktivizuar për të shmangur përplasje."
 
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
@@ -707,13 +727,48 @@ msgstr "Rrotullojeni Rrotëzën Për Sipër"
 msgid "Select Icon Theme"
 msgstr "Përzgjidhni Temë Ikonash"
 
+#. TRANSLATORS Wallpaper selection window text - workspace number is added
+#. after WORKSPACE
+#: ../mxfb-separate-backgrounds:53
+msgid "Select background for WORKSPACE"
+msgstr "Përzgjidhni sfond për HAPËSIRË PUNE"
+
+#. TRANSLATORS Main window text - line 3
+#: ../mxfb-separate-backgrounds:19
+msgid "Select the background you want and click OK."
+msgstr "Përzgjidhni sfondin që doni dhe klikoni mbi OK."
+
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr "Përzgjidhni mënyrë shtylle titujsh"
 
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:46
+msgid "Separate backgrounds have been disabled."
+msgstr "Sfondet më vete janë çaktivizuar."
+
+#. TRANSLATORS Main window title
+#: ../mxfb-separate-backgrounds:31
+msgid "Separate workspace wallpapers"
+msgstr "Ndani më vete sfonde hapësirash pune"
+
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
 msgstr "Caktoni rrotullim sfondi"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:43
+msgid "Set up separate backgrounds"
+msgstr "Ujdisni sfonde më vete"
+
+#. TRANSLATORS Main window text - note 1
+#: ../mxfb-separate-backgrounds:24
+msgid ""
+"Setting up separate backgrounds deactivates Nitrogen, the standard "
+"background settings app."
+msgstr ""
+"Ujdisja e sfondeve më vete çaktivizon Nitrogen-in, aplikacionin standard për"
+" ujdisje sfondesh."
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:43
@@ -747,7 +802,7 @@ msgstr "Sukses!"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:256 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:256
 msgid "TILING"
 msgstr ""
 
@@ -785,6 +840,18 @@ msgid "There is 1 file in the trash."
 msgid_plural "There are ${COUNT} files in the trash."
 msgstr[0] "Ka 1 kartelë te hedhurinat."
 msgstr[1] "Ka ${COUNT} kartela te hedhurinat."
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:48
+msgid "There is no wallpaper image selected for Workspace"
+msgstr "S’ka figurë sfondi të përzgjedhur për Hapësirën e Punës"
+
+#. TRANSLATORS Main window text - line 1
+#: ../mxfb-separate-backgrounds:15
+msgid ""
+"This app allows you to configure separate backgrounds for each Workspace"
+msgstr ""
+"Ky aplikacion ju lejon të formësoni sfonde më vete për çdo Hapësirë Pune"
 
 #: ../mxfb-tiles:10
 msgid ""
@@ -824,7 +891,7 @@ msgid "WINDOW: click anywhere inside"
 msgstr "DRITARE: klikoni ku të jetë brenda"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:254 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:254
 msgid "WINDOWS"
 msgstr "DRITARE"
 
@@ -836,6 +903,21 @@ msgstr "Prisni 10 sekonda që të riniset Conky"
 msgid "Wallpaper"
 msgstr "Sfond"
 
+#. TRANSLATORS Wallpaper selection window title
+#: ../mxfb-separate-backgrounds:33
+msgid "Wallpaper selector"
+msgstr "Përzgjedhës sfondesh"
+
+#. TRANSLATORS
+#: ../mxfb-separate-backgrounds:35
+msgid "Warning"
+msgstr "Kujdes"
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:50
+msgid "Will substitute mx_blue.jpg to avoid any errors."
+msgstr "Do të çaktivizojë mx_blue.jpg, për të shmangur çfarëdo gabimi."
+
 #: ../mxfb-font:175
 msgid "Window Title Default"
 msgstr "Parazgjedhje Titujsh Dritaresh"
@@ -844,6 +926,13 @@ msgstr "Parazgjedhje Titujsh Dritaresh"
 #: ../mxfb-keybindings:163
 msgid "Workspace Menu (on desktop)"
 msgstr "Menu Hapësirash Pune (në desktop)"
+
+#. TRANSLATORS Main window text - note 3
+#: ../mxfb-separate-backgrounds:28
+msgid "You need to rerun this app if you subsequently add new workspaces."
+msgstr ""
+"Lypset të rixhironi këtë aplikacion, nëse shtoni më pas hapësira të reja "
+"pune."
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

@@ -7,20 +7,20 @@
 # James Bowlin <BitJam@gmail.com>, 2022
 # Oi Suomi On! <oisuomion@protonmail.com>, 2022
 # asd asd <ekeimaja@gmail.com>, 2023
-# En Kerro <inactive+ekeimaja@transifex.com>, 2023
 # Robin, 2023
 # fehlix, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
-# Kimmo Kujansuu <mrkujansuu@gmail.com>, 2023
+# En Kerro <inactive+ekeimaja@transifex.com>, 2024
+# Kimmo Kujansuu <mrkujansuu@gmail.com>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-16 09:49-0400\n"
+"POT-Creation-Date: 2024-01-30 23:25+0100\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2023\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2024\n"
 "Language-Team: Finnish (https://app.transifex.com/anticapitalista/teams/10162/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,10 +44,18 @@ msgid ""
 "\n"
 "    --More: search \"Quickshot\" in the MX Wiki"
 msgstr ""
+"\n"
+"Huomaa\n"
+"\n"
+"    --Paina \"Hylkää\" piilottaa ohjeet tulevaisuudessa!\n"
+"\n"
+"    --Kaappaa ohje painamalla sitä\n"
+"\n"
+"    --Lisää: hae \"Kuva\" MX Wikistä"
 
 #: ../mxfb-look:319 ../mxfb-look:346
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ../mxfb-keybindings:56 ../mxfb-keybindings:63
 msgid "   or"
@@ -56,27 +64,6 @@ msgstr "tai"
 #: ../mxfb-keybindings:204 ../mxfb-keybindings:211
 msgid "   or (on keypad)"
 msgstr "tai (näppäimistöllä)"
-
-#: ../mxfb-separate-backgrounds:12
-msgid ""
-"  This app allows you to configure separate backgrounds for each Workspace  "
-"</b>"
-msgstr ""
-"  Tämän sovelluksen avulla voit määrittää erilliset taustat kullekin "
-"työtilalle  </b>"
-
-#. Confirmation Window
-#: ../mxfb-separate-backgrounds:11
-msgid " Rotate Backgrounds has been disabled to avoid conflict."
-msgstr " Taustojen kääntäminen on pois käytöstä ristiriitojen välttämiseksi."
-
-#: ../mxfb-separate-backgrounds:13
-msgid " Selection windows will pop up  each Workspace."
-msgstr " Valintaikkunat avautuvat jokaiseen työtilaan."
-
-#: ../mxfb-separate-backgrounds:14
-msgid " Type \\"
-msgstr "Tyyppi \\"
 
 #. #begin first message box
 #: ../mxfb-tiles:37
@@ -173,6 +160,15 @@ msgstr ""
 "Saman niminen ilme on jo olemassa.\\n\\nHaluatko korvata $NEWNAME vai "
 "tallettaa uudella nimellä?\\n"
 
+#. TRANSLATORS Main window text - line 2
+#: ../mxfb-separate-backgrounds:17
+msgid ""
+"A selection window for each currently configured workspace will be "
+"displayed."
+msgstr ""
+"Näyttöön tulee valintaikkuna jokaiselle tällä hetkellä määritetylle "
+"työtilalle."
+
 #: ../mxfb-menu-generator:55
 msgid "All Applications"
 msgstr "Kaikki sovellukset"
@@ -233,6 +229,15 @@ msgstr "Alt + hiiren oikea"
 msgid "Antialising"
 msgstr "Pehmennys"
 
+#. TRANSLATORS Main window text - note 2
+#: ../mxfb-separate-backgrounds:26
+msgid ""
+"Any background changes using Nitrogen will not be permanent until separate "
+"backgrounds are disabled."
+msgstr ""
+"Mikään Nitrogen taustamuutos ei ole pysyviä, ennen kuin erilliset taustat "
+"poistetaan käytöstä."
+
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Hyväksy"
@@ -240,6 +245,11 @@ msgstr "Hyväksy"
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "MÄÄRITÄ YLÖS"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:39
+msgid "Cancel"
+msgstr "Peru"
 
 #. The capture of a screenshot was cancelled.
 #: ../mxfb-quickshot:54
@@ -356,6 +366,11 @@ msgstr "TYÖPÖYTÄ: paina taustaa"
 msgid "Delay (mins)"
 msgstr "Viive (minuutteina)"
 
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:41
+msgid "Disable"
+msgstr "Poista käytöstä"
+
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
@@ -414,7 +429,7 @@ msgid "Fullscreen"
 msgstr "Koko näyttö"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:250 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:250
 msgid "GENERAL"
 msgstr "YLEINEN"
 
@@ -573,6 +588,11 @@ msgstr "Ei kiertoa: viive = 0"
 msgid "None"
 msgstr "Ei mitään"
 
+#. TRANSLATORS Main window subtitle
+#: ../mxfb-separate-backgrounds:22
+msgid "Notes"
+msgstr "Huomautukset"
+
 #: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
 msgstr "OK"
@@ -584,23 +604,23 @@ msgstr "Hyväksytkö jatkamisen?"
 
 #: ../mxfb-borders:17
 msgid "OPTIONAL BORDER STYLE CONFIG"
-msgstr ""
+msgstr "VALINNAINEN REUNUSTYYLIN MÄÄRITYS"
 
 #. ##Tab 4
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:201
 msgid "One-Half"
-msgstr ""
+msgstr "Puolikas"
 
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:208
 msgid "One-Quarter"
-msgstr ""
+msgstr "Neljännes"
 
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:215
 msgid "One-Third"
-msgstr ""
+msgstr "Kolmasosa"
 
 #: ../mxfb-menu-generator:193
 msgid "Other"
@@ -608,50 +628,59 @@ msgstr "Muut"
 
 #: ../mxfb-font:176 ../mxfb-font:179 ../mxfb-font:182
 msgid "Override with"
-msgstr ""
+msgstr "Ohita"
 
 #: ../mxfb-look:338
 #, sh-format
 msgid "Overwrite $NEWNAME"
-msgstr ""
+msgstr "Korvaa $NEWNAME"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:252 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:252
 msgid "PROGRAMS"
-msgstr ""
+msgstr "OHJELMAT"
 
 #. How to take a screenshot...
 #: ../mxfb-quickshot:72
 msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
-msgstr ""
+msgstr "Paina \"Print\" (tai \"PrtSc\") ja käytä hiirtä:"
 
 #. Translator Note - go to the previous virtual workspace
 #: ../mxfb-keybindings:60
 msgid "Previous Workspace"
-msgstr ""
+msgstr "Edellinen työtila"
 
 #. Translator Note - window action
 #: ../mxfb-keybindings:155
 msgid "Resize (drag lower R corner)"
-msgstr ""
+msgstr "Muuta kokoa (vetämällä alakulmaa)"
 
 #: ../mxfb-look:603 ../mxfb-look:764
 msgid "Restore Look"
-msgstr ""
+msgstr "Palauta ulkoasu"
 
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:169
 msgid "Right click"
-msgstr ""
+msgstr "Hiiren oikea"
 
 #: ../mxfb-look:274 ../mxfb-look:597
 msgid "Rofi Theme"
-msgstr ""
+msgstr "Rofi teema"
 
 #. Translator Note - opens root menu
 #: ../mxfb-keybindings:167
 msgid "Root Menu (on desktop)"
+msgstr "Päävalikko (työpöydällä)"
+
+#. Confirmation Window
+#. TRANSLATORS Rotate backgrounds is a separate app which creates a wallpaper
+#. slideshow
+#: ../mxfb-separate-backgrounds:13
+msgid "Rotate Backgrounds has been disabled to avoid conflict.\""
 msgstr ""
+"Taustakuvien kääntäminen on poistettu käytöstä ristiriitojen "
+"välttämiseksi.\""
 
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
@@ -662,73 +691,106 @@ msgstr "Suorita"
 #. SELECTION: press Print, then draw a rectangle
 #: ../mxfb-quickshot:81
 msgid "SELECTION: draw a rectangle"
-msgstr ""
+msgstr "VALINTA: piirrä suorakulmio"
 
 #: ../mxfb-look:764
 msgid "Save Current Look"
-msgstr ""
+msgstr "Tallenna nykyinen ulkoasu"
 
 #: ../mxfb-look:280
 msgid "Save Look"
-msgstr ""
+msgstr "Tallenna ulkoasu"
 
 #: ../mxfb-look:292
 #, sh-format
 msgid "Save Look as"
-msgstr ""
+msgstr "Tallenna ulkoasu..."
 
 #: ../mxfb-look:338
 msgid "Save as different name"
-msgstr ""
+msgstr "Tallenna eri nimellä"
 
 #. Translator Note - opens screenshot app
 #: ../mxfb-keybindings:114
 msgid "Screen Capture"
-msgstr ""
+msgstr "Näytönkaappaus"
 
 #. Translator Note - launches the screen magnifier
 #: ../mxfb-keybindings:49
 msgid "Screen Magnifier"
-msgstr ""
+msgstr "Näytön suurennuslasi"
 
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:62
 msgid "Scroll Wheel Down"
-msgstr ""
+msgstr "Vieritä rullaa alas"
 
 #. Translator Note - mouse action
 #: ../mxfb-keybindings:55
 msgid "Scroll Wheel Up"
-msgstr ""
+msgstr "Vieritä rullaa ylös"
 
 #. run main dialog
 #: ../exit-options-manager:149
 msgid "Select Icon Theme"
-msgstr ""
+msgstr "Valitse kuvaketeema"
+
+#. TRANSLATORS Wallpaper selection window text - workspace number is added
+#. after WORKSPACE
+#: ../mxfb-separate-backgrounds:53
+msgid "Select background for WORKSPACE"
+msgstr "Valitse työtilan taustakuva"
+
+#. TRANSLATORS Main window text - line 3
+#: ../mxfb-separate-backgrounds:19
+msgid "Select the background you want and click OK."
+msgstr "Valitse haluamasi tausta ja paina OK."
 
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
-msgstr ""
+msgstr "Valitse otsikkorivin tila"
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:46
+msgid "Separate backgrounds have been disabled."
+msgstr "Erilliset taustakuvat on poistettu käytöstä."
+
+#. TRANSLATORS Main window title
+#: ../mxfb-separate-backgrounds:31
+msgid "Separate workspace wallpapers"
+msgstr "Erilliset työtilan taustakuvat"
 
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
 msgstr "Aseta taustakuvan kääntyminen"
 
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:43
+msgid "Set up separate backgrounds"
+msgstr "Aseta erilliset taustakuvat"
+
+#. TRANSLATORS Main window text - note 1
+#: ../mxfb-separate-backgrounds:24
+msgid ""
+"Setting up separate backgrounds deactivates Nitrogen, the standard "
+"background settings app."
+msgstr "Erillisten taustakuvien asetus poistaa Nitrogen sovelluksen käytöstä."
+
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:43
 msgid "Shift F1"
-msgstr ""
+msgstr "Shift F1"
 
 #. ## desktop file strings
 #. Translator Note - desktop file Name field
 #: ../mxfb-keybindings:12
 msgid "Shortcuts"
-msgstr ""
+msgstr "Pikanäppäimet"
 
 #. Translator Note - desktop file Comment field
 #: ../mxfb-keybindings:14
 msgid "Shows frequently used key shortcuts"
-msgstr ""
+msgstr "Näyttää useinmin käytetyt pikanäppäimet"
 
 #. SUBTITLE=$(gettext "Be sure to fill in all fields you want enabled")
 #: ../mxfb-borders:20 ../mxfb-top:22
@@ -737,18 +799,18 @@ msgstr "Koko"
 
 #: ../exit-options-manager:143
 msgid "Spacing"
-msgstr ""
+msgstr "Välit"
 
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:56
 msgid "Success!"
-msgstr ""
+msgstr "Onnistui"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:256 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:256
 msgid "TILING"
-msgstr ""
+msgstr "IKKUNAT VIEREKKÄIN"
 
 #. Translator Note - opens terminal
 #: ../mxfb-keybindings:110
@@ -765,15 +827,15 @@ msgstr ""
 #. The existing config file will be copied into a backup directory.
 #: ../mxfb-quickshot:67
 msgid "The existing file will be backed up in:"
-msgstr ""
+msgstr "Tiedosto varmuuskopioidaan seuraavaan paikkaan:"
 
 #: ../exit-options-manager:249
 msgid "The following settings can also be defined"
-msgstr ""
+msgstr "Voit määrittää myös seuraavat asetukset"
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
-msgstr ""
+msgstr "Roskakorissa ei ole tiedostoja."
 
 #. TRANSLATORS:
 #. Do not translate the count placeholder '${COUNT}'.
@@ -783,8 +845,20 @@ msgstr ""
 #, sh-format
 msgid "There is 1 file in the trash."
 msgid_plural "There are ${COUNT} files in the trash."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Roskakorissa on ${COUNT} tiedostoa."
+msgstr[1] "Roskakorissa on ${COUNT} tiedostoa."
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:48
+msgid "There is no wallpaper image selected for Workspace"
+msgstr "Työtilaan ei ole valittua taustakuvaa"
+
+#. TRANSLATORS Main window text - line 1
+#: ../mxfb-separate-backgrounds:15
+msgid ""
+"This app allows you to configure separate backgrounds for each Workspace"
+msgstr ""
+"Sovelluksen avulla voit määrittää erilliset taustakuvat kullekin työtilalle"
 
 #: ../mxfb-tiles:10
 msgid ""
@@ -799,19 +873,21 @@ msgstr ""
 #: ../mxfb-keybindings:247
 msgid "This tool displays default shortcuts (\"keys\") that are frequently used."
 msgstr ""
+"Työkalu näyttää oletuksena olevat pikanäppäimet (\"näppäimet\"), joita "
+"käytetään usein."
 
 #. A new config file will be installed.
 #: ../mxfb-quickshot:64
 msgid "This will install a new config file"
-msgstr ""
+msgstr "Tämä asentaa uuden asetustiedoston"
 
 #: ../exit-options-manager:140
 msgid "Timeout"
-msgstr ""
+msgstr "Odotusaika"
 
 #: ../mxfb-tint2-manager:283
 msgid "Tint2 Manager"
-msgstr ""
+msgstr "Tint2 hallinta"
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
@@ -821,29 +897,51 @@ msgstr "Vaihtoehdot"
 #. WINDOW: press Print, then click anywhere inside
 #: ../mxfb-quickshot:75
 msgid "WINDOW: click anywhere inside"
-msgstr ""
+msgstr "IKKUNA: paina mitä tahansa sisäpuolella"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:254 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:254
 msgid "WINDOWS"
-msgstr ""
+msgstr "IKKUNAT"
 
 #: ../mxfb-look:601
 msgid "Wait 10 seconds for the conky to restart"
-msgstr ""
+msgstr "Odota 10 sekuntia, niin conky käynnistyy uudelleen"
 
 #: ../mxfb-look:275 ../mxfb-look:598
 msgid "Wallpaper"
 msgstr "Taustakuva"
 
+#. TRANSLATORS Wallpaper selection window title
+#: ../mxfb-separate-backgrounds:33
+msgid "Wallpaper selector"
+msgstr "Taustakuvan valitsin"
+
+#. TRANSLATORS
+#: ../mxfb-separate-backgrounds:35
+msgid "Warning"
+msgstr "Varoitus"
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:50
+msgid "Will substitute mx_blue.jpg to avoid any errors."
+msgstr "Korvaa mx_blue.jpg virheiden välttämiseksi."
+
 #: ../mxfb-font:175
 msgid "Window Title Default"
-msgstr ""
+msgstr "Ikkunan otsikon oletusarvo"
 
 #. Translator Note - opens workspace menu
 #: ../mxfb-keybindings:163
 msgid "Workspace Menu (on desktop)"
+msgstr "Työtilavalikko (työpöydällä)"
+
+#. TRANSLATORS Main window text - note 3
+#: ../mxfb-separate-backgrounds:28
+msgid "You need to rerun this app if you subsequently add new workspaces."
 msgstr ""
+"Sinun on ajettava tämä sovellus uudelleen, jos lisäät myöhemmin uusia "
+"työtiloja."
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
@@ -851,25 +949,25 @@ msgstr "\\n"
 
 #: ../mxfb-look:281
 msgid "\\n<b>"
-msgstr ""
+msgstr "\\n<b>"
 
 #: ../mxfb-look:429
 msgid "\\n<b> Choose which look to restore</b>\\n"
-msgstr ""
+msgstr "\\n<b> Valitse palautettava ulkoasu</b>\\n"
 
 #: ../mxfb-look:441
 msgid "\\n<b> You need to select a look !</b>\\n"
-msgstr ""
+msgstr "\\n<b> Sinun täytyy valita ulkoasu!</b>\\n"
 
 #: ../exit-options-manager:237
 msgid "\\nIcon themes can be defined by creating a file"
-msgstr ""
+msgstr "\\nIcon teemoja voidaan määritellä luomalla tiedosto"
 
 #: ../mxfb-borders:28 ../mxfb-top:30
 #, sh-format
 msgctxt "Stock label"
 msgid "_Apply"
-msgstr ""
+msgstr "_Käytä"
 
 #: ../mxfb-borders:27 ../mxfb-top:29
 #, sh-format
@@ -893,19 +991,21 @@ msgstr "_OK"
 #, sh-format
 msgctxt "Stock label"
 msgid "_Revert"
-msgstr ""
+msgstr "_Palauta"
 
 #: ../exit-options-manager:239
 msgid ""
 "and adding the paths for the desired 64x64 pixel icons to the following "
 "definitions"
 msgstr ""
+"ja lisäämällä polut halutuille 64x64 pikselin kuvakkeille seuraaviin "
+"määrityksiin"
 
 #. Note: Comment lines above gettext lines are visible to translators.
 #. The capture of a screenshot was aborted.
 #: ../mxfb-quickshot:52
 msgid "exiting, no image selected"
-msgstr ""
+msgstr "poistutaan, kuvaa ei ole valittuna"
 
 #: ../mxfb-timer:24
 msgid "or number and unit"
@@ -913,12 +1013,12 @@ msgstr "tai numero ja yksikkö"
 
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
-msgstr "ajan muoto:"
+msgstr "aika:"
 
 #: ../mxfb-look:261 ../mxfb-look:582
 msgid "toggled off"
-msgstr ""
+msgstr "pois päältä"
 
 #: ../mxfb-look:259 ../mxfb-look:580
 msgid "toggled on"
-msgstr ""
+msgstr "kytketty päälle"

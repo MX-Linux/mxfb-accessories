@@ -10,17 +10,17 @@
 # Hugo Carvalho <hugokarvalho@hotmail.com>, 2023
 # Robin, 2023
 # fehlix, 2023
-# José Vieira <jvieira33@sapo.pt>, 2023
-# Paulo C., 2023
+# José Vieira <jvieira33@sapo.pt>, 2024
+# Paulo C., 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-16 09:49-0400\n"
+"POT-Creation-Date: 2024-01-30 23:25+0100\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Paulo C., 2023\n"
+"Last-Translator: Paulo C., 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/anticapitalista/teams/10162/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,29 +64,6 @@ msgstr "ou"
 #: ../mxfb-keybindings:204 ../mxfb-keybindings:211
 msgid "   or (on keypad)"
 msgstr "ou (no teclado numérico)"
-
-#: ../mxfb-separate-backgrounds:12
-msgid ""
-"  This app allows you to configure separate backgrounds for each Workspace  "
-"</b>"
-msgstr ""
-"Esta aplicação permite configurar imagens de fundo diferentes para cada "
-"Workspace"
-
-#. Confirmation Window
-#: ../mxfb-separate-backgrounds:11
-msgid " Rotate Backgrounds has been disabled to avoid conflict."
-msgstr ""
-" A rotação da imagem de fundo ou papel de parede foi desativada para evitar "
-"conflitos."
-
-#: ../mxfb-separate-backgrounds:13
-msgid " Selection windows will pop up  each Workspace."
-msgstr " As janelas de seleção irão aparecer em cada área de trabalho."
-
-#: ../mxfb-separate-backgrounds:14
-msgid " Type \\"
-msgstr "Escreva \\"
 
 #. #begin first message box
 #: ../mxfb-tiles:37
@@ -184,6 +161,15 @@ msgstr ""
 "Já existe um estilo com este nome.\\n\\nQuer substituir o nome do estilo "
 "$NEWNAME ou gravar como um novo nome?\\n"
 
+#. TRANSLATORS Main window text - line 2
+#: ../mxfb-separate-backgrounds:17
+msgid ""
+"A selection window for each currently configured workspace will be "
+"displayed."
+msgstr ""
+"Uma janela de seleção será exibida para cada área de trabalho atualmente "
+"configurada."
+
 #: ../mxfb-menu-generator:55
 msgid "All Applications"
 msgstr "Todas as aplicações"
@@ -244,6 +230,15 @@ msgstr "Alt Click Direito"
 msgid "Antialising"
 msgstr "Antialising"
 
+#. TRANSLATORS Main window text - note 2
+#: ../mxfb-separate-backgrounds:26
+msgid ""
+"Any background changes using Nitrogen will not be permanent until separate "
+"backgrounds are disabled."
+msgstr ""
+"Quaisquer alterações de imagem de fundo usando o Nitrogen não serão "
+"permanentes até que as imagens de fundo separadas sejam desativadas."
+
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Aplicar"
@@ -251,6 +246,11 @@ msgstr "Aplicar"
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "CONFIGURAR A PARTE SUPERIOR"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:39
+msgid "Cancel"
+msgstr "Cancelar"
 
 #. The capture of a screenshot was cancelled.
 #: ../mxfb-quickshot:54
@@ -367,6 +367,11 @@ msgstr "ÁREA DE TRABALHO: clique no plano de fundo"
 msgid "Delay (mins)"
 msgstr "Atraso (mins)"
 
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:41
+msgid "Disable"
+msgstr "Desativar"
+
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
@@ -425,7 +430,7 @@ msgid "Fullscreen"
 msgstr "Ecrã Completo"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:250 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:250
 msgid "GENERAL"
 msgstr "GERAL"
 
@@ -584,6 +589,11 @@ msgstr "Sem rotação: Atraso = 0"
 msgid "None"
 msgstr "Nenhum"
 
+#. TRANSLATORS Main window subtitle
+#: ../mxfb-separate-backgrounds:22
+msgid "Notes"
+msgstr "Notas"
+
 #: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
 msgstr "Aceitar"
@@ -627,7 +637,7 @@ msgid "Overwrite $NEWNAME"
 msgstr "Substituir $NEWNAME"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:252 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:252
 msgid "PROGRAMS"
 msgstr "PROGRAMAS"
 
@@ -663,6 +673,13 @@ msgstr "Tema do Rofi"
 #: ../mxfb-keybindings:167
 msgid "Root Menu (on desktop)"
 msgstr "Menu Root (no ambiente de trabalho)"
+
+#. Confirmation Window
+#. TRANSLATORS Rotate backgrounds is a separate app which creates a wallpaper
+#. slideshow
+#: ../mxfb-separate-backgrounds:13
+msgid "Rotate Backgrounds has been disabled to avoid conflict.\""
+msgstr "A rotação da imagem de fundo foi desabilitada para evitar conflitos.\""
 
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
@@ -717,13 +734,48 @@ msgstr "Roda de deslizamento para cima"
 msgid "Select Icon Theme"
 msgstr "Selecionar tema de ícones"
 
+#. TRANSLATORS Wallpaper selection window text - workspace number is added
+#. after WORKSPACE
+#: ../mxfb-separate-backgrounds:53
+msgid "Select background for WORKSPACE"
+msgstr "Selecione imagem de fundo para a Área de Trabalho "
+
+#. TRANSLATORS Main window text - line 3
+#: ../mxfb-separate-backgrounds:19
+msgid "Select the background you want and click OK."
+msgstr "Selecione a imagem de fundo que deseja e clique em OK."
+
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr "Selecionar o modo da barra de título"
 
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:46
+msgid "Separate backgrounds have been disabled."
+msgstr "Imagens de fundo separadas estão desativadas."
+
+#. TRANSLATORS Main window title
+#: ../mxfb-separate-backgrounds:31
+msgid "Separate workspace wallpapers"
+msgstr "Imagem de fundo para áreas de trabalho separadas"
+
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
 msgstr "Definir a rotação do fundo"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:43
+msgid "Set up separate backgrounds"
+msgstr "Configurar imagems de fundo separadas"
+
+#. TRANSLATORS Main window text - note 1
+#: ../mxfb-separate-backgrounds:24
+msgid ""
+"Setting up separate backgrounds deactivates Nitrogen, the standard "
+"background settings app."
+msgstr ""
+"Definir imagens de fundo separadas desativa o Nitrogen, a aplicação padrão "
+"de configurações de imagens de fundo."
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:43
@@ -757,7 +809,7 @@ msgstr "Concluído com êxito!"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:256 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:256
 msgid "TILING"
 msgstr "TILING (Mosaico)"
 
@@ -799,6 +851,19 @@ msgstr[0] "Há ${COUNT} ficheiro no lixo."
 msgstr[1] "Há ${COUNT} ficheiros no lixo."
 msgstr[2] "Há ${COUNT} ficheiros no lixo."
 
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:48
+msgid "There is no wallpaper image selected for Workspace"
+msgstr "Não há imagem de fundo selecionada para a Área de Trabalho."
+
+#. TRANSLATORS Main window text - line 1
+#: ../mxfb-separate-backgrounds:15
+msgid ""
+"This app allows you to configure separate backgrounds for each Workspace"
+msgstr ""
+"Esta aplicação permite configurar imagens de fundo diferentes para cada Área"
+" de Trabalho"
+
 #: ../mxfb-tiles:10
 msgid ""
 "This script will back up your current keys file, then install commands for tiling to the end of the file. \\n\n"
@@ -839,7 +904,7 @@ msgid "WINDOW: click anywhere inside"
 msgstr "JANELA: clique em qualquer lugar dentro da janela"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:254 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:254
 msgid "WINDOWS"
 msgstr "JANELAS"
 
@@ -851,6 +916,21 @@ msgstr "Aguarde 10 segundos para que o conky reinicie"
 msgid "Wallpaper"
 msgstr "Papel de parede"
 
+#. TRANSLATORS Wallpaper selection window title
+#: ../mxfb-separate-backgrounds:33
+msgid "Wallpaper selector"
+msgstr "Seletor de imagem de fundo"
+
+#. TRANSLATORS
+#: ../mxfb-separate-backgrounds:35
+msgid "Warning"
+msgstr "Aviso"
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:50
+msgid "Will substitute mx_blue.jpg to avoid any errors."
+msgstr "Irá substituir mx_blue.jpg para evitar quaisquer erros."
+
 #: ../mxfb-font:175
 msgid "Window Title Default"
 msgstr "Padrão do título da janela"
@@ -859,6 +939,13 @@ msgstr "Padrão do título da janela"
 #: ../mxfb-keybindings:163
 msgid "Workspace Menu (on desktop)"
 msgstr "Menu de Área de Trabalho (no ambiente de trabalho)"
+
+#. TRANSLATORS Main window text - note 3
+#: ../mxfb-separate-backgrounds:28
+msgid "You need to rerun this app if you subsequently add new workspaces."
+msgstr ""
+"Você precisa executar novamente este aplicativo se posteriormente adicionar "
+"novas áreas  de trabalho."
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

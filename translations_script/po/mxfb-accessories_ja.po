@@ -6,22 +6,23 @@
 # Translators:
 # night1ynx <night1ynxd@gmail.com>, 2022
 # James Bowlin <BitJam@gmail.com>, 2022
-# Transifex Bot <>, 2022
 # Dolphin Oracle <dolphinoracle@gmail.com>, 2022
 # Robin, 2023
 # fehlix, 2023
 # 🎈 BALLOON | FU-SEN, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
-# Green <usergreen@users.osdn.me>, 2023
+# verdism, 2024
+# Transifex Bot <>, 2024
+# Green <usergreen@users.osdn.me>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-16 09:49-0400\n"
+"POT-Creation-Date: 2024-01-30 23:25+0100\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Green <usergreen@users.osdn.me>, 2023\n"
+"Last-Translator: Green <usergreen@users.osdn.me>, 2024\n"
 "Language-Team: Japanese (https://app.transifex.com/anticapitalista/teams/10162/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,25 +65,6 @@ msgstr "   or"
 #: ../mxfb-keybindings:204 ../mxfb-keybindings:211
 msgid "   or (on keypad)"
 msgstr "or（キーパッドで）"
-
-#: ../mxfb-separate-backgrounds:12
-msgid ""
-"  This app allows you to configure separate backgrounds for each Workspace  "
-"</b>"
-msgstr "  このアプリでは、ワークスペースごとに個別の背景を設定することができます  </b>"
-
-#. Confirmation Window
-#: ../mxfb-separate-backgrounds:11
-msgid " Rotate Backgrounds has been disabled to avoid conflict."
-msgstr " 背景の回転は、競合を避けるために無効化しています。"
-
-#: ../mxfb-separate-backgrounds:13
-msgid " Selection windows will pop up  each Workspace."
-msgstr "選択ウィンドウはワークスペース毎にポップアップ表示します。"
-
-#: ../mxfb-separate-backgrounds:14
-msgid " Type \\"
-msgstr " Type \\"
 
 #. #begin first message box
 #: ../mxfb-tiles:37
@@ -176,6 +158,13 @@ msgid ""
 " or save as a new name?\\n"
 msgstr "この名前の外観はすでに存在します。\\n\\n$NEWNAME を上書きしますか、それとも別の名前で保存しますか？\\n"
 
+#. TRANSLATORS Main window text - line 2
+#: ../mxfb-separate-backgrounds:17
+msgid ""
+"A selection window for each currently configured workspace will be "
+"displayed."
+msgstr "現在設定されている各ワークスペースの選択ウィンドウを表示します。"
+
 #: ../mxfb-menu-generator:55
 msgid "All Applications"
 msgstr "すべてのアプリケーション"
@@ -236,6 +225,13 @@ msgstr "Alt 右クリック"
 msgid "Antialising"
 msgstr "Antialiasing"
 
+#. TRANSLATORS Main window text - note 2
+#: ../mxfb-separate-backgrounds:26
+msgid ""
+"Any background changes using Nitrogen will not be permanent until separate "
+"backgrounds are disabled."
+msgstr "Nitrogen を使用した背景の変更は、個別の背景を無効にするまで永続的ではありません。"
+
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
 msgstr "適用"
@@ -243,6 +239,11 @@ msgstr "適用"
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "CONFIGURE TOP"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:39
+msgid "Cancel"
+msgstr "中止"
 
 #. The capture of a screenshot was cancelled.
 #: ../mxfb-quickshot:54
@@ -359,6 +360,11 @@ msgstr "デスクトップ: 背景をクリックします"
 msgid "Delay (mins)"
 msgstr "遅延 (分)"
 
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:41
+msgid "Disable"
+msgstr "無効化"
+
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
@@ -417,7 +423,7 @@ msgid "Fullscreen"
 msgstr "全画面"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:250 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:250
 msgid "GENERAL"
 msgstr "全般"
 
@@ -505,7 +511,7 @@ msgstr "MX-ツール"
 
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
-msgstr "MXFB タイマー"
+msgstr "MXFB タイマ"
 
 #. define some variables
 #: ../mxfb-look:17 ../mxfb-look:147 ../mxfb-look:413
@@ -515,12 +521,12 @@ msgstr "MXFB の外観"
 #. Translator Note - opens mx-fluxbox manual
 #: ../mxfb-keybindings:37
 msgid "Manual - MX Fluxbox"
-msgstr "MX Fluxbox のマニュアル"
+msgstr "MX Fluxbox マニュアル"
 
 #. Translator Note - opens mx manual
 #: ../mxfb-keybindings:41
 msgid "Manual - MX Linux"
-msgstr "MX Linux のマニュアル"
+msgstr "MX Linux マニュアル"
 
 #: ../exit-options-manager:142
 msgid "Margin"
@@ -576,6 +582,11 @@ msgstr "回転しない：遅延 = 0"
 msgid "None"
 msgstr "なし"
 
+#. TRANSLATORS Main window subtitle
+#: ../mxfb-separate-backgrounds:22
+msgid "Notes"
+msgstr "備考"
+
 #: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
 msgstr "OK"
@@ -587,7 +598,7 @@ msgstr "続行してもいいですか？"
 
 #: ../mxfb-borders:17
 msgid "OPTIONAL BORDER STYLE CONFIG"
-msgstr "ボーダースタイルのオプション設定"
+msgstr "ボーダスタイルのオプション設定"
 
 #. ##Tab 4
 #. Translator Note - option for window tiling
@@ -619,7 +630,7 @@ msgid "Overwrite $NEWNAME"
 msgstr "$NEWNAME を上書きする"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:252 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:252
 msgid "PROGRAMS"
 msgstr "プログラム"
 
@@ -655,6 +666,13 @@ msgstr "Rofi テーマ"
 #: ../mxfb-keybindings:167
 msgid "Root Menu (on desktop)"
 msgstr "root メニュー (デスクトップで)"
+
+#. Confirmation Window
+#. TRANSLATORS Rotate backgrounds is a separate app which creates a wallpaper
+#. slideshow
+#: ../mxfb-separate-backgrounds:13
+msgid "Rotate Backgrounds has been disabled to avoid conflict.\""
+msgstr "競合を回避するために、背景の回転は無効になっています。"
 
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
@@ -709,13 +727,46 @@ msgstr "上へスクロールする"
 msgid "Select Icon Theme"
 msgstr "アイコンのテーマを選択"
 
+#. TRANSLATORS Wallpaper selection window text - workspace number is added
+#. after WORKSPACE
+#: ../mxfb-separate-backgrounds:53
+msgid "Select background for WORKSPACE"
+msgstr "ワークスペースの背景を選択する"
+
+#. TRANSLATORS Main window text - line 3
+#: ../mxfb-separate-backgrounds:19
+msgid "Select the background you want and click OK."
+msgstr "お好みの背景を選択し、OK をクリックしてください。"
+
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr "タイトルバーのモードを選択"
 
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:46
+msgid "Separate backgrounds have been disabled."
+msgstr "個別の背景は無効化されています。"
+
+#. TRANSLATORS Main window title
+#: ../mxfb-separate-backgrounds:31
+msgid "Separate workspace wallpapers"
+msgstr "ワークスペースの壁紙を分割する"
+
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
 msgstr "背景の回転を設定"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:43
+msgid "Set up separate backgrounds"
+msgstr "別々の背景を設定する"
+
+#. TRANSLATORS Main window text - note 1
+#: ../mxfb-separate-backgrounds:24
+msgid ""
+"Setting up separate backgrounds deactivates Nitrogen, the standard "
+"background settings app."
+msgstr "別々の背景を設定すると、標準の背景設定アプリである Nitrogen が無効となります。"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:43
@@ -749,7 +800,7 @@ msgstr "成功です！"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:256 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:256
 msgid "TILING"
 msgstr "タイリング"
 
@@ -786,6 +837,17 @@ msgstr "ごみ箱は空です。"
 msgid "There is 1 file in the trash."
 msgid_plural "There are ${COUNT} files in the trash."
 msgstr[0] "ごみ箱には ${COUNT} 個のファイルがあります。"
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:48
+msgid "There is no wallpaper image selected for Workspace"
+msgstr "ワークスペースの壁紙が選択されていません"
+
+#. TRANSLATORS Main window text - line 1
+#: ../mxfb-separate-backgrounds:15
+msgid ""
+"This app allows you to configure separate backgrounds for each Workspace"
+msgstr "このアプリでは、各ワークスペースに別々の背景を設定します。"
 
 #: ../mxfb-tiles:10
 msgid ""
@@ -825,7 +887,7 @@ msgid "WINDOW: click anywhere inside"
 msgstr "ウィンドウ: この内側のどこかをクリックしてください"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:254 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:254
 msgid "WINDOWS"
 msgstr "ウィンドウ"
 
@@ -837,6 +899,21 @@ msgstr "Conky が再起動するのに 10 秒間お待ちください"
 msgid "Wallpaper"
 msgstr "壁紙"
 
+#. TRANSLATORS Wallpaper selection window title
+#: ../mxfb-separate-backgrounds:33
+msgid "Wallpaper selector"
+msgstr "壁紙選択ツール"
+
+#. TRANSLATORS
+#: ../mxfb-separate-backgrounds:35
+msgid "Warning"
+msgstr "警告"
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:50
+msgid "Will substitute mx_blue.jpg to avoid any errors."
+msgstr "エラーを避けるため、mx_blue.jpg を代用します。"
+
 #: ../mxfb-font:175
 msgid "Window Title Default"
 msgstr "既定のウィンドウタイトル"
@@ -845,6 +922,11 @@ msgstr "既定のウィンドウタイトル"
 #: ../mxfb-keybindings:163
 msgid "Workspace Menu (on desktop)"
 msgstr "ワークスペースメニュー (デスクトップで)"
+
+#. TRANSLATORS Main window text - note 3
+#: ../mxfb-separate-backgrounds:28
+msgid "You need to rerun this app if you subsequently add new workspaces."
+msgstr "あとで新しいワークスペースを追加する場合は、このアプリを再起動してください。"
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

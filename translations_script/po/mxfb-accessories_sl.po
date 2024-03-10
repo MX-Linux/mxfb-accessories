@@ -8,6 +8,7 @@
 # anticapitalista <anticapitalista@riseup.net>, 2023
 # Robin, 2023
 # fehlix, 2023
+# Mario <al.manja@gmx.com>, 2024
 # Arnold Marko <arnold.marko@gmail.com>, 2024
 # 
 #, fuzzy
@@ -15,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-16 09:49-0400\n"
+"POT-Creation-Date: 2024-01-30 23:25+0100\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2024\n"
 "Language-Team: Slovenian (https://app.transifex.com/anticapitalista/teams/10162/sl/)\n"
@@ -61,27 +62,6 @@ msgstr "ali"
 #: ../mxfb-keybindings:204 ../mxfb-keybindings:211
 msgid "   or (on keypad)"
 msgstr "ali (na številčnici)"
-
-#: ../mxfb-separate-backgrounds:12
-msgid ""
-"  This app allows you to configure separate backgrounds for each Workspace  "
-"</b>"
-msgstr ""
-"Ta aplikacija omogoča določitev različnih ozadji za posamezne delovne "
-"površine </b>"
-
-#. Confirmation Window
-#: ../mxfb-separate-backgrounds:11
-msgid " Rotate Backgrounds has been disabled to avoid conflict."
-msgstr "Obračanje ozadji je bilo onemogočeno zaradi možnosti spora."
-
-#: ../mxfb-separate-backgrounds:13
-msgid " Selection windows will pop up  each Workspace."
-msgstr "Za vsako delovno površino se bo pojavilo izbirno okno."
-
-#: ../mxfb-separate-backgrounds:14
-msgid " Type \\"
-msgstr "Vrsta \\"
 
 #. #begin first message box
 #: ../mxfb-tiles:37
@@ -178,6 +158,13 @@ msgstr ""
 "Videz s tem imenom že obstaja. \\n\\nŽelite prepisati $NEWNAME ali ga "
 "shraniti pod drugim imenom?\\n"
 
+#. TRANSLATORS Main window text - line 2
+#: ../mxfb-separate-backgrounds:17
+msgid ""
+"A selection window for each currently configured workspace will be "
+"displayed."
+msgstr "Prikazano bo izbirno okno vseh nastavljenih delovnih površin."
+
 #: ../mxfb-menu-generator:55
 msgid "All Applications"
 msgstr "Vsi programi"
@@ -238,6 +225,15 @@ msgstr "Alt in desni klik"
 msgid "Antialising"
 msgstr "Glajenje robov"
 
+#. TRANSLATORS Main window text - note 2
+#: ../mxfb-separate-backgrounds:26
+msgid ""
+"Any background changes using Nitrogen will not be permanent until separate "
+"backgrounds are disabled."
+msgstr ""
+"Spremembe ozadja preko Nitrogen ne bodo trajne, dokler ne bodo onemogočena "
+"ločena ozadja."
+
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Uveljavi"
@@ -245,6 +241,11 @@ msgstr "Uveljavi"
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "NASTAVI VRH"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:39
+msgid "Cancel"
+msgstr "Prekliči"
 
 #. The capture of a screenshot was cancelled.
 #: ../mxfb-quickshot:54
@@ -361,6 +362,11 @@ msgstr "NAMIZJE: kliknite na ozadje"
 msgid "Delay (mins)"
 msgstr "Zamik (minut)"
 
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:41
+msgid "Disable"
+msgstr "Izklopi"
+
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
@@ -419,7 +425,7 @@ msgid "Fullscreen"
 msgstr "Celozaslonsko"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:250 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:250
 msgid "GENERAL"
 msgstr "SPLOŠNO"
 
@@ -578,6 +584,11 @@ msgstr "Brez menjav: zamik = 0"
 msgid "None"
 msgstr "brez"
 
+#. TRANSLATORS Main window subtitle
+#: ../mxfb-separate-backgrounds:22
+msgid "Notes"
+msgstr "Opombe"
+
 #: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
 msgstr "V redu"
@@ -621,7 +632,7 @@ msgid "Overwrite $NEWNAME"
 msgstr "Prepiši $NEWNAME"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:252 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:252
 msgid "PROGRAMS"
 msgstr "PROGRAMI"
 
@@ -657,6 +668,13 @@ msgstr "Rofi tema"
 #: ../mxfb-keybindings:167
 msgid "Root Menu (on desktop)"
 msgstr "Korenski meni (na namizju)"
+
+#. Confirmation Window
+#. TRANSLATORS Rotate backgrounds is a separate app which creates a wallpaper
+#. slideshow
+#: ../mxfb-separate-backgrounds:13
+msgid "Rotate Backgrounds has been disabled to avoid conflict.\""
+msgstr "Obračanje ozadji je bilo onemogočeno zaradi možnosti spora.\""
 
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
@@ -711,13 +729,48 @@ msgstr "Vrti kolesce navgor"
 msgid "Select Icon Theme"
 msgstr "Izbira teme ikon"
 
+#. TRANSLATORS Wallpaper selection window text - workspace number is added
+#. after WORKSPACE
+#: ../mxfb-separate-backgrounds:53
+msgid "Select background for WORKSPACE"
+msgstr "Izberite ozadja za POVRŠINA"
+
+#. TRANSLATORS Main window text - line 3
+#: ../mxfb-separate-backgrounds:19
+msgid "Select the background you want and click OK."
+msgstr "Izberite želeno ozadje in kliknite V redu"
+
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr "Izbira načina naslovne vrstice"
 
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:46
+msgid "Separate backgrounds have been disabled."
+msgstr "Ločena ozadja so bila onemogočena"
+
+#. TRANSLATORS Main window title
+#: ../mxfb-separate-backgrounds:31
+msgid "Separate workspace wallpapers"
+msgstr "Loči ozadja delovnih površin"
+
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
 msgstr "Nastavi menjavo ozadja"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:43
+msgid "Set up separate backgrounds"
+msgstr "Nastavi ločena ozadja"
+
+#. TRANSLATORS Main window text - note 1
+#: ../mxfb-separate-backgrounds:24
+msgid ""
+"Setting up separate backgrounds deactivates Nitrogen, the standard "
+"background settings app."
+msgstr ""
+"Nastavitev ločenih ozadji deaktivira Nitrogen, standardno aplikacijo za "
+"nastavitev ozadji."
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:43
@@ -751,7 +804,7 @@ msgstr "Uspešno!"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:256 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:256
 msgid "TILING"
 msgstr "RAZDELITEV"
 
@@ -793,6 +846,18 @@ msgstr[1] "V košu sta ${COUNT} datoteki."
 msgstr[2] "V košu so ${COUNT} datoteke."
 msgstr[3] "V košu je ${COUNT} datotek."
 
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:48
+msgid "There is no wallpaper image selected for Workspace"
+msgstr "Za delovno površino ni nastavljenih ozadji"
+
+#. TRANSLATORS Main window text - line 1
+#: ../mxfb-separate-backgrounds:15
+msgid ""
+"This app allows you to configure separate backgrounds for each Workspace"
+msgstr ""
+"Ta aplikacija omogoča nastavljanje ločenih ozadji za vsako delovno površino"
+
 #: ../mxfb-tiles:10
 msgid ""
 "This script will back up your current keys file, then install commands for tiling to the end of the file. \\n\n"
@@ -832,7 +897,7 @@ msgid "WINDOW: click anywhere inside"
 msgstr "OKNO: kliknite nekam v njega"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:254 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:254
 msgid "WINDOWS"
 msgstr "OKNA"
 
@@ -844,6 +909,21 @@ msgstr "Počakajte 10 sekund, da se conky ponovno zažene"
 msgid "Wallpaper"
 msgstr "Ozadje"
 
+#. TRANSLATORS Wallpaper selection window title
+#: ../mxfb-separate-backgrounds:33
+msgid "Wallpaper selector"
+msgstr "Izbirnik ozadji"
+
+#. TRANSLATORS
+#: ../mxfb-separate-backgrounds:35
+msgid "Warning"
+msgstr "Opozorilo"
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:50
+msgid "Will substitute mx_blue.jpg to avoid any errors."
+msgstr "Bo zamenjal MX_blog v izogib napakam."
+
 #: ../mxfb-font:175
 msgid "Window Title Default"
 msgstr "Privzeti naslov okna"
@@ -852,6 +932,12 @@ msgstr "Privzeti naslov okna"
 #: ../mxfb-keybindings:163
 msgid "Workspace Menu (on desktop)"
 msgstr "Meni delovne površine (na namizju)"
+
+#. TRANSLATORS Main window text - note 3
+#: ../mxfb-separate-backgrounds:28
+msgid "You need to rerun this app if you subsequently add new workspaces."
+msgstr ""
+"Aplikacijo je potrebno po dodajanju novih delovnih površin ponovno zagnati."
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"

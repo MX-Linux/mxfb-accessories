@@ -4,24 +4,24 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Caner Başaran <basaran.caner@gmail.com>, 2022
-# e0360fc3c0afcd70e5aed1cfc885bac6, 2022
 # mahmut özcan <mahmutozcan@protonmail.com>, 2023
 # yusuf miroğlu <gurbetcii_@hotmail.com>, 2023
 # Robin, 2023
 # fehlix, 2023
-# mahmut özcan <faradundamarti@yandex.com>, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
 # Mehmet Akif 9oglu, 2023
+# e0360fc3c0afcd70e5aed1cfc885bac6, 2024
+# Caner Başaran <basaran.caner@gmail.com>, 2024
+# mahmut özcan <faradundamarti@yandex.com>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-16 09:49-0400\n"
+"POT-Creation-Date: 2024-01-30 23:25+0100\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Mehmet Akif 9oglu, 2023\n"
+"Last-Translator: mahmut özcan <faradundamarti@yandex.com>, 2024\n"
 "Language-Team: Turkish (https://app.transifex.com/anticapitalista/teams/10162/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,27 +65,6 @@ msgstr " yada"
 #: ../mxfb-keybindings:204 ../mxfb-keybindings:211
 msgid "   or (on keypad)"
 msgstr " yada (klavyede)"
-
-#: ../mxfb-separate-backgrounds:12
-msgid ""
-"  This app allows you to configure separate backgrounds for each Workspace  "
-"</b>"
-msgstr ""
-" Bu uygulama, her çalışma alanı için ayrı arka planlar oluşturmanıza olanak "
-"tanır  </b>"
-
-#. Confirmation Window
-#: ../mxfb-separate-backgrounds:11
-msgid " Rotate Backgrounds has been disabled to avoid conflict."
-msgstr "Çakışmayı önlemek için Arka Planları Döndür devre dışı bırakıldı."
-
-#: ../mxfb-separate-backgrounds:13
-msgid " Selection windows will pop up  each Workspace."
-msgstr "Seçim pencereleri her Çalışma Alanında açılır."
-
-#: ../mxfb-separate-backgrounds:14
-msgid " Type \\"
-msgstr "Tür \\"
 
 #. #begin first message box
 #: ../mxfb-tiles:37
@@ -182,6 +161,13 @@ msgstr ""
 "Bu ada sahip bir görünüm mevcut.\\n\\n$NEWNAME’in üzerine yazmak mı yoksa "
 "yeni bir ad olarak kaydetmek mi istiyorsunuz?\\n"
 
+#. TRANSLATORS Main window text - line 2
+#: ../mxfb-separate-backgrounds:17
+msgid ""
+"A selection window for each currently configured workspace will be "
+"displayed."
+msgstr ""
+
 #: ../mxfb-menu-generator:55
 msgid "All Applications"
 msgstr "Tüm Uygulamalar"
@@ -242,6 +228,13 @@ msgstr "Alt Sağ tıklama"
 msgid "Antialising"
 msgstr "Yumuşatma"
 
+#. TRANSLATORS Main window text - note 2
+#: ../mxfb-separate-backgrounds:26
+msgid ""
+"Any background changes using Nitrogen will not be permanent until separate "
+"backgrounds are disabled."
+msgstr ""
+
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Uygula"
@@ -249,6 +242,11 @@ msgstr "Uygula"
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "ÜSTÜ YAPILANDIR"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:39
+msgid "Cancel"
+msgstr "İptal"
 
 #. The capture of a screenshot was cancelled.
 #: ../mxfb-quickshot:54
@@ -365,6 +363,11 @@ msgstr "MASAÜSTÜ: arka planı tıklayın"
 msgid "Delay (mins)"
 msgstr "Gecikme (dakika)"
 
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:41
+msgid "Disable"
+msgstr "Devre dışı bırak"
+
 #. Do you want to display the Help message again?
 #: ../mxfb-quickshot:60
 msgid "Dismiss"
@@ -423,7 +426,7 @@ msgid "Fullscreen"
 msgstr "Tamekran"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:250 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:250
 msgid "GENERAL"
 msgstr "GENEL"
 
@@ -582,6 +585,11 @@ msgstr "Değişme yok: Gecikme = 0"
 msgid "None"
 msgstr "Hiçbiri"
 
+#. TRANSLATORS Main window subtitle
+#: ../mxfb-separate-backgrounds:22
+msgid "Notes"
+msgstr ""
+
 #: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
 msgstr "Tamam"
@@ -625,7 +633,7 @@ msgid "Overwrite $NEWNAME"
 msgstr "$NEWNAME üzerine yaz"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:252 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:252
 msgid "PROGRAMS"
 msgstr "UYGULAMALAR"
 
@@ -661,6 +669,13 @@ msgstr "Rofi Teması"
 #: ../mxfb-keybindings:167
 msgid "Root Menu (on desktop)"
 msgstr "Kök Menüsü (masaüstünde)"
+
+#. Confirmation Window
+#. TRANSLATORS Rotate backgrounds is a separate app which creates a wallpaper
+#. slideshow
+#: ../mxfb-separate-backgrounds:13
+msgid "Rotate Backgrounds has been disabled to avoid conflict.\""
+msgstr ""
 
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
@@ -715,13 +730,46 @@ msgstr "Tekerlek Yukarı"
 msgid "Select Icon Theme"
 msgstr "Simge Temasını Seçin"
 
+#. TRANSLATORS Wallpaper selection window text - workspace number is added
+#. after WORKSPACE
+#: ../mxfb-separate-backgrounds:53
+msgid "Select background for WORKSPACE"
+msgstr ""
+
+#. TRANSLATORS Main window text - line 3
+#: ../mxfb-separate-backgrounds:19
+msgid "Select the background you want and click OK."
+msgstr ""
+
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
 msgstr "Başlık çubuğu modunu seçin"
 
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:46
+msgid "Separate backgrounds have been disabled."
+msgstr ""
+
+#. TRANSLATORS Main window title
+#: ../mxfb-separate-backgrounds:31
+msgid "Separate workspace wallpapers"
+msgstr ""
+
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
 msgstr "Arka plan değişimini ayarla"
+
+#. TRANSLATORS - button label
+#: ../mxfb-separate-backgrounds:43
+msgid "Set up separate backgrounds"
+msgstr ""
+
+#. TRANSLATORS Main window text - note 1
+#: ../mxfb-separate-backgrounds:24
+msgid ""
+"Setting up separate backgrounds deactivates Nitrogen, the standard "
+"background settings app."
+msgstr ""
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:43
@@ -755,7 +803,7 @@ msgstr "Başarılı!"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:256 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:256
 msgid "TILING"
 msgstr "DÖŞEME"
 
@@ -793,6 +841,17 @@ msgid "There is 1 file in the trash."
 msgid_plural "There are ${COUNT} files in the trash."
 msgstr[0] "Çöp kutusunda 1 dosya var."
 msgstr[1] "Çöp kutusunda ${COUNT} dosya var."
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:48
+msgid "There is no wallpaper image selected for Workspace"
+msgstr ""
+
+#. TRANSLATORS Main window text - line 1
+#: ../mxfb-separate-backgrounds:15
+msgid ""
+"This app allows you to configure separate backgrounds for each Workspace"
+msgstr ""
 
 #: ../mxfb-tiles:10
 msgid ""
@@ -832,7 +891,7 @@ msgid "WINDOW: click anywhere inside"
 msgstr "PENCERE: içeride herhangi bir yeri tıklayın"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:254 ../mxfb-keybindings:258
+#: ../mxfb-keybindings:254
 msgid "WINDOWS"
 msgstr "PENCERELER"
 
@@ -844,6 +903,21 @@ msgstr "Conky’nin yeniden başlaması için 10 saniye bekleyin"
 msgid "Wallpaper"
 msgstr "Duvarkağıdı"
 
+#. TRANSLATORS Wallpaper selection window title
+#: ../mxfb-separate-backgrounds:33
+msgid "Wallpaper selector"
+msgstr ""
+
+#. TRANSLATORS
+#: ../mxfb-separate-backgrounds:35
+msgid "Warning"
+msgstr "Uyarı"
+
+#. TRANSLATORS - notification text
+#: ../mxfb-separate-backgrounds:50
+msgid "Will substitute mx_blue.jpg to avoid any errors."
+msgstr ""
+
 #: ../mxfb-font:175
 msgid "Window Title Default"
 msgstr "Pencere Başlık Varsayılanı"
@@ -852,6 +926,11 @@ msgstr "Pencere Başlık Varsayılanı"
 #: ../mxfb-keybindings:163
 msgid "Workspace Menu (on desktop)"
 msgstr "Çalışma Alanı Menüsü (masaüstünde)"
+
+#. TRANSLATORS Main window text - note 3
+#: ../mxfb-separate-backgrounds:28
+msgid "You need to rerun this app if you subsequently add new workspaces."
+msgstr ""
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
