@@ -1,3 +1,9 @@
+mxfb-accessories (24.03.01mx24) mx; urgency=medium
+
+  * add scrot depend (mxfb-quickshot)
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 10 Mar 2024 15:36:56 -0400
+
 mxfb-accessories (24.01.01mx23) mx; urgency=medium
 
   * fixed mxfb-separate-backgrounds errors in startup and keys
