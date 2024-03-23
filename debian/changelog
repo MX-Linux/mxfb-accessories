@@ -1,3 +1,9 @@
+mxfb-accessories (24.04.01mx23) mx; urgency=medium
+
+  * update desktop file translations 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 23 Mar 2024 11:49:30 -0400
+
 mxfb-accessories (24.03.01mx24) mx; urgency=medium
 
   * add scrot depend (mxfb-quickshot)
