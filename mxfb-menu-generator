@@ -16,6 +16,11 @@
 #######################################################################################
 ### 4.- Now click Menu > All apps > Update menu. Wait for some seconds while the menu is generated
 
+#ensure subfolder menu exists
+if [ -d "$HOME/.fluxbox/submenus" ]; then
+	mkdir -p "$HOME/.fluxbox/submenus" 
+fi
+
 #exit if in chroot
 if [ "$UID" = "0" ]; then
   echo "mxfb-menu-generator:  in a chroot, exiting..."

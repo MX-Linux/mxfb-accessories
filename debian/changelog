@@ -1,3 +1,9 @@
+mxfb-accessories (24.04.01mx23) mx; urgency=medium
+
+  * ensure $HOME/.fluxbox/submenus exists when generating menu 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 14 Apr 2024 16:24:03 -0400
+
 mxfb-accessories (24.03.02mx23) mx; urgency=medium
 
   * update desktop file translations 
