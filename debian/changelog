@@ -1,3 +1,10 @@
+mxfb-accessories (24.04.01mx23+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * added delay option for quickshot
+
+ -- Dolphin Oracle <mxdevs@mx>  Wed, 11 Sep 2024 19:19:46 -0400
+
 mxfb-accessories (24.04.01mx23) mx; urgency=medium
 
   * ensure $HOME/.fluxbox/submenus exists when generating menu 
