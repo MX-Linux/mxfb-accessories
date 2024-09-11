@@ -1,0 +1,14 @@
+#!/bin/bash
+
+WAIT=$(gettext 'Wait ... ')
+SUCCESS=$(gettext 'Success!')
+
+source $HOME/.config/MX-Linux/mxfb-quickshot.conf
+
+/usr/bin/notify-send -i /usr/share/icons/Papirus/24x24/devices/camera.svg -t 6000 "$WAIT" && sleep $DELAY
+
+mxfb-quickshot -r -png
+
+/usr/bin/notify-send -i /usr/share/icons/Papirus/24x24/devices/camera.svg -t 3000 "$SUCCESS"
+
+exit 0
