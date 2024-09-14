@@ -1,3 +1,10 @@
+mxfb-accessories (24.09.01mx23+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * corrected mxfb-quickshot.conf on image location
+
+ -- Dolphin Oracle <mxdevs@mx>  Fri, 13 Sep 2024 20:40:46 -0400
+
 mxfb-accessories (24.09.01mx23) mx; urgency=medium
 
   * added delay option for quickshot 
