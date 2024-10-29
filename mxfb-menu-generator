@@ -46,8 +46,8 @@ fi
 #check time since last build
 time=0
 now=$(date +"%s")
-if [ -e "$HOME/.fluxbox/submenus/full_menu" ]; then
-   time=$(stat --format %Y $HOME/.fluxbox/submenus/full_menu)
+if [ -e "FILE" ]; then
+   time=$(stat --format %Y $FILE)
 fi
 
 if [ $(($now-$time)) -lt 5 ]; then
@@ -69,13 +69,7 @@ CATEGORIES="Accessories Development Games Graphics Internet Multimedia MX-Tools 
 ALLAPPS=$(gettext "All Applications")
 [ "$ALLAPPS" = "All Applications"  ] && ALLAPPS="All Apps"
 
-echo "Please wait, creating menu file - stored in $HOME/.fluxbox/submenus/full_menu ..."
-
-if [ ! -d $HOME/.fluxbox ]; then
-	mkdir -p $HOME/.fluxbox
-fi
-
-touch "$FILE"
+echo "Please wait, creating menu file - stored in $FILE ..."
 
 #echo
 #echo If you want to insert this 'All categories'  sub-menu into your MXFB menu:
@@ -165,7 +159,10 @@ sed -i "s/MX-Software/MX-Tools/" "$TEMPLIST"
 sed -i "s/MX-Utilities/MX-Tools/" "$TEMPLIST"
 sort "$TEMPLIST" > "$PREGLOBAL"
 rm "$TEMPLIST"
-rm $FILE
+#remove existing menu file, if it exists
+if [ -e "$FILE" ]; then
+	rm "$FILE"
+fi
 
 #fix for repeated synaptic menu entry- first instance does not run, so, delete it:
 sed -i '/{ synaptic }/d' "$PREGLOBAL"
