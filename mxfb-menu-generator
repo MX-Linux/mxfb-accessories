@@ -17,12 +17,18 @@
 ### 4.- Now click Menu > All apps > Update menu. Wait for some seconds while the menu is generated
 
 #ensure subfolder menu exists
-if [ -d "$HOME/.fluxbox/submenus" ]; then
+if [ ! -d "$HOME/.fluxbox/submenus" ]; then
 	mkdir -p "$HOME/.fluxbox/submenus"
 fi
 
 #use a temp file for unsorted list
 TEMPLIST="$(mktemp /tmp/mxfb-menu-generator.XXXXX)"
+
+#preglobal file (can be removed)
+PREGLOBAL="$HOME/.fluxbox/pre-global-menu.txt"
+
+#target menu file
+FILE="$HOME/.fluxbox/submenus/full_menu"
 
 #exit if in chroot
 if [ "$UID" = "0" ]; then
@@ -63,17 +69,13 @@ CATEGORIES="Accessories Development Games Graphics Internet Multimedia MX-Tools 
 ALLAPPS=$(gettext "All Applications")
 [ "$ALLAPPS" = "All Applications"  ] && ALLAPPS="All Apps"
 
-echo Please wait, creating menu file - stored in ~/.fluxbox/submenus/full_menu ...
+echo "Please wait, creating menu file - stored in $HOME/.fluxbox/submenus/full_menu ..."
 
 if [ ! -d $HOME/.fluxbox ]; then
 	mkdir -p $HOME/.fluxbox
 fi
 
-
-cd $HOME/.fluxbox/
-mkdir -p submenus
-touch submenus/full_menu
-FILE="$HOME/.fluxbox/submenus/full_menu"
+touch "$FILE"
 
 #echo
 #echo If you want to insert this 'All categories'  sub-menu into your MXFB menu:
@@ -135,28 +137,40 @@ terminal=$(grep -o -m 1 'Terminal=.*' "$file")
   fi
  categories=$(grep -o -m 1 'Categories=.*' "$file")
 
-
+ #process NoDisplay, OnlyShowIn, NotShowIn
  nodisplay=$(grep -o -m 1 'NoDisplay=.*' "$file")
-  if [[ $nodisplay == *"rue"* ]]; then
+ onlyshowin=$(grep -o -m 1 'OnlyShowIn=.*' "$file")
+ notshowin=$(grep -o -m 1 'NotShowIn=.*' "$file")
+ if [ -n "$onlyshowin" ]; then
+	if [ -z "$(echo $onlyshowin |grep -i fluxbox)" ]; then
+		nodisplay=true
+	fi
+ fi
+ if [ -n "$notshowin" ]; then
+	if [ -n "$(echo $notshowin |grep -i fluxbox)" ]; then
+		nodisplay=true
+	fi
+ fi
+ if [[ $nodisplay == *"rue"* ]]; then
     Note="not adding this entry to menu because it has a nodisplay flag"
-   else
+ else
     echo "[exec] ("$name ")" "{" $command "}" $categories
-  fi
-  fi
-done > $TEMPLIST
+ fi
+fi
+done > "$TEMPLIST"
 
 #process MX-Tools categories in temp list
-sed -i "s/MX-Live/MX-Tools/" $TEMPLIST
-sed -i "s/MX-Maintenance/MX-Tools/" $TEMPLIST
-sed -i "s/MX-Setup/MX-Tools/" $TEMPLIST
-sed -i "s/MX-Software/MX-Tools/" $TEMPLIST
-sed -i "s/MX-Utilities/MX-Tools/" $TEMPLIST
-sort $TEMPLIST > ~/.fluxbox/pre-global-menu.txt
-rm $TEMPLIST
+sed -i "s/MX-Live/MX-Tools/" "$TEMPLIST"
+sed -i "s/MX-Maintenance/MX-Tools/" "$TEMPLIST"
+sed -i "s/MX-Setup/MX-Tools/" "$TEMPLIST"
+sed -i "s/MX-Software/MX-Tools/" "$TEMPLIST"
+sed -i "s/MX-Utilities/MX-Tools/" "$TEMPLIST"
+sort "$TEMPLIST" > "$PREGLOBAL"
+rm "$TEMPLIST"
 rm $FILE
 
 #fix for repeated synaptic menu entry- first instance does not run, so, delete it:
-sed -i '/{ synaptic }/d' ~/.fluxbox/pre-global-menu.txt
+sed -i '/{ synaptic }/d' "$PREGLOBAL"
 
 #### Now divide applications into categories:
 #This array has all the available .desktop file categories we want to have on the menu (note: the "." is a quick and dirty workaround, so the script ignores entry nr 0):
@@ -185,29 +199,29 @@ do
 			then
 				echo $p >> $FILE
 		fi
-	done <~/.fluxbox/pre-global-menu.txt ;
+	done <"$PREGLOBAL" ;
  echo '[end]' >> $FILE ;
 done
 
 #Process only entries that don't fit anywhere else:
-sed -i '/Utility/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/Development/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/Game/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/Graphics/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/AudioVideo/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/Office/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/System/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/Settings/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/Network/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/MX-Tools/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/MX-Live/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/MX-Maintenance/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/MX-Setup/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/MX-Software/d' ~/.fluxbox/pre-global-menu.txt
-sed -i '/MX-Utilities/d' ~/.fluxbox/pre-global-menu.txt
+sed -i '/Utility/d' "$PREGLOBAL"
+sed -i '/Development/d' "$PREGLOBAL"
+sed -i '/Game/d' "$PREGLOBAL"
+sed -i '/Graphics/d' "$PREGLOBAL"
+sed -i '/AudioVideo/d' "$PREGLOBAL"
+sed -i '/Office/d' "$PREGLOBAL"
+sed -i '/System/d' "$PREGLOBAL"
+sed -i '/Settings/d' "$PREGLOBAL"
+sed -i '/Network/d' "$PREGLOBAL"
+sed -i '/MX-Tools/d' "$PREGLOBAL"
+sed -i '/MX-Live/d' "$PREGLOBAL"
+sed -i '/MX-Maintenance/d' "$PREGLOBAL"
+sed -i '/MX-Setup/d' "$PREGLOBAL"
+sed -i '/MX-Software/d' "$PREGLOBAL"
+sed -i '/MX-Utilities/d' "$PREGLOBAL"
 
 #check if the file is not empty, create last submenu and populate it
-file="~/.fluxbox/pre-global-menu.txt"
+file="$PREGLOBAL"
 if [ -s "$file" ]
 then
  note="empty file, do nothing"
@@ -215,7 +229,7 @@ else
   echo "[submenu] ($(gettext "Other"))"  >> $FILE
   while read p; 	do
 		echo $p >> $FILE
-  done <~/.fluxbox/pre-global-menu.txt ;
+  done <"$PREGLOBAL" ;
 echo '[end]' >> $FILE
 fi
 
@@ -246,8 +260,10 @@ sed -i "/\[submenu\] (MX-Utilities)/d" ~/.fluxbox/submenus/full_menu
 
 echo Menu file created and ready to be used
 
-#if fluxbox running, reload menu
+#cleanup preglobal
+rm "$PREGLOBAL"
 
+#if fluxbox running, reload menu
 test=$(ps -aux)
 if [[ "$test" == *"startfluxbox" ]]; then
 	fluxbox-remote restart
