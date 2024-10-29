@@ -6,10 +6,10 @@
 ### How to use this script:
 ### 1. Copy the script below and paste it into your text editor, saving it in your Home as MXFB_menu_generator.sh
 ### 2. Navigate to that file, right click it > Proprieties > "Permissions" tab > Check the last field, to allow this script to run as a program
-### 3. Add the following entry to your menu to access "All Categories" anywhere you want 
-#######################################################################################   
+### 3. Add the following entry to your menu to access "All Categories" anywhere you want
+#######################################################################################
 #[submenu] (All Apps)
-#       [include] (~/.fluxbox/submenus/full_menu) 
+#       [include] (~/.fluxbox/submenus/full_menu)
 #       [separator]
 #       [include] (~/.fluxbox/full_menu)
 #   [end]
@@ -18,8 +18,11 @@
 
 #ensure subfolder menu exists
 if [ -d "$HOME/.fluxbox/submenus" ]; then
-	mkdir -p "$HOME/.fluxbox/submenus" 
+	mkdir -p "$HOME/.fluxbox/submenus"
 fi
+
+#use a temp file for unsorted list
+TEMPLIST="$(mktemp /tmp/mxfb-menu-generator.XXXXX)"
 
 #exit if in chroot
 if [ "$UID" = "0" ]; then
@@ -43,12 +46,12 @@ fi
 
 if [ $(($now-$time)) -lt 5 ]; then
 	exit 0
-fi 
+fi
 
 Encoding=UTF-8
 #
 # use session locale
-SESSION_LANG=$(sed -n '/^Language=/{s///; s/[.].*/.UTF-8/;p;q}' ~/.dmrc 2>/dev/null) ; 
+SESSION_LANG=$(sed -n '/^Language=/{s///; s/[.].*/.UTF-8/;p;q}' ~/.dmrc 2>/dev/null) ;
 LANG=${SESSION_LANG:=$LANG}
 
 # i18n - Internationalization
@@ -56,7 +59,7 @@ LANG=${SESSION_LANG:=$LANG}
 export TEXTDOMAIN=mx-desktop-menu-l10n
 export TEXTDOMAINDIR="/usr/share/locale"
 
-CATEGORIES="Accessories Development Games Graphics Internet Multimedia Office System Settings"
+CATEGORIES="Accessories Development Games Graphics Internet Multimedia MX-Tools MX-Live MX-Maintenance MX-Setup MX-Software MX-Utilities Office System Settings"
 ALLAPPS=$(gettext "All Applications")
 [ "$ALLAPPS" = "All Applications"  ] && ALLAPPS="All Apps"
 
@@ -120,15 +123,15 @@ name1=$(grep -o -m 1 '^Name=.*' "$file")
 	#if the desktop file has the string "Desktop Action" simple use the original untranslated name, to avoid using a translation that's not the name of the app, but the action it does
 	grep -q "Desktop Action" "$file" && name2=$name1
     name1=$name2
-### end of localized menu entries generator	 
+### end of localized menu entries generator
 
-name=$(echo $name1|sed 's/.*\=//') 
+name=$(echo $name1|sed 's/.*\=//')
 command1="$(grep -o -m 1 '^Exec=.*' "$file")"
 command=$(echo "$command1" |sed -E 's/Exec\=//g')
 name=$(echo "$name" |sed 's/[()]//g')
 terminal=$(grep -o -m 1 'Terminal=.*' "$file")
   if [[ $terminal == *"true"* ]]; then
-   command=$(echo x-terminal-emulator -e $command) 
+   command=$(echo x-terminal-emulator -e $command)
   fi
  categories=$(grep -o -m 1 'Categories=.*' "$file")
 
@@ -140,16 +143,24 @@ terminal=$(grep -o -m 1 'Terminal=.*' "$file")
     echo "[exec] ("$name ")" "{" $command "}" $categories
   fi
   fi
-done > /tmp/list.txt
+done > $TEMPLIST
 
-sort /tmp/list.txt > ~/.fluxbox/pre-global-menu.txt
+#process MX-Tools categories in temp list
+sed -i "s/MX-Live/MX-Tools/" $TEMPLIST
+sed -i "s/MX-Maintenance/MX-Tools/" $TEMPLIST
+sed -i "s/MX-Setup/MX-Tools/" $TEMPLIST
+sed -i "s/MX-Software/MX-Tools/" $TEMPLIST
+sed -i "s/MX-Utilities/MX-Tools/" $TEMPLIST
+sort $TEMPLIST > ~/.fluxbox/pre-global-menu.txt
+rm $TEMPLIST
 rm $FILE
+
 #fix for repeated synaptic menu entry- first instance does not run, so, delete it:
 sed -i '/{ synaptic }/d' ~/.fluxbox/pre-global-menu.txt
 
 #### Now divide applications into categories:
 #This array has all the available .desktop file categories we want to have on the menu (note: the "." is a quick and dirty workaround, so the script ignores entry nr 0):
-array1=( . Utility Development Game Graphics Network AudioVideo Office System Settings)
+array1=( . Utility Development Game Graphics Network AudioVideo MX-Tools MX-Live MX-Maintenance MX-Setup MX-Software MX-Utilities Office System Settings)
 #This array corresponds to the previous one, but it's the "user friendly name" that shows on the menu- NOTE: this can be translated to any language!
 array2=( . $CATEGORIES)
 
@@ -160,22 +171,22 @@ array2=( . $CATEGORIES)
 #		echo A criar submenus em Português
 #    fi
 #End LOCALIZATION OF Category sub-menus
-    
+
 #Create the header of the file
 echo "[begin] ($ALLAPPS)" >> $FILE
 #Loop through the array- the last number below has to match the number of entries on $array1
-for i in {1..9};
-do 
+for i in {1..15};
+do
  #Create a submenu entry for the current item on $array2
  echo "[submenu] ($(gettext "${array2[$i]}"))"  >> $FILE
-#Nested loop to check if the item on the current line of the "pre-global-menu.txt" file matches the current item on $array1, if it matches, add it to the "$FILE" file 
+#Nested loop to check if the item on the current line of the "pre-global-menu.txt" file matches the current item on $array1, if it matches, add it to the "$FILE" file
  while read p; 	do
 		if [[ $p =~ ${array1[$i]} ]]
 			then
 				echo $p >> $FILE
 		fi
 	done <~/.fluxbox/pre-global-menu.txt ;
- echo '[end]' >> $FILE ;	  
+ echo '[end]' >> $FILE ;
 done
 
 #Process only entries that don't fit anywhere else:
@@ -188,11 +199,17 @@ sed -i '/Office/d' ~/.fluxbox/pre-global-menu.txt
 sed -i '/System/d' ~/.fluxbox/pre-global-menu.txt
 sed -i '/Settings/d' ~/.fluxbox/pre-global-menu.txt
 sed -i '/Network/d' ~/.fluxbox/pre-global-menu.txt
+sed -i '/MX-Tools/d' ~/.fluxbox/pre-global-menu.txt
+sed -i '/MX-Live/d' ~/.fluxbox/pre-global-menu.txt
+sed -i '/MX-Maintenance/d' ~/.fluxbox/pre-global-menu.txt
+sed -i '/MX-Setup/d' ~/.fluxbox/pre-global-menu.txt
+sed -i '/MX-Software/d' ~/.fluxbox/pre-global-menu.txt
+sed -i '/MX-Utilities/d' ~/.fluxbox/pre-global-menu.txt
 
 #check if the file is not empty, create last submenu and populate it
 file="~/.fluxbox/pre-global-menu.txt"
 if [ -s "$file" ]
-then 
+then
  note="empty file, do nothing"
 else
   echo "[submenu] ($(gettext "Other"))"  >> $FILE
@@ -213,6 +230,19 @@ delete="%f"
 sed -e s/$delete//g -i $FILE
 echo Menu file created and ready to be used
 
+#modify menu to remove empty mx-tools entries
+sed -i '0,/\[submenu\] (MX-Live)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
+sed -i "/\[submenu\] (MX-Live)/d" ~/.fluxbox/submenus/full_menu
+sed -i '0,/\[submenu\] (MX-Maintenance)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
+sed -i "/\[submenu\] (MX-Maintenance)/d" ~/.fluxbox/submenus/full_menu
+sed -i '0,/\[submenu\] (MX-Setup)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
+sed -i "/\[submenu\] (MX-Setup)/d" ~/.fluxbox/submenus/full_menu
+sed -i '0,/\[submenu\] (MX-Software)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
+sed -i "/\[submenu\] (MX-Software)/d" ~/.fluxbox/submenus/full_menu
+sed -i '0,/\[submenu\] (MX-Utilities)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
+sed -i "/\[submenu\] (MX-Utilities)/d" ~/.fluxbox/submenus/full_menu
+
+
 #if fluxbox running, reload menu
 
 test=$(ps -aux)
@@ -221,4 +251,3 @@ if [[ "$test" == *"startfluxbox" ]]; then
   killall -SIGUSR1 conky 2>/dev/null
 fi
 exit 0
-
