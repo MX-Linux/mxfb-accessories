@@ -136,12 +136,12 @@ terminal=$(grep -o -m 1 'Terminal=.*' "$file")
  onlyshowin=$(grep -o -m 1 'OnlyShowIn=.*' "$file")
  notshowin=$(grep -o -m 1 'NotShowIn=.*' "$file")
  if [ -n "$onlyshowin" ]; then
-	if [ -z "$(echo $onlyshowin |grep -i fluxbox)" ]; then
+	if [[ ! "$onlyshowin" =~ "fluxbox" ]]; then
 		nodisplay=true
 	fi
  fi
  if [ -n "$notshowin" ]; then
-	if [ -n "$(echo $notshowin |grep -i fluxbox)" ]; then
+	if [[ "$notshowin)" =~ "fluxbox" ]]; then
 		nodisplay=true
 	fi
  fi
