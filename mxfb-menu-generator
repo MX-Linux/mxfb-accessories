@@ -151,9 +151,7 @@ terminal=$(grep -o -m 1 'Terminal=.*' "$file")
 		nodisplay=true
 	fi
  fi
- if [[ $nodisplay == *"rue"* ]]; then
-    Note="not adding this entry to menu because it has a nodisplay flag"
- else
+ if [[ $nodisplay != *"rue"* ]]; then
     echo "[exec] ("$name ")" "{" $command "}" $categories
  fi
 fi
