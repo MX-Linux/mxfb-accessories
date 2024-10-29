@@ -228,7 +228,9 @@ delete="%F"
 sed -e s/$delete//g -i $FILE
 delete="%f"
 sed -e s/$delete//g -i $FILE
-echo Menu file created and ready to be used
+
+##add [end] to the end, to match the very first [begin]
+echo "[end]" >> $FILE
 
 #modify menu to remove empty mx-tools entries
 sed -i '0,/\[submenu\] (MX-Live)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
@@ -242,6 +244,7 @@ sed -i "/\[submenu\] (MX-Software)/d" ~/.fluxbox/submenus/full_menu
 sed -i '0,/\[submenu\] (MX-Utilities)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
 sed -i "/\[submenu\] (MX-Utilities)/d" ~/.fluxbox/submenus/full_menu
 
+echo Menu file created and ready to be used
 
 #if fluxbox running, reload menu
 
