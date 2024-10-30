@@ -187,15 +187,22 @@ echo "[begin] ($ALLAPPS)" >> $FILE
 for i in {1..16};
 do
  #Create a submenu entry for the current item on $array2
- echo "[submenu] ($(gettext "${array2[$i]}"))"  >> $FILE
+ MAKESUBMENU=true
 #Nested loop to check if the item on the current line of the "pre-global-menu.txt" file matches the current item on $array1, if it matches, add it to the "$FILE" file
  while read p; 	do
 		if [[ $p =~ ${array1[$i]} ]]
 			then
+				if [ "$MAKESUBMENU" = "true" ]; then
+					echo "[submenu] ($(gettext "${array2[$i]}"))"  >> $FILE
+					MAKESUBMENU=false
+				fi
 				echo $p >> $FILE
 		fi
 	done <"$PREGLOBAL" ;
- echo '[end]' >> $FILE ;
+	if [ "$MAKESUBMENU" = "false" ]; then
+			echo '[end]' >> $FILE ;
+	fi
+	 MAKESUBMENU=true
 done
 
 #Process only entries that don't fit anywhere else:
@@ -218,8 +225,7 @@ sed -i '/MXFB-Tools/d' "$PREGLOBAL"
 
 
 #check if the file is not empty, create last submenu and populate it
-file="$PREGLOBAL"
-if [ -s "$file" ]
+if [ -n $(grep exec "$PREGLOBAL") ]
 then
  note="empty file, do nothing"
 else
@@ -258,7 +264,7 @@ sed -i "/\[submenu\] (MX-Utilities)/d" ~/.fluxbox/submenus/full_menu
 echo Menu file created and ready to be used
 
 #cleanup preglobal
-rm "$PREGLOBAL"
+#rm "$PREGLOBAL"
 
 #if fluxbox running, reload menu
 test=$(ps -aux)
