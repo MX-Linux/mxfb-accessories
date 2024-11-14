@@ -250,7 +250,7 @@ msgstr "Prekliči"
 #. The capture of a screenshot was cancelled.
 #: ../mxfb-quickshot:54
 msgid "Cancelled!"
-msgstr "Prekinjeno!"
+msgstr "Preklicano!"
 
 #: ../exit-options-manager:149
 msgid "Change Window Settings"

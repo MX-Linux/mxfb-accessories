@@ -8,8 +8,8 @@
 # Tamas Szarvas <szarvy@gmail.com>, 2022
 # fehlix, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
-# Kempelen <antixhu@netengine.hu>, 2024
 # Tamás Szekeres <szekeres.tamas@icloud.com>, 2024
+# Kempelen <antixhu@netengine.hu>, 2024
 # 
 #, fuzzy
 msgid ""
@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-30 23:25+0100\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Tamás Szekeres <szekeres.tamas@icloud.com>, 2024\n"
+"Last-Translator: Kempelen <antixhu@netengine.hu>, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/anticapitalista/teams/10162/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -164,6 +164,8 @@ msgid ""
 "A selection window for each currently configured workspace will be "
 "displayed."
 msgstr ""
+"Minden jelenleg beállított munkaterülethez megjelenik egy kiválasztási "
+"ablak."
 
 #: ../mxfb-menu-generator:55
 msgid "All Applications"
@@ -231,6 +233,8 @@ msgid ""
 "Any background changes using Nitrogen will not be permanent until separate "
 "backgrounds are disabled."
 msgstr ""
+"A Nitrogen segítségével beállított háttérképek nem lesznek véglegesek, amíg "
+"a munkaterületenkénti különböző háttérképek mód aktív."
 
 #: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
 msgid "Apply"
@@ -463,11 +467,11 @@ msgstr "Összes elrejtése"
 
 #: ../mxfb-font:186
 msgid "Hinting"
-msgstr ""
+msgstr "Hinting"
 
 #: ../mxfb-font:199
 msgid "Hinting Style"
-msgstr ""
+msgstr "Hinting stílusa"
 
 #: ../exit-options-manager:141
 msgid "Icon Size"
@@ -586,7 +590,7 @@ msgstr "Nincs"
 #. TRANSLATORS Main window subtitle
 #: ../mxfb-separate-backgrounds:22
 msgid "Notes"
-msgstr ""
+msgstr "Megjegyzések"
 
 #: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
 msgid "OK"
@@ -674,6 +678,7 @@ msgstr "Főmenü (az asztalon)"
 #: ../mxfb-separate-backgrounds:13
 msgid "Rotate Backgrounds has been disabled to avoid conflict.\""
 msgstr ""
+"Ütközés elkerülése végett, a háttérkép váltogatás kikapcsolásra került.\""
 
 #. Translator Note - opens run dialog
 #: ../mxfb-keybindings:102
@@ -732,12 +737,12 @@ msgstr "Válasszon ikontémát"
 #. after WORKSPACE
 #: ../mxfb-separate-backgrounds:53
 msgid "Select background for WORKSPACE"
-msgstr ""
+msgstr "Háttér kiválasztása a munkaterülethez:"
 
 #. TRANSLATORS Main window text - line 3
 #: ../mxfb-separate-backgrounds:19
 msgid "Select the background you want and click OK."
-msgstr ""
+msgstr "Válassza ki a kívánt háttérképet, majd nyomja meg az OK gombot."
 
 #: ../mxfb-top:18
 msgid "Select titlebar mode"
@@ -746,12 +751,12 @@ msgstr "Válasszon címsor módot"
 #. TRANSLATORS - notification text
 #: ../mxfb-separate-backgrounds:46
 msgid "Separate backgrounds have been disabled."
-msgstr ""
+msgstr "A különböző háttérképek mód letiltva."
 
 #. TRANSLATORS Main window title
 #: ../mxfb-separate-backgrounds:31
 msgid "Separate workspace wallpapers"
-msgstr ""
+msgstr "Munkaterületenként más háttérkép"
 
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
@@ -760,7 +765,7 @@ msgstr "Háttér váltogatás beállítása"
 #. TRANSLATORS - button label
 #: ../mxfb-separate-backgrounds:43
 msgid "Set up separate backgrounds"
-msgstr ""
+msgstr "Különböző háttérképek beállítása"
 
 #. TRANSLATORS Main window text - note 1
 #: ../mxfb-separate-backgrounds:24
@@ -768,6 +773,8 @@ msgid ""
 "Setting up separate backgrounds deactivates Nitrogen, the standard "
 "background settings app."
 msgstr ""
+"Különböző háttérképek bekapcsolása kikapcsolja a Nitrogent, ami az alap "
+"háttérbeállító alkalmazás."
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:43
@@ -843,13 +850,15 @@ msgstr[1] "${COUNT} fájl van a kukában."
 #. TRANSLATORS - notification text
 #: ../mxfb-separate-backgrounds:48
 msgid "There is no wallpaper image selected for Workspace"
-msgstr ""
+msgstr "Nincs háttérkép a kiválasztott munkaterülethez"
 
 #. TRANSLATORS Main window text - line 1
 #: ../mxfb-separate-backgrounds:15
 msgid ""
 "This app allows you to configure separate backgrounds for each Workspace"
 msgstr ""
+"Ez az alkalmazás lehetővé teszi különböző háttérképek beállítását minden "
+"egyes munkaterülethez"
 
 #: ../mxfb-tiles:10
 msgid ""
@@ -905,7 +914,7 @@ msgstr "Háttérkép"
 #. TRANSLATORS Wallpaper selection window title
 #: ../mxfb-separate-backgrounds:33
 msgid "Wallpaper selector"
-msgstr ""
+msgstr "Háttérkép választó"
 
 #. TRANSLATORS
 #: ../mxfb-separate-backgrounds:35
@@ -915,7 +924,7 @@ msgstr "Figyelmeztetés"
 #. TRANSLATORS - notification text
 #: ../mxfb-separate-backgrounds:50
 msgid "Will substitute mx_blue.jpg to avoid any errors."
-msgstr ""
+msgstr "Hibák elkerülése végett mx_blue.jpg kerül felhasználásra."
 
 #: ../mxfb-font:175
 msgid "Window Title Default"
@@ -930,6 +939,8 @@ msgstr "Munkaterület menü (az asztalon)"
 #: ../mxfb-separate-backgrounds:28
 msgid "You need to rerun this app if you subsequently add new workspaces."
 msgstr ""
+"Ha további munkaterületeket vesz fel, újra kell futtatnia ezt az "
+"alkalmazást."
 
 #: ../mxfb-tint2-manager:191
 msgid "\\n"
