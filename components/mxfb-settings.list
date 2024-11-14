@@ -120,7 +120,7 @@ mxfb-trashcheck
 
 Category=SYSTEM
 system-keyboard-qt
-lxrandr
+arandr
 system-config-printer
 touchpad-indicator
 alsamixer
