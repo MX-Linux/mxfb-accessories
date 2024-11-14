@@ -2,6 +2,9 @@ mxfb-accessories (24.11.01mx23) mx; urgency=medium
 
   [jerry3904]
   * Changed to arandr in Settings Manager to avoid confusion 
+  
+  [dolphin oracle]
+  * add MX tool menu to fluxbox menu (mxfb-menu-generator) 
 
  -- Dolphin Oracle <mxdevs@mx>  Thu, 14 Nov 2024 06:39:53 -0500
 
