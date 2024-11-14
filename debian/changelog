@@ -1,7 +1,7 @@
-mxfb-accessories (24.09.02mx23+nmu1) UNRELEASED; urgency=medium
+mxfb-accessories (24.11.01mx23) mx; urgency=medium
 
-  * Non-maintainer upload.
-  * Changed to arandr in Settings Manager to avoid confusion
+  [jerry3904]
+  * Changed to arandr in Settings Manager to avoid confusion 
 
  -- Dolphin Oracle <mxdevs@mx>  Thu, 14 Nov 2024 06:39:53 -0500
 
