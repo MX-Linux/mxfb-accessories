@@ -225,7 +225,7 @@ sed -i '/MXFB-Tools/d' "$PREGLOBAL"
 
 
 #check if the file is not empty, create last submenu and populate it
-if [ -n $(grep exec "$PREGLOBAL") ]
+if [ -n "$(grep exec "$PREGLOBAL")" ]
 then
  note="empty file, do nothing"
 else
