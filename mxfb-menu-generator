@@ -247,16 +247,16 @@ sed -e s/$delete//g -i $FILE
 echo "[end]" >> $FILE
 
 #modify menu to remove empty mx-tools entries
-sed -i '0,/\[submenu\] (MX-Live)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
-sed -i "/\[submenu\] (MX-Live)/d" ~/.fluxbox/submenus/full_menu
-sed -i '0,/\[submenu\] (MX-Maintenance)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
-sed -i "/\[submenu\] (MX-Maintenance)/d" ~/.fluxbox/submenus/full_menu
-sed -i '0,/\[submenu\] (MX-Setup)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
-sed -i "/\[submenu\] (MX-Setup)/d" ~/.fluxbox/submenus/full_menu
-sed -i '0,/\[submenu\] (MX-Software)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
-sed -i "/\[submenu\] (MX-Software)/d" ~/.fluxbox/submenus/full_menu
-sed -i '0,/\[submenu\] (MX-Utilities)/{//!b; :a; n; /\[end\]/d; ba;}' ~/.fluxbox/submenus/full_menu
-sed -i "/\[submenu\] (MX-Utilities)/d" ~/.fluxbox/submenus/full_menu
+sed -i '0,/\[submenu\] (MX-Live)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
+sed -i "/\[submenu\] (MX-Live)/d" $FILE
+sed -i '0,/\[submenu\] (MX-Maintenance)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
+sed -i "/\[submenu\] (MX-Maintenance)/d" $FILE
+sed -i '0,/\[submenu\] (MX-Setup)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
+sed -i "/\[submenu\] (MX-Setup)/d" $FILE
+sed -i '0,/\[submenu\] (MX-Software)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
+sed -i "/\[submenu\] (MX-Software)/d" $FILE
+sed -i '0,/\[submenu\] (MX-Utilities)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
+sed -i "/\[submenu\] (MX-Utilities)/d" $FILE
 
 echo Menu file created and ready to be used
 
@@ -266,7 +266,7 @@ echo Menu file created and ready to be used
 #if fluxbox running, reload menu
 test=$(ps -aux)
 if [[ "$test" == *"startfluxbox" ]]; then
-	fluxbox-remote restart
+	pkill -SIGUSR1 fluxbox
   killall -SIGUSR1 conky 2>/dev/null
 fi
 exit 0
