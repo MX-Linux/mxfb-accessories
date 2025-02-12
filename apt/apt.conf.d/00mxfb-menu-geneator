@@ -3,10 +3,10 @@
 
 DPkg {
   Pre-Invoke {
-    "LIST=/usr/share/applications; if [ -d /usr/share/applications/antix ]; then $LIST=$(echo $LIST /usr/share/applicatons/antix);fi; if [ -x /usr/bin/mxfb-menu-generator ]; then /usr/bin/stat -c %Y $LIST 2>/dev/null > /tmp/dpkg-pre-invoke-timestamp; fi";
+    "if [ -x /usr/bin/mxfb-menu-generator ]; then /usr/bin/stat -c %Y /usr/share/applications 2>/dev/null > /tmp/dpkg-pre-invoke-timestamp; if [ -d /usr/share/applications/antix ]; then /usr/bin/stat -c %Y /usr/share/applications/antix 2>/dev/null >> /tmp/dpkg-pre-invoke-timestamp;fi;  fi";
   };
   Post-Invoke {
-    "LIST=/usr/share/applications; if [ -d /usr/share/applications/antix ]; then $LIST=$(echo $LIST /usr/share/applicatons/antix);fi; if [ -x /usr/bin/mxfb-menu-generator ]; then /usr/bin/stat -c %Y $LIST 2>/dev/null > /tmp/dpkg-post-invoke-timestamp; /usr/bin/cmp -s /tmp/dpkg-pre-invoke-timestamp /tmp/dpkg-post-invoke-timestamp || su $(logname) /usr/bin/mxfb-menu-generator auto; fi";
+    "if [ -x /usr/bin/mxfb-menu-generator ]; then /usr/bin/stat -c %Y /usr/share/applications 2>/dev/null > /tmp/dpkg-post-invoke-timestamp;if [ -d /usr/share/applications/antix ]; then /usr/bin/stat -c %Y /usr/share/applications/antix 2>/dev/null >> /tmp/dpkg-post-invoke-timestamp;fi; /usr/bin/cmp -s /tmp/dpkg-pre-invoke-timestamp /tmp/dpkg-post-invoke-timestamp || su $(logname) /usr/bin/mxfb-menu-generator auto;fi";
   };
 };
 
