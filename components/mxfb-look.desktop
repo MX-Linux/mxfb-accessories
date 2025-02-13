@@ -21,7 +21,7 @@ Exec=mxfb-look
 Icon=/usr/share/pixmaps/mxfb-look-icon.png
 Terminal=false
 ShowOnly=fluxbox
-Categories=System;
+Categories=System; X-MXFB-Tools;
 
 
 

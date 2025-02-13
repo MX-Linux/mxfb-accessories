@@ -34,5 +34,5 @@ Exec=mxfb-quickshot
 Terminal=false
 Type=Application
 Icon=/usr/share/icons/Papirus/48x48/devices/camera-photo.svg
-Categories=System;
+Categories=System;X-MXFB-Tools;
 NoDisplay=false
