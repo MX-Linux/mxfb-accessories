@@ -30,5 +30,5 @@ Exec=mxfb-keybindings
 Terminal=false
 Type=Application
 Icon=mxfb-keybindings
-Categories=System; X-MXFB-Tools;
+Categories=System;X-MXFB-Tools;
 NoDisplay=false

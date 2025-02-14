@@ -34,6 +34,6 @@ Exec=mxfb-trashcheck
 Terminal=false
 Type=Application
 Icon=/usr/share/icons/Papirus/48x48/apps/trashindicator.svg
-Categories=System; X-MXFB-Tools;
+Categories=System;X-MXFB-Tools;
 NoDisplay=false
 

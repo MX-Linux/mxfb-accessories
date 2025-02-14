@@ -35,4 +35,4 @@ Exec=nitrogen
 Icon=background
 Terminal=false
 ShowOnly=fluxbox
-Categories=System; X-MXFB-Tools;
+Categories=System;X-MXFB-Tools;
