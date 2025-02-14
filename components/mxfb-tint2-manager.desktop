@@ -35,4 +35,4 @@ Comment[sv]=Valverktyg för skapande av panel
 Exec=/usr/bin/mxfb-tint2-manager
 Icon=systemtray
 Terminal=false
-Categories=System;
+Categories=System;X-MXFB-Tools;

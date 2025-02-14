@@ -36,4 +36,4 @@ Exec=exit-options-manager
 Icon=/usr/share/pixmaps/exit-options-manager.svg
 Terminal=false
 ShowOnly=fluxbox
-Categories=System; 
+Categories=System;X-MXFB-Tools;

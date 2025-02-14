@@ -36,5 +36,5 @@ Exec=mxfb-font
 Terminal=false
 Type=Application
 Icon=mxfb-font
-Categories=System;
+Categories=System;X-MXFB-Tools;
 NoDisplay=false

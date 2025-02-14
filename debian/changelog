@@ -1,3 +1,11 @@
+mxfb-accessories (24.11.03mx23+nmu2) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * added X-MXFB-Tools to selected apps
+  * removed spaces in Categories
+
+ -- Dolphin Oracle <devs@mx>  Fri, 14 Feb 2025 08:58:29 -0500
+
 mxfb-accessories (24.11.03mx23) mx; urgency=medium
 
   * fix "other" menu category generation, again 
