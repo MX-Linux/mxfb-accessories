@@ -401,7 +401,7 @@ msgstr "Exit-options-manager"
 
 #: ../mxfb-tiles:12
 msgid "Features: 1/2 screen, 1/4 screen, 1/3 screen and restore \\n"
-msgstr "Opcións: 1/2 pantalla, 1/4 pantalla, 1/3 pantalla, e, restaurar \\n"
+msgstr "Opcións: 1/2 pantalla, 1/4 pantalla, 1/3 pantalla, e, restaurar \\ n\n"
 
 #. Translator Note - opens file manager
 #: ../mxfb-keybindings:106
