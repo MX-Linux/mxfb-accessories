@@ -69,5 +69,6 @@ Exec=mx-tweak
 Terminal=false
 Type=Application
 Icon=mx-tweak
+OnlyShowIn=fluxbox;
 Categories=System;X-MXFB-Tools;
 NoDisplay=false
