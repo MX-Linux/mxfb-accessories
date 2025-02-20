@@ -116,19 +116,6 @@ mxfb-backgrounds
 mxfb-trashcheck
 mxfb-tweaks
 
-Category=SYSTEM
-system-keyboard-qt
-arandr
-system-config-printer
-touchpad-indicator
-alsamixer
-mx-tweak-systray
-Quick_System_Info
-blueman-manager
-mx-select-sound
-mx-network-assistant
-mx-cleanup
-lightdm-gtk-greeter-settings
 
 Category=OTHER
 mx-tools
