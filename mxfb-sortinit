@@ -1,0 +1,94 @@
+#!/bin/bash
+#mxfb-sortinit - script to sort fluxbox init file by Melber and i_ri
+#version 2503-4
+
+init_location=$HOME/.fluxbox/init
+backup_location=$HOME/.restore/fluxbox
+target_location=$HOME/.fluxbox/init
+
+OLDIFS=$IFS
+IFS="|"
+
+while read -r item; do
+
+    if [[ $item = *toolbar* ]]; then
+        toolbar_items+=($item)
+    elif [[ $item = *systray* ]]; then
+        toolbar_items+=($item)
+    elif [[ $item = *time* ]]; then
+        toolbar_items+=($item)
+    elif [[ $item = *tab* ]]; then
+        tab_items+=($item)
+    elif [[ $item = *window* ]]; then
+        window_items+=($item)
+    elif [[ $item = *NewWindows* ]]; then
+        window_items+=($item)
+    elif [[ $item = *Maximization* ]]; then
+        window_items+=($item)
+    elif [[ $item = *Deco* ]]; then
+        window_items+=($item)
+    elif [[ $item = *titlebar* ]]; then
+        window_items+=($item)
+    elif [[ $item = *slit* ]]; then
+        slit_items+=($item)
+    elif [[ $item = *iconbar* ]]; then
+        iconbar_items+=($item)
+    elif [[ $item = *tooltipDelay* ]]; then
+        iconbar_items+=($item)
+    elif [[ $item = *workspace* ]]; then
+        workspace_items+=($item)
+    elif [[ $item = *menu* ]]; then
+        menu_items+=($item)
+    elif [[ $item = *Menu* ]]; then
+        menu_items+=($item)
+    elif [[ $item = *File* ]]; then
+        config_items+=($item)
+    elif [[ $item = *Overlay* ]]; then
+        config_items+=($item)
+    elif [[ $item = *Raise* ]]; then
+        window_items+=($item)
+    elif [[ $item = *##* ]]; then
+        trash_items+=($item)
+    else
+        misc_items+=($item)
+    fi
+
+done < $init_location
+
+#####
+
+if [ ! -d $backup_location ]; then
+    mkdir -p $backup_location
+fi
+
+cp $init_location $backup_location/init.bak
+
+
+#####
+printf '### HELP: https://fluxboxwiki.github.io/category/howtos/en/Editing_the_init_file.html ###\n' > $target_location
+printf "### A backup copy of the current init file has been saved in $backup_location/init.bak  ###\n" >> $target_location
+printf "\n### WINDOW ###\n" >> $target_location
+printf '%s\n' "${window_items[@]}" >> $target_location
+printf "\n### WORKSPACE ###\n" >> $target_location
+printf '%s\n' "${workspace_items[@]}" >> $target_location
+printf "\n### TOOLBAR ###\n" >> $target_location
+printf '%s\n' "${toolbar_items[@]}" >> $target_location
+printf "\n### SLIT ###\n" >> $target_location
+printf '%s\n' "${slit_items[@]}" >> $target_location
+printf "\n### TABS ###\n" >> $target_location
+printf '%s\n' "${tab_items[@]}" >> $target_location
+printf "\n### ICONBAR ###\n" >> $target_location
+printf '%s\n' "${iconbar_items[@]}" >> $target_location
+printf "\n### MENU ###\n" >> $target_location
+printf '%s\n' "${menu_items[@]}" >> $target_location
+printf "\n### CONFIG FILES ###\n" >> $target_location
+printf '%s\n' "${config_items[@]}" >> $target_location
+printf "\n### MISCELLANEOUS ###\n" >> $target_location
+printf '%s\n' "${misc_items[@]}" >> $target_location
+
+
+IFS=$OLDIFS
+
+exo-open $target_location
+
+exit 0
