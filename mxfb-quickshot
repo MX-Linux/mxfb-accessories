@@ -5,7 +5,7 @@
 ## released under GPLv3
 
 # mxfb-quickshot version
-VERSION="230210"
+VERSION="2504-01"
 
 ## the following parameters are set in ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
 #OPTION="-s -q 100"
@@ -13,6 +13,17 @@ VERSION="230210"
 #NAME="$(date +'%y%m%d_%H%M%S')"
 #SUF="png"
 #PRE="quickshot_"
+
+# check yad version and set buttons
+yad_version_check=$(yad --version | cut -d. -f1)
+
+if [[ $yad_version_check -gt 0 ]]; then
+    yad_btn_ok='yad-ok'
+    yad_btn_cancel='yad-cancel'
+else
+    yad_btn_ok='gtk-ok'
+    yad_btn_cancel='gtk-cancel'
+fi
 
 
 BASE_NAME=$(basename "$0")
@@ -51,14 +62,14 @@ source gettext.sh
 # The capture of a screenshot was aborted.
 NONE_SELECTED=$(gettext 'exiting, no image selected')
 # The capture of a screenshot was cancelled.
-    CANCELLED=$(gettext 'Cancelled!')
+CANCELLED=$(gettext 'Cancelled!')
 # The capture of a screenshot was successful.
-      SUCCESS=$(gettext 'Success!')
+SUCCESS=$(gettext 'Success!')
 # Do you want to allow a new config file to be installed?
 OK_TO_PROCEED=$(gettext 'OK to proceed?')
 # Do you want to display the Help message again?
-      DISMISS=$(gettext 'Dismiss')
- DISMISS_HELP=$(gettext "Don't display the Help message again!")
+DISMISS=$(gettext 'Dismiss')
+DISMISS_HELP=$(gettext "Don't display the Help message again!")
 
 # A new config file will be installed.
 UPGRADE_MESSAGE=$(gettext 'This will install a new config file')
@@ -133,7 +144,7 @@ if [ ! -f "$DISMISS_CHK" ]; then
         --text-align=left
         --text="\n\n<b>$HELP_HINTS</b>\n\n"
         --button="$DISMISS"'!!'"$DISMISS_HELP":3
-        --button=gtk-ok
+        --button="$yad_btn_ok"
         )
 
     "${YAD[@]}"
@@ -164,7 +175,7 @@ if ! ls "${BACKUP_DIR}/${CONFIG_NAME}_${VERSION}"* >/dev/null 2>&1 &&
         --center
         --text-align=center
         --text="\n\n$MESSAGE\n\n"
-        --button="gtk-cancel":7
+        --button="$yad_btn_cancel":7
         --button="$OK_TO_PROCEED":6
         )
 
