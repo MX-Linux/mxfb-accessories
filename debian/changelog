@@ -1,3 +1,11 @@
+mxfb-accessories (25.05.01) mx; urgency=medium
+
+  * Non-maintainer upload.
+  * Added check for yad version
+  * Upgraded mxfb-look 
+
+ -- Dolphin Oracle <dolphimoracle@gmail.com>  Fri, 02 May 2025 19:01:08 -0400
+
 mxfb-accessories (25.04.01mx25) mx; urgency=medium
 
   * MX-25 ONLY
