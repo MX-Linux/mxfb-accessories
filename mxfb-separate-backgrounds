@@ -170,21 +170,21 @@ ChangeWorkspace :Exec fbsetbg ~/.fluxbox/backgrounds/numbered/\$(xprop -root _NE
 
 #clear normal thumbnail cache so that yad shows large thumbnails
 
-    delete_thumb(){
-    full_path="file://$(realpath -s "$1")"
-    md5name=$(printf %s "${full_path// /%20}" | md5sum)
-    rm $HOME/.cache/thumbnails/normal/${md5name%% *}.png
-    }
+#    delete_thumb(){
+#    full_path="file://$(realpath -s "$1")"
+#    md5name=$(printf %s "${full_path// /%20}" | md5sum)
+#    rm $HOME/.cache/thumbnails/normal/${md5name%% *}.png
+#    }
 
-    export -f delete_thumb
+#    export -f delete_thumb
     
-    source $HOME/.config/user-dirs.dirs
+#    source $HOME/.config/user-dirs.dirs
 
-    bg_list=$(find /usr/share/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \); find $HOME/.fluxbox/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \); find $XDG_PICTURES_DIR/* backgrounds -type f \( -name '*.png' -o -name '*.jpg' \))
+#    bg_list=$(find /usr/share/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \); find $HOME/.fluxbox/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \); find $XDG_PICTURES_DIR/* backgrounds -type f \( -name '*.png' -o -name '*.jpg' \))
 
-    for i in $bg_list; do
-        delete_thumb $i
-    done
+#    for i in $bg_list; do
+#        delete_thumb $i
+#    done
 
 
 #Loop for as many workspaces as there are, selecting one wallpaper for each workspace

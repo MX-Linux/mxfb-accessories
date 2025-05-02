@@ -59,7 +59,9 @@ fi
 
 if [ -z "$BASESTYLE" ]; then
 
-yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --text="No starting style selected.\n\n<b>MX-comfort</b> will be used as the starting style." --button=OK --text-align=center --center --width=400 --height=200 --borders=20 \
+yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+--text-align=center --center --width=400 --height=200 --borders=20 \
+--text="No starting style selected.\n\n<b>MX-comfort</b> will be used as the starting style." \
 
 BASESTYLE=MX-comfort
 
@@ -120,9 +122,27 @@ yad --title="MXFB-comfort help" --window-icon=/usr/share/pixmaps/mxcr-icon.png -
 
 export -f color_picker mxcrhelp
 
+# check yad version and set buttons
+yad_version_check=$(yad --version | cut -d. -f1)
+
+if [[ $yad_version_check -gt 0 ]]; then
+    yad_btn_ok='--button=yad-ok'
+    yad_btn_quit='--button=yad-quit'
+    yad_btn_about='--button=yad-about'
+else
+    yad_btn_ok='--button=gtk-ok'
+    yad_btn_quit='--button=gtk-quit'
+    yad_btn_about='--button=gtk-about'
+fi
+
 #color selection dialogue
 
-MAIN=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" --borders=20 --center --width=900 --height=400 --fixed --form --columns=7 --align=right --separator=" " --button="gtk-help":"bash -c mxcrhelp" --button="gtk-quit":1 --button="gtk-ok":0 \
+MAIN=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+--borders=20 --center --width=900 --height=400 --fixed \
+--form --columns=7 --align=right --separator=" " \
+"$yad_btn_about":"bash -c mxcrhelp" \
+"$yad_btn_quit":1 \
+"$yad_btn_ok":0 \
 --text="<b>\nEdit MX-comfort colors and create a new fluxbox style.\n\n</b>" \
 --field="<b>Active Window</b>":LBL " " \
 --field="Window Highlight":CLR "$ACHL" \

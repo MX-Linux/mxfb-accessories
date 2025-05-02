@@ -10,7 +10,7 @@
 # Updated and tweaked by @misko_2083 and @damo, of the bunsenlabs community November 2019
 #
 # Modified by MX Linux Devs for use with MX-Fluxbox
-# November 2020 
+# April 2025 
 # The sound file used here is located in the components folder
 ########################################################################
 Encoding=UTF-8
@@ -257,9 +257,20 @@ MIMEFILTER=""
 #echo FILEFILTER="'$FILEFILTER'" >&2
 #echo MIMEFILTER="'$MIMEFILTER'" >&2
 
+# check yad version and set buttons
+yad_version_check=$(yad --version | cut -d. -f1)
+
+if [[ $yad_version_check -gt 0 ]]; then
+    yad_btn_ok='yad-ok'
+    yad_btn_cancel='yad-cancel'
+else
+    yad_btn_ok='gtk-ok'
+    yad_btn_cancel='gtk-cancel'
+fi
+
 CHANGE=$(yad --title="$TITLE" --window-icon=$ICON2 \
         --file --width=600 --height=500 --center \
-        --button="gtk-ok:0" --button="gtk-cancel:1" \
+        --button="$yad_btn_ok:0" --button="$yad_btn_cancel:1" \
         --filename="$(soundfile)" \
         "$FILEFILTER" \
         "$MIMEFILTER" \
@@ -271,7 +282,7 @@ CHANGE=$(yad --title="$TITLE" --window-icon=$ICON2 \
         ln -nsf "$CHANGE" "$HOME/.config/mxfb-timer/alert"
         yad --title "$TITLE" \
             --window-icon="$ICON2" \
-            --button="gtk-ok:0" \
+            --button="$yad_btn_ok:0" \
             --width 300 --borders=15 --center \
             --window-icon="$ICON2" \
             --text="\nAlarm sound now in use is:\n\n<i>$CHANGE</i>"
@@ -298,8 +309,8 @@ get_countdown() {
 			--borders=15 \
 			--button="$BUTTON1:bash -c 'change_sound'" \
 			--button="$BUTTON2:bash -c 'testsound'" \
-			--button="gtk-cancel:1" \
-			--button="gtk-ok:0" \
+			--button="$yad_btn_cancel:1" \
+			--button="$yad_btn_ok:0" \
 			--height=180 \
 			--form  \
 			--align=center \
@@ -322,8 +333,8 @@ get_countdown() {
 # Would need a button added: --button:"Help:2"
  #if   [[  $ret -eq 2 ]]; then
  #yad --text-info --title "HELP" --wrap <$HELPFILE \
-    --geometry 600x300 --window-icon="/usr/share/icons/mxflux.png" \
-     --button gtk-ok:1
+#    --geometry 600x300 --window-icon="/usr/share/icons/mxflux.png" \
+#     --button=$yad_btn_ok:1
 #fi
 }
 

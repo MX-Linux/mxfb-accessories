@@ -57,18 +57,19 @@ MSG_NONE="
 
 ICON_TRASH_NONE=trashcan_empty
 ICON_TRASH_SOME=trashcan_full
-  BUTTON_NO="$NO"'!dialog-no:0'
-  BUTTON_OK="$OK"'!dialog-ok:0'
- BUTTON_YES="$YES"'!dialog-yes:2'
+BUTTON_NO="$NO"'!dialog-no:0'
+BUTTON_OK="$OK"'!dialog-ok:0'
+BUTTON_YES="$YES"'!dialog-yes:2'
 BUTTON_SHOW="$SHOW"'!'"$ICON_TRASH_SOME"':3'
 
 
 YAD_NONE=(
     $YAD
+    --center
     --title="$TITLE"
     --borders=12
     --height=20
-    --text-align=right
+    --text-align=center
     --fixed
     --class=$CLASS
     --window-icon=$ICON_TRASH_NONE
@@ -79,11 +80,12 @@ YAD_NONE=(
 
 YAD_SOME=(
     $YAD
+    --center
     --title="$TITLE"
     --borders=12
-    --text-align=right
+    --height=20
+    --text-align=center
     --fixed
-    --height 20
     --class=$CLASS
     --image=$ICON_TRASH_SOME
     --window-icon=$ICON_TRASH_SOME
