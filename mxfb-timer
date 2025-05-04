@@ -45,6 +45,17 @@ BUTTON2=$"Test sound"
 FIELD1=$"Enter alarm time"
 FIELD2=$"Check time and date"
 
+# check yad version and set buttons
+yad_version_check=$(yad --version | cut -d. -f1)
+
+if [[ $yad_version_check -gt 0 ]]; then
+    yad_btn_ok='yad-ok'
+    yad_btn_cancel='yad-cancel'
+else
+    yad_btn_ok='gtk-ok'
+    yad_btn_cancel='gtk-cancel'
+fi
+
 
 #
 # define some variables
@@ -256,17 +267,6 @@ MIMEFILTER=""
 
 #echo FILEFILTER="'$FILEFILTER'" >&2
 #echo MIMEFILTER="'$MIMEFILTER'" >&2
-
-# check yad version and set buttons
-yad_version_check=$(yad --version | cut -d. -f1)
-
-if [[ $yad_version_check -gt 0 ]]; then
-    yad_btn_ok='yad-ok'
-    yad_btn_cancel='yad-cancel'
-else
-    yad_btn_ok='gtk-ok'
-    yad_btn_cancel='gtk-cancel'
-fi
 
 CHANGE=$(yad --title="$TITLE" --window-icon=$ICON2 \
         --file --width=600 --height=500 --center \

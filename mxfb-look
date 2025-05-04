@@ -420,28 +420,10 @@ if [ ! -d "$look_fluxstyle" ] && [ ! -f "$look_fluxstyle" ]; then
 fi
 
 while [ ! -f "$look_wallpaper" ]; do
-
-#clear normal thumbnail cache so that yad shows large thumbnails
-
-#    delete_thumb(){
-#    full_path="file://$(realpath -s "$1")"
-#    md5name=$(printf %s "${full_path// /%20}" | md5sum)
-#    rm $HOME/.cache/thumbnails/normal/${md5name%% *}.png
-#    }
-
-#    export -f delete_thumb
-
-#    bg_list=$(find /usr/share/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \); find $HOME/.fluxbox/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \))
-
-#    for i in $bg_list; do
-#        [[ -f $i ]]; delete_thumb $i
-#    done
-    
+  
     text_missing_wp1="$(eval_gettext 'not found!')"
 	text_missing_wp2="$(eval_gettext 'Select an alternative wallpaper.')"
-	
-	#missing_wp_dir=$(dirname $look_wallpaper)
-	#cd "$missing_wp_dir"
+
     cd /usr/share/backgrounds
 	
 	look_wallpaper=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
@@ -825,7 +807,7 @@ until [ "$about_loop" = "closed" ]; do
 
 yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --borders=10 --center --width=300 --height=500 --fixed \
---image="/usr/share/icons/hicolor/scalable/apps/mxfb-look-96.svg" \
+--image="/usr/share/pixmaps/mxfb-look-96.svg" \
 --buttons-layout=spread --button="${BTN_LICENSE}":12 --button="${BTN_CHANGELOG}":10 --button="${BTN_CLOSE}":1 \
 --form --columns=1 --align=center \
 --field="<b><big>$ABOUTTEXT_TOP</big></b>":LBL " " \
