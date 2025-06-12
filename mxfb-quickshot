@@ -5,7 +5,7 @@
 ## released under GPLv3
 
 # mxfb-quickshot version
-VERSION="2504-01"
+VERSION="2504-02"
 
 ## the following parameters are set in ${HOME}/.config/MX-Linux/mxfb-quickshot.conf
 #OPTION="-s -q 100"
@@ -15,7 +15,7 @@ VERSION="2504-01"
 #PRE="quickshot_"
 
 # check yad version and set buttons
-yad_version_check=$(yad --version | cut -d. -f1)
+yad_version_check=$(yad --version 2>/dev/null |  sed "s/[^0-9].*//")
 
 if [[ $yad_version_check -gt 0 ]]; then
     yad_btn_ok='yad-ok'
