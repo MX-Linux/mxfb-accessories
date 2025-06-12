@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 200 50"
+   height="50"
+   width="200"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="fill:#1d2324;fill-opacity:1;fill-rule:evenodd;stroke:#c3d5f6;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+     id="rect267-5-0-8"
+     width="160"
+     height="28.999998"
+     x="4.0000005"
+     y="12.000001" />
+  <rect
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;stroke-dasharray:none;paint-order:markers fill stroke;opacity:0"
+     id="rect636"
+     width="200"
+     height="50"
+     x="0"
+     y="0" />
+  <path
+     style="fill:#0f56d9;fill-opacity:1;fill-rule:evenodd;stroke:#c3d5f6;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+     d="m 112,20 4,4 4,-4 h 2 v 2 l -4,4 4,4 v 2 h -2 l -4,-4 -4,4 h -2 v -2 l 4,-4 -4,-4 v -2"
+     id="path3398" />
+  <rect
+     style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#c3d5f6;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+     id="rect267-0"
+     width="32"
+     height="31.999996"
+     x="164"
+     y="9.000001" />
+  <path
+     style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:#c3d5f6;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+     d="m 176,20 4,4 4,-4 h 2 v 2 l -4,4 4,4 v 2 h -2 l -4,-4 -4,4 h -2 v -2 l 4,-4 -4,-4 v -2"
+     id="path3398-0" />
+  <rect
+     style="fill:#0f56d9;fill-opacity:1;fill-rule:evenodd;stroke:#c3d5f6;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+     id="rect265-0"
+     width="160"
+     height="3"
+     x="4.0000005"
+     y="9.000001" />
+  <rect
+     style="fill:#ff00ff;fill-opacity:1;fill-rule:evenodd;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+     id="rect13068-6"
+     width="12"
+     height="2"
+     x="46"
+     y="25" />
+  <path
+     id="rect14288"
+     style="fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+     d="M 78,20 V 32.000001 H 90 V 20 Z m 2,2 h 8 v 8 h -8 z" />
+</svg>

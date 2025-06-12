@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1">
+    <rect
+       style="fill:topline_active;fill-opacity:1;fill-rule:evenodd;stroke:#c3d5f6;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+       id="rect265"
+       width="32"
+       height="3"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:background_active;fill-opacity:1;fill-rule:evenodd;stroke:#c3d5f6;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+       id="rect267"
+       width="32"
+       height="29"
+       x="0"
+       y="3" />
+    <path
+       style="fill:deco_active_close;fill-opacity:1;fill-rule:evenodd;stroke:#c3d5f6;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
+       d="m 12,11 4,4 4,-4 h 2 v 2 l -4,4 4,4 v 2 h -2 l -4,-4 -4,4 h -2 v -2 l 4,-4 -4,-4 v -2"
+       id="path3398" />
+  </g>
+</svg>

@@ -1,0 +1,542 @@
+#!/bin/bash
+#Edit the colors of MX-fluxbox styles
+#for MX-Linux 25 Fluxbox by Melber
+#License: GPL-3.0+
+#Version 25.06.01
+
+
+TEXTDOMAINDIR=/usr/share/locale
+#export TEXTDOMAIN="mxfb-style-editor"
+#export TEXTDOMAIN="mxfb-accessories"
+
+#define some variables
+export TITLE="$(gettext 'MXFB Style Editor')"
+export CLASS="mxfb-style-editor"
+export iconpath="/usr/share/pixmaps/mxfb-style-editor.png"
+
+stylepath_mx=/usr/share/mxflux/styles
+stylepath_home=$HOME/.fluxbox/styles
+templatepath=/usr/share/mxfb-style-editor/templates
+
+
+# color picker function for main window
+
+color_picker() {
+    local N=$1 C="$2"
+    local YAD=(
+            yad
+            --title="Color-Picker"
+            --class=color-select
+            --window-icon=color-select
+            --posx=200
+            --posy=200
+            --color
+            --init-color="${C:=white}"
+            )
+    C=$("${YAD[@]}")
+    (($?==0)) && echo "$N:$C"
+}
+
+
+# help function for main window
+
+mxfb-se-help() {
+
+help_text0="$(cat /tmp/mxfb-se-helptext.txt)"
+text_helptitle="$(gettext 'MXFB Style Editor Help')"
+
+helppath="/usr/share/mxfb-style-editor/help"
+help_imagepath="$helppath/mxfb-se-help-$template_name.png"
+
+yad --title="$text_helptitle" --class="$CLASS" --window-icon="$iconpath" \
+--borders=20 --geometry=700x300+0+0 \
+--image="$help_imagepath" --size=fit \
+--text="$help_text0" \
+--button="yad-close" --close-on-unfocus
+
+}
+
+export -f color_picker mxfb-se-help
+
+
+### style selection dialog ###
+
+#read available styles
+
+style_list_mx="$templatepath/MX-comfort $templatepath/MX-comfort-dark $templatepath/MX-comfort-plus $templatepath/MX-comfort-plus-dark $templatepath/MX-ease $templatepath/MX-ease-Dark $templatepath/MX-Matcha"
+
+style_list_user=$(ls -fR 2>/dev/null $stylepath_home/*/mxfb-se.conf | sed -e "s/\mxfb-se.conf//g" )
+
+style_list_combined=($style_list_mx $style_list_user)
+
+for i in ${style_list_combined[@]}; do
+    style_list_name=$(basename $i)
+    style_list_yad="$i/pixmaps/preview.png $style_list_name $i"
+    style_list+=($style_list_yad)
+done
+
+#select starting style
+
+text_selection1=$(gettext "Which style would you like to edit?")
+
+basestyle_path=$( yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
+--center --width=400 --height=600 --borders=20 \
+--text="$text_selection1\n" --text-align=center \
+--list --no-headers --separator="" --hide-column=3 --print-column=3 \
+--column=:IMG \
+--column=Stylename \
+--column=Stylepath \
+${style_list[@]} )
+
+case $? in
+    1 )
+        exit 0
+    ;;
+esac
+
+
+if [ -z "$basestyle_path" ]; then
+    text_noselection1=$"(gettext 'No starting style selected!')"
+    text_noselection2=$"(gettext 'MX-comfort will be used as the starting style.')"
+
+    yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
+    --text-align=center --center --width=400 --height=200 --borders=20 \
+    --text="$text_noselection1\n\n$text_noselection2"
+
+    basestyle_path=$stylepath_mx/MX-comfort
+fi
+
+
+export basestyle_name=$(basename $basestyle_path)
+
+
+### main dialog ###
+
+#read colors
+
+source $basestyle_path/mxfb-se.conf
+export template_name="$template_name"
+
+#set up text variables
+
+text_mainitem1="$(gettext 'Top Line')"
+text_mainitem2="$(gettext 'Highlight')"
+text_mainitem3="$(gettext 'Titlebar')"
+text_mainitem4="$(gettext 'Titlebar Text')"
+text_mainitem5="$(gettext 'Close Symbol')"
+text_mainitem6="$(gettext 'Window Symbols')"
+text_mainitem7="$(gettext 'Pressed Symbols')"
+text_mainitem8="$(gettext 'Window Grips')"
+text_mainitem9="$(gettext 'Menu Title Text')"
+text_mainitem10="$(gettext 'Menu Background')"
+text_mainitem11="$(gettext 'Menu Text')"
+text_mainitem12="$(gettext 'Menu Highlight')"
+text_mainitem13="$(gettext 'Menu Highlight Text')"
+text_mainitem99="<i>"$(gettext 'not used in this style')"</i>"
+
+case $template_name in
+
+    MX-comfort | MX-comfort-dark )
+        text_mainitem2="<i>"$(gettext 'not used in this style')"</i>"
+        highlight_active=#9000ff
+        highlight_inactive=#9000ff        
+    ;;
+    
+    MX-ease | MX-ease-Dark )
+        text_mainitem1="<i>"$(gettext 'not used in this style')"</i>"
+        topline_active=#9000ff
+        topline_inactive=#9000ff  
+    ;;
+    
+esac
+
+echo "<b>$basestyle_name</b>\n\n1 - $text_mainitem1\n2 - $text_mainitem3\n3 - $text_mainitem2\n4 - $text_mainitem4\n5 - $text_mainitem5\n6 - $text_mainitem6\n7 - $text_mainitem7\n8 - $text_mainitem8\n9 - $text_mainitem9\n10 - $text_mainitem10\n11- -$text_mainitem11\n12 - $text_mainitem12\n13 - $text_mainitem13" > /tmp/mxfb-se-helptext.txt
+
+trap "rm -r "/tmp/mxfb-se-helptext.txt" " EXIT
+
+
+text_main="$(gettext 'Edit colors and create a new fluxbox style based on')"
+text_mainheader_active="$(gettext 'Active Window')"
+text_mainheader_inactive="$(gettext 'Inactive Window')"
+text_mainheader_menu="$(gettext 'Fluxbox Menu')"
+text_mainname="$(gettext 'Name for new style')"
+text_maincurrent="$(gettext 'Make new style current?')"
+text_mainpanelmatch="$(gettext 'Create matching tint2 panel?')"
+
+
+BTN_CANCEL=$(gettext "Cancel") ; BTN_CANCEL+='!window-close'
+BTN_APPLY=$(gettext "Create Style") ; BTN_APPLY+='!gtk-ok'
+BTN_HELP=$(gettext "Help") ; BTN_HELP+='!help-about'
+
+main_yad=(yad --title="$TITLE" --class="$CLASS" --window-icon=$iconpath \
+--borders=20 --center --width=1000 --height=400 --fixed \
+--form --columns=10 --align=left --separator=" " \
+--button="${BTN_HELP}":"bash -c mxfb-se-help" \
+--button="${BTN_CANCEL}":1 --button="${BTN_APPLY}":0 --align-buttons \
+--text="$text_main <b>$basestyle_name</b>\n" \
+--field="<b>$text_mainheader_active</b>":LBL " " \
+--field="$text_mainitem1":CLR "$topline_active" \
+--field="$text_mainitem2":CLR "$highlight_active" \
+--field="$text_mainitem3":CLR "$background_active" \
+--field="$text_mainitem4":CLR "$text_active" \
+--field="$text_mainitem5":CLR "$deco_active_close" \
+--field="$text_mainitem6":CLR "$deco_active" \
+--field="$text_mainitem7":CLR "$deco_active_pressed" \
+--field="$text_mainitem8":CLR "$grips_active" \
+--field=" ":LBL " " \
+--field='!color-select':BTN '@bash -c "color_picker 2 %2;"' \
+--field='!color-select':BTN '@bash -c "color_picker 3 %3;"' \
+--field='!color-select':BTN '@bash -c "color_picker 4 %4;"' \
+--field='!color-select':BTN '@bash -c "color_picker 5 %5;"' \
+--field='!color-select':BTN '@bash -c "color_picker 6 %6;"' \
+--field='!color-select':BTN '@bash -c "color_picker 7 %7;"' \
+--field='!color-select':BTN '@bash -c "color_picker 8 %8;"' \
+--field='!color-select':BTN '@bash -c "color_picker 9 %9;"' \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field="<b>$text_mainheader_inactive</b>":LBL " " \
+--field="$text_mainitem1":CLR "$topline_inactive" \
+--field="$text_mainitem2":CLR "$highlight_inactive" \
+--field="$text_mainitem3":CLR "$background_inactive" \
+--field="$text_mainitem4":CLR "$text_inactive" \
+--field="$text_mainitem99":LBL " " \
+--field="$text_mainitem6":CLR "$deco_inactive" \
+--field="$text_mainitem99":LBL " " \
+--field="$text_mainitem8":CLR "$grips_inactive" \
+--field=" ":LBL " " \
+--field='!color-select':BTN '@bash -c "color_picker 29 %29;"' \
+--field='!color-select':BTN '@bash -c "color_picker 30 %30;"' \
+--field='!color-select':BTN '@bash -c "color_picker 31 %31;"' \
+--field='!color-select':BTN '@bash -c "color_picker 32 %32;"' \
+--field=" ":LBL " " \
+--field='!color-select':BTN '@bash -c "color_picker 34 %34;"' \
+--field=" ":LBL " " \
+--field='!color-select':BTN '@bash -c "color_picker 36 %36;"' \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field="<b>$text_mainheader_menu</b>":LBL " " \
+--field="$text_mainitem9":CLR "$menu_title_text" \
+--field="$text_mainitem10":CLR "$menu_background" \
+--field="$text_mainitem11":CLR "$menu_text" \
+--field="$text_mainitem12":CLR "$menu_highlight" \
+--field="$text_mainitem13":CLR "$menu_highlight_text" \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field='!color-select':BTN '@bash -c "color_picker 56 %56;"' \
+--field='!color-select':BTN '@bash -c "color_picker 57 %57;"' \
+--field='!color-select':BTN '@bash -c "color_picker 58 %58;"' \
+--field='!color-select':BTN '@bash -c "color_picker 59 %59;"' \
+--field='!color-select':BTN '@bash -c "color_picker 60 %60;"' \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field=" ":LBL " " \
+--field="<b>$text_mainname</b>":LBL " " \
+--field=" " ""$basestyle_name-new"" \
+--field="$text_maincurrent":CHK \
+--field="$text_mainpanelmatch":CHK \
+)
+
+main_colors=$("${main_yad[@]}")
+(($?==0)) && echo "$main_colors" > /tmp/mxfb-style-editor-colors.txt
+
+main_button=$(echo "$?")
+
+if [ "$main_button" = 1 ]; then
+
+    exit 0
+
+elif [ "$main_button" = 0 ]; then
+
+    trap "rm -r "/tmp/mxfb-style-editor-colors.txt" " EXIT
+    
+    read -r -a NEWCOLORS < /tmp/mxfb-style-editor-colors.txt
+
+    new_topline_active="${NEWCOLORS[0]}"
+    new_highlight_active="${NEWCOLORS[1]}"
+    new_background_active="${NEWCOLORS[2]}"
+    new_text_active="${NEWCOLORS[3]}"
+    new_deco_active_close="${NEWCOLORS[4]}"
+    new_deco_active="${NEWCOLORS[5]}"
+    new_deco_active_pressed="${NEWCOLORS[6]}"
+    new_grips_active="${NEWCOLORS[7]}"
+    new_topline_inactive="${NEWCOLORS[8]}"    
+    new_highlight_inactive="${NEWCOLORS[9]}"
+    new_background_inactive="${NEWCOLORS[10]}"
+    new_text_inactive="${NEWCOLORS[11]}"
+    new_deco_inactive="${NEWCOLORS[12]}"
+    new_grips_inactive="${NEWCOLORS[13]}"
+    new_menu_title_text="${NEWCOLORS[14]}"
+    new_menu_background="${NEWCOLORS[15]}"
+    new_menu_text="${NEWCOLORS[16]}"
+    new_menu_highlight="${NEWCOLORS[17]}"
+    new_menu_highlight_text="${NEWCOLORS[18]}"
+    new_style_name="${NEWCOLORS[19]}"
+    make_current="${NEWCOLORS[20]}"
+    make_tint2="${NEWCOLORS[21]}"
+
+
+#check style name
+
+    if [ "$new_style_name" = 'TRUE' -o "$new_style_name" = 'FALSE' ]; then
+
+        make_tint2="$make_current"
+        make_current="$new_style_name"
+
+        new_style_name=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
+        --width=400 --height=200 --fixed --text="No Style name !" \
+        --form --center --borders=20 --separator="" \
+        --field="<b>Name for new style</b>":LBL " " \
+        --field=" " "New style name" )
+    
+        GETOUT=$(echo "$?")
+
+        if [ "$GETOUT" != 0 ]; then
+            exit 0
+        fi
+
+    fi
+    
+#check style name is not empty and forbid overwrite
+
+    while [ -z "$new_style_name" -o "$new_style_name" = 'MX-comfort' -o "$new_style_name" = 'MX-comfort-dark' -o "$new_style_name" = 'MX-comfort-plus' -o "$new_style_name" = 'MX-comfort-plus-dark' -o "$new_style_name" = 'MX-ease' -o "$new_style_name" = 'MX-ease-dark' -o "$new_style_name" = 'MX-Matcha' ]; do
+
+        text_newname1="$(gettext 'cannot be used. Choose another name.')"
+        text_newname2="$(gettext 'Name for new style')"
+
+        new_style_name=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
+        --width=400 --height=200 --fixed \
+        --text="<b>$new_style_name</b> $text_newname1" \
+        --form --center --borders=20 --separator="" \
+        --field="<b>$text_newname2</b>":LBL " " \
+        --field=" " "$new_style_name-new" )
+
+        GETOUT=$(echo "$?")
+
+        if [ "$GETOUT" != 0 ]; then
+            exit 0
+        fi
+    done
+
+
+#check if style name exists
+
+    while [ -d ~/.fluxbox/styles/$new_style_name ]; do
+    
+    	text_overwrite1="A style with this name already exists."
+    	text_overwrite2="Do you want to overwrite or save as a different style name"
+    	btn_overwrite="Overwrite"
+    	btn_savediff="Save as different style name"
+
+        yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
+        --width=400 --fixed \
+        --text="<b>$new_style_name</b>\n\n$text_overwrite1\n\n$text_overwrite2\n" \
+        --text-align=center --center --borders=20 \
+        --button="$btn_overwrite $new_style_name":2 --button="$btn_savediff":3
+
+        case $? in
+
+            2) rm -r ~/.fluxbox/styles/$new_style_name   ;;
+
+            3) new_style_name=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
+            --width=400 --height=200 --fixed --form --center --borders=20 --separator="" \
+            --field="<b>$text_newname2</b>":LBL " " \
+            --field=" " "$new_style_name-new" )    ;;
+
+            252) exit 0    ;;
+
+        esac
+    done
+
+#tint2 warning
+
+    if [ "$make_tint2" = true ]; then
+
+        yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" --width=400 --fixed \
+        --text="\nA copy of the default tint2 panel <b>tint2rc</b> will be created with a matching highlight colour.\n\nCreating a matching panel may have unexpected results if you have edited or overwritten the tint2rc file.\n\n<b>Please confirm that you want to create a matching tint2 panel</b>\n" \
+        --text-align=center --center --borders=20\
+        --button="Create matching tint2 panel":2 --button="Do not create matching tint2 panel":3
+
+        case $? in
+            2) make_tint2="true"   ;;
+            3) make_tint2="false"    ;;
+            252) exit 0    ;;
+        esac
+  
+    fi
+
+    
+# start progress yad
+    {
+    waittime=0
+    echo $waittime
+    echo "# $((waittime))%"
+
+#Copy basestyle to new style name
+
+    cp -r $templatepath/$template_name $stylepath_home/$new_style_name
+
+#Overwrite conf file
+
+    printf "style_name=$new_style_name
+template_name=$template_name
+
+topline_active=$new_topline_active
+highlight_active=$new_highlight_active
+background_active=$new_background_active
+text_active=$new_text_active
+deco_active=$new_deco_active
+deco_active_pressed=$new_deco_active_pressed
+grips_active=$new_grips_active
+
+topline_inactive=$new_topline_inactive
+highlight_inactive=$new_highlight_inactive
+background_inactive=$new_background_inactive
+text_inactive=$new_text_inactive
+deco_inactive=$new_deco_inactive
+grips_inactive=$new_grips_inactive
+
+menu_title_text=$new_menu_title_text
+menu_background=$new_menu_background
+menu_text=$new_menu_text
+menu_highlight=$new_menu_highlight
+menu_highlight_text=$new_menu_highlight_text" > $stylepath_home/$new_style_name/mxfb-se.conf
+
+#move to new style directory and amend name and grips in theme config file
+
+    cd $stylepath_home/$new_style_name
+    
+    creation_date="$(date +%Y-%m-%d)"
+
+    sed -i "s/NEW_STYLE_NAME/$new_style_name/" theme.cfg
+    sed -i "s/USERNAME/$USER/" theme.cfg    
+    sed -i "s/CREATION_DATE/$creation_date/" theme.cfg 
+        sed -i "s/menu.frame.color: menu_background/menu.frame.color: $new_menu_background/" theme.cfg
+    sed -i "s/menu.title.color: background_active/menu.title.color: $new_background_active/" theme.cfg
+    sed -i "s/menu.hilite.color: menu_highlight/menu.hilite.color: $new_menu_highlight/" theme.cfg
+    sed -i "s/menu.frame.disableColor: highlight_active/menu.frame.disableColor: $new_highlight_active/" theme.cfg
+    sed -i "s/menu.frame.textColor: menu_text/menu.frame.textColor: $new_menu_text/" theme.cfg
+    sed -i "s/menu.title.textColor: menu_title_text/menu.title.textColor: $new_menu_title_text/" theme.cfg
+    sed -i "s/menu.hilite.textColor: menu_highlight_text/menu.hilite.textColor: $new_menu_highlight_text/" theme.cfg
+    sed -i "s/window.label.focus.textColor: text_active/window.label.focus.textColor: $new_text_active/" theme.cfg
+    sed -i "s/window.label.unfocus.textColor: text_inactive/window.label.unfocus.textColor: $new_text_inactive/" theme.cfg
+    sed -i "s/window.grip.focus.color: grips_active/window.grip.focus.color: $new_grips_active/" theme.cfg
+    sed -i "s/window.grip.unfocus.color: grips_inactive/window.grip.unfocus.color: $new_grips_inactive/" theme.cfg
+    sed -i "s/window.handle.focus.color: background_active/window.handle.focus.color: $new_background_active/" theme.cfg
+    sed -i "s/window.handle.unfocus.color: background_inactive/window.handle.unfocus.color: $new_background_inactive/" theme.cfg
+        sed -i "s/borderColor: background_active/borderColor: $background_active/" theme.cfg
+
+
+    waittime=50
+    echo $waittime
+    echo "# $((waittime))%"
+
+    
+#amend svg colors and generate new xpm files
+
+    cd $stylepath_home/$new_style_name/svg
+
+    INDEX="$templatepath/assets.txt"
+    for i in `cat $INDEX`; do
+
+        sed -i "s/topline_active/$new_topline_active/g" $i.svg
+        sed -i "s/highlight_active/$new_highlight_active/g" $i.svg
+        sed -i "s/background_active/$new_background_active/g" $i.svg
+        sed -i "s/deco_active_close/$new_deco_active_close/g" $i.svg
+        sed -i "s/deco_active_pressed/$new_deco_active_pressed/g" $i.svg
+        sed -i "s/deco_active/$new_deco_active/g" $i.svg
+        sed -i "s/menu_text/$new_menu_text/g" $i.svg
+        sed -i "s/menu_highlight_text/$new_menu_highlight_text/g" $i.svg
+
+        sed -i "s/topline_inactive/$new_topline_inactive/g" $i.svg
+        sed -i "s/highlight_inactive/$new_highlight_inactive/g" $i.svg
+        sed -i "s/background_inactive/$new_background_inactive/g" $i.svg
+        sed -i "s/deco_inactive/$new_deco_inactive/g" $i.svg
+
+        convert $i.svg ../pixmaps/$i.png
+
+    done
+
+
+#copy and amend tint2 panel
+
+    if [ "$make_tint2" = "TRUE" ]; then
+        cd $HOME/.config/tint2
+        cp -r $HOME/.config/tint2/tint2rc ~/.config/tint2/$new_style_name
+        sed -i "s/#0f56d9/$new_highlight_active/g" $new_style_name
+        rm tint2-sessionfile
+        echo '$HOME'"/.config/tint2/$new_style_name" >> tint2-sessionfile
+        killall tint2
+        tint2 -c $HOME/.config/tint2/$new_style_name >/dev/null 2>&1 & disown
+    fi
+   
+    
+# close progress yad
+
+    waittime=100
+    echo $waittime
+    echo "# $((waittime))%"
+
+    } | yad --progress --title="$TITLE" --class="$CLASS" \
+    --borders=10 --center --width=400 \
+    --auto-close \
+    --auto-kill
+
+#set new style as current
+
+    text_finished1="$(gettext 'All done!')"
+    text_finished2="$(gettext 'has been set as the current style.')"
+    text_finished3="$(gettext 'has been created.')"
+    text_finished4="$(gettext 'Set styles with Fluxbox menu > Appearance >  Theme')"
+
+    if [ "$make_current" = "TRUE" ]; then
+
+        sed -i -r "/^(session.styleFile:).*/s::\1    ~/.fluxbox/styles/$new_style_name:"  ~/.fluxbox/init
+        fluxbox-remote restart
+
+        yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
+        --width=400 --height=250 --fixed --center --borders=20 --text-align=center \
+        --text="$text_finished1\n\n<b>$new_style_name</b> $text_finished2" \
+        --button=yad-ok
+
+    fi
+
+    if [ "$make_current" = "FALSE" ]; then
+
+    yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
+    --width=400 --height=250 --fixed --center --borders=20 --text-align=center \
+    --text="$text_finished1\n\n<b>$new_style_name</b> $text_finished3\n\n$text_finished4" \
+    --button=yad-ok
+
+    fi
+
+
+#    ;;
+#esac
+fi
+
+exit 0
