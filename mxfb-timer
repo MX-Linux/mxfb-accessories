@@ -10,7 +10,7 @@
 # Updated and tweaked by @misko_2083 and @damo, of the bunsenlabs community November 2019
 #
 # Modified by MX Linux Devs for use with MX-Fluxbox
-# April 2025 
+# November 2020 / June 2025 
 # The sound file used here is located in the components folder
 ########################################################################
 Encoding=UTF-8
@@ -46,8 +46,7 @@ FIELD1=$"Enter alarm time"
 FIELD2=$"Check time and date"
 
 # check yad version and set buttons
-yad_version_check=$(yad --version | cut -d. -f1)
-
+yad_version_check=$(yad --version 2>/dev/null |  sed "s/[^0-9].*//")
 if [[ $yad_version_check -gt 0 ]]; then
     yad_btn_ok='yad-ok'
     yad_btn_cancel='yad-cancel'
