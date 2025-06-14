@@ -103,6 +103,7 @@ Comment[uk]=Загальні налаштування для MX-Linux Fluxbox
 Comment[vi]=Các cài đặt chung cho MX-Linux Fluxbox
 
 Category=USER
+mxfb-style-editor
 mxfb-appfinder-settings
 mxfb-tint2-manager
 mxfb-keybindings
