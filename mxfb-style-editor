@@ -77,7 +77,7 @@ done
 
 #select starting style
 
-text_selection1=$(gettext "Which style would you like to edit?")
+text_selection1="$(gettext 'Which style would you like to edit?')"
 
 basestyle_path=$( yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
 --center --width=400 --height=600 --borders=20 \
@@ -89,15 +89,15 @@ basestyle_path=$( yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath
 ${style_list[@]} )
 
 case $? in
-    1 )
+    1 | 252 )
         exit 0
     ;;
 esac
 
 
 if [ -z "$basestyle_path" ]; then
-    text_noselection1=$"(gettext 'No starting style selected!')"
-    text_noselection2=$"(gettext 'MX-comfort will be used as the starting style.')"
+    text_noselection1="$(gettext 'No starting style selected!')"
+    text_noselection2="$(gettext 'MX-comfort will be used as the starting style.')"
 
     yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" \
     --text-align=center --center --width=400 --height=200 --borders=20 \
@@ -164,9 +164,9 @@ text_maincurrent="$(gettext 'Make new style current?')"
 text_mainpanelmatch="$(gettext 'Create matching tint2 panel?')"
 
 
-BTN_CANCEL=$(gettext "Cancel") ; BTN_CANCEL+='!window-close'
-BTN_APPLY=$(gettext "Create Style") ; BTN_APPLY+='!gtk-ok'
-BTN_HELP=$(gettext "Help") ; BTN_HELP+='!help-about'
+BTN_CANCEL="$(gettext 'Cancel')" ; BTN_CANCEL+='!window-close'
+BTN_APPLY="$(gettext 'Create Style')" ; BTN_APPLY+='!gtk-ok'
+BTN_HELP="$(gettext 'Help')" ; BTN_HELP+='!help-about'
 
 main_yad=(yad --title="$TITLE" --class="$CLASS" --window-icon=$iconpath \
 --borders=20 --center --width=1000 --height=400 --fixed \
