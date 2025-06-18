@@ -4,6 +4,9 @@ mxfb-accessories (25.05.01mx25+nmu1) mx; urgency=medium
   * fix to stop double exit options by appfinder
   * fixes to mxfb-look and mxfb-timer
   * removed extra Tweak entry from mxfb settings
+  * updated mxfb styles
+  * reorganized and redistributed  components file
+  * changes to avoid use of usr/local/bin
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 05 May 2025 06:46:24 -0400
 
