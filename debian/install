@@ -5,7 +5,7 @@ desktop/* usr/share/applications
 look/*.png usr/share/pixmaps
 icons/*.png usr/share/pixmaps
 icons/*.svg usr/share/pixmaps
-mxfb-style-editor/* usr/share/mxfb-style-editor
+style-editor/* usr/share/mxfb-style-editor
 apt/* etc/apt/
 translations_script/mo/* /
 components/mxfb-settings.list etc/custom-toolbox
