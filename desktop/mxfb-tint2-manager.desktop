@@ -33,6 +33,6 @@ Comment[pt_br]=Selection tool for creative panel
 Comment[ru]=Selection tool for creative panel
 Comment[sv]=Valverktyg för skapande av panel
 Exec=/usr/bin/mxfb-tint2-manager
-Icon=systemtray
+Icon=mxfb-tint2-manager
 Terminal=false
 Categories=System;X-MXFB-Tools;

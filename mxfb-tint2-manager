@@ -113,7 +113,7 @@ BUTTON6=$"12h/24h"
 #
 
 FIELDSEPARATOR=" "
-WINICON="--window-icon=/usr/share/icons/mxflux.png"
+WINICON="--window-icon=/usr/share/pixmaps/mxfb-tint2-manager.svg"
 
 HELPTEXT='Tint2 config files must be in $TINT2PATH, set by default to $HOME/.config/tint2/
 -----------------------------------
