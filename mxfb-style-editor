@@ -2,12 +2,13 @@
 #Edit the colors of MX-fluxbox styles
 #for MX-Linux 25 Fluxbox by Melber
 #License: GPL-3.0+
-#Version 25.06.01
+#Version 25.06.02
 
 
-TEXTDOMAINDIR=/usr/share/locale
-#export TEXTDOMAIN="mxfb-style-editor"
-#export TEXTDOMAIN="mxfb-accessories"
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN="mxfb-accessories"
+source gettext.sh
+
 
 #define some variables
 export TITLE="$(gettext 'MXFB Style Editor')"
@@ -147,7 +148,7 @@ case $template_name in
         topline_active=#9000ff
         topline_inactive=#9000ff  
     ;;
-    
+
 esac
 
 echo "<b>$basestyle_name</b>\n\n1 - $text_mainitem1\n2 - $text_mainitem3\n3 - $text_mainitem2\n4 - $text_mainitem4\n5 - $text_mainitem5\n6 - $text_mainitem6\n7 - $text_mainitem7\n8 - $text_mainitem8\n9 - $text_mainitem9\n10 - $text_mainitem10\n11- -$text_mainitem11\n12 - $text_mainitem12\n13 - $text_mainitem13" > /tmp/mxfb-se-helptext.txt
@@ -372,24 +373,7 @@ elif [ "$main_button" = 0 ]; then
         esac
     done
 
-#tint2 warning
 
-    if [ "$make_tint2" = true ]; then
-
-        yad --title="$TITLE" --class="$CLASS" --window-icon="$iconpath" --width=400 --fixed \
-        --text="\nA copy of the default tint2 panel <b>tint2rc</b> will be created with a matching highlight colour.\n\nCreating a matching panel may have unexpected results if you have edited or overwritten the tint2rc file.\n\n<b>Please confirm that you want to create a matching tint2 panel</b>\n" \
-        --text-align=center --center --borders=20\
-        --button="Create matching tint2 panel":2 --button="Do not create matching tint2 panel":3
-
-        case $? in
-            2) make_tint2="true"   ;;
-            3) make_tint2="false"    ;;
-            252) exit 0    ;;
-        esac
-  
-    fi
-
-    
 # start progress yad
     {
     waittime=0
@@ -435,7 +419,7 @@ menu_highlight_text=$new_menu_highlight_text" > $stylepath_home/$new_style_name/
     sed -i "s/NEW_STYLE_NAME/$new_style_name/" theme.cfg
     sed -i "s/USERNAME/$USER/" theme.cfg    
     sed -i "s/CREATION_DATE/$creation_date/" theme.cfg 
-        sed -i "s/menu.frame.color: menu_background/menu.frame.color: $new_menu_background/" theme.cfg
+    sed -i "s/menu.frame.color: menu_background/menu.frame.color: $new_menu_background/" theme.cfg
     sed -i "s/menu.title.color: background_active/menu.title.color: $new_background_active/" theme.cfg
     sed -i "s/menu.hilite.color: menu_highlight/menu.hilite.color: $new_menu_highlight/" theme.cfg
     sed -i "s/menu.frame.disableColor: highlight_active/menu.frame.disableColor: $new_highlight_active/" theme.cfg
@@ -448,7 +432,7 @@ menu_highlight_text=$new_menu_highlight_text" > $stylepath_home/$new_style_name/
     sed -i "s/window.grip.unfocus.color: grips_inactive/window.grip.unfocus.color: $new_grips_inactive/" theme.cfg
     sed -i "s/window.handle.focus.color: background_active/window.handle.focus.color: $new_background_active/" theme.cfg
     sed -i "s/window.handle.unfocus.color: background_inactive/window.handle.unfocus.color: $new_background_inactive/" theme.cfg
-        sed -i "s/borderColor: background_active/borderColor: $background_active/" theme.cfg
+    sed -i "s/borderColor: background_active/borderColor: $background_active/" theme.cfg
 
 
     waittime=50
@@ -486,15 +470,35 @@ menu_highlight_text=$new_menu_highlight_text" > $stylepath_home/$new_style_name/
 
     if [ "$make_tint2" = "TRUE" ]; then
         cd $HOME/.config/tint2
-        cp -r $HOME/.config/tint2/tint2rc ~/.config/tint2/$new_style_name
-        sed -i "s/#0f56d9/$new_highlight_active/g" $new_style_name
+        cp -r $templatepath/template-tint2rc ~/.config/tint2/$new_style_name-tint2rc
+        sed -i "s/highlight_active/$new_highlight_active/g" $new_style_name-tint2rc
         rm tint2-sessionfile
-        echo '$HOME'"/.config/tint2/$new_style_name" >> tint2-sessionfile
+        echo '$HOME'"/.config/tint2/$new_style_name-tint2rc" >> tint2-sessionfile
         killall tint2
-        tint2 -c $HOME/.config/tint2/$new_style_name >/dev/null 2>&1 & disown
+        tint2 -c $HOME/.config/tint2/$new_style_name-tint2rc >/dev/null 2>&1 & disown
+
+#amend fluxbox toolbar
+        cd $stylepath_home/$new_style_name
+        sed -i "s/toolbar.button.pressed.color: highlight_active/toolbar.button.pressed.color: $new_highlight_active/" theme.cfg
+        sed -i "s/toolbar.button.pressed.colorTo: highlight_active/toolbar.button.pressed.colorTo: $new_highlight_active/" theme.cfg
+
+        cd $stylepath_home/$new_style_name/svg
+
+        case $template_name in
+            MX-comfort | MX-comfort-dark )
+                new_toolbar_active=$new_topline_active
+            ;;
+            MX-ease | MX-ease-Dark | MX-comfort-plus | MX-comfort-plus-dark | MX-Matcha )
+                new_toolbar_active=$new_highlight_active
+            ;;
+        esac
+
+        sed -i "s/toolbar_active/$new_toolbar_active/g" toolbar-active.svg
+        convert toolbar-active.svg -background white -alpha remove ../pixmaps/toolbar-active.png
+
     fi
-   
-    
+
+
 # close progress yad
 
     waittime=100
@@ -534,9 +538,8 @@ menu_highlight_text=$new_menu_highlight_text" > $stylepath_home/$new_style_name/
 
     fi
 
+rm -rf $stylepath_home/$new_style_name/svg
 
-#    ;;
-#esac
 fi
 
 exit 0
