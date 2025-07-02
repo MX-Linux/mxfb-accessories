@@ -71,7 +71,7 @@ do
 
     source $i
 
-    i=$(basename $i)
+    i=$(basename $i | sed -e 's/_exit-options.conf//' )
 
     if [ $i = "$CONFIG_CURRENT" ]; then
        IMAGE_ADD=$(echo "true $RestartFluxbox $LockIcon $LogoutIcon $SuspendIcon $RebootIcon $ShutdownIcon $i ")
