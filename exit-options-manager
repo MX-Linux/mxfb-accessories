@@ -70,13 +70,13 @@ for i in "${CONFIG_ARRAY[@]}"
 do
 
     source $i
-
-    i=$(basename $i | sed -e 's/_exit-options.conf//' )
+    i=$(basename $i)
+    j=$(echo $i | sed -e 's/_exit-options//' | sed -e 's/-exit-options//' | sed -e 's/.conf//' )
 
     if [ $i = "$CONFIG_CURRENT" ]; then
-       IMAGE_ADD=$(echo "true $RestartFluxbox $LockIcon $LogoutIcon $SuspendIcon $RebootIcon $ShutdownIcon $i ")
+       IMAGE_ADD=$(echo "true $RestartFluxbox $LockIcon $LogoutIcon $SuspendIcon $RebootIcon $ShutdownIcon $j $i ")
     else
-       IMAGE_ADD=$(echo "false $RestartFluxbox $LockIcon $LogoutIcon $SuspendIcon $RebootIcon $ShutdownIcon $i ")
+       IMAGE_ADD=$(echo "false $RestartFluxbox $LockIcon $LogoutIcon $SuspendIcon $RebootIcon $ShutdownIcon $j $i ")
     fi
 
    IMAGES=$(echo -e "$IMAGES $IMAGE_ADD")
@@ -122,7 +122,7 @@ fi
 fkey=$RANDOM
 
 yad --plug=$fkey --tabnum=1 --separator=" " \
-    --list --radiolist --print-column=8 --grid-lines=horizontal --no-headers --text="\n" \
+    --list --radiolist --hide-column=9 --print-column=9 --grid-lines=horizontal --no-headers --text="\n" \
     --column=Select \
     --column=":IMG" \
     --column=":IMG" \
@@ -131,6 +131,7 @@ yad --plug=$fkey --tabnum=1 --separator=" " \
     --column=":IMG" \
     --column=":IMG" \
     --column=Theme \
+    --column=Path \
     $IMAGES \
     >$res2 &
 
