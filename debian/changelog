@@ -1,4 +1,11 @@
-mxfb-accessories (25.06.01mx25) mx; urgency=medium
+mxfb-accessories (25.07.01mx25) mx; urgency=medium
+
+  * Non-maintainer upload.
+  * update desktop file
+  * adjust icons
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 04 Jul 2025 07:01:41 -0400
+ mxfb-accessories (25.06.01mx25) mx; urgency=medium
 
   * fix to stop double exit options by appfinder
   * fixes to mxfb-look and mxfb-timer
