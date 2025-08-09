@@ -47,7 +47,7 @@ fi
 time=0
 now=$(date +"%s")
 if [ -e "FILE" ]; then
-   time=$(stat --format %Y $FILE)
+   time=$(stat --format %Y "$FILE")
 fi
 
 if [ $(($now-$time)) -lt 5 ]; then
@@ -113,21 +113,21 @@ do
 if [ -f "$file" ]; then
 name1=$(grep -o -m 1 '^Name=.*' "$file")
  ### localized menu entries generator (slows the script down, but produces nearly perfect localized menus):
-    name2=$name1
+    name2="$name1"
 	translated_name1=$(grep -o -m 1 "^Name\[$lang\]=.*" "$file")
-	[ -z "$translated_name1" ] && note="No localized name found, using the original one" || name2=$translated_name1
+	[ -z "$translated_name1" ] && note="No localized name found, using the original one" || name2="$translated_name1"
 	#if the desktop file has the string "Desktop Action" simple use the original untranslated name, to avoid using a translation that's not the name of the app, but the action it does
-	grep -q "Desktop Action" "$file" && name2=$name1
-    name1=$name2
+	grep -q "Desktop Action" "$file" && name2="$name1"
+    name1="$name2"
 ### end of localized menu entries generator
 
-name=$(echo $name1|sed 's/.*\=//')
+name=$(echo "$name1"|sed 's/.*\=//')
 command1="$(grep -o -m 1 '^Exec=.*' "$file")"
 command=$(echo "$command1" |sed -E 's/Exec\=//g')
 name=$(echo "$name" |sed 's/[()]//g')
 terminal=$(grep -o -m 1 'Terminal=.*' "$file")
   if [[ $terminal == *"true"* ]]; then
-   command=$(echo x-terminal-emulator -e $command)
+   command=$(echo x-terminal-emulator -e "$command")
   fi
  categories=$(grep -o -m 1 'Categories=.*' "$file")
 
@@ -146,7 +146,7 @@ terminal=$(grep -o -m 1 'Terminal=.*' "$file")
 	fi
  fi
  if [[ $nodisplay != *"rue"* ]]; then
-    echo "[exec] ("$name ")" "{" $command "}" $categories
+    echo "[exec] ("$name ")" "{" $command "}" "$categories"
  fi
 fi
 done > "$TEMPLIST"
@@ -182,7 +182,7 @@ array2=( . $CATEGORIES)
 #End LOCALIZATION OF Category sub-menus
 
 #Create the header of the file
-echo "[begin] ($ALLAPPS)" >> $FILE
+echo "[begin] ($ALLAPPS)" >> "$FILE"
 #Loop through the array- the last number below has to match the number of entries on $array1
 for i in {1..16};
 do
@@ -190,17 +190,17 @@ do
  MAKESUBMENU=true
 #Nested loop to check if the item on the current line of the "pre-global-menu.txt" file matches the current item on $array1, if it matches, add it to the "$FILE" file
  while read p; 	do
-		if [[ $p =~ ${array1[$i]} ]]
+		if [[ "$p" =~ "${array1[$i]}" ]]
 			then
 				if [ "$MAKESUBMENU" = "true" ]; then
-					echo "[submenu] ($(gettext "${array2[$i]}"))"  >> $FILE
+					echo "[submenu] ($(gettext "${array2[$i]}"))"  >> "$FILE"
 					MAKESUBMENU=false
 				fi
-				echo $p >> $FILE
+				echo "$p" >> "$FILE"
 		fi
 	done <"$PREGLOBAL" ;
 	if [ "$MAKESUBMENU" = "false" ]; then
-			echo '[end]' >> $FILE ;
+			echo '[end]' >> "$FILE" ;
 	fi
 	 MAKESUBMENU=true
 done
@@ -226,37 +226,37 @@ sed -i '/MXFB-Tools/d' "$PREGLOBAL"
 
 #check if the file is not empty, create last submenu and populate it
 if [ -n "$(grep exec "$PREGLOBAL")" ]; then
-  echo "[submenu] ($(gettext "Other"))"  >> $FILE
+  echo "[submenu] ($(gettext "Other"))"  >> "$FILE"
   while read p; 	do
-		echo $p >> $FILE
+		echo "$p" >> "$FILE"
   done <"$PREGLOBAL" ;
-echo '[end]' >> $FILE
+echo '[end]' >> "$FILE"
 fi
 
 ###Fix menu errors, so Libreoffice, etc, work without errors
 delete="%U"
-sed -e s/$delete//g -i $FILE
+sed -e s/$delete//g -i "$FILE"
 delete="%u"
-sed -e s/$delete//g -i $FILE
+sed -e s/$delete//g -i "$FILE"
 delete="%F"
-sed -e s/$delete//g -i $FILE
+sed -e s/$delete//g -i "$FILE"
 delete="%f"
-sed -e s/$delete//g -i $FILE
+sed -e s/$delete//g -i "$FILE"
 
 ##add [end] to the end, to match the very first [begin]
-echo "[end]" >> $FILE
+echo "[end]" >> "$FILE"
 
 #modify menu to remove empty mx-tools entries
-sed -i '0,/\[submenu\] (MX-Live)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
-sed -i "/\[submenu\] (MX-Live)/d" $FILE
-sed -i '0,/\[submenu\] (MX-Maintenance)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
-sed -i "/\[submenu\] (MX-Maintenance)/d" $FILE
-sed -i '0,/\[submenu\] (MX-Setup)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
-sed -i "/\[submenu\] (MX-Setup)/d" $FILE
-sed -i '0,/\[submenu\] (MX-Software)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
-sed -i "/\[submenu\] (MX-Software)/d" $FILE
-sed -i '0,/\[submenu\] (MX-Utilities)/{//!b; :a; n; /\[end\]/d; ba;}' $FILE
-sed -i "/\[submenu\] (MX-Utilities)/d" $FILE
+sed -i '0,/\[submenu\] (MX-Live)/{//!b; :a; n; /\[end\]/d; ba;}' "$FILE"
+sed -i "/\[submenu\] (MX-Live)/d" "$FILE"
+sed -i '0,/\[submenu\] (MX-Maintenance)/{//!b; :a; n; /\[end\]/d; ba;}' "$FILE"
+sed -i "/\[submenu\] (MX-Maintenance)/d" "$FILE"
+sed -i '0,/\[submenu\] (MX-Setup)/{//!b; :a; n; /\[end\]/d; ba;}' "$FILE"
+sed -i "/\[submenu\] (MX-Setup)/d" "$FILE"
+sed -i '0,/\[submenu\] (MX-Software)/{//!b; :a; n; /\[end\]/d; ba;}' "$FILE"
+sed -i "/\[submenu\] (MX-Software)/d" "$FILE"
+sed -i '0,/\[submenu\] (MX-Utilities)/{//!b; :a; n; /\[end\]/d; ba;}' "$FILE"
+sed -i "/\[submenu\] (MX-Utilities)/d" "$FILE"
 
 echo Menu file created and ready to be used
 
