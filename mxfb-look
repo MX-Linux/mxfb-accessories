@@ -1,6 +1,6 @@
 #!/bin/bash
 #MXFB-Look is a tool to save and restore desktop settings in MX-Linux Fluxbox by Melber
-VERSION=2505-1
+VERSION=2508-1
 #License: GPL-3.0+
 
 ##Changelog##
@@ -51,63 +51,39 @@ if [ -f $MXLKPATH/looks/MXFB-default.look ]; then
     rm $MXLKPATH/looks/MXFB-default.look $MXLKPATH/looks/MXFB-default.png
 fi
 
-#make Default look2 file
-if [ ! -f $MXLKPATH/looks/MX23-default.look2 ]; then
-
-printf 'look_fluxstyle=$HOME/.fluxbox/styles/MX-comfort
-look_theme=mx-comfort
-look_icon=Papirus-mxblue-darkpanes
-look_font=Sans-11
-look_cursor=DMZ-Black
-look_tintnum=1
-look_tint1=$HOME/.config/tint2/tint2rc
-look_tint2=None
-look_rofi=$HOME/.config/rofi/themes/MX-comfort.rasi
-look_checkfeh=
-look_wallpaper=/usr/share/backgrounds/THE_Dark_Metal.png
-look_conky1=$HOME/.conky/MX-CowonMildBlue
-look_conky2=$HOME/.conky/MX-CowonMildBlue/MX-Cowon_MildBlue
-look_conkystate=false' > $MXLKPATH/looks/MX23-default.look2
-
-fi
-
 if [ -f $MXLKPATH/looks/MX23-default.look ]; then
     mv $MXLKPATH/looks/MX23-default.look  $HOME/.restore/mxfb-look/MX23-default.look
-fi
-
-#copy image for Default look
-if [ ! -f $MXLKPATH/looks/MX23-default.png ]; then
-    cp /usr/share/pixmaps/MX23-default.png $MXLKPATH/looks/
-fi
-
-#make torre look2 file
-if [ ! -f $MXLKPATH/looks/torre-di-libretti.look2 ]; then
-
-printf 'look_fluxstyle=$HOME/.fluxbox/styles/MX-comfort-dark
-look_theme=mx-comfort-dark
-look_icon=Adwaita
-look_font=Zekton-11
-look_cursor=DMZ-White
-look_tintnum=1
-look_tint1=$HOME/.config/tint2/MX-workspaces.tint2rc
-look_tint2=None
-look_rofi=$HOME/.config/rofi/themes/MX-fancy.rasi
-look_checkfeh=
-look_wallpaper=/usr/share/backgrounds/torre-di-libretti-blu.png
-look_conky1=$HOME/.conky/MX-Comfort
-look_conky2=$HOME/.conky/MX-Comfort/MX-Comfort
-look_conkystate=false' > $MXLKPATH/looks/torre-di-libretti.look2
-
 fi
 
 if [ -f $MXLKPATH/looks/torre-di-libretti.look ]; then
     mv $MXLKPATH/looks/torre-di-libretti.look  $HOME/.restore/mxfb-look/torre-di-libretti.look
 fi
 
-#copy image for torre look
-if [ ! -f $MXLKPATH/looks/torre-di-libretti.png ]; then
-    cp /usr/share/pixmaps/torre-di-libretti.png $MXLKPATH/looks/
+#make MX25 Default look2 file
+if [ ! -f $MXLKPATH/looks/MX25-default.look2 ]; then
+
+printf 'look_fluxstyle=$HOME/.fluxbox/styles/MX-ease-Dark
+look_theme=mx-matcha
+look_icon=Papirus-mxblue
+look_font=Noto Sans-11
+look_cursor=DMZ-Black
+look_tintnum=1
+look_tint1=$HOME/.config/tint2/tint2rc
+look_tint2=None
+look_rofi=$HOME/.config/rofi/themes/MX-ease-dark.rasi
+look_checkfeh=
+look_wallpaper=/usr/share/backgrounds/maturity.png
+look_conky1=$HOME/.conky/MX-CowonMildBlue
+look_conky2=$HOME/.conky/MX-CowonMildBlue/MX-Cowon_MildBlue
+look_conkystate=false' > $MXLKPATH/looks/MX25-default.look2
+
 fi
+
+#copy image for MX25 Default look
+if [ ! -f $MXLKPATH/looks/MX25-default.png ]; then
+    cp /usr/share/pixmaps/MX25-default.png $MXLKPATH/looks/
+fi
+
 
 #check firsttext
 if [ ! -f $MXLKPATH/looks/firsttext.txt ]; then
