@@ -1,3 +1,12 @@
+mxfb-accessories (25.08.02mx25) mx; urgency=medium
+
+  [melber]
+  * update mx25-default look
+  * add mxfb-backgrounds icon
+  * sytle ditor template corrections
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 25 Aug 2025 21:42:44 -0400
+
 mxfb-accessories (25.08.01mx25) mx; urgency=medium
 
   * add string quoting to text expanded values
