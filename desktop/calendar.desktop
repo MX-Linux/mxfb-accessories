@@ -1,0 +1,42 @@
+[Desktop Entry]
+Categories=System;
+Encoding=UTF-8
+Exec=gsimplecal
+Icon=calendar
+NoDisplay=false
+Terminal=false
+Type=Application
+
+Name=Calendar
+Name[ar]=تقويم
+Name[ca]=Calendari
+Name[de]=Kalender
+Name[el]=ημερολόγιο
+Name[es]=Calendario
+Name[fr]=Calendrier
+Name[it]=Calendario
+Name[ja]=カレンダー
+Name[nl]=Kalender
+Name[pl]=Kalendarz
+Name[pt]=Calendário
+Name[ru]=Календарь
+Name[sv]=Kalender
+Name[tr]=Takvim
+Name[zh]=历
+
+Comment=Simple GTK calendar
+Comment[ar]=تقويم GTK بسيط
+Comment[ca]=Senzill calendari GTK
+Comment[de]=Einfacher GTK-Kalender
+Comment[el]=Απλό ημερολόγιο GTK
+Comment[es]=Calendario GTK sencillo
+Comment[fr]=Calendrier GTK simple
+Comment[it]=Calendario GTK semplice
+Comment[ja]=シンプルなGTKカレンダ
+Comment[nl]=Eenvoudige GTK kalender
+Comment[pl]=Prosty kalendarz GTK
+Comment[pt]=Calendário GTK simples
+Comment[ru]=Простой календарь GTK
+Comment[sv]=Enkel GTK-kalender
+Comment[tr]=Basit GTK takvim
+Comment[zh]=简单的GTK日历
