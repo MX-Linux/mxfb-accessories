@@ -8,7 +8,7 @@ Homepage: https:/mxlinux.org
 
 Package: mxfb-accessories
 Architecture: all
-Depends: nitrogen, libnotify-bin, mxfb-goodies, fonts-font-awesome, scrot
+Depends: nitrogen, libnotify-bin, mxfb-goodies, fonts-font-awesome, scrot, imagemagick
 Breaks: mxfb-goodies (<< 22.08.26)
 Conflicts: mxfb-goodies (<< 22.08.26) 
 Description: Various scripts used in MX-Fluxbox
