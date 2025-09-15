@@ -19,7 +19,7 @@
      x="0"
      y="0" />
   <ellipse
-     style="fill:deco_active_pressed;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+     style="fill:highlight_active;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
      id="path272"
      cx="14"
      cy="14"

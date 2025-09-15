@@ -20,7 +20,7 @@
      y="0" />
   <path
      id="rect5123"
-     style="fill:deco_active_pressed;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="fill:highlight_active;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      d="M 13 10 L 13 13 L 10 13 L 10 15 L 13 15 L 13 18 L 15 18 L 15 15 L 18 15 L 18 13 L 15 13 L 15 10 L 13 10 z " />
   <rect
      style="fill:topline_active;fill-opacity:1;fill-rule:evenodd;stroke-width:0;stroke-linecap:square;stroke-miterlimit:3;paint-order:markers fill stroke"
