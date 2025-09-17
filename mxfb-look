@@ -62,7 +62,7 @@ fi
 #make MX25 Default look2 file
 if [ ! -f $MXLKPATH/looks/MX25-default.look2 ]; then
 
-printf 'look_fluxstyle=$HOME/.fluxbox/styles/MX-ease-Dark
+printf 'look_fluxstyle=$HOME/.fluxbox/styles/MX-Matcha
 look_theme=mx-matcha
 look_icon=Papirus-mxblue
 look_font=Noto Sans-11
