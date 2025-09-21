@@ -255,7 +255,7 @@ look_conkystate="$(grep "Hidden" "$HOME/.config/autostart/conky.desktop" | sed -
 MAINSAVE=(yad --title="$TITLE" --class="$CLASS" --icon="$ICONPATH" \
 --borders=20 --center --width=600 --height=200 --fixed \
 --form --columns=1 --align=left --separator="" \
---button="gtk-quit":1 --button="$(gettext 'Save Look')":0 \
+--button="yad-quit":1 --button="$(gettext 'Save Look')":0 \
 --field="$(eval_gettext 'Save Look as')" $"New-Look-Name"\
 )
 
