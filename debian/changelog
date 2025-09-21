@@ -1,3 +1,10 @@
+mxfb-accessories (25.09.03mx25) mx; urgency=medium
+
+  * update mxfb-look (melber)
+  * update mxfb-style-editor (melber)
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  xxx, xx Sep 2025 20:24:09 -0400
+
 mxfb-accessories (25.09.02mx25) mx; urgency=medium
 
   * adjust mxfb-look (melber) to mx25 defaults

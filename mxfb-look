@@ -1,6 +1,6 @@
 #!/bin/bash
 #MXFB-Look is a tool to save and restore desktop settings in MX-Linux Fluxbox by Melber
-VERSION=2508-1
+VERSION=2509-1
 #License: GPL-3.0+
 
 ##Changelog##
@@ -16,7 +16,7 @@ source gettext.sh
 export TITLE='MXFB-Look'
 export CLASS="mxfb-look"
 export MXLKPATH="$HOME/.config/MX-Linux/mxfb-look"
-export ICONPATH=mxfb-look
+export ICONPATH="/usr/share/pixmaps/mxfb-look.svg"
 
 # buttons
 export BTN_CLOSE=$(gettext "Close") ; BTN_CLOSE+='!window-close'
@@ -59,23 +59,33 @@ if [ -f $MXLKPATH/looks/torre-di-libretti.look ]; then
     mv $MXLKPATH/looks/torre-di-libretti.look  $HOME/.restore/mxfb-look/torre-di-libretti.look
 fi
 
-#make MX25 Default look2 file
-if [ ! -f $MXLKPATH/looks/MX25-default.look2 ]; then
+#make checkfile
+if [ ! -f $MXLKPATH/checkfile.conf ]; then
+    echo 'look_version=xxx' > $MXLKPATH/checkfile.conf
+fi
 
-printf 'look_fluxstyle=$HOME/.fluxbox/styles/MX-Matcha
+
+#make MX25 Default look2 file
+source $MXLKPATH/checkfile.conf
+
+if [ "$look_version" != "$VERSION" ]; then
+
+printf 'look_fluxstyle=/usr/share/mxflux/styles/MX-Matcha
 look_theme=mx-matcha
 look_icon=Papirus-mxblue
-look_font=Noto Sans-11
+look_font="Noto Sans-11"
 look_cursor=DMZ-Black
 look_tintnum=1
 look_tint1=$HOME/.config/tint2/tint2rc
 look_tint2=None
 look_rofi=$HOME/.config/rofi/themes/MX-ease-dark.rasi
 look_checkfeh=
-look_wallpaper=/usr/share/backgrounds/maturity.png
-look_conky1=$HOME/.conky/MX-CowonMildBlue
-look_conky2=$HOME/.conky/MX-CowonMildBlue/MX-Cowon_MildBlue
+look_wallpaper=/usr/share/backgrounds/Maturity.png
+look_conky1=/usr/share/mx-conky-data/themes/MX-CowonMildBlue
+look_conky2=/usr/share/mx-conky-data/themes/MX-CowonMildBlue/MX-Cowon_MildBlue
 look_conkystate=false' > $MXLKPATH/looks/MX25-default.look2
+
+echo "look_version=$VERSION" > $MXLKPATH/checkfile.conf
 
 fi
 
@@ -222,7 +232,7 @@ if [ -z "$look_checkfeh" ]; then
     look_wallpaper="$(grep "file=" $HOME/.config/nitrogen/bg-saved.cfg | sed -n 2p | sed -e "s/file\=//g")"
 
     if [ -z "$look_wallpaper" ]; then
-        look_wallpaper="$(grep "file=" $HOME/.config/nitrogen/bg-saved.cfg)"
+        look_wallpaper="$(grep "file=" $HOME/.config/nitrogen/bg-saved.cfg | sed -e "s/file\=//g")"
     fi
 
 else
@@ -242,7 +252,7 @@ look_conkystate="$(grep "Hidden" "$HOME/.config/autostart/conky.desktop" | sed -
 
 #MAINSAVE
 
-MAINSAVE=(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+MAINSAVE=(yad --title="$TITLE" --class="$CLASS" --icon="$ICONPATH" \
 --borders=20 --center --width=600 --height=200 --fixed \
 --form --columns=1 --align=left --separator="" \
 --button="gtk-quit":1 --button="$(gettext 'Save Look')":0 \
@@ -379,6 +389,7 @@ restore_look() {
 source gettext.sh
 
 #read Settings for new look
+if [ -f /tmp/lookselection.txt ]; then
 
 touch /tmp/look_tempname.txt
 
@@ -642,7 +653,7 @@ if [ "$apply_restore" = "yes" ]; then
 
 
         if [ ! -f $HOME/.icons/default/index.theme ] && [ "$look_cursor" != "default" ]; then
-            mkdir $HOME/.icons/default
+            mkdir -p $HOME/.icons/default
             printf "[Icon Theme]
 Name=Default
 Comment=Default Cursor Theme
@@ -755,6 +766,8 @@ fi
 unset missinglist apply_restore missing_fbstyle missing_theme missing_icon missing_font missing_cursor missing_tint1 missing_tint2 missing_rofi missing_conky
 
 rm -f /tmp/look_missinglist.txt
+
+fi
 
 }
 
@@ -879,9 +892,9 @@ look_title=$(basename $1 | sed -e 's/\.look2//')
 look_tint0=$(basename "$look_tint0")
 look_font=$(echo $look_font | sed -e 's/ /-/')
 look_cursor=$(echo $look_cursor | sed -e 's/ /-/')
-look_rofi0=$(basename "$look_rofi")
+look_rofi0=$(basename "$look_rofi" | sed -e 's/\.rasi//' )
 look_wallpaper=$(basename "$look_wallpaper")
-look_conkyname=$(echo $look_conky1 | sed -e 's/\/home.*\.conky\///')
+look_conkyname=$(echo $look_conky1 | sed -e 's/\/usr\/share\/mx-conky-data\/themes\///')
 
 if [ "$look_conkystate" = "false" ]; then
     look_conkystate='Active'
