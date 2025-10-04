@@ -118,6 +118,10 @@ LINE_2E_2="$(gettext 'Alt Q')"
 LINE_2F_1="$(gettext 'Delayed Screen Capture')"
 #Translator Note - translate key names for your language if necessary
 LINE_2F_2="$(gettext 'Ctrl Alt Q')"
+#Translator Note - turn compositor on/off
+LINE_2G_1="$(gettext 'Compositor off/on')"
+#Translator Note - that is a zero; translate key names for your language if necessary
+LINE_2G_2="$(gettext 'Ctrl Alt 0')"
 
 yad --plug=$fkey --tabnum=2 \
 --form --columns=3 --scroll \
@@ -127,6 +131,8 @@ yad --plug=$fkey --tabnum=2 \
 --field="$LINE_2D_1":LBL \
 --field="$LINE_2E_1":LBL \
 --field="$LINE_2F_1":LBL \
+--field="$LINE_2G_1":LBL \
+--field=":":LBL \
 --field=":":LBL \
 --field=":":LBL \
 --field=":":LBL \
@@ -139,6 +145,7 @@ yad --plug=$fkey --tabnum=2 \
 --field="$LINE_2D_2":LBL \
 --field="$LINE_2E_2":LBL \
 --field="$LINE_2F_2":LBL \
+--field="$LINE_2G_2":LBL \
 >>$tempfile1 &
     
 ###Tab 3
