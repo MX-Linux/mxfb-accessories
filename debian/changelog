@@ -1,3 +1,11 @@
+mxfb-accessories (25.10.01mx25) mx; urgency=medium
+
+  * Non-maintainer upload.
+  * added conpositor shortcut
+  * minor housekeeping
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 04 Oct 2025 12:31:27 -0400
+
 mxfb-accessories (25.09.04mx25) mx; urgency=medium
 
   * update mxfb-look (melber)
