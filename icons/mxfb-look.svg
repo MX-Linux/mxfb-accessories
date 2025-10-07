@@ -7,41 +7,11 @@
    viewBox="0 0 64 64.000003"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="mxfb-look2.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#535353"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="px"
-     showgrid="true"
-     inkscape:zoom="7.3336393"
-     inkscape:cx="32.044118"
-     inkscape:cy="35.521245"
-     inkscape:window-width="1366"
-     inkscape:window-height="689"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid211" />
-  </sodipodi:namedview>
   <defs
      id="defs2" />
   <g
-     inkscape:label="Ebene 1"
-     inkscape:groupmode="layer"
      id="layer1">
     <rect
        style="opacity:0.2;stroke-width:0;stroke-dasharray:none"
@@ -51,35 +21,32 @@
        y="5"
        ry="4"
        id="rect2"
-       rx="4"
-       inkscape:label="bg-shadow" />
+       rx="4" />
     <rect
-       style="fill:#ececee;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+       style="fill:#ff7121;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
        width="56"
        height="56"
        x="4"
        y="4"
        ry="4"
        id="rect4"
-       rx="4"
-       inkscape:label="bg" />
+       rx="4" />
     <ellipse
-       style="display:inline;fill:#cacdd0;fill-opacity:1;stroke:none;stroke-width:1.89764;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#ff7121;fill-opacity:1;stroke:none;stroke-width:1.89764;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse3406"
        cx="32"
        cy="32"
        rx="16"
        ry="22" />
     <rect
-       style="fill:#ff7121;fill-opacity:1;stroke:#000000;stroke-width:1.95862;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.95862;stroke-dasharray:none;stroke-opacity:1"
        id="rect983"
        width="34.041382"
        height="22.041378"
        x="22.979309"
        y="17.979309"
        rx="2.6185677"
-       ry="2.4490416"
-       inkscape:label="red" />
+       ry="2.4490416" />
     <rect
        style="fill:#4884f2;fill-opacity:1;stroke:#000000;stroke-width:1.95861;stroke-dasharray:none;stroke-opacity:1"
        id="rect981"
@@ -88,45 +55,39 @@
        x="6.9793086"
        y="24.979305"
        rx="2.6185675"
-       ry="2.4490428"
-       inkscape:label="blue" />
+       ry="2.4490428" />
     <ellipse
        style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.00463;stroke-dasharray:none;stroke-opacity:1"
        id="path265"
        cx="32"
        cy="32"
-       inkscape:label="ellipse"
        rx="16.997686"
        ry="22.997686" />
     <rect
-       style="display:inline;fill:#ff7121;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
        id="rect2308"
        width="11"
        height="10"
        x="43.5"
-       y="29"
-       inkscape:label="red-deckung" />
+       y="29" />
     <rect
        style="fill:#4884f2;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
        id="rect2308-3"
        width="11"
        height="10"
        x="9.5"
-       y="26"
-       inkscape:label="blue-deckung" />
+       y="26" />
     <circle
        style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
        id="path1038"
        cx="49"
        cy="28"
-       r="4"
-       inkscape:label="red-dot" />
+       r="4" />
     <circle
        style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
        id="path1038-8"
        cx="15"
        cy="36"
-       r="4"
-       inkscape:label="blue-dot" />
+       r="4" />
   </g>
 </svg>
