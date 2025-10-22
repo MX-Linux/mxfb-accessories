@@ -81,8 +81,8 @@ look_tint2=None
 look_rofi=$HOME/.config/rofi/themes/MX-ease-dark.rasi
 look_checkfeh=
 look_wallpaper=/usr/share/backgrounds/Maturity.png
-look_conky1=/usr/share/mx-conky-data/themes/MX-CowonMildBlue
-look_conky2=/usr/share/mx-conky-data/themes/MX-CowonMildBlue/MX-Cowon_MildBlue
+look_conky1=/usr/share/mx-conky-data/themes/MX-Infinity
+look_conky2=/usr/share/mx-conky-data/themes/MX-Infinity/MX-Infinity-conkyrc
 look_conkystate=false' > $MXLKPATH/looks/MX25-default.look2
 
 echo "look_version=$VERSION" > $MXLKPATH/checkfile.conf
