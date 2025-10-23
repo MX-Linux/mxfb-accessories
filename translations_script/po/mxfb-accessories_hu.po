@@ -9,16 +9,17 @@
 # fehlix, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
 # Tamás Szekeres <szekeres.tamas@icloud.com>, 2024
-# Kempelen <antixhu@netengine.hu>, 2024
+# b3a601cea954ec302ff861c4e4267715_658d0ac <5d11351aabbb363b7934638cd728c892_933757>, 2025
+# Kempelen <antixhu@netengine.hu>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 23:25+0100\n"
+"POT-Creation-Date: 2025-07-17 18:46-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Kempelen <antixhu@netengine.hu>, 2024\n"
+"Last-Translator: Kempelen <antixhu@netengine.hu>, 2025\n"
 "Language-Team: Hungarian (https://app.transifex.com/anticapitalista/teams/10162/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +31,7 @@ msgstr ""
 #. The help message will not be displayed again, if user clicks on "Dismiss"
 #. button.
 #. The capture of a screenshot will start after closing this window.
-#: ../mxfb-quickshot:98
+#: ../mxfb-quickshot:109
 #, sh-format
 msgid ""
 "\n"
@@ -45,13 +46,13 @@ msgstr ""
 "\n"
 "Tippek\n"
 "\n"
-"  --Kattintson az \"Elrejtés\" gombra, hogy a jövőben elrejtse a Súgó!\n"
+"  --Kattintson az \"Elrejtés\" gombra, hogy a Súgó a továbbiakban ne jelenjen meg!\n"
 "\n"
 "  --Súgót megjelenítheti a folytatáshoz való hozzájárulás után rákattintva\n"
 "\n"
 "  --Bővebben: keressen rá a \"Quickshot\" kifejezésre az MX Wikiben"
 
-#: ../mxfb-look:319 ../mxfb-look:346
+#: ../mxfb-look:300 ../mxfb-look:333
 msgid " "
 msgstr " "
 
@@ -59,7 +60,7 @@ msgstr " "
 msgid "   or"
 msgstr "   vagy"
 
-#: ../mxfb-keybindings:204 ../mxfb-keybindings:211
+#: ../mxfb-keybindings:211 ../mxfb-keybindings:218
 msgid "   or (on keypad)"
 msgstr "   vagy (a billentyűzeten)"
 
@@ -79,37 +80,13 @@ msgstr "$TITLE2"
 msgid "12h/24h"
 msgstr "12ó/24ó"
 
-#: ../mxfb-look:272 ../mxfb-look:595
-msgid "1st Tint2 Panel"
-msgstr "Első Tint2 panel"
-
-#: ../mxfb-look:273 ../mxfb-look:596
-msgid "2nd Tint2 Panel"
-msgstr "Második Tint2 panel"
-
-#: ../mxfb-look:604
-msgid "<b>   "
-msgstr "<b>"
-
-#: ../mxfb-look:345
+#: ../mxfb-look:332
 msgid "<b>Name for New Look</b>"
 msgstr "<b>Az új kinézet neve</b>"
 
-#: ../mxfb-look:318
+#: ../mxfb-look:299
 msgid "<b>Name for new style</b>"
 msgstr "<b>Az új stílus neve</b>"
-
-#: ../mxfb-look:762
-msgid ""
-"<b>You can save the current look or restore a saved look</b>\\n\\nA look is "
-"comprised of the following elements\\n- Gtk-Theme\\n- Gtk-Icon\\n- Gtk-"
-"Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- "
-"Wallpaper\\n- One Conky\\n\\n"
-msgstr ""
-"<b>Elmentheti az aktuális megjelenést vagy visszaállíthat egy elmentett "
-"megjelenést</b>\\n\\nA megjelenés a következő elemekből áll\\n- GTK téma\\n-"
-" GTK ikon\\n- GTK betűkészlet\\n- Fluxbox stílus\\n- legfeljebb két Tint2 "
-"panel\\n- Rofi téma\\n- Háttérkép\\n- Egy Conky\\n\\n"
 
 #: ../mxfb-tiles:21
 msgid ""
@@ -149,7 +126,7 @@ msgstr ""
 "Control + 9: harmad\n"
 "Control + 0: maximalizálás"
 
-#: ../mxfb-look:337
+#: ../mxfb-look:318
 #, sh-format
 msgid ""
 "A Look with this name already exists.\\n\\nDo you want to overwrite $NEWNAME"
@@ -167,7 +144,15 @@ msgstr ""
 "Minden jelenleg beállított munkaterülethez megjelenik egy kiválasztási "
 "ablak."
 
-#: ../mxfb-menu-generator:55
+#: ../mxfb-look:28
+msgid "About MXFB-Look"
+msgstr "MXFB-kinézet névjegye"
+
+#: ../mxfb-style-editor:160
+msgid "Active Window"
+msgstr "Aktív ablak"
+
+#: ../mxfb-menu-generator:69
 msgid "All Applications"
 msgstr "Összes alkalmazás"
 
@@ -177,39 +162,44 @@ msgstr "Összes alkalmazás"
 msgid "All Apps"
 msgstr "Minden alkalmazás"
 
+#. set new style as current
+#: ../mxfb-style-editor:515
+msgid "All done!"
+msgstr "Minden kész!"
+
 #. all done
-#: ../mxfb-look:398
+#: ../mxfb-look:388
 #, sh-format
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "Kész!\\n\\nA kinézet mentésre került mint <b>$NEWNAME</b>"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:213
+#: ../mxfb-keybindings:220
 msgid "Alt 1,3,7,9"
 msgstr "Alt 1,3,7,9"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:206
+#: ../mxfb-keybindings:213
 msgid "Alt 2,4,6,8"
 msgstr "Alt 2,4,6,8"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:161
+#: ../mxfb-keybindings:168
 msgid "Alt D"
 msgstr "Alt D"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:146
+#: ../mxfb-keybindings:153
 msgid "Alt F10"
 msgstr "Alt F10"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:150
+#: ../mxfb-keybindings:157
 msgid "Alt F4"
 msgstr "Alt F4"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:142
+#: ../mxfb-keybindings:149
 msgid "Alt F9"
 msgstr "Alt F9"
 
@@ -219,7 +209,7 @@ msgid "Alt Q"
 msgstr "Alt Q"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:157
+#: ../mxfb-keybindings:164
 msgid "Alt Right click"
 msgstr "Alt jobb kattintás"
 
@@ -245,18 +235,24 @@ msgid "CONFIGURE TOP"
 msgstr "CÍMSOR KONFIGURÁLÁSA"
 
 #. TRANSLATORS - button label
-#: ../mxfb-separate-backgrounds:39
+#: ../mxfb-separate-backgrounds:39 ../mxfb-look:23 ../mxfb-look:499
+#: ../mxfb-style-editor:168
 msgid "Cancel"
 msgstr "Kilépés"
 
 #. The capture of a screenshot was cancelled.
-#: ../mxfb-quickshot:54
+#: ../mxfb-quickshot:65
 msgid "Cancelled!"
 msgstr "Elvetve!"
 
-#: ../exit-options-manager:149
+#: ../exit-options-manager:150
 msgid "Change Window Settings"
 msgstr "Ablakbeállítások megváltoztatása"
+
+#. button label
+#: ../mxfb-look:796
+msgid "Changelog"
+msgstr "Változások listája"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
@@ -269,10 +265,14 @@ msgstr "Kattintson \\"
 #. buttons
 #. ## buttons
 #. Translator Note - window command
-#: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../exit-options-manager:29
-#: ../mxfb-keybindings:17 ../mxfb-keybindings:148
+#: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../mxfb-look:22
+#: ../exit-options-manager:29 ../mxfb-keybindings:17 ../mxfb-keybindings:155
 msgid "Close"
 msgstr "Bezárás"
+
+#: ../mxfb-style-editor:127
+msgid "Close Symbol"
+msgstr "Bezárási szimbólum"
 
 #: ../mxfb-borders:21 ../mxfb-top:23
 msgid "Color Focused"
@@ -286,31 +286,35 @@ msgstr "Szín fókusz ki"
 msgid "Config"
 msgstr "Beállítások"
 
-#: ../mxfb-look:276 ../mxfb-look:599
-msgid "Conky"
-msgstr "Conky"
+#: ../mxfb-look:498
+msgid "Continue anyway?"
+msgstr "Mindenképp folytatja?"
 
-#: ../mxfb-look:277 ../mxfb-look:600
-msgid "Conky State"
-msgstr "Conky állapota"
+#: ../mxfb-style-editor:169
+msgid "Create Style"
+msgstr "Stílus létrehozása"
+
+#: ../mxfb-style-editor:165
+msgid "Create matching tint2 panel?"
+msgstr "Létrehoz egyező tint2 panelt is?"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:221
+#: ../mxfb-keybindings:228
 msgid "Ctrl 0"
 msgstr "Ctrl 0"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:203
+#: ../mxfb-keybindings:210
 msgid "Ctrl 1/2/3/4"
 msgstr "Ctrl 1/2/3/4"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:210
+#: ../mxfb-keybindings:217
 msgid "Ctrl 5/6/7/8"
 msgstr "Ctrl 5/6/7/8"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:217
+#: ../mxfb-keybindings:224
 msgid "Ctrl 9"
 msgstr "Ctrl 9"
 
@@ -323,6 +327,11 @@ msgstr "Ctrl Alt"
 #: ../mxfb-keybindings:51
 msgid "Ctrl Alt M"
 msgstr "Ctrl Alt M"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:120
+msgid "Ctrl Alt Q"
+msgstr ""
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:112
@@ -349,14 +358,9 @@ msgstr "Ctrl F3"
 msgid "Ctrl F5"
 msgstr "Ctrl F5"
 
-#. MAIN
-#: ../mxfb-look:267
-msgid "Current Settings"
-msgstr "Jelenlegi beállítások"
-
 #. Press the Print-Screen-key to capture a wallpaper.
 #. DESKTOP: press Print, then click the background
-#: ../mxfb-quickshot:78
+#: ../mxfb-quickshot:89
 msgid "DESKTOP: click the background"
 msgstr "ASZTAL: kattintson a háttéren"
 
@@ -364,13 +368,18 @@ msgstr "ASZTAL: kattintson a háttéren"
 msgid "Delay (mins)"
 msgstr "Késleltetés (perc)"
 
+#. Translator Note - delayed screenshot
+#: ../mxfb-keybindings:118
+msgid "Delayed Screen Capture"
+msgstr ""
+
 #. TRANSLATORS - button label
 #: ../mxfb-separate-backgrounds:41
 msgid "Disable"
 msgstr "Kikapcsolás"
 
 #. Do you want to display the Help message again?
-#: ../mxfb-quickshot:60
+#: ../mxfb-quickshot:71
 msgid "Dismiss"
 msgstr "Elrejtés"
 
@@ -378,13 +387,17 @@ msgstr "Elrejtés"
 msgid "Do you want to empty the trash?"
 msgstr "Kiüríti a kukát?"
 
-#: ../mxfb-quickshot:61
+#: ../mxfb-quickshot:72
 msgid "Don't display the Help message again!"
 msgstr "Ne jelenjen meg újra a súgó!"
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
 msgstr "Szerkesztés"
+
+#: ../mxfb-style-editor:159
+msgid "Edit colors and create a new fluxbox style based on"
+msgstr "Új Fluxbox stílus létrehozása a színek szerkesztésével ebből:"
 
 #. Translator Note - button to open the fluxbox 'keys' file in text editor
 #: ../mxfb-keybindings:19
@@ -396,7 +409,7 @@ msgid "Enter local time"
 msgstr "Adja meg a helyi időt"
 
 #. define some variables
-#: ../exit-options-manager:12 ../exit-options-manager:232
+#: ../exit-options-manager:12 ../exit-options-manager:233
 msgid "Exit-options-manager"
 msgstr "Kilépési lehetőségek kezelése"
 
@@ -410,9 +423,9 @@ msgstr ""
 msgid "File Manager"
 msgstr "Fájlkezelő"
 
-#: ../mxfb-look:271 ../mxfb-look:594
-msgid "Fluxbox Style"
-msgstr "Fluxbox stílus"
+#: ../mxfb-style-editor:162
+msgid "Fluxbox Menu"
+msgstr "Fluxbox menü"
 
 #. gtk-xft-rgba=none!rgb!bgr!vrgb!vbgr
 #. GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini |
@@ -423,26 +436,14 @@ msgid "Font"
 msgstr "Betűtípus"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:219
+#: ../mxfb-keybindings:226
 msgid "Fullscreen"
 msgstr "Teljes képernyő"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:250
+#: ../mxfb-keybindings:257
 msgid "GENERAL"
 msgstr "ÁLTALÁNOS"
-
-#: ../mxfb-look:270 ../mxfb-look:593
-msgid "GTK Font"
-msgstr "GTK betűkészlet"
-
-#: ../mxfb-look:269 ../mxfb-look:592
-msgid "GTK Icons"
-msgstr "GTK ikonok"
-
-#: ../mxfb-look:268 ../mxfb-look:591
-msgid "GTK Theme"
-msgstr "GTK téma"
 
 #: ../mxfb-font:184
 msgid "Gtk Font"
@@ -452,18 +453,23 @@ msgstr "GTK betűkészlet"
 msgid "HELP"
 msgstr "SÚGÓ"
 
-#: ../mxfb-quickshot:70
+#: ../mxfb-quickshot:81
 msgid "HELP: how to take a screenshot"
 msgstr "SÚGÓ: képernyőkép készítésről"
 
-#: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../exit-options-manager:30
+#: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../mxfb-look:27
+#: ../exit-options-manager:30 ../mxfb-style-editor:170
 msgid "Help"
 msgstr "Súgó"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:159
+#: ../mxfb-keybindings:166
 msgid "Hide All"
 msgstr "Összes elrejtése"
+
+#: ../mxfb-style-editor:124
+msgid "Highlight"
+msgstr "Kiemelés"
 
 #: ../mxfb-font:186
 msgid "Hinting"
@@ -473,7 +479,7 @@ msgstr "Hinting"
 msgid "Hinting Style"
 msgstr "Hinting stílusa"
 
-#: ../exit-options-manager:141
+#: ../exit-options-manager:142
 msgid "Icon Size"
 msgstr "Ikonméret"
 
@@ -485,7 +491,11 @@ msgstr "Kép mappa"
 msgid "Image mode"
 msgstr "Kép mód"
 
-#: ../exit-options-manager:139
+#: ../mxfb-style-editor:161
+msgid "Inactive Window"
+msgstr "Inaktív ablak"
+
+#: ../exit-options-manager:140
 msgid "Layout"
 msgstr "Billentyűzetkiosztás"
 
@@ -494,11 +504,16 @@ msgstr "Billentyűzetkiosztás"
 msgid "Left Super"
 msgstr "Bal Super"
 
-#: ../mxfb-keybindings:153
+#: ../mxfb-keybindings:160
 msgid "Left click"
 msgstr "Bal kattintás"
 
-#: ../mxfb-look:317
+#. button label
+#: ../mxfb-look:794
+msgid "License"
+msgstr "Licenc"
+
+#: ../mxfb-look:297
 #, sh-format
 msgid "Look name $NEWNAME is protected. Choose another name."
 msgstr "$NEWNAME kinézet név védett. Válasszon másik nevet."
@@ -514,14 +529,31 @@ msgstr "MX-Fluxbox gyorsbillentyűk"
 msgid "MX-Tools"
 msgstr "MX eszközök"
 
+#: ../mxfb-style-editor:101
+msgid "MX-comfort will be used as the starting style."
+msgstr "Az MX-comfort kerül felhasználásra indulási stílusként."
+
+#. about window app name
+#: ../mxfb-look:799
+msgid "MXFB Look"
+msgstr "MXFB kinézet"
+
+#. define some variables
+#: ../mxfb-style-editor:14
+msgid "MXFB Style Editor"
+msgstr "MXFB stílusszerkesztő"
+
+#: ../mxfb-style-editor:47
+msgid "MXFB Style Editor Help"
+msgstr "MXFB stílusszerkesztő súgó"
+
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
 msgstr "MXFB időzítő"
 
-#. define some variables
-#: ../mxfb-look:17 ../mxfb-look:147 ../mxfb-look:413
-msgid "MXFB-Look"
-msgstr "MXFB kinézet"
+#: ../mxfb-style-editor:164
+msgid "Make new style current?"
+msgstr "Jelenlegivé teszi az új stílust?"
 
 #. Translator Note - opens mx-fluxbox manual
 #: ../mxfb-keybindings:37
@@ -533,14 +565,30 @@ msgstr "Kézikönyv -- MX Fluxbox"
 msgid "Manual - MX Linux"
 msgstr "Kézikönyv -- MX Linux"
 
-#: ../exit-options-manager:142
+#: ../exit-options-manager:143
 msgid "Margin"
 msgstr "Margó"
 
 #. Translator Note - window command
-#: ../mxfb-keybindings:144
+#: ../mxfb-keybindings:151
 msgid "Maximize"
 msgstr "Maximalizálás"
+
+#: ../mxfb-style-editor:132
+msgid "Menu Background"
+msgstr "Menü háttér"
+
+#: ../mxfb-style-editor:134
+msgid "Menu Highlight"
+msgstr "Kiemelt menü"
+
+#: ../mxfb-style-editor:135
+msgid "Menu Highlight Text"
+msgstr "Kiemelt menüszöveg"
+
+#: ../mxfb-style-editor:133
+msgid "Menu Text"
+msgstr "Menü szöveg"
 
 #: ../mxfb-font:181
 msgid "Menu Text Default"
@@ -550,19 +598,23 @@ msgstr "Menü szöveg alapértelmezett"
 msgid "Menu Title Default"
 msgstr "Menü címsor alapértelmezett"
 
+#: ../mxfb-style-editor:131
+msgid "Menu Title Text"
+msgstr "Menü címsor szöveg"
+
 #. Translator Note - mouse action
-#: ../mxfb-keybindings:165
+#: ../mxfb-keybindings:172
 msgid "Middle click"
 msgstr "Középső kattintás"
 
 #. ##Tab 3
 #. Translator Note - window command
-#: ../mxfb-keybindings:140
+#: ../mxfb-keybindings:147
 msgid "Minimize"
 msgstr "Minimalizálás"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:152
+#: ../mxfb-keybindings:159
 msgid "Move (drag titlebar)"
 msgstr "Mozgatás (címsor húzása)"
 
@@ -570,7 +622,11 @@ msgstr "Mozgatás (címsor húzása)"
 msgid "Multiple options for number keys and keyboard"
 msgstr "Többféle lehetőség a szám billentyűkhöz és a billentyűzethez"
 
-#: ../mxfb-look:292
+#: ../mxfb-style-editor:163 ../mxfb-style-editor:330
+msgid "Name for new style"
+msgstr "Az új stílus neve"
+
+#: ../mxfb-look:273
 msgid "New-Look-Name"
 msgstr "Új-kinézet-neve"
 
@@ -583,21 +639,22 @@ msgstr "Következő munkaterület"
 msgid "No rotation: Delay = 0"
 msgstr "Nincs forgatás: Késleltetés = 0"
 
-#: ../mxfb-look:255
-msgid "None"
-msgstr "Nincs"
+#: ../mxfb-style-editor:100
+msgid "No starting style selected!"
+msgstr "Nincs kiválasztva kiindulási stílus!"
 
 #. TRANSLATORS Main window subtitle
 #: ../mxfb-separate-backgrounds:22
 msgid "Notes"
 msgstr "Megjegyzések"
 
-#: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
+#: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../mxfb-look:25
+#: ../exit-options-manager:31
 msgid "OK"
 msgstr "OK"
 
 #. Do you want to allow a new config file to be installed?
-#: ../mxfb-quickshot:58 ../mxfb-tiles:14
+#: ../mxfb-quickshot:69 ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr "Folytatja?"
 
@@ -607,21 +664,21 @@ msgstr "OPCIONÁLIS KERET STÍLUS BEÁLLÍTÁS"
 
 #. ##Tab 4
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:201
+#: ../mxfb-keybindings:208
 msgid "One-Half"
 msgstr "A fele"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:208
+#: ../mxfb-keybindings:215
 msgid "One-Quarter"
 msgstr "A negyede"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:215
+#: ../mxfb-keybindings:222
 msgid "One-Third"
 msgstr "A harmada"
 
-#: ../mxfb-menu-generator:193
+#: ../mxfb-menu-generator:229
 msgid "Other"
 msgstr "Egyéb"
 
@@ -629,20 +686,24 @@ msgstr "Egyéb"
 msgid "Override with"
 msgstr "Felülírás ezzel:"
 
-#: ../mxfb-look:338
+#: ../mxfb-look:323
 #, sh-format
 msgid "Overwrite $NEWNAME"
 msgstr "$NEWNAME felülírása"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:252
+#: ../mxfb-keybindings:259
 msgid "PROGRAMS"
 msgstr "PROGRAMOK"
 
 #. How to take a screenshot...
-#: ../mxfb-quickshot:72
+#: ../mxfb-quickshot:83
 msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
 msgstr "Nyomja meg a \"Print\" (vagy PrtScn) gombot majd az egérrel:"
+
+#: ../mxfb-style-editor:129
+msgid "Pressed Symbols"
+msgstr "Megnyomott szimbólumok"
 
 #. Translator Note - go to the previous virtual workspace
 #: ../mxfb-keybindings:60
@@ -650,25 +711,21 @@ msgid "Previous Workspace"
 msgstr "Előző munkaterület"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:155
+#: ../mxfb-keybindings:162
 msgid "Resize (drag lower R corner)"
 msgstr "Átméretezés (jobb alsó sarokkal)"
 
-#: ../mxfb-look:603 ../mxfb-look:764
+#: ../mxfb-look:26
 msgid "Restore Look"
 msgstr "Kinézet visszaállítása"
 
 #. Translator Note - mouse action
-#: ../mxfb-keybindings:169
+#: ../mxfb-keybindings:176
 msgid "Right click"
 msgstr "Jobb kattintás"
 
-#: ../mxfb-look:274 ../mxfb-look:597
-msgid "Rofi Theme"
-msgstr "Rofi téma"
-
 #. Translator Note - opens root menu
-#: ../mxfb-keybindings:167
+#: ../mxfb-keybindings:174
 msgid "Root Menu (on desktop)"
 msgstr "Főmenü (az asztalon)"
 
@@ -687,26 +744,31 @@ msgstr "Futtatás"
 
 #. Press the Print-Screen-key to capture a screen selection.
 #. SELECTION: press Print, then draw a rectangle
-#: ../mxfb-quickshot:81
+#: ../mxfb-quickshot:92
 msgid "SELECTION: draw a rectangle"
 msgstr "KIJELÖLÉS: rajzoljon egy téglalapot"
 
-#: ../mxfb-look:764
+#: ../mxfb-look:24
 msgid "Save Current Look"
 msgstr "Jelenlegi kinézet mentése"
 
-#: ../mxfb-look:280
+#. MAINSAVE
+#: ../mxfb-look:272
 msgid "Save Look"
 msgstr "Kinézet mentése"
 
-#: ../mxfb-look:292
+#: ../mxfb-look:273
 #, sh-format
 msgid "Save Look as"
 msgstr "Kinézet mentése mint"
 
-#: ../mxfb-look:338
+#: ../mxfb-look:802
+msgid "Save and restore desktop settings for MX-Linux Fluxbox"
+msgstr "Az MX-Linux Fluxbox asztali beállításainak mentése és visszatöltése"
+
+#: ../mxfb-look:323
 msgid "Save as different name"
-msgstr "Mentés másik néven"
+msgstr "Mentés más néven"
 
 #. Translator Note - opens screenshot app
 #: ../mxfb-keybindings:114
@@ -729,9 +791,21 @@ msgid "Scroll Wheel Up"
 msgstr "Egérgörgő görgetés fel"
 
 #. run main dialog
-#: ../exit-options-manager:149
+#: ../exit-options-manager:150
 msgid "Select Icon Theme"
 msgstr "Válasszon ikontémát"
+
+#. define some variables
+#: ../mxfb-look:943
+msgid "Select a saved look to restore or save the current setup as a new look"
+msgstr ""
+"Válasszon egy mentett kinézetet a betöltéshez, vagy mentse el a jelenlegi "
+"beállításokat új kinézetként"
+
+#: ../mxfb-look:425
+#, sh-format
+msgid "Select an alternative wallpaper."
+msgstr "Alternatív háttérkép választása."
 
 #. TRANSLATORS Wallpaper selection window text - workspace number is added
 #. after WORKSPACE
@@ -761,6 +835,10 @@ msgstr "Munkaterületenként más háttérkép"
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
 msgstr "Háttér váltogatás beállítása"
+
+#: ../mxfb-style-editor:518
+msgid "Set styles with Fluxbox menu > Appearance >  Theme"
+msgstr "A stílust kiválaszthatja a Fluxbox menü > Megjelenés > Témák menüben"
 
 #. TRANSLATORS - button label
 #: ../mxfb-separate-backgrounds:43
@@ -797,18 +875,18 @@ msgstr "Megjeleníti a gyakori gyorsbillentyűket"
 msgid "Size"
 msgstr "Méret"
 
-#: ../exit-options-manager:143
+#: ../exit-options-manager:144
 msgid "Spacing"
 msgstr "Helyköz"
 
 #. The capture of a screenshot was successful.
-#: ../mxfb-quickshot:56
+#: ../mxfb-quickshot:67
 msgid "Success!"
 msgstr "Sikeres!"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:256
+#: ../mxfb-keybindings:263
 msgid "TILING"
 msgstr "RENDEZÉS"
 
@@ -824,13 +902,17 @@ msgid ""
 msgstr "A kód sikeresen beszúrva. Most 3 lehetőség van az elrendezésre</b>"
 
 #. The existing config file will be copied into a backup directory.
-#: ../mxfb-quickshot:67
+#: ../mxfb-quickshot:78
 msgid "The existing file will be backed up in:"
 msgstr "A meglévő fájl mentésre kerül:"
 
-#: ../exit-options-manager:249
+#: ../mxfb-look:497
+msgid "The following elements cannot be found and will not be restored."
+msgstr "A következő elemek nem találhatóak és nem kerülnek visszaállításra."
+
+#: ../exit-options-manager:250
 msgid "The following settings can also be defined"
-msgstr "A következő beállítások is meghatók"
+msgstr "A következő beállítások is megadhatók"
 
 #: ../mxfb-trashcheck:32
 msgid "There are no files in the trash."
@@ -840,7 +922,7 @@ msgstr "Nincsenek fájlok a kukában."
 #. Do not translate the count placeholder '${COUNT}'.
 #. Singular form: 'There is 1 file in the trash.'
 #. Plural form: 'There are 2 files in the trash.'
-#: ../mxfb-trashcheck:104
+#: ../mxfb-trashcheck:106
 #, sh-format
 msgid "There is 1 file in the trash."
 msgid_plural "There are ${COUNT} files in the trash."
@@ -870,17 +952,17 @@ msgstr ""
 
 #. ##Main Tab
 #. Translator Note - short descriptive text on main window of mxfb-keybindings
-#: ../mxfb-keybindings:247
+#: ../mxfb-keybindings:254
 msgid "This tool displays default shortcuts (\"keys\") that are frequently used."
 msgstr ""
 "Megjeleníti a gyakran használt gyorsbillentyűket (billentyű kombinációkat)."
 
 #. A new config file will be installed.
-#: ../mxfb-quickshot:64
+#: ../mxfb-quickshot:75
 msgid "This will install a new config file"
 msgstr "Ez új beállításfájlt telepít"
 
-#: ../exit-options-manager:140
+#: ../exit-options-manager:141
 msgid "Timeout"
 msgstr "Időtúllépés"
 
@@ -888,28 +970,38 @@ msgstr "Időtúllépés"
 msgid "Tint2 Manager"
 msgstr "Tint2 kezelő"
 
+#: ../mxfb-style-editor:125
+msgid "Titlebar"
+msgstr "Címsor"
+
+#: ../mxfb-style-editor:126
+msgid "Titlebar Text"
+msgstr "Címsor szöveg"
+
+#. set up text variables
+#: ../mxfb-style-editor:123
+msgid "Top Line"
+msgstr "Legfelső sor"
+
 #: ../mxfb-tiles:29
 msgid "Usage options"
 msgstr "Felhasználási opciók"
 
+#. about window text
+#: ../mxfb-look:801
+msgid "Version"
+msgstr "Verzió"
+
 #. Press the Print-Screen-key to capture a window.
 #. WINDOW: press Print, then click anywhere inside
-#: ../mxfb-quickshot:75
+#: ../mxfb-quickshot:86
 msgid "WINDOW: click anywhere inside"
 msgstr "ABLAK: kattintson az ablakon belül"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:254
+#: ../mxfb-keybindings:261
 msgid "WINDOWS"
 msgstr "ABLAKOK"
-
-#: ../mxfb-look:601
-msgid "Wait 10 seconds for the conky to restart"
-msgstr "Várjon 10 másodpercet a Conky újraindulására"
-
-#: ../mxfb-look:275 ../mxfb-look:598
-msgid "Wallpaper"
-msgstr "Háttérkép"
 
 #. TRANSLATORS Wallpaper selection window title
 #: ../mxfb-separate-backgrounds:33
@@ -921,17 +1013,30 @@ msgstr "Háttérkép választó"
 msgid "Warning"
 msgstr "Figyelmeztetés"
 
+#. select starting style
+#: ../mxfb-style-editor:81
+msgid "Which style would you like to edit?"
+msgstr "Melyik stílust szeretné szerkeszteni?"
+
 #. TRANSLATORS - notification text
 #: ../mxfb-separate-backgrounds:50
 msgid "Will substitute mx_blue.jpg to avoid any errors."
 msgstr "Hibák elkerülése végett mx_blue.jpg kerül felhasználásra."
+
+#: ../mxfb-style-editor:130
+msgid "Window Grips"
+msgstr "Ablak fogantyúk"
+
+#: ../mxfb-style-editor:128
+msgid "Window Symbols"
+msgstr "Ablak szimbólumok"
 
 #: ../mxfb-font:175
 msgid "Window Title Default"
 msgstr "Ablak címsor alapértelmezett"
 
 #. Translator Note - opens workspace menu
-#: ../mxfb-keybindings:163
+#: ../mxfb-keybindings:170
 msgid "Workspace Menu (on desktop)"
 msgstr "Munkaterület menü (az asztalon)"
 
@@ -946,19 +1051,7 @@ msgstr ""
 msgid "\\n"
 msgstr "\\n"
 
-#: ../mxfb-look:281
-msgid "\\n<b>"
-msgstr "\\n<b>"
-
-#: ../mxfb-look:429
-msgid "\\n<b> Choose which look to restore</b>\\n"
-msgstr "\\n<b> Válassza ki a visszaállítandó kinézetet</b>\\n"
-
-#: ../mxfb-look:441
-msgid "\\n<b> You need to select a look !</b>\\n"
-msgstr "\\n<b> Ki kell választania egy kinézetet!</b>\\n"
-
-#: ../exit-options-manager:237
+#: ../exit-options-manager:238
 msgid "\\nIcon themes can be defined by creating a file"
 msgstr "\\nAz ikontémák egy fájl létrehozásával definiálhatók"
 
@@ -992,18 +1085,39 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Visszavonás"
 
-#: ../exit-options-manager:239
+#: ../exit-options-manager:240
 msgid ""
 "and adding the paths for the desired 64x64 pixel icons to the following "
 "definitions"
 msgstr ""
 "és megadva a kívánt 64x64 pixeles ikon útvonalát a következő definíciókhoz"
 
+#: ../mxfb-style-editor:329
+msgid "cannot be used. Choose another name."
+msgstr "nem használható. Válasszon egy másik nevet."
+
 #. Note: Comment lines above gettext lines are visible to translators.
 #. The capture of a screenshot was aborted.
-#: ../mxfb-quickshot:52
+#: ../mxfb-quickshot:63
 msgid "exiting, no image selected"
 msgstr "kilépés, nincs kép kiválasztva"
+
+#: ../mxfb-style-editor:517
+msgid "has been created."
+msgstr "létrehozva."
+
+#: ../mxfb-style-editor:516
+msgid "has been set as the current style."
+msgstr "beállítva jelenlegi stílusnak."
+
+#: ../mxfb-look:424
+#, sh-format
+msgid "not found!"
+msgstr "nem található!"
+
+#: ../mxfb-style-editor:136 ../mxfb-style-editor:141 ../mxfb-style-editor:147
+msgid "not used in this style"
+msgstr "nincs használatban ebben a stílusban"
 
 #: ../mxfb-timer:24
 msgid "or number and unit"
@@ -1012,11 +1126,3 @@ msgstr "vagy szám és mértékegység"
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
 msgstr "idő formátum:"
-
-#: ../mxfb-look:261 ../mxfb-look:582
-msgid "toggled off"
-msgstr "kikapcsolva"
-
-#: ../mxfb-look:259 ../mxfb-look:580
-msgid "toggled on"
-msgstr "bekapcsolva"

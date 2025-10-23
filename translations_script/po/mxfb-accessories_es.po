@@ -5,24 +5,25 @@
 # 
 # Translators:
 # Roy Avrett <rjavrett@gmail.com>, 2022
-# German Lancheros <glancheros2015@gmail.com>, 2022
 # Robin, 2023
 # fehlix, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
-# Manuel <senpai99@hotmail.com>, 2023
-# Amigo, 2024
-# Geoff Gigg <geoffgigg@hotmail.com>, 2024
-# Roberto Saravia <saravia.jroberto@gmail.com>, 2024
-# Paulo C., 2024
+# German Lancheros <glancheros2015@gmail.com>, 2025
+# Richard  Holt <richard.holt@gmail.com>, 2025
+# Roberto Saravia <saravia.jroberto@gmail.com>, 2025
+# Geoff Gigg <geoffgigg@hotmail.com>, 2025
+# Amigo, 2025
+# Manuel <senpai99@hotmail.com>, 2025
+# Paulo C., 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 23:25+0100\n"
+"POT-Creation-Date: 2025-07-17 18:46-0400\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Paulo C., 2024\n"
+"Last-Translator: Paulo C., 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/anticapitalista/teams/10162/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgstr ""
 #. The help message will not be displayed again, if user clicks on "Dismiss"
 #. button.
 #. The capture of a screenshot will start after closing this window.
-#: ../mxfb-quickshot:98
+#: ../mxfb-quickshot:109
 #, sh-format
 msgid ""
 "\n"
@@ -55,7 +56,7 @@ msgstr ""
 "\n"
 "    --Más: busque \"Quickshot\" en la Wiki de MX"
 
-#: ../mxfb-look:319 ../mxfb-look:346
+#: ../mxfb-look:300 ../mxfb-look:333
 msgid " "
 msgstr " "
 
@@ -63,7 +64,7 @@ msgstr " "
 msgid "   or"
 msgstr "o"
 
-#: ../mxfb-keybindings:204 ../mxfb-keybindings:211
+#: ../mxfb-keybindings:211 ../mxfb-keybindings:218
 msgid "   or (on keypad)"
 msgstr "o (en teclado)"
 
@@ -83,37 +84,13 @@ msgstr "$TITLE2"
 msgid "12h/24h"
 msgstr "12h/24h"
 
-#: ../mxfb-look:272 ../mxfb-look:595
-msgid "1st Tint2 Panel"
-msgstr "1er panel Tint2"
-
-#: ../mxfb-look:273 ../mxfb-look:596
-msgid "2nd Tint2 Panel"
-msgstr "2do panel Tint2"
-
-#: ../mxfb-look:604
-msgid "<b>   "
-msgstr "<b>"
-
-#: ../mxfb-look:345
+#: ../mxfb-look:332
 msgid "<b>Name for New Look</b>"
 msgstr "<b>Nombre para el nuevo look</b>"
 
-#: ../mxfb-look:318
+#: ../mxfb-look:299
 msgid "<b>Name for new style</b>"
 msgstr "<b>Nombre para el nuevo estilo</b>"
-
-#: ../mxfb-look:762
-msgid ""
-"<b>You can save the current look or restore a saved look</b>\\n\\nA look is "
-"comprised of the following elements\\n- Gtk-Theme\\n- Gtk-Icon\\n- Gtk-"
-"Font\\n- Fluxbox Style\\n- up to two Tint2 Panels\\n- Rofi Theme\\n- "
-"Wallpaper\\n- One Conky\\n\\n"
-msgstr ""
-"<b>Puede guardar el look actual o restaurar un look guardado</b>\\n\\nUn "
-"look se compone de los siguientes elementos\\n- Tema Gtk\\n- Iconos Gtk\\n- "
-"Fuente Gtk\\n- Estilo Fluxbox\\n- Hasta dos paneles Tint2\\n- Tema Rofi\\n- "
-"Fondo de pantalla\\n- Un Conky\\n\\n"
 
 #: ../mxfb-tiles:21
 msgid ""
@@ -153,7 +130,7 @@ msgstr ""
 " Control + 9: tercio\n"
 " Control + 0: des/activar maximizar"
 
-#: ../mxfb-look:337
+#: ../mxfb-look:318
 #, sh-format
 msgid ""
 "A Look with this name already exists.\\n\\nDo you want to overwrite $NEWNAME"
@@ -171,7 +148,15 @@ msgstr ""
 "Se mostrará una ventana de selección para cada espacio de trabajo "
 "configurado actualmente."
 
-#: ../mxfb-menu-generator:55
+#: ../mxfb-look:28
+msgid "About MXFB-Look"
+msgstr "Acerca de MXFB-Apariencia"
+
+#: ../mxfb-style-editor:160
+msgid "Active Window"
+msgstr "Ventana activa"
+
+#: ../mxfb-menu-generator:69
 msgid "All Applications"
 msgstr "Todas las aplicaciones"
 
@@ -181,39 +166,44 @@ msgstr "Todas las aplicaciones"
 msgid "All Apps"
 msgstr "Todas las aplicaciones"
 
+#. set new style as current
+#: ../mxfb-style-editor:515
+msgid "All done!"
+msgstr "¡Todo listo!"
+
 #. all done
-#: ../mxfb-look:398
+#: ../mxfb-look:388
 #, sh-format
 msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "¡Todo listo!\\n\\nEl look se ha guardado como <b>$NEWNAME</b>"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:213
+#: ../mxfb-keybindings:220
 msgid "Alt 1,3,7,9"
 msgstr "Alt 1,3,7,9"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:206
+#: ../mxfb-keybindings:213
 msgid "Alt 2,4,6,8"
 msgstr "Alt 2,4,6,8"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:161
+#: ../mxfb-keybindings:168
 msgid "Alt D"
 msgstr "Alt D"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:146
+#: ../mxfb-keybindings:153
 msgid "Alt F10"
 msgstr "Alt F10"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:150
+#: ../mxfb-keybindings:157
 msgid "Alt F4"
 msgstr "Alt F4"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:142
+#: ../mxfb-keybindings:149
 msgid "Alt F9"
 msgstr "Alt F9"
 
@@ -223,7 +213,7 @@ msgid "Alt Q"
 msgstr "Alt Q"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:157
+#: ../mxfb-keybindings:164
 msgid "Alt Right click"
 msgstr "Alt Clic derecho"
 
@@ -249,18 +239,24 @@ msgid "CONFIGURE TOP"
 msgstr "CONFIGURAR BARRA DE TÍTULO"
 
 #. TRANSLATORS - button label
-#: ../mxfb-separate-backgrounds:39
+#: ../mxfb-separate-backgrounds:39 ../mxfb-look:23 ../mxfb-look:499
+#: ../mxfb-style-editor:168
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. The capture of a screenshot was cancelled.
-#: ../mxfb-quickshot:54
+#: ../mxfb-quickshot:65
 msgid "Cancelled!"
 msgstr "¡Cancelado!"
 
-#: ../exit-options-manager:149
+#: ../exit-options-manager:150
 msgid "Change Window Settings"
 msgstr "Cambiar los ajustes de las ventanas"
+
+#. button label
+#: ../mxfb-look:796
+msgid "Changelog"
+msgstr "Registro de cambios"
 
 #: ../mxfb-tint2-manager:92
 msgid "Check to run, uncheck to stop"
@@ -273,10 +269,14 @@ msgstr "Click \\"
 #. buttons
 #. ## buttons
 #. Translator Note - window command
-#: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../exit-options-manager:29
-#: ../mxfb-keybindings:17 ../mxfb-keybindings:148
+#: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../mxfb-look:22
+#: ../exit-options-manager:29 ../mxfb-keybindings:17 ../mxfb-keybindings:155
 msgid "Close"
 msgstr "Cerrar"
+
+#: ../mxfb-style-editor:127
+msgid "Close Symbol"
+msgstr "Símbolo de cierre"
 
 #: ../mxfb-borders:21 ../mxfb-top:23
 msgid "Color Focused"
@@ -290,31 +290,35 @@ msgstr "Color desenfocado"
 msgid "Config"
 msgstr "Configurar"
 
-#: ../mxfb-look:276 ../mxfb-look:599
-msgid "Conky"
-msgstr "Conky"
+#: ../mxfb-look:498
+msgid "Continue anyway?"
+msgstr "¿Continuar de todos modos?"
 
-#: ../mxfb-look:277 ../mxfb-look:600
-msgid "Conky State"
-msgstr "Estado de Conky"
+#: ../mxfb-style-editor:169
+msgid "Create Style"
+msgstr "Crear estilo"
+
+#: ../mxfb-style-editor:165
+msgid "Create matching tint2 panel?"
+msgstr "¿Crear un panel tint2 idéntico?"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:221
+#: ../mxfb-keybindings:228
 msgid "Ctrl 0"
 msgstr "Ctrl 0"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:203
+#: ../mxfb-keybindings:210
 msgid "Ctrl 1/2/3/4"
 msgstr "Ctrl 1/2/3/4"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:210
+#: ../mxfb-keybindings:217
 msgid "Ctrl 5/6/7/8"
 msgstr "Ctrl 5/6/7/8"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:217
+#: ../mxfb-keybindings:224
 msgid "Ctrl 9"
 msgstr "Ctrl 9"
 
@@ -327,6 +331,11 @@ msgstr "Ctrl Alt"
 #: ../mxfb-keybindings:51
 msgid "Ctrl Alt M"
 msgstr "Ctrl Alt M"
+
+#. Translator Note - translate key names for your language if necessary
+#: ../mxfb-keybindings:120
+msgid "Ctrl Alt Q"
+msgstr "Ctrl Alt Q"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:112
@@ -353,14 +362,9 @@ msgstr "Ctrl F3"
 msgid "Ctrl F5"
 msgstr "Ctrl F5"
 
-#. MAIN
-#: ../mxfb-look:267
-msgid "Current Settings"
-msgstr "Configuración actual"
-
 #. Press the Print-Screen-key to capture a wallpaper.
 #. DESKTOP: press Print, then click the background
-#: ../mxfb-quickshot:78
+#: ../mxfb-quickshot:89
 msgid "DESKTOP: click the background"
 msgstr "ESCRITORIO: haga clic en el fondo de pantalla"
 
@@ -368,13 +372,18 @@ msgstr "ESCRITORIO: haga clic en el fondo de pantalla"
 msgid "Delay (mins)"
 msgstr "Retraso (min.)"
 
+#. Translator Note - delayed screenshot
+#: ../mxfb-keybindings:118
+msgid "Delayed Screen Capture"
+msgstr "Captura de pantalla retardada"
+
 #. TRANSLATORS - button label
 #: ../mxfb-separate-backgrounds:41
 msgid "Disable"
 msgstr "Deshabilitar"
 
 #. Do you want to display the Help message again?
-#: ../mxfb-quickshot:60
+#: ../mxfb-quickshot:71
 msgid "Dismiss"
 msgstr "Descartar"
 
@@ -382,13 +391,17 @@ msgstr "Descartar"
 msgid "Do you want to empty the trash?"
 msgstr "¿Quieres vaciar la papelera?"
 
-#: ../mxfb-quickshot:61
+#: ../mxfb-quickshot:72
 msgid "Don't display the Help message again!"
 msgstr "No volver a mostrar el mensaje de ayuda."
 
 #: ../mxfb-tint2-manager:99
 msgid "Edit"
 msgstr "Editar"
+
+#: ../mxfb-style-editor:159
+msgid "Edit colors and create a new fluxbox style based on"
+msgstr "Editar colores y crear un nuevo estilo fluxbox basado en"
 
 #. Translator Note - button to open the fluxbox 'keys' file in text editor
 #: ../mxfb-keybindings:19
@@ -400,7 +413,7 @@ msgid "Enter local time"
 msgstr "Ingrese la hora local"
 
 #. define some variables
-#: ../exit-options-manager:12 ../exit-options-manager:232
+#: ../exit-options-manager:12 ../exit-options-manager:233
 msgid "Exit-options-manager"
 msgstr "Gestor de opciones de salida"
 
@@ -415,9 +428,9 @@ msgstr ""
 msgid "File Manager"
 msgstr "Administrador de archivos"
 
-#: ../mxfb-look:271 ../mxfb-look:594
-msgid "Fluxbox Style"
-msgstr "Estilo Fluxbox"
+#: ../mxfb-style-editor:162
+msgid "Fluxbox Menu"
+msgstr "Menú de Fluxbox"
 
 #. gtk-xft-rgba=none!rgb!bgr!vrgb!vbgr
 #. GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini |
@@ -428,26 +441,14 @@ msgid "Font"
 msgstr "Fuente"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:219
+#: ../mxfb-keybindings:226
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:250
+#: ../mxfb-keybindings:257
 msgid "GENERAL"
 msgstr "GENERAL"
-
-#: ../mxfb-look:270 ../mxfb-look:593
-msgid "GTK Font"
-msgstr "Fuente GTK"
-
-#: ../mxfb-look:269 ../mxfb-look:592
-msgid "GTK Icons"
-msgstr "Iconos GTK"
-
-#: ../mxfb-look:268 ../mxfb-look:591
-msgid "GTK Theme"
-msgstr "Tema GTK"
 
 #: ../mxfb-font:184
 msgid "Gtk Font"
@@ -457,18 +458,23 @@ msgstr "Fuente GTK"
 msgid "HELP"
 msgstr "AYUDA"
 
-#: ../mxfb-quickshot:70
+#: ../mxfb-quickshot:81
 msgid "HELP: how to take a screenshot"
 msgstr "AYUDA: cómo hacer una captura de pantalla"
 
-#: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../exit-options-manager:30
+#: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../mxfb-look:27
+#: ../exit-options-manager:30 ../mxfb-style-editor:170
 msgid "Help"
 msgstr "Ayuda"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:159
+#: ../mxfb-keybindings:166
 msgid "Hide All"
 msgstr "Ocultar todo"
+
+#: ../mxfb-style-editor:124
+msgid "Highlight"
+msgstr "Destacar"
 
 #: ../mxfb-font:186
 msgid "Hinting"
@@ -478,7 +484,7 @@ msgstr "Rellenado"
 msgid "Hinting Style"
 msgstr "Modo de rellenado"
 
-#: ../exit-options-manager:141
+#: ../exit-options-manager:142
 msgid "Icon Size"
 msgstr "Tamaño del icono"
 
@@ -490,7 +496,11 @@ msgstr "Carpeta de imagen"
 msgid "Image mode"
 msgstr "Modo de imagen"
 
-#: ../exit-options-manager:139
+#: ../mxfb-style-editor:161
+msgid "Inactive Window"
+msgstr "Ventana inactiva"
+
+#: ../exit-options-manager:140
 msgid "Layout"
 msgstr "Distribución"
 
@@ -499,11 +509,16 @@ msgstr "Distribución"
 msgid "Left Super"
 msgstr "Super izquierda"
 
-#: ../mxfb-keybindings:153
+#: ../mxfb-keybindings:160
 msgid "Left click"
 msgstr "Clic izquierdo"
 
-#: ../mxfb-look:317
+#. button label
+#: ../mxfb-look:794
+msgid "License"
+msgstr "Licencia"
+
+#: ../mxfb-look:297
 #, sh-format
 msgid "Look name $NEWNAME is protected. Choose another name."
 msgstr "El nombre del look $NEWNAME está protegido. Elige otro nombre."
@@ -519,14 +534,31 @@ msgstr "MX-Fluxbox Combinación de teclas"
 msgid "MX-Tools"
 msgstr "MX Herramientas"
 
+#: ../mxfb-style-editor:101
+msgid "MX-comfort will be used as the starting style."
+msgstr "Se utilizará MX-comfort como estilo de partida."
+
+#. about window app name
+#: ../mxfb-look:799
+msgid "MXFB Look"
+msgstr "MXFB Look"
+
+#. define some variables
+#: ../mxfb-style-editor:14
+msgid "MXFB Style Editor"
+msgstr "MXFB-Editor de estilos"
+
+#: ../mxfb-style-editor:47
+msgid "MXFB Style Editor Help"
+msgstr "Ayuda de MXFB-Editor de estilos"
+
 #: ../mxfb-timer:22
 msgid "MXFB Timer"
 msgstr "Temporizador MXFB"
 
-#. define some variables
-#: ../mxfb-look:17 ../mxfb-look:147 ../mxfb-look:413
-msgid "MXFB-Look"
-msgstr "MXFB-Look"
+#: ../mxfb-style-editor:164
+msgid "Make new style current?"
+msgstr "¿Hacer que el nuevo estilo sea el actual?"
 
 #. Translator Note - opens mx-fluxbox manual
 #: ../mxfb-keybindings:37
@@ -538,14 +570,30 @@ msgstr "Manual - MX Fluxbox"
 msgid "Manual - MX Linux"
 msgstr "Manual - MX Linux"
 
-#: ../exit-options-manager:142
+#: ../exit-options-manager:143
 msgid "Margin"
 msgstr "Márgenes"
 
 #. Translator Note - window command
-#: ../mxfb-keybindings:144
+#: ../mxfb-keybindings:151
 msgid "Maximize"
 msgstr "Maximizar"
+
+#: ../mxfb-style-editor:132
+msgid "Menu Background"
+msgstr "Fondo del menú"
+
+#: ../mxfb-style-editor:134
+msgid "Menu Highlight"
+msgstr "Menú resaltado"
+
+#: ../mxfb-style-editor:135
+msgid "Menu Highlight Text"
+msgstr "Texto del menú resaltado"
+
+#: ../mxfb-style-editor:133
+msgid "Menu Text"
+msgstr "Texto del menú"
 
 #: ../mxfb-font:181
 msgid "Menu Text Default"
@@ -555,19 +603,23 @@ msgstr "Texto del menú predeterminado"
 msgid "Menu Title Default"
 msgstr "Título del menú predeterminado"
 
+#: ../mxfb-style-editor:131
+msgid "Menu Title Text"
+msgstr "Texto del título del menú"
+
 #. Translator Note - mouse action
-#: ../mxfb-keybindings:165
+#: ../mxfb-keybindings:172
 msgid "Middle click"
 msgstr "Clic del medio"
 
 #. ##Tab 3
 #. Translator Note - window command
-#: ../mxfb-keybindings:140
+#: ../mxfb-keybindings:147
 msgid "Minimize"
 msgstr "Minimizar"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:152
+#: ../mxfb-keybindings:159
 msgid "Move (drag titlebar)"
 msgstr "Mover (arrastrar barra de título)"
 
@@ -575,7 +627,11 @@ msgstr "Mover (arrastrar barra de título)"
 msgid "Multiple options for number keys and keyboard"
 msgstr "Múltiples opciones para teclas numéricas y teclado."
 
-#: ../mxfb-look:292
+#: ../mxfb-style-editor:163 ../mxfb-style-editor:330
+msgid "Name for new style"
+msgstr "Nombre para el nuevo estilo"
+
+#: ../mxfb-look:273
 msgid "New-Look-Name"
 msgstr "Nombre-Nuevo-Look"
 
@@ -588,21 +644,22 @@ msgstr "Siguiente espacio de trabajo"
 msgid "No rotation: Delay = 0"
 msgstr "Sin rotación: Retraso = 0 "
 
-#: ../mxfb-look:255
-msgid "None"
-msgstr "Ninguno"
+#: ../mxfb-style-editor:100
+msgid "No starting style selected!"
+msgstr "No se ha seleccionado el estilo de inicio."
 
 #. TRANSLATORS Main window subtitle
 #: ../mxfb-separate-backgrounds:22
 msgid "Notes"
 msgstr "Notas"
 
-#: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../exit-options-manager:31
+#: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../mxfb-look:25
+#: ../exit-options-manager:31
 msgid "OK"
 msgstr "Correcto"
 
 #. Do you want to allow a new config file to be installed?
-#: ../mxfb-quickshot:58 ../mxfb-tiles:14
+#: ../mxfb-quickshot:69 ../mxfb-tiles:14
 msgid "OK to proceed?"
 msgstr "¿Está bien si procedemos?"
 
@@ -612,21 +669,21 @@ msgstr "CONFIGURACIÓN DE ESTILO DE BORDE OPCIONAL"
 
 #. ##Tab 4
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:201
+#: ../mxfb-keybindings:208
 msgid "One-Half"
 msgstr "Medio"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:208
+#: ../mxfb-keybindings:215
 msgid "One-Quarter"
 msgstr "Un cuarto"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:215
+#: ../mxfb-keybindings:222
 msgid "One-Third"
 msgstr "Un tercio"
 
-#: ../mxfb-menu-generator:193
+#: ../mxfb-menu-generator:229
 msgid "Other"
 msgstr "Otras"
 
@@ -634,20 +691,24 @@ msgstr "Otras"
 msgid "Override with"
 msgstr "Reemplazar con"
 
-#: ../mxfb-look:338
+#: ../mxfb-look:323
 #, sh-format
 msgid "Overwrite $NEWNAME"
 msgstr "Sobrescribir $NEWNAME"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:252
+#: ../mxfb-keybindings:259
 msgid "PROGRAMS"
 msgstr "PROGRAMAS"
 
 #. How to take a screenshot...
-#: ../mxfb-quickshot:72
+#: ../mxfb-quickshot:83
 msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
 msgstr "Pulse \"Impr\" (o \"PetSis\") y utilice el ratón:"
+
+#: ../mxfb-style-editor:129
+msgid "Pressed Symbols"
+msgstr "Símbolos impresos"
 
 #. Translator Note - go to the previous virtual workspace
 #: ../mxfb-keybindings:60
@@ -655,25 +716,21 @@ msgid "Previous Workspace"
 msgstr "Anterior espacio de trabajo"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:155
+#: ../mxfb-keybindings:162
 msgid "Resize (drag lower R corner)"
 msgstr "Redimensionar (arrastre la esquina inferior)"
 
-#: ../mxfb-look:603 ../mxfb-look:764
+#: ../mxfb-look:26
 msgid "Restore Look"
 msgstr "Restaurar look"
 
 #. Translator Note - mouse action
-#: ../mxfb-keybindings:169
+#: ../mxfb-keybindings:176
 msgid "Right click"
 msgstr "Clic derecho"
 
-#: ../mxfb-look:274 ../mxfb-look:597
-msgid "Rofi Theme"
-msgstr "Tema Rofi"
-
 #. Translator Note - opens root menu
-#: ../mxfb-keybindings:167
+#: ../mxfb-keybindings:174
 msgid "Root Menu (on desktop)"
 msgstr "Menú Inicio (en el escritorio)"
 
@@ -691,24 +748,29 @@ msgstr "Ejecutar"
 
 #. Press the Print-Screen-key to capture a screen selection.
 #. SELECTION: press Print, then draw a rectangle
-#: ../mxfb-quickshot:81
+#: ../mxfb-quickshot:92
 msgid "SELECTION: draw a rectangle"
 msgstr "SELECCIÓN: dibujar un rectángulo"
 
-#: ../mxfb-look:764
+#: ../mxfb-look:24
 msgid "Save Current Look"
 msgstr "Guardar look actual"
 
-#: ../mxfb-look:280
+#. MAINSAVE
+#: ../mxfb-look:272
 msgid "Save Look"
 msgstr "Guardar look"
 
-#: ../mxfb-look:292
+#: ../mxfb-look:273
 #, sh-format
 msgid "Save Look as"
 msgstr "Guardar look como"
 
-#: ../mxfb-look:338
+#: ../mxfb-look:802
+msgid "Save and restore desktop settings for MX-Linux Fluxbox"
+msgstr "Guardar y restaurar los ajustes del escritorio para MX-Linux Fluxbox"
+
+#: ../mxfb-look:323
 msgid "Save as different name"
 msgstr "Guardar con un nombre diferente"
 
@@ -733,9 +795,21 @@ msgid "Scroll Wheel Up"
 msgstr "Rueda hacia arriba"
 
 #. run main dialog
-#: ../exit-options-manager:149
+#: ../exit-options-manager:150
 msgid "Select Icon Theme"
 msgstr "Seleccionar tema de iconos"
+
+#. define some variables
+#: ../mxfb-look:943
+msgid "Select a saved look to restore or save the current setup as a new look"
+msgstr ""
+"Selecciona una imagen guardada para restaurarla o guarda la configuración "
+"actual como una nueva imagen."
+
+#: ../mxfb-look:425
+#, sh-format
+msgid "Select an alternative wallpaper."
+msgstr "Selecciona un fondo de pantalla alternativo."
 
 #. TRANSLATORS Wallpaper selection window text - workspace number is added
 #. after WORKSPACE
@@ -765,6 +839,10 @@ msgstr "Fondos separados para cada espacio de trabajo"
 #: ../mxfb-bg-rotate:39
 msgid "Set background rotation"
 msgstr "Establecer la rotación del fondo"
+
+#: ../mxfb-style-editor:518
+msgid "Set styles with Fluxbox menu > Appearance >  Theme"
+msgstr "Configurar estilos con el menú Fluxbox > Apariencia > Tema"
 
 #. TRANSLATORS - button label
 #: ../mxfb-separate-backgrounds:43
@@ -801,18 +879,18 @@ msgstr "Muestra los atajos de teclado más utilizados"
 msgid "Size"
 msgstr "Tamaño"
 
-#: ../exit-options-manager:143
+#: ../exit-options-manager:144
 msgid "Spacing"
 msgstr "Espaciado"
 
 #. The capture of a screenshot was successful.
-#: ../mxfb-quickshot:56
+#: ../mxfb-quickshot:67
 msgid "Success!"
 msgstr "¡Éxito!"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:256
+#: ../mxfb-keybindings:263
 msgid "TILING"
 msgstr "MOSAICO"
 
@@ -830,11 +908,15 @@ msgstr ""
 "mosaico</b>"
 
 #. The existing config file will be copied into a backup directory.
-#: ../mxfb-quickshot:67
+#: ../mxfb-quickshot:78
 msgid "The existing file will be backed up in:"
 msgstr "El archivo existente se respaldará en:"
 
-#: ../exit-options-manager:249
+#: ../mxfb-look:497
+msgid "The following elements cannot be found and will not be restored."
+msgstr "Los siguientes elementos no se pueden encontrar y no se restaurarán."
+
+#: ../exit-options-manager:250
 msgid "The following settings can also be defined"
 msgstr "También se pueden definir los siguientes ajustes"
 
@@ -846,7 +928,7 @@ msgstr "No hay archivos en la papelera."
 #. Do not translate the count placeholder '${COUNT}'.
 #. Singular form: 'There is 1 file in the trash.'
 #. Plural form: 'There are 2 files in the trash.'
-#: ../mxfb-trashcheck:104
+#: ../mxfb-trashcheck:106
 #, sh-format
 msgid "There is 1 file in the trash."
 msgid_plural "There are ${COUNT} files in the trash."
@@ -879,18 +961,18 @@ msgstr ""
 
 #. ##Main Tab
 #. Translator Note - short descriptive text on main window of mxfb-keybindings
-#: ../mxfb-keybindings:247
+#: ../mxfb-keybindings:254
 msgid "This tool displays default shortcuts (\"keys\") that are frequently used."
 msgstr ""
 "Esta herramienta muestra los atajos por defecto (\"teclas\") que se utilizan"
 " con frecuencia."
 
 #. A new config file will be installed.
-#: ../mxfb-quickshot:64
+#: ../mxfb-quickshot:75
 msgid "This will install a new config file"
 msgstr "Esto instalará un nuevo archivo de configuración"
 
-#: ../exit-options-manager:140
+#: ../exit-options-manager:141
 msgid "Timeout"
 msgstr "Tiempo de espera"
 
@@ -898,28 +980,38 @@ msgstr "Tiempo de espera"
 msgid "Tint2 Manager"
 msgstr "Gestor Tint2"
 
+#: ../mxfb-style-editor:125
+msgid "Titlebar"
+msgstr "Barra de título"
+
+#: ../mxfb-style-editor:126
+msgid "Titlebar Text"
+msgstr "Texto de la barra de título"
+
+#. set up text variables
+#: ../mxfb-style-editor:123
+msgid "Top Line"
+msgstr "Línea superior"
+
 #: ../mxfb-tiles:29
 msgid "Usage options"
 msgstr "Opciones de uso"
 
+#. about window text
+#: ../mxfb-look:801
+msgid "Version"
+msgstr "Versión"
+
 #. Press the Print-Screen-key to capture a window.
 #. WINDOW: press Print, then click anywhere inside
-#: ../mxfb-quickshot:75
+#: ../mxfb-quickshot:86
 msgid "WINDOW: click anywhere inside"
 msgstr "VENTANA: haga clic en cualquier lugar del interior"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:254
+#: ../mxfb-keybindings:261
 msgid "WINDOWS"
 msgstr "VENTANAS"
-
-#: ../mxfb-look:601
-msgid "Wait 10 seconds for the conky to restart"
-msgstr "Espera 10 segundos para que el conky se reinicie."
-
-#: ../mxfb-look:275 ../mxfb-look:598
-msgid "Wallpaper"
-msgstr "Fondo de pantalla"
 
 #. TRANSLATORS Wallpaper selection window title
 #: ../mxfb-separate-backgrounds:33
@@ -931,17 +1023,30 @@ msgstr "Selector de fondos de pantalla"
 msgid "Warning"
 msgstr "Advertencia"
 
+#. select starting style
+#: ../mxfb-style-editor:81
+msgid "Which style would you like to edit?"
+msgstr "¿Qué estilo le gustaría editar?"
+
 #. TRANSLATORS - notification text
 #: ../mxfb-separate-backgrounds:50
 msgid "Will substitute mx_blue.jpg to avoid any errors."
 msgstr "Sustituiré mx_blue.jpg para evitar cualquier error."
+
+#: ../mxfb-style-editor:130
+msgid "Window Grips"
+msgstr "Agarraderas de ventanas"
+
+#: ../mxfb-style-editor:128
+msgid "Window Symbols"
+msgstr "Símbolos de ventanas"
 
 #: ../mxfb-font:175
 msgid "Window Title Default"
 msgstr "Título de la ventana predeterminado"
 
 #. Translator Note - opens workspace menu
-#: ../mxfb-keybindings:163
+#: ../mxfb-keybindings:170
 msgid "Workspace Menu (on desktop)"
 msgstr "Menú Espacio de trabajo (en escritorio)"
 
@@ -956,19 +1061,7 @@ msgstr ""
 msgid "\\n"
 msgstr "\\n"
 
-#: ../mxfb-look:281
-msgid "\\n<b>"
-msgstr "\\n<b>"
-
-#: ../mxfb-look:429
-msgid "\\n<b> Choose which look to restore</b>\\n"
-msgstr "\\n<b> Elegir qué aspecto restaurar</b>\\n"
-
-#: ../mxfb-look:441
-msgid "\\n<b> You need to select a look !</b>\\n"
-msgstr "\\n<b> ¡Tienes que seleccionar un look!</b>\\n"
-
-#: ../exit-options-manager:237
+#: ../exit-options-manager:238
 msgid "\\nIcon themes can be defined by creating a file"
 msgstr "\\nLos temas de iconos pueden definirse creando un archivo"
 
@@ -1002,7 +1095,7 @@ msgctxt "Stock label"
 msgid "_Revert"
 msgstr "_Revertir"
 
-#: ../exit-options-manager:239
+#: ../exit-options-manager:240
 msgid ""
 "and adding the paths for the desired 64x64 pixel icons to the following "
 "definitions"
@@ -1010,11 +1103,32 @@ msgstr ""
 "y añadiendo las rutas para los iconos de 64x64 píxeles deseados a las "
 "siguientes definiciones"
 
+#: ../mxfb-style-editor:329
+msgid "cannot be used. Choose another name."
+msgstr "no se puede utilizar. Elija otro nombre."
+
 #. Note: Comment lines above gettext lines are visible to translators.
 #. The capture of a screenshot was aborted.
-#: ../mxfb-quickshot:52
+#: ../mxfb-quickshot:63
 msgid "exiting, no image selected"
 msgstr "saliendo, sin imagen seleccionada"
+
+#: ../mxfb-style-editor:517
+msgid "has been created."
+msgstr "ha sido creado."
+
+#: ../mxfb-style-editor:516
+msgid "has been set as the current style."
+msgstr "como estilo actual."
+
+#: ../mxfb-look:424
+#, sh-format
+msgid "not found!"
+msgstr "¡no encontrado!"
+
+#: ../mxfb-style-editor:136 ../mxfb-style-editor:141 ../mxfb-style-editor:147
+msgid "not used in this style"
+msgstr "no se utiliza en este estilo"
 
 #: ../mxfb-timer:24
 msgid "or number and unit"
@@ -1023,11 +1137,3 @@ msgstr "o número y unidad"
 #: ../mxfb-tint2-manager:284
 msgid "time format:"
 msgstr "formato de hora:"
-
-#: ../mxfb-look:261 ../mxfb-look:582
-msgid "toggled off"
-msgstr "desactivado"
-
-#: ../mxfb-look:259 ../mxfb-look:580
-msgid "toggled on"
-msgstr "activado"
