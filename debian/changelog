@@ -1,3 +1,10 @@
+mxfb-accessories (25.10.02mx25) mx; urgency=medium
+
+  * update mxfb-menu-generator check
+  * update strings
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 22 Oct 2025 20:19:43 -0400
+
 mxfb-accessories (25.10.01mx25) mx; urgency=medium
 
   * added compositor shortcut
