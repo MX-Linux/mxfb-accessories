@@ -1,18 +1,17 @@
 #!/bin/bash
 
-##This app was developed by MX Devs 2023 and released under GPLv3
-
-# version 230604-01
+#This app was developed by MX Devs 2023 and released under GPLv3
+version=2511-01
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="mxfb-font"
 source gettext.sh
 
-# buttons
-export BTN_CLOSE=$(gettext "Close")  ; BTN_CLOSE+='!window-close'
-export BTN_HELP=$(gettext "Help")    ; BTN_HELP+='!help-contents'
-export BTN_OK=$(gettext "OK")        ; BTN_OK+='!object-select'
-export BTN_APPLY=$(gettext "Apply")        ; BTN_OK+='!object-select'
+font_temp1=/tmp/mxfb-font-temp1.txt
+font_temp2=/tmp/mxfb-font-temp2.txt
+
+# cleanup
+trap "rm -f $font_temp1 $font_temp2" EXIT
 
 ####check overlay file
 CHECK_WINTITLE="$(grep "window.font: " $HOME/.fluxbox/overlay)"
@@ -129,10 +128,9 @@ unset 'menu_frame_now[$numc]'
 unset 'CHECKNUM_C'
 
 MENU_FRAME_NOW=$(echo "${menu_frame_now[@]}" $MENU_FRAME_SIZE)
+
 ###
 
-
-####
 GTK_FONT_NOW="$(grep "gtk-font-name" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-font-name\=//" )"
 
 #gtk-xft-antialias=1 true 0 false
@@ -154,24 +152,31 @@ GTK_HINT_NOW="$(grep "gtk-xft-hinting" $HOME/.config/gtk-3.0/settings.ini | sed 
 GTK_HINTSTYLE_NOW="$(grep "gtk-xft-hintstyle" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-xft-hintstyle\=//" )"
 GTK_HINTSTYLE_NOW="$(echo $GTK_HINTSTYLE_NOW | sed -e "s/hint//" )"
 
+#get current dpi
+if [ -f $HOME/.Xresources ]; then
+    dpi_current="$(grep "Xft.dpi" $HOME/.Xresources | sed -e 's/Xft.dpi: //')"
+else
+    dpi_current=95
+fi
 
-#gtk-xft-rgba=none!rgb!bgr!vrgb!vbgr
-#GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini | sed -e "s/gtk-xft-rgba\=//" )"
 
-####
+###MAIN###
 
-TITLE="$(gettext 'Font')"
-CLASS="mxfb-font"
-ICONPATH="/usr/share/pixmaps/mxfb-font.svg"
-#helpfile=/usr/share/mxflux/HELP_Windowoverlay
+# buttons
+export BTN_CLOSE=$(gettext "Close")  ; BTN_CLOSE+='!window-close'
+export BTN_HELP=$(gettext "Help")    ; BTN_HELP+='!help-contents'
+export BTN_OK=$(gettext "OK")        ; BTN_OK+='!object-select'
+export BTN_APPLY=$(gettext "Apply")  ; BTN_APPLY+='!object-select'
+export BTN_ABOUT=$(gettext "About") ; BTN_ABOUT+='!dialog-information'
 
-TEXT1="Default fonts are defined in the current fluxbox style."
-TEXT2="Gtk-font is independent of fluxbox style settings"
+fkey=$RANDOM
 
-MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
---borders=20 --center --width=500 --form --columns=2 --output-by-row \
---align=left --separator="_" --button="${BTN_CLOSE}":7 --button="${BTN_APPLY}":6 \
---text="<i>$TEXT1\n$TEXT2\n</i>" \
+text_tab1=$(gettext 'Default fonts as defined by the selected Fluxbox style.')
+
+#tab 1
+yad --plug=$fkey --tabnum=1 --separator="_" \
+--form --columns=2 --output-by-row --align=left \
+--text="$text_tab1\n" \
 --field="<b>$(gettext 'Window Title Default'):</b>":LBL "" \
 --field="$(gettext 'Override with') ":CHK "$WINDOW_TITLE_OVERRIDE" \
 --field=" ":LBL "|" \
@@ -181,10 +186,6 @@ MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --field="<b>$(gettext 'Menu Text Default'):</b>":LBL "" \
 --field="$(gettext 'Override with') ":CHK "$MENU_FRAME_OVERRIDE" \
 --field=" ":LBL "|" \
---field="<b>$(gettext 'Gtk Font'): </b>":LBL "|" \
---field=" ":LBL "|" \
---field="$(gettext 'Hinting')":CHK "$GTK_HINT_NOW" \
---field="$(gettext 'Antialising')":CHK "$GTK_ANTI_NOW" \
 --field="<b>$STYLE_WINDOW_TITLE</b>":LBL "|" \
 --field=" ":FN "$WINDOW_TITLE_NOW" \
 --field=" ":LBL "|" \
@@ -194,24 +195,86 @@ MAINPOS=$(yad --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
 --field="<b>$STYLE_MENU_FRAME</b>":LBL "|" \
 --field=" ":FN "$MENU_FRAME_NOW" \
 --field=" ":LBL "|" \
+>"$font_temp1" &
+    
+text_tab2=$(gettext 'Main window font and miscellaneous settings.')
+
+#tab 2
+
+yad --plug=$fkey --tabnum=2 --separator="_" \
+--form --columns=2 --output-by-row --text-align=left \
+--text="$text_tab2\n" \
+--field="<b>$(gettext 'Gtk Font'): </b>":LBL "|" \
+--field=" ":LBL "|" \
+--field="$(gettext 'Font scaling'): ":LBL "|" \
+--field=" ":LBL "|" \
+--field="$(gettext 'Hinting')":CHK "$GTK_HINT_NOW" \
+--field="$(gettext 'Antialising')":CHK "$GTK_ANTI_NOW" \
+--field=" ":LBL "|" \
 --field=" ":FN "$GTK_FONT_NOW" \
 --field=" ":LBL "|" \
---field="$(gettext 'Hinting Style')":CB "$GTK_HINTSTYLE_NOW!none!slight!medium!full"
-)
+--field="DPI":NUM "$dpi_current\!75..150\!5\!0" \
+--field=" ":LBL "|" \
+--field="$(gettext 'Hinting Style')":CB "$GTK_HINTSTYLE_NOW!none!slight!medium!full" \
+--field=" ":LBL "|" \
+--field=" ":LBL "|" \
+> "$font_temp2" &
 
-ret=$?
 
-case $ret in
-    7 | 252 )
-        ENDLOOP=getouttahere
-    ;;
+title_tab1=$(gettext 'Fluxbox fonts')
+title_tab2=$(gettext 'Other font settings')  
+    
+# main dialog
+TITLE="$(gettext 'MXFB-Font')"
+CLASS="mxfb-font"
+ICONPATH="/usr/share/pixmaps/mxfb-font.svg"
 
-    6 )
+yad --notebook --key=$fkey --tab="<b>$title_tab1</b>" --tab="<b>$title_tab2</b>" \
+    --title="$TITLE" --class="$CLASS" --window-icon="$ICONPATH" \
+    --width=500 --height=350 --borders=20 --center --buttons-layout=spread \
+    --button="${BTN_ABOUT}":4 --button="${BTN_HELP}":2 \
+    --button="${BTN_CLOSE}":1 --button="${BTN_APPLY}":0 \
+    
+RET=$?
+    
+case $RET in
+    
+4 )
+#TRANSLATORS
+    text_about=$(gettext "Manage Font Settings in MX-Fluxbox")
 
-    RES=$(echo "$MAINPOS" | sed -e "s/ /-/g" | sed -e "s/_/ /g" | sed -e "s/__/ /g" | sed -e "s/___/ /g" | sed -e "s/____/ /g")
+    yad --about \
+    --image="$ICONPATH" \
+    --pname="$TITLE" \
+    --pversion="$version" \
+    --comments="$text_about" \
+    --website-label="mxlinux.org" \
+    --website="https://mxlinux.org/" \
+    --copyright="Copyright (c) 2025 Melber - MX Linux" \
+    --authors="Melber,MX Devs" \
+    --license="GPL3"
+;;
+    
+2 )
+    x-www-browser https://mxlinux.org/wiki/help-files/help-mxfb-font &
+    WAIT=0
+;;
+            
+1 | 252 )
+    WAIT=1
+;;
 
-    override=($RES)
+0 )
 
+    read -r -a font_settings1 < $font_temp1
+    read -r -a font_settings2 < $font_temp2
+
+    font_settings_combined=( "${font_settings1[@]}" "${font_settings2[@]}" )
+        
+    font_settings_clean=$(echo "${font_settings_combined[@]}" | sed -e 's/ /-/g' | sed -e 's/_/ /g' | sed -e 's/ - / /g')
+    
+    override=($font_settings_clean)
+    
 ####function fb_font
 
 fb_font() {
@@ -389,10 +452,29 @@ export fb_font
         sed -i "s/$GTK_FONT_NOW/$GTK_FONT_NEW/" $HOME/.config/gtk-3.0/settings.ini
         sed -i "s/\"$GTK_FONT_NOW\"/\"$GTK_FONT_NEW\"/" $HOME/.gtkrc-2.0
     fi
+    
+#Xresources
+if [ -f $HOME/.Xresources ]; then
+    XRES_NOW="$(grep "Xft.dpi" $HOME/.Xresources)"
+else
+    XRES_NOW=95
+fi
+
+XRES_NEW=$(echo "${override[7]}")
+XRES_NEW="Xft.dpi: $XRES_NEW"
+
+if [ "$XRES_NOW" != "$XRES_NEW" ]; then
+    if [ -f $HOME/.Xresources ]; then
+        sed -i "s/$XRES_NOW/$XRES_NEW/" $HOME/.Xresources
+    else
+        printf "$XRES_NEW" > $HOME/.Xresources
+    fi
+    xrdb ~/.Xresources
+fi
 
 #gtk-xft-antialias
 GTK_ANTI_NOW="$(grep "gtk-xft-antialias" $HOME/.config/gtk-3.0/settings.ini)"
-GTK_ANTI_NEW=$(echo "${override[9]}")
+GTK_ANTI_NEW=$(echo "${override[10]}")
 
     if [ "$GTK_ANTI_NEW" = TRUE ]; then
         GTK_ANTI_NEW=1
@@ -410,7 +492,7 @@ GTK_ANTI_NEW="gtk-xft-antialias=$GTK_ANTI_NEW"
 
 #gtk-xft-hinting
 GTK_HINT_NOW="$(grep "gtk-xft-hinting" $HOME/.config/gtk-3.0/settings.ini)"
-GTK_HINT_NEW=$(echo "${override[7]}")
+GTK_HINT_NEW=$(echo "${override[8]}")
 
     if [ "$GTK_HINT_NEW" = TRUE ]; then
         GTK_HINT_NEW=1
@@ -429,7 +511,7 @@ GTK_HINT_NEW=gtk-xft-hinting=$GTK_HINT_NEW
 
 GTK_HINTSTYLE_NOW="$(grep "gtk-xft-hintstyle" $HOME/.config/gtk-3.0/settings.ini)"
 GTK_HINTSTYLE_NOW2="$(grep "gtk-xft-hintstyle" $HOME/.gtkrc-2.0)"
-GTK_HINTSTYLE_NEW=$(echo "${override[8]}" | sed -e "s/-/ /g")
+GTK_HINTSTYLE_NEW=$(echo "${override[9]}" | sed -e "s/-/ /g")
 GTK_HINTSTYLE_NEW1=gtk-xft-hintstyle=hint$GTK_HINTSTYLE_NEW
 GTK_HINTSTYLE_NEW2=gtk-xft-hintstyle='"'hint$GTK_HINTSTYLE_NEW'"'
 
@@ -441,7 +523,7 @@ GTK_HINTSTYLE_NEW2=gtk-xft-hintstyle='"'hint$GTK_HINTSTYLE_NEW'"'
 
 
 ####
-    if [ "$RELOAD_GTK" = TRUE ]; then
+    if [ "$RELOAD_GTK" = "TRUE" ]; then
         theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
         gsettings set org.gnome.desktop.interface gtk-theme ''
         sleep 1
@@ -450,16 +532,19 @@ GTK_HINTSTYLE_NEW2=gtk-xft-hintstyle='"'hint$GTK_HINTSTYLE_NEW'"'
 
 
     fluxbox-remote reloadstyle ; fluxbox-remote reconfigure
-    ;;
+
+;;
+
 esac
 
 }
 
-export choose_font
+
+export -f choose_font
 
 ####
 
-until [ "$ENDLOOP" = "getouttahere" ]; do
+while [ "$WAIT" != "1" ]; do
     choose_font
 done
 
