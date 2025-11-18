@@ -1,6 +1,6 @@
 #!/bin/bash
 #MXFB-Look is a tool to save and restore desktop settings in MX-Linux Fluxbox by Melber
-VERSION=2509-1
+VERSION=2511-1
 #License: GPL-3.0+
 
 ##Changelog##
@@ -224,6 +224,10 @@ fi
 #rofi
 look_rofi="$(grep '@theme' $HOME/.config/rofi/config.rasi | sed -e "s/\@theme\ //" | sed -e 's/"//g')"
 
+if [ "$look_rofi" = "MX-ease-dark.rasi" ]; then
+    look_rofi="$HOME/.config/rofi/themes/MX-ease-dark.rasi"
+fi
+
 #wallpaper
 look_checkfeh=$(grep '#nitrogen' $HOME/.fluxbox/startup)
 
@@ -243,12 +247,22 @@ else
 
 fi
 
+if [ -z "$look_wallpaper" ]; then
+    look_wallpaper='/usr/share/backgrounds/Maturity.png'
+fi
 
 #conky
 look_conky1="$(grep "conky" $HOME/.conky/conky-startup.sh | sed -n 2p | sed -e 's/cd //' | sed -e 's/"//g')"
 look_conky2="$(grep "conky" $HOME/.conky/conky-startup.sh | sed -n 3p | sed -e 's/conky -c "//' | sed -e 's/" &//')"
 look_conkystate="$(grep "Hidden" "$HOME/.config/autostart/conky.desktop" | sed -e 's/Hidden=//')"
 
+if [ -z "$look_conky1" ]; then
+    look_conky1='/usr/share/mx-conky-data/themes/MX-Infinity'
+fi
+
+if [ -z "$look_conky2" ]; then
+    look_conky2='/usr/share/mx-conky-data/themes/MX-Infinity/MX-Infinity-conkyrc'
+fi
 
 #MAINSAVE
 
