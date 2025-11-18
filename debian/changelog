@@ -1,3 +1,10 @@
+mxfb-accessories (25.11.01mx25) mx; urgency=medium
+
+  * update mxfb-font - add tabs and Xft.dpi scaling (melber)
+  * update mxfb-look - fixes (melber)
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, XX Nov 2025 20:19:43 -0400
+
 mxfb-accessories (25.10.02mx25) mx; urgency=medium
 
   * update mxfb-menu-generator check
