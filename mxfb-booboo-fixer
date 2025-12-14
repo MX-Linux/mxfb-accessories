@@ -1,0 +1,242 @@
+#!/bin/bash
+#This app was developed by Melber & MX-Devs 2025 and released under GPLv3
+version=2512-01
+
+TEXTDOMAINDIR=/usr/share/locale 
+export TEXTDOMAIN="mxfb-accessories"
+source gettext.sh
+
+icon_warning=/usr/share/pixmaps/mxfb-booboo-fixer-warning.svg
+icon_ok=/usr/share/pixmaps/mxfb-booboo-fixer-ok.svg
+
+#check version function
+
+function check_version() { echo "$@" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }'; }
+export -f check_version
+
+
+#main loop
+
+until [ "$all_fixed" = "yippee" ]; do
+
+#00 check mx-fluxbox package version
+minimum_version_fluxbox='25.12.1'
+
+current_version_fluxbox=$(dpkg -s mx-fluxbox | grep 'Version:')
+current_version_fluxbox=$(echo $current_version_fluxbox | sed -e 's/Version://' | sed -e 's/mx25//')
+
+if [ $(check_version $current_version_fluxbox) -ge $(check_version "$minimum_version_fluxbox") ]; then
+
+    fluxbox_text1="mx-fluxbox"
+    fluxbox_text2="-"
+    
+    uptodate_version_fluxbox="false|mxflux|$icon_ok|$fluxbox_text1 $minimum_version_fluxbox|$fluxbox_text2|-|"
+else
+
+#TRANSLATORS Info text, version number is automatically added at end of sentence
+    fluxbox_text1=$(gettext "mx_fluxbox needs")
+#TRANSLATORS Info text
+    fluxbox_text2=$(gettext "Update Package")
+    
+    uptodate_version_fluxbox="true|mxflux|$icon_warning|$fluxbox_text1 $minimum_version_fluxbox|$fluxbox_text2|-|"
+    update_reqd="yes"
+    update_reqd_fluxbox="mx-fluxbox"
+fi
+
+
+#01 check mxfb-accessories package version
+minimum_version_accessories='25.12.01'
+
+current_version_accessories=$(dpkg -s mxfb-accessories | grep 'Version:')
+current_version_accessories=$(echo $current_version_accessories | sed -e 's/Version://' | sed -e 's/mx25//')
+
+if [ $(check_version $current_version_accessories) -ge $(check_version "$minimum_version_accessories") ]; then
+
+    acc_text1="mxfb-accessories"
+    acc_text2="-"
+     
+    uptodate_version_accessories="false|mxfbacc|$icon_ok|$acc_text1 $minimum_version_accessories|$acc_text2|-|"
+    
+else
+#TRANSLATORS Info text, version number is automatically added at end of sentence
+    acc_text1=$(gettext "mxfb-accessories needs")
+#TRANSLATORS Info text
+    acc_text2=$(gettext "Update Package")
+
+    uptodate_version_accessories="true|mxfbacc|$icon_warning|$acc_text1 $minimum_version_accessories|$acc_text2|-|"
+    update_reqd="yes"
+    update_reqd_accessories="mxfb-accessories"
+fi
+
+
+#02 check tint2
+
+check_tint2_autohide=$(grep 'autohide_height' $HOME/.config/tint2/tint2rc)
+
+#TRANSLATORS Info text describing problem
+tint2_autohide_text_1=$(gettext "Maximized windows partially hidden behind panel")
+tint2_autohide_text_2='autohide_height=45'
+tint2_autohide_text_3="-"
+
+if [ "$check_tint2_autohide" = "autohide_height = 36" ]; then
+    uptodate_tint2_autohide="true|tint2ah|$icon_warning|$tint2_autohide_text_1|$tint2_autohide_text_2|~/.config/tint2/tint2rc|"
+    update_button_reqd="yes"
+else
+    uptodate_tint2_autohide="false|tint2ah|$icon_ok|$tint2_autohide_text_1|$tint2_autohide_text_3|-|"
+fi
+
+#03 check apps file
+
+check_apps_tint2=$(awk '/class=Tint2)/{ rl = NR + 1 } NR == rl ' $HOME/.fluxbox/apps | sed -e $'s/\t/ /g' | sed -e 's/ //g' )
+
+#TRANSLATORS Info text describing problem
+apps_tint2_text_1=$(gettext "Panel on top of full screen display")
+apps_tint2_text_2='[Layer] {2}'
+apps_tint2_text_3="-"
+
+if [ "$check_apps_tint2" = "[Layer]{1}" ]; then
+    uptodate_apps_tint2="true|fbapps|$icon_warning|$apps_tint2_text_1|$apps_tint2_text_2|~/.fluxbox/apps|"
+    update_button_reqd="yes"
+else
+    uptodate_apps_tint2="false|fbapps|$icon_ok|$apps_tint2_text_1|$apps_tint2_text_3|-|"
+fi
+
+
+#make input array
+boo_boos=("$uptodate_version_fluxbox""$uptodate_version_accessories""$uptodate_tint2_autohide""$uptodate_apps_tint2")
+
+#yad setup
+
+#TRANSLATORS App name in title bar
+title=$(gettext "Fix Default Configuration")
+class="booboo-fixer"
+iconpath="/usr/share/pixmaps/mxfb-booboo-fixer.svg"
+iconpath96="/usr/share/pixmaps/mxfb-booboo-fixer96.svg"
+
+#Text
+#TRANSLATORS Text line 1 in main window
+text_main1=$(gettext "A tool to fix the default user configuration in MX-Fluxbox 25.")
+#TRANSLATORS Text line 2 in main window, path gets added automatically at end of sentence
+text_main2=$(gettext "This app edits configuration files in")
+#TRANSLATORS Text line 3 in main window, path gets added automatically at end of sentence
+text_main3=$(gettext "A backup copy of these files will be made in")
+#TRANSLATORS Text line 4 in main window
+text_main4=$(gettext "To update packages enter your sudo password in the pop-up terminal window")
+#TRANSLATORS Text line 5 in main window
+text_main5=$(gettext "No fixes needed!")
+
+#List headers
+#TRANSLATORS List column 1 header
+list_main1=$(gettext "Selected")
+#TRANSLATORS List column 2 header
+list_main2=$(gettext "Status")
+#TRANSLATORS List column 3 header describing problems
+list_main3=$(gettext "Issue")
+#TRANSLATORS List column 4 header describing solution to problem
+list_main4=$(gettext "Fix")
+#TRANSLATORS List column 5 header
+list_main5=$(gettext "File to be edited")
+
+
+#buttons
+#TRANSLATORS Button text
+BTN_CLOSE=$(gettext "Close") ; BTN_CLOSE+='!window-close'
+#TRANSLATORS Button text
+    BTN_APPLY=$(gettext "Apply Selected Fixes") ; BTN_APPLY+='!object-select'
+
+if [ "$update_reqd" = "yes" ] || [ "$update_button_reqd" = "yes" ]; then
+    BUTTONS=(--button="$BTN_APPLY":2 --button="$BTN_CLOSE":3)
+    text_main_all="<b>$text_main1</b>\n$text_main2 $HOME\n$text_main3 $HOME/.restore\n$text_main4\n"
+else
+    BUTTONS=(--button="$BTN_CLOSE":3)
+    text_main_all="<b>$text_main1\n\n$text_main5</b>\n"
+fi
+
+#TRANSLATORS Button text
+BTN_ABOUT=$(gettext "About") ; BTN_ABOUT+='!dialog-information'
+
+#yad
+
+OLDIFS=' ' 
+IFS='|'
+
+fixes=$(yad --title="$title" --class="$class" --window-icon="$iconpath" --image="$iconpath96" \
+--width=800 --height=350 --center --borders=12 \
+--list --checklist --separator="_" \
+--text="$text_main_all" --text-align=left \
+--buttons-layout=spread ${BUTTONS[@]} \
+--column="$list_main1" --column="outputs"  --column="$list_main2:IMG" --column="$list_main3" --column="$list_main4" --column="$list_main5" \
+--hide-column=1 --hide-column=2 --print-column=2 --no-selection \
+${boo_boos[@]} )
+
+yadout="$?"
+
+IFS=$OLDIFS
+fixes="${fixes//$'\n'/}"
+fixes=$(echo $fixes | sed -e 's/_/ /g')
+fixes=($fixes)
+
+for i in "${fixes[@]}"; do
+    if [ "$i" = "mxflux" ]; then
+        mx_flux=TRUE
+    elif [ "$i" = "mxfbacc" ]; then
+        mxfb_acc=TRUE
+    elif [ "$i" = "tint2ah" ]; then
+        tint2_ah=TRUE
+    elif [ "$i" = "fbapps" ]; then
+        fb_apps=TRUE
+    fi
+done
+
+case $yadout in
+
+    2)
+         #0 update packages
+
+        if [ "$mx_flux" = "TRUE" ] ||  [ "$mxfb_acc" = "TRUE" ]; then
+            if [ "$update_reqd" = "yes" ]; then
+                              
+                touch /tmp/booboo.lock
+                              
+                x-terminal-emulator -e bash -c "sudo apt update && sudo install $update_reqd_fluxbox $update_reqd_accessories ; rm /tmp/booboo.lock"
+                
+                while [ -f /tmp/booboo.lock ]; do
+                    sleep 1
+                done            
+               
+            fi
+        fi
+
+        #2 fix tint2 autohide height
+        backup_date=$(date -d "today" +"%Y%m%d")
+
+        if [ "$tint2_ah" = "TRUE" ]; then
+            mkdir -p  $HOME/.restore/tint2
+            cp  $HOME/.config/tint2/tint2rc $HOME/.restore/tint2/tint2rc_$backup_date
+            cp  $HOME/.config/tint2/MX-25.tint2rc $HOME/.restore/tint2/MX-25.tint2rc_$backup_date
+            
+            sed -i 's/autohide_height = 36/autohide_height = 45/' $HOME/.config/tint2/tint2rc $HOME/.config/tint2/MX-25.tint2rc && killall tint2 2>/dev/null && tint2session
+        fi
+
+        #3 fix tint2 layer in apps
+        if [ "$fb_apps" = "TRUE" ]; then
+            mkdir -p  $HOME/.restore/fluxbox
+            cp  $HOME/.fluxbox/apps $HOME/.restore/fluxbox/apps_$backup_date
+
+            appsfile_edit=$(awk '/class=Tint2)/{ rl = NR + 1 } NR == rl { gsub( /1/,"2") } 1' $HOME/.fluxbox/apps)
+            echo -e "$appsfile_edit" > $HOME/.fluxbox/apps
+        fi
+
+        all_fixed="nonono"
+
+    ;;
+
+    3|252)
+        all_fixed="yippee"
+    ;;
+
+esac
+
+done
+
+exit 0
