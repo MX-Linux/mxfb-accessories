@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-14 17:29-0500\n"
+"POT-Creation-Date: 2025-12-15 19:44-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,7 +103,7 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS Text line 3 in main window, path gets added automatically at end of sentence
-#: ../mxfb-booboo-fixer:122
+#: ../mxfb-booboo-fixer:128
 msgid "A backup copy of these files will be made in"
 msgstr ""
 
@@ -115,12 +115,12 @@ msgstr ""
 
 #. Text
 #. TRANSLATORS Text line 1 in main window
-#: ../mxfb-booboo-fixer:118
+#: ../mxfb-booboo-fixer:124
 msgid "A tool to fix the default user configuration in MX-Fluxbox 25."
 msgstr ""
 
 #. TRANSLATORS Button text
-#: ../mxfb-font:170 ../mxfb-booboo-fixer:156
+#: ../mxfb-font:170 ../mxfb-booboo-fixer:162
 msgid "About"
 msgstr ""
 
@@ -209,7 +209,7 @@ msgid "Apply"
 msgstr ""
 
 #. TRANSLATORS Button text
-#: ../mxfb-booboo-fixer:145
+#: ../mxfb-booboo-fixer:151
 msgid "Apply Selected Fixes"
 msgstr ""
 
@@ -253,7 +253,7 @@ msgstr ""
 #. TRANSLATORS Button text
 #: ../mxfb-tint2-manager:97 ../mxfb-font:166 ../mxfb-look:22
 #: ../exit-options-manager:29 ../mxfb-keybindings:17 ../mxfb-keybindings:162
-#: ../mxfb-booboo-fixer:143
+#: ../mxfb-booboo-fixer:149
 msgid "Close"
 msgstr ""
 
@@ -424,18 +424,18 @@ msgid "File Manager"
 msgstr ""
 
 #. TRANSLATORS List column 5 header
-#: ../mxfb-booboo-fixer:138
+#: ../mxfb-booboo-fixer:144
 msgid "File to be edited"
 msgstr ""
 
 #. TRANSLATORS List column 4 header describing solution to problem
-#: ../mxfb-booboo-fixer:136
+#: ../mxfb-booboo-fixer:142
 msgid "Fix"
 msgstr ""
 
 #. yad setup
 #. TRANSLATORS App name in title bar
-#: ../mxfb-booboo-fixer:111
+#: ../mxfb-booboo-fixer:117
 msgid "Fix Default Configuration"
 msgstr ""
 
@@ -513,7 +513,7 @@ msgid "Inactive Window"
 msgstr ""
 
 #. TRANSLATORS List column 3 header describing problems
-#: ../mxfb-booboo-fixer:134
+#: ../mxfb-booboo-fixer:140
 msgid "Issue"
 msgstr ""
 
@@ -611,7 +611,7 @@ msgid "Maximize"
 msgstr ""
 
 #. TRANSLATORS Info text describing problem
-#: ../mxfb-booboo-fixer:77
+#: ../mxfb-booboo-fixer:83
 msgid "Maximized windows partially hidden behind panel"
 msgstr ""
 
@@ -677,7 +677,7 @@ msgid "Next Workspace"
 msgstr ""
 
 #. TRANSLATORS Text line 5 in main window
-#: ../mxfb-booboo-fixer:126
+#: ../mxfb-booboo-fixer:132
 msgid "No fixes needed!"
 msgstr ""
 
@@ -747,7 +747,7 @@ msgid "PROGRAMS"
 msgstr ""
 
 #. TRANSLATORS Info text describing problem
-#: ../mxfb-booboo-fixer:93
+#: ../mxfb-booboo-fixer:99
 msgid "Panel on top of full screen display"
 msgstr ""
 
@@ -874,7 +874,7 @@ msgstr ""
 
 #. List headers
 #. TRANSLATORS List column 1 header
-#: ../mxfb-booboo-fixer:130
+#: ../mxfb-booboo-fixer:136
 msgid "Selected"
 msgstr ""
 
@@ -934,7 +934,7 @@ msgid "Spacing"
 msgstr ""
 
 #. TRANSLATORS List column 2 header
-#: ../mxfb-booboo-fixer:132
+#: ../mxfb-booboo-fixer:138
 msgid "Status"
 msgstr ""
 
@@ -999,7 +999,7 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS Text line 2 in main window, path gets added automatically at end of sentence
-#: ../mxfb-booboo-fixer:120
+#: ../mxfb-booboo-fixer:126
 msgid "This app edits configuration files in"
 msgstr ""
 
@@ -1039,7 +1039,7 @@ msgid "Titlebar Text"
 msgstr ""
 
 #. TRANSLATORS Text line 4 in main window
-#: ../mxfb-booboo-fixer:124
+#: ../mxfb-booboo-fixer:130
 msgid ""
 "To update packages enter your sudo password in the pop-up terminal window"
 msgstr ""
@@ -1050,7 +1050,7 @@ msgid "Top Line"
 msgstr ""
 
 #. TRANSLATORS Info text
-#: ../mxfb-booboo-fixer:39 ../mxfb-booboo-fixer:64
+#: ../mxfb-booboo-fixer:42 ../mxfb-booboo-fixer:68
 msgid "Update Package"
 msgstr ""
 
@@ -1179,14 +1179,23 @@ msgstr ""
 msgid "has been set as the current style."
 msgstr ""
 
+#. fluxbox_text1="mx-fluxbox"
+#. fluxbox_text2="-"
+#.
+#. uptodate_version_fluxbox="false|mxflux|$icon_ok|$fluxbox_text1 $minimum_version_fluxbox|$fluxbox_text2|-|"
+#. else
 #. TRANSLATORS Info text, version number is automatically added at end of sentence
-#: ../mxfb-booboo-fixer:37
-msgid "mx_fluxbox needs"
+#: ../mxfb-booboo-fixer:40
+msgid "mx-fluxbox needs version"
 msgstr ""
 
+#. acc_text1="mxfb-accessories"
+#. acc_text2="-"
+#. uptodate_version_accessories="false|mxfbacc|$icon_ok|$acc_text1 $minimum_version_accessories|$acc_text2|-|"
+#. else
 #. TRANSLATORS Info text, version number is automatically added at end of sentence
-#: ../mxfb-booboo-fixer:62
-msgid "mxfb-accessories needs"
+#: ../mxfb-booboo-fixer:66
+msgid "mxfb-accessories needs version"
 msgstr ""
 
 #: ../mxfb-look:425
