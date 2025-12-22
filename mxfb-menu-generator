@@ -46,7 +46,7 @@ fi
 #check time since last build
 time=0
 now=$(date +"%s")
-if [ -e "FILE" ]; then
+if [ -e "$FILE" ]; then
    time=$(stat --format %Y "$FILE")
 fi
 
