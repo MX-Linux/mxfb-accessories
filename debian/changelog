@@ -1,3 +1,12 @@
+mxfb-accessories (25.12.01mx25) mx; urgency=medium
+
+  [Melber]
+  * new mx fluxbox config update tool
+  [dolphin oracle]
+  * update translations
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 22 Dec 2025 19:10:28 -0500
+
 mxfb-accessories (25.11.01mx25) mx; urgency=medium
 
   * update mxfb-font - add tabs and Xft.dpi scaling [melber]
