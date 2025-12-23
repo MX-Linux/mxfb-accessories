@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-17 18:46-0400\n"
+"POT-Creation-Date: 2025-12-15 19:44-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2025\n"
 "Language-Team: Finnish (https://app.transifex.com/anticapitalista/teams/10162/fi/)\n"
@@ -61,7 +61,7 @@ msgstr " "
 msgid "   or"
 msgstr "tai"
 
-#: ../mxfb-keybindings:211 ../mxfb-keybindings:218
+#: ../mxfb-keybindings:218 ../mxfb-keybindings:225
 msgid "   or (on keypad)"
 msgstr "tai (näppäimistöllä)"
 
@@ -136,6 +136,12 @@ msgstr ""
 "Saman niminen ulkoasu on olemassa.\\n\\nHaluatko korvata $NEWNAME vai "
 "tallettaa uudella nimellä?\\n"
 
+#. TRANSLATORS Text line 3 in main window, path gets added automatically at
+#. end of sentence
+#: ../mxfb-booboo-fixer:128
+msgid "A backup copy of these files will be made in"
+msgstr "Näistä tiedostoista tehdään varmuuskopio"
+
 #. TRANSLATORS Main window text - line 2
 #: ../mxfb-separate-backgrounds:17
 msgid ""
@@ -145,11 +151,22 @@ msgstr ""
 "Näyttöön tulee valintaikkuna jokaiselle tällä hetkellä määritetylle "
 "työtilalle."
 
+#. Text
+#. TRANSLATORS Text line 1 in main window
+#: ../mxfb-booboo-fixer:124
+msgid "A tool to fix the default user configuration in MX-Fluxbox 25."
+msgstr "Työkalu MX-Fluxbox 25 oletuskäyttäjän määritysten korjaamiseen."
+
+#. TRANSLATORS Button text
+#: ../mxfb-font:170 ../mxfb-booboo-fixer:162
+msgid "About"
+msgstr "Tietoja"
+
 #: ../mxfb-look:28
 msgid "About MXFB-Look"
 msgstr "Tietoja MXFB-Look"
 
-#: ../mxfb-style-editor:160
+#: ../mxfb-style-editor:161
 msgid "Active Window"
 msgstr "Aktiivinen ikkuna"
 
@@ -164,7 +181,7 @@ msgid "All Apps"
 msgstr "Kaikki sovelmat"
 
 #. set new style as current
-#: ../mxfb-style-editor:515
+#: ../mxfb-style-editor:516
 msgid "All done!"
 msgstr "Kaikki valmista!"
 
@@ -175,32 +192,32 @@ msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "Valmista!!\\n\\nulkoasu on tallennettu nimellä <b>$NEWNAME</b>"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:220
+#: ../mxfb-keybindings:227
 msgid "Alt 1,3,7,9"
 msgstr "Alt 1,3,7,9"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:213
+#: ../mxfb-keybindings:220
 msgid "Alt 2,4,6,8"
 msgstr "Alt 2,4,6,8"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:168
+#: ../mxfb-keybindings:175
 msgid "Alt D"
 msgstr "Alt D"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:153
+#: ../mxfb-keybindings:160
 msgid "Alt F10"
 msgstr "Alt F10"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:157
+#: ../mxfb-keybindings:164
 msgid "Alt F4"
 msgstr "Alt F4"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:149
+#: ../mxfb-keybindings:156
 msgid "Alt F9"
 msgstr "Alt F9"
 
@@ -210,11 +227,11 @@ msgid "Alt Q"
 msgstr "Alt Q"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:164
+#: ../mxfb-keybindings:171
 msgid "Alt Right click"
 msgstr "Alt + hiiren oikea"
 
-#: ../mxfb-font:187
+#: ../mxfb-font:212
 msgid "Antialising"
 msgstr "Pehmennys"
 
@@ -227,17 +244,22 @@ msgstr ""
 "Mikään Nitrogen taustamuutos ei ole pysyviä, ennen kuin erilliset taustat "
 "poistetaan käytöstä."
 
-#: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
+#: ../mxfb-tint2-manager:96 ../mxfb-font:169 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Hyväksy"
+
+#. TRANSLATORS Button text
+#: ../mxfb-booboo-fixer:151
+msgid "Apply Selected Fixes"
+msgstr "Käytä valittuja korjauksia"
 
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "MÄÄRITÄ YLÖS"
 
 #. TRANSLATORS - button label
-#: ../mxfb-separate-backgrounds:39 ../mxfb-look:23 ../mxfb-look:499
-#: ../mxfb-style-editor:168
+#: ../mxfb-separate-backgrounds:39 ../mxfb-look:23 ../mxfb-look:500
+#: ../mxfb-style-editor:169
 msgid "Cancel"
 msgstr "Peru"
 
@@ -251,7 +273,7 @@ msgid "Change Window Settings"
 msgstr "Muuta ikkunan asetuksia"
 
 #. button label
-#: ../mxfb-look:796
+#: ../mxfb-look:799
 msgid "Changelog"
 msgstr "Muutosloki"
 
@@ -263,15 +285,19 @@ msgstr "Valitse ja suorita, poista valinta lopettaaksesi"
 msgid "Click \\"
 msgstr "Paina \\"
 
+#. ##MAIN###
 #. buttons
 #. ## buttons
 #. Translator Note - window command
-#: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../mxfb-look:22
-#: ../exit-options-manager:29 ../mxfb-keybindings:17 ../mxfb-keybindings:155
+#. buttons
+#. TRANSLATORS Button text
+#: ../mxfb-tint2-manager:97 ../mxfb-font:166 ../mxfb-look:22
+#: ../exit-options-manager:29 ../mxfb-keybindings:17 ../mxfb-keybindings:162
+#: ../mxfb-booboo-fixer:149
 msgid "Close"
 msgstr "Sulje"
 
-#: ../mxfb-style-editor:127
+#: ../mxfb-style-editor:128
 msgid "Close Symbol"
 msgstr "Sulkemisen symboli"
 
@@ -283,39 +309,44 @@ msgstr "Väri kohdistettu"
 msgid "Color Unfocused"
 msgstr "Väri ei kohdistettu"
 
+#. Translator Note - turn compositor on/off
+#: ../mxfb-keybindings:122
+msgid "Compositor off/on"
+msgstr "Koostaminen pois/päällä"
+
 #: ../mxfb-tint2-manager:98
 msgid "Config"
 msgstr "Asetukset"
 
-#: ../mxfb-look:498
+#: ../mxfb-look:499
 msgid "Continue anyway?"
 msgstr "Jatketaanko?"
 
-#: ../mxfb-style-editor:169
+#: ../mxfb-style-editor:170
 msgid "Create Style"
 msgstr "Luo tyyli"
 
-#: ../mxfb-style-editor:165
+#: ../mxfb-style-editor:166
 msgid "Create matching tint2 panel?"
 msgstr "Luodaanko vastaava tint2-paneeli?"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:228
+#: ../mxfb-keybindings:235
 msgid "Ctrl 0"
 msgstr "Ctrl 0"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:210
+#: ../mxfb-keybindings:217
 msgid "Ctrl 1/2/3/4"
 msgstr "Ctrl 1/2/3/4"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:217
+#: ../mxfb-keybindings:224
 msgid "Ctrl 5/6/7/8"
 msgstr "Ctrl 5/6/7/8"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:224
+#: ../mxfb-keybindings:231
 msgid "Ctrl 9"
 msgstr "Ctrl 9"
 
@@ -323,6 +354,12 @@ msgstr "Ctrl 9"
 #: ../mxfb-keybindings:58 ../mxfb-keybindings:65
 msgid "Ctrl Alt"
 msgstr "Ctrl Alt"
+
+#. Translator Note - that is a zero; translate key names for your language if
+#. necessary
+#: ../mxfb-keybindings:124
+msgid "Ctrl Alt 0"
+msgstr "Ctrl Alt 0"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:51
@@ -365,6 +402,10 @@ msgstr "Ctrl F5"
 msgid "DESKTOP: click the background"
 msgstr "TYÖPÖYTÄ: paina taustaa"
 
+#: ../mxfb-font:174
+msgid "Default fonts as defined by the selected Fluxbox style."
+msgstr "Valitun Fluxbox määrittämät oletusfontit."
+
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
 msgstr "Viive (minuutteina)"
@@ -396,7 +437,7 @@ msgstr "Älä näytä ohjetta uudelleen!"
 msgid "Edit"
 msgstr "Muokkaa"
 
-#: ../mxfb-style-editor:159
+#: ../mxfb-style-editor:160
 msgid "Edit colors and create a new fluxbox style based on"
 msgstr "Muokkaa värejä ja luo uusi fluxbox-tyyli sen mukaan"
 
@@ -423,29 +464,46 @@ msgstr "Ominaisuudet: 1/2-näyttö, 1/4-näyttö, 1/3-näyttö ja palautus \\n"
 msgid "File Manager"
 msgstr "Tiedostonhallinta"
 
-#: ../mxfb-style-editor:162
+#. TRANSLATORS List column 5 header
+#: ../mxfb-booboo-fixer:144
+msgid "File to be edited"
+msgstr "Muokattava tiedosto"
+
+#. TRANSLATORS List column 4 header describing solution to problem
+#: ../mxfb-booboo-fixer:142
+msgid "Fix"
+msgstr "Korjaa"
+
+#. yad setup
+#. TRANSLATORS App name in title bar
+#: ../mxfb-booboo-fixer:117
+msgid "Fix Default Configuration"
+msgstr "Korjaa oletusasetukset"
+
+#: ../mxfb-style-editor:163
 msgid "Fluxbox Menu"
 msgstr "Fluxbox valikko"
 
-#. gtk-xft-rgba=none!rgb!bgr!vrgb!vbgr
-#. GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini |
-#. sed -e "s/gtk-xft-rgba\=//" )"
-#. ###
-#: ../mxfb-font:163
-msgid "Font"
-msgstr "Fontti"
+#: ../mxfb-font:224
+msgid "Fluxbox fonts"
+msgstr "Fluxbox fontit"
+
+#: ../mxfb-font:209
+msgid "Font scaling"
+msgstr "Fontin skaalaus"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:226
+#: ../mxfb-keybindings:233
 msgid "Fullscreen"
 msgstr "Koko näyttö"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:257
+#: ../mxfb-keybindings:264
 msgid "GENERAL"
 msgstr "YLEINEN"
 
-#: ../mxfb-font:184
+#. tab 2
+#: ../mxfb-font:207
 msgid "Gtk Font"
 msgstr "Gtk fontti"
 
@@ -457,25 +515,25 @@ msgstr "APUA"
 msgid "HELP: how to take a screenshot"
 msgstr "APUA: kuinka kuvakaappaus tehdään"
 
-#: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../mxfb-look:27
-#: ../exit-options-manager:30 ../mxfb-style-editor:170
+#: ../mxfb-tint2-manager:100 ../mxfb-font:167 ../mxfb-look:27
+#: ../exit-options-manager:30 ../mxfb-style-editor:171
 msgid "Help"
 msgstr "Ohje"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:166
+#: ../mxfb-keybindings:173
 msgid "Hide All"
 msgstr "Piilota kaikki"
 
-#: ../mxfb-style-editor:124
+#: ../mxfb-style-editor:125
 msgid "Highlight"
 msgstr "Korosta"
 
-#: ../mxfb-font:186
+#: ../mxfb-font:211
 msgid "Hinting"
 msgstr "Vihjeistys"
 
-#: ../mxfb-font:199
+#: ../mxfb-font:218
 msgid "Hinting Style"
 msgstr "Vihjeistys tyyli"
 
@@ -491,9 +549,14 @@ msgstr "Kuvakansio"
 msgid "Image mode"
 msgstr "Kuvatila"
 
-#: ../mxfb-style-editor:161
+#: ../mxfb-style-editor:162
 msgid "Inactive Window"
 msgstr "Passiivinen ikkuna"
+
+#. TRANSLATORS List column 3 header describing problems
+#: ../mxfb-booboo-fixer:140
+msgid "Issue"
+msgstr "Ongelma"
 
 #: ../exit-options-manager:140
 msgid "Layout"
@@ -504,12 +567,12 @@ msgstr "Asettelu"
 msgid "Left Super"
 msgstr "Vasen Suomenlippu"
 
-#: ../mxfb-keybindings:160
+#: ../mxfb-keybindings:167
 msgid "Left click"
 msgstr "Vasen painallus"
 
 #. button label
-#: ../mxfb-look:794
+#: ../mxfb-look:797
 msgid "License"
 msgstr "Lisenssi"
 
@@ -529,12 +592,12 @@ msgstr "MX-Fluxbox pikanäppäimet"
 msgid "MX-Tools"
 msgstr "MX-Tools"
 
-#: ../mxfb-style-editor:101
+#: ../mxfb-style-editor:102
 msgid "MX-comfort will be used as the starting style."
 msgstr "Lähtötyylinä käytetään MX-comfort:ia."
 
 #. about window app name
-#: ../mxfb-look:799
+#: ../mxfb-look:802
 msgid "MXFB Look"
 msgstr "MXFB Look"
 
@@ -543,7 +606,7 @@ msgstr "MXFB Look"
 msgid "MXFB Style Editor"
 msgstr "MXFB Style Editor"
 
-#: ../mxfb-style-editor:47
+#: ../mxfb-style-editor:48
 msgid "MXFB Style Editor Help"
 msgstr "MXFB Style Editor ohje"
 
@@ -551,9 +614,23 @@ msgstr "MXFB Style Editor ohje"
 msgid "MXFB Timer"
 msgstr "MXFB Timer"
 
-#: ../mxfb-style-editor:164
+#. main dialog
+#: ../mxfb-font:228
+msgid "MXFB-Font"
+msgstr "MXFB-Font"
+
+#: ../mxfb-font:200
+msgid "Main window font and miscellaneous settings."
+msgstr "Pääikkunan fontti ja muut asetukset."
+
+#: ../mxfb-style-editor:165
 msgid "Make new style current?"
 msgstr "Tehdäänkö uusi tyyli nykyisestä?"
+
+#. TRANSLATORS
+#: ../mxfb-font:244
+msgid "Manage Font Settings in MX-Fluxbox"
+msgstr "Hallitse MX-Fluxbox fontteja"
 
 #. Translator Note - opens mx-fluxbox manual
 #: ../mxfb-keybindings:37
@@ -570,51 +647,56 @@ msgid "Margin"
 msgstr "Marginaali"
 
 #. Translator Note - window command
-#: ../mxfb-keybindings:151
+#: ../mxfb-keybindings:158
 msgid "Maximize"
 msgstr "Suurenna"
 
-#: ../mxfb-style-editor:132
+#. TRANSLATORS Info text describing problem
+#: ../mxfb-booboo-fixer:83
+msgid "Maximized windows partially hidden behind panel"
+msgstr "Suurennetut ikkunat osittain piilossa paneelin takana"
+
+#: ../mxfb-style-editor:133
 msgid "Menu Background"
 msgstr "Valikon tausta"
 
-#: ../mxfb-style-editor:134
+#: ../mxfb-style-editor:135
 msgid "Menu Highlight"
 msgstr "Valikon korostus"
 
-#: ../mxfb-style-editor:135
+#: ../mxfb-style-editor:136
 msgid "Menu Highlight Text"
 msgstr "Valikon korostettu teksti"
 
-#: ../mxfb-style-editor:133
+#: ../mxfb-style-editor:134
 msgid "Menu Text"
 msgstr "Valikon teksti"
 
-#: ../mxfb-font:181
+#: ../mxfb-font:186
 msgid "Menu Text Default"
 msgstr "Valikon oletusteksti"
 
-#: ../mxfb-font:178
+#: ../mxfb-font:183
 msgid "Menu Title Default"
 msgstr "Valikon oletusotsikko"
 
-#: ../mxfb-style-editor:131
+#: ../mxfb-style-editor:132
 msgid "Menu Title Text"
 msgstr "Valikon otsikkoteksti"
 
 #. Translator Note - mouse action
-#: ../mxfb-keybindings:172
+#: ../mxfb-keybindings:179
 msgid "Middle click"
 msgstr "Keskipainallus"
 
 #. ##Tab 3
 #. Translator Note - window command
-#: ../mxfb-keybindings:147
+#: ../mxfb-keybindings:154
 msgid "Minimize"
 msgstr "Pienennä"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:159
+#: ../mxfb-keybindings:166
 msgid "Move (drag titlebar)"
 msgstr "Siirrä (vedä otsikkoriviä)"
 
@@ -622,7 +704,7 @@ msgstr "Siirrä (vedä otsikkoriviä)"
 msgid "Multiple options for number keys and keyboard"
 msgstr "Useita vaihtoehtoja numeronäppäimille ja näppäimistölle"
 
-#: ../mxfb-style-editor:163 ../mxfb-style-editor:330
+#: ../mxfb-style-editor:164 ../mxfb-style-editor:331
 msgid "Name for new style"
 msgstr "Uuden tyylin nimi"
 
@@ -635,11 +717,16 @@ msgstr "Uuden ulkoasun nimi"
 msgid "Next Workspace"
 msgstr "Seuraava työtila"
 
+#. TRANSLATORS Text line 5 in main window
+#: ../mxfb-booboo-fixer:132
+msgid "No fixes needed!"
+msgstr "Korjausta ei tarvita!"
+
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
 msgstr "Ei kiertoa: viive = 0"
 
-#: ../mxfb-style-editor:100
+#: ../mxfb-style-editor:101
 msgid "No starting style selected!"
 msgstr "Aloitustyyliä ei ole valittuna!"
 
@@ -648,7 +735,7 @@ msgstr "Aloitustyyliä ei ole valittuna!"
 msgid "Notes"
 msgstr "Huomautukset"
 
-#: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../mxfb-look:25
+#: ../mxfb-tint2-manager:101 ../mxfb-font:168 ../mxfb-look:25
 #: ../exit-options-manager:31
 msgid "OK"
 msgstr "OK"
@@ -664,17 +751,17 @@ msgstr "VALINNAINEN REUNUSTYYLIN MÄÄRITYS"
 
 #. ##Tab 4
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:208
+#: ../mxfb-keybindings:215
 msgid "One-Half"
 msgstr "Puolikas"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:215
+#: ../mxfb-keybindings:222
 msgid "One-Quarter"
 msgstr "Neljännes"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:222
+#: ../mxfb-keybindings:229
 msgid "One-Third"
 msgstr "Kolmasosa"
 
@@ -682,7 +769,11 @@ msgstr "Kolmasosa"
 msgid "Other"
 msgstr "Muut"
 
-#: ../mxfb-font:176 ../mxfb-font:179 ../mxfb-font:182
+#: ../mxfb-font:225
+msgid "Other font settings"
+msgstr "Muut fonttiasetukset"
+
+#: ../mxfb-font:181 ../mxfb-font:184 ../mxfb-font:187
 msgid "Override with"
 msgstr "Ohita"
 
@@ -692,16 +783,21 @@ msgid "Overwrite $NEWNAME"
 msgstr "Korvaa $NEWNAME"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:259
+#: ../mxfb-keybindings:266
 msgid "PROGRAMS"
 msgstr "OHJELMAT"
+
+#. TRANSLATORS Info text describing problem
+#: ../mxfb-booboo-fixer:99
+msgid "Panel on top of full screen display"
+msgstr "Paneeli ylhäällä koko näytön päällä"
 
 #. How to take a screenshot...
 #: ../mxfb-quickshot:83
 msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
 msgstr "Paina \"Print\" (tai \"PrtSc\") ja käytä hiirtä:"
 
-#: ../mxfb-style-editor:129
+#: ../mxfb-style-editor:130
 msgid "Pressed Symbols"
 msgstr "Painettavia symboleita"
 
@@ -711,7 +807,7 @@ msgid "Previous Workspace"
 msgstr "Edellinen työtila"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:162
+#: ../mxfb-keybindings:169
 msgid "Resize (drag lower R corner)"
 msgstr "Muuta kokoa (vetämällä alakulmaa)"
 
@@ -720,12 +816,12 @@ msgid "Restore Look"
 msgstr "Palauta ulkoasu"
 
 #. Translator Note - mouse action
-#: ../mxfb-keybindings:176
+#: ../mxfb-keybindings:183
 msgid "Right click"
 msgstr "Hiiren oikea"
 
 #. Translator Note - opens root menu
-#: ../mxfb-keybindings:174
+#: ../mxfb-keybindings:181
 msgid "Root Menu (on desktop)"
 msgstr "Päävalikko (työpöydällä)"
 
@@ -763,7 +859,7 @@ msgstr "Tallenna ulkoasu"
 msgid "Save Look as"
 msgstr "Tallenna ulkoasu..."
 
-#: ../mxfb-look:802
+#: ../mxfb-look:805
 msgid "Save and restore desktop settings for MX-Linux Fluxbox"
 msgstr "Palauta MX-Linux Fluxbox työpöytäasetukset"
 
@@ -797,13 +893,13 @@ msgid "Select Icon Theme"
 msgstr "Valitse kuvaketeema"
 
 #. define some variables
-#: ../mxfb-look:943
+#: ../mxfb-look:946
 msgid "Select a saved look to restore or save the current setup as a new look"
 msgstr ""
 "Valitse tallennettu ulkoasu palautettavaksi tai tallenna nykyinen uutena "
 "ulkoasuna"
 
-#: ../mxfb-look:425
+#: ../mxfb-look:426
 #, sh-format
 msgid "Select an alternative wallpaper."
 msgstr "Valitse vaihtoehtoinen taustakuva."
@@ -823,6 +919,12 @@ msgstr "Valitse haluamasi tausta ja paina OK."
 msgid "Select titlebar mode"
 msgstr "Valitse otsikkorivin tila"
 
+#. List headers
+#. TRANSLATORS List column 1 header
+#: ../mxfb-booboo-fixer:136
+msgid "Selected"
+msgstr "Valittu"
+
 #. TRANSLATORS - notification text
 #: ../mxfb-separate-backgrounds:46
 msgid "Separate backgrounds have been disabled."
@@ -837,7 +939,7 @@ msgstr "Erilliset työtilan taustakuvat"
 msgid "Set background rotation"
 msgstr "Aseta taustakuvan kääntyminen"
 
-#: ../mxfb-style-editor:518
+#: ../mxfb-style-editor:519
 msgid "Set styles with Fluxbox menu > Appearance >  Theme"
 msgstr "Aseta tyylit Fluxbox-valikko > Ulkoasu > Teema"
 
@@ -878,6 +980,11 @@ msgstr "Koko"
 msgid "Spacing"
 msgstr "Välit"
 
+#. TRANSLATORS List column 2 header
+#: ../mxfb-booboo-fixer:138
+msgid "Status"
+msgstr "TIla"
+
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:67
 msgid "Success!"
@@ -885,7 +992,7 @@ msgstr "Onnistui"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:263
+#: ../mxfb-keybindings:270
 msgid "TILING"
 msgstr "IKKUNAT VIEREKKÄIN"
 
@@ -906,7 +1013,7 @@ msgstr ""
 msgid "The existing file will be backed up in:"
 msgstr "Tiedosto varmuuskopioidaan seuraavaan paikkaan:"
 
-#: ../mxfb-look:497
+#: ../mxfb-look:498
 msgid "The following elements cannot be found and will not be restored."
 msgstr "Seuraavia osia ei löydy, eikä niitä palauteta."
 
@@ -941,6 +1048,12 @@ msgid ""
 msgstr ""
 "Sovelluksen avulla voit määrittää erilliset taustakuvat kullekin työtilalle"
 
+#. TRANSLATORS Text line 2 in main window, path gets added automatically at
+#. end of sentence
+#: ../mxfb-booboo-fixer:126
+msgid "This app edits configuration files in"
+msgstr "Sovellus muokkaa määritystiedostoja kohdassa"
+
 #: ../mxfb-tiles:10
 msgid ""
 "This script will back up your current keys file, then install commands for tiling to the end of the file. \\n\n"
@@ -951,7 +1064,7 @@ msgstr ""
 
 #. ##Main Tab
 #. Translator Note - short descriptive text on main window of mxfb-keybindings
-#: ../mxfb-keybindings:254
+#: ../mxfb-keybindings:261
 msgid "This tool displays default shortcuts (\"keys\") that are frequently used."
 msgstr ""
 "Työkalu näyttää oletuksena olevat pikanäppäimet (\"näppäimet\"), joita "
@@ -970,25 +1083,36 @@ msgstr "Odotusaika"
 msgid "Tint2 Manager"
 msgstr "Tint2 hallinta"
 
-#: ../mxfb-style-editor:125
+#: ../mxfb-style-editor:126
 msgid "Titlebar"
 msgstr "Otsikkopalkki"
 
-#: ../mxfb-style-editor:126
+#: ../mxfb-style-editor:127
 msgid "Titlebar Text"
 msgstr "Teksti otsikkopalkissa"
 
+#. TRANSLATORS Text line 4 in main window
+#: ../mxfb-booboo-fixer:130
+msgid ""
+"To update packages enter your sudo password in the pop-up terminal window"
+msgstr "Päivittääksesi paketteja, kirjoita sudo-salasanasi ponnahdusikkunaan"
+
 #. set up text variables
-#: ../mxfb-style-editor:123
+#: ../mxfb-style-editor:124
 msgid "Top Line"
 msgstr "Ylin rivi"
+
+#. TRANSLATORS Info text
+#: ../mxfb-booboo-fixer:42 ../mxfb-booboo-fixer:68
+msgid "Update Package"
+msgstr "Päivityspaketti"
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
 msgstr "Vaihtoehdot"
 
 #. about window text
-#: ../mxfb-look:801
+#: ../mxfb-look:804
 msgid "Version"
 msgstr "Versio"
 
@@ -999,7 +1123,7 @@ msgid "WINDOW: click anywhere inside"
 msgstr "IKKUNA: paina mitä tahansa sisäpuolella"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:261
+#: ../mxfb-keybindings:268
 msgid "WINDOWS"
 msgstr "IKKUNAT"
 
@@ -1014,7 +1138,7 @@ msgid "Warning"
 msgstr "Varoitus"
 
 #. select starting style
-#: ../mxfb-style-editor:81
+#: ../mxfb-style-editor:82
 msgid "Which style would you like to edit?"
 msgstr "Mitä tyyliä haluaisit muokata?"
 
@@ -1023,20 +1147,21 @@ msgstr "Mitä tyyliä haluaisit muokata?"
 msgid "Will substitute mx_blue.jpg to avoid any errors."
 msgstr "Korvaa mx_blue.jpg virheiden välttämiseksi."
 
-#: ../mxfb-style-editor:130
+#: ../mxfb-style-editor:131
 msgid "Window Grips"
 msgstr "Ikkunakahvat"
 
-#: ../mxfb-style-editor:128
+#: ../mxfb-style-editor:129
 msgid "Window Symbols"
 msgstr "Ikkunan symbolit"
 
-#: ../mxfb-font:175
+#. tab 1
+#: ../mxfb-font:180
 msgid "Window Title Default"
 msgstr "Ikkunan otsikon oletusarvo"
 
 #. Translator Note - opens workspace menu
-#: ../mxfb-keybindings:170
+#: ../mxfb-keybindings:177
 msgid "Workspace Menu (on desktop)"
 msgstr "Työtilavalikko (työpöydällä)"
 
@@ -1093,7 +1218,7 @@ msgstr ""
 "ja lisäämällä polut halutuille 64x64 pikselin kuvakkeille seuraaviin "
 "määrityksiin"
 
-#: ../mxfb-style-editor:329
+#: ../mxfb-style-editor:330
 msgid "cannot be used. Choose another name."
 msgstr "ei voi käyttää. Valitse toinen nimi."
 
@@ -1103,20 +1228,42 @@ msgstr "ei voi käyttää. Valitse toinen nimi."
 msgid "exiting, no image selected"
 msgstr "poistutaan, valittua kuvaa ei ole"
 
-#: ../mxfb-style-editor:517
+#: ../mxfb-style-editor:518
 msgid "has been created."
 msgstr "on luotu."
 
-#: ../mxfb-style-editor:516
+#: ../mxfb-style-editor:517
 msgid "has been set as the current style."
 msgstr "on asetettu tyyliksi."
 
-#: ../mxfb-look:424
+#. fluxbox_text1="mx-fluxbox"
+#. fluxbox_text2="-"
+#. uptodate_version_fluxbox="false|mxflux|$icon_ok|$fluxbox_text1
+#. $minimum_version_fluxbox|$fluxbox_text2|-|"
+#. else
+#. TRANSLATORS Info text, version number is automatically added at end of
+#. sentence
+#: ../mxfb-booboo-fixer:40
+msgid "mx-fluxbox needs version"
+msgstr "mx-fluxbox tarvitsee version"
+
+#. acc_text1="mxfb-accessories"
+#. acc_text2="-"
+#. uptodate_version_accessories="false|mxfbacc|$icon_ok|$acc_text1
+#. $minimum_version_accessories|$acc_text2|-|"
+#. else
+#. TRANSLATORS Info text, version number is automatically added at end of
+#. sentence
+#: ../mxfb-booboo-fixer:66
+msgid "mxfb-accessories needs version"
+msgstr "mxfb-accessories tarvitsee version"
+
+#: ../mxfb-look:425
 #, sh-format
 msgid "not found!"
 msgstr "ei löydy!"
 
-#: ../mxfb-style-editor:136 ../mxfb-style-editor:141 ../mxfb-style-editor:147
+#: ../mxfb-style-editor:137 ../mxfb-style-editor:142 ../mxfb-style-editor:148
 msgid "not used in this style"
 msgstr "ei käytetty tässä tyylissä"
 

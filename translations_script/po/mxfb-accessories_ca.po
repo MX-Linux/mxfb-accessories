@@ -5,19 +5,19 @@
 # 
 # Translators:
 # Robin, 2023
-# fehlix, 2023
 # anticapitalista <anticapitalista@riseup.net>, 2023
-# Davidmp <medipas@gmail.com>, 2025
+# fehlix, 2025
 # Eduard Selma <eduard@selma.cat>, 2025
+# Davidmp <medipas@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-17 18:46-0400\n"
+"POT-Creation-Date: 2025-12-15 19:44-0500\n"
 "PO-Revision-Date: 2022-08-21 18:57+0000\n"
-"Last-Translator: Eduard Selma <eduard@selma.cat>, 2025\n"
+"Last-Translator: Davidmp <medipas@gmail.com>, 2025\n"
 "Language-Team: Catalan (https://app.transifex.com/anticapitalista/teams/10162/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,7 +61,7 @@ msgstr " "
 msgid "   or"
 msgstr "o"
 
-#: ../mxfb-keybindings:211 ../mxfb-keybindings:218
+#: ../mxfb-keybindings:218 ../mxfb-keybindings:225
 msgid "   or (on keypad)"
 msgstr "o (al teclat numèric)"
 
@@ -136,6 +136,12 @@ msgstr ""
 "Ja hi ha un Aspecte amb aquest nom.\\n\\nVoleu sobrescriure $NEWNAME o desar"
 " amb un nom nou?\\n"
 
+#. TRANSLATORS Text line 3 in main window, path gets added automatically at
+#. end of sentence
+#: ../mxfb-booboo-fixer:128
+msgid "A backup copy of these files will be made in"
+msgstr "Es farà una còpia de seguretat d'aquests fitxers a "
+
 #. TRANSLATORS Main window text - line 2
 #: ../mxfb-separate-backgrounds:17
 msgid ""
@@ -145,11 +151,23 @@ msgstr ""
 "Es mostrarà una finestra de selecció per cada espai de treball configurat "
 "actualment."
 
+#. Text
+#. TRANSLATORS Text line 1 in main window
+#: ../mxfb-booboo-fixer:124
+msgid "A tool to fix the default user configuration in MX-Fluxbox 25."
+msgstr ""
+"Eina per esmenar la configuració d'usuari per omissió a MX-Fluxbox 25,"
+
+#. TRANSLATORS Button text
+#: ../mxfb-font:170 ../mxfb-booboo-fixer:162
+msgid "About"
+msgstr "Quant a "
+
 #: ../mxfb-look:28
 msgid "About MXFB-Look"
 msgstr "Quant a MXFB-Look"
 
-#: ../mxfb-style-editor:160
+#: ../mxfb-style-editor:161
 msgid "Active Window"
 msgstr "Finestra activa"
 
@@ -164,7 +182,7 @@ msgid "All Apps"
 msgstr "Totes les aplicacions"
 
 #. set new style as current
-#: ../mxfb-style-editor:515
+#: ../mxfb-style-editor:516
 msgid "All done!"
 msgstr "Ja està fet!"
 
@@ -175,32 +193,32 @@ msgid "All done!\\n\\nLook has been saved as <b>$NEWNAME</b>"
 msgstr "Acabat!\\n\\nL'aspecte s'ha desat com a <b>$NEWNAME</b>"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:220
+#: ../mxfb-keybindings:227
 msgid "Alt 1,3,7,9"
 msgstr "Alt 1,3,7,9"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:213
+#: ../mxfb-keybindings:220
 msgid "Alt 2,4,6,8"
 msgstr "Alt 2,4,6,8"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:168
+#: ../mxfb-keybindings:175
 msgid "Alt D"
 msgstr "Alt D"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:153
+#: ../mxfb-keybindings:160
 msgid "Alt F10"
 msgstr "Alt F10"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:157
+#: ../mxfb-keybindings:164
 msgid "Alt F4"
 msgstr "Alt F4"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:149
+#: ../mxfb-keybindings:156
 msgid "Alt F9"
 msgstr "Alt F9"
 
@@ -210,11 +228,11 @@ msgid "Alt Q"
 msgstr "Alt Q"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:164
+#: ../mxfb-keybindings:171
 msgid "Alt Right click"
 msgstr "Alt Clic Dret"
 
-#: ../mxfb-font:187
+#: ../mxfb-font:212
 msgid "Antialising"
 msgstr "Antialising"
 
@@ -227,17 +245,22 @@ msgstr ""
 "Els canvis de fons de pantalla usant Nitrogen no seran permanents fins que "
 "es desactivin els altres fons de pantalla."
 
-#: ../mxfb-tint2-manager:96 ../mxfb-font:15 ../exit-options-manager:32
+#: ../mxfb-tint2-manager:96 ../mxfb-font:169 ../exit-options-manager:32
 msgid "Apply"
 msgstr "Aplica"
+
+#. TRANSLATORS Button text
+#: ../mxfb-booboo-fixer:151
+msgid "Apply Selected Fixes"
+msgstr "Aplica les esmenes seleccionades"
 
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
 msgstr "CONFIGURA LA PART SUPERIOR"
 
 #. TRANSLATORS - button label
-#: ../mxfb-separate-backgrounds:39 ../mxfb-look:23 ../mxfb-look:499
-#: ../mxfb-style-editor:168
+#: ../mxfb-separate-backgrounds:39 ../mxfb-look:23 ../mxfb-look:500
+#: ../mxfb-style-editor:169
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -251,7 +274,7 @@ msgid "Change Window Settings"
 msgstr "Canvia els paràmetres de les finestres"
 
 #. button label
-#: ../mxfb-look:796
+#: ../mxfb-look:799
 msgid "Changelog"
 msgstr "Registre de canvis"
 
@@ -263,15 +286,19 @@ msgstr "Marqueu per executar, desmarqueu per aturar"
 msgid "Click \\"
 msgstr "Cliqueu \\"
 
+#. ##MAIN###
 #. buttons
 #. ## buttons
 #. Translator Note - window command
-#: ../mxfb-tint2-manager:97 ../mxfb-font:12 ../mxfb-look:22
-#: ../exit-options-manager:29 ../mxfb-keybindings:17 ../mxfb-keybindings:155
+#. buttons
+#. TRANSLATORS Button text
+#: ../mxfb-tint2-manager:97 ../mxfb-font:166 ../mxfb-look:22
+#: ../exit-options-manager:29 ../mxfb-keybindings:17 ../mxfb-keybindings:162
+#: ../mxfb-booboo-fixer:149
 msgid "Close"
 msgstr "Tanca"
 
-#: ../mxfb-style-editor:127
+#: ../mxfb-style-editor:128
 msgid "Close Symbol"
 msgstr "Tanca el Símbol"
 
@@ -283,39 +310,44 @@ msgstr "Color al Focus"
 msgid "Color Unfocused"
 msgstr "Color Fora de focus"
 
+#. Translator Note - turn compositor on/off
+#: ../mxfb-keybindings:122
+msgid "Compositor off/on"
+msgstr "Compositor activat / desactivat"
+
 #: ../mxfb-tint2-manager:98
 msgid "Config"
 msgstr "Config"
 
-#: ../mxfb-look:498
+#: ../mxfb-look:499
 msgid "Continue anyway?"
 msgstr "Continua igualment?"
 
-#: ../mxfb-style-editor:169
+#: ../mxfb-style-editor:170
 msgid "Create Style"
 msgstr "Crea Estil"
 
-#: ../mxfb-style-editor:165
+#: ../mxfb-style-editor:166
 msgid "Create matching tint2 panel?"
 msgstr "Crear un plafó tint2 a joc?"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:228
+#: ../mxfb-keybindings:235
 msgid "Ctrl 0"
 msgstr "Ctrl D"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:210
+#: ../mxfb-keybindings:217
 msgid "Ctrl 1/2/3/4"
 msgstr "Ctrl 1/2/3/4"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:217
+#: ../mxfb-keybindings:224
 msgid "Ctrl 5/6/7/8"
 msgstr "Ctrl 5/6/7/8"
 
 #. Translator Note - translate key names for your language if necessary
-#: ../mxfb-keybindings:224
+#: ../mxfb-keybindings:231
 msgid "Ctrl 9"
 msgstr "Ctrl 9"
 
@@ -323,6 +355,12 @@ msgstr "Ctrl 9"
 #: ../mxfb-keybindings:58 ../mxfb-keybindings:65
 msgid "Ctrl Alt"
 msgstr "Ctrl Alt"
+
+#. Translator Note - that is a zero; translate key names for your language if
+#. necessary
+#: ../mxfb-keybindings:124
+msgid "Ctrl Alt 0"
+msgstr "Ctrl Alt 0"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:51
@@ -365,6 +403,11 @@ msgstr "Ctrl F5"
 msgid "DESKTOP: click the background"
 msgstr "ESCRIPTORI: cliqueu el fons de pantalla"
 
+#: ../mxfb-font:174
+msgid "Default fonts as defined by the selected Fluxbox style."
+msgstr ""
+"Fonts predeterminades tal com les defineix l'estil de Fluxbox seleccionat."
+
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
 msgstr "Retard (minuts)"
@@ -396,7 +439,7 @@ msgstr "No mostris el missatge d'Ajuda un altre cop!"
 msgid "Edit"
 msgstr "Edita"
 
-#: ../mxfb-style-editor:159
+#: ../mxfb-style-editor:160
 msgid "Edit colors and create a new fluxbox style based on"
 msgstr "Edita els colors i crea un nou estil fluxbox basat en"
 
@@ -423,29 +466,46 @@ msgstr "Funcions: 1/2 pantalla, 1/4 de pantalla, 1/3 de pantalla i restaura \\n"
 msgid "File Manager"
 msgstr "Gestor de fitxers"
 
-#: ../mxfb-style-editor:162
+#. TRANSLATORS List column 5 header
+#: ../mxfb-booboo-fixer:144
+msgid "File to be edited"
+msgstr "Fitxer per a editar"
+
+#. TRANSLATORS List column 4 header describing solution to problem
+#: ../mxfb-booboo-fixer:142
+msgid "Fix"
+msgstr "Correcció"
+
+#. yad setup
+#. TRANSLATORS App name in title bar
+#: ../mxfb-booboo-fixer:117
+msgid "Fix Default Configuration"
+msgstr "Correcció de la configuració per defecte"
+
+#: ../mxfb-style-editor:163
 msgid "Fluxbox Menu"
 msgstr "Menú del Fluxbox"
 
-#. gtk-xft-rgba=none!rgb!bgr!vrgb!vbgr
-#. GTK_RGBA_NOW="$(grep "gtk-xft-rgba" $HOME/.config/gtk-3.0/settings.ini |
-#. sed -e "s/gtk-xft-rgba\=//" )"
-#. ###
-#: ../mxfb-font:163
-msgid "Font"
-msgstr "Lletra"
+#: ../mxfb-font:224
+msgid "Fluxbox fonts"
+msgstr "Tipus de lletra de Fluxbox"
+
+#: ../mxfb-font:209
+msgid "Font scaling"
+msgstr "Escala de la lletra"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:226
+#: ../mxfb-keybindings:233
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:257
+#: ../mxfb-keybindings:264
 msgid "GENERAL"
 msgstr "GENERAL"
 
-#: ../mxfb-font:184
+#. tab 2
+#: ../mxfb-font:207
 msgid "Gtk Font"
 msgstr "Lletra Gtk"
 
@@ -457,25 +517,25 @@ msgstr "AJUDA"
 msgid "HELP: how to take a screenshot"
 msgstr "AJUDA: com fer una captura de pantalla"
 
-#: ../mxfb-tint2-manager:100 ../mxfb-font:13 ../mxfb-look:27
-#: ../exit-options-manager:30 ../mxfb-style-editor:170
+#: ../mxfb-tint2-manager:100 ../mxfb-font:167 ../mxfb-look:27
+#: ../exit-options-manager:30 ../mxfb-style-editor:171
 msgid "Help"
 msgstr "Ajuda "
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:166
+#: ../mxfb-keybindings:173
 msgid "Hide All"
 msgstr "Amaga'ls tots"
 
-#: ../mxfb-style-editor:124
+#: ../mxfb-style-editor:125
 msgid "Highlight"
 msgstr "Ressaltat"
 
-#: ../mxfb-font:186
+#: ../mxfb-font:211
 msgid "Hinting"
 msgstr "Hinting"
 
-#: ../mxfb-font:199
+#: ../mxfb-font:218
 msgid "Hinting Style"
 msgstr "Estil de hinting"
 
@@ -491,9 +551,14 @@ msgstr "Carpeta d'imatges"
 msgid "Image mode"
 msgstr "Mode d'imatge"
 
-#: ../mxfb-style-editor:161
+#: ../mxfb-style-editor:162
 msgid "Inactive Window"
 msgstr "Finestra inactiva"
+
+#. TRANSLATORS List column 3 header describing problems
+#: ../mxfb-booboo-fixer:140
+msgid "Issue"
+msgstr "Problema"
 
 #: ../exit-options-manager:140
 msgid "Layout"
@@ -504,12 +569,12 @@ msgstr "Disposició"
 msgid "Left Super"
 msgstr "Súper-Esquerra"
 
-#: ../mxfb-keybindings:160
+#: ../mxfb-keybindings:167
 msgid "Left click"
 msgstr "Clic Esquerre"
 
 #. button label
-#: ../mxfb-look:794
+#: ../mxfb-look:797
 msgid "License"
 msgstr "Llicència"
 
@@ -529,12 +594,12 @@ msgstr "MX-Fluxbox Assignació de tecles"
 msgid "MX-Tools"
 msgstr "MX-Tools"
 
-#: ../mxfb-style-editor:101
+#: ../mxfb-style-editor:102
 msgid "MX-comfort will be used as the starting style."
 msgstr "S'usarà MX-comfort com a estil de base."
 
 #. about window app name
-#: ../mxfb-look:799
+#: ../mxfb-look:802
 msgid "MXFB Look"
 msgstr "MXFB Look"
 
@@ -543,7 +608,7 @@ msgstr "MXFB Look"
 msgid "MXFB Style Editor"
 msgstr "Editor d'estil de MXFB"
 
-#: ../mxfb-style-editor:47
+#: ../mxfb-style-editor:48
 msgid "MXFB Style Editor Help"
 msgstr "Ajuda de l'Editor d'Estil del MXFB"
 
@@ -551,9 +616,23 @@ msgstr "Ajuda de l'Editor d'Estil del MXFB"
 msgid "MXFB Timer"
 msgstr "Temporitzador MXFB"
 
-#: ../mxfb-style-editor:164
+#. main dialog
+#: ../mxfb-font:228
+msgid "MXFB-Font"
+msgstr "lletra MXFB"
+
+#: ../mxfb-font:200
+msgid "Main window font and miscellaneous settings."
+msgstr "Tipus de lletra de la finestra principal i configuracions diverses."
+
+#: ../mxfb-style-editor:165
 msgid "Make new style current?"
 msgstr "Usa el nou estil com a actual?"
+
+#. TRANSLATORS
+#: ../mxfb-font:244
+msgid "Manage Font Settings in MX-Fluxbox"
+msgstr "Gestioneu la configuració de la lletra a MX-Fluxbox"
 
 #. Translator Note - opens mx-fluxbox manual
 #: ../mxfb-keybindings:37
@@ -570,51 +649,56 @@ msgid "Margin"
 msgstr "Marge"
 
 #. Translator Note - window command
-#: ../mxfb-keybindings:151
+#: ../mxfb-keybindings:158
 msgid "Maximize"
 msgstr "Maximitza"
 
-#: ../mxfb-style-editor:132
+#. TRANSLATORS Info text describing problem
+#: ../mxfb-booboo-fixer:83
+msgid "Maximized windows partially hidden behind panel"
+msgstr "Finestres maximitzades parcialment amagades darrere del plafó"
+
+#: ../mxfb-style-editor:133
 msgid "Menu Background"
 msgstr "Fons del Menú"
 
-#: ../mxfb-style-editor:134
+#: ../mxfb-style-editor:135
 msgid "Menu Highlight"
 msgstr "Ressaltat del Menú"
 
-#: ../mxfb-style-editor:135
+#: ../mxfb-style-editor:136
 msgid "Menu Highlight Text"
 msgstr "Text Ressaltat del Menú "
 
-#: ../mxfb-style-editor:133
+#: ../mxfb-style-editor:134
 msgid "Menu Text"
 msgstr "Text del Menú"
 
-#: ../mxfb-font:181
+#: ../mxfb-font:186
 msgid "Menu Text Default"
 msgstr "Text de Menú per omissió"
 
-#: ../mxfb-font:178
+#: ../mxfb-font:183
 msgid "Menu Title Default"
 msgstr "Títol de Menú per omissió"
 
-#: ../mxfb-style-editor:131
+#: ../mxfb-style-editor:132
 msgid "Menu Title Text"
 msgstr "Text del Títol del Menú"
 
 #. Translator Note - mouse action
-#: ../mxfb-keybindings:172
+#: ../mxfb-keybindings:179
 msgid "Middle click"
 msgstr "Clic al mig"
 
 #. ##Tab 3
 #. Translator Note - window command
-#: ../mxfb-keybindings:147
+#: ../mxfb-keybindings:154
 msgid "Minimize"
 msgstr "Minimitza"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:159
+#: ../mxfb-keybindings:166
 msgid "Move (drag titlebar)"
 msgstr "Mou (arrossega la barra de títol)"
 
@@ -622,7 +706,7 @@ msgstr "Mou (arrossega la barra de títol)"
 msgid "Multiple options for number keys and keyboard"
 msgstr "Opcions múltiples per a les tecles numèriques i teclat"
 
-#: ../mxfb-style-editor:163 ../mxfb-style-editor:330
+#: ../mxfb-style-editor:164 ../mxfb-style-editor:331
 msgid "Name for new style"
 msgstr "Nom del nou Estil"
 
@@ -635,11 +719,16 @@ msgstr "Nom del nou Aspecte"
 msgid "Next Workspace"
 msgstr "Espai de treball següent"
 
+#. TRANSLATORS Text line 5 in main window
+#: ../mxfb-booboo-fixer:132
+msgid "No fixes needed!"
+msgstr "No calen solucions!"
+
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
 msgstr "Sense rotació: Retard = 0"
 
-#: ../mxfb-style-editor:100
+#: ../mxfb-style-editor:101
 msgid "No starting style selected!"
 msgstr "No heu triat cap estil de base!"
 
@@ -648,7 +737,7 @@ msgstr "No heu triat cap estil de base!"
 msgid "Notes"
 msgstr "Notes"
 
-#: ../mxfb-tint2-manager:101 ../mxfb-font:14 ../mxfb-look:25
+#: ../mxfb-tint2-manager:101 ../mxfb-font:168 ../mxfb-look:25
 #: ../exit-options-manager:31
 msgid "OK"
 msgstr "D'acord"
@@ -664,17 +753,17 @@ msgstr "CONFIGURACIÓ D'ESTIL DE LA VORA OPCIONAL"
 
 #. ##Tab 4
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:208
+#: ../mxfb-keybindings:215
 msgid "One-Half"
 msgstr "Una meitat"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:215
+#: ../mxfb-keybindings:222
 msgid "One-Quarter"
 msgstr "Un quart"
 
 #. Translator Note - option for window tiling
-#: ../mxfb-keybindings:222
+#: ../mxfb-keybindings:229
 msgid "One-Third"
 msgstr "Un terç"
 
@@ -682,7 +771,11 @@ msgstr "Un terç"
 msgid "Other"
 msgstr "Altres"
 
-#: ../mxfb-font:176 ../mxfb-font:179 ../mxfb-font:182
+#: ../mxfb-font:225
+msgid "Other font settings"
+msgstr "Altres configuracions de tipus de lletra"
+
+#: ../mxfb-font:181 ../mxfb-font:184 ../mxfb-font:187
 msgid "Override with"
 msgstr "Substitueix per"
 
@@ -692,16 +785,21 @@ msgid "Overwrite $NEWNAME"
 msgstr "Sobreescriu $NEWNAME"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:259
+#: ../mxfb-keybindings:266
 msgid "PROGRAMS"
 msgstr "PROGRAMES"
+
+#. TRANSLATORS Info text describing problem
+#: ../mxfb-booboo-fixer:99
+msgid "Panel on top of full screen display"
+msgstr "Plafó a la part superior de la visualització a pantalla completa"
 
 #. How to take a screenshot...
 #: ../mxfb-quickshot:83
 msgid "Press \"Print\" (or \"PrtSc\") and use the mouse:"
 msgstr "Premeu \"ImprPant\" (o \"PrtSc\") i useu el ratolí:"
 
-#: ../mxfb-style-editor:129
+#: ../mxfb-style-editor:130
 msgid "Pressed Symbols"
 msgstr "Símbols activats"
 
@@ -711,7 +809,7 @@ msgid "Previous Workspace"
 msgstr "Espai de treball anterior"
 
 #. Translator Note - window action
-#: ../mxfb-keybindings:162
+#: ../mxfb-keybindings:169
 msgid "Resize (drag lower R corner)"
 msgstr "Redimensiona (arrossega angle inferior dret)"
 
@@ -720,12 +818,12 @@ msgid "Restore Look"
 msgstr "Restaura l'Aspecte"
 
 #. Translator Note - mouse action
-#: ../mxfb-keybindings:176
+#: ../mxfb-keybindings:183
 msgid "Right click"
 msgstr "Clic dret"
 
 #. Translator Note - opens root menu
-#: ../mxfb-keybindings:174
+#: ../mxfb-keybindings:181
 msgid "Root Menu (on desktop)"
 msgstr "Menú arrel (a l'escriptori)"
 
@@ -761,7 +859,7 @@ msgstr "Desa l'Aspecte"
 msgid "Save Look as"
 msgstr "Desa l'Aspecte com a "
 
-#: ../mxfb-look:802
+#: ../mxfb-look:805
 msgid "Save and restore desktop settings for MX-Linux Fluxbox"
 msgstr "Desa i restaura els paràmetres d'escriptori per a MX-Linux Fluxbox"
 
@@ -795,13 +893,13 @@ msgid "Select Icon Theme"
 msgstr "Trieu el Tema de la Icona"
 
 #. define some variables
-#: ../mxfb-look:943
+#: ../mxfb-look:946
 msgid "Select a saved look to restore or save the current setup as a new look"
 msgstr ""
 "Trieu un Aspecte desat per a restaurar o deseu la configuració actual com a "
 "nou Aspecte"
 
-#: ../mxfb-look:425
+#: ../mxfb-look:426
 #, sh-format
 msgid "Select an alternative wallpaper."
 msgstr "Trieu un fons de pantalla alternatiu."
@@ -821,6 +919,12 @@ msgstr "Trieu el fons de pantalla desitjat i premeu D'Acord."
 msgid "Select titlebar mode"
 msgstr "Trieu el mode de la Barra de Títol"
 
+#. List headers
+#. TRANSLATORS List column 1 header
+#: ../mxfb-booboo-fixer:136
+msgid "Selected"
+msgstr "Seleccionat"
+
 #. TRANSLATORS - notification text
 #: ../mxfb-separate-backgrounds:46
 msgid "Separate backgrounds have been disabled."
@@ -835,7 +939,7 @@ msgstr "Empaperats d'espai de treball separats"
 msgid "Set background rotation"
 msgstr "Configura la rotació del fons de pantalla"
 
-#: ../mxfb-style-editor:518
+#: ../mxfb-style-editor:519
 msgid "Set styles with Fluxbox menu > Appearance >  Theme"
 msgstr "Establiu estils amb el Menú de Fluxbox > Aspecte > Tema"
 
@@ -878,6 +982,11 @@ msgstr "Mida "
 msgid "Spacing"
 msgstr "Espaiat"
 
+#. TRANSLATORS List column 2 header
+#: ../mxfb-booboo-fixer:138
+msgid "Status"
+msgstr "Estat "
+
 #. The capture of a screenshot was successful.
 #: ../mxfb-quickshot:67
 msgid "Success!"
@@ -885,7 +994,7 @@ msgstr "Èxit!"
 
 #. Translator Note - tab label - tiling as in arrangement of non-overlapping
 #. windows on a screen
-#: ../mxfb-keybindings:263
+#: ../mxfb-keybindings:270
 msgid "TILING"
 msgstr "MOSAIC"
 
@@ -907,9 +1016,9 @@ msgstr ""
 msgid "The existing file will be backed up in:"
 msgstr "Es farà còpia del fitxer existent a:"
 
-#: ../mxfb-look:497
+#: ../mxfb-look:498
 msgid "The following elements cannot be found and will not be restored."
-msgstr "No puc trobar aquests elements i no es restauraran."
+msgstr "No s'han pogut trobar aquests elements i no es restauraran."
 
 #: ../exit-options-manager:250
 msgid "The following settings can also be defined"
@@ -943,6 +1052,12 @@ msgstr ""
 "Aquesta aplicació us permet configurar fons de pantalla diferents per cada "
 "Espai de Treball"
 
+#. TRANSLATORS Text line 2 in main window, path gets added automatically at
+#. end of sentence
+#: ../mxfb-booboo-fixer:126
+msgid "This app edits configuration files in"
+msgstr "Aquesta aplicació edita els fitxers de configuració a "
+
 #: ../mxfb-tiles:10
 msgid ""
 "This script will back up your current keys file, then install commands for tiling to the end of the file. \\n\n"
@@ -953,7 +1068,7 @@ msgstr ""
 
 #. ##Main Tab
 #. Translator Note - short descriptive text on main window of mxfb-keybindings
-#: ../mxfb-keybindings:254
+#: ../mxfb-keybindings:261
 msgid "This tool displays default shortcuts (\"keys\") that are frequently used."
 msgstr ""
 "Aquesta eina mostra les dreceres de tecla per omissió que s'usen sovint."
@@ -971,25 +1086,38 @@ msgstr "Temps d'espera"
 msgid "Tint2 Manager"
 msgstr "Gestor del Tint2"
 
-#: ../mxfb-style-editor:125
+#: ../mxfb-style-editor:126
 msgid "Titlebar"
 msgstr "Barra de Títol"
 
-#: ../mxfb-style-editor:126
+#: ../mxfb-style-editor:127
 msgid "Titlebar Text"
 msgstr "Text de la Barra de Títol"
 
+#. TRANSLATORS Text line 4 in main window
+#: ../mxfb-booboo-fixer:130
+msgid ""
+"To update packages enter your sudo password in the pop-up terminal window"
+msgstr ""
+"Per actualitzar els paquets, introduïu la  contrasenya de sudo a la finestra"
+" emergent del terminal."
+
 #. set up text variables
-#: ../mxfb-style-editor:123
+#: ../mxfb-style-editor:124
 msgid "Top Line"
 msgstr "Línia superior"
+
+#. TRANSLATORS Info text
+#: ../mxfb-booboo-fixer:42 ../mxfb-booboo-fixer:68
+msgid "Update Package"
+msgstr "Actualització del paquet"
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
 msgstr "Opcions d'ús"
 
 #. about window text
-#: ../mxfb-look:801
+#: ../mxfb-look:804
 msgid "Version"
 msgstr "Versió "
 
@@ -1000,7 +1128,7 @@ msgid "WINDOW: click anywhere inside"
 msgstr "FINESTRA: cliqueu a dins en qualsevol lloc"
 
 #. Translator Note - tab label
-#: ../mxfb-keybindings:261
+#: ../mxfb-keybindings:268
 msgid "WINDOWS"
 msgstr "FINESTRES"
 
@@ -1015,7 +1143,7 @@ msgid "Warning"
 msgstr "Atenció "
 
 #. select starting style
-#: ../mxfb-style-editor:81
+#: ../mxfb-style-editor:82
 msgid "Which style would you like to edit?"
 msgstr "Quin estil voldríeu editar?"
 
@@ -1024,20 +1152,21 @@ msgstr "Quin estil voldríeu editar?"
 msgid "Will substitute mx_blue.jpg to avoid any errors."
 msgstr "Substituiré mx_blue.jpg per tal d'evitar errors,"
 
-#: ../mxfb-style-editor:130
+#: ../mxfb-style-editor:131
 msgid "Window Grips"
 msgstr "Anses de la Finestra"
 
-#: ../mxfb-style-editor:128
+#: ../mxfb-style-editor:129
 msgid "Window Symbols"
 msgstr "Símbols de la Finestra"
 
-#: ../mxfb-font:175
+#. tab 1
+#: ../mxfb-font:180
 msgid "Window Title Default"
 msgstr "Títol de finestra per omissió"
 
 #. Translator Note - opens workspace menu
-#: ../mxfb-keybindings:170
+#: ../mxfb-keybindings:177
 msgid "Workspace Menu (on desktop)"
 msgstr "Menú de l'espai de treball (a l'escriptori)"
 
@@ -1094,7 +1223,7 @@ msgstr ""
 "i afegint els camins vers les icones de 64x64 píxels desitjades a les "
 "següents definicions"
 
-#: ../mxfb-style-editor:329
+#: ../mxfb-style-editor:330
 msgid "cannot be used. Choose another name."
 msgstr "no es pot usar. Proveu un altre nom."
 
@@ -1104,20 +1233,42 @@ msgstr "no es pot usar. Proveu un altre nom."
 msgid "exiting, no image selected"
 msgstr "sortint, no s'ha triat cap imatge"
 
-#: ../mxfb-style-editor:517
+#: ../mxfb-style-editor:518
 msgid "has been created."
 msgstr "s'ha creat."
 
-#: ../mxfb-style-editor:516
+#: ../mxfb-style-editor:517
 msgid "has been set as the current style."
 msgstr "s'ha establert com l'estil actual."
 
-#: ../mxfb-look:424
+#. fluxbox_text1="mx-fluxbox"
+#. fluxbox_text2="-"
+#. uptodate_version_fluxbox="false|mxflux|$icon_ok|$fluxbox_text1
+#. $minimum_version_fluxbox|$fluxbox_text2|-|"
+#. else
+#. TRANSLATORS Info text, version number is automatically added at end of
+#. sentence
+#: ../mxfb-booboo-fixer:40
+msgid "mx-fluxbox needs version"
+msgstr "mx-fluxbox necessita la versió"
+
+#. acc_text1="mxfb-accessories"
+#. acc_text2="-"
+#. uptodate_version_accessories="false|mxfbacc|$icon_ok|$acc_text1
+#. $minimum_version_accessories|$acc_text2|-|"
+#. else
+#. TRANSLATORS Info text, version number is automatically added at end of
+#. sentence
+#: ../mxfb-booboo-fixer:66
+msgid "mxfb-accessories needs version"
+msgstr "mxfb-accessories necessita la versió"
+
+#: ../mxfb-look:425
 #, sh-format
 msgid "not found!"
 msgstr "no trobat!"
 
-#: ../mxfb-style-editor:136 ../mxfb-style-editor:141 ../mxfb-style-editor:147
+#: ../mxfb-style-editor:137 ../mxfb-style-editor:142 ../mxfb-style-editor:148
 msgid "not used in this style"
 msgstr "no s'usa en aquest estil"
 
