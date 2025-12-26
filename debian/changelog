@@ -1,8 +1,9 @@
 mxfb-accessories (25.12.02mx25) mx; urgency=medium
 
   * fix bug in mxfb-seperate-backgrounds that breaks if loop in mx25
+  * update translations
 
- -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 26 Dec 2025 10:29:44 -0500
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 26 Dec 2025 10:35:52 -0500
 
 mxfb-accessories (25.12.01mx25) mx; urgency=medium
 
