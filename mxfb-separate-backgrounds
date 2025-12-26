@@ -1,11 +1,30 @@
 #!/bin/bash
 
 # Script to configure separate backgrounds for each Fluxbox Workspace
-# Written by user PPC, modified by MX Devs Jan 2024
+# Written by user PPC, modified by MX Devs Dec 2025
 # Released under GPLv3
 
 TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="mxfb-accessories"
+
+
+#EDIT STARTUP FILE FOR MXFB25
+
+check_startup1=$(grep '#<< comment_start_setbg' $HOME/.fluxbox/startup)
+check_startup2=$(grep 'COMMENTEDOUT4SETBG' $HOME/.fluxbox/startup)
+
+if [ -z "$check_startup1" ] && [ -z "$check_startup2" ]; then
+
+    sed -i '/restore from saved background/a\
+#<< comment_start_setbg' $HOME/.fluxbox/startup
+
+    find_line_nr=$(sed -n '/#<< comment_start_setbg/=' $HOME/.fluxbox/startup)
+    end_line_nr=$(( $find_line_nr + 8 ))
+
+    sed -i "$end_line_nr a\
+#comment_end_setbg" $HOME/.fluxbox/startup
+
+fi
 
 #Confirmation Window
 
@@ -69,7 +88,7 @@ case $? in
     
 2 )
 
- #####
+#####
 #DISABLE SEPARATE BACKGROUNDS
 #####
 
@@ -77,9 +96,15 @@ case $? in
     awk '!/#This executes fbsetbg/' ~/.fluxbox/keys > temp && mv temp ~/.fluxbox/keys
     
 # block feh and enable nitrogen
-    HASHCHECK_NITROGEN=$(grep '#nitrogen' $HOME/.fluxbox/startup)
-    if [ ! -z "$HASHCHECK_NITROGEN" ]; then
-        sed -i 's/#nitrogen/nitrogen/'  $HOME/.fluxbox/startup
+    HASHCHECK_NITROGEN_START=$(grep '#<< comment_start_setbg' $HOME/.fluxbox/startup)
+    if [ -z "$HASHCHECK_NITROGEN_START" ]; then
+        sed -i 's/<< COMMENTEDOUT4SETBG/#<< comment_start_setbg/'  $HOME/.fluxbox/startup
+    fi
+    
+    
+    HASHCHECK_NITROGEN_END=$(grep '#comment_end_setbg' $HOME/.fluxbox/startup)
+    if [ -z "$HASHCHECK_NITROGEN_END" ]; then
+        sed -i 's/COMMENTEDOUT4SETBG/#comment_end_setbg/'  $HOME/.fluxbox/startup
     fi
 
     HASHCHECK_FEH=$(grep '#~/.fehbg' $HOME/.fluxbox/startup)
@@ -108,9 +133,14 @@ case $? in
 #####
 
 # block nitrogen and enable fehbg
-    HASHCHECK_NITROGEN=$(grep '#nitrogen' $HOME/.fluxbox/startup)
-    if [ -z "$HASHCHECK_NITROGEN" ]; then
-        sed -i 's/nitrogen/#nitrogen/'  $HOME/.fluxbox/startup
+    HASHCHECK_NITROGEN_START=$(grep '#<< comment_start_setbg' $HOME/.fluxbox/startup)
+    if [ "$HASHCHECK_NITROGEN_START" ]; then
+        sed -i 's/#<< comment_start_setbg/<< COMMENTEDOUT4SETBG/'  $HOME/.fluxbox/startup
+    fi
+        
+    HASHCHECK_NITROGEN_END=$(grep '#comment_end_setbg' $HOME/.fluxbox/startup)
+    if [ "$HASHCHECK_NITROGEN_END" ]; then
+        sed -i 's/#comment_end_setbg/COMMENTEDOUT4SETBG/'  $HOME/.fluxbox/startup
     fi
 
     HASHCHECK_FEH=$(grep '#~/.fehbg' $HOME/.fluxbox/startup)
@@ -167,25 +197,6 @@ ChangeWorkspace :Exec fbsetbg ~/.fluxbox/backgrounds/numbered/\$(xprop -root _NE
         --timeout=3 --no-buttons --geometry 500x100 --text-align=center \
         --text="\n<b>$NOTIFICATION</b>"
     fi
-
-#clear normal thumbnail cache so that yad shows large thumbnails
-
-#    delete_thumb(){
-#    full_path="file://$(realpath -s "$1")"
-#    md5name=$(printf %s "${full_path// /%20}" | md5sum)
-#    rm $HOME/.cache/thumbnails/normal/${md5name%% *}.png
-#    }
-
-#    export -f delete_thumb
-    
-#    source $HOME/.config/user-dirs.dirs
-
-#    bg_list=$(find /usr/share/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \); find $HOME/.fluxbox/backgrounds -type f \( -name '*.png' -o -name '*.jpg' \); find $XDG_PICTURES_DIR/* backgrounds -type f \( -name '*.png' -o -name '*.jpg' \))
-
-#    for i in $bg_list; do
-#        delete_thumb $i
-#    done
-
 
 #Loop for as many workspaces as there are, selecting one wallpaper for each workspace
     for ((n=1;n<=$number_of_workspaces;n++))
