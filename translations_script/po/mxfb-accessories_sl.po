@@ -138,7 +138,7 @@ msgstr ""
 #. end of sentence
 #: ../mxfb-booboo-fixer:128
 msgid "A backup copy of these files will be made in"
-msgstr ""
+msgstr "Varnostna kopija teh datotek bo ustvarjena v"
 
 #. TRANSLATORS Main window text - line 2
 #: ../mxfb-separate-backgrounds:17
@@ -152,6 +152,7 @@ msgstr "Prikazano bo izbirno okno vseh nastavljenih delovnih površin."
 #: ../mxfb-booboo-fixer:124
 msgid "A tool to fix the default user configuration in MX-Fluxbox 25."
 msgstr ""
+"Orodje za popravilo privzetih uporabnikovih nastavitev v MX-Fluxbox 25."
 
 #. TRANSLATORS Button text
 #: ../mxfb-font:170 ../mxfb-booboo-fixer:162
@@ -247,7 +248,7 @@ msgstr "Uveljavi"
 #. TRANSLATORS Button text
 #: ../mxfb-booboo-fixer:151
 msgid "Apply Selected Fixes"
-msgstr ""
+msgstr "Potrdi izbrana popravila"
 
 #: ../mxfb-top:17
 msgid "CONFIGURE TOP"
@@ -308,7 +309,7 @@ msgstr "Obarvaj nefokusirane"
 #. Translator Note - turn compositor on/off
 #: ../mxfb-keybindings:122
 msgid "Compositor off/on"
-msgstr ""
+msgstr "Sestavljalnik izklop/vklop"
 
 #: ../mxfb-tint2-manager:98
 msgid "Config"
@@ -355,7 +356,7 @@ msgstr "Ctrl Alt"
 #. necessary
 #: ../mxfb-keybindings:124
 msgid "Ctrl Alt 0"
-msgstr ""
+msgstr "Ctrl Alt 0"
 
 #. Translator Note - translate key names for your language if necessary
 #: ../mxfb-keybindings:51
@@ -400,7 +401,7 @@ msgstr "NAMIZJE: kliknite na ozadje"
 
 #: ../mxfb-font:174
 msgid "Default fonts as defined by the selected Fluxbox style."
-msgstr ""
+msgstr "Privzete pisave, kot so določene v izbranem Fluxbox slogu."
 
 #: ../mxfb-bg-rotate:43
 msgid "Delay (mins)"
@@ -463,7 +464,7 @@ msgstr "Upravljalnik datotek"
 #. TRANSLATORS List column 5 header
 #: ../mxfb-booboo-fixer:144
 msgid "File to be edited"
-msgstr ""
+msgstr "Datoteka za urejanje"
 
 #. TRANSLATORS List column 4 header describing solution to problem
 #: ../mxfb-booboo-fixer:142
@@ -474,7 +475,7 @@ msgstr "Popravi"
 #. TRANSLATORS App name in title bar
 #: ../mxfb-booboo-fixer:117
 msgid "Fix Default Configuration"
-msgstr ""
+msgstr "Popravi privzeto konfiguracijo"
 
 #: ../mxfb-style-editor:163
 msgid "Fluxbox Menu"
@@ -482,11 +483,11 @@ msgstr "Fluxbox meni"
 
 #: ../mxfb-font:224
 msgid "Fluxbox fonts"
-msgstr ""
+msgstr "Fluxbox pisave"
 
 #: ../mxfb-font:209
 msgid "Font scaling"
-msgstr ""
+msgstr "Povečava pisave"
 
 #. Translator Note - option for window tiling
 #: ../mxfb-keybindings:233
@@ -552,7 +553,7 @@ msgstr "Neaktivna okna"
 #. TRANSLATORS List column 3 header describing problems
 #: ../mxfb-booboo-fixer:140
 msgid "Issue"
-msgstr ""
+msgstr "Težava"
 
 #: ../exit-options-manager:140
 msgid "Layout"
@@ -617,7 +618,7 @@ msgstr "MXFB-pisava"
 
 #: ../mxfb-font:200
 msgid "Main window font and miscellaneous settings."
-msgstr ""
+msgstr "Pisava glavnega okna in različne nastavitve."
 
 #: ../mxfb-style-editor:165
 msgid "Make new style current?"
@@ -626,7 +627,7 @@ msgstr "Prevzamem novi slog?"
 #. TRANSLATORS
 #: ../mxfb-font:244
 msgid "Manage Font Settings in MX-Fluxbox"
-msgstr ""
+msgstr "Upravljanje nastavitev pisave v MX-Fluxbox"
 
 #. Translator Note - opens mx-fluxbox manual
 #: ../mxfb-keybindings:37
@@ -650,7 +651,7 @@ msgstr "Najv.povečava"
 #. TRANSLATORS Info text describing problem
 #: ../mxfb-booboo-fixer:83
 msgid "Maximized windows partially hidden behind panel"
-msgstr ""
+msgstr "Povečana okna so delno zakrita s panojem"
 
 #: ../mxfb-style-editor:133
 msgid "Menu Background"
@@ -716,7 +717,7 @@ msgstr "Naslednja delovna površina"
 #. TRANSLATORS Text line 5 in main window
 #: ../mxfb-booboo-fixer:132
 msgid "No fixes needed!"
-msgstr ""
+msgstr "Ni potrebe po popravkih!"
 
 #: ../mxfb-bg-rotate:40
 msgid "No rotation: Delay = 0"
@@ -729,7 +730,7 @@ msgstr "Noben začetni slog ni izbran!"
 #. TRANSLATORS Main window subtitle
 #: ../mxfb-separate-backgrounds:22
 msgid "Notes"
-msgstr "Opombe"
+msgstr "Zapiski"
 
 #: ../mxfb-tint2-manager:101 ../mxfb-font:168 ../mxfb-look:25
 #: ../exit-options-manager:31
@@ -767,7 +768,7 @@ msgstr "Ostalo"
 
 #: ../mxfb-font:225
 msgid "Other font settings"
-msgstr ""
+msgstr "Druge nastavitve pisave"
 
 #: ../mxfb-font:181 ../mxfb-font:184 ../mxfb-font:187
 msgid "Override with"
@@ -786,7 +787,7 @@ msgstr "PROGRAMI"
 #. TRANSLATORS Info text describing problem
 #: ../mxfb-booboo-fixer:99
 msgid "Panel on top of full screen display"
-msgstr ""
+msgstr "Pano na vrhu celozaslonskega prikaza"
 
 #. How to take a screenshot...
 #: ../mxfb-quickshot:83
@@ -917,7 +918,7 @@ msgstr "Izbira načina naslovne vrstice"
 #. TRANSLATORS List column 1 header
 #: ../mxfb-booboo-fixer:136
 msgid "Selected"
-msgstr ""
+msgstr "Izbrano"
 
 #. TRANSLATORS - notification text
 #: ../mxfb-separate-backgrounds:46
@@ -1050,7 +1051,7 @@ msgstr ""
 #. end of sentence
 #: ../mxfb-booboo-fixer:126
 msgid "This app edits configuration files in"
-msgstr ""
+msgstr "Ta program ureja konfiguracijske datoteke v"
 
 #: ../mxfb-tiles:10
 msgid ""
@@ -1093,6 +1094,8 @@ msgstr "Besedilo naslovne pasice"
 msgid ""
 "To update packages enter your sudo password in the pop-up terminal window"
 msgstr ""
+"Za posodobitev paketov vnesite svoje sudo geslo in pojavnem oknu s "
+"terminalom"
 
 #. set up text variables
 #: ../mxfb-style-editor:124
@@ -1102,7 +1105,7 @@ msgstr "Zgornja črta"
 #. TRANSLATORS Info text
 #: ../mxfb-booboo-fixer:42 ../mxfb-booboo-fixer:68
 msgid "Update Package"
-msgstr ""
+msgstr "Posodobi paket"
 
 #: ../mxfb-tiles:29
 msgid "Usage options"
@@ -1241,7 +1244,7 @@ msgstr "je bil izbran za trenutni slog."
 #. sentence
 #: ../mxfb-booboo-fixer:40
 msgid "mx-fluxbox needs version"
-msgstr ""
+msgstr "mx-fluxbox zahteva različico"
 
 #. acc_text1="mxfb-accessories"
 #. acc_text2="-"
@@ -1252,7 +1255,7 @@ msgstr ""
 #. sentence
 #: ../mxfb-booboo-fixer:66
 msgid "mxfb-accessories needs version"
-msgstr ""
+msgstr "mxfb-accessories zahteva različico"
 
 #: ../mxfb-look:425
 #, sh-format
