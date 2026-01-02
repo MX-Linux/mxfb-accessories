@@ -1,3 +1,9 @@
+mxfb-accessories (26.01.01mx25) mx; urgency=medium
+
+  * mxfb-seperate-backgrounds deal with old style nitrogen launch line
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 02 Jan 2026 10:52:41 -0500
+
 mxfb-accessories (25.12.02mx25) mx; urgency=medium
 
   * fix bug in mxfb-seperate-backgrounds that breaks if loop in mx25
