@@ -95,6 +95,10 @@ if [ -n "$(find /var/lib/flatpak/exports/share/applications/ -name *.desktop 2>/
 	LIST="$LIST /var/lib/flatpak/exports/share/applications/*.desktop"
 fi
 
+if [ -n "$(find /var/lib/snapd/desktop/ -name *.desktop 2>/dev/null)" ]; then
+	LIST="$LIST /var/lib/snapd/desktop/*.desktop"
+fi
+
 if [ -n "$(find $HOME/.local/share/applications/ -name *.desktop 2>/dev/null)" ]; then
     LIST="$LIST $HOME/.local/share/applications/*.desktop"
 fi
