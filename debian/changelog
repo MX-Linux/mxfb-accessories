@@ -1,3 +1,9 @@
+mxfb-accessories (26.06.01mx25) mx; urgency=medium
+
+  * add snap folders to menu generator
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 04 Jun 2026 18:44:14 -0400
+
 mxfb-accessories (26.01.01mx25) mx; urgency=medium
 
   * mxfb-seperate-backgrounds deal with old style nitrogen launch line
